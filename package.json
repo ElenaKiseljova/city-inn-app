@@ -1,5 +1,5 @@
 {
-  "name": "city-inn-vue",
+  "name": "city-inn-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-meta": "^3.0.0-alpha.10",
+    "vue-router": "^4.1.3",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -19,6 +22,8 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0"
   }
