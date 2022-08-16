@@ -5,16 +5,28 @@ ul(:class='`social social--${direction}`')
     :key='item.link',
     :class='`social__item social__item--${direction}`'
   ) 
-    router-link(
+    a(
+      v-if='item.link.includes("http") || item.link.includes("tel:") || item.link.includes("mailto:")',
       :class='`social__link social__link--${pageName}`',
-      :to='item.link',
+      :href='item.link',
       target='_blank'
+    )
+      span.visually-hidden {{ item.title }}
+      svg(width='48', height='48')
+        use(
+          :xlink:href='require(`@/assets/img/sprites/sprite-mono.svg`) + `#${item.icon}`'
+        )
+
+    router-link(
+      v-else,
+      :class='`social__link social__link--${pageName}`',
+      :to='item.link'
     )
       span.visually-hidden {{ item.title }}
 
       svg(width='48', height='48')
         use(
-          :xlink:href='require(`@/assets/img/sprites/sprite-mono.svg`) + `#icon-${item.icon}`'
+          :xlink:href='require(`@/assets/img/sprites/sprite-mono.svg`) + `#${item.icon}`'
         )
 </template>
 

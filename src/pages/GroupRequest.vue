@@ -1,3 +1,3 @@
 <template lang="pug">
-h1 Group Requests
+h1 Group Request
 </template>

@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
+import meta from './assets/js/meta';
 
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');
 const ConferenceService = () => import('./pages/ConferenceService.vue');
 const ConferenceHall = () => import('./pages/ConferenceHall.vue');
-const GroupRequests = () => import('./pages/GroupRequests.vue');
+const GroupRequest = () => import('./pages/GroupRequest.vue');
 const LobbyBar = () => import('./pages/LobbyBar.vue');
 const RestaurantSviatoslav = () => import('./pages/RestaurantSviatoslav.vue');
 const RoomsHotel = () => import('./pages/RoomsHotel.vue');
@@ -25,7 +26,21 @@ const router = createRouter({
       },
     },
     {
+      path: '/en',
+      component: HomePage,
+      meta: {
+        pageName: 'home',
+      },
+    },
+    {
       path: '/about',
+      component: AboutHotel,
+      meta: {
+        pageName: 'about',
+      },
+    },
+    {
+      path: '/en/about',
       component: AboutHotel,
       meta: {
         pageName: 'about',
@@ -39,6 +54,13 @@ const router = createRouter({
       },
     },
     {
+      path: '/en/conference-service',
+      component: ConferenceService,
+      meta: {
+        pageName: 'conference-service',
+      },
+    },
+    {
       path: '/conference-hall',
       component: ConferenceHall,
       meta: {
@@ -46,8 +68,22 @@ const router = createRouter({
       },
     },
     {
-      path: '/group-requests',
-      component: GroupRequests,
+      path: '/en/conference-hall',
+      component: ConferenceHall,
+      meta: {
+        pageName: 'conference',
+      },
+    },
+    {
+      path: '/group-request',
+      component: GroupRequest,
+      meta: {
+        pageName: 'group',
+      },
+    },
+    {
+      path: '/en/group-request',
+      component: GroupRequest,
       meta: {
         pageName: 'group',
       },
@@ -60,21 +96,50 @@ const router = createRouter({
       },
     },
     {
-      path: '/RestaurantSviatoslav',
+      path: '/en/lobby-bar',
+      component: LobbyBar,
+      meta: {
+        pageName: 'lobby',
+      },
+    },
+    {
+      path: '/restaurant-sviatoslav',
       component: RestaurantSviatoslav,
       meta: {
         pageName: 'restaurant',
       },
     },
     {
-      path: '/RoomsHotel',
+      path: '/en/restaurant-sviatoslav',
+      component: RestaurantSviatoslav,
+      meta: {
+        pageName: 'restaurant',
+      },
+    },
+    {
+      path: '/rooms',
       component: RoomsHotel,
       meta: {
         pageName: 'rooms',
       },
     },
     {
-      path: '/RoomsHotel/:id',
+      path: '/en/rooms',
+      component: RoomsHotel,
+      meta: {
+        pageName: 'rooms',
+      },
+    },
+    {
+      path: '/rooms/:id',
+      component: StandartDouble,
+      props: true,
+      meta: {
+        pageName: 'standart',
+      },
+    },
+    {
+      path: '/en/rooms/:id',
       component: StandartDouble,
       props: true,
       meta: {
@@ -89,7 +154,21 @@ const router = createRouter({
       },
     },
     {
-      path: '/StarfitComplex',
+      path: '/en/smart-offer',
+      component: SmartOffer,
+      meta: {
+        pageName: 'smart',
+      },
+    },
+    {
+      path: '/starfit',
+      component: StarfitComplex,
+      meta: {
+        pageName: 'starfit',
+      },
+    },
+    {
+      path: '/en/starfit',
       component: StarfitComplex,
       meta: {
         pageName: 'starfit',
@@ -97,6 +176,7 @@ const router = createRouter({
     },
     {
       path: '/:notFound(.*)',
+      alias: ['/en/:notFound(.*)'],
       component: NotFound,
       meta: {
         pageName: '404',
@@ -110,8 +190,18 @@ router.beforeEach((to, _, next) => {
     store.dispatch('setPageName', to.meta.pageName);
   }
 
-  if (!store.getters.header) {
-    store.dispatch('setHeader');
+  const curLang = store.getters.lang;
+
+  store.dispatch('setPage', { url: to.href });
+
+  meta(store.getters.meta);
+
+  if (!store.getters.header || curLang !== store.getters.lang) {
+    store.dispatch('setHeader', { lang: store.getters.lang, url: '/header' });
+  }
+
+  if (!store.getters.footer || curLang !== store.getters.lang) {
+    store.dispatch('setFooter', { lang: store.getters.lang, url: '/footer' });
   }
 
   next();

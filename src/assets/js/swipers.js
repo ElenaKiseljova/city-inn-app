@@ -1,5 +1,5 @@
-import gsap from './gsap.min';
-import Swiper from './swiper-bundle.min';
+import { gsap, Power3 } from './libs/gsap.min';
+import Swiper from './libs/swiper-bundle.min';
 import changeActiveClass from './changeActiveClass';
 import cardsActivate from './cards';
 
@@ -353,7 +353,7 @@ export default () => {
       },
     };
 
-    const featuresIconsSwiper = new Swiper(featuresIconsSlider, swiperArgs);
+    new Swiper(featuresIconsSlider, swiperArgs);
   }
 
   // Reloader
