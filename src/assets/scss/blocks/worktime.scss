@@ -1,0 +1,50 @@
+.worktime {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: start;
+
+  width: fit-content;
+
+  @include font(14, 20, 400);
+
+  color: var(--color-page, #ffffff);
+
+  span {
+    white-space: nowrap;
+  }
+
+  &__clock {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 24px;
+
+    border: 1px solid var(--color-page, #ffffff);
+
+    border-radius: 50%;
+
+    svg {
+      width: 100%;
+      height: auto;
+
+      fill: var(--color-page, #ffffff);
+    }
+
+    &--spa {
+      margin-right: 16px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

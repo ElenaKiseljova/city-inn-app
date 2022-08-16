@@ -1,0 +1,380 @@
+.gym {
+  @extend %w100;
+
+  @media screen and (min-width: $desktop) {
+    padding: 177px 0 183px;
+  }
+
+  &__container {
+    @media screen and (min-width: $tablet) {
+      &--group {
+        display: grid;
+
+        grid-template-columns: 50% 50%;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: grid;
+
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  &__top {
+    position: relative;
+
+    @extend %w100;
+
+    overflow: visible;
+
+    @media screen and (min-width: $tablet) {
+      &--group {
+        order: 2;
+
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+
+    top: 40px;
+    left: 0;
+
+    z-index: 2;
+
+    &--desktop {
+      display: none;
+    }
+
+    &--group {
+      top: auto;
+      bottom: 41px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--group {
+        position: static;
+
+        margin-bottom: 44px;
+
+        &.gym__title--mobile {
+          display: none;
+        }
+
+        &.gym__title--desktop {
+          display: block;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      position: static;
+
+      grid-area: d;
+
+      min-width: 1026px;
+
+      margin-right: calc((100% + 464px) - 1026);
+      margin-bottom: 119px;
+      margin-left: -464px;
+
+      &--desktop {
+        display: block;
+      }
+
+      &--mobile {
+        display: none;
+      }
+
+      &--group {
+        grid-area: b;
+
+        min-width: 1026px;
+
+        margin-right: calc(100% - 1026px);
+        margin-bottom: 91px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__slider {
+    width: 100vw;
+    height: 100vw;
+
+    margin: 0 calc((100% - 100vw) / 2);
+
+    @media screen and (min-width: $tablet) {
+      height: calc(448 / 768 * 100vw);
+
+      &--group {
+        width: 50vw;
+        height: 100%;
+        min-height: calc(585 / 768 * 100vw);
+
+        margin: 0 calc(100% - 50vw) 0 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 50vw;
+
+      height: 100%;
+      min-height: calc((840 / 1440) * 100vw);
+
+      margin: 0 0 0 calc(100% - 50vw);
+
+      &--group {
+        margin: 0 calc(100% - 50vw) 0 0;
+      }
+    }
+  }
+
+  &__img {
+    @extend %img;
+
+    --before-linear-gradient-from: rgba(0, 0, 0, 0.5);
+    --before-linear-gradient-to: rgba(0, 0, 0, 0.5);
+
+    @include before-linear-gradient();
+
+    @media screen and (min-width: $tablet) {
+      --before-linear-gradient-from: rgba(0, 0, 0, 0.2);
+      --before-linear-gradient-to: rgba(0, 0, 0, 0.2);
+    }
+
+    @media screen and (min-width: $desktop) {
+      --before-linear-gradient-from: rgba(0, 0, 0, 0.3);
+      --before-linear-gradient-to: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__picture {
+    @extend %picture;
+  }
+
+  &__pagination {
+    &.swiper-pagination {
+      bottom: 40px;
+    }
+
+    &--group {
+      &.swiper-pagination {
+        bottom: -48px;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--group {
+        &.swiper-pagination {
+          bottom: 38px;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin: 0 0 0 calc((100% - 50vw) / 2);
+
+      &--group {
+        &.swiper-pagination {
+          --color-pagination: #{$starfit};
+
+          width: 50vw;
+
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @extend %w100;
+
+    padding: 40px 0;
+
+    &--group {
+      padding: 94px 0 40px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: grid;
+
+      grid-template-areas:
+        "a b"
+        "a c";
+
+      grid-template-columns: calc(312 / (768 - 72) * 100%) calc(312 / (768 - 72) * 100%);
+
+      justify-content: space-between;
+
+      padding: 40px 0 76px;
+
+      &--group {
+        order: 1;
+
+        position: relative;
+
+        z-index: 3;
+
+        display: block;
+
+        width: 100%;
+
+        padding: 11px 44px 39px 0;
+
+        overflow: visible;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      grid-template-areas:
+        "d d"
+        "a a"
+        "b c";
+
+      grid-template-columns: calc((168 / 560)* 100%) calc((312 / 560)* 100%);
+
+      padding: 118px 0 80px 78px;
+
+      overflow: visible;
+
+      &--group {
+        display: grid;
+
+        grid-template-areas:
+          "a"
+          "b"
+          "c"
+          "d";
+
+        grid-template-columns: 100%;
+        grid-template-rows: min-content;
+
+        padding: 80px 82px 79px 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend %w100;
+
+    margin-bottom: 31px;
+
+    @include font(30, 37, 500);
+
+    color: $yellow;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 13px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      grid-area: a;
+
+      margin-bottom: -5px;
+      margin-left: 9px;
+    }
+  }
+
+  &__description {
+    flex-grow: 1;
+
+    @extend %w100;
+
+    margin-bottom: 46px;
+
+    @include font(14, 21, 400);
+
+    color: var(--color-page, #ffffff);
+
+    &--group {
+      margin-bottom: 89px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      grid-area: a;
+
+      margin-bottom: 0;
+
+      @include font(14, 20, 400);
+
+      &--group {
+        margin-bottom: 80px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 116px;
+
+      &--group {
+        grid-area: c;
+
+        margin-bottom: 116px;
+      }
+    }
+  }
+
+  &__worktime {
+    margin-bottom: 45px;
+
+    @media screen and (min-width: $tablet) {
+      grid-area: b;
+
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__buttons {
+    @extend %w100;
+
+    @media screen and (min-width: $tablet) {
+      grid-area: c;
+
+      align-self: end;
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      align-items: center;
+      justify-content: flex-end;
+
+      &--group {
+        grid-area: d;
+      }
+    }
+  }
+
+  &__button {
+    min-width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      min-width: 240px;
+    }
+  }
+
+  &__arrow-top {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      margin-left: 24px;
+
+      &--group {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,979 @@
+.food {
+  @extend %w100;
+
+  &--advantages {
+    --color-page: var(--white);
+  }
+
+  @media screen and (min-width: $tablet) {
+
+    &--approach-conference {
+      position: relative;
+
+      padding-top: 162px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-bottom: 140px;
+
+    overflow: visible;
+
+    &--breakfast,
+    &--supply {
+      padding: 0;
+    }
+
+    &--advantages {
+      --color-page: var(--light-yellow);
+
+      padding: 0 0 137px;
+    }
+
+    &--approach-conference {
+      padding: 293px 0 234px;
+    }
+
+    &--approach-group {
+      padding: 0 0 249px;
+    }
+
+    &--supply {
+      padding: 180px 0 118px;
+    }
+
+    &--why-conference {
+      padding: 119px 0 145px;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @media screen and (min-width: $tablet) {
+      display: grid;
+
+      grid-template-columns: 50% 50%;
+
+      align-items: stretch;
+    }
+  }
+
+  &__top {
+    @extend %w100;
+
+    height: 100vw;
+
+    overflow: visible;
+
+    &--approach-conference,
+    &--why-conference,
+    &--approach-group {
+      height: calc((494 / 414) * 100vw);
+    }
+
+    &--supply {
+      position: relative;
+    }
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+
+      height: auto;
+      min-height: 478px;
+
+      &--menu,
+      &--advantages,
+      &--approach-conference,
+      &--approach-group,
+      &--supply {
+        order: 2;
+      }
+
+      &--approach-conference,
+      &--why-conference {
+        position: static;
+
+        min-height: 580px;
+      }
+
+      &--approach-group {
+        min-height: 488px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      align-items: stretch;
+      justify-content: flex-start;
+
+      min-height: 840px;
+
+      &--breakfast,
+      &--why-conference {
+        order: 2;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 42px;
+
+    &--mobile {
+      position: absolute;
+
+      z-index: 3;
+    }
+
+    &--desktop {
+      display: none;
+    }
+
+    &--advantages {
+      margin-top: 33px;
+    }
+
+    &--approach-conference,
+    &--why-conference,
+    &--approach-group {
+      top: calc(((494 / 414) * 100vw) - 45px);
+      left: 15px;
+
+      width: calc(100% - 30px);
+
+      margin-top: 0;
+
+      transform: translateY(-100%);
+    }
+
+    &--supply {
+      bottom: 36px;
+
+      margin: 0;
+    }
+
+    @media screen and (min-width: $mobile) {
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        left: 40px;
+
+        width: calc(100% - 80px);
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: fit-content;
+      min-width: 538px;
+
+      margin-top: 0;
+      margin-right: calc((114px + 100%) - 538px);
+      margin-bottom: 60px;
+      margin-left: -114px;
+
+      opacity: 0.8;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+
+        margin-top: 0;
+        margin-right: calc(100% - 538px);
+        margin-bottom: 128px;
+        margin-left: 0;
+      }
+
+      &--breakfast,
+      &--supply {
+        margin-right: calc((100% + 102px) - 538px);
+        margin-bottom: 47px;
+        margin-left: -102px;
+
+        opacity: 0.6;
+      }
+
+      &--advantages {
+        margin-bottom: 19px;
+
+        opacity: 1;
+      }
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        min-width: 688px;
+
+        margin-right: calc(100% - 688px);
+        margin-bottom: 35px;
+        margin-left: 0;
+
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+
+      &--supply {
+        min-width: 538px;
+
+        margin-right: calc(100% - 538px);
+        margin-bottom: 44px;
+        margin-left: 0;
+
+        transform: translateY(0);
+      }
+
+      &--why-conference {
+        min-width: 538px;
+
+        margin-right: calc((100% + 140px) - 538px);
+        margin-bottom: 94px;
+        margin-left: -140px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      min-width: 720px;
+
+      margin-right: calc(100% - 720px);
+      margin-bottom: 100px;
+      margin-left: 0;
+
+      opacity: 0.6;
+
+      &--desktop {
+        margin-right: calc(100% - 720px);
+        margin-bottom: 100px;
+      }
+
+      &--advantages,
+      &--approach-group,
+      &--supply {
+        opacity: 1;
+      }
+
+      &--breakfast,
+      &--supply {
+        min-width: 1018px;
+
+        margin-right: calc(100% - 1018px);
+        margin-left: 0;
+      }
+
+      &--breakfast {
+        margin-bottom: 48px;
+
+        opacity: 0.8;
+      }
+
+      &--advantages {
+        margin-bottom: 89px;
+      }
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        min-width: 907px;
+
+        margin-right: calc(100% - 907px);
+        margin-bottom: 116px;
+        margin-left: 0;
+      }
+
+      &--supply {
+        order: 1;
+
+        margin-bottom: 117px;
+      }
+    }
+  }
+
+  &__slider-container {
+    width: 100vw;
+
+    margin: 0 calc((100% - 100vw) / 2);
+
+    @media screen and (min-width: $tablet) {
+      width: 50vw;
+
+      margin: 0 0 0 calc(100% - 50vw);
+
+      &::before {
+        display: none;
+      }
+
+      &--menu,
+      &--advantages,
+      &--approach-conference,
+      &--approach-group,
+      &--supply {
+        margin: 0 calc(100% - 50vw) 0 0;
+      }
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        position: static;
+      }
+
+      &--breakfast {
+        position: relative;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      flex-direction: column;
+
+      align-content: flex-start;
+      justify-content: flex-start;
+
+      width: calc(50vw - 105px);
+      height: auto;
+      min-height: 840px;
+
+      margin: -14px calc(100% - 50vw) 0 105px;
+
+      padding-top: 154px;
+      padding-bottom: 129px;
+
+      overflow: hidden;
+
+      &--breakfast {
+        width: calc(50vw - 165px);
+
+        margin: 0 calc(100% - 50vw) 0 165px;
+
+        padding-bottom: 169px;
+      }
+
+      &--advantages {
+        width: calc(50vw - 80px);
+
+        margin-top: 0;
+        margin-left: 80px;
+
+        padding: 288px 0 0;
+      }
+
+      &--approach-conference,
+      &--approach-group {
+        width: calc(50vw - 72px);
+
+        margin-top: 0;
+        margin-left: 72px;
+
+        padding: 288px 0 0;
+      }
+
+      &--supply {
+        width: calc(50vw - 115px);
+
+        margin: 0 calc(100% - 50vw) 0 115px;
+
+        padding-bottom: 172px;
+      }
+
+      &--why-conference {
+        width: calc(50vw - 81px);
+
+        margin-top: 0;
+        margin-left: 81px;
+
+        padding: 288px 0 0;
+      }
+    }
+  }
+
+  &__slider {
+    position: static;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    @media screen and (min-width: $tablet) {
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        position: static;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 360px;
+      height: 420px;
+
+      margin: 0;
+
+      overflow: visible;
+    }
+  }
+
+  &__slide {
+    box-sizing: border-box;
+
+    @media screen and (min-width: $desktop) {
+      --translateY: -154px;
+
+      &--advantages,
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        --translateY: -288px;
+      }
+
+      &.swiper-slide-active {
+        .food__img {
+          transform-origin: left top;
+          transform: translateY(0) scale(1);
+
+          transition: transform 0.3s;
+        }
+      }
+
+      &.swiper-slide-next {
+        &~.swiper-slide {
+          opacity: 0;
+
+          pointer-events: none;
+        }
+
+        .food__img {
+          transform-origin: left top;
+          transform: translateY(var(--translateY)) scale(2);
+
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+
+  &__img {
+    --before-linear-gradient-from: rgba(0, 0, 0, 0.2);
+    --before-linear-gradient-to: rgba(0, 0, 0, 0.2);
+
+    @include before-linear-gradient();
+
+    @extend %img;
+  }
+
+  &__picture {
+    @extend %picture;
+  }
+
+  &__bottom {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @extend %w100;
+
+    min-height: 100vw;
+
+    padding: 40px 0 96px;
+
+    &--approach-conference,
+    &--approach-group {
+      min-height: calc(271 / 414 * 100vw);
+    }
+
+    &--why-conference {
+      min-height: calc(340 / 414 * 100vw);
+
+      padding-top: 63px;
+    }
+
+    &--supply {
+      padding: 123px 0 40px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+
+      z-index: 1;
+
+      height: auto;
+      min-height: auto;
+
+      padding: 54px 0 54px 37px;
+
+      overflow: visible;
+
+      &--menu,
+      &--advantages,
+      &--approach-conference,
+      &--approach-group,
+      &--supply {
+        order: 1;
+      }
+
+      &--menu {
+        padding: 40px 34px 38px 0;
+      }
+
+      &--breakfast,
+      &--supply {
+        padding: 25px 0 38px 35px;
+      }
+
+      &--advantages {
+        padding: 57px 36px 38px 0;
+      }
+
+      &--approach-conference,
+      &--approach-group {
+        padding: 0 40px 80px 0;
+      }
+
+      &--supply {
+        padding: 0 40px 40px 0;
+      }
+
+      &--why-conference {
+        padding: 0 4px 40px 41px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 165px 203px 129px 0;
+
+      &--breakfast,
+      &--supply,
+      &--why-conference {
+        order: 1;
+      }
+
+      &--breakfast,
+      &--supply {
+        padding: 101px 88px 169px 0;
+      }
+
+      &--advantages {
+        padding: 57px 90px 0 12px;
+      }
+
+      &--approach-conference,
+      &--why-conference {
+        padding: 51px 40px 80px 0;
+      }
+
+      &--approach-group {
+        padding: 51px 12px 80px 5px;
+      }
+
+      &--supply {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        padding: 98px 114px 172px 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend %w100;
+
+    margin-bottom: 17px;
+
+    @include font(30, 37, 500);
+
+    text-transform: uppercase;
+
+    color: $yellow;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 13px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-weight: 700;
+
+      opacity: 0.8;
+
+      &--supply {
+        order: 0;
+      }
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+
+    @extend %w100;
+
+    @media screen and (min-width: $tablet) {
+      &--why-conference {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--supply {
+        order: 2;
+      }
+    }
+  }
+
+  &__text {
+    @extend %w100;
+
+    color: var(--color-page, #ffffff);
+
+    &--top {
+      @include font(14, 21, 400);
+    }
+
+    &--bottom {
+      margin-top: 20px;
+
+      @include font(14, 20, 600);
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--top {
+        @include font(12, 20, 400);
+      }
+
+      &--bottom {
+        @include font(12, 20, 600);
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      @include font(14, 20, 400);
+
+      opacity: 0.6;
+
+      &--bottom {
+        margin-top: 36px;
+      }
+    }
+  }
+
+  &__tabs {
+    display: grid;
+
+    grid-template-areas:
+      "a b c d e"
+      "f f f f f";
+
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: 40px auto;
+
+    justify-content: space-between;
+
+    row-gap: 63px;
+
+    @extend %w100;
+
+    list-style: none;
+
+    &--approach-conference,
+    &--why-conference,
+    &--approach-group {
+      row-gap: 40px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      row-gap: 116px;
+
+      &--approach-conference,
+      &--approach-group {
+        row-gap: 65px;
+      }
+
+      &--why-conference {
+        row-gap: 36px;
+
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      grid-template-areas:
+        "a f"
+        "b g"
+        "c h"
+        "d i"
+        "e j";
+
+      grid-template-columns: 48px auto;
+      grid-template-rows: auto;
+
+      align-items: center;
+
+      gap: 41px 47px;
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        gap: 48px 47px;
+      }
+    }
+  }
+
+  &__tab-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    @include font(14, 17, 500);
+
+    color: var(--color-page, #ffffff);
+
+    background-color: transparent;
+
+    border: 1px solid var(--color-page, #ffffff);
+
+    border-radius: 50%;
+
+    transition: background-color 0.3s;
+
+    $areas: ('a', 'b', 'c', 'd', 'e');
+
+    @for $i from 0 to length($areas) {
+      &--#{$i+1} {
+        grid-area: unquote(nth($areas, $i+1));
+      }
+    }
+
+    &.active {
+      background-color: $white-20;
+
+      transition: background-color 0.3s;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        grid-area: a;
+
+        display: none;
+
+        &.active {
+          display: flex;
+
+          background-color: transparent;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 48px;
+      height: 48px;
+
+      $areas: ('a', 'b', 'c', 'd', 'e');
+
+      @for $i from 0 to length($areas) {
+        &--#{$i+1} {
+          grid-area: unquote(nth($areas, $i+1));
+        }
+      }
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        display: flex;
+
+        &.active {
+          background-color: $white-20;
+        }
+      }
+    }
+  }
+
+  &__tab-text {
+    grid-area: f;
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+
+    &.active {
+      opacity: 1;
+
+      transition: opacity 0.3s;
+    }
+
+    @media screen and (min-width: $desktop) {
+      opacity: 1;
+
+      $areas: ('f', 'g', 'h', 'i', 'j');
+
+      @for $i from 0 to length($areas) {
+        &--#{$i+1} {
+          grid-area: unquote(nth($areas, $i+1));
+        }
+      }
+
+      p {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__buttons {
+    @extend %w100;
+
+    margin-top: 45px;
+
+    &--supply {
+      margin-top: 62px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 71px;
+
+      &--breakfast {
+        margin-top: 51px;
+      }
+
+      &--supply {
+        margin-top: 54px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 123px;
+
+      &--breakfasty {
+        margin-top: 32px;
+      }
+
+      &--supply {
+        order: 3;
+
+        margin-top: 45px;
+      }
+    }
+  }
+
+  &__button {
+    min-width: 100%;
+
+    margin-top: 56px;
+
+    &--breakfast,
+    &--supply {
+      margin-top: 0;
+    }
+
+    &--why-conference {
+      display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--why-conference {
+        display: flex;
+
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      min-width: calc(200 / 437 * 100%);
+
+      margin-top: 0;
+
+      &--breakfast,
+      &--supply {
+        --background-color-button: #{$white-20};
+      }
+
+      &--why-conference {
+        display: none;
+      }
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &__pagination {
+    &.swiper-pagination {
+      bottom: 38px;
+    }
+
+    &--supply {
+      &.swiper-pagination {
+        bottom: -48px;
+      }
+    }
+
+    &--why-conference {
+      &.swiper-pagination {
+        bottom: 44px;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      &.swiper-pagination {
+        bottom: 40px;
+        left: auto;
+        right: 0;
+
+        margin-left: auto;
+        margin-right: calc((100% - 50vw) / 2);
+      }
+
+      &--approach-conference,
+      &--why-conference {
+        &.swiper-pagination {
+          left: 0;
+
+          width: 50vw;
+
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+}

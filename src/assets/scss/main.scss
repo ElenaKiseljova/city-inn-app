@@ -1,0 +1,94 @@
+// Libs
+/* stylelint-disable */
+// @import 'libs/swiper-bundle.min';
+/* stylelint-enable */
+
+// General
+@import 'general/variables';
+@import 'general/mixins';
+@import 'general/functions';
+@import 'general/extends';
+
+@import 'general/fonts';
+
+/* stylelint-disable */
+@import 'general/normalize';
+/* stylelint-enable */
+
+@import 'general/global';
+@import 'general/visually-hidden';
+
+// Layout
+@import 'layout/page';
+@import 'layout/container';
+// @import 'layout/page-header';
+@import 'layout/page-main';
+// @import 'layout/page-footer';
+
+// Global
+@import 'blocks/button';
+@import 'blocks/title';
+@import 'blocks/title-inner';
+
+// @import 'blocks/lang';
+// @import 'blocks/logo';
+// @import 'blocks/social';
+// @import 'blocks/worktime';
+// @import 'blocks/services';
+// @import 'blocks/arrow-top';
+
+// Sliders
+// @import 'blocks/navigation';
+// @import 'blocks/pagination';
+
+// Header
+// @import 'blocks/menu';
+// @import 'blocks/nav';
+// @import 'blocks/call';
+// @import 'blocks/burger';
+
+// Home
+// @import 'blocks/promo';
+// @import 'blocks/home';
+// @import 'blocks/contacts';
+
+// Smart
+// @import 'blocks/cards';
+
+// Restaurant
+// @import 'blocks/cosy';
+// @import 'blocks/food';
+// @import 'blocks/banquet';
+// @import 'blocks/event';
+
+// Lobby
+// @import 'blocks/doings';
+// @import 'blocks/bar';
+// @import 'blocks/mission';
+
+// Starfit
+// @import 'blocks/spa';
+// @import 'blocks/gym';
+
+// Rooms
+// @import 'blocks/rooms';
+// @import 'blocks/room';
+// @import 'blocks/price';
+
+// Room
+// @import 'blocks/info';
+// @import 'blocks/features';
+// @import 'blocks/gallery';
+// @import 'blocks/warm';
+
+// Conference service
+// @import 'blocks/types';
+
+// Group
+// @import 'blocks/team';
+
+// Conference
+// @import 'blocks/parking';
+// @import 'blocks/experience';
+// @import 'blocks/seating';
+// @import 'blocks/prices';

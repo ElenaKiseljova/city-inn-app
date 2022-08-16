@@ -1,0 +1,76 @@
+/* Media */
+$desktop: 1366px;
+$small-desktop: 1200px;
+$tablet: 768px;
+$mobile: 414px;
+$small-mobile: 350px;
+
+/* Computed padding container*/
+$size-desktop: 1440px;
+$size-tablet: 768px;
+$size-mobile: 414px;
+
+$padding-desktop: 80px;
+$padding-tablet: 36px;
+$padding-mobile: 40px;
+$padding-mobile-small: 15px;
+
+/* Colors */
+$white: #FFFFFF;
+$white-90: rgba(255, 255, 255, 0.9);
+$white-80: rgba(255, 255, 255, 0.8);
+$white-70: rgba(255, 255, 255, 0.7);
+$white-60: rgba(255, 255, 255, 0.6);
+$white-50: rgba(255, 255, 255, 0.5);
+$white-40: rgba(255, 255, 255, 0.4);
+$white-30: rgba(255, 255, 255, 0.3);
+$white-20: rgba(255, 255, 255, 0.2);
+$white-10: rgba(255, 255, 255, 0.1);
+
+$blue: #48586C;
+$dark-blue: #2A394D;
+
+$beige: #C4A282;
+
+$starfit: #FFCD1A;
+$dark-starfit: #E6B508;
+
+$yellow: #FF9606;
+$light-yellow: #FBF8E4;
+$yellow-70: rgba(255, 150, 6, 0.7);
+$dark-yellow: #D78C4E;
+
+$gray: #363530;
+$dark-gray: #252521;
+
+$green: #858569;
+$dark-green: #1E2927;
+$light-green: #DEE4D1;
+$light-green-40: rgba(222, 228, 209, 0.4);
+$dirty-green: #858569;
+
+$black: #242424;
+// $black-20: rgba(0, 0, 0, 0.2);
+
+:root {
+  --background-color-page: #{$starfit};
+
+  --green: #{$green};
+  --dark-green: #{$dark-green};
+
+  --gray: #{$gray};
+  --dark-gray: #{$dark-gray};
+
+  --blue: #{$blue};
+  --dark-blue: #{$dark-blue};
+
+  --beige: #{$beige};
+
+  --light-yellow: #{$light-yellow};
+  --starfit: #{$starfit};
+  --white: #{$white};
+
+  --color-button: #{$white};
+  --border-color-button: #{$white};
+  --background-color-button: transparent;
+}

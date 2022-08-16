@@ -1,0 +1,300 @@
+.services {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, calc(154 / 334 * 100%));
+  grid-template-rows: auto;
+
+  gap: 27px 5px;
+
+  justify-content: space-between;
+
+  @extend %w100;
+
+  list-style: none;
+
+  &--spa {
+    row-gap: 16px;
+  }
+
+  &--smart-rooms {
+    row-gap: 20px;
+  }
+
+  &--conference-info,
+  &--seating {
+    grid-template-columns: 100%;
+
+    row-gap: 20px;
+  }
+
+  &--conference-info,
+  &--prices {
+    row-gap: 20px;
+  }
+
+  &--seating {
+    row-gap: 22px;
+  }
+
+  @media screen and (min-width: $tablet) {
+
+    &--spa,
+    &--halls {
+      grid-template-columns: repeat(auto-fit, minmax(151px, max-content));
+
+      row-gap: 24px;
+    }
+
+    &--standart-info {
+      grid-template-columns: repeat(auto-fit, minmax(151px, max-content));
+
+      justify-content: flex-end;
+
+      row-gap: 24px;
+    }
+
+    &--conference-info {
+      row-gap: 24px;
+    }
+
+    &--seating {
+      row-gap: 26px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    &--cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &--spa {
+      grid-template-columns: repeat(3, auto);
+
+      column-gap: 56px;
+
+      justify-content: flex-start;
+    }
+
+    &--rooms {
+      grid-template-columns: repeat(3, auto);
+
+      column-gap: 24px;
+
+      justify-content: flex-start;
+    }
+
+    &--standart-info {
+      grid-template-columns: repeat(auto-fit, minmax(142px, max-content));
+
+      justify-content: flex-start;
+
+      column-gap: 26px;
+    }
+
+    &--conference-info {
+      grid-template-columns: 1fr 1fr;
+
+      column-gap: 61px;
+    }
+
+    &--smart-rooms {
+      grid-template-columns: repeat(auto-fit, minmax(132px, max-content));
+
+      justify-content: start;
+
+      column-gap: 24px;
+    }
+
+    &--seating {
+      grid-template-columns: 100%;
+
+      row-gap: 25px;
+    }
+
+    &--prices {
+      grid-template-columns: repeat(auto-fit, minmax(132px, max-content));
+
+      grid-template-rows: auto;
+
+      align-items: flex-start;
+      justify-content: start;
+
+      column-gap: 14px;
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    @media screen and (min-width: $desktop) {
+      flex-direction: column;
+
+      &--spa,
+      &--rooms,
+      &--standart-info,
+      &--warm,
+      &--types,
+      &--smart-rooms,
+      &--conference-info,
+      &--seating,
+      &--prices,
+      &--halls {
+        flex-direction: row;
+      }
+
+      &--worktime {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-right: 16px;
+
+    border: 1px solid var(--color-page, #ffffff);
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    svg {
+      width: 100%;
+      height: auto;
+
+      fill: var(--color-page, #ffffff);
+      stroke: var(--color-page, #ffffff);
+    }
+
+    &--smart-rooms,
+    &--conference-info,
+    &--seating,
+    &--prices {
+      margin-right: 25px;
+    }
+
+    &--halls {
+      margin-right: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 48px;
+      height: 48px;
+
+      margin-right: 0;
+      margin-bottom: 24px;
+
+      &--spa,
+      &--rooms,
+      &--standart-info,
+      &--warm,
+      &--types,
+      &--conference-info,
+      &--smart-rooms,
+      &--seating,
+      &--prices,
+      &--halls {
+        margin-bottom: 0;
+      }
+
+      &--spa,
+      &--rooms,
+      &--standart-info,
+      &--types,
+      &--conference-info,
+      &--smart-rooms,
+      &--prices,
+      &--halls {
+        margin-right: 24px;
+      }
+
+      &--features,
+      &--warm {
+        width: 64px;
+        height: 64px;
+      }
+
+      &--features {
+        margin-bottom: 32px;
+      }
+
+      &--warm {
+        margin-right: 47px;
+      }
+
+      &--seating {
+        margin-right: 25px;
+      }
+    }
+  }
+
+  &__name {
+    margin: 0;
+    padding: 0;
+
+    @include font(12, 18, 400);
+
+    text-transform: lowercase;
+
+    color: var(--color-page, #ffffff);
+
+    &--warm {
+      @include font(14, 18, 400);
+    }
+
+    &--types,
+    &--seating,
+    &--halls {
+      @include font(14, 21, 400);
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--cards {
+        @include font(10, 15, 400);
+      }
+
+      &--starfit {
+        @include font(14, 20, 400);
+      }
+
+      &--features {
+        @include font(14, 14, 400);
+      }
+
+      &--standart-info,
+      &--conference-info,
+      &--warm {
+        @include font(14, 21, 400);
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--cards {
+        @include font(12, 18, 400);
+      }
+
+      &--starfit,
+      &--rooms {
+        @include font(14, 21, 400);
+      }
+
+      &--features,
+      &--warm {
+        @include font(18, 27, 400);
+      }
+    }
+  }
+}

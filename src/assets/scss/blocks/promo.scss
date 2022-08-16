@@ -1,0 +1,792 @@
+.promo {
+  position: relative;
+
+  @extend %w100;
+
+  min-height: 100vh;
+
+  overflow: visible;
+
+  &--home,
+  &--smart {
+    display: flex;
+
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  &--home {
+    background-color: $yellow;
+  }
+
+  &--smart {
+    background-color: $starfit;
+  }
+
+  &--standart,
+  &--conference-service,
+  &--group,
+  &--conference {
+    min-height: fit-content;
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-height: calc(384 / 768 * 100vw);
+
+    &--standart,
+    &--conference-service,
+    &--group,
+    &--conference {
+      min-height: fit-content;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-height: 100vh;
+
+    &--standart,
+    &--conference-service,
+    &--group,
+    &--conference {
+      min-height: fit-content;
+    }
+
+    &--smart {
+      min-height: calc(520 / 1440 * 100vw);
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    overflow: visible;
+
+    &--image {
+      z-index: 3;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: auto;
+
+    &--home,
+    &--smart {
+      padding-bottom: 40px;
+
+      overflow: hidden;
+    }
+
+    &--restaurant,
+    &--lobby,
+    &--about,
+    &--starfit,
+    &--rooms,
+    &--standart {
+      height: 100vw;
+    }
+
+    &--group,
+    &--conference,
+    &--conference-service {
+      height: 820px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      max-height: calc(384 / 768 * 100vw);
+
+      &--smart {
+        overflow: visible;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--home {
+        max-height: 100vw;
+
+        padding-bottom: 61px;
+      }
+
+      &--restaurant,
+      &--lobby {
+        max-height: calc(580 / 1440 * 100vw);
+      }
+
+      &--about,
+      &--group,
+      &--conference,
+      &--conference-service {
+        max-height: calc(560 / 1440 * 100vw);
+      }
+
+      &--about {
+        padding-bottom: 43px;
+      }
+
+      &--starfit,
+      &--smart {
+        max-height: calc(520 / 1440 * 100vw);
+      }
+
+      &--rooms {
+        max-height: calc(514 / 1440 * 100vw);
+      }
+
+      &--standart,
+      &--conference,
+      &--conference-service {
+        max-height: calc(805 / 1440 * 100vw);
+      }
+
+      &--conference,
+      &--conference-service-service {
+        max-height: calc(555 / 1440 * 100vw);
+      }
+    }
+  }
+
+  &__img {
+    @extend %img;
+
+    &--home,
+    &--restaurant,
+    &--lobby,
+    &--about,
+    &--starfit {
+      --before-linear-gradient-from: rgba(0, 0, 0, 0.2);
+      --before-linear-gradient-to: rgba(0, 0, 0, 0.2);
+
+      @include before-linear-gradient();
+    }
+
+    &--rooms {
+      --before-linear-gradient-from: rgba(0, 0, 0, 0.7);
+      --before-linear-gradient-to: rgba(0, 0, 0, 0.7);
+
+      @include before-linear-gradient();
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--standart {
+        --before-linear-gradient-from: rgba(0, 0, 0, 0.7);
+        --before-linear-gradient-to: rgba(0, 0, 0, 0.7);
+
+        @include before-linear-gradient();
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--home {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__picture {
+    @extend %picture;
+  }
+
+  &__content {
+    position: relative;
+
+    z-index: 3;
+
+    flex-grow: 1;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    @extend %w100;
+
+    &--restaurant,
+    &--lobby,
+    &--about,
+    &--starfit,
+    &--rooms,
+    &--standart,
+    &--group,
+    &--conference,
+    &--conference-service {
+      flex-direction: column;
+    }
+
+    &--restaurant {
+      padding: 71px 0 40px;
+    }
+
+    &--lobby {
+      padding: 85px 0 40px;
+    }
+
+    &--about {
+      padding: 144px 0 40px;
+    }
+
+    &--starfit {
+      padding: 187px 0 93px;
+    }
+
+    &--rooms,
+    &--standart,
+    &--conference,
+    &--conference-service {
+      padding: 127px 0 90px;
+    }
+
+    &--group {
+      padding: 58px 0 90px;
+    }
+
+    &--conference {
+      display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--restaurant,
+      &--lobby,
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--group,
+      &--conference,
+      &--conference-service {
+        width: calc(500 / 694 * 100%);
+
+        margin-left: auto;
+      }
+
+      &--restaurant {
+        padding: 175px 0 80px 0;
+      }
+
+      &--lobby,
+      &--about {
+        padding: 56px 0 42px 0;
+      }
+
+      &--starfit {
+        padding: 261px 0 80px;
+      }
+
+      &--rooms,
+      &--standart,
+      &--conference-service {
+        padding: 175px 0 80px;
+      }
+
+      &--group {
+        display: flex;
+
+        padding: 100px 0 121px;
+      }
+
+      &--conference {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: grid;
+
+      column-gap: 112px;
+
+      width: 100%;
+
+      margin: 0;
+
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--restaurant &--group,
+      &--conference,
+      &--conference-service {
+        align-items: center;
+      }
+
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--conference,
+      &--conference-service {
+        grid-template-columns: 1fr calc(719 / (1440 - 160) * 100%);
+      }
+
+      &--rooms,
+      &--standart,
+      &--conference,
+      &--conference-service {
+        padding: 236px 0 90px;
+      }
+
+      &--restaurant {
+        grid-template-columns: 1fr calc(690 / (1440 - 160) * 100%);
+
+        padding: 203px 0 150px 0;
+      }
+
+      &--lobby {
+        grid-template-columns: 1fr calc(805 / (1440 - 160) * 100%);
+
+        align-items: start;
+
+        padding: 100px 0 127px 0;
+      }
+
+      &--about {
+        padding: 116px 0 112px 0;
+      }
+
+      &--starfit {
+        padding: 237px 0 142px;
+      }
+
+      &--group {
+        grid-template-columns: 260px calc(719 / (1440 - 160) * 100%);
+
+        padding: 161px 0 109px;
+      }
+
+      &--conference {
+        display: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend %w100;
+
+    @include font(24, 29, 700);
+
+    color: var(--color-page);
+
+    &--lobby {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--lobby {
+        margin-bottom: 8px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--lobby {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__top {
+    @extend %w100;
+
+    &--restaurant {
+      margin-bottom: 80px;
+    }
+
+    &--lobby,
+    &--about {
+      margin-bottom: 90px;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--restaurant,
+      &--lobby,
+      &--about {
+        margin-bottom: 40px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--restaurant,
+      &--lobby,
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--group,
+      &--conference,
+      &--conference-service {
+        order: 2;
+
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__text {
+    @extend %w100;
+
+    @include font(14, 21, 400);
+
+    color: var(--color-page);
+
+    &--starfit {
+      --color-page: #{$dark-starfit};
+    }
+
+    @media screen and (min-width: $tablet) {
+      @include font(18, 27, 400);
+    }
+
+    @media screen and (min-width: $desktop) {
+      @include font(24, 36, 400);
+    }
+  }
+
+  &__bottom {
+    @extend %w100;
+
+    @media screen and (min-width: $tablet) {
+
+      &--restaurant,
+      &--lobby,
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--group,
+      &--conference,
+      &--conference-service {
+        display: flex;
+
+        align-items: center;
+        justify-content: start;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--restaurant,
+      &--lobby,
+      &--about,
+      &--starfit,
+      &--rooms,
+      &--standart,
+      &--group,
+      &--conference,
+      &--conference-service {
+        order: 1;
+      }
+    }
+  }
+
+  &__btn {
+    min-width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      &--about {
+        min-width: 208px;
+
+        margin: 0 auto 0 0;
+      }
+
+      &--restaurant,
+      &--lobby {
+        min-width: 162px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--lobby {
+        min-width: 200px;
+
+        margin: 0 auto;
+      }
+
+      &--about {
+        --background-color-button: #{$white-20};
+      }
+    }
+  }
+
+  &__worktime {
+
+    &--restaurant {
+      margin-bottom: 35px;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--restaurant {
+        margin-right: 30px;
+        margin-bottom: 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--restaurant {
+        margin-right: 59px;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    z-index: 3;
+
+    width: fit-content;
+
+    margin: 0;
+    padding: 0;
+
+    @include font(64, 58, 600);
+
+    opacity: 0.6;
+
+    color: var(--color-page);
+
+    &--restaurant {
+      transform: translate(-5px, 6px);
+    }
+
+    &--lobby {
+      transform: translate(-5px, 40px);
+    }
+
+    &--about {
+      transform: translate(-5px, 6px);
+    }
+
+    &--starfit {
+      transform: translate(-5px, calc((122 / 174) * 100%));
+    }
+
+    &--rooms {
+      transform: translate(0, calc((64 / 232) * 100%));
+    }
+
+    &--standart {
+      transform: translate(0, calc((64 / 116) * 100%));
+    }
+
+    &--group,
+    &--conference,
+    &--conference-service {
+      @include font(96, 86, 700);
+
+      writing-mode: vertical-rl;
+
+      transform: rotate(-180deg) translate(0px, 40px);
+    }
+
+    &--smart {
+      margin-bottom: 41px;
+
+      @include font(90, 80, 700);
+    }
+
+    @media screen and (min-width: $mobile) {
+
+      &--restaurant {
+        transform: translate(-4px, 6px);
+      }
+
+      &--lobby {
+        transform: translate(0, 40px);
+
+        br {
+          display: none;
+        }
+      }
+
+      &--about {
+        transform: translate(0, 6px);
+      }
+
+      &--starfit {
+        transform: translate(0, calc((122 / 174) * 100%));
+      }
+
+      &--smart {
+        @include font(96, 86, 700);
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      @include font(96, 86, 600);
+
+      opacity: 0.5;
+
+      &--about,
+      &--rooms {
+        br {
+          display: none;
+        }
+      }
+
+      &--restaurant {
+        transform: translate(0, 45%);
+      }
+
+      &--lobby,
+      &--about {
+        transform: translate(0, 9px);
+      }
+
+      &--starfit {
+        transform: translate(0, calc((181 / 258) * 100%));
+      }
+
+      &--rooms {
+        transform: translate(0, calc((85 / 172) * 100%));
+      }
+
+      &--standart {
+        transform: translate(0, calc((85 / 172) * 100%));
+      }
+
+      &--group,
+      &--conference,
+      &--conference-service {
+        writing-mode: horizontal-tb;
+      }
+
+      &--group {
+        transform: translate(-3px, calc((42 / 172) * 100%));
+      }
+
+      &--conference {
+        transform: translate(-3px, calc((95 / 258) * 100%));
+
+        br:last-of-type {
+          display: none;
+        }
+      }
+
+      &--conference-service {
+        transform: translate(-3px, calc((95 / 172) * 100%));
+      }
+
+      &--smart {
+        margin: 0;
+
+        @include font(112, 90, 700);
+
+        transform: translate(0, 45px);
+      }
+
+
+    }
+
+    @media screen and (min-width: $desktop) {
+      @include font(144, 140, 600);
+
+      opacity: 0.6;
+
+      &--restaurant {
+        transform: translate(-6px, 45%);
+      }
+
+      &--lobby {
+        transform: translate(-6px, 50px);
+      }
+
+      &--about {
+        transform: translate(-7px, 161px);
+      }
+
+      &--starfit {
+        transform: translate(0, calc((195 / 420) * 100%));
+      }
+
+      &--rooms {
+        transform: translate(0, calc((146 / 280) * 100%));
+      }
+
+      &--standart {
+        transform: translate(0, calc((121 / 280) * 100%));
+      }
+
+      &--group {
+        transform: translate(-6px, calc((70 / 140) * 100%));
+
+        br {
+          display: none;
+        }
+      }
+
+      &--conference,
+      &--conference-service {
+        transform: translate(-3px, calc((78 / 280) * 100%));
+      }
+
+      &--conference-service {
+        transform: translate(-3px, calc((136 / 260) * 100%));
+      }
+
+      &--smart {
+        @include font(200, 140, 700);
+
+        transform: translate(-112px, 37px);
+      }
+
+
+    }
+  }
+
+  &__lang {
+    margin-right: 18px;
+  }
+
+  &__social {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+
+      &--home,
+      &--about {
+        display: flex;
+      }
+
+      &--home {
+        justify-content: flex-start;
+      }
+
+      &--about {
+        --color-button: #{$starfit};
+        --border-color-button: #{$starfit};
+
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__buttons {
+    @media screen and (min-width: $mobile) {
+      // width: calc(100% - 80px);
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__button {
+    min-width: 100%;
+
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}

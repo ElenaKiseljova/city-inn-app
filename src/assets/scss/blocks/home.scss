@@ -1,0 +1,703 @@
+.home {
+  position: relative;
+
+  @extend %w100;
+
+  height: fit-content;
+
+  &--smart {
+    background-color: $dark-blue;
+  }
+
+  &--lobby {
+    background-color: $gray;
+  }
+
+  &--conference {
+    background-color: $beige;
+  }
+
+  &--group {
+    background-color: $blue;
+  }
+
+  &--restaurant {
+    background-color: $dark-green;
+  }
+
+  &--starfit {
+    background-color: $starfit;
+  }
+
+  &--about {
+    background-color: $green;
+  }
+
+  &__container {
+    overflow: visible;
+
+    @media screen and (min-width: $tablet) {
+      display: grid;
+
+      &--smart,
+      &--why,
+      &--group,
+      &--starfit,
+      &--conference,
+      &--about {
+        grid-template-columns: 50% 50%;
+      }
+
+      &--lobby,
+      &--restaurant {
+        grid-template-columns: 100%;
+        grid-template-rows: calc(384 / 768 * 100vw) auto;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--lobby,
+      &--restaurant {
+        grid-template-rows: calc(440 / 1440 * 100vw) auto;
+      }
+    }
+  }
+
+  &__top {
+    position: relative;
+
+    width: auto;
+
+    margin: 0;
+
+    @media screen and (min-width: $tablet) {
+
+      &--conference,
+      &--about {
+        order: 2;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+
+    width: 100vw;
+    height: 100vw;
+
+    margin: 0 calc((100% - 100vw) / 2);
+
+    padding: 0;
+
+    background-color: inherit;
+
+    &--why {
+      --before-linear-gradient-from: rgba(0, 0, 0, 0.1);
+      --before-linear-gradient-to: rgba(0, 0, 0, 0.1);
+
+      @include before-linear-gradient();
+    }
+
+    @media screen and (min-width: $tablet) {
+      height: 100%;
+
+      &--smart,
+      &--why,
+      &--group,
+      &--starfit,
+      &--conference,
+      &--about {
+        width: 50vw;
+
+        min-height: calc(585 / 768 * 100vw);
+      }
+
+      &--smart,
+      &--why,
+      &--group,
+      &--starfit {
+        margin: 0 0 0 calc(100% - 50vw);
+      }
+
+      &--conference,
+      &--about {
+        margin: 0 calc(100% - 50vw) 0 0;
+      }
+
+      &--lobby,
+      &--restaurant {
+        width: 100vw;
+
+        min-height: calc(384 / 768 * 100vw);
+
+        margin: 0 calc((100% - 100vw)/ 2);
+      }
+
+      &--why {
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--smart,
+      &--why,
+      &--conference {
+        min-height: calc(840 / 1440 * 100vw);
+      }
+
+      &--lobby,
+      &--restaurant {
+        min-height: calc(440 / 1440 * 100vw);
+      }
+
+      &--group {
+        min-height: calc(726 / 1440 * 100vw);
+      }
+
+      &--starfit {
+        min-height: calc(600 / 1440 * 100vw);
+      }
+
+      &--about {
+        min-height: calc(720 / 1440 * 100vw);
+      }
+    }
+  }
+
+  &__img {
+    @extend %img;
+  }
+
+  &__picture {
+    @extend %picture;
+  }
+
+  &__bottom {
+    padding: 40px 0;
+
+    &--why {
+      padding: 40px 0 60px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+
+      justify-content: flex-start;
+
+      flex-direction: column;
+
+      &--smart,
+      &--group,
+      &--starfit {
+        align-items: flex-end;
+
+        padding: 36px 0 36px 36px;
+      }
+
+      &--why {
+        padding: 112px 2px 112px 35px;
+      }
+
+      &--conference,
+      &--about {
+        order: 1;
+
+        align-items: flex-start;
+
+        padding: 36px 36px 36px 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--smart,
+      &--why,
+      &--group,
+      &--starfit {
+        padding: 80px 0 80px 80px;
+      }
+
+      &--conference,
+      &--about {
+        padding: 80px 80px 80px 0;
+      }
+
+      &--lobby,
+      &--restaurant {
+        padding: 80px 0;
+      }
+
+      &--lobby {
+        padding-top: 198px;
+      }
+
+      &--restaurant {
+        padding-top: 148px;
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+
+    z-index: 3;
+
+    width: fit-content;
+
+    white-space: nowrap;
+
+    &--smart,
+    &--conference,
+    &--restaurant,
+    &--about {
+      top: 0;
+      right: 0;
+
+      padding-top: 40px;
+
+      text-align: right;
+    }
+
+    &--lobby,
+    &--group,
+    &--starfit {
+      bottom: 0;
+      left: 0;
+
+      padding-bottom: 40px;
+
+      text-align: left;
+    }
+
+    &--why {
+      bottom: 0;
+      left: 0;
+
+      padding-bottom: 55px;
+    }
+
+    &--desktop {
+      display: none;
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--desktop {
+        position: static;
+
+        display: block;
+
+        padding: 0;
+
+        &.home__title--lobby,
+        &.home__title--restaurant {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+
+        &.home__title--lobby,
+        &.home__title--restaurant {
+          display: block;
+
+          padding-bottom: 38px;
+        }
+
+        &.home__title--lobby {
+          br {
+            display: none;
+          }
+        }
+
+        &.home__title--restaurant {
+          top: auto;
+          right: auto;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      &--smart,
+      &--group,
+      &--starfit {
+        min-width: 419px;
+
+        margin-right: calc((100% + 105px) - 419px);
+        margin-left: -105px;
+        margin-bottom: 91.5px;
+
+        text-align: left;
+      }
+
+      &--starfit {
+        margin-bottom: 105.5px;
+      }
+
+      &--conference,
+      &--about {
+        min-width: 696px;
+
+        margin-right: calc(100% - 696px);
+        margin-left: 0;
+        margin-bottom: 91.5px;
+
+        text-align: left;
+      }
+
+      &--about {
+        margin-bottom: 117.5px;
+      }
+
+      &--why {
+        min-width: 538px;
+
+        margin-right: calc(100% - 538px);
+        margin-left: 0;
+        margin-bottom: 47px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--mobile {
+        &.home__title--lobby {
+          margin-bottom: -94px;
+
+          padding-bottom: 0;
+        }
+
+        &.home__title--restaurant {
+          margin-bottom: -16px;
+
+          padding-bottom: 0;
+        }
+      }
+
+      &--smart {
+        min-width: 858px;
+
+        margin-right: calc((100% + 247px) - 858px);
+        margin-bottom: 111px;
+        margin-left: -247px;
+      }
+
+      &--conference {
+        min-width: 1142px;
+
+        margin-right: calc(100% - 1142px);
+        margin-bottom: 111px;
+        margin-left: 0;
+      }
+
+      &--group {
+        min-width: 847px;
+
+        margin-right: calc((100% + 273px) - 847px);
+        margin-bottom: 95px;
+        margin-left: 273px;
+      }
+
+      &--starfit {
+        min-width: 779px;
+
+        margin-right: calc((100% + 159px) - 779px);
+        margin-bottom: 59px;
+        margin-left: -159px;
+      }
+
+      &--about {
+        min-width: 1023px;
+
+        margin-right: calc(100% - 1023px);
+        margin-bottom: 100px;
+        margin-left: 0;
+      }
+
+      &--why {
+        margin-bottom: 80px;
+
+        @include font(144, 140, 300);
+
+        color: var(--color-page, #ffffff);
+
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    @extend %w100;
+
+    margin-bottom: 40px;
+
+    &--why {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--smart,
+      &--conference,
+      &--group {
+        margin-bottom: 91.5px;
+      }
+
+      &--lobby,
+      &--restaurant {
+        margin-bottom: 39px;
+      }
+
+      &--starfit {
+        margin-bottom: 105.5px;
+      }
+
+      &--about {
+        margin-bottom: 117.5px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--lobby,
+      &--restaurant {
+        max-width: calc(717 / (1440 - 160)) * 100%;
+
+        align-self: flex-end;
+      }
+
+      &--smart,
+      &--why {
+        margin-bottom: 124px;
+      }
+
+      &--lobby {
+        margin-bottom: 42px;
+      }
+
+      &--conference {
+        margin-bottom: 95px;
+      }
+
+      &--group {
+        margin-bottom: 40px;
+      }
+
+      &--restaurant {
+        margin-bottom: 89px;
+      }
+
+      &--starfit {
+        margin-bottom: 79px;
+      }
+
+      &--about {
+        margin-bottom: 101px;
+      }
+    }
+  }
+
+  &__text {
+    @extend %w100;
+
+    @include font(24, 29, 400);
+
+    color: $white;
+
+    &--top {
+      margin-bottom: 24px;
+    }
+
+    &--bottom {
+      font-weight: 700;
+
+      text-transform: uppercase;
+    }
+
+    &--about {
+      @include font(14, 21, 400);
+    }
+
+    &--why {
+      &.home__text--top {
+        margin-bottom: 20px;
+
+        @include font(14, 20, 400);
+      }
+
+      &.home__text--bottom {
+        @include font(14, 20, 600);
+
+        text-transform: none;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--about {
+        margin-bottom: 45px;
+      }
+
+      &--why {
+        color: var(--color-page, #ffffff);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    @extend %w100;
+
+    &--restaurant {
+      flex-direction: column;
+
+      align-items: flex-start;
+    }
+
+    @media screen and (min-width: $tablet) {
+
+      &--lobby,
+      &--restaurant {
+        width: auto;
+
+        align-self: flex-end;
+      }
+
+      &--restaurant {
+        flex-direction: row;
+
+        align-items: center;
+      }
+
+
+      &--starfitt {
+        justify-content: flex-start;
+      }
+
+      &--lobby {
+        min-width: 340px;
+      }
+
+      &--restaurant {
+        min-width: 350px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &--smart,
+      &--why,
+      &--group,
+      &--starfit,
+      &--about {
+        justify-content: flex-end;
+      }
+
+      &--conference {
+        justify-content: flex-start;
+      }
+
+      &--lobby,
+      &--restaurant {
+        align-self: flex-start;
+      }
+
+      &--restaurant {
+        min-width: 448px;
+      }
+
+      &--lobby {
+        min-width: 424px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    min-width: calc(155 / 334 * 100%);
+
+    margin-left: calc(24 / 334 * 100%);
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &--book-now {
+      &.home__button--smart {
+        display: none;
+      }
+    }
+
+    &--restaurant {
+      margin-top: 30px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      min-width: calc(155 / 347 * 100%);
+
+      margin-left: 24px;
+
+      &--restaurant {
+        margin-top: 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: auto;
+
+      min-width: 200px;
+
+      &--book-now {
+        &.home__button--smart {
+          display: flex;
+        }
+
+        &.home__button--group {
+          --background-color-button: #{$white-10};
+        }
+      }
+
+      &--more {
+
+        &.home__button--smart,
+        &.home__button--lobby,
+        &.home__button--about {
+          --background-color-button: #{$white-10};
+        }
+      }
+
+      &--restaurant {
+        min-width: calc(240 / 448 * 100%);
+      }
+
+      &--group {
+        min-width: calc(269 / 560 * 100%);
+      }
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      margin-left: 48px;
+    }
+  }
+
+  &__worktime {
+    margin-right: 24px;
+
+    @media screen and (min-width: $desktop) {
+      margin-right: 40px;
+    }
+  }
+}

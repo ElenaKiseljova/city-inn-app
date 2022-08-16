@@ -1,0 +1,160 @@
+.page-header {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  @extend %w100;
+  min-height: 100vh;
+
+  pointer-events: none;
+
+  // &__container {}
+
+  &__top {
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 40px 0 0 0;
+
+    pointer-events: all;
+
+    @media screen and (min-width: $tablet) {
+      padding: 37px 0;
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 60px 0 0 0;
+    }
+  }
+
+  &__logo {
+    width: 120px;
+  }
+
+  &__right {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @media screen and (min-width: $desktop) {
+      padding-top: 20px;
+    }
+  }
+
+  &__buttons {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+  }
+
+  &__button {
+    --background-color-button: #{$white-50};
+
+    &--home {
+      --background-color-button: transparent;
+    }
+
+    &--starfit {
+      --color-button: #{$white};
+      --border-color-button: #{$white};
+    }
+
+    &.active {
+      --background-color-button: #{$white-50};
+    }
+
+    &::before {
+      opacity: 0.7;
+    }
+
+    @media screen and (min-width: $tablet) {
+      min-width: 190px;
+
+      &:not(:first-of-type) {
+        margin-left: 24px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 48px;
+
+    margin-left: 24px;
+  }
+
+  &__burger {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social {
+    --color-button: #{$white};
+    --border-color-button: #{$white};
+
+    &--home,
+    &--smart {
+      transform: translateX(50vw);
+    }
+
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 9;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: auto;
+
+    opacity: 0;
+
+    transform: translateY(-100vh);
+
+    pointer-events: none;
+
+    &.loaded {
+      transition: transform 1s, opacity 1s;
+    }
+
+    &.active {
+      opacity: 1;
+
+      transform: translateY(0);
+
+      transition: transform 1s, opacity 1s;
+
+      pointer-events: all;
+    }
+  }
+}
