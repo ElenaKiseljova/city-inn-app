@@ -26,7 +26,7 @@ const router = createRouter({
       },
     },
     {
-      path: '/en',
+      path: '/en/',
       component: HomePage,
       meta: {
         pageName: 'home',
@@ -192,7 +192,7 @@ router.beforeEach((to, _, next) => {
 
   const curLang = store.getters.lang;
 
-  store.dispatch('setPage', { url: to.href });
+  store.dispatch('setPage', { url: to.path });
 
   meta(store.getters.meta);
 

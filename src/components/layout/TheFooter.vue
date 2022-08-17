@@ -41,12 +41,15 @@ footer(:class='`page-footer page-footer--${pageName}`')
 </template>
 
 <script>
+import social from '../../mixins/social';
+
 import SocialList from '../blocks/SocialList.vue';
 
 export default {
   components: {
     SocialList,
   },
+  mixins: [social],
   methods: {
     columnLinksApp(index) {
       return this.columns[index].items.filter(
@@ -75,21 +78,6 @@ export default {
     },
     header() {
       return this.$store.getters.header;
-    },
-    social() {
-      if (
-        this.header.content &&
-        this.header.content.social &&
-        this.header.content.address
-      ) {
-        const address = this.header.content.address;
-
-        const social = [address, ...this.header.content.social];
-
-        return social;
-      }
-
-      return [];
     },
     footer() {
       return this.$store.getters.footer;

@@ -1,4 +1,6 @@
 .page {
+  background-color: var(--background-color-page);
+
   &--about {
     --color-button: var(--light-yellow);
     --border-color-button: var(--light-yellow);

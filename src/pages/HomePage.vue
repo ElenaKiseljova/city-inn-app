@@ -1,4 +1,14 @@
 <template lang="pug">
-h1 Home
+PromoSection
 </template>
+
+<script>
+import PromoSection from '../components/mixins/PromoSection.vue';
+
+export default {
+  components: {
+    PromoSection,
+  },
+};
+</script>
 

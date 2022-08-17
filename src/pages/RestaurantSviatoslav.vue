@@ -1,3 +1,14 @@
 <template lang="pug">
-h1 Restaurant Sviatoslav
+PromoSection
 </template>
+
+<script>
+import PromoSection from '../components/mixins/PromoSection.vue';
+
+export default {
+  components: {
+    PromoSection,
+  },
+};
+</script>
+
