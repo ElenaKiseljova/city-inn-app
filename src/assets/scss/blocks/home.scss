@@ -640,7 +640,7 @@
     }
 
     @media screen and (min-width: $tablet) {
-      min-width: calc(155 / 347 * 100%);
+      min-width: 200px;
 
       margin-left: 24px;
 
@@ -674,11 +674,11 @@
       }
 
       &--restaurant {
-        min-width: calc(240 / 448 * 100%);
+        min-width: 240px;
       }
 
       &--group {
-        min-width: calc(269 / 560 * 100%);
+        min-width: 269px;
       }
     }
   }

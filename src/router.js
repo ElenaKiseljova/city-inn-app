@@ -182,16 +182,20 @@ const router = createRouter({
       },
     },
   ],
-  scrollBehavior(to, _2, savePosition) {
+  scrollBehavior(to, _2, savedPosition) {
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            behavior: 'smooth',
+          })
+        }, 600)
+      })
     }
 
-    if (savePosition) {
-      return savePosition;
+    if (savedPosition) {
+      return savedPosition;
     }
 
     return { left: 0, top: 0 };

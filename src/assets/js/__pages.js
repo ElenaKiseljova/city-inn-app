@@ -659,7 +659,7 @@ const __pages = {
           {
             "id": 4,
             "sectionName": "smart",
-            "title": "smart номера",
+            "title": "smart\r\nномера",
             "contentTop": "Щоб ви гарно виспались",
             "contentBottom": "Буде тепло!",
             "book": {
@@ -668,18 +668,18 @@ const __pages = {
             },
             "more": {
               "title": "Дізнатись більше",
-              "link": "google.com"
+              "link": "/rooms"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/smart-mobile.webp",
+                "tablet": "/img/home/smart-tablet.webp",
+                "desktop": "/img/home/smart-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/smart-mobile.jpg",
+                "tablet": "/img/home/smart-tablet.jpg",
+                "desktop": "/img/home/smart-desktop.jpg"
               }
             }
           },
@@ -690,53 +690,53 @@ const __pages = {
             "contentTop": "Щоб ви гарно проводили вільний час",
             "contentBottom": "Буде смачно!",
             "book": {
-              "title": "RESERVE TABLE",
-              "link": "google.com"
+              "title": "",
+              "link": ""
             },
             "more": {
               "title": "Menu",
-              "link": "google.com"
+              "link": "/lobby-bar"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/lobby-mobile.webp",
+                "tablet": "/img/home/lobby-tablet.webp",
+                "desktop": "/img/home/lobby-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/lobby-mobile.jpg",
+                "tablet": "/img/home/lobby-tablet.jpg",
+                "desktop": "/img/home/lobby-desktop.jpg"
               }
             }
           },
           {
             "id": 5,
             "sectionName": "conference",
-            "title": "Conference service",
+            "title": "Conference\r\nservice",
             "contentTop": "Щоб ви провели гарний захід",
             "contentBottom": "Буде SMART",
             "more": {
               "title": "View more",
-              "link": "google.com"
+              "link": "/conference-service"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/conference-mobile.webp",
+                "tablet": "/img/home/conference-tablet.webp",
+                "desktop": "/img/home/conference-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/conference-mobile.jpg",
+                "tablet": "/img/home/conference-tablet.jpg",
+                "desktop": "/img/home/conference-desktop.jpg"
               }
             }
           },
           {
             "id": 6,
             "sectionName": "group",
-            "title": "group request",
+            "title": "group\r\nrequest",
             "contentTop": "Щоб ви провели гарний захід",
             "contentBottom": "Буде smart",
             "book": {
@@ -745,14 +745,14 @@ const __pages = {
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/group-mobile.webp",
+                "tablet": "/img/home/group-tablet.webp",
+                "desktop": "/img/home/group-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/group-mobile.jpg",
+                "tablet": "/img/home/group-tablet.jpg",
+                "desktop": "/img/home/group-desktop.jpg"
               }
             }
           },
@@ -769,14 +769,14 @@ const __pages = {
             "worktime": "07:00 до 22:00",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/restaurant-mobile.webp",
+                "tablet": "/img/home/restaurant-tablet.webp",
+                "desktop": "/img/home/restaurant-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/restaurant-mobile.jpg",
+                "tablet": "/img/home/restaurant-tablet.jpg",
+                "desktop": "/img/home/restaurant-desktop.jpg"
               }
             }
           },
@@ -788,18 +788,18 @@ const __pages = {
             "contentBottom": "Буде СПА! Буде СПОРТ!",
             "more": {
               "title": "Дізнатись більше",
-              "link": "google.com"
+              "link": "/starfit"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/starfit-mobile.webp",
+                "tablet": "/img/home/starfit-tablet.webp",
+                "desktop": "/img/home/starfit-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/starfit-mobile.jpg",
+                "tablet": "/img/home/starfit-tablet.jpg",
+                "desktop": "/img/home/starfit-desktop.jpg"
               }
             }
           },
@@ -811,18 +811,18 @@ const __pages = {
             "contentBottom": "Буде професійно! Буде SMART",
             "more": {
               "title": "Дізнатись більше",
-              "link": "google.com"
+              "link": "/about"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/about-mobile.webp",
+                "tablet": "/img/home/about-tablet.webp",
+                "desktop": "/img/home/about-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/about-mobile.jpg",
+                "tablet": "/img/home/about-tablet.jpg",
+                "desktop": "/img/home/about-desktop.jpg"
               }
             }
           }
@@ -854,7 +854,7 @@ const __pages = {
           {
             "id": 4,
             "sectionName": "smart",
-            "title": "smart rooms",
+            "title": "smart\r\nrooms",
             "contentTop": "Good sleep",
             "contentBottom": "It will be warm!",
             "book": {
@@ -863,18 +863,18 @@ const __pages = {
             },
             "more": {
               "title": "Read more",
-              "link": "google.com"
+              "link": "/en/rooms"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/smart-mobile.webp",
+                "tablet": "/img/home/smart-tablet.webp",
+                "desktop": "/img/home/smart-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/smart-mobile.jpg",
+                "tablet": "/img/home/smart-tablet.jpg",
+                "desktop": "/img/home/smart-desktop.jpg"
               }
             }
           },
@@ -885,53 +885,53 @@ const __pages = {
             "contentTop": "Щоб ви гарно проводили вільний час",
             "contentBottom": "Буде смачно!",
             "book": {
-              "title": "RESERVE TABLE",
-              "link": "google.com"
+              "title": "",
+              "link": ""
             },
             "more": {
               "title": "Menu",
-              "link": "google.com"
+              "link": "/en/lobby-bar"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/lobby-mobile.webp",
+                "tablet": "/img/home/lobby-tablet.webp",
+                "desktop": "/img/home/lobby-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/lobby-mobile.jpg",
+                "tablet": "/img/home/lobby-tablet.jpg",
+                "desktop": "/img/home/lobby-desktop.jpg"
               }
             }
           },
           {
             "id": 5,
             "sectionName": "conference",
-            "title": "Conference service",
+            "title": "Conference\r\nservice",
             "contentTop": "Щоб ви провели гарний захід",
             "contentBottom": "Буде SMART",
             "more": {
               "title": "View more",
-              "link": "google.com"
+              "link": "/en/conference-service"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/conference-mobile.webp",
+                "tablet": "/img/home/conference-tablet.webp",
+                "desktop": "/img/home/conference-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/conference-mobile.jpg",
+                "tablet": "/img/home/conference-tablet.jpg",
+                "desktop": "/img/home/conference-desktop.jpg"
               }
             }
           },
           {
             "id": 6,
             "sectionName": "group",
-            "title": "group request",
+            "title": "group\r\nrequest",
             "contentTop": "Щоб ви провели гарний захід",
             "contentBottom": "Буде smart",
             "book": {
@@ -940,14 +940,14 @@ const __pages = {
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/group-mobile.webp",
+                "tablet": "/img/home/group-tablet.webp",
+                "desktop": "/img/home/group-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/group-mobile.jpg",
+                "tablet": "/img/home/group-tablet.jpg",
+                "desktop": "/img/home/group-desktop.jpg"
               }
             }
           },
@@ -964,14 +964,14 @@ const __pages = {
             "worktime": "07:00 до 22:00",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/restaurant-mobile.webp",
+                "tablet": "/img/home/restaurant-tablet.webp",
+                "desktop": "/img/home/restaurant-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/restaurant-mobile.jpg",
+                "tablet": "/img/home/restaurant-tablet.jpg",
+                "desktop": "/img/home/restaurant-desktop.jpg"
               }
             }
           },
@@ -983,18 +983,18 @@ const __pages = {
             "contentBottom": "Буде СПА! Буде СПОРТ!",
             "more": {
               "title": "Дізнатись більше",
-              "link": "google.com"
+              "link": "/en/starfit"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/starfit-mobile.webp",
+                "tablet": "/img/home/starfit-tablet.webp",
+                "desktop": "/img/home/starfit-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/starfit-mobile.jpg",
+                "tablet": "/img/home/starfit-tablet.jpg",
+                "desktop": "/img/home/starfit-desktop.jpg"
               }
             }
           },
@@ -1006,18 +1006,18 @@ const __pages = {
             "contentBottom": "Буде професійно! Буде SMART",
             "more": {
               "title": "Дізнатись більше",
-              "link": "google.com"
+              "link": "/en/about"
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/home/about-mobile.webp",
+                "tablet": "/img/home/about-tablet.webp",
+                "desktop": "/img/home/about-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/home/about-mobile.jpg",
+                "tablet": "/img/home/about-tablet.jpg",
+                "desktop": "/img/home/about-desktop.jpg"
               }
             }
           }

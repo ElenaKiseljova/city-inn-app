@@ -25,6 +25,17 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@/assets/scss/general/fonts';
+@import '~@/assets/scss/general/normalize';
+@import '~@/assets/scss/general/global';
+@import '~@/assets/scss/general/visually-hidden';
+
+@import '~@/assets/scss/layout/container';
+
+@import '~@/assets/scss/blocks/button';
+@import '~@/assets/scss/blocks/title';
+@import '~@/assets/scss/blocks/title-inner';
+
 .rout-enter-from {
   opacity: 0.5;
   transform: translateY(-30px);
