@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import meta from './assets/js/meta';
 import __pages from './assets/js/__pages';
 
 const store = createStore({
@@ -43,26 +44,44 @@ const store = createStore({
       header: null,
       footer: null,
       page: null,
+      nextPage: null,
     };
   },
   mutations: {
     setPageName(state, payload) {
+      console.log('set page name', payload);
+
       state.pageName = payload;
     },
     setLang(state, payload) {
+      console.log('set lang', payload);
+
       state.lang = payload;
     },
     setMeta(state, payload) {
+      console.log('set meta', payload);
+
       state.meta = payload;
     },
     setHeader(state, payload) {
+      console.log('set header', payload);
+
       state.header = payload;
     },
     setFooter(state, payload) {
+      console.log('set footer', payload);
+
       state.footer = payload;
     },
     setPage(state, payload) {
+      console.log('set page', payload);
+
       state.page = payload;
+    },
+    setNextPage(state, payload) {
+      console.log('set next page', payload);
+
+      state.nextPage = payload;
     },
   },
   actions: {
@@ -74,6 +93,8 @@ const store = createStore({
     },
     setMeta(context, payload) {
       context.commit('setMeta', payload);
+
+      meta(context.getters.meta);
     },
     async setHeader(context, payload) {
       let url = '';
@@ -105,8 +126,6 @@ const store = createStore({
       headerJson = headerJson.replace(/\r\n/g, '\\r\\n');
 
       const headerObj = JSON.parse(headerJson);
-
-      // console.log('header', headerObj);
       /* TEST */
 
       context.commit('setHeader', headerObj);
@@ -142,13 +161,11 @@ const store = createStore({
       footerJson = footerJson.replace(/\r\n/g, '\\r\\n');
 
       const footerObj = JSON.parse(footerJson);
-
-      // console.log('footer', footerObj);
       /* TEST */
 
       context.commit('setFooter', footerObj);
     },
-    async setPage(context, payload) {
+    async setNextPage(context, payload) {
       let url = '';
 
       url = `${window.location.origin}/api${payload.url}`;
@@ -163,19 +180,31 @@ const store = createStore({
       //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
 
       //   throw error;
-      // }
+      // } 
 
       /* TEST */
       let pageJson = __pages[payload.url] || __pages['/'];
       pageJson = pageJson.replace(/\r\n/g, '\\r\\n');
 
       const pageObj = JSON.parse(pageJson);
-
-      console.log('page', pageObj);
       /* TEST */
 
+      // Set Next page
+      context.commit('setNextPage', pageObj);
+    },
+    async setPage(context, payload) {
+      const path = payload.url;
+      const curLang = payload.curLang;
+      const pageName = payload.pageName;
+
+      const pageObj = context.getters.nextPage;
+
+      if (!pageObj) {
+        return;
+      }
+
       // Update meta
-      const meta = {
+      const newMeta = {
         lang: pageObj.content.language,
         title: pageObj.content.seoTitle,
         items: [
@@ -190,17 +219,30 @@ const store = createStore({
           },
           {
             property: 'og:url',
-            content: `${window.location.origin}${payload.url}`,
+            content: `${window.location.origin}${path}`,
           },
         ],
       };
 
-      context.commit('setMeta', meta);
+      context.dispatch('setMeta', newMeta);
 
       // Update lang
       const lang = pageObj.content.language;
 
-      context.commit('setLang', lang);
+      context.dispatch('setLang', lang);
+
+      // Update Header
+      if (!context.getters.header || curLang !== context.getters.lang) {
+        context.dispatch('setHeader', { lang: context.getters.lang, url: '/header' });
+      }
+
+      // Update Footer
+      if (!context.getters.footer || curLang !== context.getters.lang) {
+        context.dispatch('setFooter', { lang: context.getters.lang, url: '/footer' });
+      }
+
+      // Update pageName
+      context.dispatch('setPageName', pageName);
 
       // Set page
       context.commit('setPage', pageObj);
@@ -224,6 +266,9 @@ const store = createStore({
     },
     page(state) {
       return state.page;
+    },
+    nextPage(state) {
+      return state.nextPage;
     },
   },
 });

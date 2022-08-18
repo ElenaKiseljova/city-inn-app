@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
-import meta from './assets/js/meta';
 
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');
@@ -185,26 +184,18 @@ const router = createRouter({
   ],
 });
 
+let curLang;
+
 router.beforeEach((to, _, next) => {
-  if (to.meta.pageName && store.getters.pageName) {
-    store.dispatch('setPageName', to.meta.pageName);
-  }
+  curLang = store.getters.lang;
 
-  const curLang = store.getters.lang;
-
-  store.dispatch('setPage', { url: to.path });
-
-  meta(store.getters.meta);
-
-  if (!store.getters.header || curLang !== store.getters.lang) {
-    store.dispatch('setHeader', { lang: store.getters.lang, url: '/header' });
-  }
-
-  if (!store.getters.footer || curLang !== store.getters.lang) {
-    store.dispatch('setFooter', { lang: store.getters.lang, url: '/footer' });
-  }
+  store.dispatch('setNextPage', { url: to.path });
 
   next();
+});
+
+router.afterEach((to) => {
+  store.dispatch('setPage', { url: to.path, curLang: curLang, pageName: to.meta.pageName });
 });
 
 export default router;
