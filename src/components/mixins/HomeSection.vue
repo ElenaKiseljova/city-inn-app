@@ -1,0 +1,71 @@
+<template lang="pug">
+//- - const sectionName = attr.sectionName ?? 'smart';
+
+//- - const title = attr.title ?? '';
+//- - const contentTop = attr.contentTop ?? '';
+//- - const contentBottom = attr.contentBottom ?? '';
+
+//- - const more = attr.more ?? {};
+//- - const book = attr.book ?? {};
+
+//- - const imageName = attr.image ?? 'smart';//в проде тут будет объект
+//-   //- image: {
+//-   //-     webp: {
+//-   //-       mobile: '',
+//-   //- tablet: '',
+//-   //- desktop: '',
+//-   //-     },
+//-   //-     jpg: {
+//-   //-       mobile: '',
+//-   //- tablet: '',
+//-   //- desktop: '',
+//-   //-     },
+//-   //-   },
+//- - const worktime = attr.worktime ?? '';
+
+section(:class='`home home--${sectionName}`', :id='sectionName')
+  div(:class='`home__container container home__container--${sectionName}`')
+    div(:class='`home__top home__top--${sectionName}`')
+//-       h2(class="home__title home__title--mobile title home__title--" + sectionName)
+//-         | !{title}
+
+//-       div(class="home__img-wrapper home__img-wrapper--" + sectionName)
+//-         +img('home', sectionName, imageName, title)
+
+//-     div(class="home__bottom home__bottom--" + sectionName)
+//-       h2(class=" home__title home__title--desktop title home__title--" + sectionName)
+//-         | !{title}
+//-       div(class="home__content home__content--" + sectionName)
+//-         p(class="home__text home__text--top home__text--" + sectionName)
+//-           | #{contentTop}
+
+//-         p(class="home__text home__text--bottom home__text--" + sectionName)
+//-           | #{contentBottom}
+
+//-       div(class="home__buttons home__buttons--" + sectionName)
+//-         if worktime !== ''
+//-           +worktime(pageName, '', worktime)
+
+//-         if more && more.link !== '' && more.title !== ''
+//-           a(class="button home__button home__button--more home__button--" + sectionName href= more.link)
+//-             span #{more.title}
+
+//-         if book && book.link && book.link !== '' && book.title && book.title !== ''
+//-           a(class="button home__button home__button--book-now home__button--" + sectionName href= book.link)
+//-             span #{book.title}
+</template>
+
+<script>
+export default {
+  props: {
+    sectionName: {
+      type: String,
+      required: true,
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+@import '~@/assets/scss/blocks/home';
+</style>

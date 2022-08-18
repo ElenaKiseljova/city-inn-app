@@ -1,16 +1,16 @@
 <template lang="pug">
 TheMain
-  PromoSection
+  ThePromo
 </template>
 
 <script>
 import TheMain from '../components/layout/TheMain.vue';
-import PromoSection from '../components/mixins/PromoSection.vue';
+import ThePromo from '../components/mixins/ThePromo.vue';
 
 export default {
   components: {
     TheMain,
-    PromoSection,
+    ThePromo,
   },
 };
 </script>

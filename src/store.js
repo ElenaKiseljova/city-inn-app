@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import meta from './assets/js/meta';
+import { map } from './assets/js/map';
 import __pages from './assets/js/__pages';
 
 const store = createStore({
@@ -43,44 +44,38 @@ const store = createStore({
       },
       header: null,
       footer: null,
+      contacts: null,
+      google: null,
       page: null,
       nextPage: null,
     };
   },
   mutations: {
     setPageName(state, payload) {
-      console.log('set page name', payload);
-
       state.pageName = payload;
     },
     setLang(state, payload) {
-      console.log('set lang', payload);
-
       state.lang = payload;
     },
     setMeta(state, payload) {
-      console.log('set meta', payload);
-
       state.meta = payload;
     },
     setHeader(state, payload) {
-      console.log('set header', payload);
-
       state.header = payload;
     },
     setFooter(state, payload) {
-      console.log('set footer', payload);
-
       state.footer = payload;
     },
+    setContacts(state, payload) {
+      state.contacts = payload;
+    },
+    setGoogle(state, payload) {
+      state.google = payload;
+    },
     setPage(state, payload) {
-      console.log('set page', payload);
-
       state.page = payload;
     },
     setNextPage(state, payload) {
-      console.log('set next page', payload);
-
       state.nextPage = payload;
     },
   },
@@ -99,7 +94,7 @@ const store = createStore({
     async setHeader(context, payload) {
       let url = '';
       let lang = payload.lang;
-      let path = payload.url;
+      let path = '/header';
 
       if (lang === 'uk') {
         lang = '';
@@ -133,7 +128,7 @@ const store = createStore({
     async setFooter(context, payload) {
       let url = '';
       let lang = payload.lang;
-      let path = payload.url;
+      let path = '/footer';
 
       if (lang === 'uk') {
         lang = '';
@@ -164,6 +159,49 @@ const store = createStore({
       /* TEST */
 
       context.commit('setFooter', footerObj);
+    },
+    async setContacts(context, payload) {
+      let url = '';
+      let lang = payload.lang;
+      let path = '/contacts';
+
+      if (lang === 'uk') {
+        lang = '';
+      } else {
+        lang = `/${lang}`;
+      }
+
+      url = `${window.location.origin}/api${lang}${path}`;
+
+      console.log(url);
+
+      // const response = await fetch(url);
+
+      // const responseData = await response.json();
+
+      // if (!response.ok) {
+      //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
+
+      //   throw error;
+      // }
+
+      /* TEST */
+
+      let contactsJson = __pages[`${lang}${path}`];
+      contactsJson = contactsJson.replace(/\r\n/g, '\\r\\n');
+
+      const contactsObj = JSON.parse(contactsJson);
+      /* TEST */
+
+      context.commit('setContacts', contactsObj);
+    },
+    async setGoogle(context, payload) {
+      const key = payload.key;
+      const lang = payload.lang;
+
+      const google = await map(key, lang);
+
+      context.commit('setGoogle', google);
     },
     async setNextPage(context, payload) {
       let url = '';
@@ -233,12 +271,17 @@ const store = createStore({
 
       // Update Header
       if (!context.getters.header || curLang !== context.getters.lang) {
-        context.dispatch('setHeader', { lang: context.getters.lang, url: '/header' });
+        context.dispatch('setHeader', { lang: context.getters.lang });
       }
 
       // Update Footer
       if (!context.getters.footer || curLang !== context.getters.lang) {
-        context.dispatch('setFooter', { lang: context.getters.lang, url: '/footer' });
+        context.dispatch('setFooter', { lang: context.getters.lang });
+      }
+
+      // Update Contacts
+      if (!context.getters.contacts || curLang !== context.getters.lang) {
+        context.dispatch('setContacts', { lang: context.getters.lang });
       }
 
       // Update pageName
@@ -264,11 +307,17 @@ const store = createStore({
     footer(state) {
       return state.footer;
     },
+    contacts(state) {
+      return state.contacts;
+    },
     page(state) {
       return state.page;
     },
     nextPage(state) {
       return state.nextPage;
+    },
+    google(state) {
+      return state.google;
     },
   },
 });

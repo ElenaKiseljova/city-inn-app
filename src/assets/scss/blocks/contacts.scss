@@ -3,6 +3,14 @@
 
   background-color: $dark-gray;
 
+  .gmnoprint {
+    display: none;
+  }
+
+  img[alt='Google'] {
+    display: none;
+  }
+
   &--restaurant {
     background-color: $gray;
   }

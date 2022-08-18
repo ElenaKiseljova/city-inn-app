@@ -1,5 +1,5 @@
 <template lang="pug">
-footer(:class='`page-footer page-footer--${pageName}`')
+footer#footer(:class='`page-footer page-footer--${pageName}`')
   .page-footer__container.container
     .page-footer__left
       .page-footer__logo.logo.logo--footer
@@ -19,25 +19,21 @@ footer(:class='`page-footer page-footer--${pageName}`')
 
       ul.page-footer__list
         li.page-footer__item(v-for='(column, index) in columns')
-          h4.page-footer__title.new
+          h4.page-footer__title
             | {{ column.title }}
 
-          a.page-footer__link(
-            v-for='columnLink in columnLinks(index)',
-            :href='columnLink.link'
-          )
-            | {{ columnLink.text }}
+          template(v-for='item in column.items')
+            address.page-footer__address(v-if='item.link === ""')
+              | {{ item.text }}
 
-          router-link.page-footer__link(
-            v-for='columnLinkApp in columnLinksApp(index)',
-            :to='columnLinkApp.link'
-          )
-            | {{ columnLinkApp.text }}
+            a.page-footer__link(
+              v-else-if='item.link !== "" && item.link.includes("http") && item.link.includes("tel:") && item.link.includes("mailto:")',
+              :href='item.link'
+            )
+              | {{ item.text }}
 
-          address.page-footer__address(
-            v-for='columnText in columnTexts(index)'
-          )
-            | {{ columnText.text }}
+            router-link.page-footer__link(v-else, :to='item.link')
+              | {{ item.text }}
 </template>
 
 <script>
@@ -48,30 +44,14 @@ import SocialList from '../blocks/SocialList.vue';
 export default {
   components: {
     SocialList,
+    item: null,
+  },
+  watch: {
+    item() {
+      console.log('item changed');
+    },
   },
   mixins: [social],
-  methods: {
-    columnLinksApp(index) {
-      return this.columns[index].items.filter(
-        (i) =>
-          i.link &&
-          i.link !== '' &&
-          !i.link.includes('http') &&
-          !i.link.includes('tel:') &&
-          !i.link.includes('mailto:')
-      );
-    },
-    columnTexts(index) {
-      return this.columns[index].items.filter((i) => !i.link || i.link === '');
-    },
-    columnLinks(index) {
-      return this.columns[index].items.filter(
-        (i) =>
-          !this.columnLinksApp(index).includes(i) &&
-          !this.columnTexts(index).includes(i)
-      );
-    },
-  },
   computed: {
     pageName() {
       return this.$store.getters.pageName;

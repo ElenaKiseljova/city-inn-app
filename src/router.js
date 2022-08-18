@@ -182,6 +182,20 @@ const router = createRouter({
       },
     },
   ],
+  scrollBehavior(to, _2, savePosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+
+    if (savePosition) {
+      return savePosition;
+    }
+
+    return { left: 0, top: 0 };
+  }
 });
 
 let curLang;

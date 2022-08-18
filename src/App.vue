@@ -26,12 +26,12 @@ export default {
 
 <style lang="scss">
 .rout-enter-from {
-  opacity: 0;
+  opacity: 0.5;
   transform: translateY(-30px);
 }
 
 .rout-leave-to {
-  opacity: 0;
+  opacity: 0.5;
   transform: translateY(-30px);
 }
 

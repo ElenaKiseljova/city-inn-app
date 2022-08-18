@@ -8,7 +8,7 @@ const __pages = {
           "link": "https://google.com"
         },
         "offer": {
-          "title": "SMART OFFER",
+          "title": "SMART пропозиція",
           "link": "smart-offer"
         },
         "address": {
@@ -494,6 +494,146 @@ const __pages = {
         ]
       }
     }
+  `,
+  '/contacts': `
+    {
+      "status": "success",
+      "content": {
+        "title": "Контакти",
+        "map": {
+          "key": "AIzaSyCU8GzLIx6EGCRicra_jXwLfQe_Mieze3Y",
+          "center": {
+            "lat": 49.81173756211972,
+            "lng": 24.141566493630982
+          },
+          "zoom": 13
+        },
+        "columns": [
+          {
+            "title": "Адреса",
+            "items": [
+              {
+                "text": "79495 вул. Iвана Франко, 53б, Винники, Львiвська область",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "title": "ПРОДАЖІ",
+            "items": [
+              {
+                "text": "sales@city-inn.com.ua",
+                "link": "mailto:sales@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          },
+          {
+            "title": "БРОНЮВАННЯ",
+            "items": [
+              {
+                "text": "reservation@city-inn.com.ua",
+                "link": "mailto:reservation@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          },
+          {
+            "title": "РЕЦЕПЦІЯ",
+            "items": [
+              {
+                "text": "reception@city-inn.com.ua",
+                "link": "mailto:reception@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "title": "Замовити зараз",
+          "link": "google.com"
+        }
+      }
+    }  
+  `,
+  '/en/contacts': `
+    {
+      "status": "success",
+      "content": {
+        "title": "Contacts",
+        "map": {
+          "key": "AIzaSyCU8GzLIx6EGCRicra_jXwLfQe_Mieze3Y",
+          "center": {
+            "lat": 49.81173756211972,
+            "lng": 24.141566493630982
+          },
+          "zoom": 13
+        },
+        "columns": [
+          {
+            "title": "Address",
+            "items": [
+              {
+                "text": "79495 Ivan Franko street, 53b, Vinniki, Lvivska oblast",
+                "link": ""
+              }
+            ]
+          },
+          {
+            "title": "Sales",
+            "items": [
+              {
+                "text": "sales@city-inn.com.ua",
+                "link": "mailto:sales@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          },
+          {
+            "title": "Boking",
+            "items": [
+              {
+                "text": "reservation@city-inn.com.ua",
+                "link": "mailto:reservation@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          },
+          {
+            "title": "Reception",
+            "items": [
+              {
+                "text": "reception@city-inn.com.ua",
+                "link": "mailto:reception@city-inn.com.ua"
+              },
+              {
+                "text": "+38 032 247 15 51",
+                "link": "tel:+380322471551"
+              }
+            ]
+          }
+        ],
+        "book": {
+          "title": "BOOK NOW",
+          "link": "google.com"
+        }
+      }
+    }  
   `,
   '/': `
     {
@@ -1435,7 +1575,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "smart\r\nконференц-зал",
         "seoTitle": "smart конференц-зал",
         "seoDescription": "smart конференц-зал від city inn",
@@ -2233,7 +2373,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "conference service",
         "seoTitle": "conference service",
         "seoDescription": "conference service from city inn",
@@ -2587,7 +2727,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "group request",
         "seoTitle": "group request",
         "seoDescription": "group request from city inn",
@@ -3657,7 +3797,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "lobby bar",
         "seoTitle": "lobby bar",
         "seoDescription": "lobby bar city inn!!!",
@@ -4067,7 +4207,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "Ресторан Святослав",
         "seoTitle": "Ресторан Святослав - топ за свои деньги!",
         "seoDescription": "Кушать очень вкусно! Ресторан Святослав!",
@@ -4531,7 +4671,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "Номери та апартаменти",
         "seoTitle": "Номери та апартаменти",
         "seoDescription": "Тепло, затишно, безпечно, комфортно. City Inn The Best!!!",
@@ -5153,7 +5293,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "standart double",
         "seoTitle": "Кімната - standart double",
         "seoDescription": "Кімната standart double від City Inn. Топові ціні!",
@@ -5481,7 +5621,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "smart <br>пропозиції",
         "seoTitle": "SMART пропозиції від City Inn!!!",
         "seoDescription": "SMART пропозиції від City Inn!!! Лише топові пропозиції, для топового відпочинку!",
@@ -6405,7 +6545,7 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
+        "language": "uk",
         "title": "Спортивний<br>комплекс<br>StarFit",
         "seoTitle": "Starfit - ставки на спорт!",
         "seoDescription": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",

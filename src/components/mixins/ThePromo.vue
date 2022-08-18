@@ -1,5 +1,5 @@
 <template lang="pug">
-section(:class='`promo promo--${sectionName}`') 
+section#promo(:class='`promo promo--${sectionName}`') 
   h1.visually-hidden(v-if='title === ""')
     | {{ meta.title }}
 
@@ -78,6 +78,7 @@ section(:class='`promo promo--${sectionName}`')
 </template>
 
 <script>
+import gsapAnimations from '../../assets/js/gsap-animations';
 import social from '../../mixins/social';
 
 import BaseImage from '../mixins/BaseImage.vue';
@@ -173,6 +174,9 @@ export default {
           : { ...this.content.bottom.book, route: true }
         : null;
     },
+  },
+  mounted() {
+    gsapAnimations();
   },
 };
 </script>
