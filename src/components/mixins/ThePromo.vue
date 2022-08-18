@@ -4,7 +4,9 @@ section#promo(:class='`promo promo--${sectionName}`')
     | {{ meta.title }}
 
   div(:class='`promo__img-wrapper promo__img-wrapper--${sectionName}`')
-    .promo__container.promo__container--image.container 
+    div(
+      :class='`promo__container promo__container--image container promo__container--${sectionName}`'
+    )
       h1(
         v-if='title !== ""',
         v-html='title',
