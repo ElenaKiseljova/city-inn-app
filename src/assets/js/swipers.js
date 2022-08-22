@@ -85,7 +85,7 @@ export default () => {
     }
   };
 
-  const changeFoodTab = (swiperSlider, numbers = [], texts = []) => {
+  const changeTab = (swiperSlider, numbers = [], texts = []) => {
     const index = swiperSlider.activeIndex ?? 0;
 
     if (numbers[index] && texts[index]) {
@@ -298,10 +298,10 @@ export default () => {
       const foodTextTabs = swiperItem.closest('section').querySelectorAll('.food__tab-text');
 
       if (foodNumberTabs.length > 0 && foodTextTabs.length > 0) {
-        changeFoodTab(swiperSlider, foodNumberTabs, foodTextTabs);
+        changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
 
         swiperSlider.on('slideChange', () => {
-          changeFoodTab(swiperSlider, foodNumberTabs, foodTextTabs);
+          changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
         });
       }
     }
