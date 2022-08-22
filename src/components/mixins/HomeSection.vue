@@ -105,7 +105,7 @@ export default {
       return this.$store.getters.pageName;
     },
     page() {
-      return this.$store.getters.page;
+      return this.$store.getters.page || {};
     },
     sections() {
       return this.page.content.sections;

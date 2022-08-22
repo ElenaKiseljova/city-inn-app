@@ -5645,50 +5645,49 @@ const __pages = {
               "text": "BOOK NOW",
               "link": "google.com"
             },
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
               },
               {
                 "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-corporate-mobile.webp",
+                "tablet": "/img/smart/cards-corporate-tablet.webp",
+                "desktop": "/img/smart/cards-corporate-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                "desktop": "/img/smart/cards-corporate-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5697,14 +5696,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5712,33 +5711,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5756,50 +5755,49 @@ const __pages = {
               "text": "BOOK NOW",
               "link": "google.com"
             },
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
-                "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
               },
               {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-spa-mobile.webp",
+                "tablet": "/img/smart/cards-spa-tablet.webp",
+                "desktop": "/img/smart/cards-spa-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-spa-mobile.jpg",
+                "tablet": "/img/smart/cards-spa-tablet.jpg",
+                "desktop": "/img/smart/cards-spa-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5808,14 +5806,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5823,33 +5821,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5863,50 +5861,49 @@ const __pages = {
           },
           {
             "title": "дегустаційний вікенд",
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-degustation-mobile.webp",
+                "tablet": "/img/smart/cards-degustation-tablet.webp",
+                "desktop": "/img/smart/cards-degustation-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                "desktop": "/img/smart/cards-degustation-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5915,14 +5912,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5930,33 +5927,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -5970,50 +5967,49 @@ const __pages = {
           },
           {
             "title": "романтичний вікенд",
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
-                "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/smart/cards-romantic-mobile.webp",
+                "tablet": "/img/smart/cards-romantic-tablet.webp",
+                "desktop": "/img/smart/cards-romantic-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                "desktop": "/img/smart/cards-romantic-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6022,14 +6018,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6037,33 +6033,143 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Тепер вам не потрібно платити повну вартість номера!",
+                "book": {
+                  "text": "BOOK NOW",
+                  "link": "google.com"
+                }
+              }
+            ]
+          },
+          {
+            "title": "корпоративна співпраця",
+            "book": {
+              "text": "BOOK NOW",
+              "link": "google.com"
+            },
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "services": [
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
+              }
+            ],
+            "image": {
+              "webp": {
+                "mobile": "/img/smart/cards-corporate-mobile.webp",
+                "tablet": "/img/smart/cards-corporate-tablet.webp",
+                "desktop": "/img/smart/cards-corporate-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                "desktop": "/img/smart/cards-corporate-desktop.jpg"
+              }
+            },
+            "slides": [
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!\r\n\r\nОплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!"
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+                "services": [
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-tv.svg"
+                  },
+                  {
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
+                  },
+                  {
+                    "title": "міні-холодильник",
+                    "icon": "/img/icons/mono/icon-gym.svg"
+                  },
+                  {
+                    "title": "міні парфюмерія",
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6084,8 +6190,8 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "en",
-        "title": "smart <br>пропозиції",
-        "seoTitle": "SMART пропозиції від City Inn!!!",
+        "title": "smart <br>offers",
+        "seoTitle": "SMART offers from City Inn!!!",
         "seoDescription": "SMART пропозиції від City Inn!!! Лише топові пропозиції, для топового відпочинку!",
         "template": "smart",
         "image": {
@@ -6107,50 +6213,49 @@ const __pages = {
               "text": "BOOK NOW",
               "link": "google.com"
             },
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
               },
               {
                 "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-corporate-mobile.webp",
+                "tablet": "/img/smart/cards-corporate-tablet.webp",
+                "desktop": "/img/smart/cards-corporate-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                "desktop": "/img/smart/cards-corporate-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6159,14 +6264,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6174,33 +6279,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-corporate-mobile.webp",
+                    "tablet": "/img/smart/cards-corporate-tablet.webp",
+                    "desktop": "/img/smart/cards-corporate-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                    "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                    "desktop": "/img/smart/cards-corporate-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6218,50 +6323,49 @@ const __pages = {
               "text": "BOOK NOW",
               "link": "google.com"
             },
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
-                "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
               },
               {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-spa-mobile.webp",
+                "tablet": "/img/smart/cards-spa-tablet.webp",
+                "desktop": "/img/smart/cards-spa-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-spa-mobile.jpg",
+                "tablet": "/img/smart/cards-spa-tablet.jpg",
+                "desktop": "/img/smart/cards-spa-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6270,14 +6374,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6285,33 +6389,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-spa-mobile.webp",
+                    "tablet": "/img/smart/cards-spa-tablet.webp",
+                    "desktop": "/img/smart/cards-spa-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-spa-mobile.jpg",
+                    "tablet": "/img/smart/cards-spa-tablet.jpg",
+                    "desktop": "/img/smart/cards-spa-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6325,50 +6429,49 @@ const __pages = {
           },
           {
             "title": "дегустаційний вікенд",
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-pool.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/smart/cards-degustation-mobile.webp",
+                "tablet": "/img/smart/cards-degustation-tablet.webp",
+                "desktop": "/img/smart/cards-degustation-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                "desktop": "/img/smart/cards-degustation-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6377,14 +6480,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6392,33 +6495,33 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-degustation-mobile.webp",
+                    "tablet": "/img/smart/cards-degustation-tablet.webp",
+                    "desktop": "/img/smart/cards-degustation-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-degustation-mobile.jpg",
+                    "tablet": "/img/smart/cards-degustation-tablet.jpg",
+                    "desktop": "/img/smart/cards-degustation-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6432,50 +6535,49 @@ const __pages = {
           },
           {
             "title": "романтичний вікенд",
-            "textTop": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!",
-            "textBottom": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
               {
-                "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               }
             ],
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/smart/cards-romantic-mobile.webp",
+                "tablet": "/img/smart/cards-romantic-tablet.webp",
+                "desktop": "/img/smart/cards-romantic-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                "desktop": "/img/smart/cards-romantic-desktop.jpg"
               }
             },
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6484,14 +6586,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",
@@ -6499,33 +6601,143 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-tv.svg"
                   },
                   {
-                    "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-gym.svg"
                   },
                   {
                     "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
                   }
                 ]
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Тепер вам не потрібно платити повну вартість номера!",
+                "book": {
+                  "text": "BOOK NOW",
+                  "link": "google.com"
+                }
+              }
+            ]
+          },
+          {
+            "title": "корпоративна співпраця",
+            "book": {
+              "text": "BOOK NOW",
+              "link": "google.com"
+            },
+            "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+            "services": [
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-pool.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-gym.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
+              }
+            ],
+            "image": {
+              "webp": {
+                "mobile": "/img/smart/cards-corporate-mobile.webp",
+                "tablet": "/img/smart/cards-corporate-tablet.webp",
+                "desktop": "/img/smart/cards-corporate-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/smart/cards-corporate-mobile.jpg",
+                "tablet": "/img/smart/cards-corporate-tablet.jpg",
+                "desktop": "/img/smart/cards-corporate-desktop.jpg"
+              }
+            },
+            "slides": [
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!\r\n\r\nОплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!"
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
+                  }
+                },
+                "title": "SPA DAY USE OFFER",
+                "description": "Grand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
+                "services": [
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-tv.svg"
+                  },
+                  {
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-pool.svg"
+                  },
+                  {
+                    "title": "міні-холодильник",
+                    "icon": "/img/icons/mono/icon-gym.svg"
+                  },
+                  {
+                    "title": "міні парфюмерія",
+                    "icon": "/img/icons/mono/icon-mini-bar.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/smart/cards-romantic-mobile.webp",
+                    "tablet": "/img/smart/cards-romantic-tablet.webp",
+                    "desktop": "/img/smart/cards-romantic-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/smart/cards-romantic-mobile.jpg",
+                    "tablet": "/img/smart/cards-romantic-tablet.jpg",
+                    "desktop": "/img/smart/cards-romantic-desktop.jpg"
                   }
                 },
                 "title": "SPA DAY USE OFFER",

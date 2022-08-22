@@ -130,7 +130,7 @@ export default {
       return this.name || this.pageName;
     },
     page() {
-      return this.$store.getters.page;
+      return this.$store.getters.page || {};
     },
     title() {
       return this.page.content.title

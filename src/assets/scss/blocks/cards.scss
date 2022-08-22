@@ -32,12 +32,12 @@
 
     transition: height 0.5s;
 
+    &--last {
+      background-color: $gray;
+    }
+
     &.active {
       z-index: 100;
-
-      .cards__pagination {
-        opacity: 0;
-      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -219,6 +219,10 @@
 
     transition: transform 1s;
 
+    &--last {
+      background-color: $gray;
+    }
+
     &.active {
       position: relative;
 
@@ -227,6 +231,10 @@
       transform: rotateY(360deg);
 
       transition: transform 1s;
+
+      .cards__pagination {
+        opacity: 1;
+      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -260,18 +268,20 @@
     }
   }
 
-  &__slider {
-    width: 100%;
+  &__pagination {
+    position: static;
+
+    margin-bottom: 40px;
+
+    opacity: 0;
 
     @media screen and (min-width: $desktop) {
       display: none;
     }
   }
 
-  &__pagination {
-    position: static;
-
-    margin-bottom: 40px;
+  &__slider {
+    width: 100%;
 
     @media screen and (min-width: $desktop) {
       display: none;
@@ -361,6 +371,8 @@
     @include font(24, 29, 700);
 
     color: $white;
+
+    text-transform: uppercase;
 
     @media screen and (min-width: $tablet) {
       margin-bottom: 20px;

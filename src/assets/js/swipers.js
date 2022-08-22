@@ -380,7 +380,7 @@ export default () => {
       },
     };
 
-    const featuresIconsSwiper = new Swiper(featuresIconsSlider, swiperArgs);
+    new Swiper(featuresIconsSlider, swiperArgs);
   }
 
   // Reloader
