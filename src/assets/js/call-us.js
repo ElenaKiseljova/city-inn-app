@@ -1,4 +1,4 @@
-export default () => {
+const callUs = () => {
   const callLink = document.querySelector('.call__link');
 
   if (callLink) {
@@ -17,5 +17,11 @@ export default () => {
         }
       });
     }
+
+    return true;
   }
+
+  return false;
 };
+
+export { callUs };

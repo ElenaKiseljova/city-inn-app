@@ -1,18 +1,18 @@
 import gsap from './libs/gsap.min';
 import ScrollTrigger from './libs/ScrollTrigger.min';
 
-export default () => {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  const TABLET_WIDTH = 768;
+const TABLET_WIDTH = 768;
 
-  const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
-    ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-    : window.innerWidth
-    || document.documentElement.clientWidth
-    || document.getElementsByTagName('body')[0].clientWidth;
+const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
+  ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+  : window.innerWidth
+  || document.documentElement.clientWidth
+  || document.getElementsByTagName('body')[0].clientWidth;
 
-  const animationOpacityTranslate = (elements, trigerElement) => {
+const animationOpacityTranslate = (elements, trigerElement) => {
+  if (elements.length > 0 && trigerElement) {
     gsap.to(elements, {
       x: 0,
       y: 0,
@@ -28,36 +28,103 @@ export default () => {
         end: 'bottom center',
       },
     });
-  };
 
-  const animationPromoButtons = (elements) => {
+    return true;
+  }
+
+  return false;
+};
+
+const animationOpacityTranslateReset = (elements) => {
+  if (elements.length > 0) {
     gsap.to(elements, {
-      y: 192,
+      x: 20,
+      y: 20,
+      opacity: 0,
       duration: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.promo',
-        scrub: 1,
-        // markers: true,
-        start: 'top top',
-        end: '98vh top',
-      },
+      stagger: 0.2,
+      ease: 'power3.inOut',
     });
 
-    gsap.to('.page-header__social', {
-      x: 0,
-      duration: 1,
-      ease: 'power1.inOut',
-      scrollTrigger: {
-        trigger: '.promo',
-        scrub: 1,
-        // markers: true,
-        start: 'top top',
-        end: '98vh top',
-      },
-    });
-  };
+    return true;
+  }
 
+  return false;
+};
+
+const animationPromoButtons = (elements) => {
+  gsap.to(elements, {
+    y: 192,
+    duration: 1,
+    ease: 'power1.inOut',
+    scrollTrigger: {
+      trigger: '.promo',
+      scrub: 1,
+      // markers: true,
+      start: 'top top',
+      end: '98vh top',
+    },
+  });
+};
+
+const animationPromoSocial = () => {
+  gsap.to('.page-header__social', {
+    x: 0,
+    duration: 1,
+    ease: 'power1.inOut',
+    scrollTrigger: {
+      trigger: '.promo',
+      // scrub: 1,
+      // markers: true,
+      start: 'top top',
+      end: '98vh top',
+    },
+  });
+};
+
+// Contacts
+const contactsAnimation = {
+  trigger() {
+    return document.querySelector('.contacts');
+  },
+  elements() {
+    return this.trigger() ? this.trigger().querySelectorAll('.contacts__item') : [];
+  },
+  init() {
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      return animationOpacityTranslate(this.elements(), this.trigger());
+    }
+  },
+  reset() {
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      return animationOpacityTranslateReset(this.elements());
+    }
+  },
+};
+export { contactsAnimation };
+
+const pageFooter = {
+  trigger() {
+    return document.querySelector('.page-footer');
+  },
+  elements() {
+    return this.trigger() ? this.trigger().querySelectorAll('.page-footer__item') : [];
+  },
+  init() {
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      return animationOpacityTranslate(this.elements(), this.trigger());
+    }
+  },
+  reset() {
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      return animationOpacityTranslateReset(this.elements());
+    }
+  },
+};
+export { pageFooter };
+
+
+export default () => {
   if (DEVICE_WIDTH < TABLET_WIDTH) {
     const imageContainers = document.querySelectorAll('.promo--home .promo__container--image, .promo--smart .promo__container--image');
 
@@ -67,11 +134,13 @@ export default () => {
   }
 
   if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    animationPromoSocial();
+
     // Services
-    const services = document.querySelectorAll('.services, .contacts, .page-footer, .promo__social');
+    const services = document.querySelectorAll('.services, .promo__social');
     if (services.length > 0) {
       services.forEach((servicesBlock) => {
-        const servicesItems = servicesBlock.querySelectorAll('.services__item, .contacts__item, .page-footer__item, .promo__lang, .social__item');
+        const servicesItems = servicesBlock.querySelectorAll('.services__item, .promo__lang, .social__item');
 
         animationOpacityTranslate(servicesItems, servicesBlock);
       });

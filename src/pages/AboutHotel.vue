@@ -2,7 +2,7 @@
 TheMain
   ThePromo
   MissionSection
-  HomeSection(sectionName='why', :section='section')
+  HomeSection(sectionName='why')
 </template>
 
 <script>
@@ -19,15 +19,15 @@ export default {
     HomeSection,
   },
   computed: {
-    page() {
-      return this.$store.getters.page || {};
-    },
-    sections() {
-      return this.page.content.sections || [];
-    },
-    section() {
-      return this.sections[1] || {};
-    },
+    // page() {
+    //   return this.$store.getters.page || {};
+    // },
+    // sections() {
+    //   return this.page.content.sections || [];
+    // },
+    // section() {
+    //   return this.sections[1] || {};
+    // },
   },
 };
 </script>

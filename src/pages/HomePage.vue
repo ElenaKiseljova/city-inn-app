@@ -1,13 +1,13 @@
 <template lang="pug">
 TheMain
   ThePromo
-  HomeSection(sectionName='smart', :section='getSection("smart")')
-  HomeSection(sectionName='lobby', :section='getSection("lobby")')
-  HomeSection(sectionName='conference', :section='getSection("conference")')
-  HomeSection(sectionName='group', :section='getSection("group")')
-  HomeSection(sectionName='restaurant', :section='getSection("restaurant")')
-  HomeSection(sectionName='starfit', :section='getSection("starfit")')
-  HomeSection(sectionName='about', :section='getSection("about")')
+  HomeSection(sectionName='smart')
+  HomeSection(sectionName='lobby')
+  HomeSection(sectionName='conference')
+  HomeSection(sectionName='group')
+  HomeSection(sectionName='restaurant')
+  HomeSection(sectionName='starfit')
+  HomeSection(sectionName='about')
   TheContacts
 </template>
 
@@ -25,18 +25,13 @@ export default {
     TheContacts,
   },
   methods: {
-    getSection(name) {
-      return this.sections.find((section) => section.sectionName === name);
-    },
+    // getSection(name) {
+    //   return this.sections.length > 0
+    //     ? this.sections.find((section) => section.sectionName === name)
+    //     : {};
+    // },
   },
-  computed: {
-    page() {
-      return this.$store.getters.page || {};
-    },
-    sections() {
-      return this.page.content.sections || [];
-    },
-  },
+  computed: {},
 };
 </script>
 

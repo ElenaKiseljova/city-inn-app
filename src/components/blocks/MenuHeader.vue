@@ -10,18 +10,20 @@
 
       .menu__call.call
         a.call__link(
-          v-if='call',
-          :href='call.link',
-          :data-text='call.text',
-          :data-phone='call.phone'
+          v-if='callUs.link && callUs.text',
+          :href='callUs.link',
+          :data-text='callUs.text',
+          :data-phone='callUs.phone'
         )
           span.call__text
-            | {{ call.text }}
+            | {{ callUs.text }}
 
           span.call__icon
             svg(width='48', height='48')
               use(xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-phone')
+
   BaseImage(
+    v-if='navigationList.length > 0',
     v-for='(navItemHeader, index) in navigationList',
     :key='navItemHeader.title',
     sectionName='menu',
@@ -30,6 +32,9 @@
 </template>
 
 <script>
+import { callUs } from '../../assets/js/call-us';
+import menu from '../../assets/js/menu';
+
 import social from '../../mixins/social';
 
 import SocialList from './SocialList.vue';
@@ -43,24 +48,39 @@ export default {
     BaseImage,
   },
   mixins: [social],
+  data() {
+    return {
+      headerIsReady: false,
+    };
+  },
   computed: {
     header() {
       return this.$store.getters.header || {};
     },
-    call() {
-      if (this.header.content && this.header.content.call) {
-        return this.header.content.call;
-      }
-
-      return null;
+    callUs() {
+      return this.header.content && this.header.content.call
+        ? this.header.content.call
+        : {};
     },
     navigationList() {
-      if (this.header.content && this.header.content.menu) {
-        return this.header.content.menu;
-      }
-
-      return [];
+      return this.header.content && this.header.content.menu
+        ? this.header.content.menu
+        : [];
     },
+  },
+  mounted() {
+    if (this.header.content && !this.headerIsReady) {
+      const scriptsInited = callUs() && menu();
+
+      this.headerIsReady = scriptsInited;
+    }
+  },
+  updated() {
+    if (this.header.content && !this.headerIsReady) {
+      const scriptsInited = callUs() && menu();
+
+      this.headerIsReady = scriptsInited;
+    }
   },
 };
 </script>

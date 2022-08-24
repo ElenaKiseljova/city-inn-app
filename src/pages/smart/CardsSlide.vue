@@ -21,7 +21,7 @@ div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
   )
 
   ServicesList(
-    v-if='services.length > 0',
+    v-if='services && services.length > 0',
     sectionName='cards',
     modificator='cards',
     :items='services',

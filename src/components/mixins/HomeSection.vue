@@ -64,10 +64,6 @@ export default {
       type: String,
       required: true,
     },
-    section: {
-      type: Object,
-      required: true,
-    },
   },
   mixins: [converteSymbolsNewLineToBr, checkUrlType],
   components: {
@@ -75,8 +71,36 @@ export default {
     WorktimeInfo,
   },
   computed: {
+    pageName() {
+      return this.$store.getters.pageName;
+    },
+    page() {
+      return this.$store.getters.page || {};
+    },
+    sections() {
+      return this.page.content && this.page.content.sections
+        ? this.page.content.sections
+        : [];
+    },
+    section() {
+      if (this.pageName === 'home') {
+        return this.sections.length > 0
+          ? this.sections.find(
+              (section) => section.sectionName === this.sectionName
+            )
+          : {};
+      }
+
+      if (this.pageName === 'about') {
+        return this.sections ? this.sections[1] : {};
+      }
+
+      return {};
+    },
     title() {
-      return this.converteSymbolsNewLineToBr(this.section.title);
+      return this.section.title
+        ? this.converteSymbolsNewLineToBr(this.section.title)
+        : '';
     },
     contentTop() {
       return this.section.contentTop
@@ -98,7 +122,7 @@ export default {
         : {};
     },
     more() {
-      const moreButton = this.section.more;
+      const moreButton = this.section.more ? this.section.more : {};
 
       if (
         moreButton &&
@@ -113,7 +137,7 @@ export default {
       return null;
     },
     book() {
-      const bookButton = this.section.book;
+      const bookButton = this.section.book ? this.section.book : {};
 
       if (
         bookButton &&
@@ -146,6 +170,15 @@ export default {
       return buttons;
     },
   },
+  // beforeMount() {
+  //   console.log(this.page);
+  // },
+  // mounted() {
+  //   // console.log(this.page);
+  // },
+  // updated() {
+  //   // console.log(this.page);
+  // },
 };
 </script>
 

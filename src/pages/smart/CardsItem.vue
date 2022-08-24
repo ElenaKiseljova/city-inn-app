@@ -10,7 +10,7 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
       BaseImage(sectionName='cards', alt='img', :image='card.image')
 
   div(:class='`cards__bottom cards__bottom--${oddEvenLast}`')
-    BaseSlider(v-if='slides.length > 0', sectionName='cards')
+    BaseSlider(v-if='slides && slides.length > 0', sectionName='cards')
       BaseSlide(v-for='slide in slides', sectionName='cards')
         CardsSlide(
           :oddEvenLast='oddEvenLast',
@@ -37,7 +37,7 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
       )
 
       ServicesList(
-        v-if='card.services.length > 0',
+        v-if='card.services && card.services.length > 0',
         sectionName='cards',
         modificator='cards',
         :items='card.services',
@@ -88,7 +88,9 @@ export default {
       return this.$store.getters.page || {};
     },
     cards() {
-      return this.page.content.sections || [];
+      return this.page.content && this.page.content.sections
+        ? this.page.content.sections
+        : [];
     },
     slides() {
       return this.card.slides || [];
@@ -96,15 +98,19 @@ export default {
     oddEvenLast() {
       return (this.index + 1) % 2 === 0
         ? 'even'
-        : this.index + 1 === this.cards.length
+        : this.index + 1 === (this.cards ? this.cards.length : null)
         ? 'last'
         : 'odd';
     },
     cardsBottomClass() {
-      return this.slides.length > 0 ? 'cards__bottom--slider' : '';
+      return this.slides && this.slides.length > 0
+        ? 'cards__bottom--slider'
+        : '';
     },
     cardsContentClass() {
-      return this.slides.length > 0 ? 'cards__content--desktop' : '';
+      return this.slides && this.slides.length > 0
+        ? 'cards__content--desktop'
+        : '';
     },
     titleHtml() {
       return this.card.title

@@ -22,7 +22,7 @@ export default () => {
       const defaultImage = navImages[0];
 
       const onClickRoot = (evt) => {
-        if (evt.target !== burger) {
+        if (evt.target !== burger && !evt.target.closest('.call')) {
           burger.click();
         }
       };
@@ -80,6 +80,10 @@ export default () => {
 
         navItem.addEventListener('mouseleave', onMouseLeave);
       });
+
+      return true;
     }
   }
+
+  return false;
 };

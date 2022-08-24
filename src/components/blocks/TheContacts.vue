@@ -58,6 +58,7 @@ section#contacts(:class='`contacts contacts--${pageName}`')
 </template>
 
 <script>
+import { contactsAnimation } from '../../assets/js/gsap-animations';
 import checkUrlType from '../../mixins/checkUrlType';
 
 import TheMap from './TheMap.vue';
@@ -66,6 +67,11 @@ export default {
   mixins: [checkUrlType],
   components: {
     TheMap,
+  },
+  data() {
+    return {
+      contactsIsReady: false,
+    };
   },
   computed: {
     pageName() {
@@ -116,6 +122,23 @@ export default {
 
       return null;
     },
+  },
+  mounted() {
+    if (this.contacts.content && !this.contactsIsReady) {
+      this.contactsIsReady = contactsAnimation.init();
+    }
+  },
+  unmounted() {
+    if (this.contacts.content) {
+      contactsAnimation.reset();
+
+      this.contactsIsReady = false;
+    }
+  },
+  updated() {
+    if (this.contacts.content && !this.contactsIsReady) {
+      this.contactsIsReady = contactsAnimation.init();
+    }
   },
 };
 </script>

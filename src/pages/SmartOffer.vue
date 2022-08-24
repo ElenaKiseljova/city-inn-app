@@ -1,19 +1,19 @@
 <template lang="pug">
 TheMain
   ThePromo
-  CardsSections
+  CardsSection
 </template>
 
 <script>
 import TheMain from '../components/layout/TheMain.vue';
 import ThePromo from '../components/mixins/ThePromo.vue';
-import CardsSections from './smart/CardsSections.vue';
+import CardsSection from './smart/CardsSection.vue';
 
 export default {
   components: {
     TheMain,
     ThePromo,
-    CardsSections,
+    CardsSection,
   },
 };
 </script>

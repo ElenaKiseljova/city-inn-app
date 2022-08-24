@@ -40,6 +40,8 @@ footer#footer(:class='`page-footer page-footer--${pageName}`')
 </template>
 
 <script>
+import { pageFooter } from '../../assets/js/gsap-animations';
+
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
 
@@ -49,7 +51,11 @@ export default {
   mixins: [social, checkUrlType],
   components: {
     SocialList,
-    item: null,
+  },
+  data() {
+    return {
+      footerIsReady: false,
+    };
   },
   computed: {
     pageName() {
@@ -88,6 +94,27 @@ export default {
     year() {
       return new Date().getFullYear();
     },
+    // route() {
+    //   return this.$route;
+    // },
+  },
+  // watch: {
+  //   route() {
+  //     if (this.footer.content && this.footerIsReady) {
+
+  //     }
+  //     this.footerIsReady = false;
+  //   },
+  // },
+  mounted() {
+    if (this.footer.content && !this.footerIsReady) {
+      this.footerIsReady = pageFooter.init();
+    }
+  },
+  updated() {
+    if (this.footer.content && !this.footerIsReady) {
+      this.footerIsReady = pageFooter.init();
+    }
   },
 };
 </script>
