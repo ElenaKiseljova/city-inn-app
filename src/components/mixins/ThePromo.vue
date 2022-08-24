@@ -13,26 +13,30 @@ section#promo(:class='`promo promo--${sectionName}`')
         :class='`promo__title promo__title--${sectionName}`'
       )
 
-      div(
-        v-if='social.length > 0',
-        :class='`promo__social promo__social--${sectionName}`'
-      ) 
+      div(:class='`promo__social promo__social--${sectionName}`') 
         router-link.promo__lang.lang.button.button--circle(
           v-if='sectionName === "home"',
           :to='lang.path'
         )
           span {{ lang.text }}
 
-        SocialList(:items='social')
+        SocialList(v-if='social.length > 0', :items='social')
 
       .promo__buttons(v-if='sectionName === "home" || sectionName === "smart"')
-        router-link.promo__button.button(v-if='offer', :to='offer.link')
-          span
-            | {{ offer.title }}
+        template(v-for='button in buttons')
+          a.promo__button.button(
+            v-if='button && button.type === "link"',
+            :href='button.link'
+          )
+            span
+              | {{ button.title }}
 
-        a.promo__button.button(v-if='book', target='_blank', :href='book.link')
-          span 
-            | {{ book.title }}
+          router-link.promo__button.button(
+            v-if='button && button.type === "route"',
+            :to='button.link'
+          )
+            span
+              | {{ button.title }}
 
     BaseImage(sectionName='promo', :image='image')
 
@@ -63,7 +67,7 @@ section#promo(:class='`promo promo--${sectionName}`')
         )
 
         a(
-          v-if='contentBottomBook && !contentBottomBook.route',
+          v-if='contentBottomBook && contentBottomBook.type === "link"',
           :class='`button promo__btn promo__btn--${sectionName}`',
           :href='contentBottomBook.link'
         )
@@ -71,7 +75,7 @@ section#promo(:class='`promo promo--${sectionName}`')
             | {{ contentBottomBook.text }}
 
         router-link(
-          v-else-if='contentBottomBook && contentBottomBook.route',
+          v-else-if='contentBottomBook && contentBottomBook.type === "route"',
           :class='`button promo__btn promo__btn--${sectionName}`',
           :to='contentBottomBook.link'
         )
@@ -80,8 +84,9 @@ section#promo(:class='`promo promo--${sectionName}`')
 </template>
 
 <script>
-import gsapAnimations from '../../assets/js/gsap-animations';
 import social from '../../mixins/social';
+import checkUrlType from '../../mixins/checkUrlType';
+import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '../mixins/BaseImage.vue';
 import WorktimeInfo from '../mixins/WorktimeInfo.vue';
@@ -100,19 +105,68 @@ export default {
     WorktimeInfo,
     SocialList,
   },
-  mixins: [social],
+  mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   computed: {
     pageName() {
       return this.$store.getters.pageName;
     },
     header() {
-      return this.$store.getters.header;
+      return this.$store.getters.header || {};
     },
     book() {
-      return this.header.content.book;
+      const bookButton =
+        this.header.content && this.header.content.book
+          ? this.header.content.book
+          : null;
+
+      if (
+        bookButton &&
+        bookButton.link &&
+        bookButton.link !== '' &&
+        bookButton.title &&
+        bookButton.title !== ''
+      ) {
+        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
+      }
+
+      return null;
     },
     offer() {
-      return this.header.content.offer;
+      const offerButton =
+        this.header.content && this.header.content.offer
+          ? this.header.content.offer
+          : null;
+
+      if (
+        offerButton &&
+        offerButton.link &&
+        offerButton.link !== '' &&
+        offerButton.title &&
+        offerButton.title !== ''
+      ) {
+        return { ...offerButton, type: this.checkUrlType(offerButton.link) };
+      }
+
+      return null;
+    },
+    buttons() {
+      const buttons = [];
+
+      if (this.book) {
+        buttons.push({
+          ...this.book,
+          icon: 'icon-phone',
+        });
+      }
+
+      if (this.offer) {
+        buttons.push({
+          ...this.offer,
+          icon: 'icon-offer',
+        });
+      }
+
+      return buttons;
     },
     meta() {
       return this.$store.getters.meta;
@@ -134,7 +188,7 @@ export default {
     },
     title() {
       return this.page.content.title
-        ? this.page.content.title.replace(/\r\n/g, '<br />')
+        ? this.converteSymbolsNewLineToBr(this.page.content.title)
         : '';
     },
     image() {
@@ -147,14 +201,14 @@ export default {
       return this.content.top &&
         this.content.top.description &&
         this.content.top.description.trim() !== ''
-        ? this.content.top.description.replace(/\r\n/g, '<br />')
+        ? this.converteSymbolsNewLineToBr(this.content.top.description)
         : null;
     },
     contentTopSubTitle() {
       return this.content.top &&
         this.content.top.subTitle &&
         this.content.top.subTitle.trim() !== ''
-        ? this.content.top.subTitle.replace(/\r\n/g, '<br />')
+        ? this.converteSymbolsNewLineToBr(this.content.top.subTitle)
         : null;
     },
     contentBottomWorktime() {
@@ -165,20 +219,20 @@ export default {
         : null;
     },
     contentBottomBook() {
-      return this.content.bottom &&
-        this.content.bottom.book &&
-        this.content.bottom.book.text.trim() !== '' &&
-        this.content.bottom.book.link.trim() !== ''
-        ? this.content.bottom.book.link.includes('http') ||
-          this.content.bottom.book.link.includes('tel:') ||
-          this.content.bottom.book.link.includes('mailto:')
-          ? this.content.bottom.book
-          : { ...this.content.bottom.book, route: true }
-        : null;
+      const bookButton = this.content.bottom.book;
+
+      if (
+        bookButton &&
+        bookButton.link &&
+        bookButton.link !== '' &&
+        bookButton.title &&
+        bookButton.title !== ''
+      ) {
+        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
+      }
+
+      return null;
     },
-  },
-  mounted() {
-    gsapAnimations();
   },
 };
 </script>

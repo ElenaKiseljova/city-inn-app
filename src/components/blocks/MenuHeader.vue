@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import call from '../../assets/js/call-us';
 import social from '../../mixins/social';
 
 import SocialList from './SocialList.vue';
@@ -46,7 +45,7 @@ export default {
   mixins: [social],
   computed: {
     header() {
-      return this.$store.getters.header;
+      return this.$store.getters.header || {};
     },
     call() {
       if (this.header.content && this.header.content.call) {
@@ -62,9 +61,6 @@ export default {
 
       return [];
     },
-  },
-  mounted() {
-    call();
   },
 };
 </script>

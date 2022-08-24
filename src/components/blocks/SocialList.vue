@@ -1,12 +1,12 @@
 <template lang="pug">
 ul(:class='`social social--${direction}`')
   li(
-    v-for='(item, index) in items',
+    v-for='(item, index) in itemsWithType',
     :key='item.link',
     :class='`social__item social__item--${direction}`'
-  ) 
+  )
     a(
-      v-if='item.link.includes("http") || item.link.includes("tel:") || item.link.includes("mailto:")',
+      v-if='item.type === "link"',
       :class='`social__link social__link--${pageName}`',
       :href='item.link',
       target='_blank'
@@ -18,11 +18,11 @@ ul(:class='`social social--${direction}`')
         )
 
     router-link(
-      v-else,
+      v-else-if='item.type === "route"',
       :class='`social__link social__link--${pageName}`',
       :to='item.link'
     )
-      span.visually-hidden {{ item.title }}
+      span.visually-hidden {{ item.link }}
 
       svg(width='48', height='48')
         use(
@@ -31,6 +31,8 @@ ul(:class='`social social--${direction}`')
 </template>
 
 <script>
+import checkUrlType from '../../mixins/checkUrlType';
+
 export default {
   props: {
     items: {
@@ -46,9 +48,19 @@ export default {
       default: 'horizontal',
     },
   },
+  mixins: [checkUrlType],
   computed: {
     pageName() {
       return this.$store.getters.pageName;
+    },
+    itemsWithType() {
+      const itemsWithType = this.items.map((item) => {
+        item.type = this.checkUrlType(item.link);
+
+        return item;
+      });
+
+      return itemsWithType;
     },
   },
 };

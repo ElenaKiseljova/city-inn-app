@@ -8,12 +8,14 @@ import { mapInit } from '../../assets/js/map';
 export default {
   methods: {
     mapInit() {
-      const options = {
-        center: this.map.center,
-        zoom: this.map.zoom,
-      };
+      if (this.map.center && this.map.zoom) {
+        const options = {
+          center: this.map.center,
+          zoom: this.map.zoom,
+        };
 
-      mapInit(this.google, options);
+        mapInit(this.google, options);
+      }
     },
   },
   computed: {
@@ -27,16 +29,28 @@ export default {
       return this.$store.getters.contacts;
     },
     map() {
-      return this.contacts.content.map;
+      return this.contacts && this.contacts.content.map
+        ? this.contacts.content.map
+        : {};
     },
   },
   watch: {
     google() {
-      this.mapInit();
+      if (this.google) {
+        this.mapInit();
+      }
+    },
+    map() {
+      if (!this.google && this.map.key) {
+        this.$store.dispatch('setGoogle', {
+          key: this.map.key,
+          lang: this.lang,
+        });
+      }
     },
   },
   mounted() {
-    if (!this.google) {
+    if (!this.google && this.map.key) {
       this.$store.dispatch('setGoogle', {
         key: this.map.key,
         lang: this.lang,

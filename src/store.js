@@ -3,6 +3,12 @@ import meta from './assets/js/meta';
 import { map } from './assets/js/map';
 import __pages from './assets/js/__pages';
 
+const replceLineBreakSymbolsForJsonValidFormat = (text) => {
+  const changedText = text.replace(/\r\n/g, '\\r\\n');
+
+  return changedText;
+};
+
 const store = createStore({
   state() {
     return {
@@ -104,26 +110,31 @@ const store = createStore({
 
       url = `${window.location.origin}/api${lang}${path}`;
 
-      console.log(url);
+      let responseJson;
 
-      // const response = await fetch(url);
+      try {
+        const response = await fetch(url);
 
-      // const responseData = await response.json();
+        if (!response.ok) {
+          const message = `An error has occured: ${response.status}`;
 
-      // if (!response.ok) {
-      //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
+          throw new Error(message);
+        }
 
-      //   throw error;
-      // }
+        responseJson = response;
+      } catch (error) {
+        /* TEST */
+        responseJson = __pages[`${lang}${path}`];
+        /* TEST */
+      }
 
-      /* TEST */
-      let headerJson = __pages[`${lang}${path}`];
-      headerJson = headerJson.replace(/\r\n/g, '\\r\\n');
+      if (responseJson) {
+        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
 
-      const headerObj = JSON.parse(headerJson);
-      /* TEST */
+        const responseObj = await JSON.parse(responseJson);
 
-      context.commit('setHeader', headerObj);
+        context.commit('setHeader', responseObj);
+      }
     },
     async setFooter(context, payload) {
       let url = '';
@@ -138,27 +149,31 @@ const store = createStore({
 
       url = `${window.location.origin}/api${lang}${path}`;
 
-      console.log(url);
+      let responseJson;
 
-      // const response = await fetch(url);
+      try {
+        const response = await fetch(url);
 
-      // const responseData = await response.json();
+        if (!response.ok) {
+          const message = `An error has occured: ${response.status}`;
 
-      // if (!response.ok) {
-      //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
+          throw new Error(message);
+        }
 
-      //   throw error;
-      // }
+        responseJson = response;
+      } catch (error) {
+        /* TEST */
+        responseJson = __pages[`${lang}${path}`];
+        /* TEST */
+      }
 
-      /* TEST */
+      if (responseJson) {
+        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
 
-      let footerJson = __pages[`${lang}${path}`];
-      footerJson = footerJson.replace(/\r\n/g, '\\r\\n');
+        const responseObj = await JSON.parse(responseJson);
 
-      const footerObj = JSON.parse(footerJson);
-      /* TEST */
-
-      context.commit('setFooter', footerObj);
+        context.commit('setFooter', responseObj);
+      }
     },
     async setContacts(context, payload) {
       let url = '';
@@ -173,27 +188,31 @@ const store = createStore({
 
       url = `${window.location.origin}/api${lang}${path}`;
 
-      console.log(url);
+      let responseJson;
 
-      // const response = await fetch(url);
+      try {
+        const response = await fetch(url);
 
-      // const responseData = await response.json();
+        if (!response.ok) {
+          const message = `An error has occured: ${response.status}`;
 
-      // if (!response.ok) {
-      //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
+          throw new Error(message);
+        }
 
-      //   throw error;
-      // }
+        responseJson = response;
+      } catch (error) {
+        /* TEST */
+        responseJson = __pages[`${lang}${path}`];
+        /* TEST */
+      }
 
-      /* TEST */
+      if (responseJson) {
+        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
 
-      let contactsJson = __pages[`${lang}${path}`];
-      contactsJson = contactsJson.replace(/\r\n/g, '\\r\\n');
+        const responseObj = await JSON.parse(responseJson);
 
-      const contactsObj = JSON.parse(contactsJson);
-      /* TEST */
-
-      context.commit('setContacts', contactsObj);
+        context.commit('setContacts', responseObj);
+      }
     },
     async setGoogle(context, payload) {
       const key = payload.key;
@@ -204,31 +223,37 @@ const store = createStore({
       context.commit('setGoogle', google);
     },
     async setNextPage(context, payload) {
+      const path = payload.url;
+
       let url = '';
 
-      url = `${window.location.origin}/api${payload.url}`;
+      url = `${window.location.origin}/api${path}`;
 
-      console.log(url);
+      let responseJson;
 
-      // const response = await fetch(url);
+      try {
+        const response = await fetch(url);
 
-      // const responseData = await response.json();
+        if (!response.ok) {
+          const message = `An error has occured: ${response.status}`;
 
-      // if (!response.ok) {
-      //   const error = new Error(responseData.message || responseData.error.message || 'Failed to fetch!');
+          throw new Error(message);
+        }
 
-      //   throw error;
-      // } 
+        responseJson = response;
+      } catch (error) {
+        /* TEST */
+        responseJson = __pages[path] || __pages['/'];
+        /* TEST */
+      }
 
-      /* TEST */
-      let pageJson = __pages[payload.url] || __pages['/'];
-      pageJson = pageJson.replace(/\r\n/g, '\\r\\n');
+      if (responseJson) {
+        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
 
-      const pageObj = JSON.parse(pageJson);
-      /* TEST */
+        const responseObj = await JSON.parse(responseJson);
 
-      // Set Next page
-      context.commit('setNextPage', pageObj);
+        context.commit('setNextPage', responseObj);
+      }
     },
     async setPage(context, payload) {
       const path = payload.url;

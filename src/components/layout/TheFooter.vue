@@ -23,48 +23,57 @@ footer#footer(:class='`page-footer page-footer--${pageName}`')
             | {{ column.title }}
 
           template(v-for='item in column.items')
-            address.page-footer__address(v-if='item.link === ""')
+            address.page-footer__address(v-if='item.type === "text"')
               | {{ item.text }}
 
             a.page-footer__link(
-              v-else-if='item.link !== "" && item.link.includes("http") && item.link.includes("tel:") && item.link.includes("mailto:")',
+              v-else-if='item.type === "link"',
               :href='item.link'
             )
               | {{ item.text }}
 
-            router-link.page-footer__link(v-else, :to='item.link')
+            router-link.page-footer__link(
+              v-else-if='item.type === "route"',
+              :to='item.link'
+            )
               | {{ item.text }}
 </template>
 
 <script>
 import social from '../../mixins/social';
+import checkUrlType from '../../mixins/checkUrlType';
 
 import SocialList from '../blocks/SocialList.vue';
 
 export default {
+  mixins: [social, checkUrlType],
   components: {
     SocialList,
     item: null,
   },
-  watch: {
-    item() {
-      console.log('item changed');
-    },
-  },
-  mixins: [social],
   computed: {
     pageName() {
       return this.$store.getters.pageName;
     },
     header() {
-      return this.$store.getters.header;
+      return this.$store.getters.header || {};
     },
     footer() {
-      return this.$store.getters.footer;
+      return this.$store.getters.footer || {};
     },
     columns() {
       if (this.footer.content && this.footer.content.columns) {
-        return this.footer.content.columns;
+        const columnsWithType = this.footer.content.columns.map((column) => {
+          const items = column.items || [];
+
+          items.forEach((item) => {
+            item.type = this.checkUrlType(item.link);
+          });
+
+          return column;
+        });
+
+        return columnsWithType;
       }
 
       return [];

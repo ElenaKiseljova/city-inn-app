@@ -1063,26 +1063,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
                 }
               }
             ],
@@ -1090,294 +1102,20 @@ const __pages = {
           },
           {
             "title": "чому<br />SMART?",
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                }
+            "image": {
+              "webp": {
+                "mobile": "/img/about/why-mobile.webp",
+                "tablet": "/img/about/why-tablet.webp",
+                "desktop": "/img/about/why-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/about/why-mobile.jpg",
+                "tablet": "/img/about/why-tablet.jpg",
+                "desktop": "/img/about/why-desktop.jpg"
               }
-            ],
-            "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
-            "sectionName": "why"
-          },
-          {
-            "title": "ПЕРЕВАГИ",
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
-                }
-              },
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
-                }
-              },
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                }
-              }
-            ],
-            "tabs": [
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              }
-            ]
-          },
-          {
-            "title": "Що навколо нас?",
-            "slides": [
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "ЛІС",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕ",
-                  "link": "google.com"
-                }
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "гори",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕ",
-                  "link": "google.com"
-                }
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "Море",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕН",
-                  "link": "google.com"
-                }
-              }
-            ],
-            "sectionName": "around"
-          },
-          {
-            "title": "Що<br>подивитись?",
-            "slides": [
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕ",
-                  "link": "google.com"
-                }
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕ",
-                  "link": "google.com"
-                }
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
-                "button": {
-                  "text": "БІЛЬШЕН",
-                  "link": "google.com"
-                }
-              }
-            ],
-            "sectionName": "attraction"
-          }
-        ]
-      }
-    }  
-  `,
-  '/en/about': `
-    {
-      "status": "success",
-      "content": {
-        "language": "en",
-        "title": "About us",
-        "seoTitle": "Про компанию City Inn!",
-        "seoDescription": "Про компанию City Inn! Самую топовою компанию в мире!",
-        "template": "about",
-        "image": {
-          "webp": {
-            "mobile": "/img/about/promo-bg-mobile.webp",
-            "tablet": "/img/about/promo-bg-tablet.webp",
-            "desktop": "/img/about/promo-bg-desktop.webp"
-          },
-          "jpg": {
-            "mobile": "/img/about/promo-bg-mobile.jpg",
-            "tablet": "/img/about/promo-bg-tablet.jpg",
-            "desktop": "/img/about/promo-bg-desktop.jpg"
-          }
-        },
-        "content": {
-          "bottom": {
-            "book": {
-              "text": "Call us",
-              "link": "tel:+380322471551"
-            }
-          },
-          "top": {
-            "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
-          }
-        },
-        "sections": [
-          {
-            "title": "Місія",
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                }
-              },
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
-                }
-              }
-            ],
-            "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
-          },
-          {
-            "title": "чому<br />SMART?",
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                }
-              }
-            ],
-            "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            },
+            "contentTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни ",
+            "contentBottom": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
             "sectionName": "why"
           },
           {

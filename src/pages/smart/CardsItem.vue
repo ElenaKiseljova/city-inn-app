@@ -7,12 +7,7 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
     )
 
     div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
-      BaseImage(
-        sectionName='cards',
-        :modificator='pageName',
-        alt='img',
-        :image='card.image'
-      )
+      BaseImage(sectionName='cards', alt='img', :image='card.image')
 
   div(:class='`cards__bottom cards__bottom--${oddEvenLast}`')
     BaseSlider(v-if='slides.length > 0', sectionName='cards')
@@ -26,7 +21,7 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
           :book='slide.book'
         )
 
-    BasePagination(sectionName='cards', :modificator='pageName')
+    BasePagination(sectionName='cards')
 
     div(
       :class='`cards__content cards__content--${oddEvenLast} ${cardsContentClass}`'
@@ -58,15 +53,18 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
 </template>
 
 <script>
+import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
+
 import BaseImage from '../../components/mixins/BaseImage.vue';
 import BaseSlider from '../../components/mixins/BaseSlider.vue';
 import BaseSlide from '../../components/mixins/BaseSlide.vue';
 import BasePagination from '../../components/mixins/BasePagination.vue';
-import ServicesList from '@/components/mixins/ServicesList.vue';
+import ServicesList from '../../components/mixins/ServicesList.vue';
 
 import CardsSlide from './CardsSlide.vue';
 
 export default {
+  mixins: [converteSymbolsNewLineToBr],
   props: {
     card: {
       type: Object,
@@ -86,9 +84,6 @@ export default {
     ServicesList,
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
     page() {
       return this.$store.getters.page || {};
     },
@@ -112,11 +107,13 @@ export default {
       return this.slides.length > 0 ? 'cards__content--desktop' : '';
     },
     titleHtml() {
-      return this.card.title ? this.card.title.replace(/\r\n/g, '<br />') : '';
+      return this.card.title
+        ? this.converteSymbolsNewLineToBr(this.card.title)
+        : '';
     },
     descriptionHtml() {
       return this.card.description
-        ? this.card.description.replace(/\r\n/g, '<br />')
+        ? this.converteSymbolsNewLineToBr(this.card.description)
         : '';
     },
   },

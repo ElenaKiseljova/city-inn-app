@@ -38,10 +38,13 @@ div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
 </template>
 
 <script>
+import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
+
 import BaseImage from '../../components/mixins/BaseImage.vue';
 import ServicesList from '../../components/mixins/ServicesList.vue';
 
 export default {
+  mixins: [converteSymbolsNewLineToBr],
   props: {
     oddEvenLast: {
       type: String,
@@ -84,11 +87,11 @@ export default {
       return this.$store.getters.pageName;
     },
     titleHtml() {
-      return this.title ? this.title.replace(/\r\n/g, '<br />') : '';
+      return this.title ? this.converteSymbolsNewLineToBr(this.title) : '';
     },
     descriptionHtml() {
       return this.description
-        ? this.description.replace(/\r\n/g, '<br />')
+        ? this.converteSymbolsNewLineToBr(this.description)
         : '';
     },
   },

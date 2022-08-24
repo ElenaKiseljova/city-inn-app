@@ -16,7 +16,7 @@ export default {
     modificator: {
       type: String,
       required: false,
-      default: null,
+      default: '',
     },
     type: {
       type: String,
@@ -28,13 +28,10 @@ export default {
     pageName() {
       return this.$store.getters.pageName || '';
     },
-    slideModificator() {
-      return this.modificator ? this.modificator : this.pageName;
-    },
     slideModification() {
-      return this.slideModificator !== ''
+      return this.modificator !== ''
         ? `${this.sectionName}__slide--${this.slideModificator}`
-        : '';
+        : `${this.sectionName}__slide--${this.pageName}`;
     },
     slideType() {
       return this.type !== '' ? `${this.sectionName}__slide--${this.type}` : '';

@@ -11,20 +11,21 @@ header.page-header
 
       .page-header__right
         .page-header__buttons
-          a(
-            v-if='book',
-            :class='`page-header__button button __js page-header__button--${pageName}`',
-            :href='book.link',
-            target='_blank'
-          )
-            span {{ book.title }}
+          template(v-for='button in buttons')
+            a(
+              v-if='button.type === "link"',
+              :class='`page-header__button button __js page-header__button--${pageName}`',
+              :href='button.link',
+              target='_blank'
+            )
+              span {{ button.title }}
 
-          router-link(
-            v-if='offer',
-            :class='`page-header__button button __js page-header__button--${pageName}`',
-            :to='offer.link'
-          )
-            span {{ offer.title }}
+            router-link(
+              v-if='button.type === "route"',
+              :class='`page-header__button button __js page-header__button--${pageName}`',
+              :to='button.link'
+            )
+              span {{ button.title }}
 
         .page-header__links
           button.page-header__burger.burger.__js
@@ -42,48 +43,84 @@ header.page-header
 </template>
 
 <script>
-import menu from '../../assets/js/menu';
+import checkUrlType from '../../mixins/checkUrlType';
 
 import SocialList from '../blocks/SocialList.vue';
 import MenuHeader from '../blocks/MenuHeader.vue';
 
 export default {
+  mixins: [checkUrlType],
   components: {
     SocialList,
     MenuHeader,
+  },
+  data() {
+    return {
+      headerIsSet: false,
+    };
   },
   computed: {
     pageName() {
       return this.$store.getters.pageName;
     },
     header() {
-      return this.$store.getters.header;
+      return this.$store.getters.header || {};
     },
     book() {
-      return this.header.content.book;
-    },
-    offer() {
-      return this.header.content.offer;
-    },
-    buttons() {
-      if (this.book && this.offer) {
-        return [
-          {
-            ...this.book,
-            icon: 'icon-phone',
-          },
-          {
-            ...this.offer,
-            icon: 'icon-offer',
-          },
-        ];
+      const bookButton =
+        this.header.content && this.header.content.book
+          ? this.header.content.book
+          : null;
+
+      if (
+        bookButton &&
+        bookButton.link &&
+        bookButton.link !== '' &&
+        bookButton.title &&
+        bookButton.title !== ''
+      ) {
+        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
       }
 
-      return [];
+      return null;
     },
-  },
-  mounted() {
-    menu();
+    offer() {
+      const offerButton =
+        this.header.content && this.header.content.offer
+          ? this.header.content.offer
+          : null;
+
+      if (
+        offerButton &&
+        offerButton.link &&
+        offerButton.link !== '' &&
+        offerButton.title &&
+        offerButton.title !== ''
+      ) {
+        return { ...offerButton, type: this.checkUrlType(offerButton.link) };
+      }
+
+      return null;
+    },
+    buttons() {
+      const buttons = [];
+
+      if (this.book) {
+        buttons.push({
+          ...this.book,
+          icon: 'icon-phone',
+        });
+      }
+
+      if (this.offer) {
+        buttons.push({
+          ...this.offer,
+          icon: 'icon-offer',
+        });
+      }
+
+      return buttons;
+    },
   },
 };
 </script>

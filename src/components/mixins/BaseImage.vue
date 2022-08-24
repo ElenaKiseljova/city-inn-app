@@ -49,12 +49,12 @@ export default {
     modificator: {
       type: String,
       required: false,
-      default: null,
+      default: '',
     },
     alt: {
       type: String,
       required: false,
-      default: null,
+      default: '',
     },
     image: {
       type: Object,
@@ -68,17 +68,24 @@ export default {
     meta() {
       return this.$store.getters.meta;
     },
-    imageModificator() {
-      return this.modificator || this.pageName;
-    },
     imageAlt() {
-      return this.alt || this.meta.title;
+      return this.alt !== '' ? this.alt : this.meta.title;
     },
     imgClasses() {
-      return `${this.sectionName}__img ${this.sectionName}__img--${this.imageModificator}`;
+      const imageModificator =
+        this.modificator !== ''
+          ? `${this.sectionName}__img--${this.modificator}`
+          : `${this.sectionName}__img--${this.pageName}`;
+
+      return `${this.sectionName}__img ${imageModificator}`;
     },
     pictureClasses() {
-      return `${this.sectionName}__picture ${this.sectionName}__picture--${this.imageModificator}`;
+      const pictureModificator =
+        this.modificator !== ''
+          ? `${this.sectionName}__picture--${this.modificator}`
+          : `${this.sectionName}__picture--${this.pageName}`;
+
+      return `${this.sectionName}__picture ${pictureModificator}`;
     },
   },
 };

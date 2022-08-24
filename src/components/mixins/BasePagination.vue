@@ -1,5 +1,5 @@
 <template lang="pug">
-div(:class='classes')
+div(:class='paginationClasses')
 </template>
 
 <script>
@@ -11,12 +11,18 @@ export default {
     },
     modificator: {
       type: String,
-      required: true,
+      required: false,
+      default: '',
     },
   },
   computed: {
-    classes() {
-      return `${this.sectionName}__pagination pagination swiper-pagination ${this.sectionName}__pagination--${this.modificator}`;
+    paginationClasses() {
+      const paginationModificator =
+        this.modificator !== ''
+          ? `${this.sectionName}__pagination--${this.modificator}`
+          : '';
+
+      return `${this.sectionName}__pagination pagination swiper-pagination ${paginationModificator}`;
     },
   },
 };

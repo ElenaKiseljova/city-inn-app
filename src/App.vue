@@ -13,6 +13,10 @@
 </template>
 
 <script>
+import gsapAnimations from './assets/js/gsap-animations';
+import call from './assets/js/call-us';
+import menu from './assets/js/menu';
+
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
 
@@ -20,6 +24,43 @@ export default {
   components: {
     TheHeader,
     TheFooter,
+  },
+  data() {
+    return {
+      scriptsWasInited: false,
+    };
+  },
+  computed: {
+    pageIsReady() {
+      const pageIsReady =
+        this.$store.getters.page &&
+        this.$store.getters.header &&
+        this.$store.getters.footer &&
+        this.$store.getters.contacts
+          ? true
+          : false;
+
+      return pageIsReady;
+    },
+  },
+  watch: {
+    pageIsReady() {
+      console.log(
+        this.$store.getters.page,
+        this.$store.getters.header,
+        this.$store.getters.footer,
+        this.$store.getters.contacts
+      );
+      if (this.pageIsReady && !this.scriptsWasInited) {
+        console.log('scripts of page was inited');
+
+        gsapAnimations();
+        menu();
+        call();
+
+        this.scriptsWasInited = true;
+      }
+    },
   },
 };
 </script>
