@@ -1,5 +1,9 @@
 <template lang="pug">
-section(v-if='section', :class='`home home--${sectionName}`', :id='sectionName')
+section(
+  v-if='pageName && page',
+  :class='`home home--${sectionName}`',
+  :id='sectionName'
+)
   div(:class='`home__container container home__container--${sectionName}`')
     div(:class='`home__top home__top--${sectionName}`')
       h2(
@@ -52,11 +56,13 @@ section(v-if='section', :class='`home home--${sectionName}`', :id='sectionName')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
-import BaseImage from './BaseImage.vue';
-import WorktimeInfo from './WorktimeInfo.vue';
+import BaseImage from '../UI/BaseImage.vue';
+import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 
 export default {
   props: {
@@ -71,12 +77,7 @@ export default {
     WorktimeInfo,
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    page() {
-      return this.$store.getters.page || {};
-    },
+    ...mapGetters(['pageName', 'page']),
     sections() {
       return this.page.content && this.page.content.sections
         ? this.page.content.sections
@@ -170,15 +171,6 @@ export default {
       return buttons;
     },
   },
-  // beforeMount() {
-  //   console.log(this.page);
-  // },
-  // mounted() {
-  //   // console.log(this.page);
-  // },
-  // updated() {
-  //   // console.log(this.page);
-  // },
 };
 </script>
 

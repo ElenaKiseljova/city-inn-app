@@ -1,5 +1,8 @@
 <template lang="pug">
-section#promo(:class='`promo promo--${sectionName}`') 
+section#promo(
+  v-if='lang && meta && pageName && header && page',
+  :class='`promo promo--${sectionName}`'
+) 
   h1.visually-hidden(v-if='title === ""')
     | {{ meta.title }}
 
@@ -16,9 +19,9 @@ section#promo(:class='`promo promo--${sectionName}`')
       div(:class='`promo__social promo__social--${sectionName}`') 
         router-link.promo__lang.lang.button.button--circle(
           v-if='sectionName === "home"',
-          :to='lang.path'
+          :to='langToggle.path'
         )
-          span {{ lang.text }}
+          span {{ langToggle.text }}
 
         SocialList(v-if='social.length > 0', :items='social')
 
@@ -84,12 +87,21 @@ section#promo(:class='`promo promo--${sectionName}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
+import { promoSocialAnimation } from '../../assets/js/gsap-animations';
+// import {
+//   promoTitleAnimation,
+//   animationPromoAndHeaderButtonsBookAndOffer,
+//   promoSocialAnimation,
+// } from '../../assets/js/gsap-animations';
+
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
-import BaseImage from '../mixins/BaseImage.vue';
-import WorktimeInfo from '../mixins/WorktimeInfo.vue';
+import BaseImage from '../UI/BaseImage.vue';
+import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 import SocialList from '../blocks/SocialList.vue';
 
 export default {
@@ -106,13 +118,23 @@ export default {
     SocialList,
   },
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
+  data() {
+    return {
+      //     promoTitleAnimationInited: false,
+      //     promoAndHeaderAnimationInited: false,
+      promoSocialAnimationInited: false,
+
+      //     promoTitleAnimationInterval: null,
+      //     promoAndHeaderAnimationInterval: null,
+      promoSocialAnimationInterval: null,
+
+      i: 0,
+      //     i1: 0,
+      //     i2: 0,
+    };
+  },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    header() {
-      return this.$store.getters.header || {};
-    },
+    ...mapGetters(['lang', 'meta', 'pageName', 'header', 'page']),
     book() {
       const bookButton =
         this.header.content && this.header.content.book
@@ -168,23 +190,16 @@ export default {
 
       return buttons;
     },
-    meta() {
-      return this.$store.getters.meta;
-    },
-    lang() {
-      const curLang = this.$store.getters.lang;
+    langToggle() {
       const path = this.$route.path;
 
       return {
-        path: curLang === 'uk' ? `/en${path}` : path.replace('/en', ''),
-        text: curLang === 'uk' ? 'en' : 'ua',
+        path: this.lang === 'uk' ? `/en${path}` : path.replace('/en', ''),
+        text: this.lang === 'uk' ? 'en' : 'ua',
       };
     },
     sectionName() {
       return this.name || this.pageName;
-    },
-    page() {
-      return this.$store.getters.page || {};
     },
     title() {
       return this.page.content.title
@@ -198,28 +213,32 @@ export default {
       return this.page.content.content || null;
     },
     contentTopDescription() {
-      return this.content.top &&
+      return this.content &&
+        this.content.top &&
         this.content.top.description &&
         this.content.top.description.trim() !== ''
         ? this.converteSymbolsNewLineToBr(this.content.top.description)
         : null;
     },
     contentTopSubTitle() {
-      return this.content.top &&
+      return this.content &&
+        this.content.top &&
         this.content.top.subTitle &&
         this.content.top.subTitle.trim() !== ''
         ? this.converteSymbolsNewLineToBr(this.content.top.subTitle)
         : null;
     },
     contentBottomWorktime() {
-      return this.content.bottom &&
+      return this.content &&
+        this.content.bottom &&
         this.content.bottom.worktime &&
         this.content.bottom.worktime.trim() !== ''
         ? this.content.bottom.worktime
         : null;
     },
     contentBottomBook() {
-      const bookButton = this.content.bottom.book;
+      const bookButton =
+        this.content && this.content.bottom ? this.content.bottom.book : {};
 
       if (
         bookButton &&
@@ -233,6 +252,84 @@ export default {
 
       return null;
     },
+  },
+  mounted() {
+    //   if (!this.promoTitleAnimationInited) {
+    //     this.promoTitleAnimationInterval = setInterval(() => {
+    //       const promo = document.querySelector('.promo');
+    //       const promoTitle = document.querySelector(
+    //         '.promo__container:not(.promo__container--home)'
+    //       );
+
+    //       if (promo && promoTitle) {
+    //         clearInterval(this.promoTitleAnimationInterval);
+
+    //         promoTitleAnimation.init(promoTitle, promo);
+
+    //         this.promoTitleAnimationInited = true;
+    //       }
+
+    //       this.i1 += 1;
+
+    //       if (this.i1 > 10) {
+    //         clearInterval(this.promoTitleAnimationInterval);
+    //       }
+    //     }, 300);
+    //   }
+
+    //   if (
+    //     !this.promoAndHeaderAnimationInited &&
+    //     (this.pageName === 'home' || this.pageName === 'smart')
+    //   ) {
+    //     this.promoAndHeaderAnimationInterval = setInterval(() => {
+    //       const promo = document.querySelector('.promo');
+    //       const promoButtons = document.querySelector('.promo__buttons');
+    //       const pageHeaderButtonsContainer = document.querySelector(
+    //         '.page-header__social'
+    //       );
+
+    //       if (promo && promoButtons && pageHeaderButtonsContainer) {
+    //         clearInterval(this.promoAndHeaderAnimationInterval);
+
+    //         this.promoAndHeaderAnimationInited =
+    //           animationPromoAndHeaderButtonsBookAndOffer(
+    //             pageHeaderButtonsContainer,
+    //             promoButtons,
+    //             promo
+    //           );
+    //       }
+
+    //       this.i2 += 1;
+
+    //       if (this.i2 > 10) {
+    //         clearInterval(this.promoAndHeaderAnimationInterval);
+    //       }
+    //     }, 300);
+    //   }
+
+    if (
+      !this.promoSocialAnimationInited &&
+      (this.pageName === 'home' || this.pageName === 'about')
+    ) {
+      this.promoSocialAnimationInterval = setInterval(() => {
+        const promo = document.querySelector('.promo');
+
+        if (promo) {
+          clearInterval(this.promoSocialAnimationInterval);
+
+          this.promoSocialAnimationInited = promoSocialAnimation.init(promo);
+        }
+
+        this.i += 1;
+
+        if (this.i > 10) {
+          clearInterval(this.promoSocialAnimationInterval);
+        }
+      }, 300);
+    }
+  },
+  unmounted() {
+    promoSocialAnimation.reset();
   },
 };
 </script>

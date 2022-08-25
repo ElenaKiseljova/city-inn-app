@@ -1,5 +1,5 @@
 <template lang="pug">
-header.page-header
+header.page-header(v-if='pageName && header')
   .page-header__container.container
     .page-header__top
       div(
@@ -43,6 +43,8 @@ header.page-header
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import checkUrlType from '../../mixins/checkUrlType';
 
 import SocialList from '../blocks/SocialList.vue';
@@ -60,12 +62,7 @@ export default {
     };
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    header() {
-      return this.$store.getters.header || {};
-    },
+    ...mapGetters(['pageName', 'header']),
     book() {
       const bookButton =
         this.header.content && this.header.content.book

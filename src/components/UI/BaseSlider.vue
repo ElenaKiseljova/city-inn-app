@@ -10,6 +10,8 @@ div(
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import swipers from '../../assets/js/swipers';
 
 export default {
@@ -30,9 +32,7 @@ export default {
     },
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName || '';
-    },
+    ...mapGetters(['pageName']),
     sliderModificator() {
       return this.modificator ? this.modificator : this.pageName;
     },

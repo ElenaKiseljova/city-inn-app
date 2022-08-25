@@ -1,5 +1,5 @@
 <template lang="pug">
-ul(:class='`social social--${direction}`')
+ul(v-if='pageName', :class='`social social--${direction}`')
   li(
     v-for='(item, index) in itemsWithType',
     :key='item.link',
@@ -31,6 +31,8 @@ ul(:class='`social social--${direction}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import checkUrlType from '../../mixins/checkUrlType';
 
 export default {
@@ -50,9 +52,7 @@ export default {
   },
   mixins: [checkUrlType],
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
+    ...mapGetters(['pageName']),
     itemsWithType() {
       const itemsWithType = this.items.map((item) => {
         item.type = this.checkUrlType(item.link);

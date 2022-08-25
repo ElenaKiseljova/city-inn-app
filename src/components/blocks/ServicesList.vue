@@ -12,7 +12,7 @@ ul(v-if='items.length > 0', :class='listClasses')
 
 <script>
 import ServicesItem from './ServicesItem.vue';
-import WorktimeInfo from './WorktimeInfo.vue';
+import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 
 export default {
   props: {

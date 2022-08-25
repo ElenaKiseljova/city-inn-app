@@ -1,5 +1,5 @@
 <template lang="pug">
-section.mission
+section.mission(v-if='page')
   .mission__container.container
     h2.title-inner.mission__title(v-html='title')
 
@@ -20,13 +20,15 @@ section.mission
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
-import BaseSlider from '../../components/mixins/BaseSlider.vue';
-import BaseSlide from '../../components/mixins/BaseSlide.vue';
-import BaseNavigation from '../../components/mixins/BaseNavigation.vue';
-import BasePagination from '../../components/mixins/BasePagination.vue';
-import BaseImage from '../../components/mixins/BaseImage.vue';
+import BaseSlider from '../../components/UI/BaseSlider.vue';
+import BaseSlide from '../../components/UI/BaseSlide.vue';
+import BaseNavigation from '../../components/UI/BaseNavigation.vue';
+import BasePagination from '../../components/UI/BasePagination.vue';
+import BaseImage from '../../components/UI/BaseImage.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -43,9 +45,7 @@ export default {
     };
   },
   computed: {
-    page() {
-      return this.$store.getters.page || {};
-    },
+    ...mapGetters(['page']),
     mission() {
       return this.page.content &&
         this.page.content.sections &&

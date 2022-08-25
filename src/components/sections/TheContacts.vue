@@ -1,5 +1,9 @@
 <template lang="pug">
-section#contacts(:class='`contacts contacts--${pageName}`')
+section#contacts(
+  v-if='pageName && contacts',
+  :class='`contacts contacts--${pageName}`',
+  ref='contacts'
+)
   div(
     :class='`container contacts__container contacts__container--${pageName}`'
   )
@@ -58,10 +62,13 @@ section#contacts(:class='`contacts contacts--${pageName}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import { contactsAnimation } from '../../assets/js/gsap-animations';
+
 import checkUrlType from '../../mixins/checkUrlType';
 
-import TheMap from './TheMap.vue';
+import TheMap from '../blocks/TheMap.vue';
 
 export default {
   mixins: [checkUrlType],
@@ -70,16 +77,15 @@ export default {
   },
   data() {
     return {
-      contactsIsReady: false,
+      contactsAnimationInited: false,
+
+      contactsLastInterval: null,
+
+      i: 0,
     };
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    contacts() {
-      return this.$store.getters.contacts || {};
-    },
+    ...mapGetters(['pageName', 'contacts']),
     title() {
       if (this.contacts.content && this.contacts.content.title) {
         return this.contacts.content.title;
@@ -124,21 +130,25 @@ export default {
     },
   },
   mounted() {
-    if (this.contacts.content && !this.contactsIsReady) {
-      this.contactsIsReady = contactsAnimation.init();
+    if (!this.contactsAnimationInited) {
+      this.contactsLastInterval = setInterval(() => {
+        const contacts = document.querySelector('.contacts');
+        if (contacts) {
+          clearInterval(this.contactsLastInterval);
+
+          this.contactsAnimationInited = contactsAnimation.init(contacts);
+        }
+
+        this.i += 1;
+
+        if (this.i > 10) {
+          clearInterval(this.contactsLastInterval);
+        }
+      }, 300);
     }
   },
   unmounted() {
-    if (this.contacts.content) {
-      contactsAnimation.reset();
-
-      this.contactsIsReady = false;
-    }
-  },
-  updated() {
-    if (this.contacts.content && !this.contactsIsReady) {
-      this.contactsIsReady = contactsAnimation.init();
-    }
+    contactsAnimation.reset();
   },
 };
 </script>

@@ -7,6 +7,8 @@ div(
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   props: {
     sectionName: {
@@ -25,9 +27,7 @@ export default {
     },
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName || '';
-    },
+    ...mapGetters(['pageName']),
     slideModification() {
       return this.modificator !== ''
         ? `${this.sectionName}__slide--${this.slideModificator}`

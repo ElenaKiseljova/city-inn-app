@@ -86,6 +86,9 @@ const store = createStore({
     },
   },
   actions: {
+    setAnimationTriggers(context, payload) {
+      context.commit('setAnimationTriggers', payload);
+    },
     setPageName(context, payload) {
       context.commit('setPageName', payload);
     },
@@ -287,30 +290,30 @@ const store = createStore({
         ],
       };
 
-      context.dispatch('setMeta', newMeta);
+      await context.dispatch('setMeta', newMeta);
 
       // Update lang
       const lang = pageObj.content.language;
 
-      context.dispatch('setLang', lang);
+      await context.dispatch('setLang', lang);
 
       // Update Header
       if (!context.getters.header || curLang !== context.getters.lang) {
-        context.dispatch('setHeader', { lang: context.getters.lang });
+        await context.dispatch('setHeader', { lang: context.getters.lang });
       }
 
       // Update Footer
       if (!context.getters.footer || curLang !== context.getters.lang) {
-        context.dispatch('setFooter', { lang: context.getters.lang });
+        await context.dispatch('setFooter', { lang: context.getters.lang });
       }
 
       // Update Contacts
       if (!context.getters.contacts || curLang !== context.getters.lang) {
-        context.dispatch('setContacts', { lang: context.getters.lang });
+        await context.dispatch('setContacts', { lang: context.getters.lang });
       }
 
       // Update pageName
-      context.dispatch('setPageName', pageName);
+      await context.dispatch('setPageName', pageName);
 
       // Set page
       context.commit('setPage', pageObj);

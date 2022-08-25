@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
 
+
+
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');
 const ConferenceService = () => import('./pages/ConferenceService.vue');
@@ -204,16 +206,16 @@ const router = createRouter({
 
 let curLang;
 
-router.beforeEach((to, _, next) => {
+router.beforeEach(async (to, _, next) => {
   curLang = store.getters.lang;
 
-  store.dispatch('setNextPage', { url: to.path });
+  await store.dispatch('setNextPage', { url: to.path });
 
   next();
 });
 
-router.afterEach((to) => {
-  store.dispatch('setPage', { url: to.path, curLang: curLang, pageName: to.meta.pageName });
+router.afterEach(async (to) => {
+  await store.dispatch('setPage', { url: to.path, curLang: curLang, pageName: to.meta.pageName });
 });
 
 export default router;

@@ -1,10 +1,12 @@
 <template lang="pug">
-section.cards
+section.cards(v-if='page')
   ul.cards__list
     CardsItem(v-for='(card, index) in cards', :index='index', :card='card')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import cards from '../../assets/js/cards';
 
 import CardsItem from './CardsItem.vue';
@@ -13,10 +15,17 @@ export default {
   components: {
     CardsItem,
   },
+  data() {
+    return {
+      cardsAnimationInited: false,
+
+      cardsAnimationInterval: null,
+
+      i: 0,
+    };
+  },
   computed: {
-    page() {
-      return this.$store.getters.page || {};
-    },
+    ...mapGetters(['page']),
     cards() {
       return this.page.content && this.page.content.sections
         ? this.page.content.sections
@@ -24,7 +33,27 @@ export default {
     },
   },
   mounted() {
-    cards();
+    if (!this.cardsAnimationInited) {
+      this.cardsAnimationInterval = setInterval(() => {
+        const cardsSection = document.querySelector('.cards');
+
+        if (cardsSection) {
+          clearInterval(this.cardsAnimationInterval);
+
+          cards('cards', '.cards__item');
+
+          this.cardsAnimationInited = true;
+        }
+
+        this.i += 1;
+
+        if (this.i > 10) {
+          clearInterval(this.cardsAnimationInterval);
+        }
+
+        console.log('search cards');
+      }, 300);
+    }
   },
 };
 </script>

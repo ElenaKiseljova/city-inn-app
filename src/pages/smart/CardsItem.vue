@@ -1,5 +1,5 @@
 <template lang="pug">
-li(:class='`cards__item cards__item--${oddEvenLast}`')
+li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
   .cards__top
     h3(
       v-html='titleHtml',
@@ -53,13 +53,15 @@ li(:class='`cards__item cards__item--${oddEvenLast}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
-import BaseImage from '../../components/mixins/BaseImage.vue';
-import BaseSlider from '../../components/mixins/BaseSlider.vue';
-import BaseSlide from '../../components/mixins/BaseSlide.vue';
-import BasePagination from '../../components/mixins/BasePagination.vue';
-import ServicesList from '../../components/mixins/ServicesList.vue';
+import BaseImage from '../../components/UI/BaseImage.vue';
+import BaseSlider from '../../components/UI/BaseSlider.vue';
+import BaseSlide from '../../components/UI/BaseSlide.vue';
+import BasePagination from '../../components/UI/BasePagination.vue';
+import ServicesList from '../../components/blocks/ServicesList.vue';
 
 import CardsSlide from './CardsSlide.vue';
 
@@ -84,9 +86,7 @@ export default {
     ServicesList,
   },
   computed: {
-    page() {
-      return this.$store.getters.page || {};
-    },
+    ...mapGetters(['page']),
     cards() {
       return this.page.content && this.page.content.sections
         ? this.page.content.sections

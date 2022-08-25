@@ -5,8 +5,10 @@ TheMain
 </template>
 
 <script>
+import footerGsapAnimations from '../mixins/footerGsapAnimations';
+
 import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/mixins/ThePromo.vue';
+import ThePromo from '../components/sections/ThePromo.vue';
 import CardsSection from './smart/CardsSection.vue';
 
 export default {
@@ -15,6 +17,7 @@ export default {
     ThePromo,
     CardsSection,
   },
+  mixins: [footerGsapAnimations],
 };
 </script>
 

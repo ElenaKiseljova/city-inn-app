@@ -75,7 +75,7 @@
 
     @media screen and (min-width: $tablet) {
       &--image {
-        transform: translate(50px, 50px);
+        transform: translateX(-100px);
 
         opacity: 0;
 

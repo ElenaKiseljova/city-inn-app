@@ -4,11 +4,11 @@ main(:class='`page-main page-main--${pageName}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
+    ...mapGetters(['pageName']),
   },
 };
 </script>

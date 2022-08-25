@@ -11,9 +11,13 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
+/**
+ * Аниаммция элементов списков по триггеру: init/reset
+ *  
+ */
 const animationOpacityTranslate = (elements, trigerElement) => {
   if (elements.length > 0 && trigerElement) {
-    gsap.to(elements, {
+    return gsap.to(elements, {
       x: 0,
       y: 0,
       opacity: 1,
@@ -28,8 +32,6 @@ const animationOpacityTranslate = (elements, trigerElement) => {
         end: 'bottom center',
       },
     });
-
-    return true;
   }
 
   return false;
@@ -52,101 +54,152 @@ const animationOpacityTranslateReset = (elements) => {
   return false;
 };
 
-const animationPromoButtons = (elements) => {
-  gsap.to(elements, {
-    y: 192,
-    duration: 1,
-    ease: 'power1.inOut',
-    scrollTrigger: {
-      trigger: '.promo',
-      scrub: 1,
-      // markers: true,
-      start: 'top top',
-      end: '98vh top',
-    },
-  });
-};
+class Animation {
+  constructor(selectorItem) {
+    this.selectorItem = selectorItem;
+  }
 
-const animationPromoSocial = () => {
-  gsap.to('.page-header__social', {
-    x: 0,
-    duration: 1,
-    ease: 'power1.inOut',
-    scrollTrigger: {
-      trigger: '.promo',
-      // scrub: 1,
-      // markers: true,
-      start: 'top top',
-      end: '98vh top',
-    },
-  });
-};
+  static trigger = null;
 
-// Contacts
-const contactsAnimation = {
-  trigger() {
-    return document.querySelector('.contacts');
-  },
   elements() {
-    return this.trigger() ? this.trigger().querySelectorAll('.contacts__item') : [];
-  },
-  init() {
-    if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      return animationOpacityTranslate(this.elements(), this.trigger());
-    }
-  },
-  reset() {
-    if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      return animationOpacityTranslateReset(this.elements());
-    }
-  },
-};
-export { contactsAnimation };
+    return this.triggerValue ? this.triggerValue.querySelectorAll(this.selectorItem) : [];
+  }
 
-const pageFooter = {
-  trigger() {
-    return document.querySelector('.page-footer');
-  },
-  elements() {
-    return this.trigger() ? this.trigger().querySelectorAll('.page-footer__item') : [];
-  },
-  init() {
+  init(trigger) {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      return animationOpacityTranslate(this.elements(), this.trigger());
-    }
-  },
-  reset() {
-    if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      return animationOpacityTranslateReset(this.elements());
-    }
-  },
-};
-export { pageFooter };
+      this.triggerInit = trigger;
 
+      this.scrollTriggerInit = animationOpacityTranslate(this.elements(), trigger);
 
-export default () => {
-  if (DEVICE_WIDTH < TABLET_WIDTH) {
-    const imageContainers = document.querySelectorAll('.promo--home .promo__container--image, .promo--smart .promo__container--image');
-
-    if (imageContainers.length > 0) {
-      animationPromoButtons(imageContainers);
+      return true;
     }
   }
 
-  if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    animationPromoSocial();
+  reset() {
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      if (this.scrollTrigger) {
+        this.scrollTrigger.kill();
+        console.log(this.scrollTrigger);
+      }
 
-    // Services
-    const services = document.querySelectorAll('.services, .promo__social');
-    if (services.length > 0) {
-      services.forEach((servicesBlock) => {
-        const servicesItems = servicesBlock.querySelectorAll('.services__item, .promo__lang, .social__item');
-
-        animationOpacityTranslate(servicesItems, servicesBlock);
-      });
+      return animationOpacityTranslateReset(this.elements());
     }
+  }
 
-    animationOpacityTranslate('.promo__container--image', '.promo__container--image:not(.promo__container--home)');
+  set triggerInit(value) {
+    this.trigger = value;
+  }
+
+  set scrollTriggerInit(value) {
+    this.scrollTrigger = value;
+  }
+
+  get triggerValue() {
+    return this.trigger;
+  }
+}
+
+//.contacts
+const contactsAnimation = new Animation('.contacts__item');
+
+export { contactsAnimation };
+
+//.page-footer
+const pageFooterAnimation = new Animation('.page-footer__item');
+
+export { pageFooterAnimation };
+
+//.services
+const servicesAnimation = new Animation('.services__item');
+
+export { servicesAnimation };
+
+//.promo__social
+const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item');
+
+export { promoSocialAnimation };
+
+
+export default () => {
+  if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    /** 
+      * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции 
+      * на мобильных устройствах
+      * 
+    */
+    //.page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
+    // const animationPromoAndHeaderButtonsBookAndOffer = (element1, element2, trigger) => {
+    //   if (DEVICE_WIDTH < TABLET_WIDTH && element1 && element2 && trigger) {
+    //     gsap.to(element1, {
+    //       x: 0,
+    //       duration: 1.5,
+    //       ease: 'power1.inOut',
+    //       scrollTrigger: {
+    //         trigger: trigger,
+    //         scrub: 1,
+    //         // markers: true,
+    //         start: 'top top',
+    //         end: '98vh top',
+    //       },
+    //     });
+
+    //     gsap.to(element2, {
+    //       y: 192,
+    //       duration: 1.5,
+    //       ease: 'power1.inOut',
+    //       scrollTrigger: {
+    //         trigger: trigger,
+    //         scrub: 1,
+    //         // markers: true,
+    //         start: 'top top',
+    //         end: '98vh top',
+    //       },
+    //     });
+
+    //     return true;
+    //   }
+
+    //   return false;
+    // };
+
+    // export { animationPromoAndHeaderButtonsBookAndOffer };
+
+    // const promoTitleAnimation = {
+    //   scrollTrigger: null,
+    //   init(element, trigger) {
+    //     if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    //       this.scrollTriggerInit = gsap.to(element, {
+    //         x: 0,
+    //         opacity: 1,
+    //         duration: 1,
+    //         ease: 'Power1.easeIn',
+    //         scrollTrigger: {
+    //           trigger: trigger,
+    //           // markers: true,
+    //           // scrub: 1,
+    //           start: 'top top',
+    //           end: '98vh top',
+    //         },
+    //       });
+
+    //       return true;
+    //     }
+
+    //     return false;
+    //   },
+    //   reset() {
+    //     if (this.scrollTrigger) {
+    //       this.scrollTrigger.kill();
+    //     }
+    //   },
+    //   set scrollTriggerInit(value) {
+    //     this.scrollTrigger = value;
+    //   }
+    // };
+
+    // export { promoTitleAnimation };
+
+    animationOpacityTranslate('.promo__container--image:not(.promo__container--home)');
     animationOpacityTranslate('.promo__text', '.promo__text');
 
     // Rooms

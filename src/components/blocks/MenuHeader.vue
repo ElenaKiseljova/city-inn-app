@@ -1,5 +1,5 @@
 <template lang="pug">
-.menu
+.menu(v-if='header')
   .menu__container.container
     .menu__nav
       NavigationHeader(:items='navigationList')
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import { callUs } from '../../assets/js/call-us';
 import menu from '../../assets/js/menu';
 
@@ -39,7 +41,7 @@ import social from '../../mixins/social';
 
 import SocialList from './SocialList.vue';
 import NavigationHeader from './NavigationHeader.vue';
-import BaseImage from '../mixins/BaseImage.vue';
+import BaseImage from '../UI/BaseImage.vue';
 
 export default {
   components: {
@@ -53,10 +55,17 @@ export default {
       headerIsReady: false,
     };
   },
-  computed: {
-    header() {
-      return this.$store.getters.header || {};
+  methods: {
+    scriptsInit() {
+      if (!this.headerIsReady) {
+        const scriptsInited = callUs() && menu();
+
+        this.headerIsReady = scriptsInited;
+      }
     },
+  },
+  computed: {
+    ...mapGetters(['header']),
     callUs() {
       return this.header.content && this.header.content.call
         ? this.header.content.call
@@ -69,18 +78,10 @@ export default {
     },
   },
   mounted() {
-    if (this.header.content && !this.headerIsReady) {
-      const scriptsInited = callUs() && menu();
-
-      this.headerIsReady = scriptsInited;
-    }
+    this.scriptsInit();
   },
   updated() {
-    if (this.header.content && !this.headerIsReady) {
-      const scriptsInited = callUs() && menu();
-
-      this.headerIsReady = scriptsInited;
-    }
+    this.scriptsInit();
   },
 };
 </script>

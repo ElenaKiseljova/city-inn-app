@@ -1,5 +1,9 @@
 <template lang="pug">
-footer#footer(:class='`page-footer page-footer--${pageName}`')
+footer#footer(
+  v-if='pageName && header && footer',
+  :class='`page-footer page-footer--${pageName}`',
+  ref='footer'
+)
   .page-footer__container.container
     .page-footer__left
       .page-footer__logo.logo.logo--footer
@@ -40,7 +44,7 @@ footer#footer(:class='`page-footer page-footer--${pageName}`')
 </template>
 
 <script>
-import { pageFooter } from '../../assets/js/gsap-animations';
+import { mapGetters } from 'vuex';
 
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
@@ -52,21 +56,8 @@ export default {
   components: {
     SocialList,
   },
-  data() {
-    return {
-      footerIsReady: false,
-    };
-  },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    header() {
-      return this.$store.getters.header || {};
-    },
-    footer() {
-      return this.$store.getters.footer || {};
-    },
+    ...mapGetters(['pageName', 'header', 'footer']),
     columns() {
       if (this.footer.content && this.footer.content.columns) {
         const columnsWithType = this.footer.content.columns.map((column) => {
@@ -94,27 +85,6 @@ export default {
     year() {
       return new Date().getFullYear();
     },
-    // route() {
-    //   return this.$route;
-    // },
-  },
-  // watch: {
-  //   route() {
-  //     if (this.footer.content && this.footerIsReady) {
-
-  //     }
-  //     this.footerIsReady = false;
-  //   },
-  // },
-  mounted() {
-    if (this.footer.content && !this.footerIsReady) {
-      this.footerIsReady = pageFooter.init();
-    }
-  },
-  updated() {
-    if (this.footer.content && !this.footerIsReady) {
-      this.footerIsReady = pageFooter.init();
-    }
   },
 };
 </script>

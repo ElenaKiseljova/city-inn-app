@@ -48,6 +48,8 @@ div(:class='imgClasses')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   props: {
     sectionName: {
@@ -70,12 +72,7 @@ export default {
     },
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
-    meta() {
-      return this.$store.getters.meta;
-    },
+    ...mapGetters(['pageName', 'meta']),
     imageAlt() {
       return this.alt !== '' ? this.alt : this.meta.title;
     },

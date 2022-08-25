@@ -1,5 +1,8 @@
 <template lang="pug">
-div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
+div(
+  v-if='pageName',
+  :class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`'
+)
   BaseImage(
     sectionName='cards',
     :modificator='pageName',
@@ -38,10 +41,12 @@ div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
-import BaseImage from '../../components/mixins/BaseImage.vue';
-import ServicesList from '../../components/mixins/ServicesList.vue';
+import BaseImage from '../../components/UI/BaseImage.vue';
+import ServicesList from '../../components/blocks/ServicesList.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -83,9 +88,7 @@ export default {
     ServicesList,
   },
   computed: {
-    pageName() {
-      return this.$store.getters.pageName;
-    },
+    ...mapGetters(['pageName']),
     titleHtml() {
       return this.title ? this.converteSymbolsNewLineToBr(this.title) : '';
     },

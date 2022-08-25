@@ -166,7 +166,7 @@ section(:class='`event event--${sectionName}`')
 <script>
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-import BaseNavigation from './BaseNavigation.vue';
+import BaseNavigation from '../UI/BaseNavigation.vue';
 
 export default {
   mixins: [checkUrlType, converteSymbolsNewLineToBr],

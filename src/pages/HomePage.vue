@@ -12,10 +12,11 @@ TheMain
 </template>
 
 <script>
+import footerGsapAnimations from '../mixins/footerGsapAnimations';
 import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/mixins/ThePromo.vue';
-import HomeSection from '../components/mixins/HomeSection.vue';
-import TheContacts from '../components/blocks/TheContacts.vue';
+import ThePromo from '../components/sections/ThePromo.vue';
+import HomeSection from '../components/sections/HomeSection.vue';
+import TheContacts from '../components/sections/TheContacts.vue';
 
 export default {
   components: {
@@ -24,14 +25,7 @@ export default {
     HomeSection,
     TheContacts,
   },
-  methods: {
-    // getSection(name) {
-    //   return this.sections.length > 0
-    //     ? this.sections.find((section) => section.sectionName === name)
-    //     : {};
-    // },
-  },
-  computed: {},
+  mixins: [footerGsapAnimations],
 };
 </script>
 
