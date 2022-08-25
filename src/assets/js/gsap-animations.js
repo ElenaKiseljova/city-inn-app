@@ -127,80 +127,74 @@ export default () => {
       * на мобильных устройствах
       * 
     */
-    //.page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
-    // const animationPromoAndHeaderButtonsBookAndOffer = (element1, element2, trigger) => {
-    //   if (DEVICE_WIDTH < TABLET_WIDTH && element1 && element2 && trigger) {
-    //     gsap.to(element1, {
-    //       x: 0,
-    //       duration: 1.5,
-    //       ease: 'power1.inOut',
-    //       scrollTrigger: {
-    //         trigger: trigger,
-    //         scrub: 1,
-    //         // markers: true,
-    //         start: 'top top',
-    //         end: '98vh top',
-    //       },
-    //     });
+    // .page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
+    const animationPromoAndHeaderButtonsBookAndOffer = (element1, element2, trigger) => {
+      if (element1 && element2 && trigger) {
+        gsap.to(element1, {
+          x: 0,
+          duration: 1.5,
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: trigger,
+            scrub: 1,
+            // markers: true,
+            start: 'top top',
+            end: '98vh top',
+          },
+        });
 
-    //     gsap.to(element2, {
-    //       y: 192,
-    //       duration: 1.5,
-    //       ease: 'power1.inOut',
-    //       scrollTrigger: {
-    //         trigger: trigger,
-    //         scrub: 1,
-    //         // markers: true,
-    //         start: 'top top',
-    //         end: '98vh top',
-    //       },
-    //     });
+        gsap.to(element2, {
+          y: 192,
+          duration: 1.5,
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: trigger,
+            scrub: 1,
+            // markers: true,
+            start: 'top top',
+            end: '98vh top',
+          },
+        });
 
-    //     return true;
-    //   }
+        return true;
+      }
 
-    //   return false;
-    // };
+      return false;
+    };
 
-    // export { animationPromoAndHeaderButtonsBookAndOffer };
+    const pageHeaderButtons = document.querySelector('.page-header__social');
+    const promoButtons = document.querySelector('.promo--home .promo__buttons, .promo--smart .promo__buttons');
+    const promo = document.querySelector('.promo');
 
-    // const promoTitleAnimation = {
-    //   scrollTrigger: null,
-    //   init(element, trigger) {
-    //     if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    //       this.scrollTriggerInit = gsap.to(element, {
-    //         x: 0,
-    //         opacity: 1,
-    //         duration: 1,
-    //         ease: 'Power1.easeIn',
-    //         scrollTrigger: {
-    //           trigger: trigger,
-    //           // markers: true,
-    //           // scrub: 1,
-    //           start: 'top top',
-    //           end: '98vh top',
-    //         },
-    //       });
+    animationPromoAndHeaderButtonsBookAndOffer(pageHeaderButtons, promoButtons, promo);
 
-    //       return true;
-    //     }
+    /**
+     * Анимация заголовка страницы
+     */
+    //.promo__content--image:not(.promo__content--home) | .promo
+    const promoTitleAnimation = (element, trigger) => {
+      console.log(element, trigger);
+      if (element && trigger) {
+        gsap.to(element, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'Power1.easeIn',
+          scrollTrigger: {
+            trigger: trigger,
+            // markers: true,
+            // scrub: 1,
+            start: 'top top',
+            end: '98vh top',
+          },
+        });
+      }
+    };
 
-    //     return false;
-    //   },
-    //   reset() {
-    //     if (this.scrollTrigger) {
-    //       this.scrollTrigger.kill();
-    //     }
-    //   },
-    //   set scrollTriggerInit(value) {
-    //     this.scrollTrigger = value;
-    //   }
-    // };
+    const promoContainerTitle = document.querySelector('.promo__content--image:not(.promo__content--home)');
 
-    // export { promoTitleAnimation };
+    promoTitleAnimation(promoContainerTitle, promo);
 
-    animationOpacityTranslate('.promo__container--image:not(.promo__container--home)');
-    animationOpacityTranslate('.promo__text', '.promo__text');
 
     // Rooms
     const rooms = document.querySelectorAll('.room, .home');
