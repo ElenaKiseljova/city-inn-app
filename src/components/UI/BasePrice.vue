@@ -1,9 +1,14 @@
 <template lang="pug">
-.price(:class='`${sectionName}__price`')
-  h4.price__title
+.price(:class='`${sectionName}__price ${modificationClasses}`')
+  h4.price__title(
+    v-if='price.text !== ""',
+    :class='`${modificationTitleClasses}`'
+  )
     | {{ price.text }}
-  p.price__number
-    | {{ price.number }} ₴
+  p.price__number(:class='`${modificationNumberClasses}`')
+    | {{ price.number }}
+
+    template(v-if='price.text !== ""') ₴
 </template>
 
 <script>
@@ -16,6 +21,27 @@ export default {
     price: {
       type: Object,
       required: true,
+    },
+    modificator: {
+      type: String,
+      required: false,
+    },
+  },
+  computed: {
+    modificationClasses() {
+      return this.modificator && this.modificator !== ''
+        ? `${this.sectionName}__price--${this.modificator}`
+        : '';
+    },
+    modificationTitleClasses() {
+      return this.modificator && this.modificator !== ''
+        ? `price__title--${this.modificator}`
+        : '';
+    },
+    modificationNumberClasses() {
+      return this.modificator && this.modificator !== ''
+        ? `price__number--${this.modificator}`
+        : '';
     },
   },
 };

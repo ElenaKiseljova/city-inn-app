@@ -142,6 +142,10 @@ export default {
         return this.sections[2] ?? {};
       }
 
+      if (this.sectionName === 'why-conference') {
+        return this.sections[4] ?? {};
+      }
+
       return null;
     },
     title() {

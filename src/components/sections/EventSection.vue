@@ -47,8 +47,8 @@ section(
             )
 
             h3(
-              v-if='slide.titleImage && slide.titleImage !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.titleImage)',
+              v-if='sectionName === "coffee" && slide.title && slide.title !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.title)',
               :class='`title-inner event__title-image event__title-image--mobile event__title-image--${sectionName}`'
             )
 
@@ -76,7 +76,7 @@ section(
           type='text'
         )
           h3(
-            v-if='slide.title && slide.title !== ""',
+            v-if='sectionName !== "coffee" && slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)',
             :class='`event__subtitle event__subtitle--${sectionName}`'
           )
@@ -88,13 +88,13 @@ section(
           )
 
           h3(
-            v-else-if='slide.titleImage && slide.titleImage !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.titleImage)',
+            v-else-if='sectionName === "coffee" && slide.title && slide.title !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.title)',
             :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
           )
 
           div(
-            v-if='slide.topText || slide.bottomText || slide.text || slide.list',
+            v-if='slide.topText || slide.bottomText || slide.text || slide.description',
             :class='`event__content event__content--${sectionName}`'
           )
             p.event__text.event__text--top(
@@ -113,7 +113,7 @@ section(
             )
 
             p(
-              v-if='slide.description && slide.description !== ""',
+              v-if='sectionName !== "coffee" && slide.description && slide.description !== ""',
               v-html='converteSymbolsNewLineToBr(slide.description)',
               :class='`event__text event__text--${sectionName}`'
             )
@@ -135,11 +135,12 @@ section(
             :items='slide.services'
           )
 
-          .event__price.price(v-if='slide.priceTitle && slide.priceNumber')
-            h4(:class='`price__title price__title--${sectionName}`')
-              | {{ slide.priceTitle }}
-            p.price__number
-              | {{ slide.priceNumber }} ₴
+          BasePrice(
+            v-if='(slide.priceFor || slide.prePrice) && slide.price',
+            sectionName='event',
+            :modificator='sectionName',
+            :price='{ text: slide.priceFor || slide.prePrice, number: slide.price }'
+          )
 
           div(
             v-if='slide.button && slide.button.text && slide.button.text !== "" && slide.button.link && slide.button.link !== ""',
@@ -201,6 +202,7 @@ import BaseImage from '../UI/BaseImage.vue';
 import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 import ServicesList from '../blocks/ServicesList.vue';
 import BaseButton from '../UI/BaseButton.vue';
+import BasePrice from '../UI/BasePrice.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -219,10 +221,15 @@ export default {
     WorktimeInfo,
     ServicesList,
     BaseButton,
+    BasePrice,
   },
   methods: {
     slideList(slide) {
-      return slide.list ? slide.list.split('\r\n') : [];
+      if (this.sectionName === 'coffee') {
+        return slide.description ? slide.description.split('\r\n') : [];
+      }
+
+      return [];
     },
   },
   computed: {
@@ -241,14 +248,28 @@ export default {
         return this.sections[4] ?? {};
       }
 
+      if (this.sectionName === 'coffee') {
+        return this.sections[3] ?? {};
+      }
+
       return null;
     },
     title() {
+      if (this.sectionName === 'coffee') {
+        return null;
+      }
+
       return this.section && this.section.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     titleSmall() {
+      if (this.sectionName === 'coffee') {
+        return this.section && this.section.title && this.section.title !== ''
+          ? this.converteSymbolsNewLineToBr(this.section.title)
+          : null;
+      }
+
       return this.section &&
         this.section.titleSmall &&
         this.section.titleSmall !== ''

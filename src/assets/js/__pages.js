@@ -9,7 +9,7 @@ const __pages = {
         },
         "offer": {
           "title": "SMART пропозиція",
-          "link": "smart-offer"
+          "link": "/smart-offer"
         },
         "address": {
           "icon": "icon-map-pin",
@@ -1748,12 +1748,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/prices-1-mobile.webp",
                     "tablet": "/img/conference/prices-1-tablet.webp",
-                    "desktop": "/img/conference/prices-1-desctop.webp"
+                    "desktop": "/img/conference/prices-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/prices-1-mobile.jpg",
                     "tablet": "/img/conference/prices-1-tablet.jpg",
-                    "desktop": "/img/conference/prices-1-desctop.jpg"
+                    "desktop": "/img/conference/prices-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1793,12 +1793,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/prices-1-mobile.webp",
                     "tablet": "/img/conference/prices-1-tablet.webp",
-                    "desktop": "/img/conference/prices-1-desctop.webp"
+                    "desktop": "/img/conference/prices-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/prices-1-mobile.jpg",
                     "tablet": "/img/conference/prices-1-tablet.jpg",
-                    "desktop": "/img/conference/prices-1-desctop.jpg"
+                    "desktop": "/img/conference/prices-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1835,12 +1835,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/coffee-1-mobile.webp",
                     "tablet": "/img/conference/coffee-1-tablet.webp",
-                    "desktop": "/img/conference/coffee-1-desctop.webp"
+                    "desktop": "/img/conference/coffee-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/coffee-1-mobile.jpg",
                     "tablet": "/img/conference/coffee-1-tablet.jpg",
-                    "desktop": "/img/conference/coffee-1-desctop.jpg"
+                    "desktop": "/img/conference/coffee-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1858,12 +1858,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/coffee-2-mobile.webp",
                     "tablet": "/img/conference/coffee-2-tablet.webp",
-                    "desktop": "/img/conference/coffee-2-desctop.webp"
+                    "desktop": "/img/conference/coffee-2-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/coffee-2-mobile.jpg",
                     "tablet": "/img/conference/coffee-2-tablet.jpg",
-                    "desktop": "/img/conference/coffee-2-desctop.jpg"
+                    "desktop": "/img/conference/coffee-2-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1880,36 +1880,36 @@ const __pages = {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               }
             ],
@@ -1935,12 +1935,12 @@ const __pages = {
               "webp": {
                 "mobile": "/img/conference/parking-mobile.webp",
                 "tablet": "/img/conference/parking-tablet.webp",
-                "desktop": "/img/conference/parking-desctop.webp"
+                "desktop": "/img/conference/parking-desktop.webp"
               },
               "jpg": {
                 "mobile": "/img/conference/parking-mobile.jpg",
                 "tablet": "/img/conference/parking-tablet.jpg",
-                "desktop": "/img/conference/parking-desctop.jpg"
+                "desktop": "/img/conference/parking-desktop.jpg"
               }
             }
           },
@@ -1975,12 +1975,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/team-1-mobile.webp",
                     "tablet": "/img/conference/team-1-tablet.webp",
-                    "desktop": "/img/conference/team-1-desctop.webp"
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/team-1-mobile.jpg",
                     "tablet": "/img/conference/team-1-tablet.jpg",
-                    "desktop": "/img/conference/team-1-desctop.jpg"
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "contacts": [
@@ -1997,12 +1997,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/team-1-mobile.webp",
                     "tablet": "/img/conference/team-1-tablet.webp",
-                    "desktop": "/img/conference/team-1-desctop.webp"
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/team-1-mobile.jpg",
                     "tablet": "/img/conference/team-1-tablet.jpg",
-                    "desktop": "/img/conference/team-1-desctop.jpg"
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "contacts": [
@@ -2077,12 +2077,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/seating-1-mobile.webp",
                     "tablet": "/img/conference/seating-1-tablet.webp",
-                    "desktop": "/img/conference/seating-1-desctop.webp"
+                    "desktop": "/img/conference/seating-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/seating-1-mobile.jpg",
                     "tablet": "/img/conference/seating-1-tablet.jpg",
-                    "desktop": "/img/conference/seating-1-desctop.jpg"
+                    "desktop": "/img/conference/seating-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2111,12 +2111,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/seating-1-mobile.webp",
                     "tablet": "/img/conference/seating-1-tablet.webp",
-                    "desktop": "/img/conference/seating-1-desctop.webp"
+                    "desktop": "/img/conference/seating-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/seating-1-mobile.jpg",
                     "tablet": "/img/conference/seating-1-tablet.jpg",
-                    "desktop": "/img/conference/seating-1-desctop.jpg"
+                    "desktop": "/img/conference/seating-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2149,12 +2149,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/prices-1-mobile.webp",
                     "tablet": "/img/conference/prices-1-tablet.webp",
-                    "desktop": "/img/conference/prices-1-desctop.webp"
+                    "desktop": "/img/conference/prices-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/prices-1-mobile.jpg",
                     "tablet": "/img/conference/prices-1-tablet.jpg",
-                    "desktop": "/img/conference/prices-1-desctop.jpg"
+                    "desktop": "/img/conference/prices-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2194,12 +2194,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/prices-1-mobile.webp",
                     "tablet": "/img/conference/prices-1-tablet.webp",
-                    "desktop": "/img/conference/prices-1-desctop.webp"
+                    "desktop": "/img/conference/prices-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/prices-1-mobile.jpg",
                     "tablet": "/img/conference/prices-1-tablet.jpg",
-                    "desktop": "/img/conference/prices-1-desctop.jpg"
+                    "desktop": "/img/conference/prices-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2236,12 +2236,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/coffee-1-mobile.webp",
                     "tablet": "/img/conference/coffee-1-tablet.webp",
-                    "desktop": "/img/conference/coffee-1-desctop.webp"
+                    "desktop": "/img/conference/coffee-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/coffee-1-mobile.jpg",
                     "tablet": "/img/conference/coffee-1-tablet.jpg",
-                    "desktop": "/img/conference/coffee-1-desctop.jpg"
+                    "desktop": "/img/conference/coffee-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2259,12 +2259,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/coffee-2-mobile.webp",
                     "tablet": "/img/conference/coffee-2-tablet.webp",
-                    "desktop": "/img/conference/coffee-2-desctop.webp"
+                    "desktop": "/img/conference/coffee-2-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/coffee-2-mobile.jpg",
                     "tablet": "/img/conference/coffee-2-tablet.jpg",
-                    "desktop": "/img/conference/coffee-2-desctop.jpg"
+                    "desktop": "/img/conference/coffee-2-desktop.jpg"
                   }
                 },
                 "button": {
@@ -2281,36 +2281,36 @@ const __pages = {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
                   "mobile": "/img/conference/why-1-mobile.webp",
                   "tablet": "/img/conference/why-1-tablet.webp",
-                  "desktop": "/img/conference/why-1-desctop.webp"
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
                   "mobile": "/img/conference/why-1-mobile.jpg",
                   "tablet": "/img/conference/why-1-tablet.jpg",
-                  "desktop": "/img/conference/why-1-desctop.jpg"
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               }
             ],
@@ -2336,12 +2336,12 @@ const __pages = {
               "webp": {
                 "mobile": "/img/conference/parking-mobile.webp",
                 "tablet": "/img/conference/parking-tablet.webp",
-                "desktop": "/img/conference/parking-desctop.webp"
+                "desktop": "/img/conference/parking-desktop.webp"
               },
               "jpg": {
                 "mobile": "/img/conference/parking-mobile.jpg",
                 "tablet": "/img/conference/parking-tablet.jpg",
-                "desktop": "/img/conference/parking-desctop.jpg"
+                "desktop": "/img/conference/parking-desktop.jpg"
               }
             }
           },
@@ -2376,12 +2376,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/team-1-mobile.webp",
                     "tablet": "/img/conference/team-1-tablet.webp",
-                    "desktop": "/img/conference/team-1-desctop.webp"
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/team-1-mobile.jpg",
                     "tablet": "/img/conference/team-1-tablet.jpg",
-                    "desktop": "/img/conference/team-1-desctop.jpg"
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "contacts": [
@@ -2398,12 +2398,12 @@ const __pages = {
                   "webp": {
                     "mobile": "/img/conference/team-1-mobile.webp",
                     "tablet": "/img/conference/team-1-tablet.webp",
-                    "desktop": "/img/conference/team-1-desctop.webp"
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
                     "mobile": "/img/conference/team-1-mobile.jpg",
                     "tablet": "/img/conference/team-1-tablet.jpg",
-                    "desktop": "/img/conference/team-1-desctop.jpg"
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "contacts": [

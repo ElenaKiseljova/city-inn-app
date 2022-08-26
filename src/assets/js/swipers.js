@@ -357,6 +357,8 @@ export default () => {
 
         imagesEventSlider.on('slideChange', () => {
           textEventSlider.slideTo(imagesEventSlider.activeIndex);
+
+          console.log('slideChange');
         });
       }
     });
