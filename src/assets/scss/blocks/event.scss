@@ -434,6 +434,7 @@
     position: relative;
 
     width: 100vw;
+    height: 100%;
 
     margin: 0 calc((100% - 100vw) / 2);
 
@@ -468,7 +469,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-      height: auto;
       min-height: 840px;
 
       &--kitchen,
@@ -501,6 +501,7 @@
 
   &__slider {
     width: 100%;
+    height: 100%;
 
     cursor: pointer;
 
@@ -1053,6 +1054,8 @@
       margin-top: 67px;
 
       &--around {
+        width: fit-content;
+
         margin: 40px 168px 0 auto;
       }
 

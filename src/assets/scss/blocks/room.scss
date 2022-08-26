@@ -59,9 +59,9 @@
       &--desktop {
         display: block;
 
-        transform: translate(50px, 50px);
+        // transform: translate(50px, 50px);
 
-        opacity: 0;
+        // opacity: 0;
       }
 
       &--mobile {
@@ -299,9 +299,9 @@
     @media screen and (min-width: $tablet) {
       min-width: 200px;
 
-      transform: translate(20px, 20px);
+      // transform: translate(20px, 20px);
 
-      opacity: 0;
+      // opacity: 0;
 
       &:not(:last-of-type) {
         margin-bottom: 0;

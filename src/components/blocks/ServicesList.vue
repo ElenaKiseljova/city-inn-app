@@ -1,5 +1,8 @@
 <template lang="pug">
-ul(v-if='items.length > 0', :class='listClasses')
+ul(
+  v-if='items.length > 0',
+  :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`'
+)
   ServicesItem(v-for='item in items', :item='item', :modificator='modificator')
 
   li.services__item.services__item--worktime(v-if='additionalItem.worktime')
@@ -20,10 +23,6 @@ export default {
       type: String,
       required: true,
     },
-    oddEvenLast: {
-      type: String,
-      required: true,
-    },
     items: {
       type: Array,
       required: true,
@@ -31,14 +30,10 @@ export default {
         return [];
       },
     },
+    //modificator1,modificator2
     modificator: {
       type: String,
       required: true,
-    },
-    additionalModificator: {
-      type: String,
-      required: false,
-      default: null,
     },
     additionalItem: {
       type: Object,
@@ -53,13 +48,17 @@ export default {
     WorktimeInfo,
   },
   computed: {
-    additionalListModificator() {
-      return this.additionalModificator
-        ? `${this.sectionName}__services--${this.additionalModificator}`
-        : '';
+    modificatorArr() {
+      return this.modificator.split(',');
     },
-    listClasses() {
-      return `${this.sectionName}__services ${this.sectionName}__services--${this.modificator} ${this.additionalListModificator} services services--${this.modificator}`;
+    modificationClasses() {
+      const modificationClasses = this.modificatorArr
+        .map((mod) => {
+          return `${this.sectionName}__services--${mod}`;
+        })
+        .join(' ');
+
+      return modificationClasses;
     },
   },
 };

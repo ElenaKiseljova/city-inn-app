@@ -39,20 +39,19 @@ section(
           :text='section.worktime'
         )
 
-        template(v-for='button in buttons')
-          a(
-            v-if='button && button.type === "link"',
-            :class='`button home__button home__button--${button.name} home__button--${sectionName}`',
-            :href='button.link'
-          )
-            span {{ button.title }}
+        BaseButton(
+          v-if='book',
+          sectionName='home',
+          :modificator='`${sectionName},book`',
+          :button='book'
+        )
 
-          router-link(
-            v-else-if='button && button.type === "route"',
-            :class='`button home__button home__button--${button.name} home__button--${sectionName}`',
-            :to='button.link'
-          )
-            span {{ button.title }}
+        BaseButton(
+          v-if='more',
+          sectionName='home',
+          :modificator='`${sectionName},more`',
+          :button='more'
+        )
 </template>
 
 <script>
@@ -63,6 +62,7 @@ import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr'
 
 import BaseImage from '../UI/BaseImage.vue';
 import WorktimeInfo from '../blocks/WorktimeInfo.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 export default {
   props: {
@@ -75,6 +75,7 @@ export default {
   components: {
     BaseImage,
     WorktimeInfo,
+    BaseButton,
   },
   computed: {
     ...mapGetters(['pageName', 'page']),
@@ -123,52 +124,10 @@ export default {
         : {};
     },
     more() {
-      const moreButton = this.section.more ? this.section.more : {};
-
-      if (
-        moreButton &&
-        moreButton.link &&
-        moreButton.link !== '' &&
-        moreButton.title &&
-        moreButton.title !== ''
-      ) {
-        return { ...moreButton, type: this.checkUrlType(moreButton.link) };
-      }
-
-      return null;
+      return this.section && this.section.more ? this.section.more : null;
     },
     book() {
-      const bookButton = this.section.book ? this.section.book : {};
-
-      if (
-        bookButton &&
-        bookButton.link &&
-        bookButton.link !== '' &&
-        bookButton.title &&
-        bookButton.title !== ''
-      ) {
-        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
-      }
-
-      return null;
-    },
-    buttons() {
-      const buttons = [];
-
-      if (this.more) {
-        buttons.push({
-          ...this.more,
-          name: 'more',
-        });
-      }
-
-      if (this.book) {
-        buttons.push({
-          ...this.book,
-          name: 'book',
-        });
-      }
-      return buttons;
+      return this.section && this.section.book ? this.section.book : null;
     },
   },
 };

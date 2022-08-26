@@ -12,13 +12,13 @@ div(
 
 .cards__content.cards__content--mobile
   h4(
-    v-if='title',
+    v-if='titleHtml',
     v-html='titleHtml',
     :class='`cards__subtitle cards__subtitle--${oddEvenLast}`'
   )
 
   div(
-    v-if='description !== ""',
+    v-if='descriptionHtml',
     v-html='descriptionHtml',
     :class='`cards__description cards__description--${oddEvenLast}`'
   )
@@ -31,13 +31,12 @@ div(
     :oddEvenLast='oddEvenLast'
   )
 
-  a(
-    v-if='book.title && book.title !== "" && book.link && book.link !== ""',
-    :class='`cards__button button cards__button--${oddEvenLast}`',
-    :href='book.link',
-    target='_blank'
+  BaseButton(
+    v-if='slideBook',
+    sectionName='cards',
+    :modificator='`${oddEvenLast}`',
+    :button='slideBook'
   )
-    span {{ book.title }}
 </template>
 
 <script>
@@ -47,6 +46,7 @@ import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr'
 
 import BaseImage from '../../components/UI/BaseImage.vue';
 import ServicesList from '../../components/blocks/ServicesList.vue';
+import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -78,24 +78,27 @@ export default {
     book: {
       type: Object,
       required: false,
-      default() {
-        return {};
-      },
     },
   },
   components: {
     BaseImage,
     ServicesList,
+    BaseButton,
   },
   computed: {
     ...mapGetters(['pageName']),
     titleHtml() {
-      return this.title ? this.converteSymbolsNewLineToBr(this.title) : '';
+      return this.title && this.title !== ''
+        ? this.converteSymbolsNewLineToBr(this.title)
+        : null;
     },
     descriptionHtml() {
-      return this.description
+      return this.description && this.description !== ''
         ? this.converteSymbolsNewLineToBr(this.description)
-        : '';
+        : null;
+    },
+    slideBook() {
+      return this.book ? this.book : null;
     },
   },
 };

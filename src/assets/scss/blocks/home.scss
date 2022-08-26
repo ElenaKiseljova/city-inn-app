@@ -287,9 +287,9 @@
     }
 
     @media screen and (min-width: $tablet) {
-      transform: translate(50px, 50px);
+      // transform: translate(50px, 50px);
 
-      opacity: 0;
+      // opacity: 0;
 
       &--desktop {
         position: static;
@@ -651,9 +651,9 @@
 
       margin-left: 24px;
 
-      transform: translate(20px, 20px);
+      // transform: translate(20px, 20px);
 
-      opacity: 0;
+      // opacity: 0;
 
       &--restaurant {
         margin-top: 0;

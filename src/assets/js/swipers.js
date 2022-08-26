@@ -119,6 +119,7 @@ export default () => {
       slidesPerView: 1,
       spaceBetween: 0,
       resizeObserver: true,
+      speed: 500,
     };
 
     prevButton = swiperItem.closest('section').querySelector('.swiper-button-prev');
@@ -326,7 +327,7 @@ export default () => {
       if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
         if (eventSliderImages.classList.contains('event__slider--group')) {
           attrImages.spaceBetween = 246;
-        } else {
+        } else if (!eventSliderImages.classList.contains('event__slider--around') && !eventSliderImages.classList.contains('event__slider--attraction')) {
           attrImages.spaceBetween = 280;
         }
       }

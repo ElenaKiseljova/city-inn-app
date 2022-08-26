@@ -1,5 +1,5 @@
 <template lang="pug">
-section.cards(v-if='page')
+section.cards(v-if='page && cards')
   ul.cards__list
     CardsItem(v-for='(card, index) in cards', :index='index', :card='card')
 </template>

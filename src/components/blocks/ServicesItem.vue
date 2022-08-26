@@ -1,9 +1,9 @@
 <template lang="pug">
-li(:class='`services__item services__item--${modificator} ${additionalClass}`')
-  div(:class='`services__icon services__icon--${modificator}`')
+li(:class='`services__item ${modificationItemClasses}`')
+  div(:class='`services__icon ${modificationIconClasses}`')
     img(width='40', height='40', :src='item.icon', :alt='item.title')
 
-  h5(:class='`services__name services__name--${modificator}`')
+  h5(:class='`services__name ${modificationNameClasses}`')
     | {{ item.title }}
 </template>
 
@@ -22,6 +22,38 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+  },
+  computed: {
+    modificationItemClasses() {
+      const modificationClasses = this.modificator
+        .split(',')
+        .map((mod) => {
+          return `services__item--${mod}`;
+        })
+        .join(' ');
+
+      return modificationClasses;
+    },
+    modificationIconClasses() {
+      const modificationClasses = this.modificator
+        .split(',')
+        .map((mod) => {
+          return `services__icon--${mod}`;
+        })
+        .join(' ');
+
+      return modificationClasses;
+    },
+    modificationNameClasses() {
+      const modificationClasses = this.modificator
+        .split(',')
+        .map((mod) => {
+          return `services__name--${mod}`;
+        })
+        .join(' ');
+
+      return modificationClasses;
     },
   },
 };

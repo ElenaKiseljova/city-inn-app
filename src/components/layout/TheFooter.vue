@@ -1,8 +1,7 @@
 <template lang="pug">
 footer#footer(
   v-if='pageName && header && footer',
-  :class='`page-footer page-footer--${pageName}`',
-  ref='footer'
+  :class='`page-footer page-footer--${pageName}`'
 )
   .page-footer__container.container
     .page-footer__left

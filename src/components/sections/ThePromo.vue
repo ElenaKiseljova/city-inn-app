@@ -26,20 +26,19 @@ section#promo(
         SocialList(v-if='social.length > 0', :items='social')
 
       .promo__buttons(v-if='sectionName === "home" || sectionName === "smart"')
-        template(v-for='button in buttons')
-          a.promo__button.button(
-            v-if='button && button.type === "link"',
-            :href='button.link'
-          )
-            span
-              | {{ button.title }}
+        BaseButton(
+          v-if='book',
+          sectionName='promo',
+          :modificator='`${pageName}`',
+          :button='book'
+        )
 
-          router-link.promo__button.button(
-            v-if='button && button.type === "route"',
-            :to='button.link'
-          )
-            span
-              | {{ button.title }}
+        BaseButton(
+          v-if='offer',
+          sectionName='promo',
+          :modificator='`${sectionName}`',
+          :button='offer'
+        )
 
     BaseImage(sectionName='promo', :image='image')
 
@@ -69,21 +68,13 @@ section#promo(
           :text='contentBottomWorktime'
         )
 
-        a(
-          v-if='contentBottomBook && contentBottomBook.type === "link"',
-          :class='`button promo__btn promo__btn--${sectionName}`',
-          :href='contentBottomBook.link'
+        BaseButton(
+          v-if='contentBottomBook',
+          sectionName='promo',
+          :modificator='`${sectionName}`',
+          :button='contentBottomBook',
+          sectionElementName='btn'
         )
-          span
-            | {{ contentBottomBook.text }}
-
-        router-link(
-          v-else-if='contentBottomBook && contentBottomBook.type === "route"',
-          :class='`button promo__btn promo__btn--${sectionName}`',
-          :to='contentBottomBook.link'
-        )
-          span
-            | {{ contentBottomBook.text }}
 </template>
 
 <script>
@@ -103,6 +94,7 @@ import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr'
 import BaseImage from '../UI/BaseImage.vue';
 import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 import SocialList from '../blocks/SocialList.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 export default {
   props: {
@@ -116,6 +108,7 @@ export default {
     BaseImage,
     WorktimeInfo,
     SocialList,
+    BaseButton,
   },
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   data() {
@@ -136,59 +129,14 @@ export default {
   computed: {
     ...mapGetters(['lang', 'meta', 'pageName', 'header', 'page']),
     book() {
-      const bookButton =
-        this.header.content && this.header.content.book
-          ? this.header.content.book
-          : null;
-
-      if (
-        bookButton &&
-        bookButton.link &&
-        bookButton.link !== '' &&
-        bookButton.title &&
-        bookButton.title !== ''
-      ) {
-        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
-      }
-
-      return null;
+      return this.header.content && this.header.content.book
+        ? this.header.content.book
+        : null;
     },
     offer() {
-      const offerButton =
-        this.header.content && this.header.content.offer
-          ? this.header.content.offer
-          : null;
-
-      if (
-        offerButton &&
-        offerButton.link &&
-        offerButton.link !== '' &&
-        offerButton.title &&
-        offerButton.title !== ''
-      ) {
-        return { ...offerButton, type: this.checkUrlType(offerButton.link) };
-      }
-
-      return null;
-    },
-    buttons() {
-      const buttons = [];
-
-      if (this.book) {
-        buttons.push({
-          ...this.book,
-          icon: 'icon-phone',
-        });
-      }
-
-      if (this.offer) {
-        buttons.push({
-          ...this.offer,
-          icon: 'icon-offer',
-        });
-      }
-
-      return buttons;
+      return this.header.content && this.header.content.offer
+        ? this.header.content.offer
+        : null;
     },
     langToggle() {
       const path = this.$route.path;
@@ -237,20 +185,9 @@ export default {
         : null;
     },
     contentBottomBook() {
-      const bookButton =
-        this.content && this.content.bottom ? this.content.bottom.book : {};
-
-      if (
-        bookButton &&
-        bookButton.link &&
-        bookButton.link !== '' &&
-        bookButton.title &&
-        bookButton.title !== ''
-      ) {
-        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
-      }
-
-      return null;
+      return this.content && this.content.bottom && this.content.bottom.book
+        ? this.content.bottom.book
+        : null;
     },
   },
   mounted() {

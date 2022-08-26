@@ -30,7 +30,7 @@ export default {
     ...mapGetters(['pageName']),
     slideModification() {
       return this.modificator !== ''
-        ? `${this.sectionName}__slide--${this.slideModificator}`
+        ? `${this.sectionName}__slide--${this.modificator}`
         : `${this.sectionName}__slide--${this.pageName}`;
     },
     slideType() {

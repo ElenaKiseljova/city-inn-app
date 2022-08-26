@@ -1,23 +1,31 @@
 <template lang="pug">
-section(:class='`event event--${sectionName}`')
+section(
+  v-if='page && sectionName && section && slides',
+  :class='`event event--${sectionName}`'
+)
   div(:class='`event__container container event__container--${sectionName}`')
     h2(
-      v-if='isSmallTitle',
+      v-if='titleSmall',
+      v-html='titleSmall',
       :class='`event__title-small event__title-small--${sectionName}`'
     )
-      template(v-if='titleSmall', v-html='titleSmall')
-      template(v-if='subTitle', v-html='subTitle')
+
+    h2(
+      v-else-if='subTitle',
+      v-html='subTitle',
+      :class='`event__title-small event__title-small--${sectionName}`'
+    )
 
   div(:class='`event__container container event__container--${sectionName}`')
     div(:class='`event__top event__top--${sectionName}`')
       h2(
-        v-if='title && title !== ""',
+        v-if='title',
         v-html='title',
         :class='`title-inner event__title event__title--mobile event__title--${sectionName}`'
       )
 
       div(
-        v-if='slides.length > 0',
+        v-if='slides && slides.length > 0',
         :class='`event__slider-container event__slider-container--${sectionName}`'
       )
         BaseSlider(
@@ -40,7 +48,7 @@ section(:class='`event event--${sectionName}`')
 
             h3(
               v-if='slide.titleImage && slide.titleImage !== ""',
-              v-html='slide.titleImage',
+              v-html='converteSymbolsNewLineToBr(slide.titleImage)',
               :class='`title-inner event__title-image event__title-image--mobile event__title-image--${sectionName}`'
             )
 
@@ -48,7 +56,7 @@ section(:class='`event event--${sectionName}`')
 
     div(:class='`event__bottom event__bottom--${sectionName}`')
       h2(
-        v-if='title && title !== ""',
+        v-if='title',
         v-html='title',
         :class='`title-inner event__title event__title--desktop event__title--${sectionName}`'
       )
@@ -56,75 +64,101 @@ section(:class='`event event--${sectionName}`')
       BaseNavigation(sectionName='event', :modificator='sectionName')
 
       BaseSlider(
-        v-if='slides.length > 0 && !content',
+        v-if='slides && slides.length > 0 && !content',
         sectionName='event',
-        type='text'
+        type='text',
+        :modificator='sectionName'
       )
-      if slides.length > 0 && !content
-        +slider('event', 'text')
-          each slide in slides
-            +slide('event', sectionName, 'text')
-              if (slide.title && slide.title !== '') || subTitle
-                h3(:class='`event__subtitle event__subtitle--${sectionName}`')
-                  | !{ slide.title || subTitle }
+        BaseSlide(
+          v-for='slide in slides',
+          sectionName='event',
+          :modificator='sectionName',
+          type='text'
+        )
+          h3(
+            v-if='slide.title && slide.title !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.title)',
+            :class='`event__subtitle event__subtitle--${sectionName}`'
+          )
 
-              if slide.titleImage && slide.titleImage !== ''
-                h3(
-                  :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
+          h3(
+            v-else-if='subTitle',
+            v-html='subTitle',
+            :class='`event__subtitle event__subtitle--${sectionName}`'
+          )
+
+          h3(
+            v-else-if='slide.titleImage && slide.titleImage !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.titleImage)',
+            :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
+          )
+
+          div(
+            v-if='slide.topText || slide.bottomText || slide.text || slide.list',
+            :class='`event__content event__content--${sectionName}`'
+          )
+            p.event__text.event__text--top(
+              v-if='slide.topText && slide.topText !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.topText)'
+            )
+
+            p.event__text.event__text--top(
+              v-else-if='slide.text && slide.text !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.text)'
+            )
+
+            p.event__text.event__text--bottom(
+              v-if='slide.bottomText && slide.bottomText !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.bottomText)'
+            )
+
+            p(
+              v-if='slide.description && slide.description !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.description)',
+              :class='`event__text event__text--${sectionName}`'
+            )
+
+            ul.event__list(v-if='slideList(slide).length > 0')
+              li.event__item(v-for='item in slideList(slide)', :key='item') {{ item }}
+
+          WorktimeInfo(
+            v-if='slide.worktime && slide.worktime !== ""',
+            sectionName='event',
+            :modificator='sectionName',
+            :text='slide.worktime'
+          )
+
+          ServicesList(
+            v-if='slide.services && slide.services.length > 0',
+            sectionName='event',
+            :modificator='sectionName',
+            :items='slide.services'
+          )
+
+          .event__price.price(v-if='slide.priceTitle && slide.priceNumber')
+            h4(:class='`price__title price__title--${sectionName}`')
+              | {{ slide.priceTitle }}
+            p.price__number
+              | {{ slide.priceNumber }} ₴
+
+          div(
+            v-if='slide.button && slide.button.text && slide.button.text !== "" && slide.button.link && slide.button.link !== ""',
+            :class='`event__buttons event__buttons--${sectionName}`'
+          )
+            a(
+              :class='`button event__button event__button--${sectionName}`',
+              :href='slide.button.link'
+            )
+              span
+                | {{ slide.button.text }}
+
+            div(
+              :class='`event__arrow-top arrow-top event__arrow-top--${sectionName}`'
+            )
+              svg(width='48', height='48')
+                use(
+                  xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-arrow-top'
                 )
-                  | !{ slide.titleImage }
-
-              if slide.topText || slide.bottomText || slide.text || slide.list
-                div(:class='`event__content event__content--${sectionName}`')
-                  if slide.topText && slide.topText !== ''
-                    p.event__text.event__text--top
-                      | !{ slide.topText }
-
-                  if slide.bottomText && slide.bottomText !== ''
-                    p.event__text.event__text--bottom
-                      | !{ slide.bottomText }
-
-                  if slide.text && slide.text !== ''
-                    p(:class='`event__text event__text--${sectionName}`')
-                      | !{ slide.text }
-
-                  if slide.list
-                    - const list = slide.list.split("\r\n");
-                    if list.length > 0
-                      ul.event__list
-                        each item in list
-                          li.event__item
-                            | !{ item }
-
-              if slide.worktime && slide.worktime !== ''
-                +worktime('event', sectionName, worktime)
-
-              if slide.services && slide.services.length > 0
-                +services('event', sectionName, slide.services)
-
-              if slide.priceTitle && slide.priceNumber
-                .event__price.price
-                  h4(:class='`price__title price__title--${sectionName}`')
-                    | #{ slide.priceTitle }
-                  p.price__number
-                    | #{ slide.priceNumber } ₴
-
-              if slide.button && slide.button.text && slide.button.text !== '' && slide.button.link && slide.button.link !== ''
-                div(:class='`event__buttons event__buttons--${sectionName}`')
-                  a(
-                    :class='`button event__button event__button--${sectionName}`',
-                    href="" + slide.button.link
-                  )
-                    span
-                      | !{ slide.button.text }
-
-                  div(
-                    :class='`event__arrow-top arrow-top event__arrow-top--${sectionName}`'
-                  )
-                    svg(width='48', height='48')
-                      use(
-                        xlink:href='img/sprites/sprite-mono.svg#icon-arrow-top'
-                      )
 
       div(
         v-if='content',
@@ -146,70 +180,107 @@ section(:class='`event event--${sectionName}`')
           v-html='contentTextBottom'
         )
 
-        a(
-          v-if='contentButton && contentButton.type === "link"',
-          :class='`button event__button event__button--${sectionName}`',
-          :href='contentButton.link'
+        BaseButton(
+          v-if='contentButton',
+          sectionName='event',
+          :modificator='sectionName',
+          :button='contentButton'
         )
-          span
-            | {{ contentButton.text }}
-
-        router-link(
-          v-if='contentButton && contentButton.type === "route"',
-          :class='`button event__button event__button--${sectionName}`',
-          :href='contentButton.link'
-        )
-          span
-            | {{ contentButton.text }}
 </template>
 
 <script>
-import checkUrlType from '../../mixins/checkUrlType';
+import { mapGetters } from 'vuex';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
+
+import BaseSlider from '../UI/BaseSlider.vue';
+import BaseSlide from '../UI/BaseSlide.vue';
+import BasePagination from '../UI/BasePagination.vue';
 import BaseNavigation from '../UI/BaseNavigation.vue';
+import BaseImage from '../UI/BaseImage.vue';
+import WorktimeInfo from '../blocks/WorktimeInfo.vue';
+import ServicesList from '../blocks/ServicesList.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 export default {
-  mixins: [checkUrlType, converteSymbolsNewLineToBr],
+  mixins: [converteSymbolsNewLineToBr],
   props: {
     sectionName: {
       type: String,
       required: true,
     },
-    titleSmall: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    subTitle: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    slides: {
-      type: Array,
-      required: true,
-      default() {
-        return [];
-      },
-    },
-    content: {
-      type: Object,
-      required: false,
-      default: null,
+  },
+  components: {
+    BaseSlider,
+    BaseSlide,
+    BasePagination,
+    BaseNavigation,
+    BaseImage,
+    WorktimeInfo,
+    ServicesList,
+    BaseButton,
+  },
+  methods: {
+    slideList(slide) {
+      return slide.list ? slide.list.split('\r\n') : [];
     },
   },
   computed: {
+    ...mapGetters(['page']),
+    sections() {
+      return this.page && this.page.content && this.page.content.sections
+        ? this.page.content.sections
+        : [];
+    },
+    section() {
+      if (this.sectionName === 'around') {
+        return this.sections[3] ?? {};
+      }
+
+      if (this.sectionName === 'attraction') {
+        return this.sections[4] ?? {};
+      }
+
+      return null;
+    },
+    title() {
+      return this.section && this.section.title && this.section.title !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.title)
+        : null;
+    },
+    titleSmall() {
+      return this.section &&
+        this.section.titleSmall &&
+        this.section.titleSmall !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.titleSmall)
+        : null;
+    },
+    subTitle() {
+      return this.section &&
+        this.section.subTitle &&
+        this.section.subTitle !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.subTitle)
+        : null;
+    },
+    slides() {
+      return this.section && this.section.slides ? this.section.slides : [];
+    },
+    content() {
+      return this.section & this.section.content ? this.section.content : null;
+    },
     contentTitle() {
       const title =
         this.content && this.content.title ? this.content.title : null;
       return title ? this.converteSymbolsNewLineToBr(title) : title;
     },
-    contentTopText() {
+    contentTextTop() {
       const topText =
-        this.content && this.content.topText ? this.content.topText : null;
+        this.content && (this.content.topText || this.content.text)
+          ? this.content.topText ?? this.content.text
+          : null;
       return topText ? this.converteSymbolsNewLineToBr(topText) : topText;
     },
-    contentBottomText() {
+    contentTextBottom() {
       const bottomText =
         this.content && this.content.bottomText
           ? this.content.bottomText
@@ -219,28 +290,12 @@ export default {
         : bottomText;
     },
     contentButton() {
-      const button = this.content && this.content.button;
-      if (
-        button &&
-        button.link &&
-        button.link !== '' &&
-        button.text &&
-        button.text !== ''
-      ) {
-        return {
-          ...button,
-          type: this.checkUrlType(button.link),
-        };
-      }
-      return null;
-    },
-    isSmallTitle() {
-      return (
-        (this.titleSmall && this.titleSmall !== '') ||
-        (this.subTitle && this.subTitle !== '')
-      );
+      return this.content && this.content.button ? this.content.button : null;
     },
   },
-  components: { BaseNavigation },
 };
 </script>
+
+<style lang="scss">
+@import '~@/assets/scss/blocks/event';
+</style>

@@ -62,14 +62,15 @@ const router = createRouter({
       },
     },
     {
-      path: '/conference-hall',
+      path: '/conference-service/:id',
       component: ConferenceHall,
+      props: true,
       meta: {
         pageName: 'conference',
       },
     },
     {
-      path: '/en/conference-hall',
+      path: '/en/conference-service/:id',
       component: ConferenceHall,
       meta: {
         pageName: 'conference',

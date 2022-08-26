@@ -44,12 +44,12 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
         :oddEvenLast='oddEvenLast'
       )
 
-      a(
-        v-if='card.book && card.book.text && card.book.text !== "" && card.book.link && card.book.link !== ""',
-        :class='`cards__button button cards__button--${oddEvenLast}`',
-        :href='card.book.link'
-      )
-        span {{ card.book.text }}
+      BaseButton(
+        v-if='book',
+        sectionName='cards',
+        :modificator='`${oddEvenLast}`',
+        :button='book'
+      ) 
 </template>
 
 <script>
@@ -64,6 +64,7 @@ import BasePagination from '../../components/UI/BasePagination.vue';
 import ServicesList from '../../components/blocks/ServicesList.vue';
 
 import CardsSlide from './CardsSlide.vue';
+import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -84,6 +85,7 @@ export default {
     BasePagination,
     CardsSlide,
     ServicesList,
+    BaseButton,
   },
   computed: {
     ...mapGetters(['page']),
@@ -121,6 +123,9 @@ export default {
       return this.card.description
         ? this.converteSymbolsNewLineToBr(this.card.description)
         : '';
+    },
+    book() {
+      return this.card && this.card.book ? this.card.book : null;
     },
   },
 };

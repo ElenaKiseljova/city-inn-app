@@ -77,12 +77,12 @@ const __pages = {
             "link": "/smart-offer",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-3-mobile.webp",
-                "desktop": "/img/menu-bg-3-desktop.webp"
+                "mobile": "/img/menu-bg-1-mobile.webp",
+                "desktop": "/img/menu-bg-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-3-mobile.jpg",
-                "desktop": "/img/menu-bg-3-desktop.jpg"
+                "mobile": "/img/menu-bg-1-mobile.jpg",
+                "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
           },
@@ -91,12 +91,12 @@ const __pages = {
             "link": "/starfit",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-4-mobile.webp",
-                "desktop": "/img/menu-bg-4-desktop.webp"
+                "mobile": "/img/menu-bg-2-mobile.webp",
+                "desktop": "/img/menu-bg-2-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-4-mobile.jpg",
-                "desktop": "/img/menu-bg-4-desktop.jpg"
+                "mobile": "/img/menu-bg-2-mobile.jpg",
+                "desktop": "/img/menu-bg-2-desktop.jpg"
               }
             }
           },
@@ -105,12 +105,12 @@ const __pages = {
             "link": "/lobby-bar",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-5-mobile.webp",
-                "desktop": "/img/menu-bg-5-desktop.webp"
+                "mobile": "/img/menu-bg-1-mobile.webp",
+                "desktop": "/img/menu-bg-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-5-mobile.jpg",
-                "desktop": "/img/menu-bg-5-desktop.jpg"
+                "mobile": "/img/menu-bg-1-mobile.jpg",
+                "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
           },
@@ -119,12 +119,12 @@ const __pages = {
             "link": "conference-service",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-6-mobile.webp",
-                "desktop": "/img/menu-bg-6-mobile.webp"
+                "mobile": "/img/menu-bg-2-mobile.webp",
+                "desktop": "/img/menu-bg-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-6-mobile.jpg",
-                "desktop": "/img/menu-bg-6-mobile.jpg"
+                "mobile": "/img/menu-bg-2-mobile.jpg",
+                "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
           },
@@ -133,12 +133,12 @@ const __pages = {
             "link": "/group-request",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-7-mobile.webp",
-                "desktop": "/img/menu-bg-7-mobile.webp"
+                "mobile": "/img/menu-bg-2-mobile.webp",
+                "desktop": "/img/menu-bg-2-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-7-mobile.jpg",
-                "desktop": "/img/menu-bg-7-mobile.jpg"
+                "mobile": "/img/menu-bg-2-mobile.jpg",
+                "desktop": "/img/menu-bg-2-desktop.jpg"
               }
             }
           },
@@ -147,12 +147,12 @@ const __pages = {
             "link": "/#contacts",
             "image": {
               "webp": {
-                "mobile": "/img/menu-bg-8-mobile.webp",
-                "desktop": "/img/menu-bg-8-mobile.webp"
+                "mobile": "/img/menu-bg-1-mobile.webp",
+                "desktop": "/img/menu-bg-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/img/menu-bg-8-mobile.jpg",
-                "desktop": "/img/menu-bg-8-mobile.jpg"
+                "mobile": "/img/menu-bg-1-mobile.jpg",
+                "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
           }
@@ -1123,38 +1123,50 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/about/cosy-1-mobile.webp",
+                  "tablet": "/img/about/cosy-1-tablet.webp",
+                  "desktop": "/img/about/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/about/cosy-1-mobile.jpg",
+                  "tablet": "/img/about/cosy-1-tablet.jpg",
+                  "desktop": "/img/about/cosy-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/about/food-1-mobile.webp",
+                  "tablet": "/img/about/food-1-tablet.webp",
+                  "desktop": "/img/about/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/about/food-1-mobile.jpg",
+                  "tablet": "/img/about/food-1-tablet.jpg",
+                  "desktop": "/img/about/food-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/about/food-2-mobile.webp",
+                  "tablet": "/img/about/food-2-tablet.webp",
+                  "desktop": "/img/about/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/about/food-2-mobile.jpg",
+                  "tablet": "/img/about/food-2-tablet.jpg",
+                  "desktop": "/img/about/food-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/food-1-mobile.webp",
+                  "tablet": "/img/about/food-1-tablet.webp",
+                  "desktop": "/img/about/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/food-1-mobile.jpg",
+                  "tablet": "/img/about/food-1-tablet.jpg",
+                  "desktop": "/img/about/food-1-desktop.jpg"
                 }
               }
             ],
@@ -1179,18 +1191,18 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
                   }
                 },
                 "title": "ЛІС",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
                   "link": "google.com"
@@ -1199,18 +1211,18 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
                   }
                 },
                 "title": "гори",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
                   "link": "google.com"
@@ -1219,18 +1231,18 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
                   }
                 },
                 "title": "Море",
-                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕН",
                   "link": "google.com"
@@ -1245,14 +1257,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
                   }
                 },
                 "title": "",
@@ -1265,14 +1277,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
                   }
                 },
                 "title": "",
@@ -1285,14 +1297,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
                   }
                 },
                 "title": "",
@@ -1309,7 +1321,303 @@ const __pages = {
       }
     }  
   `,
-  '/conference-hall': `
+  '/en/about': `
+    {
+      "status": "success",
+      "content": {
+        "language": "en",
+        "title": "About us",
+        "seoTitle": "Про компанию City Inn!",
+        "seoDescription": "Про компанию City Inn! Самую топовою компанию в мире!",
+        "template": "about",
+        "image": {
+          "webp": {
+            "mobile": "/img/about/promo-bg-mobile.webp",
+            "tablet": "/img/about/promo-bg-tablet.webp",
+            "desktop": "/img/about/promo-bg-desktop.webp"
+          },
+          "jpg": {
+            "mobile": "/img/about/promo-bg-mobile.jpg",
+            "tablet": "/img/about/promo-bg-tablet.jpg",
+            "desktop": "/img/about/promo-bg-desktop.jpg"
+          }
+        },
+        "content": {
+          "bottom": {
+            "book": {
+              "text": "Call us",
+              "link": "tel:+380322471551"
+            }
+          },
+          "top": {
+            "description": "Nullam consequat lacus risus, non lobortismi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
+          }
+        },
+        "sections": [
+          {
+            "title": "Місія",
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/mission-1-mobile.webp",
+                  "tablet": "/img/about/mission-1-tablet.webp",
+                  "desktop": "/img/about/mission-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/mission-1-mobile.jpg",
+                  "tablet": "/img/about/mission-1-tablet.jpg",
+                  "desktop": "/img/about/mission-1-desktop.jpg"
+                }
+              }
+            ],
+            "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
+          },
+          {
+            "title": "чому<br />SMART?",
+            "image": {
+              "webp": {
+                "mobile": "/img/about/why-mobile.webp",
+                "tablet": "/img/about/why-tablet.webp",
+                "desktop": "/img/about/why-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/about/why-mobile.jpg",
+                "tablet": "/img/about/why-tablet.jpg",
+                "desktop": "/img/about/why-desktop.jpg"
+              }
+            },
+            "contentTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни ",
+            "contentBottom": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            "sectionName": "why"
+          },
+          {
+            "title": "ПЕРЕВАГИ",
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/img/about/cosy-1-mobile.webp",
+                  "tablet": "/img/about/cosy-1-tablet.webp",
+                  "desktop": "/img/about/cosy-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/cosy-1-mobile.jpg",
+                  "tablet": "/img/about/cosy-1-tablet.jpg",
+                  "desktop": "/img/about/cosy-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/food-1-mobile.webp",
+                  "tablet": "/img/about/food-1-tablet.webp",
+                  "desktop": "/img/about/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/food-1-mobile.jpg",
+                  "tablet": "/img/about/food-1-tablet.jpg",
+                  "desktop": "/img/about/food-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/food-2-mobile.webp",
+                  "tablet": "/img/about/food-2-tablet.webp",
+                  "desktop": "/img/about/food-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/food-2-mobile.jpg",
+                  "tablet": "/img/about/food-2-tablet.jpg",
+                  "desktop": "/img/about/food-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/about/food-1-mobile.webp",
+                  "tablet": "/img/about/food-1-tablet.webp",
+                  "desktop": "/img/about/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/about/food-1-mobile.jpg",
+                  "tablet": "/img/about/food-1-tablet.jpg",
+                  "desktop": "/img/about/food-1-desktop.jpg"
+                }
+              }
+            ],
+            "tabs": [
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              }
+            ]
+          },
+          {
+            "title": "Що навколо нас?",
+            "slides": [
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
+                  }
+                },
+                "title": "ЛІС",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕ",
+                  "link": "google.com"
+                }
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
+                  }
+                },
+                "title": "гори",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕ",
+                  "link": "google.com"
+                }
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/around-1-mobile.webp",
+                    "tablet": "/img/about/around-1-tablet.webp",
+                    "desktop": "/img/about/around-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/around-1-mobile.jpg",
+                    "tablet": "/img/about/around-1-tablet.jpg",
+                    "desktop": "/img/about/around-1-desktop.jpg"
+                  }
+                },
+                "title": "Море",
+                "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕН",
+                  "link": "google.com"
+                }
+              }
+            ],
+            "sectionName": "around"
+          },
+          {
+            "title": "Що<br>подивитись?",
+            "slides": [
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
+                  }
+                },
+                "title": "",
+                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕ",
+                  "link": "google.com"
+                }
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
+                  }
+                },
+                "title": "",
+                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕ",
+                  "link": "google.com"
+                }
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/about/attraction-1-mobile.webp",
+                    "tablet": "/img/about/attraction-1-tablet.webp",
+                    "desktop": "/img/about/attraction-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/about/attraction-1-mobile.jpg",
+                    "tablet": "/img/about/attraction-1-tablet.jpg",
+                    "desktop": "/img/about/attraction-1-desktop.jpg"
+                  }
+                },
+                "title": "",
+                "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
+                "button": {
+                  "text": "БІЛЬШЕН",
+                  "link": "google.com"
+                }
+              }
+            ],
+            "sectionName": "attraction"
+          }
+        ]
+      }
+    }  
+  `,
+  '/conference-service/conference-hall': `
     {
       "status": "success",
       "content": {
@@ -1335,24 +1643,22 @@ const __pages = {
             "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "tablet": "/img/conference/info-tablet.webp",
+                "desktop": "/img/conference/info-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "tablet": "/img/conference/info-tablet.jpg",
+                "desktop": "/img/conference/info-desktop.jpg"
               }
             },
             "services": [
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-guests.svg"
               },
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ],
             "button": {
@@ -1365,17 +1671,17 @@ const __pages = {
             "slides": [
               {
                 "title": "Театр",
-                "SVG": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg",
+                "SVG": "/img/icons/mono/icon-theater.svg",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/seating-1-mobile.webp",
+                    "tablet": "/img/conference/seating-1-tablet.webp",
+                    "desktop": "/img/conference/seating-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/seating-1-mobile.jpg",
+                    "tablet": "/img/conference/seating-1-tablet.jpg",
+                    "desktop": "/img/conference/seating-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1385,31 +1691,31 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
                   },
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               },
               {
                 "title": "Фуршет",
-                "SVG": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg",
+                "SVG": "/img/icons/mono/icon-buffet.svg",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/seating-1-mobile.webp",
+                    "tablet": "/img/conference/seating-1-tablet.webp",
+                    "desktop": "/img/conference/seating-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/seating-1-mobile.jpg",
+                    "tablet": "/img/conference/seating-1-tablet.jpg",
+                    "desktop": "/img/conference/seating-1-desktop.jpg"
                   }
                 },
                 "button": {
@@ -1418,12 +1724,12 @@ const __pages = {
                 },
                 "services": [
                   {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
-                    "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               }
@@ -1440,14 +1746,14 @@ const __pages = {
                 "price": 500,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/prices-1-mobile.webp",
+                    "tablet": "/img/conference/prices-1-tablet.webp",
+                    "desktop": "/img/conference/prices-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/prices-1-mobile.jpg",
+                    "tablet": "/img/conference/prices-1-tablet.jpg",
+                    "desktop": "/img/conference/prices-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1456,20 +1762,24 @@ const __pages = {
                 },
                 "services": [
                   {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
+                  },
+                  {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   },
                   {
-                    "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
                   },
                   {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               },
@@ -1481,14 +1791,14 @@ const __pages = {
                 "price": "FREE",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/prices-1-mobile.webp",
+                    "tablet": "/img/conference/prices-1-tablet.webp",
+                    "desktop": "/img/conference/prices-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/prices-1-mobile.jpg",
+                    "tablet": "/img/conference/prices-1-tablet.jpg",
+                    "desktop": "/img/conference/prices-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1497,16 +1807,16 @@ const __pages = {
                 },
                 "services": [
                   {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
+                  },
+                  {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               }
@@ -1523,14 +1833,14 @@ const __pages = {
                 "price": 90,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/coffee-1-mobile.webp",
+                    "tablet": "/img/conference/coffee-1-tablet.webp",
+                    "desktop": "/img/conference/coffee-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/coffee-1-mobile.jpg",
+                    "tablet": "/img/conference/coffee-1-tablet.jpg",
+                    "desktop": "/img/conference/coffee-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1546,14 +1856,14 @@ const __pages = {
                 "price": 1001,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/coffee-2-mobile.webp",
+                    "tablet": "/img/conference/coffee-2-tablet.webp",
+                    "desktop": "/img/conference/coffee-2-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/coffee-2-mobile.jpg",
+                    "tablet": "/img/conference/coffee-2-tablet.jpg",
+                    "desktop": "/img/conference/coffee-2-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1568,38 +1878,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               }
             ],
@@ -1623,14 +1933,14 @@ const __pages = {
             "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/conference/parking-mobile.webp",
+                "tablet": "/img/conference/parking-tablet.webp",
+                "desktop": "/img/conference/parking-desctop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/conference/parking-mobile.jpg",
+                "tablet": "/img/conference/parking-tablet.jpg",
+                "desktop": "/img/conference/parking-desctop.jpg"
               }
             }
           },
@@ -1663,14 +1973,14 @@ const __pages = {
                 "description": "менеджер з продажів",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desctop.jpg"
                   }
                 },
                 "contacts": [
@@ -1685,14 +1995,14 @@ const __pages = {
                 "description": "Менеджер з продажів",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desctop.jpg"
                   }
                 },
                 "contacts": [
@@ -1708,13 +2018,13 @@ const __pages = {
       }
     }
   `,
-  '/en/conference-hall': `
+  '/en/conference-service/conference-hall': `
     {
       "status": "success",
       "content": {
         "language": "en",
-        "title": "smart\r\nконференц-зал",
-        "seoTitle": "smart конференц-зал",
+        "title": "smart\r\nonference-hall",
+        "seoTitle": "smart conference-hall",
         "seoDescription": "smart конференц-зал від city inn",
         "template": "conference",
         "image": {
@@ -1728,30 +2038,28 @@ const __pages = {
             "tablet": "/img/conference/promo-bg-tablet.jpg",
             "desktop": "/img/conference/promo-bg-desktop.jpg"
           }
-        },
+        },       
         "sections": [
           {
             "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "tablet": "/img/conference/info-tablet.webp",
+                "desktop": "/img/conference/info-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "tablet": "/img/conference/info-tablet.jpg",
+                "desktop": "/img/conference/info-desktop.jpg"
               }
             },
             "services": [
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-guests.svg"
               },
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ],
             "button": {
@@ -1764,17 +2072,17 @@ const __pages = {
             "slides": [
               {
                 "title": "Театр",
-                "SVG": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg",
+                "SVG": "/img/icons/mono/icon-theater.svg",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/seating-1-mobile.webp",
+                    "tablet": "/img/conference/seating-1-tablet.webp",
+                    "desktop": "/img/conference/seating-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/seating-1-mobile.jpg",
+                    "tablet": "/img/conference/seating-1-tablet.jpg",
+                    "desktop": "/img/conference/seating-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1784,31 +2092,31 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
                   },
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               },
               {
                 "title": "Фуршет",
-                "SVG": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg",
+                "SVG": "/img/icons/mono/icon-buffet.svg",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/seating-1-mobile.webp",
+                    "tablet": "/img/conference/seating-1-tablet.webp",
+                    "desktop": "/img/conference/seating-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/seating-1-mobile.jpg",
+                    "tablet": "/img/conference/seating-1-tablet.jpg",
+                    "desktop": "/img/conference/seating-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1817,12 +2125,12 @@ const __pages = {
                 },
                 "services": [
                   {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
-                    "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               }
@@ -1839,14 +2147,14 @@ const __pages = {
                 "price": 500,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/prices-1-mobile.webp",
+                    "tablet": "/img/conference/prices-1-tablet.webp",
+                    "desktop": "/img/conference/prices-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/prices-1-mobile.jpg",
+                    "tablet": "/img/conference/prices-1-tablet.jpg",
+                    "desktop": "/img/conference/prices-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1855,20 +2163,24 @@ const __pages = {
                 },
                 "services": [
                   {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
+                  },
+                  {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   },
                   {
-                    "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
                   },
                   {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "міні парфюмерія",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               },
@@ -1880,14 +2192,14 @@ const __pages = {
                 "price": "FREE",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/prices-1-mobile.webp",
+                    "tablet": "/img/conference/prices-1-tablet.webp",
+                    "desktop": "/img/conference/prices-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/prices-1-mobile.jpg",
+                    "tablet": "/img/conference/prices-1-tablet.jpg",
+                    "desktop": "/img/conference/prices-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1896,16 +2208,16 @@ const __pages = {
                 },
                 "services": [
                   {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-wi-fi.svg"
+                  },
+                  {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-                  },
-                  {
-                    "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-conditioner.svg"
                   }
                 ]
               }
@@ -1922,14 +2234,14 @@ const __pages = {
                 "price": 90,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/coffee-1-mobile.webp",
+                    "tablet": "/img/conference/coffee-1-tablet.webp",
+                    "desktop": "/img/conference/coffee-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/coffee-1-mobile.jpg",
+                    "tablet": "/img/conference/coffee-1-tablet.jpg",
+                    "desktop": "/img/conference/coffee-1-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1945,14 +2257,14 @@ const __pages = {
                 "price": 1001,
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/coffee-2-mobile.webp",
+                    "tablet": "/img/conference/coffee-2-tablet.webp",
+                    "desktop": "/img/conference/coffee-2-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/coffee-2-mobile.jpg",
+                    "tablet": "/img/conference/coffee-2-tablet.jpg",
+                    "desktop": "/img/conference/coffee-2-desctop.jpg"
                   }
                 },
                 "button": {
@@ -1967,38 +2279,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desctop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desctop.jpg"
                 }
               }
             ],
@@ -2022,14 +2334,14 @@ const __pages = {
             "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/conference/parking-mobile.webp",
+                "tablet": "/img/conference/parking-tablet.webp",
+                "desktop": "/img/conference/parking-desctop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/conference/parking-mobile.jpg",
+                "tablet": "/img/conference/parking-tablet.jpg",
+                "desktop": "/img/conference/parking-desctop.jpg"
               }
             }
           },
@@ -2062,14 +2374,14 @@ const __pages = {
                 "description": "менеджер з продажів",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desctop.jpg"
                   }
                 },
                 "contacts": [
@@ -2084,14 +2396,14 @@ const __pages = {
                 "description": "Менеджер з продажів",
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desctop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desctop.jpg"
                   }
                 },
                 "contacts": [
@@ -2222,7 +2534,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2248,7 +2560,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2274,7 +2586,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -2399,7 +2711,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2425,7 +2737,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2451,7 +2763,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -2566,15 +2878,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2603,15 +2915,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2640,15 +2952,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2677,15 +2989,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2714,15 +3026,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2751,15 +3063,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2788,15 +3100,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -2875,7 +3187,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -2901,7 +3213,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -3101,15 +3413,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3138,15 +3450,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3175,15 +3487,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3212,15 +3524,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3249,15 +3561,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3286,15 +3598,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "2 ліжка",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3323,15 +3635,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "2 гостей",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "велике ліжко",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -3410,7 +3722,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -3436,7 +3748,7 @@ const __pages = {
                 "services": [
                   {
                     "title": "18-25 кв. м",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -4460,15 +4772,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4500,15 +4812,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4540,15 +4852,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4580,15 +4892,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4620,15 +4932,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4660,15 +4972,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4700,15 +5012,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           }
@@ -4771,15 +5083,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4811,15 +5123,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4851,15 +5163,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4891,15 +5203,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4931,15 +5243,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -4971,15 +5283,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "2 ліжка",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           },
@@ -5011,15 +5323,15 @@ const __pages = {
             "services": [
               {
                 "title": "2 гостей",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "18-25 кв. м",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ]
           }
@@ -5032,15 +5344,10 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "uk",
-        "title": "standart double",
+        "title": "Стандарт для двох",
         "seoTitle": "Кімната - standart double",
         "seoDescription": "Кімната standart double від City Inn. Топові ціні!",
         "template": "standart",
-        "content": {
-          "top": {
-            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками."
-          }
-        },
         "image": {
           "webp": {
             "mobile": "/img/standart/promo-bg-mobile.webp",
@@ -5053,89 +5360,11 @@ const __pages = {
             "desktop": "/img/standart/promo-bg-desktop.jpg"
           }
         },
-        "roomInfo": {
-          "id": 1,
-          "title": "standart double",
-          "image": {
-            "webp": {
-              "mobile": "/storage/media/2022/07/alesha-4.webp",
-              "tablet": "/storage/media/2022/07/alesha-4.webp",
-              "desktop": "/storage/media/2022/07/alesha-4.webp"
-            },
-            "jpg": {
-              "mobile": "/storage/media/2022/07/alesha-3.jpg",
-              "tablet": "/storage/media/2022/07/alesha-3.jpg",
-              "desktop": "/storage/media/2022/07/alesha-3.jpg"
-            }
-          },
-          "book": {
-            "title": "BOOK NOW",
-            "link": "google.com"
-          },
-          "price": 3100,
-          "mainFeatures": [
-            {
-              "title": "2 гостей",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "велике ліжко",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "18-25 кв. м",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            }
-          ],
-          "allFeatures": [
-            {
-              "title": "велике ліжко",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "міні парфюмерія",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "Wi-fi",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "Кондиціонер",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "міні-холодильник",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            }
-          ],
-          "includedFeatures": {
-            "items": [
-              {
-                "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              }
-            ],
-            "title": "ВХОДИТЬ У ВАРТІСТЬ"
-          },
-          "images": [
-            {
+        "id": 1,
+        "sections": [
+          {
+            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
+            "image": {
               "webp": {
                 "mobile": "/storage/media/2022/07/alesha-4.webp",
                 "tablet": "/storage/media/2022/07/alesha-4.webp",
@@ -5147,47 +5376,132 @@ const __pages = {
                 "desktop": "/storage/media/2022/07/alesha-3.jpg"
               }
             },
-            {
+            "button": {
+              "text": "BOOK NOW",
+              "link": "google.com"
+            },
+            "priceNumber": 3100,
+            "priceText": "ціна від",
+            "services": [
+              {
+                "title": "2 гостей",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "18-25 кв. м",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ]
+          },
+          {
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ]
+          },
+          {
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/alesha-4.webp",
+                  "tablet": "/storage/media/2022/07/alesha-4.webp",
+                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
+                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
+                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/network-2.webp",
+                  "tablet": "/storage/media/2022/07/network-2.webp",
+                  "desktop": "/storage/media/2022/07/network-2.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/network-2.jpg",
+                  "tablet": "/storage/media/2022/07/network-2.jpg",
+                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/network1-2.webp",
+                  "tablet": "/storage/media/2022/07/network1-2.webp",
+                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/network1-2.jpg",
+                  "tablet": "/storage/media/2022/07/network1-2.jpg",
+                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                }
+              }
+            ]
+          },
+          {
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ],
+            "title": "ВХОДИТЬ У ВАРТІСТЬ"
+          },
+          {
+            "title": "Буде тепло!",
+            "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/storage/media/2022/07/alesha-4.webp",
+                "tablet": "/storage/media/2022/07/alesha-4.webp",
+                "desktop": "/storage/media/2022/07/alesha-4.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/storage/media/2022/07/alesha-3.jpg",
+                "tablet": "/storage/media/2022/07/alesha-3.jpg",
+                "desktop": "/storage/media/2022/07/alesha-3.jpg"
               }
-            },
-            {
-              "webp": {
-                "mobile": "/storage/media/2022/07/network1-2.webp",
-                "tablet": "/storage/media/2022/07/network1-2.webp",
-                "desktop": "/storage/media/2022/07/network1-2.webp"
-              },
-              "jpg": {
-                "mobile": "/storage/media/2022/07/network1-2.jpg",
-                "tablet": "/storage/media/2022/07/network1-2.jpg",
-                "desktop": "/storage/media/2022/07/network1-2.jpg"
-              }
-            }
-          ]
-        },
-        "bottomBlock": {
-          "title": "Буде тепло!",
-          "image": {
-            "webp": {
-              "mobile": "/storage/media/2022/07/alesha-4.webp",
-              "tablet": "/storage/media/2022/07/alesha-4.webp",
-              "desktop": "/storage/media/2022/07/alesha-4.webp"
-            },
-            "jpg": {
-              "mobile": "/storage/media/2022/07/alesha-3.jpg",
-              "tablet": "/storage/media/2022/07/alesha-3.jpg",
-              "desktop": "/storage/media/2022/07/alesha-3.jpg"
             }
           }
-        }
+        ]
       }
     }
   `,
@@ -5200,11 +5514,6 @@ const __pages = {
         "seoTitle": "Кімната - standart double",
         "seoDescription": "Кімната standart double від City Inn. Топові ціні!",
         "template": "standart",
-        "content": {
-          "top": {
-            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками."
-          }
-        },
         "image": {
           "webp": {
             "mobile": "/img/standart/promo-bg-mobile.webp",
@@ -5217,89 +5526,11 @@ const __pages = {
             "desktop": "/img/standart/promo-bg-desktop.jpg"
           }
         },
-        "roomInfo": {
-          "id": 1,
-          "title": "standart double",
-          "image": {
-            "webp": {
-              "mobile": "/storage/media/2022/07/alesha-4.webp",
-              "tablet": "/storage/media/2022/07/alesha-4.webp",
-              "desktop": "/storage/media/2022/07/alesha-4.webp"
-            },
-            "jpg": {
-              "mobile": "/storage/media/2022/07/alesha-3.jpg",
-              "tablet": "/storage/media/2022/07/alesha-3.jpg",
-              "desktop": "/storage/media/2022/07/alesha-3.jpg"
-            }
-          },
-          "book": {
-            "title": "BOOK NOW",
-            "link": "google.com"
-          },
-          "price": 3100,
-          "mainFeatures": [
-            {
-              "title": "2 гостей",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "велике ліжко",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "18-25 кв. м",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            }
-          ],
-          "allFeatures": [
-            {
-              "title": "велике ліжко",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "міні парфюмерія",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "Wi-fi",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "Кондиціонер",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            },
-            {
-              "title": "міні-холодильник",
-              "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-            }
-          ],
-          "includedFeatures": {
-            "items": [
-              {
-                "title": "велике ліжко",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "міні парфюмерія",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              },
-              {
-                "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
-              }
-            ],
-            "title": "ВХОДИТЬ У ВАРТІСТЬ"
-          },
-          "images": [
-            {
+        "id": 1,
+        "sections": [
+          {
+            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
+            "image": {
               "webp": {
                 "mobile": "/storage/media/2022/07/alesha-4.webp",
                 "tablet": "/storage/media/2022/07/alesha-4.webp",
@@ -5311,47 +5542,132 @@ const __pages = {
                 "desktop": "/storage/media/2022/07/alesha-3.jpg"
               }
             },
-            {
+            "button": {
+              "text": "BOOK NOW",
+              "link": "google.com"
+            },
+            "priceNumber": 3100,
+            "priceText": "ціна від",
+            "services": [
+              {
+                "title": "2 гостей",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "18-25 кв. м",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ]
+          },
+          {
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ]
+          },
+          {
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/alesha-4.webp",
+                  "tablet": "/storage/media/2022/07/alesha-4.webp",
+                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
+                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
+                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/network-2.webp",
+                  "tablet": "/storage/media/2022/07/network-2.webp",
+                  "desktop": "/storage/media/2022/07/network-2.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/network-2.jpg",
+                  "tablet": "/storage/media/2022/07/network-2.jpg",
+                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/storage/media/2022/07/network1-2.webp",
+                  "tablet": "/storage/media/2022/07/network1-2.webp",
+                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                },
+                "jpg": {
+                  "mobile": "/storage/media/2022/07/network1-2.jpg",
+                  "tablet": "/storage/media/2022/07/network1-2.jpg",
+                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                }
+              }
+            ]
+          },
+          {
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ],
+            "title": "ВХОДИТЬ У ВАРТІСТЬ"
+          },
+          {
+            "title": "Буде тепло!",
+            "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/storage/media/2022/07/alesha-4.webp",
+                "tablet": "/storage/media/2022/07/alesha-4.webp",
+                "desktop": "/storage/media/2022/07/alesha-4.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/storage/media/2022/07/alesha-3.jpg",
+                "tablet": "/storage/media/2022/07/alesha-3.jpg",
+                "desktop": "/storage/media/2022/07/alesha-3.jpg"
               }
-            },
-            {
-              "webp": {
-                "mobile": "/storage/media/2022/07/network1-2.webp",
-                "tablet": "/storage/media/2022/07/network1-2.webp",
-                "desktop": "/storage/media/2022/07/network1-2.webp"
-              },
-              "jpg": {
-                "mobile": "/storage/media/2022/07/network1-2.jpg",
-                "tablet": "/storage/media/2022/07/network1-2.jpg",
-                "desktop": "/storage/media/2022/07/network1-2.jpg"
-              }
-            }
-          ]
-        },
-        "bottomBlock": {
-          "title": "Буде тепло!",
-          "image": {
-            "webp": {
-              "mobile": "/storage/media/2022/07/alesha-4.webp",
-              "tablet": "/storage/media/2022/07/alesha-4.webp",
-              "desktop": "/storage/media/2022/07/alesha-4.webp"
-            },
-            "jpg": {
-              "mobile": "/storage/media/2022/07/alesha-3.jpg",
-              "tablet": "/storage/media/2022/07/alesha-3.jpg",
-              "desktop": "/storage/media/2022/07/alesha-3.jpg"
             }
           }
-        }
+        ]
       }
     }
   `,
@@ -6530,15 +6846,15 @@ const __pages = {
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ],
             "slides": [
@@ -6559,15 +6875,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -6649,11 +6965,11 @@ const __pages = {
                 "services": [
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }
@@ -6749,15 +7065,15 @@ const __pages = {
             "services": [
               {
                 "title": "Wi-fi",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "Кондиціонер",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "міні-холодильник",
-                "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                "icon": "/img/icons/mono/icon-area.svg"
               }
             ],
             "slides": [
@@ -6778,15 +7094,15 @@ const __pages = {
                 "services": [
                   {
                     "title": "Wi-fi",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               },
@@ -6868,11 +7184,11 @@ const __pages = {
                 "services": [
                   {
                     "title": "Кондиціонер",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   },
                   {
                     "title": "міні-холодильник",
-                    "icon": "/storage/media/2022/07/furniture-interior-cabinet-table-desk-home-kitchen-icon-226181.svg"
+                    "icon": "/img/icons/mono/icon-area.svg"
                   }
                 ]
               }

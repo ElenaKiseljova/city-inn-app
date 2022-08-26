@@ -1,8 +1,7 @@
 <template lang="pug">
 section#contacts(
   v-if='pageName && contacts',
-  :class='`contacts contacts--${pageName}`',
-  ref='contacts'
+  :class='`contacts contacts--${pageName}`'
 )
   div(
     :class='`container contacts__container contacts__container--${pageName}`'
@@ -46,19 +45,12 @@ section#contacts(
               )
                 | {{ item.text }}
 
-      a(
-        v-if='book && book.type === "link"',
-        :class='`contacts__button button contacts__button--${pageName}`',
-        :href='book.link'
+      BaseButton(
+        v-if='book',
+        sectionName='contacts',
+        :modificator='`${pageName}`',
+        :button='book'
       )
-        span {{ book.title }}
-
-      router-link(
-        v-if='book && book.type === "route"',
-        :class='`contacts__button button contacts__button--${pageName}`',
-        :to='book.link'
-      )
-        span {{ book.title }}
 </template>
 
 <script>
@@ -69,11 +61,13 @@ import { contactsAnimation } from '../../assets/js/gsap-animations';
 import checkUrlType from '../../mixins/checkUrlType';
 
 import TheMap from '../blocks/TheMap.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 export default {
   mixins: [checkUrlType],
   components: {
     TheMap,
+    BaseButton,
   },
   data() {
     return {
@@ -111,22 +105,9 @@ export default {
       return [];
     },
     book() {
-      const bookButton =
-        this.contacts.content && this.contacts.content.book
-          ? this.contacts.content.book
-          : {};
-
-      if (
-        bookButton &&
-        bookButton.link &&
-        bookButton.link !== '' &&
-        bookButton.title &&
-        bookButton.title !== ''
-      ) {
-        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
-      }
-
-      return null;
+      return this.contacts.content && this.contacts.content.book
+        ? this.contacts.content.book
+        : null;
     },
   },
   mounted() {

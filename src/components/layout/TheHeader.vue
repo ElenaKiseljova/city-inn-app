@@ -11,21 +11,19 @@ header.page-header(v-if='pageName && header')
 
       .page-header__right
         .page-header__buttons
-          template(v-for='button in buttons')
-            a(
-              v-if='button.type === "link"',
-              :class='`page-header__button button __js page-header__button--${pageName}`',
-              :href='button.link',
-              target='_blank'
-            )
-              span {{ button.title }}
+          BaseButton(
+            v-if='book',
+            sectionName='page-header',
+            :modificator='pageName',
+            :button='book'
+          )
 
-            router-link(
-              v-if='button.type === "route"',
-              :class='`page-header__button button __js page-header__button--${pageName}`',
-              :to='button.link'
-            )
-              span {{ button.title }}
+          BaseButton(
+            v-if='offer',
+            sectionName='page-header',
+            :modificator='pageName',
+            :button='offer'
+          )
 
         .page-header__links
           button.page-header__burger.burger.__js
@@ -49,12 +47,14 @@ import checkUrlType from '../../mixins/checkUrlType';
 
 import SocialList from '../blocks/SocialList.vue';
 import MenuHeader from '../blocks/MenuHeader.vue';
+import BaseButton from '../UI/BaseButton.vue';
 
 export default {
   mixins: [checkUrlType],
   components: {
     SocialList,
     MenuHeader,
+    BaseButton,
   },
   data() {
     return {
@@ -64,40 +64,14 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'header']),
     book() {
-      const bookButton =
-        this.header.content && this.header.content.book
-          ? this.header.content.book
-          : null;
-
-      if (
-        bookButton &&
-        bookButton.link &&
-        bookButton.link !== '' &&
-        bookButton.title &&
-        bookButton.title !== ''
-      ) {
-        return { ...bookButton, type: this.checkUrlType(bookButton.link) };
-      }
-
-      return null;
+      return this.header.content && this.header.content.book
+        ? this.header.content.book
+        : null;
     },
     offer() {
-      const offerButton =
-        this.header.content && this.header.content.offer
-          ? this.header.content.offer
-          : null;
-
-      if (
-        offerButton &&
-        offerButton.link &&
-        offerButton.link !== '' &&
-        offerButton.title &&
-        offerButton.title !== ''
-      ) {
-        return { ...offerButton, type: this.checkUrlType(offerButton.link) };
-      }
-
-      return null;
+      return this.header.content && this.header.content.offer
+        ? this.header.content.offer
+        : null;
     },
     buttons() {
       const buttons = [];
@@ -106,6 +80,7 @@ export default {
         buttons.push({
           ...this.book,
           icon: 'icon-phone',
+          type: this.checkUrlType(this.book.link),
         });
       }
 
@@ -113,6 +88,7 @@ export default {
         buttons.push({
           ...this.offer,
           icon: 'icon-offer',
+          type: this.checkUrlType(this.offer.link),
         });
       }
 

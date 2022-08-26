@@ -32,7 +32,6 @@ export default {
 
 @import '~@/assets/scss/layout/container';
 
-@import '~@/assets/scss/blocks/button';
 @import '~@/assets/scss/blocks/title';
 @import '~@/assets/scss/blocks/title-inner';
 
