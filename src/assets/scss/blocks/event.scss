@@ -317,6 +317,8 @@
         margin-right: calc((100% + 106px) - 784px);
         margin-bottom: 235px;
         margin-left: -106px;
+
+        opacity: 0.8;
       }
 
       &--smart-rooms {
@@ -976,11 +978,9 @@
   &__text {
     @extend %w100;
 
-    color: var(--color-page, #ffffff);
+    @include font(14, 21, 400);
 
-    &--top {
-      @include font(14, 21, 400);
-    }
+    color: var(--color-page, #ffffff);
 
     &--bottom {
       margin-top: 20px;
@@ -993,9 +993,7 @@
     }
 
     @media screen and (min-width: $tablet) {
-      &--top {
-        @include font(12, 20, 400);
-      }
+      @include font(12, 20, 400);
 
       &--bottom {
         @include font(12, 20, 600);
@@ -1016,7 +1014,8 @@
       }
 
       &--smart-rooms,
-      &--halls {
+      &--halls,
+      &--locations {
         opacity: 1;
       }
     }

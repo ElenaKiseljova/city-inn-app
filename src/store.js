@@ -246,7 +246,7 @@ const store = createStore({
         responseJson = response;
       } catch (error) {
         /* TEST */
-        responseJson = __pages[path] || __pages['/'];
+        responseJson = __pages[path];
         /* TEST */
       }
 
@@ -256,7 +256,11 @@ const store = createStore({
         const responseObj = await JSON.parse(responseJson);
 
         context.commit('setNextPage', responseObj);
+
+        return true;
       }
+
+      return false;
     },
     async setPage(context, payload) {
       const path = payload.url;

@@ -146,6 +146,10 @@ export default {
         return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
+      if (this.sectionName === 'approach-conference') {
+        return this.sections && this.sections[0] ? this.sections[0] : null;
+      }
+
       return null;
     },
     title() {

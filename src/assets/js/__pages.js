@@ -116,7 +116,7 @@ const __pages = {
           },
           {
             "title": "conference service",
-            "link": "conference-service",
+            "link": "/conference-service",
             "image": {
               "webp": {
                 "mobile": "/img/menu-bg-2-mobile.webp",
@@ -277,7 +277,7 @@ const __pages = {
           },
           {
             "title": "conference service",
-            "link": "conference-service",
+            "link": "/conference-service",
             "image": {
               "webp": {
                 "mobile": "/img/menu-bg-6-mobile.webp",
@@ -2499,31 +2499,70 @@ const __pages = {
               },
               {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               }
             ],
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
                 }
               }
             ]
@@ -2536,195 +2575,38 @@ const __pages = {
                 "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
                 "button": {
                   "text": "VIEW MORE",
-                  "link": "/conference-service/conference-hall/"
+                  "link": "/conference-service/conference-hall"
                 },
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/conference-service/locations-1-mobile.webp",
+                    "tablet": "/img/conference-service/locations-1-tablet.webp",
+                    "desktop": "/img/conference-service/locations-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/conference-service/locations-1-mobile.jpg",
+                    "tablet": "/img/conference-service/locations-1-tablet.jpg",
+                    "desktop": "/img/conference-service/locations-1-desktop.jpg"
                   }
-                }
-              }
-            ]
-          },
-          {
-            "title": "ТИПИ ЗАХОДІВ",
-            "slides": [
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "КОНФЕРЕНЦІЯ",
-                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
-                "button": {
-                  "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
-                },
-                "services": [
-                  {
-                    "title": "2 ліжка",
-                    "icon": "/img/icons/mono/icon-area.svg"
-                  }
-                ]
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "ПЕРЕГОВОРИ",
-                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
-                "button": {
-                  "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
-                },
-                "services": [
-                  {
-                    "title": "велике ліжко",
-                    "icon": "/img/icons/mono/icon-area.svg"
-                  }
-                ]
-              },
-              {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
-                },
-                "title": "ПРЕЗЕНТАЦІЯ",
-                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
-                "button": {
-                  "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
-                },
-                "services": [
-                  {
-                    "title": "Wi-fi",
-                    "icon": "/img/icons/mono/icon-area.svg"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    }
-  `,
-  '/en/conference-service': `
-    {
-      "status": "success",
-      "content": {
-        "language": "en",
-        "title": "conference service",
-        "seoTitle": "conference service",
-        "seoDescription": "conference service from city inn",
-        "template": "conference-service",
-        "image": {
-          "webp": {
-            "mobile": "/img/conference-service/promo-bg-mobile.webp",
-            "tablet": "/img/conference-service/promo-bg-tablet.webp",
-            "desktop": "/img/conference-service/promo-bg-desktop.webp"
-          },
-          "jpg": {
-            "mobile": "/img/conference-service/promo-bg-mobile.jpg",
-            "tablet": "/img/conference-service/promo-bg-tablet.jpg",
-            "desktop": "/img/conference-service/promo-bg-desktop.jpg"
-          }
-        },
-        "sections": [
-          {
-            "title": "SMART ПІДХІД",
-            "tabs": [
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              },
-              {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
-              }
-            ],
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
                 }
               },
               {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
-                }
-              }
-            ]
-          },
-          {
-            "title": "ЛОКАЦІЇ",
-            "slides": [
-              {
-                "title": "smart конференц-зал",
-                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
+                "title": "smart конференц-зал 2",
+                "description": "Сучасний компактний номер, який ідеально підходить для",
                 "button": {
                   "text": "VIEW MORE",
-                  "link": "/conference-service/conference-hall/"
+                  "link": "/conference-service/conference-hall"
                 },
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/conference-service/locations-1-mobile.webp",
+                    "tablet": "/img/conference-service/locations-2-tablet.webp",
+                    "desktop": "/img/conference-service/locations-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/conference-service/locations-2-mobile.jpg",
+                    "tablet": "/img/conference-service/locations-2-tablet.jpg",
+                    "desktop": "/img/conference-service/locations-2-desktop.jpg"
                   }
                 }
               }

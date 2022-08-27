@@ -143,15 +143,14 @@ section(
           )
 
           div(
-            v-if='slide.button && slide.button.text && slide.button.text !== "" && slide.button.link && slide.button.link !== ""',
+            v-if='slide.button',
             :class='`event__buttons event__buttons--${sectionName}`'
           )
-            a(
-              :class='`button event__button event__button--${sectionName}`',
-              :href='slide.button.link'
+            BaseButton(
+              sectionName='event',
+              :modificator='sectionName',
+              :button='slide.button'
             )
-              span
-                | {{ slide.button.text }}
 
             div(
               :class='`event__arrow-top arrow-top event__arrow-top--${sectionName}`'
@@ -240,7 +239,7 @@ export default {
         : [];
     },
     section() {
-      if (this.sectionName === 'around') {
+      if (this.sectionName === 'around' || this.sectionName === 'coffee') {
         return this.sections && this.sections[3] ? this.sections[3] : null;
       }
 
@@ -248,8 +247,8 @@ export default {
         return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
-      if (this.sectionName === 'coffee') {
-        return this.sections[3] ?? {};
+      if (this.sectionName === 'locations') {
+        return this.sections && this.sections[1] ? this.sections[1] : null;
       }
 
       return null;

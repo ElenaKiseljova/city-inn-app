@@ -20,6 +20,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
+      name: 'Home',
       path: '/',
       component: HomePage,
       meta: {
@@ -27,7 +28,9 @@ const router = createRouter({
       },
     },
     {
+      name: 'Home En',
       path: '/en/',
+      alias: ['/en'],
       component: HomePage,
       meta: {
         pageName: 'home',
@@ -35,6 +38,7 @@ const router = createRouter({
     },
     {
       path: '/about',
+      alias: ['/about/'],
       component: AboutHotel,
       meta: {
         pageName: 'about',
@@ -42,26 +46,32 @@ const router = createRouter({
     },
     {
       path: '/en/about',
+      alias: ['/en/about/'],
       component: AboutHotel,
       meta: {
         pageName: 'about',
       },
     },
     {
+      name: 'Conference Service',
       path: '/conference-service',
+      alias: ['/conference-service/'],
       component: ConferenceService,
       meta: {
         pageName: 'conference-service',
       },
     },
     {
+      name: 'Conference Service En',
       path: '/en/conference-service',
+      alias: ['/en/conference-service/'],
       component: ConferenceService,
       meta: {
         pageName: 'conference-service',
       },
     },
     {
+      name: 'Conference Hall',
       path: '/conference-service/:id',
       component: ConferenceHall,
       props: true,
@@ -70,14 +80,17 @@ const router = createRouter({
       },
     },
     {
+      name: 'Conference Hall En',
       path: '/en/conference-service/:id',
       component: ConferenceHall,
+      props: true,
       meta: {
         pageName: 'conference',
       },
     },
     {
       path: '/group-request',
+      alias: ['/group-request/'],
       component: GroupRequest,
       meta: {
         pageName: 'group',
@@ -85,6 +98,7 @@ const router = createRouter({
     },
     {
       path: '/en/group-request',
+      alias: ['/en/group-request/'],
       component: GroupRequest,
       meta: {
         pageName: 'group',
@@ -92,6 +106,7 @@ const router = createRouter({
     },
     {
       path: '/lobby-bar',
+      alias: ['/lobby-bar/'],
       component: LobbyBar,
       meta: {
         pageName: 'lobby',
@@ -99,6 +114,7 @@ const router = createRouter({
     },
     {
       path: '/en/lobby-bar',
+      alias: ['/en/lobby-bar/'],
       component: LobbyBar,
       meta: {
         pageName: 'lobby',
@@ -106,6 +122,7 @@ const router = createRouter({
     },
     {
       path: '/restaurant-sviatoslav',
+      alias: ['/restaurant-sviatoslav/'],
       component: RestaurantSviatoslav,
       meta: {
         pageName: 'restaurant',
@@ -113,26 +130,32 @@ const router = createRouter({
     },
     {
       path: '/en/restaurant-sviatoslav',
+      alias: ['/en/restaurant-sviatoslav/'],
       component: RestaurantSviatoslav,
       meta: {
         pageName: 'restaurant',
       },
     },
     {
+      name: 'Rooms',
       path: '/rooms',
+      alias: ['/rooms/'],
       component: RoomsHotel,
       meta: {
         pageName: 'rooms',
       },
     },
     {
+      name: 'Rooms En',
       path: '/en/rooms',
+      alias: ['/en/rooms/'],
       component: RoomsHotel,
       meta: {
         pageName: 'rooms',
       },
     },
     {
+      name: 'Room',
       path: '/rooms/:id',
       component: StandartDouble,
       props: true,
@@ -141,6 +164,7 @@ const router = createRouter({
       },
     },
     {
+      name: 'Room En',
       path: '/en/rooms/:id',
       component: StandartDouble,
       props: true,
@@ -150,6 +174,7 @@ const router = createRouter({
     },
     {
       path: '/smart-offer',
+      alias: ['/smart-offer/'],
       component: SmartOffer,
       meta: {
         pageName: 'smart',
@@ -157,6 +182,7 @@ const router = createRouter({
     },
     {
       path: '/en/smart-offer',
+      alias: ['/en/smart-offer/'],
       component: SmartOffer,
       meta: {
         pageName: 'smart',
@@ -164,6 +190,7 @@ const router = createRouter({
     },
     {
       path: '/starfit',
+      alias: ['/starfit/'],
       component: StarfitComplex,
       meta: {
         pageName: 'starfit',
@@ -171,6 +198,7 @@ const router = createRouter({
     },
     {
       path: '/en/starfit',
+      alias: ['/en/starfit/'],
       component: StarfitComplex,
       meta: {
         pageName: 'starfit',
@@ -179,6 +207,7 @@ const router = createRouter({
     {
       path: '/:notFound(.*)',
       alias: ['/en/:notFound(.*)'],
+      redirect: '/',
       component: NotFound,
       meta: {
         pageName: '404',
@@ -210,9 +239,42 @@ let curLang;
 router.beforeEach(async (to, _, next) => {
   curLang = store.getters.lang;
 
-  await store.dispatch('setNextPage', { url: to.path });
+  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path });
 
-  next();
+  if (nextPageIsSet) {
+    next();
+  } else {
+    switch (to.name) {
+      case 'Room':
+        next({ name: 'Rooms' });
+
+        break;
+
+      case 'Room En':
+        next({ name: 'Rooms En' });
+
+        break;
+
+      case 'Conference Hall':
+        next({ name: 'Conference Service' });
+
+        break;
+
+      case 'Conference Hall En':
+        next({ name: 'Conference Service En' });
+
+        break;
+
+      default:
+        if (curLang === 'uk') {
+          next({ name: 'Home' });
+        } else {
+          next({ name: 'Home En' });
+        }
+
+        break;
+    }
+  }
 });
 
 router.afterEach(async (to) => {
