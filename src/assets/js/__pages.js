@@ -2599,7 +2599,7 @@ const __pages = {
                 },
                 "image": {
                   "webp": {
-                    "mobile": "/img/conference-service/locations-1-mobile.webp",
+                    "mobile": "/img/conference-service/locations-2-mobile.webp",
                     "tablet": "/img/conference-service/locations-2-tablet.webp",
                     "desktop": "/img/conference-service/locations-2-desktop.webp"
                   },
@@ -2618,14 +2618,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference-service/slide-1-mobile.webp",
+                    "tablet": "/img/conference-service/slide-1-tablet.webp",
+                    "desktop": "/img/conference-service/slide-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference-service/slide-1-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-1-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-1-desktop.jpg"
                   }
                 },
                 "title": "КОНФЕРЕНЦІЯ",
@@ -2644,14 +2644,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference-service/slide-2-mobile.webp",
+                    "tablet": "/img/conference-service/slide-2-tablet.webp",
+                    "desktop": "/img/conference-service/slide-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference-service/slide-2-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-2-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-2-desktop.jpg"
                   }
                 },
                 "title": "ПЕРЕГОВОРИ",
@@ -2670,14 +2670,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference-service/slide-3-mobile.webp",
+                    "tablet": "/img/conference-service/slide-3-tablet.webp",
+                    "desktop": "/img/conference-service/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference-service/slide-3-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-3-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-3-desktop.jpg"
                   }
                 },
                 "title": "ПРЕЗЕНТАЦІЯ",
@@ -2687,6 +2687,302 @@ const __pages = {
                   "link": "google.com"
                 },
                 "services": [
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/slide-4-mobile.webp",
+                    "tablet": "/img/conference-service/slide-4-tablet.webp",
+                    "desktop": "/img/conference-service/slide-4-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/slide-4-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-4-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-4-desktop.jpg"
+                  }
+                },
+                "title": "ПРЕЗЕНТАЦІЯ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "button": {
+                  "text": "ЗАБРОНЮВАТИ",
+                  "link": "google.com"
+                },
+                "services": [
+                  {
+                    "title": "hairdryer",
+                    "icon": "/img/icons/mono/icon-hairdryer.svg"
+                  },
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  `,
+  '/en/conference-service': `
+    {
+      "status": "success",
+      "content": {
+        "language": "en",
+        "title": "conference service",
+        "seoTitle": "conference service",
+        "seoDescription": "conference service from city inn",
+        "template": "conference-service",
+        "image": {
+          "webp": {
+            "mobile": "/img/conference-service/promo-bg-mobile.webp",
+            "tablet": "/img/conference-service/promo-bg-tablet.webp",
+            "desktop": "/img/conference-service/promo-bg-desktop.webp"
+          },
+          "jpg": {
+            "mobile": "/img/conference-service/promo-bg-mobile.jpg",
+            "tablet": "/img/conference-service/promo-bg-tablet.jpg",
+            "desktop": "/img/conference-service/promo-bg-desktop.jpg"
+          }
+        },
+        "sections": [
+          {
+            "title": "SMART ПІДХІД",
+            "tabs": [
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              },
+              {
+                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+              }
+            ],
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/conference/why-1-mobile.webp",
+                  "tablet": "/img/conference/why-1-tablet.webp",
+                  "desktop": "/img/conference/why-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/conference/why-1-mobile.jpg",
+                  "tablet": "/img/conference/why-1-tablet.jpg",
+                  "desktop": "/img/conference/why-1-desktop.jpg"
+                }
+              }
+            ]
+          },
+          {
+            "title": "ЛОКАЦІЇ",
+            "slides": [
+              {
+                "title": "smart конференц-зал",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоративні партнери для відряджень або групових поселень.",
+                "button": {
+                  "text": "VIEW MORE",
+                  "link": "/conference-service/conference-hall"
+                },
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/locations-1-mobile.webp",
+                    "tablet": "/img/conference-service/locations-1-tablet.webp",
+                    "desktop": "/img/conference-service/locations-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/locations-1-mobile.jpg",
+                    "tablet": "/img/conference-service/locations-1-tablet.jpg",
+                    "desktop": "/img/conference-service/locations-1-desktop.jpg"
+                  }
+                }
+              },
+              {
+                "title": "smart конференц-зал 2",
+                "description": "Сучасний компактний номер, який ідеально підходить для",
+                "button": {
+                  "text": "VIEW MORE",
+                  "link": "/conference-service/conference-hall"
+                },
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/locations-2-mobile.webp",
+                    "tablet": "/img/conference-service/locations-2-tablet.webp",
+                    "desktop": "/img/conference-service/locations-2-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/locations-2-mobile.jpg",
+                    "tablet": "/img/conference-service/locations-2-tablet.jpg",
+                    "desktop": "/img/conference-service/locations-2-desktop.jpg"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "title": "ТИПИ ЗАХОДІВ",
+            "slides": [
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/slide-1-mobile.webp",
+                    "tablet": "/img/conference-service/slide-1-tablet.webp",
+                    "desktop": "/img/conference-service/slide-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/slide-1-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-1-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-1-desktop.jpg"
+                  }
+                },
+                "title": "КОНФЕРЕНЦІЯ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "button": {
+                  "text": "ЗАБРОНЮВАТИ",
+                  "link": "google.com"
+                },
+                "services": [
+                  {
+                    "title": "2 ліжка",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/slide-2-mobile.webp",
+                    "tablet": "/img/conference-service/slide-2-tablet.webp",
+                    "desktop": "/img/conference-service/slide-2-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/slide-2-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-2-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-2-desktop.jpg"
+                  }
+                },
+                "title": "ПЕРЕГОВОРИ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "button": {
+                  "text": "ЗАБРОНЮВАТИ",
+                  "link": "google.com"
+                },
+                "services": [
+                  {
+                    "title": "велике ліжко",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/slide-3-mobile.webp",
+                    "tablet": "/img/conference-service/slide-3-tablet.webp",
+                    "desktop": "/img/conference-service/slide-3-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/slide-3-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-3-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-3-desktop.jpg"
+                  }
+                },
+                "title": "ПРЕЗЕНТАЦІЯ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "button": {
+                  "text": "ЗАБРОНЮВАТИ",
+                  "link": "google.com"
+                },
+                "services": [
+                  {
+                    "title": "Wi-fi",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference-service/slide-4-mobile.webp",
+                    "tablet": "/img/conference-service/slide-4-tablet.webp",
+                    "desktop": "/img/conference-service/slide-4-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference-service/slide-4-mobile.jpg",
+                    "tablet": "/img/conference-service/slide-4-tablet.jpg",
+                    "desktop": "/img/conference-service/slide-4-desktop.jpg"
+                  }
+                },
+                "title": "ПРЕЗЕНТАЦІЯ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "button": {
+                  "text": "ЗАБРОНЮВАТИ",
+                  "link": "google.com"
+                },
+                "services": [
+                  {
+                    "title": "hairdryer",
+                    "icon": "/img/icons/mono/icon-hairdryer.svg"
+                  },
                   {
                     "title": "Wi-fi",
                     "icon": "/img/icons/mono/icon-area.svg"
@@ -2720,58 +3016,77 @@ const __pages = {
             "desktop": "/img/group/promo-bg-desktop.jpg"
           }
         },
+        "content": {
+          "bottom": {
+          },
+          "top": {
+            "description": "Nullam consequat lacus risus, non lobortismi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
+          }
+        },
         "sections": [
           {
             "title": "smart-підхід",
             "tabs": [
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "Заради наших гостей Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "ми зробили колоборацію з комплексом для відпочинку Starfit."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               }
             ],
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/approach-1-mobile.webp",
+                  "tablet": "/img/group/approach-1-tablet.webp",
+                  "desktop": "/img/group/approach-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/approach-1-mobile.jpg",
+                  "tablet": "/img/group/approach-1-tablet.jpg",
+                  "desktop": "/img/group/approach-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/approach-1-mobile.webp",
+                  "tablet": "/img/group/approach-1-tablet.webp",
+                  "desktop": "/img/group/approach-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/approach-1-mobile.jpg",
+                  "tablet": "/img/group/approach-1-tablet.jpg",
+                  "desktop": "/img/group/approach-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/group/approach-2-mobile.webp",
+                  "tablet": "/img/group/approach-2-tablet.webp",
+                  "desktop": "/img/group/approach-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/group/approach-2-mobile.jpg",
+                  "tablet": "/img/group/approach-2-tablet.jpg",
+                  "desktop": "/img/group/approach-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/group/approach-2-mobile.webp",
+                  "tablet": "/img/group/approach-2-tablet.webp",
+                  "desktop": "/img/group/approach-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/group/approach-2-mobile.jpg",
+                  "tablet": "/img/group/approach-2-tablet.jpg",
+                  "desktop": "/img/group/approach-2-desktop.jpg"
                 }
               }
             ]
@@ -2787,19 +3102,19 @@ const __pages = {
                 "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
                   "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-                  "link": "/rooms/standart_double"
+                  "link": "/rooms/1"
                 },
                 "services": [
                   {
@@ -2821,17 +3136,17 @@ const __pages = {
                 "title": "standart twin",
                 "code": "standart_twin",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-1-mobile.webp",
+                    "tablet": "/img/group/room-1-tablet.webp",
+                    "desktop": "/img/group/room-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-1-mobile.jpg",
+                    "tablet": "/img/group/room-1-tablet.jpg",
+                    "desktop": "/img/group/room-1-desktop.jpg"
                   }
                 },
                 "more": {
@@ -2858,17 +3173,17 @@ const __pages = {
                 "title": "superior double",
                 "code": "superior_double",
                 "price": 3000,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -2895,17 +3210,17 @@ const __pages = {
                 "title": "superior twin",
                 "code": "superior_twin",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -2932,17 +3247,17 @@ const __pages = {
                 "title": "superior family",
                 "code": "superior_family",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/group/room-1-mobile.webp",
+                    "tablet": "/img/group/room-1-tablet.webp",
+                    "desktop": "/img/group/room-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/group/room-1-mobile.jpg",
+                    "tablet": "/img/group/room-1-tablet.jpg",
+                    "desktop": "/img/group/room-1-desktop.jpg"
                   }
                 },
                 "more": {
@@ -2969,17 +3284,17 @@ const __pages = {
                 "title": "junior suite",
                 "code": "junior_suite",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3006,17 +3321,17 @@ const __pages = {
                 "title": "suite",
                 "code": "suite",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3051,38 +3366,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/group/food-2-mobile.webp",
+                  "tablet": "/img/group/food-2-tablet.webp",
+                  "desktop": "/img/group/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/group/food-2-mobile.jpg",
+                  "tablet": "/img/group/food-2-tablet.jpg",
+                  "desktop": "/img/group/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/food-2-mobile.webp",
+                  "tablet": "/img/group/food-2-tablet.webp",
+                  "desktop": "/img/group/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/food-2-mobile.jpg",
+                  "tablet": "/img/group/food-2-tablet.jpg",
+                  "desktop": "/img/group/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/food-1-mobile.webp",
+                  "tablet": "/img/group/food-1-tablet.webp",
+                  "desktop": "/img/group/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/food-1-mobile.jpg",
+                  "tablet": "/img/group/food-1-tablet.jpg",
+                  "desktop": "/img/group/food-1-desktop.jpg"
                 }
               }
             ]
@@ -3094,21 +3409,21 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/hall-2-mobile.webp",
+                    "tablet": "/img/group/hall-2-tablet.webp",
+                    "desktop": "/img/group/hall-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/hall-2-mobile.jpg",
+                    "tablet": "/img/group/hall-2-tablet.jpg",
+                    "desktop": "/img/group/hall-2-desktop.jpg"
                   }
                 },
                 "title": "КОНФЕРЕНЦ ЗАЛИ",
-                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.\r\n\r\nlacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
                 "button": {
                   "text": "VIEW MORE",
-                  "link": "/conference-service/conference-hall/"
+                  "link": "/conference-service/conference-hall"
                 },
                 "services": [
                   {
@@ -3120,14 +3435,40 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/hall-2-mobile.webp",
+                    "tablet": "/img/group/hall-2-tablet.webp",
+                    "desktop": "/img/group/hall-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/hall-2-mobile.jpg",
+                    "tablet": "/img/group/hall-2-tablet.jpg",
+                    "desktop": "/img/group/hall-2-desktop.jpg"
+                  }
+                },
+                "title": "КОНФЕРЕНЦ ЗАЛИ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
+                "button": {
+                  "text": "VIEW MORE",
+                  "link": "/conference-service/conference-hall"
+                },
+                "services": [
+                  {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/group/hall-1-mobile.webp",
+                    "tablet": "/img/group/hall-1-tablet.webp",
+                    "desktop": "/img/group/hall-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/group/hall-1-mobile.jpg",
+                    "tablet": "/img/group/hall-1-tablet.jpg",
+                    "desktop": "/img/group/hall-1-desktop.jpg"
                   }
                 },
                 "title": "Meeting Room",
@@ -3150,32 +3491,44 @@ const __pages = {
             "subTitle": "відпочинок гостей у спортивному",
             "button": {
               "text": "Про STARFIT",
-              "link": "/starfit/"
+              "link": "/starfit"
             },
             "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/slide-1-mobile.webp",
+                  "tablet": "/img/group/slide-1-tablet.webp",
+                  "desktop": "/img/group/slide-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/slide-1-mobile.jpg",
+                  "tablet": "/img/group/slide-1-tablet.jpg",
+                  "desktop": "/img/group/slide-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/slide-2-mobile.webp",
+                  "tablet": "/img/group/slide-2-tablet.webp",
+                  "desktop": "/img/group/slide-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/slide-2-mobile.jpg",
+                  "tablet": "/img/group/slide-2-tablet.jpg",
+                  "desktop": "/img/group/slide-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/group/slide-3-mobile.webp",
+                  "tablet": "/img/group/slide-3-tablet.webp",
+                  "desktop": "/img/group/slide-3-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/group/slide-3-mobile.jpg",
+                  "tablet": "/img/group/slide-3-tablet.jpg",
+                  "desktop": "/img/group/slide-3-desktop.jpg"
                 }
               }
             ]
@@ -3187,14 +3540,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "title": "Мар'яна Ніколін",
@@ -3209,14 +3562,58 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "title": "Андрій Ліпак",
+                "description": "Менеджер з продажів",
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "title": "Андрій Ліпак",
+                "description": "Менеджер з продажів",
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "title": "Андрій Ліпак",
@@ -3255,58 +3652,77 @@ const __pages = {
             "desktop": "/img/group/promo-bg-desktop.jpg"
           }
         },
+        "content": {
+          "bottom": {
+          },
+          "top": {
+            "description": "Nullam consequat lacus risus, non lobortismi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam."
+          }
+        },
         "sections": [
           {
             "title": "smart-підхід",
             "tabs": [
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "Заради наших гостей Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "ми зробили колоборацію з комплексом для відпочинку Starfit."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               },
               {
-                "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни.\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
+                "text": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення."
               }
             ],
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/approach-1-mobile.webp",
+                  "tablet": "/img/group/approach-1-tablet.webp",
+                  "desktop": "/img/group/approach-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/approach-1-mobile.jpg",
+                  "tablet": "/img/group/approach-1-tablet.jpg",
+                  "desktop": "/img/group/approach-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/approach-1-mobile.webp",
+                  "tablet": "/img/group/approach-1-tablet.webp",
+                  "desktop": "/img/group/approach-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/approach-1-mobile.jpg",
+                  "tablet": "/img/group/approach-1-tablet.jpg",
+                  "desktop": "/img/group/approach-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/group/approach-2-mobile.webp",
+                  "tablet": "/img/group/approach-2-tablet.webp",
+                  "desktop": "/img/group/approach-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/group/approach-2-mobile.jpg",
+                  "tablet": "/img/group/approach-2-tablet.jpg",
+                  "desktop": "/img/group/approach-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/group/approach-2-mobile.webp",
+                  "tablet": "/img/group/approach-2-tablet.webp",
+                  "desktop": "/img/group/approach-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/group/approach-2-mobile.jpg",
+                  "tablet": "/img/group/approach-2-tablet.jpg",
+                  "desktop": "/img/group/approach-2-desktop.jpg"
                 }
               }
             ]
@@ -3322,19 +3738,19 @@ const __pages = {
                 "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
                   "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-                  "link": "/rooms/standart_double"
+                  "link": "/rooms/1"
                 },
                 "services": [
                   {
@@ -3356,17 +3772,17 @@ const __pages = {
                 "title": "standart twin",
                 "code": "standart_twin",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-1-mobile.webp",
+                    "tablet": "/img/group/room-1-tablet.webp",
+                    "desktop": "/img/group/room-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-1-mobile.jpg",
+                    "tablet": "/img/group/room-1-tablet.jpg",
+                    "desktop": "/img/group/room-1-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3393,17 +3809,17 @@ const __pages = {
                 "title": "superior double",
                 "code": "superior_double",
                 "price": 3000,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3430,17 +3846,17 @@ const __pages = {
                 "title": "superior twin",
                 "code": "superior_twin",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3467,17 +3883,17 @@ const __pages = {
                 "title": "superior family",
                 "code": "superior_family",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/group/room-1-mobile.webp",
+                    "tablet": "/img/group/room-1-tablet.webp",
+                    "desktop": "/img/group/room-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/group/room-1-mobile.jpg",
+                    "tablet": "/img/group/room-1-tablet.jpg",
+                    "desktop": "/img/group/room-1-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3504,17 +3920,17 @@ const __pages = {
                 "title": "junior suite",
                 "code": "junior_suite",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3541,17 +3957,17 @@ const __pages = {
                 "title": "suite",
                 "code": "suite",
                 "price": 3100,
-                "description": "test",
+                "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей",
                 "previewImage": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/group/room-2-mobile.webp",
+                    "tablet": "/img/group/room-2-tablet.webp",
+                    "desktop": "/img/group/room-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/group/room-2-mobile.jpg",
+                    "tablet": "/img/group/room-2-tablet.jpg",
+                    "desktop": "/img/group/room-2-desktop.jpg"
                   }
                 },
                 "more": {
@@ -3586,38 +4002,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/group/food-2-mobile.webp",
+                  "tablet": "/img/group/food-2-tablet.webp",
+                  "desktop": "/img/group/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/group/food-2-mobile.jpg",
+                  "tablet": "/img/group/food-2-tablet.jpg",
+                  "desktop": "/img/group/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/food-2-mobile.webp",
+                  "tablet": "/img/group/food-2-tablet.webp",
+                  "desktop": "/img/group/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/food-2-mobile.jpg",
+                  "tablet": "/img/group/food-2-tablet.jpg",
+                  "desktop": "/img/group/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/food-1-mobile.webp",
+                  "tablet": "/img/group/food-1-tablet.webp",
+                  "desktop": "/img/group/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/food-1-mobile.jpg",
+                  "tablet": "/img/group/food-1-tablet.jpg",
+                  "desktop": "/img/group/food-1-desktop.jpg"
                 }
               }
             ]
@@ -3629,21 +4045,21 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/hall-2-mobile.webp",
+                    "tablet": "/img/group/hall-2-tablet.webp",
+                    "desktop": "/img/group/hall-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/hall-2-mobile.jpg",
+                    "tablet": "/img/group/hall-2-tablet.jpg",
+                    "desktop": "/img/group/hall-2-desktop.jpg"
                   }
                 },
                 "title": "КОНФЕРЕНЦ ЗАЛИ",
-                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.\r\n\r\nlacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
                 "button": {
                   "text": "VIEW MORE",
-                  "link": "/conference-service/conference-hall/"
+                  "link": "/conference-service/conference-hall"
                 },
                 "services": [
                   {
@@ -3655,14 +4071,40 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/group/hall-2-mobile.webp",
+                    "tablet": "/img/group/hall-2-tablet.webp",
+                    "desktop": "/img/group/hall-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/group/hall-2-mobile.jpg",
+                    "tablet": "/img/group/hall-2-tablet.jpg",
+                    "desktop": "/img/group/hall-2-desktop.jpg"
+                  }
+                },
+                "title": "КОНФЕРЕНЦ ЗАЛИ",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
+                "button": {
+                  "text": "VIEW MORE",
+                  "link": "/conference-service/conference-hall"
+                },
+                "services": [
+                  {
+                    "title": "18-25 кв. м",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/group/hall-1-mobile.webp",
+                    "tablet": "/img/group/hall-1-tablet.webp",
+                    "desktop": "/img/group/hall-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/group/hall-1-mobile.jpg",
+                    "tablet": "/img/group/hall-1-tablet.jpg",
+                    "desktop": "/img/group/hall-1-desktop.jpg"
                   }
                 },
                 "title": "Meeting Room",
@@ -3685,32 +4127,44 @@ const __pages = {
             "subTitle": "відпочинок гостей у спортивному",
             "button": {
               "text": "Про STARFIT",
-              "link": "/starfit/"
+              "link": "/starfit"
             },
             "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/group/slide-1-mobile.webp",
+                  "tablet": "/img/group/slide-1-tablet.webp",
+                  "desktop": "/img/group/slide-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/group/slide-1-mobile.jpg",
+                  "tablet": "/img/group/slide-1-tablet.jpg",
+                  "desktop": "/img/group/slide-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/group/slide-2-mobile.webp",
+                  "tablet": "/img/group/slide-2-tablet.webp",
+                  "desktop": "/img/group/slide-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/group/slide-2-mobile.jpg",
+                  "tablet": "/img/group/slide-2-tablet.jpg",
+                  "desktop": "/img/group/slide-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/group/slide-3-mobile.webp",
+                  "tablet": "/img/group/slide-3-tablet.webp",
+                  "desktop": "/img/group/slide-3-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/group/slide-3-mobile.jpg",
+                  "tablet": "/img/group/slide-3-tablet.jpg",
+                  "desktop": "/img/group/slide-3-desktop.jpg"
                 }
               }
             ]
@@ -3722,14 +4176,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "title": "Мар'яна Ніколін",
@@ -3744,14 +4198,58 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "title": "Андрій Ліпак",
+                "description": "Менеджер з продажів",
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "title": "Андрій Ліпак",
+                "description": "Менеджер з продажів",
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
                   }
                 },
                 "title": "Андрій Ліпак",
@@ -6787,14 +7285,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-1-mobile.webp",
+                    "tablet": "/img/starfit/slide-1-tablet.webp",
+                    "desktop": "/img/starfit/slide-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-1-mobile.jpg",
+                    "tablet": "/img/starfit/slide-1-tablet.jpg",
+                    "desktop": "/img/starfit/slide-1-desktop.jpg"
                   }
                 },
                 "description": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
@@ -6816,14 +7314,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/starfit/slide-2-mobile.webp",
+                    "tablet": "/img/starfit/slide-2-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/starfit/slide-2-mobile.jpg",
+                    "tablet": "/img/starfit/slide-2-tablet.jpg",
+                    "desktop": "/img/starfit/slide-2-desktop.jpg"
                   }
                 },
                 "description": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви порините в світ релаксу, відпочинку та відновлення",
@@ -6836,14 +7334,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/starfit/slide-3-mobile.webp",
+                    "tablet": "/img/starfit/slide-3-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/starfit/slide-3-mobile.jpg",
+                    "tablet": "/img/starfit/slide-3-tablet.jpg",
+                    "desktop": "/img/starfit/slide-3-desktop.jpg"
                   }
                 }
               }
@@ -6855,17 +7353,17 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-2-mobile.webp",
+                    "tablet": "/img/starfit/slide-2-tablet.webp",
+                    "desktop": "/img/starfit/slide-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-2-mobile.jpg",
+                    "tablet": "/img/starfit/slide-2-tablet.jpg",
+                    "desktop": "/img/starfit/slide-2-desktop.jpg"
                   }
                 },
-                "title": "Інфрачервона сауна",
+                "title": "",
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "правила відвідування",
@@ -6876,14 +7374,40 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-3-mobile.webp",
+                    "tablet": "/img/starfit/slide-3-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-3-mobile.jpg",
+                    "tablet": "/img/starfit/slide-3-tablet.jpg",
+                    "desktop": "/img/starfit/slide-3-desktop.jpg"
+                  }
+                },
+                "title": "Інфрачервона сауна",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "services": [
+                  {
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "міні-холодильник",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/starfit/slide-1-mobile.webp",
+                    "tablet": "/img/starfit/slide-1-tablet.webp",
+                    "desktop": "/img/starfit/slide-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/starfit/slide-1-mobile.jpg",
+                    "tablet": "/img/starfit/slide-1-tablet.jpg",
+                    "desktop": "/img/starfit/slide-1-desktop.jpg"
                   }
                 },
                 "title": "Фінська сауна",
@@ -6912,38 +7436,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/starfit/slide-3-mobile.webp",
+                  "tablet": "/img/starfit/slide-3-tablet.webp",
+                  "desktop": "/img/starfit/slide-3-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/starfit/slide-3-mobile.jpg",
+                  "tablet": "/img/starfit/slide-3-tablet.jpg",
+                  "desktop": "/img/starfit/slide-3-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/starfit/slide-2-mobile.webp",
+                  "tablet": "/img/starfit/slide-2-tablet.webp",
+                  "desktop": "/img/starfit/slide-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/starfit/slide-2-mobile.jpg",
+                  "tablet": "/img/starfit/slide-2-tablet.jpg",
+                  "desktop": "/img/starfit/slide-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/starfit/slide-1-mobile.webp",
+                  "tablet": "/img/starfit/slide-1-tablet.webp",
+                  "desktop": "/img/starfit/slide-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/starfit/slide-1-mobile.jpg",
+                  "tablet": "/img/starfit/slide-1-tablet.jpg",
+                  "desktop": "/img/starfit/slide-1-desktop.jpg"
                 }
               }
             ]

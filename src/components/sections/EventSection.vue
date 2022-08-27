@@ -3,7 +3,10 @@ section(
   v-if='page && sectionName && section && slides',
   :class='`event event--${sectionName}`'
 )
-  div(:class='`event__container container event__container--${sectionName}`')
+  div(
+    v-if='titleSmall || subTitle',
+    :class='`event__container container event__container--${sectionName}`'
+  )
     h2(
       v-if='titleSmall',
       v-html='titleSmall',
@@ -42,12 +45,12 @@ section(
             BaseImage(
               sectionName='event',
               :modificator='sectionName',
-              :image='slide.image',
+              :image='slide.image || slide.previewImage',
               alt='img'
             )
 
             h3(
-              v-if='sectionName === "coffee" && slide.title && slide.title !== ""',
+              v-if='haveTitleImage && slide.title && slide.title !== ""',
               v-html='converteSymbolsNewLineToBr(slide.title)',
               :class='`title-inner event__title-image event__title-image--mobile event__title-image--${sectionName}`'
             )
@@ -88,7 +91,7 @@ section(
           )
 
           h3(
-            v-else-if='sectionName === "coffee" && slide.title && slide.title !== ""',
+            v-else-if='haveTitleImage && slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)',
             :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
           )
@@ -143,13 +146,13 @@ section(
           )
 
           div(
-            v-if='slide.button',
+            v-if='slide.button || slide.more',
             :class='`event__buttons event__buttons--${sectionName}`'
           )
             BaseButton(
               sectionName='event',
               :modificator='sectionName',
-              :button='slide.button'
+              :button='slide.button || slide.more'
             )
 
             div(
@@ -224,7 +227,7 @@ export default {
   },
   methods: {
     slideList(slide) {
-      if (this.sectionName === 'coffee') {
+      if (this.haveDescriptionList) {
         return slide.description ? slide.description.split('\r\n') : [];
       }
 
@@ -239,7 +242,11 @@ export default {
         : [];
     },
     section() {
-      if (this.sectionName === 'around' || this.sectionName === 'coffee') {
+      if (
+        this.sectionName === 'around' ||
+        this.sectionName === 'coffee' ||
+        this.sectionName === 'halls'
+      ) {
         return this.sections && this.sections[3] ? this.sections[3] : null;
       }
 
@@ -247,33 +254,34 @@ export default {
         return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
-      if (this.sectionName === 'locations') {
+      if (
+        this.sectionName === 'locations' ||
+        this.sectionName === 'saunas' ||
+        this.sectionName === 'smart-rooms'
+      ) {
         return this.sections && this.sections[1] ? this.sections[1] : null;
       }
 
       return null;
     },
     title() {
-      if (this.sectionName === 'coffee') {
-        return null;
-      }
-
-      return this.section && this.section.title && this.section.title !== ''
+      return !this.haveTitleSmall &&
+        this.section &&
+        this.section.title &&
+        this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     titleSmall() {
-      if (this.sectionName === 'coffee') {
-        return this.section && this.section.title && this.section.title !== ''
-          ? this.converteSymbolsNewLineToBr(this.section.title)
+      if (this.section) {
+        const titleSmall = this.section.titleSmall || this.section.title;
+
+        return titleSmall !== '' && this.haveTitleSmall
+          ? this.converteSymbolsNewLineToBr(titleSmall)
           : null;
       }
 
-      return this.section &&
-        this.section.titleSmall &&
-        this.section.titleSmall !== ''
-        ? this.converteSymbolsNewLineToBr(this.section.titleSmall)
-        : null;
+      return null;
     },
     subTitle() {
       return this.section &&
@@ -283,7 +291,9 @@ export default {
         : null;
     },
     slides() {
-      return this.section && this.section.slides ? this.section.slides : [];
+      return this.section && (this.section.slides || this.section.rooms)
+        ? this.section.slides || this.section.rooms
+        : [];
     },
     content() {
       return this.section & this.section.content ? this.section.content : null;
@@ -311,6 +321,27 @@ export default {
     },
     contentButton() {
       return this.content && this.content.button ? this.content.button : null;
+    },
+    haveTitleImage() {
+      if (this.sectionName === 'coffee' || this.sectionName === 'halls') {
+        return true;
+      }
+
+      return false;
+    },
+    haveDescriptionList() {
+      if (this.sectionName === 'coffee') {
+        return true;
+      }
+
+      return false;
+    },
+    haveTitleSmall() {
+      if (this.sectionName === 'coffee') {
+        return true;
+      }
+
+      return false;
     },
   },
 };

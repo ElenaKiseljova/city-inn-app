@@ -124,6 +124,10 @@
       column-gap: 14px;
       row-gap: 30px;
     }
+
+    &--types {
+      grid-template-columns: repeat(2, 48%);
+    }
   }
 
   &__item {

@@ -78,9 +78,9 @@ export default {
         return this.sections && this.sections[7] ? this.sections[7] : null;
       }
 
-      // if (this.sectionName === 'why-conference') {
-      //   return this.sections[4] ?? {};
-      // }
+      if (this.pageName === 'group') {
+        return this.sections && this.sections[5] ? this.sections[5] : null;
+      }
 
       return null;
     },

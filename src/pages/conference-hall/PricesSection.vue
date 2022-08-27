@@ -83,12 +83,12 @@ export default {
       return this.sections && this.sections[2] ? this.sections[2] : null;
     },
     title() {
-      return this.section.title && this.section.title !== ''
+      return this.section && this.section.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     slides() {
-      return this.section.slides ? this.section.slides : [];
+      return this.section && this.section.slides ? this.section.slides : [];
     },
   },
 };

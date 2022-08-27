@@ -1,6 +1,6 @@
 <template lang="pug">
 section(
-  v-if='page && sectionName && section && images && tabs',
+  v-if='page && sectionName && section',
   :class='`food food--${sectionName}`'
 )
   .food__container.container
@@ -12,7 +12,7 @@ section(
       )
 
       div(
-        v-if='images.length > 0',
+        v-if='images && images.length > 0',
         :class='`food__slider-container food__slider-container--${sectionName}`'
       )
         BaseSlider(sectionName='food', :modificator='sectionName')
@@ -42,12 +42,16 @@ section(
       p.food__subtitle(v-if='subTitle', v-html='subTitle')
 
       div(:class='`food__content food__content--${sectionName}`')
-        p.food__text.food__text--top(v-if='textTop', v-html='textTop')
+        p.food__text.food__text--top(
+          v-if='textTop',
+          v-html='textTop',
+          :class='`food__text--${sectionName}`'
+        )
 
         p.food__text.food__text--bottom(v-if='textBottom', v-html='textBottom')
 
         ul(
-          v-if='tabs.length > 0',
+          v-if='tabs && tabs.length > 0',
           :class='`food__tabs food__tabs--${sectionName}`'
         )
           li(
@@ -138,7 +142,7 @@ export default {
         : [];
     },
     section() {
-      if (this.sectionName === 'advantages') {
+      if (this.sectionName === 'advantages' || this.sectionName === 'supply') {
         return this.sections && this.sections[2] ? this.sections[2] : null;
       }
 
@@ -146,7 +150,10 @@ export default {
         return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
-      if (this.sectionName === 'approach-conference') {
+      if (
+        this.sectionName === 'approach-conference' ||
+        this.sectionName === 'approach-group'
+      ) {
         return this.sections && this.sections[0] ? this.sections[0] : null;
       }
 
@@ -166,11 +173,12 @@ export default {
     },
     textTop() {
       if (this.section) {
-        if (this.section.textTop && this.section.textTop !== '') {
-          return this.converteSymbolsNewLineToBr(this.section.textTop);
-        } else if (this.section.text && this.section.text !== '') {
-          return this.converteSymbolsNewLineToBr(this.section.text);
-        }
+        const textTop =
+          this.section.textTop || this.section.text || this.section.description;
+
+        return textTop && textTop !== ''
+          ? this.converteSymbolsNewLineToBr(textTop)
+          : null;
       }
 
       return null;
@@ -193,7 +201,9 @@ export default {
         : null;
     },
     menu() {
-      return this.section && this.section.menu ? this.section.menu : null;
+      return this.section && (this.section.menu || this.section.button)
+        ? this.section.menu || this.section.button
+        : null;
     },
     images() {
       return this.section && this.section.images ? this.section.images : null;
