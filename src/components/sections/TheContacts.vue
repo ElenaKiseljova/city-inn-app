@@ -7,12 +7,16 @@ section#contacts(
     :class='`container contacts__container contacts__container--${pageName}`'
   )
     .contacts__left
-      h2.contacts__title.contacts__title--mobile.title.title--light-green
+      h2.contacts__title.contacts__title--mobile(
+        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`'
+      )
         | {{ title }}
       TheMap
 
     div(:class='`contacts__content contacts__content--${pageName}`')
-      h2.contacts__title.contacts__title--desktop.title.title--light-green
+      h2.contacts__title.contacts__title--desktop(
+        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`'
+      )
         | {{ title }}
 
       address(:class='`contacts__address contacts__address--${pageName}`')

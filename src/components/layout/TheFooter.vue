@@ -18,7 +18,7 @@ footer#footer(
 
     .page-footer__right
       .page-footer__social
-        SocialList(:items='social', direction='horizontal')
+        BaseSocial(:items='social', direction='horizontal')
 
       ul.page-footer__list
         li.page-footer__item(v-for='(column, index) in columns')
@@ -48,12 +48,12 @@ import { mapGetters } from 'vuex';
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
 
-import SocialList from '../blocks/SocialList.vue';
+import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
   mixins: [social, checkUrlType],
   components: {
-    SocialList,
+    BaseSocial,
   },
   computed: {
     ...mapGetters(['pageName', 'header', 'footer']),

@@ -36,7 +36,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
         :class='`cards__description cards__description--${oddEvenLast}`'
       )
 
-      ServicesList(
+      BaseServices(
         v-if='card.services && card.services.length > 0',
         sectionName='cards',
         modificator='cards',
@@ -61,10 +61,10 @@ import BaseImage from '../../components/UI/BaseImage.vue';
 import BaseSlider from '../../components/UI/BaseSlider.vue';
 import BaseSlide from '../../components/UI/BaseSlide.vue';
 import BasePagination from '../../components/UI/BasePagination.vue';
-import ServicesList from '../../components/blocks/ServicesList.vue';
 
 import CardsSlide from './CardsSlide.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
+import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -84,8 +84,8 @@ export default {
     BaseSlide,
     BasePagination,
     CardsSlide,
-    ServicesList,
     BaseButton,
+    BaseServices,
   },
   computed: {
     ...mapGetters(['page']),

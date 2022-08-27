@@ -121,14 +121,14 @@ section(
             ul.event__list(v-if='slideList(slide).length > 0')
               li.event__item(v-for='item in slideList(slide)', :key='item') {{ item }}
 
-          WorktimeInfo(
+          BaseWorktime(
             v-if='slide.worktime && slide.worktime !== ""',
             sectionName='event',
             :modificator='sectionName',
             :text='slide.worktime'
           )
 
-          ServicesList(
+          BaseServices(
             v-if='slide.services && slide.services.length > 0',
             sectionName='event',
             :modificator='sectionName',
@@ -199,10 +199,10 @@ import BaseSlide from '../UI/BaseSlide.vue';
 import BasePagination from '../UI/BasePagination.vue';
 import BaseNavigation from '../UI/BaseNavigation.vue';
 import BaseImage from '../UI/BaseImage.vue';
-import WorktimeInfo from '../blocks/WorktimeInfo.vue';
-import ServicesList from '../blocks/ServicesList.vue';
+import BaseServices from '../UI/BaseServices.vue';
 import BaseButton from '../UI/BaseButton.vue';
 import BasePrice from '../UI/BasePrice.vue';
+import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -218,8 +218,8 @@ export default {
     BasePagination,
     BaseNavigation,
     BaseImage,
-    WorktimeInfo,
-    ServicesList,
+    BaseWorktime,
+    BaseServices,
     BaseButton,
     BasePrice,
   },
@@ -241,11 +241,11 @@ export default {
     },
     section() {
       if (this.sectionName === 'around') {
-        return this.sections[3] ?? {};
+        return this.sections && this.sections[3] ? this.sections[3] : null;
       }
 
       if (this.sectionName === 'attraction') {
-        return this.sections[4] ?? {};
+        return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
       if (this.sectionName === 'coffee') {

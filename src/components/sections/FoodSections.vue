@@ -39,7 +39,7 @@ section(
         :class='`title-inner food__title food__title--desktop food__title--${sectionName}`'
       )
 
-      p.food__subtitle(v-if='subtitle', v-html='subtitle')
+      p.food__subtitle(v-if='subTitle', v-html='subTitle')
 
       div(:class='`food__content food__content--${sectionName}`')
         p.food__text.food__text--top(v-if='textTop', v-html='textTop')
@@ -85,7 +85,7 @@ section(
         v-if='worktime || menu',
         :class='`food__buttons food__buttons--${sectionName}`'
       )
-        WorktimeInfo(
+        BaseWorktime(
           v-if='worktime',
           sectionName='food',
           :modificator='sectionName',
@@ -110,8 +110,8 @@ import BaseSlide from '../UI/BaseSlide.vue';
 import BasePagination from '../UI/BasePagination.vue';
 import BaseNavigation from '../UI/BaseNavigation.vue';
 import BaseImage from '../UI/BaseImage.vue';
-import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 import BaseButton from '../UI/BaseButton.vue';
+import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -127,8 +127,8 @@ export default {
     BasePagination,
     BaseNavigation,
     BaseImage,
-    WorktimeInfo,
     BaseButton,
+    BaseWorktime,
   },
   computed: {
     ...mapGetters(['page']),
@@ -139,11 +139,11 @@ export default {
     },
     section() {
       if (this.sectionName === 'advantages') {
-        return this.sections[2] ?? {};
+        return this.sections && this.sections[2] ? this.sections[2] : null;
       }
 
       if (this.sectionName === 'why-conference') {
-        return this.sections[4] ?? {};
+        return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
       return null;
@@ -153,11 +153,11 @@ export default {
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
-    subtitle() {
+    subTitle() {
       return this.section &&
-        this.section.subtitle &&
-        this.section.subtitle !== ''
-        ? this.converteSymbolsNewLineToBr(this.section.subtitle)
+        this.section.subTitle &&
+        this.section.subTitle !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },
     textTop() {

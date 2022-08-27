@@ -23,7 +23,7 @@ div(
     :class='`cards__description cards__description--${oddEvenLast}`'
   )
 
-  ServicesList(
+  BaseServices(
     v-if='services && services.length > 0',
     sectionName='cards',
     modificator='cards',
@@ -45,8 +45,8 @@ import { mapGetters } from 'vuex';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '../../components/UI/BaseImage.vue';
-import ServicesList from '../../components/blocks/ServicesList.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
+import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
@@ -82,8 +82,8 @@ export default {
   },
   components: {
     BaseImage,
-    ServicesList,
     BaseButton,
+    BaseServices,
   },
   computed: {
     ...mapGetters(['pageName']),

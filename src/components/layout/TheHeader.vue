@@ -34,7 +34,7 @@ header.page-header(v-if='pageName && header')
           div(
             :class='`page-header__social __js page-header__social--${pageName}`'
           )
-            SocialList(:items='buttons', direction='vertical')
+            BaseSocial(:items='buttons', direction='vertical')
 
   .page-header__menu.__js
     MenuHeader
@@ -45,16 +45,16 @@ import { mapGetters } from 'vuex';
 
 import checkUrlType from '../../mixins/checkUrlType';
 
-import SocialList from '../blocks/SocialList.vue';
 import MenuHeader from '../blocks/MenuHeader.vue';
 import BaseButton from '../UI/BaseButton.vue';
+import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
   mixins: [checkUrlType],
   components: {
-    SocialList,
     MenuHeader,
     BaseButton,
+    BaseSocial,
   },
   data() {
     return {

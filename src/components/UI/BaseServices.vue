@@ -3,10 +3,14 @@ ul(
   v-if='items.length > 0',
   :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`'
 )
-  ServicesItem(v-for='item in items', :item='item', :modificator='modificator')
+  BaseServicesItem(
+    v-for='item in items',
+    :item='item',
+    :modificator='modificator'
+  )
 
   li.services__item.services__item--worktime(v-if='additionalItem.worktime')
-    WorktimeInfo(
+    BaseWorktime(
       sectionName='spa',
       modificator='tablet',
       :text='additionalItem.worktime'
@@ -14,8 +18,8 @@ ul(
 </template>
 
 <script>
-import ServicesItem from './ServicesItem.vue';
-import WorktimeInfo from '../blocks/WorktimeInfo.vue';
+import BaseServicesItem from './BaseServicesItem.vue';
+import BaseWorktime from './BaseWorktime.vue';
 
 export default {
   props: {
@@ -44,8 +48,8 @@ export default {
     },
   },
   components: {
-    ServicesItem,
-    WorktimeInfo,
+    BaseServicesItem,
+    BaseWorktime,
   },
   computed: {
     modificatorArr() {

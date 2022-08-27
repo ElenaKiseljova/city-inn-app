@@ -4,7 +4,7 @@ section(
   :class='`info info--${pageName}`'
 )
   div(:class='`info__container container info__container--${pageName}`')
-    ServicesList(
+    BaseServices(
       v-if='services && services.length > 0',
       sectionName='info',
       :modificator='sectionName',
@@ -42,14 +42,14 @@ import { mapGetters } from 'vuex';
 
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-import ServicesList from '../blocks/ServicesList.vue';
+import BaseServices from '../UI/BaseServices.vue';
 import BaseImage from '../UI/BaseImage.vue';
 import BasePrice from '../UI/BasePrice.vue';
 import BaseButton from '../UI/BaseButton.vue';
 
 export default {
   components: {
-    ServicesList,
+    BaseServices,
     BaseImage,
     BasePrice,
     BaseButton,

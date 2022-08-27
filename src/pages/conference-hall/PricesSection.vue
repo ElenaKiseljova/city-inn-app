@@ -25,7 +25,7 @@ section.prices(v-if='page && sections && section')
           v-html='converteSymbolsNewLineToBr(slide.text)'
         )
 
-        ServicesList(
+        BaseServices(
           v-if='slide.services && slide.services.length > 0',
           sectionName='prices',
           modificator='prices',
@@ -56,9 +56,9 @@ import BaseNavigation from '@/components/UI/BaseNavigation.vue';
 import BaseSlider from '@/components/UI/BaseSlider.vue';
 import BaseSlide from '@/components/UI/BaseSlide.vue';
 import BaseImage from '@/components/UI/BaseImage.vue';
-import ServicesList from '@/components/blocks/ServicesList.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 import BasePrice from '@/components/UI/BasePrice.vue';
+import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
   components: {
@@ -67,9 +67,9 @@ export default {
     BaseSlider,
     BaseSlide,
     BaseImage,
-    ServicesList,
     BaseButton,
     BasePrice,
+    BaseServices,
   },
   mixins: [converteSymbolsNewLineToBr],
   computed: {

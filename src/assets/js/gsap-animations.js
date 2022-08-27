@@ -120,6 +120,76 @@ const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social
 export { promoSocialAnimation };
 
 
+// Experiences
+const experience = () => {
+  if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    const list = document.querySelector('.experience__list');
+
+    if (list) {
+      let init = true;
+
+      const listObjStart = {};
+      const listObjEnd = {};
+
+      const items = list.querySelectorAll('.experience__number');
+
+      const updateList = (obj = null) => {
+        items.forEach((item, index) => {
+          if (init && !obj) {
+            listObjEnd[index] = parseInt(item.textContent, 10);
+            listObjStart[index] = 0;
+            item.textContent = 0;
+          } else if (!init && obj) {
+            item.textContent = parseInt(obj[index], 10);
+          }
+        });
+      };
+
+      if (init) {
+        updateList();
+
+        gsap.to(listObjStart, {
+          ...listObjEnd,
+          duration: 2,
+          scrollTrigger: {
+            trigger: '.experience',
+            // markers: true,
+            start: 'top center',
+            end: 'bottom center',
+          },
+          onUpdate() {
+            updateList(listObjStart);
+          },
+        });
+
+        init = false;
+      }
+    }
+  }
+};
+
+export { experience };
+
+
+// ROOMS
+const rooms = () => {
+  if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    const rooms = document.querySelectorAll('.room, .home');
+    if (rooms.length > 0) {
+      rooms.forEach((room) => {
+        const roomTitle = room.querySelectorAll('.room__title--desktop, .home__title');
+        const roomButtons = room.querySelectorAll('.room__button, .home__button');
+        const roomPrice = room.querySelector('.room__price, .home__content');
+
+        animationOpacityTranslate(roomTitle, room);
+        animationOpacityTranslate(roomButtons, roomPrice);
+      });
+    }
+  }
+};
+
+export { rooms };
+
 export default () => {
   if (DEVICE_WIDTH >= TABLET_WIDTH) {
     /** 
@@ -196,61 +266,6 @@ export default () => {
     promoTitleAnimation(promoContainerTitle, promo);
 
 
-    // Rooms
-    const rooms = document.querySelectorAll('.room, .home');
-    if (rooms.length > 0) {
-      rooms.forEach((room) => {
-        const roomTitle = room.querySelectorAll('.room__title--desktop, .home__title');
-        const roomButtons = room.querySelectorAll('.room__button, .home__button');
-        const roomPrice = room.querySelector('.room__price, .home__content');
 
-        animationOpacityTranslate(roomTitle, room);
-        animationOpacityTranslate(roomButtons, roomPrice);
-      });
-    }
-
-    // Experiences
-    const list = document.querySelector('.experience__list');
-
-    if (list) {
-      let init = true;
-
-      const listObjStart = {};
-      const listObjEnd = {};
-
-      const items = list.querySelectorAll('.experience__number');
-
-      const updateList = (obj = null) => {
-        items.forEach((item, index) => {
-          if (init && !obj) {
-            listObjEnd[index] = parseInt(item.textContent, 10);
-            listObjStart[index] = 0;
-            item.textContent = 0;
-          } else if (!init && obj) {
-            item.textContent = parseInt(obj[index], 10);
-          }
-        });
-      };
-
-      if (init) {
-        updateList();
-
-        gsap.to(listObjStart, {
-          ...listObjEnd,
-          duration: 2,
-          scrollTrigger: {
-            trigger: '.experience',
-            // markers: true,
-            start: 'top center',
-            end: 'bottom center',
-          },
-          onUpdate() {
-            updateList(listObjStart);
-          },
-        });
-
-        init = false;
-      }
-    }
   }
 };

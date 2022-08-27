@@ -1,6 +1,6 @@
 <template lang="pug">
 section(
-  v-if='pageName && page',
+  v-if='pageName && page && sections && section',
   :class='`home home--${sectionName}`',
   :id='sectionName'
 )
@@ -32,7 +32,7 @@ section(
           | {{ contentBottom }}
 
       div(:class='`home__buttons home__buttons--${sectionName}`')
-        WorktimeInfo(
+        BaseWorktime(
           v-if='section.worktime && section.worktime !== ""',
           sectionName='home',
           :modificator='sectionName',
@@ -61,8 +61,8 @@ import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '../UI/BaseImage.vue';
-import WorktimeInfo from '../blocks/WorktimeInfo.vue';
 import BaseButton from '../UI/BaseButton.vue';
+import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
   props: {
@@ -74,8 +74,8 @@ export default {
   mixins: [converteSymbolsNewLineToBr, checkUrlType],
   components: {
     BaseImage,
-    WorktimeInfo,
     BaseButton,
+    BaseWorktime,
   },
   computed: {
     ...mapGetters(['pageName', 'page']),
@@ -86,7 +86,7 @@ export default {
     },
     section() {
       if (this.pageName === 'home') {
-        return this.sections.length > 0
+        return this.sections && this.sections.length > 0
           ? this.sections.find(
               (section) => section.sectionName === this.sectionName
             )
@@ -94,7 +94,7 @@ export default {
       }
 
       if (this.pageName === 'about') {
-        return this.sections ? this.sections[1] : {};
+        return this.sections && this.sections[1] ? this.sections[1] : null;
       }
 
       return {};

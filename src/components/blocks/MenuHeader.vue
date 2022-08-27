@@ -6,7 +6,7 @@
 
     .menu__bottom
       .menu__social
-        SocialList(:items='social', direction='horizontal')
+        BaseSocial(:items='social', direction='horizontal')
 
       .menu__call.call
         a.call__link(
@@ -39,15 +39,15 @@ import menu from '../../assets/js/menu';
 
 import social from '../../mixins/social';
 
-import SocialList from './SocialList.vue';
 import NavigationHeader from './NavigationHeader.vue';
 import BaseImage from '../UI/BaseImage.vue';
+import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
   components: {
     NavigationHeader,
-    SocialList,
     BaseImage,
+    BaseSocial,
   },
   mixins: [social],
   data() {

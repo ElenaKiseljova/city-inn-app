@@ -27,7 +27,7 @@ section.seating(v-if='page && sections && section')
           h3.seating__subtitle
             | {{ slide.title }}
 
-        ServicesList(
+        BaseServices(
           sectionName='seating',
           modificator='seating',
           :items='slide.services'
@@ -50,8 +50,8 @@ import BaseNavigation from '@/components/UI/BaseNavigation.vue';
 import BaseSlider from '@/components/UI/BaseSlider.vue';
 import BaseSlide from '@/components/UI/BaseSlide.vue';
 import BaseImage from '@/components/UI/BaseImage.vue';
-import ServicesList from '@/components/blocks/ServicesList.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
+import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
   components: {
@@ -60,8 +60,8 @@ export default {
     BaseSlider,
     BaseSlide,
     BaseImage,
-    ServicesList,
     BaseButton,
+    BaseServices,
   },
   mixins: [converteSymbolsNewLineToBr],
   computed: {

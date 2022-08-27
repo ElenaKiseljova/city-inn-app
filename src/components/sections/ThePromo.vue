@@ -23,7 +23,7 @@ section#promo(
         )
           span {{ langToggle.text }}
 
-        SocialList(v-if='social.length > 0', :items='social')
+        BaseSocial(v-if='social.length > 0', :items='social')
 
       .promo__buttons(v-if='sectionName === "home" || sectionName === "smart"')
         BaseButton(
@@ -61,7 +61,7 @@ section#promo(
         )
 
       div(:class='`promo__bottom promo__bottom--${sectionName}`')
-        WorktimeInfo(
+        BaseWorktime(
           v-if='contentBottomWorktime',
           sectionName='promo',
           :modificator='sectionName',
@@ -92,9 +92,9 @@ import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '../UI/BaseImage.vue';
-import WorktimeInfo from '../blocks/WorktimeInfo.vue';
-import SocialList from '../blocks/SocialList.vue';
 import BaseButton from '../UI/BaseButton.vue';
+import BaseWorktime from '../UI/BaseWorktime.vue';
+import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
   props: {
@@ -106,9 +106,9 @@ export default {
   },
   components: {
     BaseImage,
-    WorktimeInfo,
-    SocialList,
     BaseButton,
+    BaseWorktime,
+    BaseSocial,
   },
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   data() {

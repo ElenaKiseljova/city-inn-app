@@ -1991,6 +1991,50 @@ const __pages = {
                 ]
               },
               {
+                "title": "МАР'ЯНА НІКОЛІН",
+                "description": "менеджер з продажів",
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
+                "title": "МАР'ЯНА НІКОЛІН",
+                "description": "менеджер з продажів",
+                "image": {
+                  "webp": {
+                    "mobile": "/img/conference/team-1-mobile.webp",
+                    "tablet": "/img/conference/team-1-tablet.webp",
+                    "desktop": "/img/conference/team-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/conference/team-1-mobile.jpg",
+                    "tablet": "/img/conference/team-1-tablet.jpg",
+                    "desktop": "/img/conference/team-1-desktop.jpg"
+                  }
+                },
+                "contacts": [
+                  {
+                    "text": "reception@city-inn.com.ua",
+                    "link": "mailto:reception@city-inn.com.ua"
+                  }
+                ]
+              },
+              {
                 "title": "Андрій Ліпак",
                 "description": "Менеджер з продажів",
                 "image": {

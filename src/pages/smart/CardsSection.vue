@@ -25,7 +25,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['page']),
+    ...mapGetters(['page', 'pageName']),
     cards() {
       return this.page.content && this.page.content.sections
         ? this.page.content.sections

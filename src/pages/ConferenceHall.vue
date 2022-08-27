@@ -7,6 +7,9 @@ TheMain
   EventSection(sectionName='coffee')
   FoodSections(sectionName='why-conference')
   ParkingSection
+  ExperienceSection
+  TeamSection
+  TheContacts
 </template>
 
 <script>
@@ -20,6 +23,9 @@ import PricesSection from './conference-hall/PricesSection.vue';
 import EventSection from '@/components/sections/EventSection.vue';
 import FoodSections from '../components/sections/FoodSections.vue';
 import ParkingSection from './conference-hall/ParkingSection.vue';
+import ExperienceSection from './conference-hall/ExperienceSection.vue';
+import TeamSection from '@/components/sections/TeamSection.vue';
+import TheContacts from '@/components/sections/TheContacts.vue';
 
 export default {
   components: {
@@ -31,6 +37,9 @@ export default {
     EventSection,
     FoodSections,
     ParkingSection,
+    ExperienceSection,
+    TeamSection,
+    TheContacts,
   },
   mixins: [footerGsapAnimations],
 };
