@@ -12,7 +12,7 @@ section.mission(v-if='page && sections && section')
       BaseSlide(v-for='image in images', sectionName='mission')
         BaseImage(
           sectionName='mission',
-          :modificator='sectionName',
+          modificator='mission',
           :image='image',
           alt='img'
         )

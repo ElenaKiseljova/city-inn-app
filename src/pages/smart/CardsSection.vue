@@ -1,5 +1,5 @@
 <template lang="pug">
-section.cards(v-if='page && cards')
+section.cards(v-if='page && cards', ref='cards')
   ul.cards__list
     CardsItem(v-for='(card, index) in cards', :index='index', :card='card')
 </template>
@@ -18,10 +18,6 @@ export default {
   data() {
     return {
       cardsAnimationInited: false,
-
-      cardsAnimationInterval: null,
-
-      i: 0,
     };
   },
   computed: {
@@ -33,26 +29,21 @@ export default {
     },
   },
   mounted() {
-    if (!this.cardsAnimationInited) {
-      this.cardsAnimationInterval = setInterval(() => {
-        const cardsSection = document.querySelector('.cards');
+    if (this.$refs.cards && !this.cardsAnimationInited) {
+      cards('cards', '.cards__item');
 
-        if (cardsSection) {
-          clearInterval(this.cardsAnimationInterval);
+      this.cardsAnimationInited = true;
 
-          cards('cards', '.cards__item');
+      // console.log('Cards Activated - mounted');
+    }
+  },
+  updated() {
+    if (this.$refs.cards && !this.cardsAnimationInited) {
+      cards('cards', '.cards__item');
 
-          this.cardsAnimationInited = true;
-        }
+      this.cardsAnimationInited = true;
 
-        this.i += 1;
-
-        if (this.i > 10) {
-          clearInterval(this.cardsAnimationInterval);
-        }
-
-        console.log('search cards');
-      }, 300);
+      // console.log('Cards Activated - updated');
     }
   },
 };

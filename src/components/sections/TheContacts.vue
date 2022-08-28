@@ -1,7 +1,8 @@
 <template lang="pug">
 section#contacts(
   v-if='pageName && contacts',
-  :class='`contacts contacts--${pageName}`'
+  :class='`contacts contacts--${pageName}`',
+  ref='section'
 )
   div(
     :class='`container contacts__container contacts__container--${pageName}`'
@@ -15,7 +16,8 @@ section#contacts(
 
     div(:class='`contacts__content contacts__content--${pageName}`')
       h2.contacts__title.contacts__title--desktop(
-        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`'
+        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`',
+        ref='title'
       )
         | {{ title }}
 
@@ -60,7 +62,10 @@ section#contacts(
 <script>
 import { mapGetters } from 'vuex';
 
-import { contactsAnimation } from '../../assets/js/gsap-animations';
+import {
+  contactsAnimation,
+  sectionTitleAnimation,
+} from '../../assets/js/gsap-animations';
 
 import checkUrlType from '../../mixins/checkUrlType';
 
@@ -75,6 +80,7 @@ export default {
   },
   data() {
     return {
+      sectionTitleAnimationIsSet: false,
       contactsAnimationInited: false,
 
       contactsLastInterval: null,
@@ -130,6 +136,29 @@ export default {
           clearInterval(this.contactsLastInterval);
         }
       }, 300);
+    }
+
+    if (
+      this.$refs.title &&
+      this.$refs.section &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+        this.$refs.title,
+        this.$refs.section
+      );
+    }
+  },
+  updated() {
+    if (
+      this.$refs.title &&
+      this.$refs.section &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+        this.$refs.title,
+        this.$refs.section
+      );
     }
   },
   unmounted() {

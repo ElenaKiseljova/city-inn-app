@@ -1,7 +1,8 @@
 <template lang="pug">
 ul(
   v-if='items.length > 0',
-  :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`'
+  :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`',
+  ref='services'
 )
   li.services__item(v-for='item in items', :key='item', :item='item')
     BaseService(:item='item', :modificator='modificator')
@@ -15,6 +16,8 @@ ul(
 </template>
 
 <script>
+import { serviceAnimation } from '../../assets/js/gsap-animations';
+
 import BaseService from './BaseService.vue';
 import BaseWorktime from './BaseWorktime.vue';
 
@@ -44,6 +47,11 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      serviceAnimationIsSet: false,
+    };
+  },
   components: {
     BaseService,
     BaseWorktime,
@@ -61,6 +69,23 @@ export default {
 
       return modificationClasses;
     },
+  },
+  mounted() {
+    if (this.$refs.services && !this.serviceAnimationIsSet) {
+      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.services);
+
+      // console.log('Services Activated - mounted');
+    }
+  },
+  updated() {
+    if (this.$refs.services && !this.serviceAnimationIsSet) {
+      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.services);
+
+      // console.log('Services Activated - updated');
+    }
+  },
+  unmounted() {
+    serviceAnimation.reset();
   },
 };
 </script>

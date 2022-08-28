@@ -68,7 +68,6 @@ export default {
     if (slider) {
       if (slider.classList.contains('event__slider--images')) {
         eventSliderInit(slider);
-        console.log(slider);
       } else if (slider.classList.contains('features__slider')) {
         featuresSliderInit(slider);
       } else if (!slider.classList.contains('event__slider--text')) {

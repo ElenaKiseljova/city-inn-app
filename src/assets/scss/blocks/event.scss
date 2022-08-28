@@ -580,6 +580,24 @@
         --translateY: 142px;
       }
 
+      &.transition {
+        .event__title-image--coffee {
+          opacity: 0;
+
+          transform: translateY(-50px);
+        }
+      }
+
+      &.translated {
+        .event__title-image--coffee {
+          opacity: 1;
+
+          transform: translateY(0);
+
+          transition: transform 0.5s linear, opacity 0.5s linear;
+        }
+      }
+
       &--images:not(.event__slide--around):not(.event__slide--attraction):not(.event__slide--saunas) {
         &.swiper-slide-active {
           .event__img {
@@ -596,8 +614,6 @@
             left: calc((409 / 1440) * 100vw);
 
             @include font(144, 140, 300);
-
-            transition: font 0.5s linear, top 0.5s linear, left 0.5s linear;
 
             &--halls {
               top: -23px;
@@ -629,8 +645,6 @@
 
             @include font(30, 45, 300);
 
-            transition: font 0.5s linear, top 0.5s linear, left 0.5s linear;
-
             &--halls {
               opacity: 0;
             }
@@ -640,10 +654,6 @@
         &.swiper-slide-next {
           .event__img {
             transition: height 0.5s linear, width 0.5s linear, transform 0.5s linear;
-          }
-
-          .event__title-image {
-            transition: font 0.5s linear, top 0.5s linear, left 0.5s linear;
           }
         }
       }

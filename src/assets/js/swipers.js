@@ -84,6 +84,16 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
   }
 };
 
+const animationSlideBottom = (swiperSlider, mode = 1) => {
+  if (mode === 1) {
+    changeActiveClass(swiperSlider.slides, 'remove', 'translated');
+    changeActiveClass(swiperSlider.slides, 'add', 'transition');
+  } else {
+    changeActiveClass(swiperSlider.slides, 'remove', 'transition');
+    changeActiveClass(swiperSlider.slides, 'add', 'translated');
+  }
+};
+
 const changeTab = (swiperSlider, numbers = [], texts = []) => {
   const index = swiperSlider.activeIndex ?? 0;
 
@@ -255,6 +265,20 @@ const swiperInit = (swiperItem, attr = {}) => {
       });
 
       swiperSlider.el.style.minHeight = `${maxHeightSlide}px`;
+
+      // Слайдер с меняющимся заголовком
+      let lastTimeout;
+      swiperSlider.on('beforeTransitionStart', () => {
+        animationSlideBottom(swiperSlider, 1);
+
+        if (lastTimeout) {
+          clearTimeout(lastTimeout);
+        }
+
+        lastTimeout = setTimeout(() => {
+          animationSlideBottom(swiperSlider, 2);
+        }, 700);
+      });
     }
   }
 
@@ -341,6 +365,22 @@ const eventSliderInit = (eventSliderImages = null) => {
 
     const imagesEventSlider = swiperInit(eventSliderImages, attrImages);
 
+    // Слайдер с меняющимся заголовком
+    if (eventSliderImages.classList.contains('event__slider--coffee')) {
+      let lastTimeout;
+      imagesEventSlider.on('beforeTransitionStart', () => {
+        animationSlideBottom(imagesEventSlider, 1);
+
+        if (lastTimeout) {
+          clearTimeout(lastTimeout);
+        }
+
+        lastTimeout = setTimeout(() => {
+          animationSlideBottom(imagesEventSlider, 2);
+        }, 700);
+      });
+    }
+
     const eventSliderText = eventSliderImages.closest('.event').querySelector('.event__slider--text');
 
     if (eventSliderText) {
@@ -364,8 +404,6 @@ const eventSliderInit = (eventSliderImages = null) => {
 
       imagesEventSlider.on('slideChange', () => {
         textEventSlider.slideTo(imagesEventSlider.activeIndex);
-
-        console.log('slideChange');
       });
     }
   }

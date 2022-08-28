@@ -1,5 +1,5 @@
 <template lang="pug">
-section.features(v-if='page && pageName && sections && section')
+section.features(v-if='page && pageName && sections && section', ref='features')
   h2.visually-hidden Features
 
   .features__container.container
@@ -21,6 +21,8 @@ section.features(v-if='page && pageName && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import { serviceAnimation } from '../../assets/js/gsap-animations';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
@@ -36,6 +38,11 @@ export default {
     BasePagination,
     BaseService,
   },
+  data() {
+    return {
+      serviceAnimationIsSet: false,
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
@@ -49,6 +56,23 @@ export default {
     services() {
       return this.section && this.section.services ? this.section.services : [];
     },
+  },
+  mounted() {
+    if (this.$refs.features && !this.serviceAnimationIsSet) {
+      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
+
+      // console.log('Services Activated - mounted');
+    }
+  },
+  updated() {
+    if (this.$refs.features && !this.serviceAnimationIsSet) {
+      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
+
+      // console.log('Services Activated - updated');
+    }
+  },
+  unmounted() {
+    serviceAnimation.reset();
   },
 };
 </script>

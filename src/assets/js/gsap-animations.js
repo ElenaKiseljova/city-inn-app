@@ -79,7 +79,7 @@ class Animation {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
       if (this.scrollTrigger) {
         this.scrollTrigger.kill();
-        console.log(this.scrollTrigger);
+        // console.log(this.scrollTrigger);
       }
 
       return animationOpacityTranslateReset(this.elements());
@@ -109,10 +109,10 @@ const pageFooterAnimation = new Animation('.page-footer__item');
 
 export { pageFooterAnimation };
 
-//.services
-const servicesAnimation = new Animation('.services__item');
+//parent block .service
+const serviceAnimation = new Animation('.service');
 
-export { servicesAnimation };
+export { serviceAnimation };
 
 //.promo__social
 const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item');
@@ -170,102 +170,107 @@ const experience = () => {
 
 export { experience };
 
+const sectionTitleAnimation = (title, trigger) => {
+  if (title && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    gsap.to(title, {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      ease: 'power3.inOut',
+      scrollTrigger: {
+        trigger: trigger,
+        // markers: true,
+        // scrub: 1,
+        start: 'top 70%',
+        end: 'bottom center',
+      },
+    });
 
-// ROOMS
-const rooms = () => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    const rooms = document.querySelectorAll('.room, .home');
-    if (rooms.length > 0) {
-      rooms.forEach((room) => {
-        const roomTitle = room.querySelectorAll('.room__title--desktop, .home__title');
-        const roomButtons = room.querySelectorAll('.room__button, .home__button');
-        const roomPrice = room.querySelector('.room__price, .home__content');
-
-        animationOpacityTranslate(roomTitle, room);
-        animationOpacityTranslate(roomButtons, roomPrice);
-      });
-    }
+    return true;
   }
+
+  return false;
 };
 
-export { rooms };
+export { sectionTitleAnimation };
 
-export default () => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    /** 
+/** 
       * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции 
       * на мобильных устройствах
       * 
     */
-    // .page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
-    const animationPromoAndHeaderButtonsBookAndOffer = (element1, element2, trigger) => {
-      if (element1 && element2 && trigger) {
-        gsap.to(element1, {
-          x: 0,
-          duration: 1.5,
-          ease: 'power1.inOut',
-          scrollTrigger: {
-            trigger: trigger,
-            scrub: 1,
-            // markers: true,
-            start: 'top top',
-            end: '98vh top',
-          },
-        });
+// .page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
+const animationTwoElements = (trigger) => {
+  if (trigger && DEVICE_WIDTH < TABLET_WIDTH) {
+    const element1 = document.querySelector('.page-header__social');
+    const element2 = trigger.querySelector('.promo--home .promo__buttons, .promo--smart .promo__buttons');
 
-        gsap.to(element2, {
-          y: 192,
-          duration: 1.5,
-          ease: 'power1.inOut',
-          scrollTrigger: {
-            trigger: trigger,
-            scrub: 1,
-            // markers: true,
-            start: 'top top',
-            end: '98vh top',
-          },
-        });
+    if (element1 && element2) {
+      gsap.to(element1, {
+        x: 0,
+        duration: 1.5,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: trigger,
+          scrub: 1,
+          // markers: true,
+          start: 'top top',
+          end: '98vh top',
+        },
+      });
 
-        return true;
-      }
+      gsap.to(element2, {
+        y: 192,
+        duration: 1.5,
+        ease: 'power1.inOut',
+        scrollTrigger: {
+          trigger: trigger,
+          scrub: 1,
+          // markers: true,
+          start: 'top top',
+          end: '98vh top',
+        },
+      });
 
-      return false;
-    };
-
-    const pageHeaderButtons = document.querySelector('.page-header__social');
-    const promoButtons = document.querySelector('.promo--home .promo__buttons, .promo--smart .promo__buttons');
-    const promo = document.querySelector('.promo');
-
-    animationPromoAndHeaderButtonsBookAndOffer(pageHeaderButtons, promoButtons, promo);
-
-    /**
-     * Анимация заголовка страницы
-     */
-    //.promo__content--image:not(.promo__content--home) | .promo
-    const promoTitleAnimation = (element, trigger) => {
-      console.log(element, trigger);
-      if (element && trigger) {
-        gsap.to(element, {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: 'Power1.easeIn',
-          scrollTrigger: {
-            trigger: trigger,
-            // markers: true,
-            // scrub: 1,
-            start: 'top top',
-            end: '98vh top',
-          },
-        });
-      }
-    };
-
-    const promoContainerTitle = document.querySelector('.promo__content--image:not(.promo__content--home)');
-
-    promoTitleAnimation(promoContainerTitle, promo);
-
-
-
+      return true;
+    }
   }
+
+  return false;
 };
+
+export { animationTwoElements };
+
+/**
+     * Анимация заголовка и текста страницы
+     */
+//.promo__title | .promo
+const promoTitleAndTextAnimation = (trigger) => {
+  if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    const elements = trigger.querySelectorAll('.promo__title, .promo__text');
+
+    if (elements.length > 0) {
+      gsap.to(elements, {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        ease: 'Power1.easeIn',
+        scrollTrigger: {
+          trigger: trigger,
+          // markers: true,
+          // scrub: 1,
+          start: 'top top',
+          end: '98vh top',
+        },
+      });
+
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export { promoTitleAndTextAnimation };

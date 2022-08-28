@@ -287,9 +287,9 @@
     }
 
     @media screen and (min-width: $tablet) {
-      // transform: translate(50px, 50px);
 
-      // opacity: 0;
+
+      opacity: 0;
 
       &--desktop {
         position: static;
@@ -331,6 +331,8 @@
       &--smart,
       &--group,
       &--starfit {
+        transform: translate(50px, 50px);
+
         min-width: 419px;
 
         margin-right: calc((100% + 105px) - 419px);
@@ -346,6 +348,8 @@
 
       &--conference,
       &--about {
+        transform: translate(-50px, 50px);
+
         min-width: 696px;
 
         margin-right: calc(100% - 696px);
@@ -365,6 +369,11 @@
         margin-right: calc(100% - 538px);
         margin-left: 0;
         margin-bottom: 47px;
+      }
+
+      &--lobby,
+      &--restaurant {
+        transform: translate(-50px, 50px);
       }
     }
 

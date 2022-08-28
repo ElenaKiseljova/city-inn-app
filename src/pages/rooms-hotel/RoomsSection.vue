@@ -11,7 +11,7 @@ section.rooms(v-if='page && items')
       sectionName='rooms',
       :modificator='pageName'
     )
-      .room
+      .room(ref='room')
         div(
           :class='`room__container container room__container--${mode(index)}`'
         )
@@ -36,7 +36,8 @@ section.rooms(v-if='page && items')
             h2(
               v-if='item.title && item.title !== ""',
               v-html='converteSymbolsNewLineToBr(item.title)',
-              :class='`title-inner room__title room__title--desktop room__title--${mode(index)}`'
+              :class='`title-inner room__title room__title--desktop room__title--${mode(index)}`',
+              ref='title'
             )
 
             div(
@@ -77,6 +78,8 @@ section.rooms(v-if='page && items')
 <script>
 import { mapGetters } from 'vuex';
 
+import { sectionTitleAnimation } from '../../assets/js/gsap-animations';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
@@ -98,6 +101,11 @@ export default {
     BaseServices,
     BasePrice,
   },
+  data() {
+    return {
+      sectionTitleAnimationIsSet: false,
+    };
+  },
   methods: {
     mode(index) {
       return (index + 1) % 2 === 0 ? 'even' : 'odd';
@@ -110,6 +118,42 @@ export default {
         ? this.page.content.items
         : [];
     },
+  },
+  mounted() {
+    if (
+      this.$refs.room &&
+      this.$refs.title &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      const rooms = this.$refs.room;
+      const titles = this.$refs.title;
+
+      let allOk = true;
+
+      rooms.forEach((room, index) => {
+        allOk = sectionTitleAnimation(titles[index], room);
+      });
+
+      this.sectionTitleAnimationIsSet = allOk;
+    }
+  },
+  updated() {
+    if (
+      this.$refs.room &&
+      this.$refs.title &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      const rooms = this.$refs.room;
+      const titles = this.$refs.title;
+
+      let allOk = true;
+
+      rooms.forEach((room, index) => {
+        allOk = sectionTitleAnimation(titles[index], room);
+      });
+
+      this.sectionTitleAnimationIsSet = allOk;
+    }
   },
 };
 </script>

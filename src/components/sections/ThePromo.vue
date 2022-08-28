@@ -1,7 +1,8 @@
 <template lang="pug">
 section#promo(
   v-if='lang && meta && pageName && header && page',
-  :class='`promo promo--${sectionName}`'
+  :class='`promo promo--${sectionName}`',
+  ref='promo'
 ) 
   h1.visually-hidden(v-if='title === ""')
     | {{ meta.title }}
@@ -9,12 +10,13 @@ section#promo(
   div(:class='`promo__img-wrapper promo__img-wrapper--${sectionName}`')
     div(
       :class='`promo__container promo__container--image container promo__container--${sectionName}`'
-    )
-      h1(
-        v-if='title !== ""',
-        v-html='title',
-        :class='`promo__title promo__title--${sectionName}`'
-      )
+    ) 
+      .promo__title-wrapper(:class='`promo__title-wrapper--${sectionName}`')
+        h1.promo__title(
+          v-if='title !== ""',
+          v-html='title',
+          :class='`promo__title--${sectionName}`'
+        )
 
       div(:class='`promo__social promo__social--${sectionName}`') 
         router-link.promo__lang.lang.button.button--circle(
@@ -80,12 +82,11 @@ section#promo(
 <script>
 import { mapGetters } from 'vuex';
 
-import { promoSocialAnimation } from '../../assets/js/gsap-animations';
-// import {
-//   promoTitleAnimation,
-//   animationPromoAndHeaderButtonsBookAndOffer,
-//   promoSocialAnimation,
-// } from '../../assets/js/gsap-animations';
+import {
+  promoTitleAndTextAnimation,
+  promoSocialAnimation,
+  animationTwoElements,
+} from '../../assets/js/gsap-animations';
 
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
@@ -113,17 +114,9 @@ export default {
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   data() {
     return {
-      //     promoTitleAnimationInited: false,
-      //     promoAndHeaderAnimationInited: false,
-      promoSocialAnimationInited: false,
-
-      //     promoTitleAnimationInterval: null,
-      //     promoAndHeaderAnimationInterval: null,
-      promoSocialAnimationInterval: null,
-
-      i: 0,
-      //     i1: 0,
-      //     i2: 0,
+      promoTitleAnimationIsSet: false,
+      promoSocialAnimationIsSet: false,
+      twoElementsAnimationIsSet: false,
     };
   },
   computed: {
@@ -189,80 +182,52 @@ export default {
         ? this.content.bottom.book
         : null;
     },
+    pageIsReady() {
+      return this.lang && this.meta && this.pageName && this.header && this.page
+        ? true
+        : false;
+    },
   },
   mounted() {
-    //   if (!this.promoTitleAnimationInited) {
-    //     this.promoTitleAnimationInterval = setInterval(() => {
-    //       const promo = document.querySelector('.promo');
-    //       const promoTitle = document.querySelector(
-    //         '.promo__container:not(.promo__container--home)'
-    //       );
+    if (this.$refs.promo) {
+      if (!this.promoSocialAnimationIsSet) {
+        this.promoSocialAnimationIsSet = promoSocialAnimation.init(
+          this.$refs.promo
+        );
+      }
 
-    //       if (promo && promoTitle) {
-    //         clearInterval(this.promoTitleAnimationInterval);
+      if (!this.twoElementsAnimationIsSet) {
+        this.twoElementsAnimationIsSet = animationTwoElements(this.$refs.promo);
+      }
 
-    //         promoTitleAnimation.init(promoTitle, promo);
+      if (!this.promoTitleAnimationIsSet) {
+        this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
+          this.$refs.promo
+        );
+      }
 
-    //         this.promoTitleAnimationInited = true;
-    //       }
+      // console.log('Animation init - promo mounted');
+    }
+  },
+  updated() {
+    if (this.$refs.promo) {
+      if (!this.promoSocialAnimationIsSet) {
+        this.promoSocialAnimationIsSet = promoSocialAnimation.init(
+          this.$refs.promo
+        );
+      }
 
-    //       this.i1 += 1;
+      if (!this.twoElementsAnimationIsSet) {
+        this.twoElementsAnimationIsSet = animationTwoElements(this.$refs.promo);
+      }
 
-    //       if (this.i1 > 10) {
-    //         clearInterval(this.promoTitleAnimationInterval);
-    //       }
-    //     }, 300);
-    //   }
+      if (!this.promoTitleAnimationIsSet) {
+        this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
+          this.$refs.promo
+        );
+      }
 
-    //   if (
-    //     !this.promoAndHeaderAnimationInited &&
-    //     (this.pageName === 'home' || this.pageName === 'smart')
-    //   ) {
-    //     this.promoAndHeaderAnimationInterval = setInterval(() => {
-    //       const promo = document.querySelector('.promo');
-    //       const promoButtons = document.querySelector('.promo__buttons');
-    //       const pageHeaderButtonsContainer = document.querySelector(
-    //         '.page-header__social'
-    //       );
-
-    //       if (promo && promoButtons && pageHeaderButtonsContainer) {
-    //         clearInterval(this.promoAndHeaderAnimationInterval);
-
-    //         this.promoAndHeaderAnimationInited =
-    //           animationPromoAndHeaderButtonsBookAndOffer(
-    //             pageHeaderButtonsContainer,
-    //             promoButtons,
-    //             promo
-    //           );
-    //       }
-
-    //       this.i2 += 1;
-
-    //       if (this.i2 > 10) {
-    //         clearInterval(this.promoAndHeaderAnimationInterval);
-    //       }
-    //     }, 300);
-    //   }
-
-    if (
-      !this.promoSocialAnimationInited &&
-      (this.pageName === 'home' || this.pageName === 'about')
-    ) {
-      this.promoSocialAnimationInterval = setInterval(() => {
-        const promo = document.querySelector('.promo');
-
-        if (promo) {
-          clearInterval(this.promoSocialAnimationInterval);
-
-          this.promoSocialAnimationInited = promoSocialAnimation.init(promo);
-        }
-
-        this.i += 1;
-
-        if (this.i > 10) {
-          clearInterval(this.promoSocialAnimationInterval);
-        }
-      }, 300);
+      // console.log('Animation init - promo updated');
     }
   },
   unmounted() {

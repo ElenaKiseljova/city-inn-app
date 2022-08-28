@@ -100,15 +100,11 @@
 
     z-index: 1;
 
-
-
     width: fit-content;
 
     padding-bottom: 40px;
 
     color: $white;
-
-    opacity: 1;
 
     &--desktop {
       display: none;
@@ -122,7 +118,9 @@
 
       color: $white;
 
-      opacity: 1;
+      transform: translate(50px, 50px);
+
+      opacity: 0;
     }
 
     @media screen and (min-width: $desktop) {
@@ -134,9 +132,7 @@
 
       padding: 0;
 
-      color: $light-green;
-
-      opacity: 0.4;
+      color: $white-40;
 
       &--desktop {
         display: block;
@@ -147,6 +143,8 @@
       }
 
       &.contacts__title--home {
+        color: $light-green-40;
+
         bottom: -5px;
       }
 

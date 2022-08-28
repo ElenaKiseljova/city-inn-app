@@ -1,6 +1,6 @@
 <template lang="pug">
 div(
-  :class='`swiper-slide ${this.sectionName}__slide ${slideType} ${slideModification}`'
+  :class='`swiper-slide ${sectionName}__slide ${slideType} ${slideModification}`'
 )
   slot
     | Empty slide

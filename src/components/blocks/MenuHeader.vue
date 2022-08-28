@@ -1,5 +1,5 @@
 <template lang="pug">
-.menu(v-if='header')
+.menu(v-if='header', ref='menu')
   .menu__container.container
     .menu__nav
       NavigationHeader(:items='navigationList')
@@ -55,15 +55,6 @@ export default {
       headerIsReady: false,
     };
   },
-  methods: {
-    scriptsInit() {
-      if (!this.headerIsReady) {
-        const scriptsInited = callUs() && menu();
-
-        this.headerIsReady = scriptsInited;
-      }
-    },
-  },
   computed: {
     ...mapGetters(['header']),
     callUs() {
@@ -78,10 +69,22 @@ export default {
     },
   },
   mounted() {
-    this.scriptsInit();
+    if (this.$refs.menu && !this.headerIsReady) {
+      callUs() && menu();
+
+      this.headerIsReady = true;
+
+      // console.log('Menu Activated - mounted');
+    }
   },
   updated() {
-    this.scriptsInit();
+    if (this.$refs.menu && !this.headerIsReady) {
+      callUs() && menu();
+
+      this.headerIsReady = true;
+
+      // console.log('Menu Activated - updated');
+    }
   },
 };
 </script>

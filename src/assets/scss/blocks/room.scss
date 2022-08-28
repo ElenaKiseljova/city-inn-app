@@ -59,9 +59,7 @@
       &--desktop {
         display: block;
 
-        // transform: translate(50px, 50px);
-
-        // opacity: 0;
+        opacity: 0;
       }
 
       &--mobile {
@@ -72,12 +70,16 @@
         margin-right: calc((100% + 232px) - 536px);
         margin-bottom: 92px;
         margin-left: -232px;
+
+        transform: translate(50px, 50px);
       }
 
       &--even {
         margin-right: calc(100% - 536px);
         margin-bottom: 52px;
         margin-left: 0;
+
+        transform: translate(-50px, -50px);
       }
     }
 

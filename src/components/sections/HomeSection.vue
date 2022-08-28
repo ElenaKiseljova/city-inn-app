@@ -2,13 +2,15 @@
 section(
   v-if='pageName && page && sections && section',
   :class='`home home--${sectionName}`',
-  :id='sectionName'
+  :id='sectionName',
+  ref='section'
 )
   div(:class='`home__container container home__container--${sectionName}`')
     div(:class='`home__top home__top--${sectionName}`')
       h2(
         v-html='title',
-        :class='`home__title home__title--mobile title home__title--${sectionName}`'
+        :class='`home__title home__title--mobile title home__title--${sectionName}`',
+        ref='title2'
       )
 
       div(:class='`home__img-wrapper home__img-wrapper--${sectionName}`')
@@ -21,7 +23,8 @@ section(
     div(:class='`home__bottom home__bottom--${sectionName}`')
       h2(
         v-html='title',
-        :class='` home__title home__title--desktop title home__title--${sectionName}`'
+        :class='` home__title home__title--desktop title home__title--${sectionName}`',
+        ref='title1'
       )
 
       div(:class='`home__content home__content--${sectionName}`')
@@ -57,6 +60,8 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import { sectionTitleAnimation } from '../../assets/js/gsap-animations';
+
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -76,6 +81,11 @@ export default {
     BaseImage,
     BaseButton,
     BaseWorktime,
+  },
+  data() {
+    return {
+      sectionTitleAnimationIsSet: false,
+    };
   },
   computed: {
     ...mapGetters(['pageName', 'page']),
@@ -129,6 +139,44 @@ export default {
     book() {
       return this.section && this.section.book ? this.section.book : null;
     },
+  },
+  mounted() {
+    if (
+      this.$refs.title1 &&
+      this.$refs.title2 &&
+      this.$refs.section &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      let title = this.$refs.title1;
+
+      if (this.sectionName === 'lobby' || this.sectionName === 'restaurant') {
+        title = this.$refs.title2;
+      }
+
+      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+        title,
+        this.$refs.section
+      );
+    }
+  },
+  updated() {
+    if (
+      this.$refs.title1 &&
+      this.$refs.title2 &&
+      this.$refs.section &&
+      !this.sectionTitleAnimationIsSet
+    ) {
+      let title = this.$refs.title1;
+
+      if (this.sectionName === 'lobby' || this.sectionName === 'restaurant') {
+        title = this.$refs.title2;
+      }
+
+      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+        title,
+        this.$refs.section
+      );
+    }
   },
 };
 </script>
