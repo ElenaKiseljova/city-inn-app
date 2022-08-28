@@ -56,6 +56,12 @@
 
     @include font(40, 40, 600);
 
+    @media screen and (min-width: $tablet) {
+      &--warm {
+        @include font(48, 48, 600);
+      }
+    }
+
     @media screen and (min-width: $desktop) {
       @include font(48, 48, 600);
     }

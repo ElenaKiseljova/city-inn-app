@@ -1,6 +1,7 @@
 <template lang="pug">
 div(
-  :class='`swiper ${sectionName}__slider ${sliderType} ${sliderModification}`'
+  :class='`swiper ${sectionName}__slider ${sliderType} ${sliderModification}`',
+  ref='slider'
 )
   div(
     :class='`swiper-wrapper ${this.sectionName}__slider-wrapper ${sliderWrapperType} ${sliderWrapperMofification}`'
@@ -12,7 +13,11 @@ div(
 <script>
 import { mapGetters } from 'vuex';
 
-import swipers from '../../assets/js/swipers';
+import {
+  swiperInit,
+  eventSliderInit,
+  featuresSliderInit,
+} from '../../assets/js/swipers';
 
 export default {
   props: {
@@ -58,7 +63,18 @@ export default {
     },
   },
   mounted() {
-    swipers();
+    const slider = this.$refs.slider;
+
+    if (slider) {
+      if (slider.classList.contains('event__slider--images')) {
+        eventSliderInit(slider);
+        console.log(slider);
+      } else if (slider.classList.contains('features__slider')) {
+        featuresSliderInit(slider);
+      } else if (!slider.classList.contains('event__slider--text')) {
+        swiperInit(slider);
+      }
+    }
   },
 };
 </script>

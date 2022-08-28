@@ -174,12 +174,6 @@
     }
   }
 
-  &__price-number {
-    @media screen and (min-width: $tablet) {
-      @include font(48, 48, 600);
-    }
-  }
-
   &__button {
     min-width: 100%;
 

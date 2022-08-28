@@ -155,6 +155,20 @@ const __pages = {
                 "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
+          },
+          {
+            "title": "кiмнати",
+            "link": "/rooms",
+            "image": {
+              "webp": {
+                "mobile": "/img/menu-bg-2-mobile.webp",
+                "desktop": "/img/menu-bg-2-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/menu-bg-2-mobile.jpg",
+                "desktop": "/img/menu-bg-2-desktop.jpg"
+              }
+            }
           }
         ]
       }
@@ -314,6 +328,20 @@ const __pages = {
               "jpg": {
                 "mobile": "/img/menu-bg-8-mobile.jpg",
                 "desktop": "/img/menu-bg-8-mobile.jpg"
+              }
+            }
+          },
+          {
+            "title": "rooms",
+            "link": "/en/rooms",
+            "image": {
+              "webp": {
+                "mobile": "/img/menu-bg-2-mobile.webp",
+                "desktop": "/img/menu-bg-2-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/menu-bg-2-mobile.jpg",
+                "desktop": "/img/menu-bg-2-desktop.jpg"
               }
             }
           }
@@ -5830,18 +5858,42 @@ const __pages = {
             "services": [
               {
                 "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-table.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-wi-fi.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-hairdryer.svg"
+              },
+              {
+                "title": "велике ліжко",
                 "icon": "/img/icons/mono/icon-area.svg"
               },
               {
                 "title": "міні парфюмерія",
-                "icon": "/img/icons/mono/icon-area.svg"
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
               },
               {
                 "title": "Wi-fi",
-                "icon": "/img/icons/mono/icon-area.svg"
+                "icon": "/img/icons/mono/icon-bed-2.svg"
               },
               {
                 "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-bed-big.svg"
+              },
+              {
+                "title": "міні-холодильник",
                 "icon": "/img/icons/mono/icon-area.svg"
               },
               {
@@ -5854,43 +5906,44 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/standart/gallery-1-mobile.webp",
+                  "tablet": "/img/standart/gallery-1-tablet.webp",
+                  "desktop": "/img/standart/gallery-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/standart/gallery-1-mobile.jpg",
+                  "tablet": "/img/standart/gallery-1-tablet.jpg",
+                  "desktop": "/img/standart/gallery-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/standart/gallery-2-mobile.webp",
+                  "tablet": "/img/standart/gallery-2-tablet.webp",
+                  "desktop": "/img/standart/gallery-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/standart/gallery-2-mobile.jpg",
+                  "tablet": "/img/standart/gallery-2-tablet.jpg",
+                  "desktop": "/img/standart/gallery-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/standart/gallery-1-mobile.webp",
+                  "tablet": "/img/standart/gallery-1-tablet.webp",
+                  "desktop": "/img/standart/gallery-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/standart/gallery-1-mobile.jpg",
+                  "tablet": "/img/standart/gallery-1-tablet.jpg",
+                  "desktop": "/img/standart/gallery-1-desktop.jpg"
                 }
               }
             ]
           },
           {
+            "subTitle": "ВХОДИТЬ У ВАРТІСТЬ",
             "services": [
               {
                 "title": "велике ліжко",
@@ -5898,11 +5951,108 @@ const __pages = {
               },
               {
                 "title": "міні парфюмерія",
-                "icon": "/img/icons/mono/icon-area.svg"
+                "icon": "/img/icons/mono/icon-table.svg"
               },
               {
                 "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-wi-fi.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
+              }
+            ],
+            "title": "Буде тепло!",
+            "image": {
+              "webp": {
+                "mobile": "/img/standart/warm-mobile.webp",
+                "tablet": "/img/standart/warm-tablet.webp",
+                "desktop": "/img/standart/warm-desktop.webp"
+              },
+              "jpg": {
+                "mobile": "/img/standart/warm-mobile.jpg",
+                "tablet": "/img/standart/warm-tablet.jpg",
+                "desktop": "/img/standart/warm-desktop.jpg"
+              }
+            }
+          }
+        ]
+      }
+    }
+  `,
+  '/en/rooms/1': `
+    {
+      "status": "success",
+      "content": {
+        "language": "en",
+        "title": "standart double",
+        "seoTitle": "Room - standart double",
+        "seoDescription": "Room standart double from City Inn. Top prices!",
+        "template": "standart",
+        "image": {
+          "webp": {
+            "mobile": "/img/standart/promo-bg-mobile.webp",
+            "tablet": "/img/standart/promo-bg-tablet.webp",
+            "desktop": "/img/standart/promo-bg-desktop.webp"
+          },
+          "jpg": {
+            "mobile": "/img/standart/promo-bg-mobile.jpg",
+            "tablet": "/img/standart/promo-bg-tablet.jpg",
+            "desktop": "/img/standart/promo-bg-desktop.jpg"
+          }
+        },
+        "id": 1,
+        "sections": [
+          {
+            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
+            "image": {
+              "webp": {
+                "tablet": "/img/standart/info-tablet.webp",
+                "desktop": "/img/standart/info-desktop.webp"
+              },
+              "jpg": {
+                "tablet": "/img/standart/info-tablet.jpg",
+                "desktop": "/img/standart/info-desktop.jpg"
+              }
+            },
+            "button": {
+              "text": "BOOK NOW",
+              "link": "google.com"
+            },
+            "priceNumber": 3100,
+            "priceText": "ціна від",
+            "services": [
+              {
+                "title": "2 гостей",
                 "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "18-25 кв. м",
+                "icon": "/img/icons/mono/icon-area.svg"
+              }
+            ]
+          },
+          {
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-table.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-wi-fi.svg"
               },
               {
                 "title": "Кондиціонер",
@@ -5910,23 +6060,109 @@ const __pages = {
               },
               {
                 "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-hairdryer.svg"
+              },
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-bed-2.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-bed-big.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні-холодильник",
                 "icon": "/img/icons/mono/icon-area.svg"
               }
-            ],
-            "title": "ВХОДИТЬ У ВАРТІСТЬ"
+            ]
           },
           {
+            "images": [
+              {
+                "webp": {
+                  "mobile": "/img/standart/gallery-1-mobile.webp",
+                  "tablet": "/img/standart/gallery-1-tablet.webp",
+                  "desktop": "/img/standart/gallery-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/standart/gallery-1-mobile.jpg",
+                  "tablet": "/img/standart/gallery-1-tablet.jpg",
+                  "desktop": "/img/standart/gallery-1-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/standart/gallery-2-mobile.webp",
+                  "tablet": "/img/standart/gallery-2-tablet.webp",
+                  "desktop": "/img/standart/gallery-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/standart/gallery-2-mobile.jpg",
+                  "tablet": "/img/standart/gallery-2-tablet.jpg",
+                  "desktop": "/img/standart/gallery-2-desktop.jpg"
+                }
+              },
+              {
+                "webp": {
+                  "mobile": "/img/standart/gallery-1-mobile.webp",
+                  "tablet": "/img/standart/gallery-1-tablet.webp",
+                  "desktop": "/img/standart/gallery-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/standart/gallery-1-mobile.jpg",
+                  "tablet": "/img/standart/gallery-1-tablet.jpg",
+                  "desktop": "/img/standart/gallery-1-desktop.jpg"
+                }
+              }
+            ]
+          },
+          {
+            "subTitle": "ВХОДИТЬ У ВАРТІСТЬ",
+            "services": [
+              {
+                "title": "велике ліжко",
+                "icon": "/img/icons/mono/icon-area.svg"
+              },
+              {
+                "title": "міні парфюмерія",
+                "icon": "/img/icons/mono/icon-table.svg"
+              },
+              {
+                "title": "Wi-fi",
+                "icon": "/img/icons/mono/icon-tv.svg"
+              },
+              {
+                "title": "Кондиціонер",
+                "icon": "/img/icons/mono/icon-wi-fi.svg"
+              },
+              {
+                "title": "міні-холодильник",
+                "icon": "/img/icons/mono/icon-mini-bar.svg"
+              }
+            ],
             "title": "Буде тепло!",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/standart/warm-mobile.webp",
+                "tablet": "/img/standart/warm-tablet.webp",
+                "desktop": "/img/standart/warm-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/standart/warm-mobile.jpg",
+                "tablet": "/img/standart/warm-tablet.jpg",
+                "desktop": "/img/standart/warm-desktop.jpg"
               }
             }
           }

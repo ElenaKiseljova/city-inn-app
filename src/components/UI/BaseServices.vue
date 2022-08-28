@@ -3,11 +3,8 @@ ul(
   v-if='items.length > 0',
   :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`'
 )
-  BaseServicesItem(
-    v-for='item in items',
-    :item='item',
-    :modificator='modificator'
-  )
+  li.services__item(v-for='item in items', :key='item', :item='item')
+    BaseService(:item='item', :modificator='modificator')
 
   li.services__item.services__item--worktime(v-if='additionalItem.worktime')
     BaseWorktime(
@@ -18,7 +15,7 @@ ul(
 </template>
 
 <script>
-import BaseServicesItem from './BaseServicesItem.vue';
+import BaseService from './BaseService.vue';
 import BaseWorktime from './BaseWorktime.vue';
 
 export default {
@@ -48,7 +45,7 @@ export default {
     },
   },
   components: {
-    BaseServicesItem,
+    BaseService,
     BaseWorktime,
   },
   computed: {

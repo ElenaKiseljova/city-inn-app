@@ -1,9 +1,9 @@
 <template lang="pug">
-li(:class='`services__item ${modificationItemClasses}`')
-  div(:class='`services__icon ${modificationIconClasses}`')
+div(:class='`service ${modificationItemClasses}`')
+  div(:class='`service__icon ${modificationIconClasses}`')
     img(width='40', height='40', :src='item.icon', :alt='item.title')
 
-  h5(:class='`services__name ${modificationNameClasses}`')
+  h5(:class='`service__name ${modificationNameClasses}`')
     | {{ item.title }}
 </template>
 
@@ -18,18 +18,13 @@ export default {
       type: String,
       required: true,
     },
-    additionalClass: {
-      type: String,
-      required: false,
-      default: '',
-    },
   },
   computed: {
     modificationItemClasses() {
       const modificationClasses = this.modificator
         .split(',')
         .map((mod) => {
-          return `services__item--${mod}`;
+          return `service--${mod}`;
         })
         .join(' ');
 
@@ -39,7 +34,7 @@ export default {
       const modificationClasses = this.modificator
         .split(',')
         .map((mod) => {
-          return `services__icon--${mod}`;
+          return `service__icon--${mod}`;
         })
         .join(' ');
 
@@ -49,7 +44,7 @@ export default {
       const modificationClasses = this.modificator
         .split(',')
         .map((mod) => {
-          return `services__name--${mod}`;
+          return `service__name--${mod}`;
         })
         .join(' ');
 
@@ -58,3 +53,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '~@/assets/scss/blocks/service';
+</style>

@@ -1,17 +1,27 @@
 <template lang="pug">
-section.banquet(v-if='page && pageName && sections && section')
-  .banquet__container.container
-    h2.title-inner.banquet__title(v-if='title', v-html='title')
+section.gallery(v-if='page && sections && section')
+  h2.visually-hidden Gallery
 
-    BaseSlider(v-if='images && images.length > 0', sectionName='banquet')
-      BaseSlide(v-for='image in images', sectionName='banquet')
+  .gallery__container.container
+    BaseSlider(
+      v-if='images && images.length > 0',
+      sectionName='gallery',
+      :modificator='pageName'
+    )
+      BaseSlide(
+        v-for='iamge in images',
+        sectionName='gallery',
+        :modificator='pageName'
+      )
         BaseImage(
-          sectionName='banquet',
+          sectionName='gallery',
           :modificator='pageName',
-          :image='image',
-          alt='img'
+          :image='iamge'
         )
-    BasePagination(sectionName='banquet')
+
+    BasePagination(sectionName='gallery', :modificator='pageName')
+
+    BaseNavigation(sectionName='gallery', :modificator='pageName')
 </template>
 
 <script>
@@ -21,33 +31,28 @@ import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr'
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
 import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BaseNavigation from '../../components/UI/BaseNavigation.vue';
 import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseImage from '../../components/UI/BaseImage.vue';
+import BaseImage from '@/components/UI/BaseImage.vue';
+import BaseNavigation from '@/components/UI/BaseNavigation.vue';
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,
-    BaseNavigation,
     BasePagination,
     BaseImage,
+    BaseNavigation,
   },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
+      return this.page && this.page.content && this.page.content.sections
         ? this.page.content.sections
-        : null;
+        : [];
     },
     section() {
       return this.sections && this.sections[2] ? this.sections[2] : null;
-    },
-    title() {
-      return this.section && this.section.title && this.section.title !== ''
-        ? this.converteSymbolsNewLineToBr(this.section.title)
-        : null;
     },
     images() {
       return this.section && this.section.images ? this.section.images : [];
@@ -57,5 +62,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/assets/scss/blocks/banquet';
+@import '~@/assets/scss/blocks/gallery';
 </style>

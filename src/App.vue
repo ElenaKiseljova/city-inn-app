@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { reloader } from './assets/js/swipers';
+
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
 
@@ -20,6 +22,9 @@ export default {
   components: {
     TheHeader,
     TheFooter,
+  },
+  mounted() {
+    reloader();
   },
 };
 </script>

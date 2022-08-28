@@ -44,30 +44,31 @@
           transform-origin: left top;
           transform: translateY(0) scale(1);
 
-          transition: transform 0.3s;
+          transition: transform 0.5s linear;
         }
       }
 
-      &.swiper-slide-next {
-        &~.swiper-slide {
-          opacity: 0;
-
-          pointer-events: none;
-        }
-
+      &.swiper-slide-next,
+      &.swiper-slide-next~.swiper-slide {
         .gallery__img {
           $scale: calc(280 / 680);
 
           transform-origin: left top;
           transform: translateY(80px) scale(#{$scale});
+        }
+      }
 
-          transition: transform 0.3s;
+      &.swiper-slide-next {
+        .gallery__img {
+          transition: transform 0.5s linear;
         }
       }
     }
 
     @media screen and (min-width: $desktop) {
-      &.swiper-slide-next {
+
+      &.swiper-slide-next,
+      &.swiper-slide-next~.swiper-slide {
         .gallery__img {
           $scale: calc(420 / 840);
 

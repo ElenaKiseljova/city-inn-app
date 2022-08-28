@@ -42,7 +42,7 @@ section(
         BaseButton(
           v-if='book',
           sectionName='home',
-          :modificator='`${sectionName},book`',
+          :modificator='`${sectionName},book-now`',
           :button='book'
         )
 
