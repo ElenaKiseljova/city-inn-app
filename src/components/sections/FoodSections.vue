@@ -79,7 +79,7 @@ section(
             )
 
         BaseButton(
-          v-if='more',
+          v-if='tabs && tabs.length > 0 && more',
           sectionName='food',
           :modificator='sectionName',
           :button='more'
@@ -142,19 +142,27 @@ export default {
         : [];
     },
     section() {
-      if (this.sectionName === 'advantages' || this.sectionName === 'supply') {
-        return this.sections && this.sections[2] ? this.sections[2] : null;
-      }
-
-      if (this.sectionName === 'why-conference') {
-        return this.sections && this.sections[4] ? this.sections[4] : null;
-      }
-
       if (
         this.sectionName === 'approach-conference' ||
         this.sectionName === 'approach-group'
       ) {
         return this.sections && this.sections[0] ? this.sections[0] : null;
+      }
+
+      if (this.sectionName === 'menu') {
+        return this.sections && this.sections[1] ? this.sections[1] : null;
+      }
+
+      if (this.sectionName === 'advantages' || this.sectionName === 'supply') {
+        return this.sections && this.sections[2] ? this.sections[2] : null;
+      }
+
+      if (this.sectionName === 'breakfast') {
+        return this.sections && this.sections[3] ? this.sections[3] : null;
+      }
+
+      if (this.sectionName === 'why-conference') {
+        return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
       return null;
@@ -201,8 +209,10 @@ export default {
         : null;
     },
     menu() {
-      return this.section && (this.section.menu || this.section.button)
-        ? this.section.menu || this.section.button
+      return this.haveMenuButton &&
+        this.section &&
+        (this.section.menu || this.section.more || this.section.button)
+        ? this.section.menu || this.section.more || this.section.button
         : null;
     },
     images() {
@@ -210,6 +220,13 @@ export default {
     },
     tabs() {
       return this.section && this.section.tabs ? this.section.tabs : null;
+    },
+    haveMenuButton() {
+      return this.sectionName === 'menu' ||
+        this.sectionName === 'supply' ||
+        this.sectionName === 'breakfast'
+        ? true
+        : false;
     },
   },
 };

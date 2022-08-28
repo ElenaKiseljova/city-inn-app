@@ -183,12 +183,12 @@ section(
           v-html='contentTextBottom'
         )
 
-        BaseButton(
-          v-if='contentButton',
-          sectionName='event',
-          :modificator='sectionName',
-          :button='contentButton'
-        )
+      BaseButton(
+        v-if='contentButton',
+        sectionName='event',
+        :modificator='sectionName',
+        :button='contentButton'
+      )
 </template>
 
 <script>
@@ -243,8 +243,21 @@ export default {
     },
     section() {
       if (
+        this.sectionName === 'locations' ||
+        this.sectionName === 'saunas' ||
+        this.sectionName === 'smart-rooms'
+      ) {
+        return this.sections && this.sections[1] ? this.sections[1] : null;
+      }
+
+      if (this.sectionName === 'kitchen') {
+        return this.sections && this.sections[2] ? this.sections[2] : null;
+      }
+
+      if (
         this.sectionName === 'around' ||
         this.sectionName === 'coffee' ||
+        this.sectionName === 'event' ||
         this.sectionName === 'halls'
       ) {
         return this.sections && this.sections[3] ? this.sections[3] : null;
@@ -252,14 +265,6 @@ export default {
 
       if (this.sectionName === 'attraction') {
         return this.sections && this.sections[4] ? this.sections[4] : null;
-      }
-
-      if (
-        this.sectionName === 'locations' ||
-        this.sectionName === 'saunas' ||
-        this.sectionName === 'smart-rooms'
-      ) {
-        return this.sections && this.sections[1] ? this.sections[1] : null;
       }
 
       return null;
@@ -296,31 +301,42 @@ export default {
         : [];
     },
     content() {
-      return this.section & this.section.content ? this.section.content : null;
+      return this.section &&
+        (this.section.text ||
+          this.section.more ||
+          this.section.menu ||
+          this.section.button)
+        ? true
+        : false;
     },
     contentTitle() {
-      const title =
-        this.content && this.content.title ? this.content.title : null;
-      return title ? this.converteSymbolsNewLineToBr(title) : title;
+      return this.content &&
+        this.section.contentTitle &&
+        this.section.contentTitle !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.contentTitle)
+        : null;
     },
     contentTextTop() {
-      const topText =
-        this.content && (this.content.topText || this.content.text)
-          ? this.content.topText ?? this.content.text
-          : null;
-      return topText ? this.converteSymbolsNewLineToBr(topText) : topText;
+      return this.content &&
+        (this.section.topText || this.section.text) &&
+        (this.section.topText !== '' || this.section.text !== '')
+        ? this.converteSymbolsNewLineToBr(
+            this.section.topText || this.section.text
+          )
+        : null;
     },
     contentTextBottom() {
-      const bottomText =
-        this.content && this.content.bottomText
-          ? this.content.bottomText
-          : null;
-      return bottomText
-        ? this.converteSymbolsNewLineToBr(bottomText)
-        : bottomText;
+      return this.content &&
+        this.section.bottomText &&
+        this.section.bottomText !== ''
+        ? this.converteSymbolsNewLineToBr(this.section.bottomText)
+        : null;
     },
     contentButton() {
-      return this.content && this.content.button ? this.content.button : null;
+      return this.content &&
+        (this.section.more || this.section.menu || this.section.button)
+        ? this.section.more || this.section.menu || this.section.button
+        : null;
     },
     haveTitleImage() {
       if (this.sectionName === 'coffee' || this.sectionName === 'halls') {

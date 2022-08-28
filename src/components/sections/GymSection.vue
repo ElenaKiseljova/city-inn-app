@@ -101,12 +101,12 @@ export default {
         : null;
     },
     section() {
-      if (this.pageName === 'group') {
-        return this.sections && this.sections[4] ? this.sections[4] : null;
-      }
-
       if (this.pageName === 'starfit') {
         return this.sections && this.sections[2] ? this.sections[2] : null;
+      }
+
+      if (this.pageName === 'group') {
+        return this.sections && this.sections[4] ? this.sections[4] : null;
       }
 
       return null;

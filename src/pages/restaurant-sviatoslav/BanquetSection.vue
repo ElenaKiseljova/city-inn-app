@@ -1,22 +1,17 @@
 <template lang="pug">
-section.mission(v-if='page && sections && section')
-  .mission__container.container
-    h2.title-inner.mission__title(v-if='title', v-html='title')
+section.banquet(v-if='page && sections && section')
+  .banquet__container.container
+    h2.title-inner.banquet__title(v-if='title', v-html='title')
 
-    .mission__content
-      p.mission__text(v-if='text', v-html='text')
-
-    BaseNavigation(sectionName='mission')
-
-    BaseSlider(v-if='images && images.length > 0', sectionName='mission')
-      BaseSlide(v-for='image in images', sectionName='mission')
+    BaseSlider(v-if='images && images.length > 0', sectionName='banquet')
+      BaseSlide(v-for='image in images', sectionName='banquet')
         BaseImage(
-          sectionName='mission',
+          sectionName='banquet',
           :modificator='sectionName',
           :image='image',
           alt='img'
         )
-    BasePagination(sectionName='mission')
+    BasePagination(sectionName='banquet')
 </template>
 
 <script>
@@ -47,16 +42,11 @@ export default {
         : null;
     },
     section() {
-      return this.sections && this.sections[0] ? this.sections[0] : null;
+      return this.sections && this.sections[2] ? this.sections[2] : null;
     },
     title() {
       return this.section && this.section.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
-        : null;
-    },
-    text() {
-      return this.section && this.section.text && this.section.text !== ''
-        ? this.converteSymbolsNewLineToBr(this.section.text)
         : null;
     },
     images() {
@@ -67,5 +57,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@/assets/scss/blocks/mission';
+@import '~@/assets/scss/blocks/banquet';
 </style>

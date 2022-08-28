@@ -741,7 +741,7 @@ const __pages = {
             "contentBottom": "Буде smart",
             "book": {
               "title": "group booking",
-              "link": "google.com"
+              "link": "/group-request"
             },
             "image": {
               "webp": {
@@ -764,7 +764,7 @@ const __pages = {
             "contentBottom": "Буде смачно",
             "book": {
               "title": "Забронювати",
-              "link": "google.com"
+              "link": "/restaurant-sviatoslav"
             },
             "worktime": "07:00 до 22:00",
             "image": {
@@ -936,7 +936,7 @@ const __pages = {
             "contentBottom": "Буде smart",
             "book": {
               "title": "group booking",
-              "link": "google.com"
+              "link": "/en/group-request"
             },
             "image": {
               "webp": {
@@ -959,7 +959,7 @@ const __pages = {
             "contentBottom": "Буде смачно",
             "book": {
               "title": "Забронювати",
-              "link": "google.com"
+              "link": "/en/restaurant-sviatoslav"
             },
             "worktime": "07:00 до 22:00",
             "image": {
@@ -1075,14 +1075,14 @@ const __pages = {
               },
               {
                 "webp": {
-                  "mobile": "/img/about/mission-1-mobile.webp",
-                  "tablet": "/img/about/mission-1-tablet.webp",
-                  "desktop": "/img/about/mission-1-desktop.webp"
+                  "mobile": "/img/about/why-1-mobile.webp",
+                  "tablet": "/img/about/why-1-tablet.webp",
+                  "desktop": "/img/about/why-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/img/about/mission-1-mobile.jpg",
-                  "tablet": "/img/about/mission-1-tablet.jpg",
-                  "desktop": "/img/about/mission-1-desktop.jpg"
+                  "mobile": "/img/about/why-1-mobile.jpg",
+                  "tablet": "/img/about/why-1-tablet.jpg",
+                  "desktop": "/img/about/why-1-desktop.jpg"
                 }
               },
               {
@@ -4272,7 +4272,7 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "uk",
-        "title": "lobby bar",
+        "title": "lobby\r\nbar",
         "seoTitle": "lobby bar",
         "seoDescription": "lobby bar city inn!!!",
         "template": "lobby",
@@ -4307,14 +4307,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/doings-1-mobile.webp",
+                    "tablet": "/img/lobby/doings-1-tablet.webp",
+                    "desktop": "/img/lobby/doings-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/doings-1-mobile.jpg",
+                    "tablet": "/img/lobby/doings-1-tablet.jpg",
+                    "desktop": "/img/lobby/doings-1-desktop.jpg"
                   }
                 },
                 "title": "кино",
@@ -4323,14 +4323,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/cosy-1-mobile.webp",
+                    "tablet": "/img/lobby/cosy-1-tablet.webp",
+                    "desktop": "/img/lobby/cosy-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/cosy-1-mobile.jpg",
+                    "tablet": "/img/lobby/cosy-1-tablet.jpg",
+                    "desktop": "/img/lobby/cosy-1-desktop.jpg"
                   }
                 },
                 "title": "гастро-вечера",
@@ -4339,14 +4339,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-1-mobile.webp",
+                    "tablet": "/img/lobby/food-1-tablet.webp",
+                    "desktop": "/img/lobby/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-1-mobile.jpg",
+                    "tablet": "/img/lobby/food-1-tablet.jpg",
+                    "desktop": "/img/lobby/food-1-desktop.jpg"
                   }
                 },
                 "title": "кино-вечера",
@@ -4367,14 +4367,14 @@ const __pages = {
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/lobby/bar-bg-mobile.webp",
+                "tablet": "/img/lobby/bar-bg-tablet.webp",
+                "desktop": "/img/lobby/bar-bg-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/lobby/bar-bg-mobile.jpg",
+                "tablet": "/img/lobby/bar-bg-tablet.jpg",
+                "desktop": "/img/lobby/bar-bg-desktop.jpg"
               }
             }
           },
@@ -4389,28 +4389,28 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-1-mobile.webp",
+                    "tablet": "/img/lobby/food-1-tablet.webp",
+                    "desktop": "/img/lobby/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-1-mobile.jpg",
+                    "tablet": "/img/lobby/food-1-tablet.jpg",
+                    "desktop": "/img/lobby/food-1-desktop.jpg"
                   }
                 }
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-2-mobile.webp",
+                    "tablet": "/img/lobby/food-2-tablet.webp",
+                    "desktop": "/img/lobby/food-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-2-mobile.jpg",
+                    "tablet": "/img/lobby/food-2-tablet.jpg",
+                    "desktop": "/img/lobby/food-2-desktop.jpg"
                   }
                 }
               }
@@ -4418,52 +4418,48 @@ const __pages = {
           },
           {
             "title": "про\r\nзавтраки",
-            "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            "textTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з ",
+            "textBottom": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            
             "more": {
               "text": "menu",
               "link": "google.com"
             },
-            "slides": [
+            "images": [
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-2-mobile.webp",
+                  "tablet": "/img/lobby/food-2-tablet.webp",
+                  "desktop": "/img/lobby/food-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-2-mobile.jpg",
+                  "tablet": "/img/lobby/food-2-tablet.jpg",
+                  "desktop": "/img/lobby/food-2-desktop.jpg"
                 }
               },
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-1-mobile.webp",
+                  "tablet": "/img/lobby/food-1-tablet.webp",
+                  "desktop": "/img/lobby/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-1-mobile.jpg",
+                  "tablet": "/img/lobby/food-1-tablet.jpg",
+                  "desktop": "/img/lobby/food-1-desktop.jpg"
                 }
               },
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-1-mobile.webp",
+                  "tablet": "/img/lobby/food-1-tablet.webp",
+                  "desktop": "/img/lobby/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-1-mobile.jpg",
+                  "tablet": "/img/lobby/food-1-tablet.jpg",
+                  "desktop": "/img/lobby/food-1-desktop.jpg"
                 }
               }
             ]
@@ -4476,8 +4472,8 @@ const __pages = {
     {
       "status": "success",
       "content": {
-        "language": "en",
-        "title": "lobby bar",
+        "language": "uk",
+        "title": "lobby\r\nbar",
         "seoTitle": "lobby bar",
         "seoDescription": "lobby bar city inn!!!",
         "template": "lobby",
@@ -4512,14 +4508,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/doings-1-mobile.webp",
+                    "tablet": "/img/lobby/doings-1-tablet.webp",
+                    "desktop": "/img/lobby/doings-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/doings-1-mobile.jpg",
+                    "tablet": "/img/lobby/doings-1-tablet.jpg",
+                    "desktop": "/img/lobby/doings-1-desktop.jpg"
                   }
                 },
                 "title": "кино",
@@ -4528,14 +4524,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/cosy-1-mobile.webp",
+                    "tablet": "/img/lobby/cosy-1-tablet.webp",
+                    "desktop": "/img/lobby/cosy-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/cosy-1-mobile.jpg",
+                    "tablet": "/img/lobby/cosy-1-tablet.jpg",
+                    "desktop": "/img/lobby/cosy-1-desktop.jpg"
                   }
                 },
                 "title": "гастро-вечера",
@@ -4544,14 +4540,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-1-mobile.webp",
+                    "tablet": "/img/lobby/food-1-tablet.webp",
+                    "desktop": "/img/lobby/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-1-mobile.jpg",
+                    "tablet": "/img/lobby/food-1-tablet.jpg",
+                    "desktop": "/img/lobby/food-1-desktop.jpg"
                   }
                 },
                 "title": "кино-вечера",
@@ -4572,14 +4568,14 @@ const __pages = {
             },
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/lobby/bar-bg-mobile.webp",
+                "tablet": "/img/lobby/bar-bg-tablet.webp",
+                "desktop": "/img/lobby/bar-bg-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/lobby/bar-bg-mobile.jpg",
+                "tablet": "/img/lobby/bar-bg-tablet.jpg",
+                "desktop": "/img/lobby/bar-bg-desktop.jpg"
               }
             }
           },
@@ -4594,28 +4590,28 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-1-mobile.webp",
+                    "tablet": "/img/lobby/food-1-tablet.webp",
+                    "desktop": "/img/lobby/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-1-mobile.jpg",
+                    "tablet": "/img/lobby/food-1-tablet.jpg",
+                    "desktop": "/img/lobby/food-1-desktop.jpg"
                   }
                 }
               },
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/lobby/food-2-mobile.webp",
+                    "tablet": "/img/lobby/food-2-tablet.webp",
+                    "desktop": "/img/lobby/food-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/lobby/food-2-mobile.jpg",
+                    "tablet": "/img/lobby/food-2-tablet.jpg",
+                    "desktop": "/img/lobby/food-2-desktop.jpg"
                   }
                 }
               }
@@ -4623,52 +4619,48 @@ const __pages = {
           },
           {
             "title": "про\r\nзавтраки",
-            "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            "textTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з ",
+            "textBottom": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            
             "more": {
               "text": "menu",
               "link": "google.com"
             },
-            "slides": [
+            "images": [
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-2-mobile.webp",
+                  "tablet": "/img/lobby/food-2-tablet.webp",
+                  "desktop": "/img/lobby/food-2-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-2-mobile.jpg",
+                  "tablet": "/img/lobby/food-2-tablet.jpg",
+                  "desktop": "/img/lobby/food-2-desktop.jpg"
                 }
               },
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-1-mobile.webp",
+                  "tablet": "/img/lobby/food-1-tablet.webp",
+                  "desktop": "/img/lobby/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-1-mobile.jpg",
+                  "tablet": "/img/lobby/food-1-tablet.jpg",
+                  "desktop": "/img/lobby/food-1-desktop.jpg"
                 }
               },
               {
-                "image": {
-                  "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
-                  },
-                  "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                  }
+                "webp": {
+                  "mobile": "/img/lobby/food-1-mobile.webp",
+                  "tablet": "/img/lobby/food-1-tablet.webp",
+                  "desktop": "/img/lobby/food-1-desktop.webp"
+                },
+                "jpg": {
+                  "mobile": "/img/lobby/food-1-mobile.jpg",
+                  "tablet": "/img/lobby/food-1-tablet.jpg",
+                  "desktop": "/img/lobby/food-1-desktop.jpg"
                 }
               }
             ]
@@ -4713,42 +4705,43 @@ const __pages = {
         "sections": [
           {
             "title": "затишно",
-            "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            "textTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
+            "textBottom": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/food-1-mobile.webp",
+                  "tablet": "/img/restaurant/food-1-tablet.webp",
+                  "desktop": "/img/restaurant/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/food-1-mobile.jpg",
+                  "tablet": "/img/restaurant/food-1-tablet.jpg",
+                  "desktop": "/img/restaurant/food-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/food-2-mobile.webp",
+                  "tablet": "/img/restaurant/food-2-tablet.webp",
+                  "desktop": "/img/restaurant/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/food-2-mobile.jpg",
+                  "tablet": "/img/restaurant/food-2-tablet.jpg",
+                  "desktop": "/img/restaurant/food-2-desktop.jpg"
                 }
               }
             ]
@@ -4763,97 +4756,97 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/food-1-mobile.webp",
+                  "tablet": "/img/restaurant/food-1-tablet.webp",
+                  "desktop": "/img/restaurant/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/food-1-mobile.jpg",
+                  "tablet": "/img/restaurant/food-1-tablet.jpg",
+                  "desktop": "/img/restaurant/food-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/food-2-mobile.webp",
+                  "tablet": "/img/restaurant/food-2-tablet.webp",
+                  "desktop": "/img/restaurant/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/food-2-mobile.jpg",
+                  "tablet": "/img/restaurant/food-2-tablet.jpg",
+                  "desktop": "/img/restaurant/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               }
             ]
           },
           {
-            "title": "Банкетный зал",
+            "title": "Банкетный\r\nзал",
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/banquet-1-mobile.webp",
+                  "tablet": "/img/restaurant/banquet-1-tablet.webp",
+                  "desktop": "/img/restaurant/banquet-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/banquet-1-mobile.jpg",
+                  "tablet": "/img/restaurant/banquet-1-tablet.jpg",
+                  "desktop": "/img/restaurant/banquet-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/banquet-1-mobile.webp",
+                  "tablet": "/img/restaurant/banquet-1-tablet.webp",
+                  "desktop": "/img/restaurant/banquet-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/banquet-1-mobile.jpg",
+                  "tablet": "/img/restaurant/banquet-1-tablet.jpg",
+                  "desktop": "/img/restaurant/banquet-1-desktop.jpg"
                 }
               }
             ]
           },
           {
-            "title": "проведіть<br />захід",
+            "title": "проведіть\r\nзахід",
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/event-1-mobile.webp",
+                    "tablet": "/img/restaurant/event-1-tablet.webp",
+                    "desktop": "/img/restaurant/event-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/event-1-mobile.jpg",
+                    "tablet": "/img/restaurant/event-1-tablet.jpg",
+                    "desktop": "/img/restaurant/event-1-desktop.jpg"
                   }
                 },
                 "title": "ВЕСІЛЛЯ",
@@ -4866,14 +4859,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                    "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                    "desktop": "/img/restaurant/cosy-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                    "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                    "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                   }
                 },
                 "title": "БЕНКЕТ",
@@ -4886,14 +4879,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/food-1-mobile.webp",
+                    "tablet": "/img/restaurant/food-1-tablet.webp",
+                    "desktop": "/img/restaurant/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/food-1-mobile.jpg",
+                    "tablet": "/img/restaurant/food-1-tablet.jpg",
+                    "desktop": "/img/restaurant/food-1-desktop.jpg"
                   }
                 },
                 "title": "корпоратив",
@@ -4914,7 +4907,7 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "en",
-        "title": "Ресторан Святослав",
+        "title": "Restaurant Sviatoslav",
         "seoTitle": "Ресторан Святослав - топ за свои деньги!",
         "seoDescription": "Кушать очень вкусно! Ресторан Святослав!",
         "template": "restaurant",
@@ -4949,38 +4942,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/food-1-mobile.webp",
+                  "tablet": "/img/restaurant/food-1-tablet.webp",
+                  "desktop": "/img/restaurant/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/food-1-mobile.jpg",
+                  "tablet": "/img/restaurant/food-1-tablet.jpg",
+                  "desktop": "/img/restaurant/food-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/food-2-mobile.webp",
+                  "tablet": "/img/restaurant/food-2-tablet.webp",
+                  "desktop": "/img/restaurant/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/food-2-mobile.jpg",
+                  "tablet": "/img/restaurant/food-2-tablet.jpg",
+                  "desktop": "/img/restaurant/food-2-desktop.jpg"
                 }
               }
             ]
@@ -4995,97 +4988,97 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/food-1-mobile.webp",
+                  "tablet": "/img/restaurant/food-1-tablet.webp",
+                  "desktop": "/img/restaurant/food-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/food-1-mobile.jpg",
+                  "tablet": "/img/restaurant/food-1-tablet.jpg",
+                  "desktop": "/img/restaurant/food-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/food-2-mobile.webp",
+                  "tablet": "/img/restaurant/food-2-tablet.webp",
+                  "desktop": "/img/restaurant/food-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/food-2-mobile.jpg",
+                  "tablet": "/img/restaurant/food-2-tablet.jpg",
+                  "desktop": "/img/restaurant/food-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               }
             ]
           },
           {
-            "title": "Банкетный зал",
+            "title": "Банкетный\r\nзал",
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/restaurant/banquet-1-mobile.webp",
+                  "tablet": "/img/restaurant/banquet-1-tablet.webp",
+                  "desktop": "/img/restaurant/banquet-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/restaurant/banquet-1-mobile.jpg",
+                  "tablet": "/img/restaurant/banquet-1-tablet.jpg",
+                  "desktop": "/img/restaurant/banquet-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                  "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                  "desktop": "/img/restaurant/cosy-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                  "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                  "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/restaurant/banquet-1-mobile.webp",
+                  "tablet": "/img/restaurant/banquet-1-tablet.webp",
+                  "desktop": "/img/restaurant/banquet-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/restaurant/banquet-1-mobile.jpg",
+                  "tablet": "/img/restaurant/banquet-1-tablet.jpg",
+                  "desktop": "/img/restaurant/banquet-1-desktop.jpg"
                 }
               }
             ]
           },
           {
-            "title": "проведіть<br />захід",
+            "title": "проведіть\r\nзахід",
             "slides": [
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/event-1-mobile.webp",
+                    "tablet": "/img/restaurant/event-1-tablet.webp",
+                    "desktop": "/img/restaurant/event-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/event-1-mobile.jpg",
+                    "tablet": "/img/restaurant/event-1-tablet.jpg",
+                    "desktop": "/img/restaurant/event-1-desktop.jpg"
                   }
                 },
                 "title": "ВЕСІЛЛЯ",
@@ -5098,14 +5091,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/cosy-1-mobile.webp",
+                    "tablet": "/img/restaurant/cosy-1-tablet.webp",
+                    "desktop": "/img/restaurant/cosy-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/cosy-1-mobile.jpg",
+                    "tablet": "/img/restaurant/cosy-1-tablet.jpg",
+                    "desktop": "/img/restaurant/cosy-1-desktop.jpg"
                   }
                 },
                 "title": "БЕНКЕТ",
@@ -5118,14 +5111,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/restaurant/food-1-mobile.webp",
+                    "tablet": "/img/restaurant/food-1-tablet.webp",
+                    "desktop": "/img/restaurant/food-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/restaurant/food-1-mobile.jpg",
+                    "tablet": "/img/restaurant/food-1-tablet.jpg",
+                    "desktop": "/img/restaurant/food-1-desktop.jpg"
                   }
                 },
                 "title": "корпоратив",
@@ -5172,17 +5165,18 @@ const __pages = {
             "id": 1,
             "title": "standart double",
             "code": "standart_double",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-1-mobile.webp",
+                "tablet": "/img/rooms/room-1-tablet.webp",
+                "desktop": "/img/rooms/room-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-1-mobile.jpg",
+                "tablet": "/img/rooms/room-1-tablet.jpg",
+                "desktop": "/img/rooms/room-1-desktop.jpg"
               }
             },
             "book": {
@@ -5191,7 +5185,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/standart_double"
+              "link": "/rooms/1"
             },
             "services": [
               {
@@ -5212,17 +5206,18 @@ const __pages = {
             "id": 2,
             "title": "standart twin",
             "code": "standart_twin",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-2-mobile.webp",
+                "tablet": "/img/rooms/room-2-tablet.webp",
+                "desktop": "/img/rooms/room-2-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-2-mobile.jpg",
+                "tablet": "/img/rooms/room-2-tablet.jpg",
+                "desktop": "/img/rooms/room-2-desktop.jpg"
               }
             },
             "book": {
@@ -5231,7 +5226,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/standart_twin"
+              "link": "/rooms/2"
             },
             "services": [
               {
@@ -5252,17 +5247,18 @@ const __pages = {
             "id": 3,
             "title": "superior double",
             "code": "superior_double",
+            "priceFor": "ціна від",
             "price": 3000,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-3-mobile.webp",
+                "tablet": "/img/rooms/room-3-tablet.webp",
+                "desktop": "/img/rooms/room-3-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-3-mobile.jpg",
+                "tablet": "/img/rooms/room-3-tablet.jpg",
+                "desktop": "/img/rooms/room-3-desktop.jpg"
               }
             },
             "book": {
@@ -5271,7 +5267,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/superior_double"
+              "link": "/rooms/3"
             },
             "services": [
               {
@@ -5292,17 +5288,18 @@ const __pages = {
             "id": 4,
             "title": "superior twin",
             "code": "superior_twin",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/rooms/room-4-mobile.webp",
+                "tablet": "/img/rooms/room-4-tablet.webp",
+                "desktop": "/img/rooms/room-4-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/rooms/room-4-mobile.jpg",
+                "tablet": "/img/rooms/room-4-tablet.jpg",
+                "desktop": "/img/rooms/room-4-desktop.jpg"
               }
             },
             "book": {
@@ -5332,17 +5329,18 @@ const __pages = {
             "id": 5,
             "title": "superior family",
             "code": "superior_family",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/rooms/room-5-mobile.webp",
+                "tablet": "/img/rooms/room-5-tablet.webp",
+                "desktop": "/img/rooms/room-5-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/rooms/room-5-mobile.jpg",
+                "tablet": "/img/rooms/room-5-tablet.jpg",
+                "desktop": "/img/rooms/room-5-desktop.jpg"
               }
             },
             "book": {
@@ -5372,17 +5370,18 @@ const __pages = {
             "id": 6,
             "title": "junior suite",
             "code": "junior_suite",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-6-mobile.webp",
+                "tablet": "/img/rooms/room-6-tablet.webp",
+                "desktop": "/img/rooms/room-6-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-6-mobile.jpg",
+                "tablet": "/img/rooms/room-6-tablet.jpg",
+                "desktop": "/img/rooms/room-6-desktop.jpg"
               }
             },
             "book": {
@@ -5412,17 +5411,18 @@ const __pages = {
             "id": 7,
             "title": "suite",
             "code": "suite",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network1-2.webp",
-                "tablet": "/storage/media/2022/07/network1-2.webp",
-                "desktop": "/storage/media/2022/07/network1-2.webp"
+                "mobile": "/img/rooms/room-7-mobile.webp",
+                "tablet": "/img/rooms/room-7-tablet.webp",
+                "desktop": "/img/rooms/room-7-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network1-2.jpg",
-                "tablet": "/storage/media/2022/07/network1-2.jpg",
-                "desktop": "/storage/media/2022/07/network1-2.jpg"
+                "mobile": "/img/rooms/room-7-mobile.jpg",
+                "tablet": "/img/rooms/room-7-tablet.jpg",
+                "desktop": "/img/rooms/room-7-desktop.jpg"
               }
             },
             "book": {
@@ -5457,8 +5457,8 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "en",
-        "title": "Номери та апартаменти",
-        "seoTitle": "Номери та апартаменти",
+        "title": "Apartments and rooms",
+        "seoTitle": "Apartments and rooms",
         "seoDescription": "Тепло, затишно, безпечно, комфортно. City Inn The Best!!!",
         "template": "rooms",
         "content": {
@@ -5483,17 +5483,18 @@ const __pages = {
             "id": 1,
             "title": "standart double",
             "code": "standart_double",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-1-mobile.webp",
+                "tablet": "/img/rooms/room-1-tablet.webp",
+                "desktop": "/img/rooms/room-1-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-1-mobile.jpg",
+                "tablet": "/img/rooms/room-1-tablet.jpg",
+                "desktop": "/img/rooms/room-1-desktop.jpg"
               }
             },
             "book": {
@@ -5502,7 +5503,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/standart_double"
+              "link": "/rooms/1"
             },
             "services": [
               {
@@ -5523,17 +5524,18 @@ const __pages = {
             "id": 2,
             "title": "standart twin",
             "code": "standart_twin",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-2-mobile.webp",
+                "tablet": "/img/rooms/room-2-tablet.webp",
+                "desktop": "/img/rooms/room-2-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-2-mobile.jpg",
+                "tablet": "/img/rooms/room-2-tablet.jpg",
+                "desktop": "/img/rooms/room-2-desktop.jpg"
               }
             },
             "book": {
@@ -5542,7 +5544,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/standart_twin"
+              "link": "/rooms/2"
             },
             "services": [
               {
@@ -5563,17 +5565,18 @@ const __pages = {
             "id": 3,
             "title": "superior double",
             "code": "superior_double",
+            "priceFor": "ціна від",
             "price": 3000,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-3-mobile.webp",
+                "tablet": "/img/rooms/room-3-tablet.webp",
+                "desktop": "/img/rooms/room-3-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-3-mobile.jpg",
+                "tablet": "/img/rooms/room-3-tablet.jpg",
+                "desktop": "/img/rooms/room-3-desktop.jpg"
               }
             },
             "book": {
@@ -5582,7 +5585,7 @@ const __pages = {
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
-              "link": "/rooms/superior_double"
+              "link": "/rooms/3"
             },
             "services": [
               {
@@ -5603,17 +5606,18 @@ const __pages = {
             "id": 4,
             "title": "superior twin",
             "code": "superior_twin",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/rooms/room-4-mobile.webp",
+                "tablet": "/img/rooms/room-4-tablet.webp",
+                "desktop": "/img/rooms/room-4-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/rooms/room-4-mobile.jpg",
+                "tablet": "/img/rooms/room-4-tablet.jpg",
+                "desktop": "/img/rooms/room-4-desktop.jpg"
               }
             },
             "book": {
@@ -5643,17 +5647,18 @@ const __pages = {
             "id": 5,
             "title": "superior family",
             "code": "superior_family",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network-2.webp",
-                "tablet": "/storage/media/2022/07/network-2.webp",
-                "desktop": "/storage/media/2022/07/network-2.webp"
+                "mobile": "/img/rooms/room-5-mobile.webp",
+                "tablet": "/img/rooms/room-5-tablet.webp",
+                "desktop": "/img/rooms/room-5-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network-2.jpg",
-                "tablet": "/storage/media/2022/07/network-2.jpg",
-                "desktop": "/storage/media/2022/07/network-2.jpg"
+                "mobile": "/img/rooms/room-5-mobile.jpg",
+                "tablet": "/img/rooms/room-5-tablet.jpg",
+                "desktop": "/img/rooms/room-5-desktop.jpg"
               }
             },
             "book": {
@@ -5683,17 +5688,18 @@ const __pages = {
             "id": 6,
             "title": "junior suite",
             "code": "junior_suite",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "mobile": "/img/rooms/room-6-mobile.webp",
+                "tablet": "/img/rooms/room-6-tablet.webp",
+                "desktop": "/img/rooms/room-6-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "mobile": "/img/rooms/room-6-mobile.jpg",
+                "tablet": "/img/rooms/room-6-tablet.jpg",
+                "desktop": "/img/rooms/room-6-desktop.jpg"
               }
             },
             "book": {
@@ -5723,17 +5729,18 @@ const __pages = {
             "id": 7,
             "title": "suite",
             "code": "suite",
+            "priceFor": "ціна від",
             "price": 3100,
             "previewImage": {
               "webp": {
-                "mobile": "/storage/media/2022/07/network1-2.webp",
-                "tablet": "/storage/media/2022/07/network1-2.webp",
-                "desktop": "/storage/media/2022/07/network1-2.webp"
+                "mobile": "/img/rooms/room-7-mobile.webp",
+                "tablet": "/img/rooms/room-7-tablet.webp",
+                "desktop": "/img/rooms/room-7-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/network1-2.jpg",
-                "tablet": "/storage/media/2022/07/network1-2.jpg",
-                "desktop": "/storage/media/2022/07/network1-2.jpg"
+                "mobile": "/img/rooms/room-7-mobile.jpg",
+                "tablet": "/img/rooms/room-7-tablet.jpg",
+                "desktop": "/img/rooms/room-7-desktop.jpg"
               }
             },
             "book": {
@@ -5790,180 +5797,12 @@ const __pages = {
             "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
             "image": {
               "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
+                "tablet": "/img/standart/info-tablet.webp",
+                "desktop": "/img/standart/info-desktop.webp"
               },
               "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
-              }
-            },
-            "button": {
-              "text": "BOOK NOW",
-              "link": "google.com"
-            },
-            "priceNumber": 3100,
-            "priceText": "ціна від",
-            "services": [
-              {
-                "title": "2 гостей",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "велике ліжко",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "18-25 кв. м",
-                "icon": "/img/icons/mono/icon-area.svg"
-              }
-            ]
-          },
-          {
-            "services": [
-              {
-                "title": "велике ліжко",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "міні парфюмерія",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "міні-холодильник",
-                "icon": "/img/icons/mono/icon-area.svg"
-              }
-            ]
-          },
-          {
-            "images": [
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
-                }
-              },
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
-                }
-              },
-              {
-                "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
-                },
-                "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
-                }
-              }
-            ]
-          },
-          {
-            "services": [
-              {
-                "title": "велике ліжко",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "міні парфюмерія",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "Wi-fi",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "Кондиціонер",
-                "icon": "/img/icons/mono/icon-area.svg"
-              },
-              {
-                "title": "міні-холодильник",
-                "icon": "/img/icons/mono/icon-area.svg"
-              }
-            ],
-            "title": "ВХОДИТЬ У ВАРТІСТЬ"
-          },
-          {
-            "title": "Буде тепло!",
-            "image": {
-              "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
-              },
-              "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
-              }
-            }
-          }
-        ]
-      }
-    }
-  `,
-  '/en/rooms/1': `
-    {
-      "status": "success",
-      "content": {
-        "language": "en",
-        "title": "standart double",
-        "seoTitle": "Кімната - standart double",
-        "seoDescription": "Кімната standart double від City Inn. Топові ціні!",
-        "template": "standart",
-        "image": {
-          "webp": {
-            "mobile": "/img/standart/promo-bg-mobile.webp",
-            "tablet": "/img/standart/promo-bg-tablet.webp",
-            "desktop": "/img/standart/promo-bg-desktop.webp"
-          },
-          "jpg": {
-            "mobile": "/img/standart/promo-bg-mobile.jpg",
-            "tablet": "/img/standart/promo-bg-tablet.jpg",
-            "desktop": "/img/standart/promo-bg-desktop.jpg"
-          }
-        },
-        "id": 1,
-        "sections": [
-          {
-            "description": "Сучасний компактний номер, який ідеально підходить для розміщення 1-2 гостей, які зупиняються на період 1-2 ночі і не планують багато часу проводити в номері. Зазвичай цей номер обирають наші корпоротивні партнери для відряджень або групових поселень. \r\n\r\nВ кожному номері є ванна кімната з душем та санвузлом. Зона для сну з 1 великим або 2 ліжками.",
-            "image": {
-              "webp": {
-                "mobile": "/storage/media/2022/07/alesha-4.webp",
-                "tablet": "/storage/media/2022/07/alesha-4.webp",
-                "desktop": "/storage/media/2022/07/alesha-4.webp"
-              },
-              "jpg": {
-                "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                "tablet": "/img/standart/info-tablet.jpg",
+                "desktop": "/img/standart/info-desktop.jpg"
               }
             },
             "button": {
@@ -7236,7 +7075,7 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "uk",
-        "title": "Спортивний<br>комплекс<br>StarFit",
+        "title": "Спортивний\r\nкомплекс\r\nStarFit",
         "seoTitle": "Starfit - ставки на спорт!",
         "seoDescription": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
         "template": "starfit",
@@ -7481,7 +7320,7 @@ const __pages = {
       "status": "success",
       "content": {
         "language": "en",
-        "title": "Спортивний<br>комплекс<br>StarFit",
+        "title": "Sport\r\ncomplex\r\nStarFit",
         "seoTitle": "Starfit - ставки на спорт!",
         "seoDescription": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
         "template": "starfit",
@@ -7530,14 +7369,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-1-mobile.webp",
+                    "tablet": "/img/starfit/slide-1-tablet.webp",
+                    "desktop": "/img/starfit/slide-1-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-1-mobile.jpg",
+                    "tablet": "/img/starfit/slide-1-tablet.jpg",
+                    "desktop": "/img/starfit/slide-1-desktop.jpg"
                   }
                 },
                 "description": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
@@ -7559,14 +7398,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network-2.webp",
-                    "tablet": "/storage/media/2022/07/network-2.webp",
-                    "desktop": "/storage/media/2022/07/network-2.webp"
+                    "mobile": "/img/starfit/slide-2-mobile.webp",
+                    "tablet": "/img/starfit/slide-2-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network-2.jpg",
-                    "tablet": "/storage/media/2022/07/network-2.jpg",
-                    "desktop": "/storage/media/2022/07/network-2.jpg"
+                    "mobile": "/img/starfit/slide-2-mobile.jpg",
+                    "tablet": "/img/starfit/slide-2-tablet.jpg",
+                    "desktop": "/img/starfit/slide-2-desktop.jpg"
                   }
                 },
                 "description": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви порините в світ релаксу, відпочинку та відновлення",
@@ -7579,14 +7418,14 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/network1-2.webp",
-                    "tablet": "/storage/media/2022/07/network1-2.webp",
-                    "desktop": "/storage/media/2022/07/network1-2.webp"
+                    "mobile": "/img/starfit/slide-3-mobile.webp",
+                    "tablet": "/img/starfit/slide-3-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/network1-2.jpg",
-                    "tablet": "/storage/media/2022/07/network1-2.jpg",
-                    "desktop": "/storage/media/2022/07/network1-2.jpg"
+                    "mobile": "/img/starfit/slide-3-mobile.jpg",
+                    "tablet": "/img/starfit/slide-3-tablet.jpg",
+                    "desktop": "/img/starfit/slide-3-desktop.jpg"
                   }
                 }
               }
@@ -7598,17 +7437,17 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-2-mobile.webp",
+                    "tablet": "/img/starfit/slide-2-tablet.webp",
+                    "desktop": "/img/starfit/slide-2-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-2-mobile.jpg",
+                    "tablet": "/img/starfit/slide-2-tablet.jpg",
+                    "desktop": "/img/starfit/slide-2-desktop.jpg"
                   }
                 },
-                "title": "Інфрачервона сауна",
+                "title": "",
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "правила відвідування",
@@ -7619,14 +7458,40 @@ const __pages = {
               {
                 "image": {
                   "webp": {
-                    "mobile": "/storage/media/2022/07/alesha-4.webp",
-                    "tablet": "/storage/media/2022/07/alesha-4.webp",
-                    "desktop": "/storage/media/2022/07/alesha-4.webp"
+                    "mobile": "/img/starfit/slide-3-mobile.webp",
+                    "tablet": "/img/starfit/slide-3-tablet.webp",
+                    "desktop": "/img/starfit/slide-3-desktop.webp"
                   },
                   "jpg": {
-                    "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                    "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                    "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                    "mobile": "/img/starfit/slide-3-mobile.jpg",
+                    "tablet": "/img/starfit/slide-3-tablet.jpg",
+                    "desktop": "/img/starfit/slide-3-desktop.jpg"
+                  }
+                },
+                "title": "Інфрачервона сауна",
+                "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
+                "services": [
+                  {
+                    "title": "Кондиціонер",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  },
+                  {
+                    "title": "міні-холодильник",
+                    "icon": "/img/icons/mono/icon-area.svg"
+                  }
+                ]
+              },
+              {
+                "image": {
+                  "webp": {
+                    "mobile": "/img/starfit/slide-1-mobile.webp",
+                    "tablet": "/img/starfit/slide-1-tablet.webp",
+                    "desktop": "/img/starfit/slide-1-desktop.webp"
+                  },
+                  "jpg": {
+                    "mobile": "/img/starfit/slide-1-mobile.jpg",
+                    "tablet": "/img/starfit/slide-1-tablet.jpg",
+                    "desktop": "/img/starfit/slide-1-desktop.jpg"
                   }
                 },
                 "title": "Фінська сауна",
@@ -7655,38 +7520,38 @@ const __pages = {
             "images": [
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network1-2.webp",
-                  "tablet": "/storage/media/2022/07/network1-2.webp",
-                  "desktop": "/storage/media/2022/07/network1-2.webp"
+                  "mobile": "/img/starfit/slide-3-mobile.webp",
+                  "tablet": "/img/starfit/slide-3-tablet.webp",
+                  "desktop": "/img/starfit/slide-3-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network1-2.jpg",
-                  "tablet": "/storage/media/2022/07/network1-2.jpg",
-                  "desktop": "/storage/media/2022/07/network1-2.jpg"
+                  "mobile": "/img/starfit/slide-3-mobile.jpg",
+                  "tablet": "/img/starfit/slide-3-tablet.jpg",
+                  "desktop": "/img/starfit/slide-3-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/network-2.webp",
-                  "tablet": "/storage/media/2022/07/network-2.webp",
-                  "desktop": "/storage/media/2022/07/network-2.webp"
+                  "mobile": "/img/starfit/slide-2-mobile.webp",
+                  "tablet": "/img/starfit/slide-2-tablet.webp",
+                  "desktop": "/img/starfit/slide-2-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/network-2.jpg",
-                  "tablet": "/storage/media/2022/07/network-2.jpg",
-                  "desktop": "/storage/media/2022/07/network-2.jpg"
+                  "mobile": "/img/starfit/slide-2-mobile.jpg",
+                  "tablet": "/img/starfit/slide-2-tablet.jpg",
+                  "desktop": "/img/starfit/slide-2-desktop.jpg"
                 }
               },
               {
                 "webp": {
-                  "mobile": "/storage/media/2022/07/alesha-4.webp",
-                  "tablet": "/storage/media/2022/07/alesha-4.webp",
-                  "desktop": "/storage/media/2022/07/alesha-4.webp"
+                  "mobile": "/img/starfit/slide-1-mobile.webp",
+                  "tablet": "/img/starfit/slide-1-tablet.webp",
+                  "desktop": "/img/starfit/slide-1-desktop.webp"
                 },
                 "jpg": {
-                  "mobile": "/storage/media/2022/07/alesha-3.jpg",
-                  "tablet": "/storage/media/2022/07/alesha-3.jpg",
-                  "desktop": "/storage/media/2022/07/alesha-3.jpg"
+                  "mobile": "/img/starfit/slide-1-mobile.jpg",
+                  "tablet": "/img/starfit/slide-1-tablet.jpg",
+                  "desktop": "/img/starfit/slide-1-desktop.jpg"
                 }
               }
             ]

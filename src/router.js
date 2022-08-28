@@ -11,7 +11,7 @@ const GroupRequest = () => import('./pages/GroupRequest.vue');
 const LobbyBar = () => import('./pages/LobbyBar.vue');
 const RestaurantSviatoslav = () => import('./pages/RestaurantSviatoslav.vue');
 const RoomsHotel = () => import('./pages/RoomsHotel.vue');
-const StandartDouble = () => import('./pages/StandartDouble.vue');
+const RoomsItem = () => import('./pages/RoomsItem.vue');
 const SmartOffer = () => import('./pages/SmartOffer.vue');
 const StarfitComplex = () => import('./pages/StarfitComplex.vue');
 const NotFound = () => import('./pages/NotFound.vue');
@@ -157,7 +157,7 @@ const router = createRouter({
     {
       name: 'Room',
       path: '/rooms/:id',
-      component: StandartDouble,
+      component: RoomsItem,
       props: true,
       meta: {
         pageName: 'standart',
@@ -166,7 +166,7 @@ const router = createRouter({
     {
       name: 'Room En',
       path: '/en/rooms/:id',
-      component: StandartDouble,
+      component: RoomsItem,
       props: true,
       meta: {
         pageName: 'standart',
