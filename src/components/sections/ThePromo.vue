@@ -188,47 +188,37 @@ export default {
         : false;
     },
   },
+  methods: {
+    setPromoAnimation() {
+      if (this.$refs.promo) {
+        if (!this.promoSocialAnimationIsSet) {
+          this.promoSocialAnimationIsSet = promoSocialAnimation.init(
+            this.$refs.promo
+          );
+        }
+
+        if (
+          !this.twoElementsAnimationIsSet &&
+          (this.pageName === 'home' || this.pageName === 'smart')
+        ) {
+          this.twoElementsAnimationIsSet = animationTwoElements(
+            this.$refs.promo
+          );
+        }
+
+        if (!this.promoTitleAnimationIsSet) {
+          this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
+            this.$refs.promo
+          );
+        }
+      }
+    },
+  },
   mounted() {
-    if (this.$refs.promo) {
-      if (!this.promoSocialAnimationIsSet) {
-        this.promoSocialAnimationIsSet = promoSocialAnimation.init(
-          this.$refs.promo
-        );
-      }
-
-      if (!this.twoElementsAnimationIsSet) {
-        this.twoElementsAnimationIsSet = animationTwoElements(this.$refs.promo);
-      }
-
-      if (!this.promoTitleAnimationIsSet) {
-        this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
-          this.$refs.promo
-        );
-      }
-
-      // console.log('Animation init - promo mounted');
-    }
+    this.setPromoAnimation();
   },
   updated() {
-    if (this.$refs.promo) {
-      if (!this.promoSocialAnimationIsSet) {
-        this.promoSocialAnimationIsSet = promoSocialAnimation.init(
-          this.$refs.promo
-        );
-      }
-
-      if (!this.twoElementsAnimationIsSet) {
-        this.twoElementsAnimationIsSet = animationTwoElements(this.$refs.promo);
-      }
-
-      if (!this.promoTitleAnimationIsSet) {
-        this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
-          this.$refs.promo
-        );
-      }
-
-      // console.log('Animation init - promo updated');
-    }
+    this.setPromoAnimation();
   },
   unmounted() {
     promoSocialAnimation.reset();

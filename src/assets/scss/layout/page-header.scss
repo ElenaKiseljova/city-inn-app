@@ -114,7 +114,9 @@
     --color-button: #{$white};
     --border-color-button: #{$white};
 
-    transform: none;
+    &:not(.page-header__social--home):not(.page-header__social--smart) {
+      transform: none !important;
+    }
 
     &--home,
     &--smart {
