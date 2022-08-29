@@ -141,7 +141,7 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   // Restaurant sliders
   if (swiperItem.classList.contains('food__slider')) {
-    if (DEVICE_WIDTH > TABLET_WIDTH) {
+    if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 75;
     }
   }
@@ -277,7 +277,7 @@ const swiperInit = (swiperItem, attr = {}) => {
 
         lastTimeout = setTimeout(() => {
           animationSlideBottom(swiperSlider, 2);
-        }, 700);
+        }, 500);
       });
     }
   }

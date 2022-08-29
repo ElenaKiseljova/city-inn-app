@@ -4,6 +4,7 @@ import ScrollTrigger from './libs/ScrollTrigger.min';
 gsap.registerPlugin(ScrollTrigger);
 
 const TABLET_WIDTH = 768;
+const DESKTOP_WIDTH = 1366;
 
 const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   ? Math.min(window.innerWidth, document.documentElement.clientWidth)
@@ -11,12 +12,14 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
+export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
+
 /**
  * Аниаммция элементов списков по триггеру: init/reset
  *  
  */
 const animationOpacityTranslate = (elements, trigerElement) => {
-  if (elements.length > 0 && trigerElement) {
+  if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
     return gsap.to(elements, {
       x: 0,
       y: 0,
@@ -28,7 +31,7 @@ const animationOpacityTranslate = (elements, trigerElement) => {
         trigger: trigerElement,
         // markers: true,
         // scrub: 1,
-        start: 'top 70%',
+        start: 'top bottom',
         end: 'bottom center',
       },
     });
@@ -38,7 +41,7 @@ const animationOpacityTranslate = (elements, trigerElement) => {
 };
 
 const animationOpacityTranslateReset = (elements) => {
-  if (elements.length > 0) {
+  if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0) {
     gsap.to(elements, {
       x: 20,
       y: 20,
@@ -119,56 +122,66 @@ const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social
 
 export { promoSocialAnimation };
 
+//.types
+const typesItemsAnimation = new Animation('.types__slide');
+
+export { typesItemsAnimation };
+
+//.cards
+const cardsItemsAnimation = new Animation('.cards__item');
+
+export { cardsItemsAnimation };
+
 
 // Experiences
-const experience = () => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    const list = document.querySelector('.experience__list');
+const experienceAnimation = (list) => {
+  if (DEVICE_WIDTH >= TABLET_WIDTH && list) {
+    let init = true;
 
-    if (list) {
-      let init = true;
+    const listObjStart = {};
+    const listObjEnd = {};
 
-      const listObjStart = {};
-      const listObjEnd = {};
+    const items = list.querySelectorAll('.experience__number');
 
-      const items = list.querySelectorAll('.experience__number');
+    const updateList = (obj = null) => {
+      items.forEach((item, index) => {
+        if (init && !obj) {
+          listObjEnd[index] = parseInt(item.textContent, 10);
+          listObjStart[index] = 0;
+          item.textContent = 0;
+        } else if (!init && obj) {
+          item.textContent = parseInt(obj[index], 10);
+        }
+      });
+    };
 
-      const updateList = (obj = null) => {
-        items.forEach((item, index) => {
-          if (init && !obj) {
-            listObjEnd[index] = parseInt(item.textContent, 10);
-            listObjStart[index] = 0;
-            item.textContent = 0;
-          } else if (!init && obj) {
-            item.textContent = parseInt(obj[index], 10);
-          }
-        });
-      };
+    if (init) {
+      updateList();
 
-      if (init) {
-        updateList();
+      gsap.to(listObjStart, {
+        ...listObjEnd,
+        duration: 2,
+        scrollTrigger: {
+          trigger: '.experience',
+          // markers: true,
+          start: 'top center',
+          end: 'bottom center',
+        },
+        onUpdate() {
+          updateList(listObjStart);
+        },
+      });
 
-        gsap.to(listObjStart, {
-          ...listObjEnd,
-          duration: 2,
-          scrollTrigger: {
-            trigger: '.experience',
-            // markers: true,
-            start: 'top center',
-            end: 'bottom center',
-          },
-          onUpdate() {
-            updateList(listObjStart);
-          },
-        });
-
-        init = false;
-      }
+      init = false;
     }
+
+    return true;
   }
+
+  return false;
 };
 
-export { experience };
+export { experienceAnimation };
 
 const sectionTitleAnimation = (title, trigger) => {
   if (title && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
@@ -195,6 +208,29 @@ const sectionTitleAnimation = (title, trigger) => {
 };
 
 export { sectionTitleAnimation };
+
+const sectionAnimation = (section, trigger) => {
+  if (section && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    gsap.to(section, {
+      x: 0,
+      duration: 3,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: trigger,
+        // markers: true,
+        scrub: 0.3,
+        start: 'top bottom',
+        end: 'top top',
+      },
+    });
+
+    return true;
+  }
+
+  return false;
+};
+
+export { sectionAnimation };
 
 /** 
       * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции 

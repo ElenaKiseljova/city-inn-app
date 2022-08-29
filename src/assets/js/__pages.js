@@ -5,7 +5,7 @@ const __pages = {
       "content": {          
         "book": {
           "title": "Забронювати зараз",
-          "link": "https://google.com"
+          "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
         },
         "offer": {
           "title": "SMART пропозиція",
@@ -73,8 +73,8 @@ const __pages = {
             }
           },
           {
-            "title": "smart пропозиція",
-            "link": "/smart-offer",
+            "title": "smart номери",
+            "link": "/rooms",
             "image": {
               "webp": {
                 "mobile": "/img/menu-bg-1-mobile.webp",
@@ -87,7 +87,7 @@ const __pages = {
             }
           },
           {
-            "title": "star fit",
+            "title": "starfit",
             "link": "/starfit",
             "image": {
               "webp": {
@@ -155,20 +155,6 @@ const __pages = {
                 "desktop": "/img/menu-bg-1-desktop.jpg"
               }
             }
-          },
-          {
-            "title": "кiмнати",
-            "link": "/rooms",
-            "image": {
-              "webp": {
-                "mobile": "/img/menu-bg-2-mobile.webp",
-                "desktop": "/img/menu-bg-2-desktop.webp"
-              },
-              "jpg": {
-                "mobile": "/img/menu-bg-2-mobile.jpg",
-                "desktop": "/img/menu-bg-2-desktop.jpg"
-              }
-            }
           }
         ]
       }
@@ -180,7 +166,7 @@ const __pages = {
       "content": {          
         "book": {
           "title": "BOOK NOW",
-          "link": "https://google.com"
+          "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
         },
         "offer": {
           "title": "SMART OFFER",
@@ -248,8 +234,8 @@ const __pages = {
             }
           },
           {
-            "title": "smart offer",
-            "link": "/en/smart-offer",
+            "title": "smart rooms",
+            "link": "/en/rooms",
             "image": {
               "webp": {
                 "mobile": "/img/menu-bg-3-mobile.webp",
@@ -262,7 +248,7 @@ const __pages = {
             }
           },
           {
-            "title": "star fit",
+            "title": "starfit",
             "link": "/en/starfit",
             "image": {
               "webp": {
@@ -330,20 +316,6 @@ const __pages = {
                 "desktop": "/img/menu-bg-8-mobile.jpg"
               }
             }
-          },
-          {
-            "title": "rooms",
-            "link": "/en/rooms",
-            "image": {
-              "webp": {
-                "mobile": "/img/menu-bg-2-mobile.webp",
-                "desktop": "/img/menu-bg-2-desktop.webp"
-              },
-              "jpg": {
-                "mobile": "/img/menu-bg-2-mobile.jpg",
-                "desktop": "/img/menu-bg-2-desktop.jpg"
-              }
-            }
           }
         ]
       }
@@ -402,7 +374,7 @@ const __pages = {
               },
               {
                 "text": "Чому SMART?",
-                "link": "/about#smart"
+                "link": "/about#why"
               }
             ]
           },
@@ -489,7 +461,7 @@ const __pages = {
               },
               {
                 "text": "Чому SMART?",
-                "link": "/en/about#smart"
+                "link": "/en/about#why"
               }
             ]
           },
@@ -588,7 +560,7 @@ const __pages = {
         ],
         "book": {
           "title": "Замовити зараз",
-          "link": "google.com"
+          "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
         }
       }
     }  
@@ -658,7 +630,7 @@ const __pages = {
         ],
         "book": {
           "title": "BOOK NOW",
-          "link": "google.com"
+          "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
         }
       }
     }  
@@ -692,7 +664,7 @@ const __pages = {
             "contentBottom": "Буде тепло!",
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "Дізнатись більше",
@@ -887,7 +859,7 @@ const __pages = {
             "contentBottom": "It will be warm!",
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "Read more",
@@ -1233,7 +1205,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1253,7 +1225,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1273,7 +1245,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕН",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ],
@@ -1299,7 +1271,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1319,7 +1291,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1339,7 +1311,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕН",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ],
@@ -1529,7 +1501,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1549,7 +1521,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1569,7 +1541,7 @@ const __pages = {
                 "topText": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕН",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ],
@@ -1595,7 +1567,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1615,7 +1587,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1635,7 +1607,7 @@ const __pages = {
                 "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
                 "button": {
                   "text": "БІЛЬШЕН",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ],
@@ -1691,7 +1663,7 @@ const __pages = {
             ],
             "button": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             }
           },
           {
@@ -1714,7 +1686,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -1748,7 +1720,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -1786,7 +1758,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -1831,7 +1803,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -1873,7 +1845,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "MENU",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -1896,7 +1868,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "MENU",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -2136,7 +2108,7 @@ const __pages = {
             ],
             "button": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             }
           },
           {
@@ -2159,7 +2131,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2193,7 +2165,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2231,7 +2203,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2276,7 +2248,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2318,7 +2290,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "MENU",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -2341,7 +2313,7 @@ const __pages = {
                 },
                 "button": {
                   "text": "MENU",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -2660,7 +2632,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2686,7 +2658,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2712,7 +2684,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2738,7 +2710,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2926,7 +2898,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2952,7 +2924,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -2978,7 +2950,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -3004,7 +2976,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "services": [
                   {
@@ -3388,7 +3360,7 @@ const __pages = {
             "subTitle": "організувуємо харчування під ваші потреби",
             "button": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
             "images": [
@@ -4024,7 +3996,7 @@ const __pages = {
             "subTitle": "організувуємо харчування під ваші потреби",
             "button": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros.",
             "images": [
@@ -4320,7 +4292,7 @@ const __pages = {
           "bottom": {
             "book": {
               "text": "RESERVE TABLE",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             }
           },
           "top": {
@@ -4387,11 +4359,11 @@ const __pages = {
             "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "book": {
               "text": "BOOK",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "image": {
               "webp": {
@@ -4411,7 +4383,7 @@ const __pages = {
             "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "slides": [
               {
@@ -4451,7 +4423,7 @@ const __pages = {
             
             "more": {
               "text": "menu",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "images": [
               {
@@ -4521,7 +4493,7 @@ const __pages = {
           "bottom": {
             "book": {
               "text": "RESERVE TABLE",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             }
           },
           "top": {
@@ -4588,11 +4560,11 @@ const __pages = {
             "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "book": {
               "text": "BOOK",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "image": {
               "webp": {
@@ -4612,7 +4584,7 @@ const __pages = {
             "text": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit. Nunc velit dui, tristique sed enim nec, fringilla interdum eros. In hac habitasse platea dictumst. Nunc convallis felis ac fermentum volutpat. Phasellus at scelerisque est. In sit amet pulvinar mi. Pellentesque ut condimentum ante, et gravida mi. In erat felis, laoreet nec porta eu, vehicula nec diam.",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "slides": [
               {
@@ -4652,7 +4624,7 @@ const __pages = {
             
             "more": {
               "text": "menu",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "images": [
               {
@@ -4722,7 +4694,7 @@ const __pages = {
           "bottom": {
             "book": {
               "text": "Забронювати",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "worktime": "07:00 до 22:00"
           },
@@ -4779,7 +4751,7 @@ const __pages = {
             "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "images": [
               {
@@ -4881,7 +4853,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "Забронювати",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -4901,7 +4873,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -4921,7 +4893,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -4955,7 +4927,7 @@ const __pages = {
           "bottom": {
             "book": {
               "text": "Забронювати",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "worktime": "07:00 до 22:00"
           },
@@ -5011,7 +4983,7 @@ const __pages = {
             "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
             "more": {
               "text": "MENU",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "images": [
               {
@@ -5113,7 +5085,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "Забронювати",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -5133,7 +5105,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               },
               {
@@ -5153,7 +5125,7 @@ const __pages = {
                 "text": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit. Наші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни\r\n\r\nЄ один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
                 "button": {
                   "text": "ЗАБРОНЮВАТИ",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -5209,7 +5181,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5250,7 +5222,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5291,7 +5263,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5332,7 +5304,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5373,7 +5345,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5414,7 +5386,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5455,7 +5427,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5527,7 +5499,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5568,7 +5540,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5609,7 +5581,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5650,7 +5622,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5691,7 +5663,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5732,7 +5704,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5773,7 +5745,7 @@ const __pages = {
             },
             "book": {
               "title": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "more": {
               "title": "ДІЗНАТИСЬ БІЛЬШЕ",
@@ -5835,7 +5807,7 @@ const __pages = {
             },
             "button": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "priceNumber": 3100,
             "priceText": "ціна від",
@@ -6021,7 +5993,7 @@ const __pages = {
             },
             "button": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "priceNumber": 3100,
             "priceText": "ціна від",
@@ -6196,7 +6168,7 @@ const __pages = {
             "title": "корпоративна співпраця",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -6297,7 +6269,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6306,7 +6278,7 @@ const __pages = {
             "title": "SPA DAY USE OFFER",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -6407,7 +6379,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6513,7 +6485,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6619,7 +6591,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6628,7 +6600,7 @@ const __pages = {
             "title": "корпоративна співпраця",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -6729,7 +6701,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6764,7 +6736,7 @@ const __pages = {
             "title": "корпоративна співпраця",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -6865,7 +6837,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -6874,7 +6846,7 @@ const __pages = {
             "title": "SPA DAY USE OFFER",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -6975,7 +6947,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -7081,7 +7053,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -7187,7 +7159,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -7196,7 +7168,7 @@ const __pages = {
             "title": "корпоративна співпраця",
             "book": {
               "text": "BOOK NOW",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "description": "Найкраще СПА в центрі Львова вже від 2500 грн! Cпа-день в Oasis Infinity Pool & SPA (з 6:00 до 20:00, не більше 6 годин). Плануєте день відпочинку у нашому розкішному Oasis Infinity Pool & SPA без ночівлі? Не пропустіть свій шанс відпочити!Оплатіть номер за спеціальною ціною та відпочивайте протягом 6 годин з 6:00 до 20:00. для власного задоволення. Тепер вам не потрібно платити повну вартість номера!\r\n\r\nGrand hotel lviv luxury&spa має у розпорядженні унікальний для львова spa-центр категорії люкс, до якого входять:",
             "services": [
@@ -7297,7 +7269,7 @@ const __pages = {
                 "description": "Тепер вам не потрібно платити повну вартість номера!",
                 "book": {
                   "text": "BOOK NOW",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 }
               }
             ]
@@ -7337,7 +7309,7 @@ const __pages = {
             "title": "БУДЕ СПА",
             "rules": {
               "text": "правила відвідування",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "textTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
             "textBottom": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
@@ -7402,7 +7374,7 @@ const __pages = {
                 "description": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви порините в світ релаксу, відпочинку та відновлення",
                 "button": {
                   "text": "Правила відвідування",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "worktime": "7:00 до 22:00"
               },
@@ -7442,7 +7414,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "правила відвідування",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "worktime": "7:00 до 22:00"
               },
@@ -7504,7 +7476,7 @@ const __pages = {
             "title": "СПОРТЗАЛ",
             "rules": {
               "text": "Правила відвідування",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "textTop": "Найкраще розпочинати або завершувати день у тренажерному залі. Сучасне обладнання підходить як для новачків, так і для професійних спортсменів. Просторий зал, роздягальня та душ зроблять відвідування залу ще приємнішим. Спортзал працює щодня з 7:00 до 22:00.",
             "worktime": "07:00 до 22:00",
@@ -7582,7 +7554,7 @@ const __pages = {
             "title": "БУДЕ СПА",
             "rules": {
               "text": "правила відвідування",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "textTop": "Заради наших гостей ми зробили колоборацію з комплексом для відпочинку Starfit.\r\nНаші гості можуть компліментарно користуватись усією інфраструктурою: басейн, тренажерний зал, сауни",
             "textBottom": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви поринете в світ релаксу, відпочинку та відновлення.",
@@ -7647,7 +7619,7 @@ const __pages = {
                 "description": "Є один нюанс, що потрібно вийти з готелю і пройти 20 метрів до входу, але після цього ви порините в світ релаксу, відпочинку та відновлення",
                 "button": {
                   "text": "Правила відвідування",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "worktime": "7:00 до 22:00"
               },
@@ -7687,7 +7659,7 @@ const __pages = {
                 "description": "Nullam consequat lacus risus, non lobortis mi feugiat id. Praesent a odio semper, pulvinar ex ac, ullamcorper erat. Phasellus porta euismod massa sit amet hendrerit.",
                 "button": {
                   "text": "правила відвідування",
-                  "link": "google.com"
+                  "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
                 },
                 "worktime": "7:00 до 22:00"
               },
@@ -7749,7 +7721,7 @@ const __pages = {
             "title": "СПОРТЗАЛ",
             "rules": {
               "text": "Правила відвідування",
-              "link": "google.com"
+              "link": "https://www.simplebooking.it/ibe/hotelbooking/search?hid=7589&lang=UK"
             },
             "textTop": "Найкраще розпочинати або завершувати день у тренажерному залі. Сучасне обладнання підходить як для новачків, так і для професійних спортсменів. Просторий зал, роздягальня та душ зроблять відвідування залу ще приємнішим. Спортзал працює щодня з 7:00 до 22:00.",
             "worktime": "07:00 до 22:00",

@@ -7,6 +7,7 @@ section.cards(v-if='page && cards', ref='cards')
 <script>
 import { mapGetters } from 'vuex';
 
+import { cardsItemsAnimation } from '../../assets/js/gsap-animations';
 import cards from '../../assets/js/cards';
 
 import CardsItem from './CardsItem.vue';
@@ -28,23 +29,25 @@ export default {
         : [];
     },
   },
+  methods: {
+    setCardsAnimation() {
+      if (this.$refs.cards && !this.cardsAnimationInited) {
+        cards('cards', '.cards__item');
+
+        cardsItemsAnimation.init(this.$refs.cards);
+
+        this.cardsAnimationInited = true;
+      }
+    },
+  },
   mounted() {
-    if (this.$refs.cards && !this.cardsAnimationInited) {
-      cards('cards', '.cards__item');
-
-      this.cardsAnimationInited = true;
-
-      // console.log('Cards Activated - mounted');
-    }
+    this.setCardsAnimation();
   },
   updated() {
-    if (this.$refs.cards && !this.cardsAnimationInited) {
-      cards('cards', '.cards__item');
-
-      this.cardsAnimationInited = true;
-
-      // console.log('Cards Activated - updated');
-    }
+    this.setCardsAnimation();
+  },
+  unmounted() {
+    cardsItemsAnimation.reset();
   },
 };
 </script>

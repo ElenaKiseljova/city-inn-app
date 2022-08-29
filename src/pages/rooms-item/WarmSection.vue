@@ -1,5 +1,5 @@
 <template lang="pug">
-section.warm(v-if='page && sections && section && infoSection')
+section.warm(v-if='page && sections && section && infoSection', ref='section')
   .warm__container.container
     .warm__included
       h3.warm__subtitle(v-if='subTitle', v-html='subTitle')
@@ -15,7 +15,7 @@ section.warm(v-if='page && sections && section && infoSection')
       BaseImage(sectionName='warm', :modificator='pageName', :image='image')
 
     .warm__content
-      h2.title-inner.warm__title(v-if='title', v-html='title')
+      h2.title-inner.warm__title(v-if='title', v-html='title', ref='title')
 
       BasePrice(
         v-if='price',
@@ -35,6 +35,7 @@ section.warm(v-if='page && sections && section && infoSection')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '@/components/UI/BaseImage.vue';
@@ -43,7 +44,7 @@ import BasePrice from '@/components/UI/BasePrice.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseImage,
     BaseServices,

@@ -84,6 +84,8 @@
     }
 
     @media screen and (min-width: $desktop) {
+      position: static;
+
       --width-img: 360px;
       --height-img: 360px;
 
@@ -115,14 +117,16 @@
       }
 
       &.swiper-slide-active {
-        .doings__top {
+        .doings__img {
           width: 100%;
-          height: calc((640 / 1440) * 100vw);
+          height: 100%;
 
           transition: height 0.5s linear, width 0.5s linear;
         }
 
         .doings__bottom {
+          position: static;
+
           max-width: 730px;
 
           margin: 0;
@@ -143,12 +147,20 @@
 
       &.swiper-slide-next,
       &.swiper-slide-next~.swiper-slide {
-        .doings__top {
+        position: relative;
+
+        .doings__img {
           width: var(--width-img);
           height: var(--height-img);
         }
 
         .doings__bottom {
+          position: absolute;
+
+          top: var(--height-img);
+
+          left: 0;
+
           max-width: var(--width-img);
 
           margin: 0;
@@ -168,20 +180,12 @@
       }
 
       &.swiper-slide-next {
-        .doings__top {
+        .doings__img {
           transition: height 0.5s linear, width 0.5s linear;
         }
 
         .doings__bottom {
-          transition: transform 0.5s linear, padding 0.5s linear, max-width 0.5s linear;
-        }
-
-        .doings__subtitle {
-          transition: opacity 0.5s linear, font-size 0.5s linear, line-height 0.5s linear;
-        }
-
-        .doings__text {
-          transition: opacity 0.5s linear;
+          transition: transform 0.5s linear;
         }
       }
     }
@@ -203,7 +207,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      height: 640px;
+      height: calc((640 / 1440) * 100vw);
 
       opacity: 1;
 

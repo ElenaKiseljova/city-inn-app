@@ -1,7 +1,8 @@
 <template lang="pug">
 section(
   v-if='page && sectionName && section',
-  :class='`food food--${sectionName}`'
+  :class='`food food--${sectionName}`',
+  ref='section'
 )
   .food__container.container
     div(:class='`food__top food__top--${sectionName}`')
@@ -107,6 +108,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../UI/BaseSlider.vue';
@@ -118,7 +120,7 @@ import BaseButton from '../UI/BaseButton.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   props: {
     sectionName: {
       type: String,

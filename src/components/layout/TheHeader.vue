@@ -5,7 +5,7 @@ header.page-header(v-if='pageName && header')
       div(
         :class='`page-header__logo logo logo--header __js logo--${pageName}`'
       )
-        router-link.logo__link(to='/')
+        router-link.logo__link(:to='toHome')
           svg(width='120', height='120')
             use(xlink:href='@/assets/img/sprites/sprite-multi.svg#icon-logo')
 
@@ -62,7 +62,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['pageName', 'header']),
+    ...mapGetters(['pageName', 'header', 'lang']),
     book() {
       return this.header.content && this.header.content.book
         ? this.header.content.book
@@ -93,6 +93,9 @@ export default {
       }
 
       return buttons;
+    },
+    toHome() {
+      return this.lang === 'uk' ? `/` : `/${this.lang}`;
     },
   },
 };

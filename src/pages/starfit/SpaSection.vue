@@ -1,5 +1,5 @@
 <template lang="pug">
-section.spa(v-if='page && sections && section')
+section.spa(v-if='page && sections && section', ref='section')
   .spa__left
     h2.title-inner.spa__title.spa__title--mobile(v-if='title', v-html='title')
 
@@ -86,6 +86,7 @@ section.spa(v-if='page && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -106,7 +107,7 @@ export default {
     BaseServices,
     BaseWorktime,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

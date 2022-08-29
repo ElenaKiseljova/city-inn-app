@@ -71,7 +71,7 @@
         margin-bottom: 92px;
         margin-left: -232px;
 
-        transform: translate(50px, 50px);
+        transform: translate(20px, 20px);
       }
 
       &--even {
@@ -79,7 +79,7 @@
         margin-bottom: 52px;
         margin-left: 0;
 
-        transform: translate(-50px, -50px);
+        transform: translate(-20px, -20px);
       }
     }
 
@@ -209,6 +209,8 @@
         grid-template-columns: calc(50% - 40px) 50%;
         grid-template-rows: minmax(224px, max-content) minmax(134px, max-content) max-content;
       }
+
+      overflow: visible;
     }
 
     @media screen and (min-width: $desktop) {

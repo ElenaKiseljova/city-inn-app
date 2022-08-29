@@ -187,7 +187,7 @@
       transition: none;
     }
 
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $desktop) {
       transition: all linear;
     }
   }
@@ -227,6 +227,8 @@
       opacity: 0;
 
       transform: translateX(-100%);
+
+      transition: translate 0.5s linear, opacity 0.5s linear;
     }
 
     @media screen and (min-width: $desktop) {
@@ -266,6 +268,8 @@
       opacity: 0;
 
       transform: translateX(100%);
+
+      transition: translate 0.5s linear, opacity 0.5s linear;
     }
 
     @media screen and (min-width: $desktop) {

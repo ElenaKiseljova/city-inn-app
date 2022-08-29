@@ -1,6 +1,12 @@
 .cosy {
   @extend %w100;
 
+  @media screen and (min-width: $tablet) {
+    overflow: visible;
+
+    transform: translateX(-30vw);
+  }
+
   &__container {
     position: relative;
 

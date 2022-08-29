@@ -65,3 +65,7 @@ a {
 .swiper-wrapper {
   transition: all linear;
 }
+
+section {
+  transition: transform 0.5s linear;
+}

@@ -33,6 +33,12 @@
     background-color: $green;
   }
 
+  @media screen and (min-width: $tablet) {
+    &--why {
+      transform: translateX(-30vw);
+    }
+  }
+
   &__container {
     overflow: visible;
 
@@ -331,7 +337,7 @@
       &--smart,
       &--group,
       &--starfit {
-        transform: translate(50px, 50px);
+        transform: translate(20px, 20px);
 
         min-width: 419px;
 
@@ -348,7 +354,7 @@
 
       &--conference,
       &--about {
-        transform: translate(-50px, 50px);
+        transform: translate(-20px, -20px);
 
         min-width: 696px;
 
@@ -369,11 +375,13 @@
         margin-right: calc(100% - 538px);
         margin-left: 0;
         margin-bottom: 47px;
+
+        opacity: 1;
       }
 
       &--lobby,
       &--restaurant {
-        transform: translate(-50px, 50px);
+        transform: translate(-20px, -20px);
       }
     }
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-section.prices(v-if='page && sections && section')
+section.prices(v-if='page && sections && section', ref='section')
   h2.title-inner.prices__title(v-if='title', v-html='title')
 
   BasePagination(sectionName='prices')
@@ -49,6 +49,7 @@ section.prices(v-if='page && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -71,7 +72,7 @@ export default {
     BasePrice,
     BaseServices,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

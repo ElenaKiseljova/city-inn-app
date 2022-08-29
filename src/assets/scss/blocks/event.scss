@@ -8,10 +8,39 @@
     --border-color-button: var(--white);
   }
 
+  @media screen and (min-width: $tablet) {
+    overflow: visible;
+
+    &--around,
+    &--event,
+    &--locations,
+    &--smart-rooms,
+    &--halls {
+      transform: translateX(-30vw);
+    }
+
+    &--attraction,
+    &--kitchen,
+    &--saunas,
+    &--coffee {
+      transform: translateX(30vw);
+    }
+  }
+
   @media screen and (min-width: $desktop) {
     padding: 140px 0 80px;
 
     overflow: visible;
+
+    &--attraction {
+      transform: translateX(30vw);
+    }
+
+    &--kitchen,
+    &--around,
+    &--coffee {
+      transform: translateX(-30vw);
+    }
 
     &--kitchen {
       padding: 98px 0;

@@ -6,6 +6,20 @@
   }
 
   @media screen and (min-width: $tablet) {
+    overflow: visible;
+
+    &--advantages,
+    &--menu,
+    &--approach-conference,
+    &--approach-group,
+    &--supply {
+      transform: translateX(30vw);
+    }
+
+    &--breakfast,
+    &--why-conference {
+      transform: translateX(-30vw);
+    }
 
     &--approach-conference {
       position: relative;
@@ -18,6 +32,11 @@
     padding-bottom: 140px;
 
     overflow: visible;
+
+    &--breakfast,
+    &--why-conference {
+      transform: translateX(30vw);
+    }
 
     &--breakfast,
     &--supply {

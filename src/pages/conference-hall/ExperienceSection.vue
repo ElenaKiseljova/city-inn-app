@@ -3,7 +3,7 @@ section.experience(v-if='page && sections && section && items')
   .experience__container.container
     h2.title-inner.experience__title(v-if='title', v-html='title')
 
-    ul.experience__list(v-if='items.length > 0')
+    ul.experience__list(v-if='items.length > 0', ref='experienceList')
       li.experience__item(v-for='item in items')
         p.experience__text.experience__text--top
           | {{ item.textTop }}
@@ -16,7 +16,7 @@ section.experience(v-if='page && sections && section && items')
 </template>
 
 <script>
-import { experience } from '../../assets/js/gsap-animations';
+import { experienceAnimation } from '../../assets/js/gsap-animations';
 
 import { mapGetters } from 'vuex';
 
@@ -24,6 +24,11 @@ import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr'
 
 export default {
   mixins: [converteSymbolsNewLineToBr],
+  data() {
+    return {
+      experienceAnimationIsSet: false,
+    };
+  },
   computed: {
     ...mapGetters(['page']),
     sections() {
@@ -43,8 +48,20 @@ export default {
       return this.section.items ? this.section.items : [];
     },
   },
+  methods: {
+    setExperienceAnimation() {
+      if (this.$refs.experienceList && !this.experienceAnimationIsSet) {
+        this.experienceAnimationIsSet = experienceAnimation(
+          this.$refs.experienceList
+        );
+      }
+    },
+  },
   mounted() {
-    experience();
+    this.setExperienceAnimation();
+  },
+  updated() {
+    this.setExperienceAnimation();
   },
 };
 </script>

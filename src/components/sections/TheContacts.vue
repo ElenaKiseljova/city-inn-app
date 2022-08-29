@@ -9,7 +9,8 @@ section#contacts(
   )
     .contacts__left
       h2.contacts__title.contacts__title--mobile(
-        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`'
+        :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`',
+        ref='title1'
       )
         | {{ title }}
       TheMap
@@ -17,7 +18,7 @@ section#contacts(
     div(:class='`contacts__content contacts__content--${pageName}`')
       h2.contacts__title.contacts__title--desktop(
         :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`',
-        ref='title'
+        ref='title2'
       )
         | {{ title }}
 
@@ -65,6 +66,9 @@ import { mapGetters } from 'vuex';
 import {
   contactsAnimation,
   sectionTitleAnimation,
+  DEVICE_WIDTH,
+  TABLET_WIDTH,
+  DESKTOP_WIDTH,
 } from '../../assets/js/gsap-animations';
 
 import checkUrlType from '../../mixins/checkUrlType';
@@ -120,6 +124,28 @@ export default {
         : null;
     },
   },
+  methods: {
+    setSectionTitleAnimation() {
+      if (
+        this.$refs.title1 &&
+        this.$refs.title2 &&
+        this.$refs.section &&
+        !this.sectionTitleAnimationIsSet
+      ) {
+        if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
+          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+            this.$refs.title1,
+            this.$refs.section
+          );
+        } else if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+            this.$refs.title2,
+            this.$refs.section
+          );
+        }
+      }
+    },
+  },
   mounted() {
     if (!this.contactsAnimationInited) {
       this.contactsLastInterval = setInterval(() => {
@@ -138,28 +164,10 @@ export default {
       }, 300);
     }
 
-    if (
-      this.$refs.title &&
-      this.$refs.section &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-        this.$refs.title,
-        this.$refs.section
-      );
-    }
+    this.setSectionTitleAnimation();
   },
   updated() {
-    if (
-      this.$refs.title &&
-      this.$refs.section &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-        this.$refs.title,
-        this.$refs.section
-      );
-    }
+    this.setSectionTitleAnimation();
   },
   unmounted() {
     contactsAnimation.reset();

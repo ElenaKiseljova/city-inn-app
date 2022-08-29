@@ -1,7 +1,8 @@
 <template lang="pug">
 section(
   v-if='page && sectionName && section && slides',
-  :class='`event event--${sectionName}`'
+  :class='`event event--${sectionName}`',
+  ref='section'
 )
   div(
     v-if='titleSmall || subTitle',
@@ -79,19 +80,19 @@ section(
           type='text'
         )
           h3(
-            v-if='sectionName !== "coffee" && slide.title && slide.title !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.title)',
-            :class='`event__subtitle event__subtitle--${sectionName}`'
-          )
-
-          h3(
-            v-else-if='subTitle',
+            v-if='subTitle',
             v-html='subTitle',
             :class='`event__subtitle event__subtitle--${sectionName}`'
           )
 
           h3(
-            v-else-if='haveTitleImage && slide.title && slide.title !== ""',
+            v-else-if='!haveTitleSmall && slide.title && slide.title !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.title)',
+            :class='`event__subtitle event__subtitle--${sectionName}`'
+          )
+
+          h3(
+            v-if='haveTitleImage && slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)',
             :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
           )
@@ -116,12 +117,14 @@ section(
             )
 
             p(
-              v-if='sectionName !== "coffee" && slide.description && slide.description !== ""',
+              v-if='!haveDescriptionList && slide.description && slide.description !== ""',
               v-html='converteSymbolsNewLineToBr(slide.description)',
               :class='`event__text event__text--${sectionName}`'
             )
 
-            ul.event__list(v-if='slideList(slide).length > 0')
+            ul.event__list(
+              v-if='haveDescriptionList && slideList(slide).length > 0'
+            )
               li.event__item(v-for='item in slideList(slide)', :key='item') {{ item }}
 
           BaseWorktime(
@@ -194,6 +197,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../UI/BaseSlider.vue';
@@ -207,7 +211,7 @@ import BasePrice from '../UI/BasePrice.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   props: {
     sectionName: {
       type: String,

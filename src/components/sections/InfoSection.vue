@@ -20,7 +20,8 @@ section(
 
       button(
         v-if='pageName === "standart"',
-        :class='`info__text info__more info__more--${pageName}`'
+        :class='`info__text info__more info__more--${pageName}`',
+        ref='readMore'
       )
         span(v-if='lang === "en"') Read more
         span(v-else) Детальніше
@@ -64,6 +65,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      readMoreIsSet: false,
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName', 'lang']),
     sections() {
@@ -102,7 +108,18 @@ export default {
     },
   },
   mounted() {
-    readMore();
+    if (this.$refs.readMore && !this.readMoreIsSet) {
+      readMore();
+
+      this.readMoreIsSet = true;
+    }
+  },
+  updated() {
+    if (this.$refs.readMore && !this.readMoreIsSet) {
+      readMore();
+
+      this.readMoreIsSet = true;
+    }
   },
 };
 </script>

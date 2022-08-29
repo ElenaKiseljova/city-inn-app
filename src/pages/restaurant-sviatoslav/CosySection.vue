@@ -1,5 +1,5 @@
 <template lang="pug">
-section.cosy(v-if='page && pageName && sections && section')
+section.cosy(v-if='page && pageName && sections && section', ref='section')
   .cosy__container.container
     .cosy__top
       h2.title-inner.cosy__title.cosy__title--mobile(
@@ -43,6 +43,7 @@ section.cosy(v-if='page && pageName && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
@@ -52,7 +53,7 @@ import BaseNavigation from '../../components/UI/BaseNavigation.vue';
 import BaseImage from '../../components/UI/BaseImage.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,

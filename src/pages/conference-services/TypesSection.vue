@@ -1,5 +1,5 @@
 <template lang="pug">
-section.types(v-if='page && pageName && sections && section')
+section.types(v-if='page && pageName && sections && section', ref='types')
   .types__container.container
     header.types__header
       h2.title-inner.types__title(v-if='title', v-html='title')
@@ -55,6 +55,8 @@ section.types(v-if='page && pageName && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import { typesItemsAnimation } from '../../assets/js/gsap-animations';
+
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -76,6 +78,11 @@ export default {
     BaseServices,
   },
   mixins: [converteSymbolsNewLineToBr],
+  data() {
+    return {
+      typesItemsAnimationIsSet: false,
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
@@ -94,6 +101,24 @@ export default {
     slides() {
       return this.section.slides ? this.section.slides : [];
     },
+  },
+  methods: {
+    setTypesItemsAnimation() {
+      if (this.$refs.types && !this.typesItemsAnimationIsSet) {
+        this.typesItemsAnimationIsSet = typesItemsAnimation.init(
+          this.$refs.types
+        );
+      }
+    },
+  },
+  mounted() {
+    this.setTypesItemsAnimation();
+  },
+  updated() {
+    this.setTypesItemsAnimation();
+  },
+  unmounted() {
+    typesItemsAnimation.reset();
   },
 };
 </script>

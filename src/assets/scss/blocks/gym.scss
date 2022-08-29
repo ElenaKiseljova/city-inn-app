@@ -1,9 +1,19 @@
 .gym {
   @extend %w100;
 
+  @media screen and (min-width: $tablet) {
+    &--group {
+      transform: translateX(30vw);
+    }
+  }
+
   @media screen and (min-width: $desktop) {
     &--group {
       padding: 177px 0 183px;
+    }
+
+    &--starfit {
+      transform: translateX(-30vw);
     }
   }
 

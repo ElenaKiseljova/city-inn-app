@@ -1,7 +1,7 @@
 <template lang="pug">
-section.mission(v-if='page && sections && section')
+section.mission(v-if='page && sections && section', ref='section')
   .mission__container.container
-    h2.title-inner.mission__title(v-if='title', v-html='title')
+    h2.title-inner.mission__title(v-if='title', v-html='title', ref='title')
 
     .mission__content
       p.mission__text(v-if='text', v-html='text')
@@ -22,6 +22,7 @@ section.mission(v-if='page && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
@@ -31,7 +32,7 @@ import BasePagination from '../../components/UI/BasePagination.vue';
 import BaseImage from '../../components/UI/BaseImage.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,

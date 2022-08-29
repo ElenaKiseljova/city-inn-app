@@ -41,10 +41,24 @@
     }
 
     @media screen and (min-width: $tablet) {
+      opacity: 0;
+
+      transition: transform 0.5s linear;
+
       &--last {
         grid-column: span 2;
 
         height: fit-content;
+
+        transform: translateY(50px);
+      }
+
+      &--odd {
+        transform: translateX(-20vw);
+      }
+
+      &--even {
+        transform: translateX(20vw);
       }
     }
 

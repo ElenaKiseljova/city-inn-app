@@ -1,6 +1,14 @@
 .parking {
   @extend %w100;
 
+  @media screen and (min-width: $tablet) {
+    transform: translateX(30vw);
+  }
+
+  @media screen and (min-width: $desktop) {
+    transform: translateX(-30vw);
+  }
+
   &__container {
     position: relative;
 

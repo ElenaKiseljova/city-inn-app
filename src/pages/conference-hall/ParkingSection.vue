@@ -1,5 +1,5 @@
 <template lang="pug">
-section.parking(v-if='page && pageName && sections && section')
+section.parking(v-if='page && pageName && sections && section', ref='section')
   .parking__container.container
     .parking__content
       h2.title-inner.parking__title(v-if='title', v-html='title')
@@ -12,7 +12,7 @@ section.parking(v-if='page && pageName && sections && section')
 
 <script>
 import { mapGetters } from 'vuex';
-
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '@/components/UI/BaseImage.vue';
@@ -21,7 +21,7 @@ export default {
   components: {
     BaseImage,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

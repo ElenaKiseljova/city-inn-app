@@ -60,7 +60,10 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import { sectionTitleAnimation } from '../../assets/js/gsap-animations';
+import {
+  sectionAnimation,
+  sectionTitleAnimation,
+} from '../../assets/js/gsap-animations';
 
 import checkUrlType from '../../mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
@@ -85,6 +88,7 @@ export default {
   data() {
     return {
       sectionTitleAnimationIsSet: false,
+      sectionAnimationIsSet: false,
     };
   },
   computed: {
@@ -140,43 +144,39 @@ export default {
       return this.section && this.section.book ? this.section.book : null;
     },
   },
-  mounted() {
-    if (
-      this.$refs.title1 &&
-      this.$refs.title2 &&
-      this.$refs.section &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      let title = this.$refs.title1;
+  methods: {
+    setAnimations() {
+      if (this.$refs.title1 && this.$refs.title2 && this.$refs.section) {
+        if (!this.sectionTitleAnimationIsSet && this.sectionName !== 'why') {
+          let title = this.$refs.title1;
 
-      if (this.sectionName === 'lobby' || this.sectionName === 'restaurant') {
-        title = this.$refs.title2;
+          if (
+            this.sectionName === 'lobby' ||
+            this.sectionName === 'restaurant'
+          ) {
+            title = this.$refs.title2;
+          }
+
+          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
+            title,
+            this.$refs.section
+          );
+        }
+
+        if (!this.sectionAnimationIsSet && this.sectionName === 'why') {
+          this.sectionAnimationIsSet = sectionAnimation(
+            this.$refs.section,
+            this.$refs.section
+          );
+        }
       }
-
-      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-        title,
-        this.$refs.section
-      );
-    }
+    },
+  },
+  mounted() {
+    this.setAnimations();
   },
   updated() {
-    if (
-      this.$refs.title1 &&
-      this.$refs.title2 &&
-      this.$refs.section &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      let title = this.$refs.title1;
-
-      if (this.sectionName === 'lobby' || this.sectionName === 'restaurant') {
-        title = this.$refs.title2;
-      }
-
-      this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-        title,
-        this.$refs.section
-      );
-    }
+    this.setAnimations();
   },
 };
 </script>

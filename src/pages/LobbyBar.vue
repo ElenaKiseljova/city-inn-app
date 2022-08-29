@@ -5,6 +5,7 @@ TheMain
   BarSection
   EventSection(sectionName='kitchen')
   FoodSections(sectionName='breakfast')
+  TheContacts
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import DoingsSection from './lobby-bar/DoingsSection.vue';
 import BarSection from './lobby-bar/BarSection.vue';
 import EventSection from '@/components/sections/EventSection.vue';
 import FoodSections from '@/components/sections/FoodSections.vue';
+import TheContacts from '@/components/sections/TheContacts.vue';
 
 export default {
   components: {
@@ -25,6 +27,7 @@ export default {
     BarSection,
     EventSection,
     FoodSections,
+    TheContacts,
   },
   mixins: [footerGsapAnimations],
 };

@@ -1,5 +1,9 @@
 <template lang="pug">
-section(v-if='page && sections && section', :class='`gym gym--${pageName}`')
+section(
+  v-if='page && sections && section',
+  :class='`gym gym--${pageName}`',
+  ref='section'
+)
   div(:class='`gym__container container gym__container--${pageName}`')
     div(:class='`gym__top gym__top--${pageName}`')
       h2(
@@ -72,6 +76,7 @@ section(v-if='page && sections && section', :class='`gym gym--${pageName}`')
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -92,7 +97,7 @@ export default {
     BaseButton,
     BaseWorktime,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

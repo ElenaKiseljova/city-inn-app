@@ -136,8 +136,28 @@
 
       perspective: 50vw;
 
+      opacity: 0;
+
+      transition: transform 0.5s linear, opacity 0.5s linear;
+
+      &:nth-of-type(odd) {
+        transform: translateX(-20vw);
+      }
+
+      &:nth-of-type(even) {
+        transform: translateX(20vw);
+      }
+
       &.active {
         z-index: 100;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+
+      &:nth-of-type(odd),
+      &:nth-of-type(even) {
+        transform: translateY(50px);
       }
     }
   }
@@ -238,6 +258,10 @@
   }
 
   &__bottom {
+    display: flex;
+
+    flex-wrap: wrap;
+
     @extend %w100;
 
     padding: 40px 15px;
@@ -251,6 +275,8 @@
 
       top: 0;
       left: 0;
+
+      min-height: 100%;
 
       padding: 36px 32px 40px 40px;
 

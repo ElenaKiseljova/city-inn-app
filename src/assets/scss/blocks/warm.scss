@@ -147,6 +147,10 @@
       margin-right: calc((100% + 180px) - 452px);
       margin-bottom: 24px;
       margin-left: -180px;
+
+      transform: translate(20px, 20px);
+
+      opacity: 0;
     }
 
     @media screen and (min-width: $desktop) {
