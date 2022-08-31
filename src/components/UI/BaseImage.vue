@@ -2,18 +2,18 @@
 div(:class='imgClasses')
   picture(:class='pictureClasses')
     source(
-      v-if='image.webp && image.webp.desktop',
+      v-if='canUseWebp && image.webp && image.webp.desktop',
       media='(min-width: 1025px)',
       type='image/webp',
       :srcset='image.webp.desktop'
     )
     source(
-      v-if='image.webp && image.webp.tablet',
+      v-if='canUseWebp && image.webp && image.webp.tablet',
       media='(min-width: 500px)',
       :srcset='image.webp.tablet'
     )
     source(
-      v-if='image.webp && image.webp.mobile',
+      v-if='canUseWebp && image.webp && image.webp.mobile',
       media='(min-width: 100px)',
       type='image/webp',
       :srcset='image.webp.mobile'
@@ -72,9 +72,12 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['pageName', 'meta']),
+    ...mapGetters(['pageName', 'meta', 'browser']),
+    canUseWebp() {
+      return this.browser ? this.browser.canUseWebp : false;
+    },
     imageAlt() {
-      return this.alt !== '' ? this.alt : this.meta.title;
+      return this.alt !== '' ? this.alt : this.meta.title || 'img';
     },
     imgClasses() {
       const imageModificator =

@@ -1,8 +1,10 @@
 .page-header {
-  position: absolute;
+  position: fixed;
 
   top: 0;
   left: 0;
+
+  z-index: 9;
 
   @extend %w100;
   min-height: 100vh;
@@ -23,7 +25,7 @@
 
     padding: 40px 0 0 0;
 
-    pointer-events: all;
+    pointer-events: none;
 
     @media screen and (min-width: $tablet) {
       padding: 37px 0;
@@ -36,6 +38,8 @@
 
   &__logo {
     width: 120px;
+
+    pointer-events: all;
   }
 
   &__right {
@@ -43,6 +47,8 @@
 
     align-items: flex-start;
     justify-content: flex-end;
+
+    pointer-events: all;
 
     @media screen and (min-width: $desktop) {
       padding-top: 20px;
@@ -114,13 +120,19 @@
     --color-button: #{$white};
     --border-color-button: #{$white};
 
-    &:not(.page-header__social--home):not(.page-header__social--smart) {
-      transform: none !important;
-    }
+    transform: none;
 
     &--home,
     &--smart {
       transform: translateX(50vw);
+
+      transition: transform 0.5s ease-in;
+
+      &.scrolled {
+        transform: translateX(0);
+
+        transition: transform 0.5s ease-out;
+      }
     }
 
     @media screen and (min-width: $desktop) {

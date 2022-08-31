@@ -3,6 +3,8 @@
 
   background-color: $dirty-green;
 
+  overflow: visible;
+
   &__list {
     display: grid;
 
@@ -37,7 +39,7 @@
     }
 
     &.active {
-      z-index: 100;
+      z-index: 3;
     }
 
     @media screen and (min-width: $tablet) {

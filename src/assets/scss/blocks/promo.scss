@@ -64,7 +64,20 @@
     overflow: visible;
 
     &--image {
-      z-index: 3;
+      z-index: 4;
+
+      &.promo__container--home,
+      &.promo__container--smart {
+        transform: translateY(0);
+
+        transition: transform 0.5s ease-in;
+
+        &.scrolled {
+          transform: translateY(192px);
+
+          transition: transform 0.5s ease-out;
+        }
+      }
     }
 
     &--content {
@@ -72,6 +85,24 @@
       &.promo__container--home,
       &.promo__container--smart {
         display: none;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      &--image {
+
+        &.promo__container--home,
+        &.promo__container--smart {
+          transform: translateY(0);
+
+          transition: none;
+
+          &.scrolled {
+            transform: translateY(0);
+
+            transition: none;
+          }
+        }
       }
     }
   }

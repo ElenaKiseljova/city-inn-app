@@ -237,36 +237,32 @@ export { sectionAnimation };
       * на мобильных устройствах
       * 
     */
-// .page-header__social | .promo--home .promo__buttons, .promo--smart .promo__buttons | .promo
+// .page-header__social | .promo__container--home, .promo__container--smart | .promo
 const animationTwoElements = (trigger) => {
-  if (trigger && DEVICE_WIDTH < TABLET_WIDTH) {
-    const element1 = document.querySelector('.page-header__social');
-    const element2 = trigger.querySelector('.promo--home .promo__buttons, .promo--smart .promo__buttons');
+  if (trigger) {
+    const headerButtons = document.querySelector('.page-header__social--smart, .page-header__social--home');
+    const promoButtonsContainer = trigger.querySelector('.promo__container--home, .promo__container--smart');
 
-    if (element1 && element2) {
-      gsap.to(element1, {
-        x: 0,
-        duration: 1.5,
-        ease: 'power1.inOut',
+    if (headerButtons && promoButtonsContainer) {
+      gsap.to(headerButtons, {
         scrollTrigger: {
           trigger: trigger,
-          scrub: 1,
-          // markers: true,
           start: 'top top',
-          end: '98vh top',
+          end: 9999999,
+          onToggle: () => {
+            headerButtons.classList.toggle('scrolled');
+          },
         },
       });
 
-      gsap.to(element2, {
-        y: 192,
-        duration: 1.5,
-        ease: 'power1.inOut',
+      gsap.to(promoButtonsContainer, {
         scrollTrigger: {
           trigger: trigger,
-          scrub: 1,
-          // markers: true,
           start: 'top top',
-          end: '98vh top',
+          end: 9999999,
+          onToggle: () => {
+            promoButtonsContainer.classList.toggle('scrolled');
+          },
         },
       });
 
@@ -278,6 +274,31 @@ const animationTwoElements = (trigger) => {
 };
 
 export { animationTwoElements };
+
+const animationLogo = (trigger) => {
+  if (trigger) {
+    const headerLogo = document.querySelector('.page-header__logo');
+
+    if (headerLogo) {
+      gsap.to(headerLogo, {
+        scrollTrigger: {
+          trigger: trigger,
+          start: 'top top',
+          end: 9999999,
+          onToggle: () => {
+            headerLogo.classList.toggle('scrolled');
+          },
+        },
+      });
+
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export { animationLogo };
 
 /**
      * Анимация заголовка и текста страницы

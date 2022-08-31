@@ -1,12 +1,45 @@
 import { createStore } from 'vuex';
+
 import meta from './assets/js/meta';
 import { map } from './assets/js/map';
-import __pages from './assets/js/__pages';
 
-const replceLineBreakSymbolsForJsonValidFormat = (text) => {
-  const changedText = text.replace(/\r\n/g, '\\r\\n');
+/**
+ * Test Start
+ */
+// import __pages from './assets/js/__pages';
 
-  return changedText;
+/**
+ * Test End
+ */
+
+// const replceLineBreakSymbolsForJsonValidFormat = (text) => {
+//   const changedText = text.replace(/\r\n/g, '\\r\\n');
+
+//   return changedText;
+// };
+
+const urlAPI = `https://city-inn-app-25969-default-rtdb.firebaseio.com`;
+// const urlAPI = `${window.location.origin}/api`;
+
+const getFetchData = async (url) => {
+  let response;
+  let responseData;
+
+  try {
+    response = await fetch(url);
+
+    if (!response.ok) {
+      const message = `An error has occured: ${response.status}`;
+
+      throw new Error(message);
+    }
+
+    responseData = await response.json();
+
+    return responseData;
+  } catch (error) {
+    console.log(response, responseData);
+  }
 };
 
 const store = createStore({
@@ -54,6 +87,7 @@ const store = createStore({
       google: null,
       page: null,
       nextPage: null,
+      browser: null,
     };
   },
   mutations: {
@@ -84,6 +118,9 @@ const store = createStore({
     setNextPage(state, payload) {
       state.nextPage = payload;
     },
+    setBrowser(state, payload) {
+      state.browser = payload;
+    },
   },
   actions: {
     setAnimationTriggers(context, payload) {
@@ -111,32 +148,12 @@ const store = createStore({
         lang = `/${lang}`;
       }
 
-      url = `${window.location.origin}/api${lang}${path}`;
+      url = `${urlAPI}${lang}${path}.json`;
 
-      let responseJson;
+      const responseData = await getFetchData(url);
 
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          const message = `An error has occured: ${response.status}`;
-
-          throw new Error(message);
-        }
-
-        responseJson = response;
-      } catch (error) {
-        /* TEST */
-        responseJson = __pages[`${lang}${path}`];
-        /* TEST */
-      }
-
-      if (responseJson) {
-        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
-
-        const responseObj = await JSON.parse(responseJson);
-
-        context.commit('setHeader', responseObj);
+      if (responseData) {
+        context.commit('setHeader', responseData);
       }
     },
     async setFooter(context, payload) {
@@ -150,32 +167,12 @@ const store = createStore({
         lang = `/${lang}`;
       }
 
-      url = `${window.location.origin}/api${lang}${path}`;
+      url = `${urlAPI}${lang}${path}.json`;
 
-      let responseJson;
+      const responseData = await getFetchData(url);
 
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          const message = `An error has occured: ${response.status}`;
-
-          throw new Error(message);
-        }
-
-        responseJson = response;
-      } catch (error) {
-        /* TEST */
-        responseJson = __pages[`${lang}${path}`];
-        /* TEST */
-      }
-
-      if (responseJson) {
-        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
-
-        const responseObj = await JSON.parse(responseJson);
-
-        context.commit('setFooter', responseObj);
+      if (responseData) {
+        context.commit('setFooter', responseData);
       }
     },
     async setContacts(context, payload) {
@@ -189,32 +186,12 @@ const store = createStore({
         lang = `/${lang}`;
       }
 
-      url = `${window.location.origin}/api${lang}${path}`;
+      url = `${urlAPI}${lang}${path}.json`;
 
-      let responseJson;
+      const responseData = await getFetchData(url);
 
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          const message = `An error has occured: ${response.status}`;
-
-          throw new Error(message);
-        }
-
-        responseJson = response;
-      } catch (error) {
-        /* TEST */
-        responseJson = __pages[`${lang}${path}`];
-        /* TEST */
-      }
-
-      if (responseJson) {
-        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
-
-        const responseObj = await JSON.parse(responseJson);
-
-        context.commit('setContacts', responseObj);
+      if (responseData) {
+        context.commit('setContacts', responseData);
       }
     },
     async setGoogle(context, payload) {
@@ -226,36 +203,30 @@ const store = createStore({
       context.commit('setGoogle', google);
     },
     async setNextPage(context, payload) {
-      const path = payload.url;
+      let path = payload.url;
+
+      path = path === '/'
+        ? '/index'
+        : (path === '/en/' || path === '/en')
+          ? '/en/index'
+          : path === '/conference-service'
+            ? '/conference-service/index'
+            : path === '/en/conference-service'
+              ? '/en/conference-service/index'
+              : path === '/rooms'
+                ? '/rooms/index'
+                : path === '/en/rooms'
+                  ? '/en/rooms/index'
+                  : path;
 
       let url = '';
 
-      url = `${window.location.origin}/api${path}`;
+      url = `${urlAPI}${path}.json`;
 
-      let responseJson;
+      const responseData = await getFetchData(url);
 
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          const message = `An error has occured: ${response.status}`;
-
-          throw new Error(message);
-        }
-
-        responseJson = response;
-      } catch (error) {
-        /* TEST */
-        responseJson = __pages[path];
-        /* TEST */
-      }
-
-      if (responseJson) {
-        responseJson = await replceLineBreakSymbolsForJsonValidFormat(responseJson);
-
-        const responseObj = await JSON.parse(responseJson);
-
-        context.commit('setNextPage', responseObj);
+      if (responseData) {
+        context.commit('setNextPage', responseData);
 
         return true;
       }
@@ -322,6 +293,9 @@ const store = createStore({
       // Set page
       context.commit('setPage', pageObj);
     },
+    setBrowser(context, payload) {
+      context.commit('setBrowser', payload);
+    },
   },
   getters: {
     pageName(state) {
@@ -350,6 +324,9 @@ const store = createStore({
     },
     google(state) {
       return state.google;
+    },
+    browser(state) {
+      return state.browser;
     },
   },
 });

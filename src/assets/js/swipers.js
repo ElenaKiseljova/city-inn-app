@@ -12,6 +12,23 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
+const reloader = () => {
+  // Reloader
+  window.addEventListener('resize', () => {
+    const DEVICE_WIDTH_RESIZE = window.innerWidth && document.documentElement.clientWidth
+      ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+      : window.innerWidth
+      || document.documentElement.clientWidth
+      || document.getElementsByTagName('body')[0].clientWidth;
+
+    if (DEVICE_WIDTH !== DEVICE_WIDTH_RESIZE && Math.abs(DEVICE_WIDTH - DEVICE_WIDTH_RESIZE) > 100) {
+      document.location.reload();
+    }
+  });
+};
+
+export { reloader };
+
 const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {
   const el1 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
   const el2 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
@@ -333,23 +350,6 @@ const swiperInit = (swiperItem, attr = {}) => {
 };
 
 export { swiperInit };
-
-const reloader = () => {
-  // Reloader
-  window.addEventListener('resize', () => {
-    const DEVICE_WIDTH_RESIZE = window.innerWidth && document.documentElement.clientWidth
-      ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-      : window.innerWidth
-      || document.documentElement.clientWidth
-      || document.getElementsByTagName('body')[0].clientWidth;
-
-    if (DEVICE_WIDTH !== DEVICE_WIDTH_RESIZE) {
-      document.location.reload();
-    }
-  });
-};
-
-export { reloader };
 
 const eventSliderInit = (eventSliderImages = null) => {
   if (eventSliderImages) {

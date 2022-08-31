@@ -265,6 +265,16 @@ router.beforeEach(async (to, _, next) => {
 
         break;
 
+      case 'Home':
+        next(false);
+
+        break;
+
+      case 'Home En':
+        next(false);
+
+        break;
+
       default:
         if (curLang === 'uk') {
           next({ name: 'Home' });

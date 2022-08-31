@@ -1,6 +1,8 @@
 .logo {
   color: $dark-yellow;
 
+  opacity: 1;
+
   &--home,
   &--smart,
   &--about,
@@ -9,7 +11,11 @@
   }
 
   &--header {
-    transition: color 0.3s;
+    transform-origin: center;
+
+    transform: scale(1);
+
+    transition: transform 0.5s ease-out, color 0.5s;
 
     svg {
       fill: $white;
@@ -18,7 +24,23 @@
     &.active {
       color: $dark-yellow;
 
-      transition: color 0.3s;
+      transition: transform 0.5s ease-out, color 0.5s;
+
+      &.scrolled {
+        opacity: 1;
+
+        transform: scale(1);
+
+        transition: opacity 0.5s 0.8s;
+      }
+    }
+
+    &.scrolled {
+      opacity: 0;
+
+      transform: scale(0);
+
+      transition: transform 0.5s ease-in, opacity 0.5s;
     }
   }
 
@@ -47,6 +69,11 @@
   }
 
   &__link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
 
     color: inherit;
