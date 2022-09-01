@@ -86,14 +86,10 @@ export default {
     return {
       sectionTitleAnimationIsSet: false,
       contactsAnimationInited: false,
-
-      contactsLastInterval: null,
-
-      i: 0,
     };
   },
   computed: {
-    ...mapGetters(['pageName', 'contacts']),
+    ...mapGetters(['pageName', 'contacts', 'routeChanged']),
     title() {
       if (this.contacts.content && this.contacts.content.title) {
         return this.contacts.content.title;
@@ -125,52 +121,47 @@ export default {
     },
   },
   methods: {
-    setSectionTitleAnimation() {
-      if (
-        this.$refs.title1 &&
-        this.$refs.title2 &&
-        this.$refs.section &&
-        !this.sectionTitleAnimationIsSet
-      ) {
-        if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
-          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-            this.$refs.title1,
+    async setContactsAnimation() {
+      if (this.routeChanged && this.$refs.section) {
+        if (!this.contactsAnimationInited) {
+          this.contactsAnimationInited = await contactsAnimation.init(
             this.$refs.section
           );
-        } else if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-            this.$refs.title2,
-            this.$refs.section
-          );
+        }
+
+        if (
+          this.$refs.title1 &&
+          this.$refs.title2 &&
+          !this.sectionTitleAnimationIsSet
+        ) {
+          if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
+            this.sectionTitleAnimationIsSet = await sectionTitleAnimation(
+              this.$refs.title1,
+              this.$refs.section
+            );
+          } else if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+            this.sectionTitleAnimationIsSet = await sectionTitleAnimation(
+              this.$refs.title2,
+              this.$refs.section
+            );
+          }
         }
       }
     },
   },
-  mounted() {
-    if (!this.contactsAnimationInited) {
-      this.contactsLastInterval = setInterval(() => {
-        const contacts = document.querySelector('.contacts');
-        if (contacts) {
-          clearInterval(this.contactsLastInterval);
-
-          this.contactsAnimationInited = contactsAnimation.init(contacts);
-        }
-
-        this.i += 1;
-
-        if (this.i > 10) {
-          clearInterval(this.contactsLastInterval);
-        }
-      }, 300);
-    }
-
-    this.setSectionTitleAnimation();
+  watch: {
+    async routeChanged() {
+      await this.setContactsAnimation();
+    },
   },
-  updated() {
-    this.setSectionTitleAnimation();
+  async mounted() {
+    await this.setContactsAnimation();
   },
-  unmounted() {
-    contactsAnimation.reset();
+  async updated() {
+    await this.setContactsAnimation();
+  },
+  async beforeUnmount() {
+    await contactsAnimation.reset();
   },
 };
 </script>

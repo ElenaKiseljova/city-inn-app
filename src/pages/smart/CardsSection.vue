@@ -46,8 +46,8 @@ export default {
   updated() {
     this.setCardsAnimation();
   },
-  unmounted() {
-    cardsItemsAnimation.reset();
+  async beforeUnmount() {
+    await cardsItemsAnimation.reset();
   },
 };
 </script>

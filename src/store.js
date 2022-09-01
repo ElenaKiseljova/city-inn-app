@@ -88,6 +88,7 @@ const store = createStore({
       page: null,
       nextPage: null,
       browser: null,
+      routeChanged: false,
     };
   },
   mutations: {
@@ -120,6 +121,9 @@ const store = createStore({
     },
     setBrowser(state, payload) {
       state.browser = payload;
+    },
+    setRouteChanged(state, payload) {
+      state.routeChanged = payload;
     },
   },
   actions: {
@@ -293,8 +297,11 @@ const store = createStore({
       // Set page
       context.commit('setPage', pageObj);
     },
-    setBrowser(context, payload) {
-      context.commit('setBrowser', payload);
+    async setBrowser(context, payload) {
+      await context.commit('setBrowser', payload);
+    },
+    setRouteChanged(context, payload) {
+      context.commit('setRouteChanged', payload);
     },
   },
   getters: {
@@ -327,6 +334,9 @@ const store = createStore({
     },
     browser(state) {
       return state.browser;
+    },
+    routeChanged(state) {
+      return state.routeChanged;
     },
   },
 });

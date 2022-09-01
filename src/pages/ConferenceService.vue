@@ -8,8 +8,6 @@ TheMain
 </template>
 
 <script>
-import footerGsapAnimations from '../mixins/footerGsapAnimations';
-
 import TheMain from '../components/layout/TheMain.vue';
 import ThePromo from '../components/sections/ThePromo.vue';
 import FoodSections from '@/components/sections/FoodSections.vue';
@@ -26,7 +24,6 @@ export default {
     TypesSection,
     TheContacts,
   },
-  mixins: [footerGsapAnimations],
 };
 </script>
 

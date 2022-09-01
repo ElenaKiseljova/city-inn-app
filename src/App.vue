@@ -1,11 +1,13 @@
 <template lang="pug">
-TheHeader 
+BaseSpinner.spinner--main(v-if='!appIsReady')
 
-router-view(v-slot='slotProps')
+TheHeader(v-show='appIsReady')
+
+router-view(v-show='appIsReady', v-slot='slotProps')
   transition(name='rout', mode='out-in')
     component(:is='slotProps.Component') 
 
-TheFooter
+TheFooter(v-show='appIsReady')
 </template>
 
 <script>
@@ -17,13 +19,27 @@ import { reloader } from './assets/js/swipers';
 
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
+import BaseSpinner from './components/UI/BaseSpinner.vue';
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    BaseSpinner,
   },
-  ...mapGetters(['browser']),
+  computed: {
+    ...mapGetters(['header', 'footer', 'page', 'browser']),
+    appIsReady() {
+      return this.header && this.footer && this.page ? true : false;
+    },
+  },
+  watch: {
+    appIsReady() {
+      if (this.appIsReady) {
+        reloader();
+      }
+    },
+  },
   async created() {
     const ua = detect.parse(navigator.userAgent);
 
@@ -42,11 +58,6 @@ export default {
     };
 
     await this.$store.dispatch('setBrowser', browser);
-  },
-  mounted() {
-    reloader();
-
-    // alert('mounted');
   },
 };
 </script>

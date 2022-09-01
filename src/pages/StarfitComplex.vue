@@ -7,8 +7,6 @@ TheMain
 </template>
 
 <script>
-import footerGsapAnimations from '../mixins/footerGsapAnimations';
-
 import TheMain from '../components/layout/TheMain.vue';
 import ThePromo from '../components/sections/ThePromo.vue';
 import GymSection from '@/components/sections/GymSection.vue';
@@ -23,7 +21,6 @@ export default {
     EventSection,
     SpaSection,
   },
-  mixins: [footerGsapAnimations],
 };
 </script>
 

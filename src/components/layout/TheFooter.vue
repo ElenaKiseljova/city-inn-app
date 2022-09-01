@@ -1,7 +1,8 @@
 <template lang="pug">
 footer#footer(
   v-if='pageName && header && footer',
-  :class='`page-footer page-footer--${pageName}`'
+  :class='`page-footer page-footer--${pageName}`',
+  ref='footer'
 )
   .page-footer__container.container
     .page-footer__left
@@ -45,6 +46,8 @@ footer#footer(
 <script>
 import { mapGetters } from 'vuex';
 
+import { pageFooterAnimation } from '../../assets/js/gsap-animations';
+
 import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
 
@@ -55,8 +58,32 @@ export default {
   components: {
     BaseSocial,
   },
+  data() {
+    return {
+      footerAnimationInited: false,
+    };
+  },
+  methods: {
+    async setFooterAnimation(type = 'init') {
+      if (type === 'init' && this.routeChanged && this.$refs.footer) {
+        // console.log(this.footerAnimationInited, 'init', type);
+
+        if (!this.footerAnimationInited) {
+          this.footerAnimationInited = await pageFooterAnimation.init(
+            this.$refs.footer
+          );
+        }
+      } else if (type === 'reset' && !this.routeChanged) {
+        await pageFooterAnimation.reset();
+
+        this.footerAnimationInited = false;
+
+        // console.log(this.footerAnimationInited, 'reset', type);
+      }
+    },
+  },
   computed: {
-    ...mapGetters(['pageName', 'header', 'footer']),
+    ...mapGetters(['pageName', 'header', 'footer', 'routeChanged']),
     columns() {
       if (this.footer.content && this.footer.content.columns) {
         const columnsWithType = this.footer.content.columns.map((column) => {
@@ -84,6 +111,24 @@ export default {
     year() {
       return new Date().getFullYear();
     },
+  },
+  watch: {
+    async routeChanged(newVal, oldVal) {
+      if (newVal === false && oldVal === true) {
+        await this.setFooterAnimation('reset');
+      } else if (newVal === true) {
+        // 500 time for animation route
+        setTimeout(async () => {
+          await this.setFooterAnimation();
+        }, 500);
+      }
+    },
+  },
+  async mounted() {
+    await this.setFooterAnimation();
+  },
+  async updated() {
+    await this.setFooterAnimation();
   },
 };
 </script>

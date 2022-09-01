@@ -237,6 +237,8 @@ const router = createRouter({
 let curLang;
 
 router.beforeEach(async (to, _, next) => {
+  await store.dispatch('setRouteChanged', false);
+
   curLang = store.getters.lang;
 
   const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path });
@@ -289,6 +291,8 @@ router.beforeEach(async (to, _, next) => {
 
 router.afterEach(async (to) => {
   await store.dispatch('setPage', { url: to.path, curLang: curLang, pageName: to.meta.pageName });
+
+  await store.dispatch('setRouteChanged', true);
 });
 
 export default router;

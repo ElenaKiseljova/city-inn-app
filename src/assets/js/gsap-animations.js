@@ -18,9 +18,11 @@ export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
  * Аниаммция элементов списков по триггеру: init/reset
  *  
  */
-const animationOpacityTranslate = (elements, trigerElement) => {
+const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null) => {
   if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
-    return gsap.to(elements, {
+    scrollTriggerId = scrollTriggerId ? `${scrollTriggerId}-${new Date().getTime()}` : `scrollTriggerId-${new Date().getTime()}`;
+
+    const animation = gsap.to(elements, {
       x: 0,
       y: 0,
       opacity: 1,
@@ -28,41 +30,31 @@ const animationOpacityTranslate = (elements, trigerElement) => {
       stagger: 0.2,
       ease: 'power3.inOut',
       scrollTrigger: {
+        id: scrollTriggerId,
         trigger: trigerElement,
-        // markers: true,
-        // scrub: 1,
+        markers: true,
         start: 'top bottom',
         end: 'bottom center',
       },
     });
-  }
 
-  return false;
-};
-
-const animationOpacityTranslateReset = (elements) => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0) {
-    gsap.to(elements, {
-      x: 20,
-      y: 20,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.inOut',
-    });
-
-    return true;
+    return {
+      animation,
+      scrollTriggerId,
+    };
   }
 
   return false;
 };
 
 class Animation {
-  constructor(selectorItem) {
+  constructor(selectorItem, scrollTriggerId = null) {
     this.selectorItem = selectorItem;
+    this.scrollTriggerId = scrollTriggerId;
   }
 
   static trigger = null;
+  static animation = null;
 
   elements() {
     return this.triggerValue ? this.triggerValue.querySelectorAll(this.selectorItem) : [];
@@ -72,20 +64,34 @@ class Animation {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
       this.triggerInit = trigger;
 
-      this.scrollTriggerInit = animationOpacityTranslate(this.elements(), trigger);
+      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId);
+
+      this.animationInit = response.animation;
+      this.scrollTriggerIdInit = response.scrollTriggerId;
 
       return true;
     }
   }
 
   reset() {
-    if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      if (this.scrollTrigger) {
-        this.scrollTrigger.kill();
-        // console.log(this.scrollTrigger);
-      }
+    const elements = this.elements();
 
-      return animationOpacityTranslateReset(this.elements());
+    if (elements) {
+      gsap.set(elements, { clearProps: true });
+    }
+
+    if (this.animation) {
+      this.animation.pause(0).kill(true);
+    } else {
+      console.log('Animation no exist');
+    }
+
+    const curScrollTrigger = ScrollTrigger.getById(this.scrollTriggerId);
+
+    if (curScrollTrigger) {
+      curScrollTrigger.kill(true);
+    } else {
+      // console.log('ScrollTrigger not found: ', this.scrollTriggerId);
     }
   }
 
@@ -93,8 +99,12 @@ class Animation {
     this.trigger = value;
   }
 
-  set scrollTriggerInit(value) {
-    this.scrollTrigger = value;
+  set scrollTriggerIdInit(value) {
+    this.scrollTriggerId = value;
+  }
+
+  set animationInit(value) {
+    this.animation = value;
   }
 
   get triggerValue() {
@@ -103,32 +113,32 @@ class Animation {
 }
 
 //.contacts
-const contactsAnimation = new Animation('.contacts__item');
+const contactsAnimation = new Animation('.contacts__item', 'contacts');
 
 export { contactsAnimation };
 
 //.page-footer
-const pageFooterAnimation = new Animation('.page-footer__item');
+const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer');
 
 export { pageFooterAnimation };
 
 //parent block .service
-const serviceAnimation = new Animation('.service');
+const serviceAnimation = new Animation('.service', 'services');
 
 export { serviceAnimation };
 
 //.promo__social
-const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item');
+const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item', 'promoSocial');
 
 export { promoSocialAnimation };
 
 //.types
-const typesItemsAnimation = new Animation('.types__slide');
+const typesItemsAnimation = new Animation('.types__slide', 'types');
 
 export { typesItemsAnimation };
 
 //.cards
-const cardsItemsAnimation = new Animation('.cards__item');
+const cardsItemsAnimation = new Animation('.cards__item', 'cards');
 
 export { cardsItemsAnimation };
 
@@ -233,72 +243,75 @@ const sectionAnimation = (section, trigger) => {
 export { sectionAnimation };
 
 /** 
-      * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции 
-      * на мобильных устройствах
+      * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции + масштабирование лого
       * 
     */
 // .page-header__social | .promo__container--home, .promo__container--smart | .promo
-const animationTwoElements = (trigger) => {
-  if (trigger) {
-    const headerButtons = document.querySelector('.page-header__social--smart, .page-header__social--home');
-    const promoButtonsContainer = trigger.querySelector('.promo__container--home, .promo__container--smart');
+const animationThreeElements = {
+  animation: null,
+  elements: [],
+  trigger: null,
+  init(trigger) {
+    if (trigger) {
+      this.trigger = trigger;
 
-    if (headerButtons && promoButtonsContainer) {
-      gsap.to(headerButtons, {
-        scrollTrigger: {
-          trigger: trigger,
-          start: 'top top',
-          end: 9999999,
-          onToggle: () => {
-            headerButtons.classList.toggle('scrolled');
+      const headerLogo = document.querySelector('.page-header__logo');
+      const headerButtons = document.querySelector('.page-header__social--smart, .page-header__social--home');
+      const promoButtonsContainer = trigger.querySelector('.promo__container--home, .promo__container--smart');
+
+      if (headerLogo) {
+        this.elements[0] = headerLogo;
+
+        this.animation = gsap.to(headerLogo, {
+          scrollTrigger: {
+            id: 'threeElements',
+            trigger: trigger,
+            start: '10% top',
+            end: 9999999,
+            // markers: true,
+            onToggle: () => {
+              if (headerButtons) {
+                this.elements[1] = headerButtons;
+
+                headerButtons.classList.toggle('scrolled');
+              }
+
+              if (promoButtonsContainer) {
+                this.elements[2] = promoButtonsContainer;
+
+                promoButtonsContainer.classList.toggle('scrolled');
+              }
+
+              headerLogo.classList.toggle('scrolled');
+            },
           },
-        },
-      });
+        });
 
-      gsap.to(promoButtonsContainer, {
-        scrollTrigger: {
-          trigger: trigger,
-          start: 'top top',
-          end: 9999999,
-          onToggle: () => {
-            promoButtonsContainer.classList.toggle('scrolled');
-          },
-        },
-      });
-
-      return true;
+        return true;
+      }
     }
-  }
 
-  return false;
+    return false;
+  },
+  reset() {
+    if (this.animation) {
+      this.animation.pause(0).kill(true);
+    }
+
+    if (ScrollTrigger.getById('threeElements')) {
+      ScrollTrigger.getById('threeElements').kill(true);
+    }
+
+    this.elements.forEach((element) => {
+      element.classList.remove('scrolled');
+    });
+  },
+  status() {
+    console.log(this.elements, this.trigger, this.animation, ScrollTrigger.getById('threeElements'));
+  }
 };
 
-export { animationTwoElements };
-
-const animationLogo = (trigger) => {
-  if (trigger) {
-    const headerLogo = document.querySelector('.page-header__logo');
-
-    if (headerLogo) {
-      gsap.to(headerLogo, {
-        scrollTrigger: {
-          trigger: trigger,
-          start: 'top top',
-          end: 9999999,
-          onToggle: () => {
-            headerLogo.classList.toggle('scrolled');
-          },
-        },
-      });
-
-      return true;
-    }
-  }
-
-  return false;
-};
-
-export { animationLogo };
+export { animationThreeElements };
 
 /**
      * Анимация заголовка и текста страницы

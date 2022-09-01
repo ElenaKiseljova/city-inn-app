@@ -84,8 +84,8 @@ export default {
       // console.log('Services Activated - updated');
     }
   },
-  unmounted() {
-    serviceAnimation.reset();
+  async beforeUnmount() {
+    await serviceAnimation.reset();
   },
 };
 </script>

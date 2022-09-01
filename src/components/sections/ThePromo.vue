@@ -85,7 +85,7 @@ import { mapGetters } from 'vuex';
 import {
   promoTitleAndTextAnimation,
   promoSocialAnimation,
-  animationTwoElements,
+  animationThreeElements,
 } from '../../assets/js/gsap-animations';
 
 import social from '../../mixins/social';
@@ -114,9 +114,9 @@ export default {
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   data() {
     return {
-      promoTitleAnimationIsSet: false,
+      promoTitleAndTextAnimation: false,
       promoSocialAnimationIsSet: false,
-      twoElementsAnimationIsSet: false,
+      animationThreeElementsIsSet: false,
     };
   },
   computed: {
@@ -197,17 +197,14 @@ export default {
           );
         }
 
-        if (
-          !this.twoElementsAnimationIsSet &&
-          (this.pageName === 'home' || this.pageName === 'smart')
-        ) {
-          this.twoElementsAnimationIsSet = animationTwoElements(
+        if (!this.animationThreeElementsIsSet) {
+          this.animationThreeElementsIsSet = animationThreeElements.init(
             this.$refs.promo
           );
         }
 
-        if (!this.promoTitleAnimationIsSet) {
-          this.promoTitleAnimationIsSet = promoTitleAndTextAnimation(
+        if (!this.promoTitleAndTextAnimationIsSet) {
+          this.promoTitleAndTextAnimation = promoTitleAndTextAnimation(
             this.$refs.promo
           );
         }
@@ -220,8 +217,13 @@ export default {
   updated() {
     this.setPromoAnimation();
   },
+  async beforeUnmount() {
+    await promoSocialAnimation.reset();
+
+    await animationThreeElements.reset();
+  },
   unmounted() {
-    promoSocialAnimation.reset();
+    // animationThreeElements.status();
   },
 };
 </script>

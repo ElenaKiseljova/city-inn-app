@@ -5,8 +5,6 @@ TheMain
 </template>
 
 <script>
-import footerGsapAnimations from '../mixins/footerGsapAnimations';
-
 import TheMain from '../components/layout/TheMain.vue';
 import ThePromo from '../components/sections/ThePromo.vue';
 import RoomsSection from './rooms-hotel/RoomsSection.vue';
@@ -17,7 +15,6 @@ export default {
     ThePromo,
     RoomsSection,
   },
-  mixins: [footerGsapAnimations],
 };
 </script>
 

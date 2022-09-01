@@ -9,8 +9,6 @@ TheMain
 </template>
 
 <script>
-import footerGsapAnimations from '../mixins/footerGsapAnimations';
-
 import TheMain from '../components/layout/TheMain.vue';
 import ThePromo from '../components/sections/ThePromo.vue';
 import DoingsSection from './lobby-bar/DoingsSection.vue';
@@ -29,7 +27,6 @@ export default {
     FoodSections,
     TheContacts,
   },
-  mixins: [footerGsapAnimations],
 };
 </script>
 
