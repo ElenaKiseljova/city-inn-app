@@ -373,7 +373,13 @@ export { swiperInit };
 
 const eventSliderInit = (eventSliderImages = null) => {
   if (eventSliderImages) {
-    const attrImages = {};
+    const attrImages = {
+      speed: 1200,
+    };
+
+    if (DEVICE_WIDTH >= TABLET_WIDTH) {
+      attrImages.speed = 500;
+    }
 
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       if (eventSliderImages.classList.contains('event__slider--group')) {
@@ -405,6 +411,7 @@ const eventSliderInit = (eventSliderImages = null) => {
 
     if (eventSliderText) {
       let attrText = {
+        speed: 1200,
         spaceBetween: 40,
         breakpoints: {
           // when window width is >= 1366px
@@ -415,6 +422,7 @@ const eventSliderInit = (eventSliderImages = null) => {
 
       if (DEVICE_WIDTH >= TABLET_WIDTH) {
         attrText = {
+          speed: 500,
           effect: 'fade',
           fadeEffect: {
             crossFade: true,

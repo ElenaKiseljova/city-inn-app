@@ -541,11 +541,19 @@
 
     cursor: pointer;
 
+    &--images {
+      direction: rtl;
+    }
+
     &--text {
       height: fit-content;
     }
 
     @media screen and (min-width: $tablet) {
+      &--images {
+        direction: ltr;
+      }
+
       &--text {
         flex-grow: 1;
 
@@ -577,6 +585,10 @@
     height: auto;
 
     box-sizing: border-box;
+
+    &--images {
+      direction: ltr;
+    }
 
     &--text {
       padding-left: 15px;
