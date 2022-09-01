@@ -1,6 +1,7 @@
 <template lang="pug">
-section.doings(v-if='page && pageName && sections && section')
-  h2.title-inner.doings__title(v-if='title', v-html='title')
+section.doings(v-if='page && pageName && sections && section', ref='section')
+  .doings__title-wrapper
+    h2.title-inner.doings__title(v-if='title', v-html='title', ref='title')
 
   .doings__slider-container(v-if='slides && slides.length > 0')
     BaseSlider(sectionName='doings', :modificator='pageName')
@@ -36,6 +37,7 @@ section.doings(v-if='page && pageName && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
@@ -45,7 +47,7 @@ import BaseNavigation from '../../components/UI/BaseNavigation.vue';
 import BaseImage from '../../components/UI/BaseImage.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,

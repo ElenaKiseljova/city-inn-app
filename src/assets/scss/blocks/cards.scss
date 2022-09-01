@@ -90,7 +90,7 @@
 
     transform: rotateX(0deg);
 
-    transition: transform 1s;
+    transition: transform 1s linear;
 
     &.active {
       position: absolute;
@@ -99,7 +99,7 @@
 
       transform: rotateY(180deg);
 
-      transition: transform 1s;
+      transition: transform 1s linear;
     }
 
     @media screen and (min-width: $desktop) {
@@ -233,7 +233,7 @@
 
     transform: rotateY(180deg);
 
-    transition: transform 1s;
+    transition: transform 1s linear;
 
     &--last {
       background-color: $gray;
@@ -246,7 +246,7 @@
 
       transform: rotateY(360deg);
 
-      transition: transform 1s;
+      transition: transform 1s linear;
 
       .cards__pagination {
         opacity: 1;
@@ -267,8 +267,6 @@
 
     @media screen and (min-width: $desktop) {
       position: relative;
-
-      min-height: auto;
 
       &--odd {
         left: auto;
@@ -307,6 +305,8 @@
     display: flex;
 
     align-items: stretch;
+
+    transition: none;
   }
 
   &__slide {
@@ -321,8 +321,78 @@
 
     box-sizing: border-box;
 
+    .cards__img-wrapper {
+      opacity: 0;
+
+      transform: translateX(-100%);
+
+      visibility: hidden;
+    }
+
+    .cards__content {
+      opacity: 0;
+
+      transform: translateX(100%);
+
+      visibility: hidden;
+    }
+
+    .cards__subtitle {
+      opacity: 0;
+
+      transform: translate(10px, 5px);
+    }
+
+    .cards__description {
+      opacity: 0;
+
+      transform: translate(15px, 5px);
+    }
+
+    .cards__services {
+      opacity: 0;
+
+      transform: translate(20px, 5px);
+    }
+
     &.swiper-slide-active {
       z-index: 1;
+
+      .cards__img-wrapper {
+        visibility: visible;
+
+        transition: translate 0.5s linear, opacity 0.5s linear;
+      }
+
+      .cards__content {
+        visibility: visible;
+
+        transition: translate 0.5s transform 0.5s 0.3s linear, opacity 0.5s linear;
+      }
+
+      .cards__subtitle {
+        opacity: 1;
+
+        transform: translate(0, 0);
+
+        transition: transform 0.8s cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      .cards__description {
+        opacity: 1;
+
+        transform: translate(0, 0);
+
+        transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
+      }
+
+      .cards__services {
+        opacity: 1;
+
+        transform: translate(0, 0);
+
+        transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
+      }
     }
   }
 

@@ -323,10 +323,10 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   if (swiperItem.classList.contains('prices__slider')) {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom', 1);
+      animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
 
       swiperSlider.on('beforeTransitionStart', () => {
-        animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom', 1);
+        animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
       });
     }
   }
@@ -345,6 +345,26 @@ const swiperInit = (swiperItem, attr = {}) => {
       });
     }
   }
+
+  if (swiperItem.classList.contains('cards__slider')) {
+    if (DEVICE_WIDTH < DESKTOP_WIDTH) {
+      animationSlideElements(swiperSlider, '.cards__img-wrapper', '.cards__content');
+
+      swiperSlider.on('beforeTransitionStart', () => {
+        animationSlideElements(swiperSlider, '.cards__img-wrapper', '.cards__content');
+      });
+    }
+  }
+
+
+  // Переход к следующему/предыдущему слайду по клику
+  swiperSlider.on('click', () => {
+    if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active')) {
+      swiperSlider.slidePrev();
+    } else {
+      swiperSlider.slideNext();
+    }
+  });
 
   return swiperSlider;
 };
@@ -384,17 +404,28 @@ const eventSliderInit = (eventSliderImages = null) => {
     const eventSliderText = eventSliderImages.closest('.event').querySelector('.event__slider--text');
 
     if (eventSliderText) {
-      const attrText = {
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true,
-        },
+      let attrText = {
+        spaceBetween: 40,
         breakpoints: {
           // when window width is >= 1366px
           1366: {
           },
         },
       };
+
+      if (DEVICE_WIDTH >= TABLET_WIDTH) {
+        attrText = {
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true,
+          },
+          breakpoints: {
+            // when window width is >= 1366px
+            1366: {
+            },
+          },
+        };
+      }
 
       const textEventSlider = swiperInit(eventSliderText, attrText);
 
@@ -431,7 +462,15 @@ const featuresSliderInit = (featuresIconsSlider = null) => {
       };
     }
 
-    new Swiper(featuresIconsSlider, swiperArgs);
+    const featuresSwiper = new Swiper(featuresIconsSlider, swiperArgs);
+
+    featuresSwiper.on('click', () => {
+      if (featuresSwiper.clickedSlide.classList.contains('swiper-slide-active')) {
+        featuresSwiper.slidePrev();
+      } else {
+        featuresSwiper.slideNext();
+      }
+    });
   }
 };
 

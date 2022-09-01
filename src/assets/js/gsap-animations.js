@@ -32,7 +32,7 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
       scrollTrigger: {
         id: scrollTriggerId,
         trigger: trigerElement,
-        markers: true,
+        // markers: true,
         start: 'top bottom',
         end: 'bottom center',
       },

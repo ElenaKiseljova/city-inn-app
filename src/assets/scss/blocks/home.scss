@@ -65,7 +65,9 @@
 
       &--lobby,
       &--restaurant {
-        grid-template-rows: calc(440 / 1440 * 100vw) auto;
+        min-height: 100vh;
+
+        grid-template-rows: auto max-content; // calc(440 / 1440 * 100vw) auto;
       }
     }
   }
@@ -152,25 +154,27 @@
       &--smart,
       &--why,
       &--conference {
-        min-height: calc(840 / 1440 * 100vw);
+        min-height: 100vh; //calc(840 / 1440 * 100vw);
       }
 
       &--lobby,
       &--restaurant {
-        min-height: calc(440 / 1440 * 100vw);
+        height: 100%;
+
+        min-height: unset; // calc(440 / 1440 * 100vw);
       }
 
-      &--group {
-        min-height: calc(726 / 1440 * 100vw);
-      }
+      // &--group {
+      //   min-height: calc(726 / 1440 * 100vw);
+      // }
 
-      &--starfit {
-        min-height: calc(600 / 1440 * 100vw);
-      }
+      // &--starfit {
+      //   min-height: calc(600 / 1440 * 100vw);
+      // }
 
-      &--about {
-        min-height: calc(720 / 1440 * 100vw);
-      }
+      // &--about {
+      //   min-height: calc(720 / 1440 * 100vw);
+      // }
     }
   }
 

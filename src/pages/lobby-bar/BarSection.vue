@@ -1,8 +1,9 @@
 <template lang="pug">
-section.bar(v-if='page && pageName && sections && section')
+section.bar(v-if='page && pageName && sections && section', ref='section')
   .bar__container.container
     .bar__top
-      h2.title-inner.bar__title(v-if='title', v-html='title')
+      .bar__title-wrapper
+        h2.title-inner.bar__title(v-if='title', v-html='title', ref='title')
 
       .bar__img-wrapper(v-if='image')
         BaseImage(sectionName='bar', :modificator='pageName', :image='image')
@@ -30,13 +31,14 @@ section.bar(v-if='page && pageName && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseImage from '../../components/UI/BaseImage.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseImage,
     BaseButton,

@@ -160,7 +160,7 @@
     pointer-events: none;
 
     &.loaded {
-      transition: transform 1s, opacity 1s;
+      transition: transform 1s linear, opacity 1s linear;
     }
 
     &.active {
@@ -168,7 +168,7 @@
 
       transform: translateY(0);
 
-      transition: transform 1s, opacity 1s;
+      transition: transform 1s linear, opacity 1s linear;
 
       pointer-events: all;
     }

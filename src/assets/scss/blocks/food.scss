@@ -473,8 +473,6 @@
 
         &~.swiper-slide {
           opacity: 0;
-
-          pointer-events: none;
         }
       }
     }
@@ -571,6 +569,8 @@
 
     @media screen and (min-width: $desktop) {
       padding: 165px 203px 129px 0;
+
+      pointer-events: none;
 
       &--breakfast,
       &--supply,
@@ -954,6 +954,8 @@
 
       margin-top: auto;
       margin-bottom: 0;
+
+      pointer-events: all;
     }
   }
 

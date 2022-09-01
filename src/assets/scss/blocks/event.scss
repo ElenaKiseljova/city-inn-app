@@ -578,9 +578,27 @@
 
     box-sizing: border-box;
 
-    // &--text {
-    //   height: fit-content;
-    // }
+    &--text {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      opacity: 0;
+
+      transition: opacity 0.5s;
+
+      &.swiper-slide-active {
+        opacity: 1;
+
+        transition: opacity 0.5s;
+      }
+    }
+
+    @media screen and (min-width: $mobile) {
+      &--text {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
 
     @media screen and (min-width: $tablet) {
       &--text {
@@ -754,11 +772,13 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    @extend %w100;
+    width: 100vw;
 
     min-height: 100vw;
 
-    padding: 95px 0 40px 0;
+    margin: 0 calc((100% - 100vw) / 2);
+
+    padding: 95px 0 40px;
 
     &--kitchen,
     &--saunas {
@@ -778,15 +798,18 @@
     }
 
     &--locations {
-      padding: 40px 0 88px;
+      padding-top: 40px;
+      padding-bottom: 88px;
     }
 
     &--smart-rooms {
-      padding: 135px 0 40px;
+      padding-top: 135px;
+      padding-bottom: 40px;
     }
 
     &--halls {
-      padding: 94px 0 40px;
+      padding-top: 94px;
+      padding-bottom: 40px;
     }
 
     &--coffee {
@@ -800,9 +823,12 @@
 
       z-index: 1;
 
+      width: 100%;
+
       height: auto;
       min-height: auto;
 
+      margin: 0;
       padding: 53px 0 40px 39px;
 
       overflow: visible;
@@ -850,6 +876,8 @@
 
     @media screen and (min-width: $desktop) {
       padding: 0 0 0 87px;
+
+      pointer-events: none;
 
       &--kitchen,
       &--attraction,
@@ -1177,6 +1205,8 @@
 
       margin-bottom: 55px;
       margin-left: 193px;
+
+      pointer-events: all;
 
       &--kitchen {
         margin-left: 238px;

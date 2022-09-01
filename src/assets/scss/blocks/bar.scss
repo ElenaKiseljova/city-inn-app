@@ -9,7 +9,7 @@
     overflow: visible;
   }
 
-  &__title {
+  &__title-wrapper {
     position: absolute;
 
     top: 42px;
@@ -30,6 +30,14 @@
       left: 15px;
 
       opacity: 0.8;
+    }
+  }
+
+  &__title {
+    @media screen and (min-width: $tablet) {
+      opacity: 0;
+
+      transform: translate(-20px, -20px);
     }
   }
 
