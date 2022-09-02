@@ -432,7 +432,7 @@ const eventSliderInit = (eventSliderImages = null) => {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       if (eventSliderImages.classList.contains('event__slider--group')) {
         attrImages.spaceBetween = 246;
-      } else if (!eventSliderImages.classList.contains('event__slider--around') && !eventSliderImages.classList.contains('event__slider--attraction')) {
+      } else if (!eventSliderImages.classList.contains('event__slider--around') && !eventSliderImages.classList.contains('event__slider--attraction') && !eventSliderImages.classList.contains('event__slider--saunas')) {
         attrImages.spaceBetween = 280;
       }
     }

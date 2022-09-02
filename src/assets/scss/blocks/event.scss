@@ -850,7 +850,7 @@
         }
 
         &.event__slide--halls {
-          padding: 454px 11px 32px 69px;
+          padding: 0;
         }
       }
 
@@ -969,6 +969,10 @@
 
       &--kitchen {
         padding: 35px 78px 40px 42px;
+      }
+
+      &--halls {
+        padding: 454px 11px 32px 69px;
       }
     }
   }
