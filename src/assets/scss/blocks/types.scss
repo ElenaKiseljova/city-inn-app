@@ -116,6 +116,8 @@
   }
 
   &__slider-wrapper {
+    transition: none;
+
     @media screen and (min-width: $tablet) {
       display: grid;
 
@@ -125,11 +127,41 @@
 
     @media screen and (min-width: $desktop) {
       display: flex;
+
+      transition: all 1.2s linear;
     }
   }
 
   &__slide {
     box-sizing: border-box;
+
+    visibility: hidden;
+
+    .types__top,
+    .types__bottom {
+      visibility: hidden;
+
+      opacity: 0;
+    }
+
+    .types__top {
+      transform: translateX(-100%);
+    }
+
+    .types__bottom {
+      transform: translateX(100%);
+    }
+
+    &.swiper-slide-active {
+      visibility: visible;
+
+      .types__top,
+      .types__bottom {
+        visibility: visible;
+
+        transition: translate 1.2s linear, opacity 0.5s linear;
+      }
+    }
 
     @media screen and (min-width: $tablet) {
       position: relative;
@@ -140,12 +172,53 @@
 
       transition: transform 0.5s linear, opacity 0.5s linear;
 
+      visibility: visible;
+
       &:nth-of-type(odd) {
         transform: translateX(-20vw);
       }
 
       &:nth-of-type(even) {
         transform: translateX(20vw);
+      }
+
+      .types__top,
+      .types__bottom {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform-origin: center;
+
+        transition: transform 1s linear;
+      }
+
+      .types__top {
+        transform: rotateX(0deg);
+
+        &.active {
+          position: absolute;
+
+          width: 100%;
+
+          transform: rotateY(180deg);
+
+          transition: transform 1s linear;
+        }
+      }
+
+      .types__bottom {
+        transform: rotateY(180deg);
+
+        &.active {
+          position: relative;
+
+          pointer-events: all;
+
+          transform: rotateY(360deg);
+
+          transition: transform 1s linear;
+        }
       }
 
       &.active {
@@ -158,6 +231,13 @@
       &:nth-of-type(odd),
       &:nth-of-type(even) {
         transform: translateY(50px);
+      }
+
+      .types__top,
+      .types__bottom {
+        transform: none;
+
+        transition: none;
       }
     }
   }
@@ -173,22 +253,6 @@
       height: 50vw;
 
       backface-visibility: hidden;
-
-      transform-origin: center;
-
-      transform: rotateX(0deg);
-
-      transition: transform 1s;
-
-      &.active {
-        position: absolute;
-
-        width: 100%;
-
-        transform: rotateY(180deg);
-
-        transition: transform 1s;
-      }
     }
 
     @media screen and (min-width: $desktop) {
@@ -285,22 +349,6 @@
       pointer-events: none;
 
       backface-visibility: hidden;
-
-      transform-origin: center;
-
-      transform: rotateY(180deg);
-
-      transition: transform 1s;
-
-      &.active {
-        position: relative;
-
-        pointer-events: all;
-
-        transform: rotateY(360deg);
-
-        transition: transform 1s;
-      }
     }
 
     @media screen and (min-width: $desktop) {
@@ -311,8 +359,6 @@
       padding: 46px 0 0;
 
       background-color: transparent;
-
-      transform: none;
 
       pointer-events: all;
     }

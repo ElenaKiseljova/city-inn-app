@@ -17,12 +17,6 @@
     }
   }
 
-  &__slide {
-    @media screen and (min-width: $tablet) {
-      overflow: visible;
-    }
-  }
-
   &__top {
     position: relative;
 
@@ -243,8 +237,6 @@
       margin-bottom: 0;
     }
   }
-
-  &__services {}
 
   &__buttons {
     @extend %w100;

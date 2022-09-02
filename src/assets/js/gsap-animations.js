@@ -145,7 +145,7 @@ export { cardsItemsAnimation };
 
 // Experiences
 const experienceAnimation = (list) => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH && list) {
+  if (list) {
     let init = true;
 
     const listObjStart = {};

@@ -323,9 +323,9 @@
         min-width: 961px;
 
         margin-top: 0;
-        margin-right: calc((100% + 318px) - 961px);
+        margin-right: calc((100% + 200px) - 961px);
         margin-bottom: 81px;
-        margin-left: -318px;
+        margin-left: -200px;
       }
 
       &--saunas {
@@ -343,9 +343,9 @@
         min-width: 784px;
 
         margin-top: 0;
-        margin-right: calc((100% + 106px) - 784px);
+        margin-right: calc((100% + 64px) - 784px);
         margin-bottom: 235px;
-        margin-left: -106px;
+        margin-left: -64px;
 
         opacity: 0.8;
       }
@@ -354,9 +354,9 @@
         min-width: 1128px;
 
         margin-top: 0;
-        margin-right: calc((100% + 437px) - 1128px);
+        margin-right: calc((100% + 360px) - 1128px);
         margin-bottom: 486px;
-        margin-left: -437px;
+        margin-left: -360px;
       }
     }
   }
@@ -591,30 +591,113 @@
     }
 
     &--text {
-      padding-left: 15px;
-      padding-right: 15px;
+      padding: 95px 15px 40px;
 
-      opacity: 0;
+      .event__content,
+      .event__subtitle,
+      .event__buttons {
+        opacity: 0;
 
-      transition: opacity 0.5s;
+        transition: opacity 1.2s linear;
+      }
 
       &.swiper-slide-active {
-        opacity: 1;
 
-        transition: opacity 0.5s;
+        .event__content,
+        .event__subtitle,
+        .event__buttons {
+          opacity: 1;
+
+          transition: opacity 1.2s linear;
+        }
       }
+
+      // &.event__slide--kitchen,
+      &.event__slide--saunas {
+        padding-top: 40px;
+      }
+
+      &.event__slide--around {
+        padding-top: 46px;
+      }
+
+      &.event__slide--attraction {
+        padding-top: 71px;
+      }
+
+      &.event__slide--saunas {
+        padding-bottom: 97px;
+      }
+
+      &.event__slide--locations {
+        padding-top: 40px;
+        padding-bottom: 88px;
+      }
+
+      &.event__slide--smart-rooms {
+        padding-top: 135px;
+        padding-bottom: 40px;
+      }
+
+      &.event__slide--halls {
+        padding-top: 94px;
+        padding-bottom: 40px;
+      }
+
+      &.event__slide--coffee {
+        min-height: fit-content;
+
+        padding-top: 40px;
+      }
+
+
     }
 
     @media screen and (min-width: $mobile) {
       &--text {
-        padding-left: 40px;
         padding-right: 40px;
+        padding-left: 40px;
       }
     }
 
     @media screen and (min-width: $tablet) {
       &--text {
         height: auto;
+
+        padding: 53px 0 40px 39px;
+
+        // &.event__slide--kitchen,
+        &.event__slide--saunas {
+          padding: 47px 31px 38px 0;
+        }
+
+        &.event__slide--around {
+          padding: 16px 0 38px 41px;
+        }
+
+        &.event__slide--attraction {
+          padding: 13px 36px 38px 0;
+        }
+
+        &.event__slide--saunas {
+          padding: 40px 36px 40px 0;
+        }
+
+        &.event__slide--locations {
+          padding: 34px 4px 40px 40px;
+        }
+
+        &.event__slide--smart-rooms {
+          padding: 16px 4px 40px 41px;
+        }
+
+        &.event__slide--coffee {
+          padding: 50px 40px 40px 0;
+        }
+
+        &.event__slide--halls {
+          padding: 14px 9px 38px 37px;
+        }
       }
     }
 
@@ -725,6 +808,8 @@
         align-items: flex-start;
         justify-content: flex-start;
 
+        padding: 0 0 0 87px;
+
         &.event__slide--coffee {
           display: grid;
 
@@ -736,6 +821,36 @@
           grid-template-rows: 1fr auto;
 
           column-gap: 49px;
+
+          padding: 435px 48px 66px 60px;
+        }
+
+        // &.event__slide--kitchen {
+        //   padding: 35px 78px 40px 42px;
+        // }
+
+        &.event__slide--around {
+          padding: 31px 80px 80px 0;
+        }
+
+        &.event__slide--attraction {
+          padding: 44px 25px 136px 119px;
+        }
+
+        &.event__slide--saunas {
+          padding: 80px 80px 0 0;
+        }
+
+        &.event__slide--locations {
+          padding: 34px 74px 0 42px;
+        }
+
+        &.event__slide--smart-rooms {
+          padding: 0 42px 0 77px;
+        }
+
+        &.event__slide--halls {
+          padding: 454px 11px 32px 69px;
         }
       }
 
@@ -790,44 +905,17 @@
 
     margin: 0 calc((100% - 100vw) / 2);
 
-    padding: 95px 0 40px;
+    padding: 0;
 
-    &--kitchen,
-    &--saunas {
-      padding-top: 40px;
+    &--kitchen {
+      padding: 40px 15px 40px;
     }
 
-    &--around {
-      padding-top: 46px;
-    }
-
-    &--attraction {
-      padding-top: 71px;
-    }
-
-    &--saunas {
-      padding-bottom: 97px;
-    }
-
-    &--locations {
-      padding-top: 40px;
-      padding-bottom: 88px;
-    }
-
-    &--smart-rooms {
-      padding-top: 135px;
-      padding-bottom: 40px;
-    }
-
-    &--halls {
-      padding-top: 94px;
-      padding-bottom: 40px;
-    }
-
-    &--coffee {
-      min-height: fit-content;
-
-      padding-top: 40px;
+    @media screen and (min-width: $mobile) {
+      &--kitchen {
+        padding-right: 40px;
+        padding-left: 40px;
+      }
     }
 
     @media screen and (min-width: $tablet) {
@@ -841,7 +929,6 @@
       min-height: auto;
 
       margin: 0;
-      padding: 53px 0 40px 39px;
 
       overflow: visible;
 
@@ -852,43 +939,12 @@
         order: 1;
       }
 
-      &--kitchen,
-      &--saunas {
+      &--kitchen {
         padding: 47px 31px 38px 0;
-      }
-
-      &--around {
-        padding: 16px 0 38px 41px;
-      }
-
-      &--attraction {
-        padding: 13px 36px 38px 0;
-      }
-
-      &--saunas {
-        padding: 40px 36px 40px 0;
-      }
-
-      &--locations {
-        padding: 34px 4px 40px 40px;
-      }
-
-      &--smart-rooms {
-        padding: 16px 4px 40px 41px;
-      }
-
-      &--coffee {
-        padding: 50px 40px 40px 0;
-      }
-
-      &--halls {
-        padding: 14px 9px 38px 37px;
       }
     }
 
     @media screen and (min-width: $desktop) {
-      padding: 0 0 0 87px;
-
       pointer-events: none;
 
       &--kitchen,
@@ -897,44 +953,22 @@
         order: 2;
       }
 
-      &--kitchen {
-        padding: 35px 78px 40px 42px;
-      }
-
       &--around {
         order: 1;
 
         position: relative;
-
-        padding: 31px 80px 80px 0;
-      }
-
-      &--attraction {
-        padding: 44px 25px 136px 119px;
       }
 
       &--saunas {
         position: static;
-
-        padding: 80px 80px 0 0;
-      }
-
-      &--locations {
-        padding: 34px 74px 0 42px;
       }
 
       &--smart-rooms {
         position: relative;
-
-        padding: 0 42px 0 77px;
       }
 
-      &--coffee {
-        padding: 435px 48px 66px 60px;
-      }
-
-      &--halls {
-        padding: 454px 11px 32px 69px;
+      &--kitchen {
+        padding: 35px 78px 40px 42px;
       }
     }
   }

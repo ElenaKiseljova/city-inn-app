@@ -84,8 +84,57 @@
     }
   }
 
+  &__slider-wrapper {
+    transition: none;
+
+    @media screen and (min-width: $tablet) {
+      transition: all 1.2s linear;
+    }
+  }
+
   &__slide {
     box-sizing: border-box;
+
+    visibility: hidden;
+
+    .spa__top,
+    .spa__bottom {
+      visibility: hidden;
+
+      opacity: 0;
+    }
+
+    .spa__top {
+      transform: translateX(-100%);
+    }
+
+    .spa__bottom {
+      transform: translateX(100%);
+    }
+
+    &.swiper-slide-active {
+      visibility: visible;
+
+      .spa__top,
+      .spa__bottom {
+        visibility: visible;
+
+        transition: translate 1.2s linear, opacity 0.5s linear;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      visibility: visible;
+
+      .spa__top,
+      .spa__bottom {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+      }
+    }
   }
 
   &__top {

@@ -135,6 +135,10 @@ const swiperInit = (swiperItem, attr = {}) => {
     return;
   }
 
+  if (swiperItem.classList.contains('cards__slider') && (DEVICE_WIDTH > TABLET_WIDTH)) {
+    return;
+  }
+
   const newAttr = { ...attr };
 
   let prevButton = null;
@@ -151,26 +155,39 @@ const swiperInit = (swiperItem, attr = {}) => {
   prevButton = swiperItem.closest('section').querySelector('.swiper-button-prev');
   nextButton = swiperItem.closest('section').querySelector('.swiper-button-next');
 
-  // Smart sliders
+  // Половинчатые двойные (картинка + текст) слайдеры СТАРТ
+  if (swiperItem.classList.contains('cards__slider') ||
+    swiperItem.classList.contains('team__slider') ||
+    swiperItem.classList.contains('rooms__slider') ||
+    swiperItem.classList.contains('spa__slider') ||
+    swiperItem.classList.contains('types__slider') || swiperItem.classList.contains('prices__slider')
+  ) {
+    if (DEVICE_WIDTH < DESKTOP_WIDTH) {
+      swiperArgs.speed = 1200;
+    }
+  }
+  // Половинчатые двойные (картинка +  текст) слайдеры КОНЕЦ
+
+  // Cards slider
   if (swiperItem.classList.contains('cards__slider')) {
     pagination = swiperItem.closest('.cards__item').querySelector('.swiper-pagination');
   }
 
-  // Restaurant sliders
+  // Food slider
   if (swiperItem.classList.contains('food__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 75;
     }
   }
 
-  // Lobby sliders
+  // Doings slider
   if (swiperItem.classList.contains('doings__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 270;
     }
   }
 
-  // Standart sliders
+  // Gallery slider
   if (swiperItem.classList.contains('gallery__slider')) {
     newAttr.breakpoints = {
       // when window width is >= 768px
@@ -192,14 +209,14 @@ const swiperInit = (swiperItem, attr = {}) => {
     };
   }
 
-  // Conference services sliders
+  // Types slider
   if (swiperItem.classList.contains('types__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 40;
     }
   }
 
-  // Group sliders
+  // Team slider
   if (swiperItem.classList.contains('team__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 51;
@@ -264,9 +281,9 @@ const swiperInit = (swiperItem, attr = {}) => {
   const swiperSlider = new Swiper(swiperItem, swiperArgsMerged);
 
   // Половинчатые двойные (картинка +  текст) слайдеры СТАРТ
-  // Lobby
+  // Doings slider
   if (swiperItem.classList.contains('doings__slider')) {
-    if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
+    if (DEVICE_WIDTH < DESKTOP_WIDTH) {
       animationSlideElements(swiperSlider, '.doings__top', '.doings__bottom');
 
       swiperSlider.on('beforeTransitionStart', () => {
@@ -299,13 +316,46 @@ const swiperInit = (swiperItem, attr = {}) => {
     }
   }
 
-  // Group
+  // Team slider
   if (swiperItem.classList.contains('team__slider')) {
-    if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
+    if (DEVICE_WIDTH < DESKTOP_WIDTH) {
       animationSlideElements(swiperSlider, '.team__top', '.team__bottom');
 
       swiperSlider.on('beforeTransitionStart', () => {
         animationSlideElements(swiperSlider, '.team__top', '.team__bottom');
+      });
+    }
+  }
+
+  // Rooms slider
+  if (swiperItem.classList.contains('rooms__slider')) {
+    if (DEVICE_WIDTH < TABLET_WIDTH) {
+      animationSlideElements(swiperSlider, '.room__top', '.room__bottom');
+
+      swiperSlider.on('beforeTransitionStart', () => {
+        animationSlideElements(swiperSlider, '.room__top', '.room__bottom');
+      });
+    }
+  }
+
+  // Types slider
+  if (swiperItem.classList.contains('types__slider')) {
+    if (DEVICE_WIDTH < TABLET_WIDTH) {
+      animationSlideElements(swiperSlider, '.types__top', '.types__bottom');
+
+      swiperSlider.on('beforeTransitionStart', () => {
+        animationSlideElements(swiperSlider, '.types__top', '.types__bottom');
+      });
+    }
+  }
+
+  // Spa slider
+  if (swiperItem.classList.contains('spa__slider')) {
+    if (DEVICE_WIDTH < TABLET_WIDTH) {
+      animationSlideElements(swiperSlider, '.spa__top', '.spa__bottom');
+
+      swiperSlider.on('beforeTransitionStart', () => {
+        animationSlideElements(swiperSlider, '.spa__top', '.spa__bottom');
       });
     }
   }
@@ -322,13 +372,11 @@ const swiperInit = (swiperItem, attr = {}) => {
   }
 
   if (swiperItem.classList.contains('prices__slider')) {
-    if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
+    animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
 
-      swiperSlider.on('beforeTransitionStart', () => {
-        animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
-      });
-    }
+    swiperSlider.on('beforeTransitionStart', () => {
+      animationSlideElements(swiperSlider, '.prices__top', '.prices__bottom');
+    });
   }
   // Половинчатые двойные (картинка +  текст) слайдеры КОНЕЦ
 

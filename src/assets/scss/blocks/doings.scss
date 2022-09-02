@@ -63,14 +63,10 @@
   }
 
   &__slider-wrapper {
-    transition: all linear;
-
-    @media screen and (min-width: $tablet) {
-      transition: none;
-    }
+    transition: none;
 
     @media screen and (min-width: $desktop) {
-      transition: all linear;
+      transition: all 1.2s linear;
     }
   }
 
@@ -79,16 +75,38 @@
 
     box-sizing: border-box;
 
+    visibility: hidden;
+
+    .doings__top,
+    .doings__bottom {
+      visibility: hidden;
+
+      opacity: 0;
+    }
+
+    .doings__top {
+      transform: translateX(-100%);
+    }
+
+    .doings__bottom {
+      transform: translateX(100%);
+    }
+
+    &.swiper-slide-active {
+      visibility: visible;
+
+      .doings__top,
+      .doings__bottom {
+        visibility: visible;
+
+        transition: translate 1.2s linear, opacity 0.5s linear;
+      }
+    }
+
     @media screen and (min-width: $tablet) {
       display: grid;
 
       grid-template-columns: 50% 50%;
-
-      opacity: 0;
-
-      &.swiper-slide-active {
-        opacity: 1;
-      }
     }
 
     @media screen and (min-width: $desktop) {
@@ -106,7 +124,16 @@
 
       height: fit-content;
 
-      opacity: 1;
+      visibility: visible;
+
+      .doings__top,
+      .doings__bottom {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: none;
+      }
 
       &.transition {
         .doings__bottom {
@@ -207,19 +234,12 @@
 
     @media screen and (min-width: $tablet) {
       width: 100%;
-      height: auto;
-
-      opacity: 0;
-
-      transform: translateX(-100%);
+      height: calc((478 / 768) * 100vw);
+      min-height: 100%;
     }
 
     @media screen and (min-width: $desktop) {
       height: calc((640 / 1440) * 100vw);
-
-      opacity: 1;
-
-      transform: translateX(0);
     }
   }
 
@@ -243,10 +263,6 @@
       min-height: auto;
 
       padding: 198px 36px 40px;
-
-      opacity: 0;
-
-      transform: translateX(100%);
     }
 
     @media screen and (min-width: $desktop) {
@@ -256,10 +272,6 @@
       margin-left: auto;
 
       padding: 0 75px 90px 106px;
-
-      opacity: 1;
-
-      transform: translateX(0);
     }
   }
 
