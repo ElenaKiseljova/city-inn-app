@@ -1,6 +1,6 @@
 <template lang="pug">
 section#promo(
-  v-if='lang && meta && pageName && header && page',
+  v-if='meta && pageName && header && page',
   :class='`promo promo--${sectionName}`',
   ref='promo'
 ) 
@@ -19,11 +19,7 @@ section#promo(
         )
 
       div(:class='`promo__social promo__social--${sectionName}`') 
-        router-link.promo__lang.lang.button.button--circle(
-          v-if='sectionName === "home"',
-          :to='langToggle.path'
-        )
-          span {{ langToggle.text }}
+        BaseLang(sectionName='promo')
 
         BaseSocial(v-if='social.length > 0', :items='social')
 
@@ -96,6 +92,7 @@ import BaseImage from '../UI/BaseImage.vue';
 import BaseButton from '../UI/BaseButton.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 import BaseSocial from '../UI/BaseSocial.vue';
+import BaseLang from '../UI/BaseLang.vue';
 
 export default {
   props: {
@@ -110,6 +107,7 @@ export default {
     BaseButton,
     BaseWorktime,
     BaseSocial,
+    BaseLang,
   },
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   data() {
@@ -120,7 +118,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['lang', 'meta', 'pageName', 'header', 'page']),
+    ...mapGetters(['meta', 'pageName', 'header', 'page']),
     book() {
       return this.header.content && this.header.content.book
         ? this.header.content.book
@@ -130,14 +128,6 @@ export default {
       return this.header.content && this.header.content.offer
         ? this.header.content.offer
         : null;
-    },
-    langToggle() {
-      const path = this.$route.path;
-
-      return {
-        path: this.lang === 'uk' ? `/en${path}` : path.replace('/en', ''),
-        text: this.lang === 'uk' ? 'en' : 'ua',
-      };
     },
     sectionName() {
       return this.name || this.pageName;
@@ -183,7 +173,7 @@ export default {
         : null;
     },
     pageIsReady() {
-      return this.lang && this.meta && this.pageName && this.header && this.page
+      return this.meta && this.pageName && this.header && this.page
         ? true
         : false;
     },

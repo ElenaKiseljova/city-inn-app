@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
 
-
+import { scrollbar } from './assets/js/gsap-animations';
 
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');
@@ -214,20 +214,15 @@ const router = createRouter({
       },
     },
   ],
-  scrollBehavior(to, _2, savedPosition) {
-    if (to.hash) {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({
-            el: to.hash,
-            behavior: 'smooth',
-          })
-        }, 600)
-      })
-    }
+  scrollBehavior(to) {
+    scrollbar.setPosition(0, 0);
 
-    if (savedPosition) {
-      return savedPosition;
+    if (to.hash) {
+      setTimeout(() => {
+        scrollbar.scrollIntoView(document.querySelector(to.hash), {
+          onlyScrollIfNeeded: true,
+        });
+      }, 600);
     }
 
     return { left: 0, top: 0 };

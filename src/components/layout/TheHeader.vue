@@ -37,10 +37,13 @@ header.page-header(v-if='pageName && header')
             BaseSocial(:items='buttons', direction='vertical')
 
   .page-header__menu.__js
-    MenuHeader
+    #scrollbar-menu(ref='scrollbarMenu')
+      MenuHeader
 </template>
 
 <script>
+import Scrollbar from 'smooth-scrollbar';
+
 import { mapGetters } from 'vuex';
 
 import checkUrlType from '../../mixins/checkUrlType';
@@ -58,11 +61,11 @@ export default {
   },
   data() {
     return {
-      headerIsSet: false,
+      scrollbarMenuIsSet: false,
     };
   },
   computed: {
-    ...mapGetters(['pageName', 'header', 'lang']),
+    ...mapGetters(['pageName', 'header', 'lang', 'routeChanged']),
     book() {
       return this.header.content && this.header.content.book
         ? this.header.content.book
@@ -98,6 +101,23 @@ export default {
       return this.lang === 'uk' ? `/` : `/${this.lang}`;
     },
   },
+  methods: {
+    setScrollbarMenu() {
+      if (this.$refs.scrollbarMenu && !this.scrollbarMenuIsSet) {
+        const options = {};
+
+        Scrollbar.init(this.$refs.scrollbarMenu, options);
+
+        this.scrollbarMenuIsSet = true;
+      }
+    },
+  },
+  mounted() {
+    this.setScrollbarMenu();
+  },
+  updated() {
+    this.setScrollbarMenu();
+  },
 };
 </script>
 
@@ -105,4 +125,11 @@ export default {
 @import '~@/assets/scss/layout/page-header';
 @import '~@/assets/scss/blocks/logo';
 @import '~@/assets/scss/blocks/burger';
+
+#scrollbar-menu {
+  width: 100%;
+  height: 100vh;
+
+  overflow: auto;
+}
 </style>

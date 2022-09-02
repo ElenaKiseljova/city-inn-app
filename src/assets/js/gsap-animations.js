@@ -1,7 +1,28 @@
 import gsap from './libs/gsap.min';
 import ScrollTrigger from './libs/ScrollTrigger.min';
+import Scrollbar from 'smooth-scrollbar';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const scrollbar = Scrollbar.init(document.body, {
+  delegateTo: document,
+  damping: 0.05,
+  continuousScrolling: false,
+});
+
+ScrollTrigger.scrollerProxy(document.body, {
+  scrollTop(value) {
+    if (arguments.length) {
+      scrollbar.scrollTop = value; // setter
+    }
+    return scrollbar.scrollTop;    // getter
+  }
+});
+
+scrollbar.addListener(ScrollTrigger.update);
+ScrollTrigger.defaults({ scroller: document.body });
+
+export { scrollbar };
 
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1366;

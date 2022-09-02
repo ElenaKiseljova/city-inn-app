@@ -5,7 +5,8 @@
       NavigationHeader(:items='navigationList')
 
     .menu__bottom
-      .menu__social
+      .menu__social 
+        BaseLang(sectionName='menu')
         BaseSocial(:items='social', direction='horizontal')
 
       .menu__call.call
@@ -42,17 +43,19 @@ import social from '../../mixins/social';
 import NavigationHeader from './NavigationHeader.vue';
 import BaseImage from '../UI/BaseImage.vue';
 import BaseSocial from '../UI/BaseSocial.vue';
+import BaseLang from '../UI/BaseLang.vue';
 
 export default {
   components: {
     NavigationHeader,
     BaseImage,
     BaseSocial,
+    BaseLang,
   },
   mixins: [social],
   data() {
     return {
-      headerIsReady: false,
+      headerScriptsIsSet: false,
     };
   },
   computed: {
@@ -68,23 +71,20 @@ export default {
         : [];
     },
   },
+  methods: {
+    setHeaderScripts() {
+      if (this.$refs.menu && !this.headerScriptsIsSet) {
+        callUs() && menu();
+
+        this.headerScriptsIsSet = true;
+      }
+    },
+  },
   mounted() {
-    if (this.$refs.menu && !this.headerIsReady) {
-      callUs() && menu();
-
-      this.headerIsReady = true;
-
-      // console.log('Menu Activated - mounted');
-    }
+    this.setHeaderScripts();
   },
   updated() {
-    if (this.$refs.menu && !this.headerIsReady) {
-      callUs() && menu();
-
-      this.headerIsReady = true;
-
-      // console.log('Menu Activated - updated');
-    }
+    this.setHeaderScripts();
   },
 };
 </script>

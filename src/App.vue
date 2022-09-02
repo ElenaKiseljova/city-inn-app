@@ -1,5 +1,6 @@
 <template lang="pug">
-BaseSpinner.spinner--main(v-if='!appIsReady')
+teleport(to='body')
+  BaseSpinner.spinner--main(v-if='!appIsReady')
 
 TheHeader(v-show='appIsReady')
 
@@ -73,7 +74,7 @@ export default {
 @import '~@/assets/scss/blocks/title';
 @import '~@/assets/scss/blocks/title-inner';
 
-/** Animations */
+/** Animations Routs */
 .rout-enter-from {
   opacity: 0.5;
   transform: translateY(-30px);
