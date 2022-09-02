@@ -406,10 +406,10 @@ const swiperInit = (swiperItem, attr = {}) => {
 
 
   // Переход к следующему/предыдущему слайду по клику
-  swiperSlider.on('click', () => {
-    if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active')) {
+  swiperSlider.on('click', (_, touchEvent) => {
+    if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active') && touchEvent.target.tagName !== 'A') {
       swiperSlider.slidePrev();
-    } else {
+    } else if (touchEvent.target.tagName !== 'A') {
       swiperSlider.slideNext();
     }
   });

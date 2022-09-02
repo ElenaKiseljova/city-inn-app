@@ -76,14 +76,14 @@ class Animation {
   reset() {
     const elements = this.elements();
 
-    if (elements) {
+    if (elements && elements.length > 0) {
       gsap.set(elements, { clearProps: true });
     }
 
     if (this.animation) {
       this.animation.pause(0).kill(true);
     } else {
-      console.log('Animation no exist');
+      // console.log('Animation no exist');
     }
 
     const curScrollTrigger = ScrollTrigger.getById(this.scrollTriggerId);
