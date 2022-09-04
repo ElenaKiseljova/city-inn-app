@@ -18,6 +18,27 @@ import { map } from './assets/js/map';
 //   return changedText;
 // };
 
+
+/*
+  Для работы с API вместо нативного fetch рекомендую axios (https://www.npmjs.com/package/axios). Он удобнее, не нужно делать "лишних"
+преобразований типа response.json(). Так же, там есть куча всяких доп. фич (если, к примеру, нужно проверить срок действия токена перед отправкой запроса и с 
+fetch придётся это реализовывать самому, то в axios для этого уже есть interceptors и т.д.).
+  Касательно самих запросов хорошей практикой считается выносить сами запросы в отдельный(-е) файл(-ы), а в сторе их импортировать, вызывать и работать уже с результатом.
+Пример:
+
+export async function load(token){
+	let { data } = await server.get('cart/load.php', { params: { token }});
+	return data;
+}
+
+export async function change(token, id, cnt){
+	let { data } = await server.get(`cart/change.php?token=${token}&id=${id}&cnt=${cnt}`);
+	return data;
+}
+
+То файл содержит функции (1 функция - 1 запрос), каждая функция описывает метод получения/работы с данными (GET, POST, PUT, PATCH, DELETE), url, тело запроса и т.д.
+*/
+
 const urlAPI = `https://city-inn-app-25969-default-rtdb.firebaseio.com`;
 // const urlAPI = `${window.location.origin}/api`;
 
@@ -208,6 +229,12 @@ const store = createStore({
     },
     async setNextPage(context, payload) {
       let path = payload.url;
+
+      /*
+        Для интернационализации самое популярное решение i18n (https://kazupon.github.io/vue-i18n/). Я раньше тоже писал это вручную, но 
+        i18n покрывает всё, что касается интернационализации, там уже всё реализовано и все нюансы учтены.
+        Там не придётся писать таких многоэтажных конструкций
+      */
 
       path = path === '/'
         ? '/index'
