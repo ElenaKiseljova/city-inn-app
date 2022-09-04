@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import { mapInit } from '../../assets/js/map';
 
@@ -14,6 +14,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['setGoogle']),
     mapInit() {
       if (this.map.center && this.map.zoom) {
         const options = {
@@ -37,6 +38,13 @@ export default {
     if (this.google) {
       this.mapInit();
     } else if (this.map && !this.google) {
+      /*Уже используется вспомагательная функция mapGetters, которая позволяет удобно доставать геттеры со стора. Точно также можно сделать с actions с помощью
+      ...mapActions. было бы просто. Удобнее как по мне, не нужно писать this.$store.dispatch.
+        await this.setGoogle({
+          key: this.map.key,
+          lang: this.lang,
+        })
+      */
       await this.$store.dispatch('setGoogle', {
         key: this.map.key,
         lang: this.lang,

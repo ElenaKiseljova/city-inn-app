@@ -14,6 +14,8 @@ ul(
       :text='additionalItem.worktime'
     )
 </template>
+//В template this не нужен, Vue сама расставляет ссылки. Можно просто :class='`services services--${modificatorArr[0]} ${sectionName}__services ${modificationClasses}`', 
+
 
 <script>
 import { serviceAnimation } from '../../assets/js/gsap-animations';

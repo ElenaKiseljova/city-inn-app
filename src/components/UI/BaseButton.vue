@@ -1,6 +1,6 @@
 <template lang="pug">
 a(
-  v-if='buttonWithType && buttonWithType.type === "link"',
+  v-if='buttonWithType?.type === "link"',
   :class='`${sectionName}__${sectionElementName} button ${modificationClasses}`',
   :href='buttonWithType.link',
   target='_blank'
@@ -16,7 +16,8 @@ router-link(
   span
     | {{ buttonWithType.text || buttonWithType.title }}
 </template>
-
+// v-if='buttonWithType && buttonWithType.type === "link"' Тут можно задействовать optional chaining, то есть v-if='buttonWithType?.type === "link"'
+//В случае, если buttonWithType неопределён - вернется undefinded и v-if будет равен false
 <script>
 import checkUrlType from '../../mixins/checkUrlType';
 

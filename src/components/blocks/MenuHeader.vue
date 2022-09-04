@@ -34,11 +34,11 @@
 
 <script>
 import { mapGetters } from 'vuex';
+//Можно просто '@/assets/js/call-us'; @ - алиас для src.
+import { callUs } from '@/assets/js/call-us';
+import menu from '@/assets/js/menu';
 
-import { callUs } from '../../assets/js/call-us';
-import menu from '../../assets/js/menu';
-
-import social from '../../mixins/social';
+import social from '@/mixins/social';
 
 import NavigationHeader from './NavigationHeader.vue';
 import BaseImage from '../UI/BaseImage.vue';
