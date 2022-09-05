@@ -18,8 +18,7 @@ import { map } from './assets/js/map';
 //   return changedText;
 // };
 
-const urlAPI = `https://city-inn-app-25969-default-rtdb.firebaseio.com`;
-// const urlAPI = `${window.location.origin}/api`;
+const urlAPI = `https://city-inn-app-25969-default-rtdb.firebaseio.com`; //`https://admin.city-inn.com.ua/api`; // 
 
 const getFetchData = async (url) => {
   let response;
@@ -29,16 +28,22 @@ const getFetchData = async (url) => {
     response = await fetch(url);
 
     if (!response.ok) {
-      const message = `An error has occured: ${response.status}`;
+      const message = `Error: ${response.status}`;
 
       throw new Error(message);
     }
 
     responseData = await response.json();
 
+    if (!responseData.status || responseData.status !== 'success') {
+      const message = `Error: ${responseData.error}`;
+
+      throw new Error(message);
+    }
+
     return responseData;
   } catch (error) {
-    console.log(response, responseData);
+    console.log(response);
   }
 };
 

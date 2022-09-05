@@ -71,6 +71,12 @@ export default {
         : [];
     },
   },
+  mounted() {
+    this.setHeaderScripts();
+  },
+  updated() {
+    this.setHeaderScripts();
+  },
   methods: {
     setHeaderScripts() {
       if (this.$refs.menu && !this.headerScriptsIsSet) {
@@ -79,12 +85,6 @@ export default {
         this.headerScriptsIsSet = true;
       }
     },
-  },
-  mounted() {
-    this.setHeaderScripts();
-  },
-  updated() {
-    this.setHeaderScripts();
   },
 };
 </script>

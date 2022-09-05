@@ -6,6 +6,12 @@ export default {
       sectionTitleAnimationIsSet: false,
     };
   },
+  mounted() {
+    this.setTitleAnimation();
+  },
+  updated() {
+    this.setTitleAnimation();
+  },
   methods: {
     setTitleAnimation() {
       if (
@@ -19,11 +25,5 @@ export default {
         );
       }
     },
-  },
-  mounted() {
-    this.setTitleAnimation();
-  },
-  updated() {
-    this.setTitleAnimation();
   },
 };

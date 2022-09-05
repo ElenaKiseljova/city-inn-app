@@ -73,17 +73,17 @@ import BaseButton from '../UI/BaseButton.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
+  components: {
+    BaseImage,
+    BaseButton,
+    BaseWorktime,
+  },
+  mixins: [converteSymbolsNewLineToBr, checkUrlType],
   props: {
     sectionName: {
       type: String,
       required: true,
     },
-  },
-  mixins: [converteSymbolsNewLineToBr, checkUrlType],
-  components: {
-    BaseImage,
-    BaseButton,
-    BaseWorktime,
   },
   data() {
     return {
@@ -144,6 +144,12 @@ export default {
       return this.section && this.section.book ? this.section.book : null;
     },
   },
+  mounted() {
+    this.setAnimations();
+  },
+  updated() {
+    this.setAnimations();
+  },
   methods: {
     setAnimations() {
       if (this.$refs.title1 && this.$refs.title2 && this.$refs.section) {
@@ -171,12 +177,6 @@ export default {
         }
       }
     },
-  },
-  mounted() {
-    this.setAnimations();
-  },
-  updated() {
-    this.setAnimations();
   },
 };
 </script>

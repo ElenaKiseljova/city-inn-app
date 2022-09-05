@@ -33,6 +33,9 @@ export default {
     appIsReady() {
       return this.header && this.footer && this.page ? true : false;
     },
+    langButton() {
+      return document.querySelector('.menu__lang');
+    },
   },
   watch: {
     appIsReady() {
@@ -41,7 +44,24 @@ export default {
       }
     },
   },
+  beforeCreate() {
+    // Lang redirect
+    const browserLang = window.navigator.language;
+    const path = this.$route.path;
+
+    if (browserLang === 'uk' && path.indexOf('/en') === 0) {
+      window.location.href = `${window.location.origin}${path.replace(
+        '/en',
+        ''
+      )}`;
+    }
+
+    if (browserLang !== 'uk' && path.indexOf('/en') === -1) {
+      window.location.href = `${window.location.origin}/en${path}`;
+    }
+  },
   async created() {
+    // Webp support detect
     const ua = detect.parse(navigator.userAgent);
 
     const browser = {

@@ -26,7 +26,6 @@ import BasePagination from '../../components/UI/BasePagination.vue';
 import BaseImage from '../../components/UI/BaseImage.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,
@@ -34,6 +33,7 @@ export default {
     BasePagination,
     BaseImage,
   },
+  mixins: [converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

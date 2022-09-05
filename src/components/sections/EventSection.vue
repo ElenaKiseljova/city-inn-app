@@ -211,13 +211,6 @@ import BasePrice from '../UI/BasePrice.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
-  props: {
-    sectionName: {
-      type: String,
-      required: true,
-    },
-  },
   components: {
     BaseSlider,
     BaseSlide,
@@ -229,13 +222,11 @@ export default {
     BaseButton,
     BasePrice,
   },
-  methods: {
-    slideList(slide) {
-      if (this.haveDescriptionList) {
-        return slide.description ? slide.description.split('\r\n') : [];
-      }
-
-      return [];
+  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  props: {
+    sectionName: {
+      type: String,
+      required: true,
     },
   },
   computed: {
@@ -362,6 +353,15 @@ export default {
       }
 
       return false;
+    },
+  },
+  methods: {
+    slideList(slide) {
+      if (this.haveDescriptionList) {
+        return slide.description ? slide.description.split('\r\n') : [];
+      }
+
+      return [];
     },
   },
 };

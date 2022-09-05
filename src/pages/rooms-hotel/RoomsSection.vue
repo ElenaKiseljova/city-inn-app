@@ -91,7 +91,6 @@ import BaseServices from '../../components/UI/BaseServices.vue';
 import BasePrice from '../../components/UI/BasePrice.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,
@@ -101,15 +100,11 @@ export default {
     BaseServices,
     BasePrice,
   },
+  mixins: [converteSymbolsNewLineToBr],
   data() {
     return {
       sectionTitleAnimationIsSet: false,
     };
-  },
-  methods: {
-    mode(index) {
-      return (index + 1) % 2 === 0 ? 'even' : 'odd';
-    },
   },
   computed: {
     ...mapGetters(['page', 'pageName']),
@@ -154,6 +149,11 @@ export default {
 
       this.sectionTitleAnimationIsSet = allOk;
     }
+  },
+  methods: {
+    mode(index) {
+      return (index + 1) % 2 === 0 ? 'even' : 'odd';
+    },
   },
 };
 </script>

@@ -67,6 +67,15 @@ import BaseButton from '@/components/UI/BaseButton.vue';
 import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
+  components: {
+    BaseImage,
+    BaseSlider,
+    BaseSlide,
+    BasePagination,
+    CardsSlide,
+    BaseButton,
+    BaseServices,
+  },
   mixins: [converteSymbolsNewLineToBr],
   props: {
     card: {
@@ -77,15 +86,6 @@ export default {
       type: Number,
       required: true,
     },
-  },
-  components: {
-    BaseImage,
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    CardsSlide,
-    BaseButton,
-    BaseServices,
   },
   computed: {
     ...mapGetters(['page']),

@@ -58,7 +58,6 @@ import BaseNavigation from '../UI/BaseNavigation.vue';
 import BaseImage from '../UI/BaseImage.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,
@@ -66,6 +65,7 @@ export default {
     BaseNavigation,
     BaseImage,
   },
+  mixins: [converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

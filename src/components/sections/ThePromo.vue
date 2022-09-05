@@ -95,13 +95,6 @@ import BaseSocial from '../UI/BaseSocial.vue';
 import BaseLang from '../UI/BaseLang.vue';
 
 export default {
-  props: {
-    name: {
-      type: String,
-      required: false,
-      default: null,
-    },
-  },
   components: {
     BaseImage,
     BaseButton,
@@ -110,6 +103,13 @@ export default {
     BaseLang,
   },
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
+  props: {
+    name: {
+      type: String,
+      required: false,
+      default: null,
+    },
+  },
   data() {
     return {
       promoTitleAndTextAnimation: false,
@@ -178,6 +178,20 @@ export default {
         : false;
     },
   },
+  mounted() {
+    this.setPromoAnimation();
+  },
+  updated() {
+    this.setPromoAnimation();
+  },
+  async beforeUnmount() {
+    await promoSocialAnimation.reset();
+
+    await animationThreeElements.reset();
+  },
+  unmounted() {
+    // animationThreeElements.status();
+  },
   methods: {
     setPromoAnimation() {
       if (this.$refs.promo) {
@@ -200,20 +214,6 @@ export default {
         }
       }
     },
-  },
-  mounted() {
-    this.setPromoAnimation();
-  },
-  updated() {
-    this.setPromoAnimation();
-  },
-  async beforeUnmount() {
-    await promoSocialAnimation.reset();
-
-    await animationThreeElements.reset();
-  },
-  unmounted() {
-    // animationThreeElements.status();
   },
 };
 </script>

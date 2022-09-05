@@ -22,6 +22,10 @@ import BaseService from './BaseService.vue';
 import BaseWorktime from './BaseWorktime.vue';
 
 export default {
+  components: {
+    BaseService,
+    BaseWorktime,
+  },
   props: {
     sectionName: {
       type: String,
@@ -52,10 +56,6 @@ export default {
       serviceAnimationIsSet: false,
     };
   },
-  components: {
-    BaseService,
-    BaseWorktime,
-  },
   computed: {
     modificatorArr() {
       return this.modificator.split(',');
@@ -71,21 +71,20 @@ export default {
     },
   },
   mounted() {
-    if (this.$refs.services && !this.serviceAnimationIsSet) {
-      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.services);
-
-      // console.log('Services Activated - mounted');
-    }
+    this.setServiceAnimation();
   },
   updated() {
-    if (this.$refs.services && !this.serviceAnimationIsSet) {
-      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.services);
-
-      // console.log('Services Activated - updated');
-    }
+    this.setServiceAnimation();
   },
   async beforeUnmount() {
     await serviceAnimation.reset();
+  },
+  methods: {
+    setServiceAnimation() {
+      if (this.$refs.services && !this.serviceAnimationIsSet) {
+        this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.services);
+      }
+    },
   },
 };
 </script>

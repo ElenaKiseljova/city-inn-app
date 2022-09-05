@@ -1,6 +1,6 @@
 <template lang="pug">
 a(
-  v-if='buttonWithType && buttonWithType.type === "link"',
+  v-if='buttonWithType?.type === "link"',
   :class='`${sectionName}__${sectionElementName} button ${modificationClasses}`',
   :href='buttonWithType.link',
   target='_blank'
@@ -9,7 +9,7 @@ a(
     | {{ buttonWithType.text || buttonWithType.title }}
 
 router-link(
-  v-else-if='buttonWithType && buttonWithType.type === "route"',
+  v-else-if='buttonWithType?.type === "route"',
   :class='`${sectionName}__${sectionElementName} button ${modificationClasses}`',
   :to='buttonWithType.link'
 )
@@ -21,6 +21,7 @@ router-link(
 import checkUrlType from '../../mixins/checkUrlType';
 
 export default {
+  mixins: [checkUrlType],
   props: {
     sectionName: {
       type: String,
@@ -41,7 +42,6 @@ export default {
       required: true,
     },
   },
-  mixins: [checkUrlType],
   computed: {
     buttonWithType() {
       const button = this.button ?? null;

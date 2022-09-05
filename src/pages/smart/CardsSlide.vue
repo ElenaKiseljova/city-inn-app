@@ -49,6 +49,11 @@ import BaseButton from '@/components/UI/BaseButton.vue';
 import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
+  components: {
+    BaseImage,
+    BaseButton,
+    BaseServices,
+  },
   mixins: [converteSymbolsNewLineToBr],
   props: {
     oddEvenLast: {
@@ -79,11 +84,6 @@ export default {
       type: Object,
       required: false,
     },
-  },
-  components: {
-    BaseImage,
-    BaseButton,
-    BaseServices,
   },
   computed: {
     ...mapGetters(['pageName']),

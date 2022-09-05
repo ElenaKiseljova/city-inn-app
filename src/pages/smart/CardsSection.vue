@@ -29,6 +29,15 @@ export default {
         : [];
     },
   },
+  mounted() {
+    this.setCardsAnimation();
+  },
+  updated() {
+    this.setCardsAnimation();
+  },
+  async beforeUnmount() {
+    await cardsItemsAnimation.reset();
+  },
   methods: {
     setCardsAnimation() {
       if (this.$refs.cards && !this.cardsAnimationInited) {
@@ -39,15 +48,6 @@ export default {
         this.cardsAnimationInited = true;
       }
     },
-  },
-  mounted() {
-    this.setCardsAnimation();
-  },
-  updated() {
-    this.setCardsAnimation();
-  },
-  async beforeUnmount() {
-    await cardsItemsAnimation.reset();
   },
 };
 </script>

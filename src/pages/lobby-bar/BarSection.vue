@@ -38,11 +38,11 @@ import BaseImage from '../../components/UI/BaseImage.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseImage,
     BaseButton,
   },
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

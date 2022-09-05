@@ -48,6 +48,12 @@ export default {
       return this.section.items ? this.section.items : [];
     },
   },
+  mounted() {
+    this.setExperienceAnimation();
+  },
+  updated() {
+    this.setExperienceAnimation();
+  },
   methods: {
     setExperienceAnimation() {
       if (this.$refs.experienceList && !this.experienceAnimationIsSet) {
@@ -56,12 +62,6 @@ export default {
         );
       }
     },
-  },
-  mounted() {
-    this.setExperienceAnimation();
-  },
-  updated() {
-    this.setExperienceAnimation();
   },
 };
 </script>

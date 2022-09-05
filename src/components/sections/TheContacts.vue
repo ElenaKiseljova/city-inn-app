@@ -77,11 +77,11 @@ import TheMap from '../blocks/TheMap.vue';
 import BaseButton from '../UI/BaseButton.vue';
 
 export default {
-  mixins: [checkUrlType],
   components: {
     TheMap,
     BaseButton,
   },
+  mixins: [checkUrlType],
   data() {
     return {
       sectionTitleAnimationIsSet: false,
@@ -120,6 +120,20 @@ export default {
         : null;
     },
   },
+  watch: {
+    async routeChanged() {
+      await this.setContactsAnimation();
+    },
+  },
+  async mounted() {
+    await this.setContactsAnimation();
+  },
+  async updated() {
+    await this.setContactsAnimation();
+  },
+  async beforeUnmount() {
+    await contactsAnimation.reset();
+  },
   methods: {
     async setContactsAnimation() {
       if (this.routeChanged && this.$refs.section) {
@@ -148,20 +162,6 @@ export default {
         }
       }
     },
-  },
-  watch: {
-    async routeChanged() {
-      await this.setContactsAnimation();
-    },
-  },
-  async mounted() {
-    await this.setContactsAnimation();
-  },
-  async updated() {
-    await this.setContactsAnimation();
-  },
-  async beforeUnmount() {
-    await contactsAnimation.reset();
   },
 };
 </script>

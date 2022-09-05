@@ -36,6 +36,7 @@ import { mapGetters } from 'vuex';
 import checkUrlType from '../../mixins/checkUrlType';
 
 export default {
+  mixins: [checkUrlType],
   props: {
     items: {
       type: Array,
@@ -50,7 +51,6 @@ export default {
       default: 'horizontal',
     },
   },
-  mixins: [checkUrlType],
   computed: {
     ...mapGetters(['pageName']),
     itemsWithType() {

@@ -44,13 +44,13 @@ import BasePrice from '@/components/UI/BasePrice.vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   components: {
     BaseImage,
     BaseServices,
     BasePrice,
     BaseButton,
   },
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

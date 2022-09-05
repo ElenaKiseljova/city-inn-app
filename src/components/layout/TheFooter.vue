@@ -54,33 +54,14 @@ import checkUrlType from '../../mixins/checkUrlType';
 import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
-  mixins: [social, checkUrlType],
   components: {
     BaseSocial,
   },
+  mixins: [social, checkUrlType],
   data() {
     return {
       footerAnimationInited: false,
     };
-  },
-  methods: {
-    async setFooterAnimation(type = 'init') {
-      if (type === 'init' && this.routeChanged && this.$refs.footer) {
-        // console.log(this.footerAnimationInited, 'init', type);
-
-        if (!this.footerAnimationInited) {
-          this.footerAnimationInited = await pageFooterAnimation.init(
-            this.$refs.footer
-          );
-        }
-      } else if (type === 'reset' && !this.routeChanged) {
-        await pageFooterAnimation.reset();
-
-        this.footerAnimationInited = false;
-
-        // console.log(this.footerAnimationInited, 'reset', type);
-      }
-    },
   },
   computed: {
     ...mapGetters(['pageName', 'header', 'footer', 'routeChanged']),
@@ -129,6 +110,25 @@ export default {
   },
   async updated() {
     await this.setFooterAnimation();
+  },
+  methods: {
+    async setFooterAnimation(type = 'init') {
+      if (type === 'init' && this.routeChanged && this.$refs.footer) {
+        // console.log(this.footerAnimationInited, 'init', type);
+
+        if (!this.footerAnimationInited) {
+          this.footerAnimationInited = await pageFooterAnimation.init(
+            this.$refs.footer
+          );
+        }
+      } else if (type === 'reset' && !this.routeChanged) {
+        await pageFooterAnimation.reset();
+
+        this.footerAnimationInited = false;
+
+        // console.log(this.footerAnimationInited, 'reset', type);
+      }
+    },
   },
 };
 </script>

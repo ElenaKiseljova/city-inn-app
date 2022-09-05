@@ -31,13 +31,13 @@ import BasePagination from '../../components/UI/BasePagination.vue';
 import BaseService from '@/components/UI/BaseService.vue';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
   components: {
     BaseSlider,
     BaseSlide,
     BasePagination,
     BaseService,
   },
+  mixins: [converteSymbolsNewLineToBr],
   data() {
     return {
       serviceAnimationIsSet: false,

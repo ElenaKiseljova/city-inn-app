@@ -13,18 +13,6 @@ export default {
       mapIsReady: false,
     };
   },
-  methods: {
-    mapInit() {
-      if (this.map.center && this.map.zoom) {
-        const options = {
-          center: this.map.center,
-          zoom: this.map.zoom,
-        };
-
-        mapInit(this.google, options);
-      }
-    },
-  },
   computed: {
     ...mapGetters(['lang', 'google', 'contacts']),
     map() {
@@ -44,6 +32,18 @@ export default {
 
       this.mapInit();
     }
+  },
+  methods: {
+    mapInit() {
+      if (this.map.center && this.map.zoom) {
+        const options = {
+          center: this.map.center,
+          zoom: this.map.zoom,
+        };
+
+        mapInit(this.google, options);
+      }
+    },
   },
 };
 </script>

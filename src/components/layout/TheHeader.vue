@@ -36,29 +36,29 @@ header.page-header(v-if='pageName && header')
           )
             BaseSocial(:items='buttons', direction='vertical')
 
-  .page-header__menu.__js
-    #scrollbar-menu(ref='scrollbarMenu')
-      MenuHeader
+  .page-header__menu.__js(ref='scrollbarMenu')
+    MenuHeader
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import Scrollbar from 'smooth-scrollbar';
 
-import { mapGetters } from 'vuex';
+import { DEVICE_WIDTH, DESKTOP_WIDTH } from '@/assets/js/gsap-animations';
 
-import checkUrlType from '../../mixins/checkUrlType';
+import checkUrlType from '@/mixins/checkUrlType';
 
 import MenuHeader from '../blocks/MenuHeader.vue';
 import BaseButton from '../UI/BaseButton.vue';
 import BaseSocial from '../UI/BaseSocial.vue';
 
 export default {
-  mixins: [checkUrlType],
   components: {
     MenuHeader,
     BaseButton,
     BaseSocial,
   },
+  mixins: [checkUrlType],
   data() {
     return {
       scrollbarMenuIsSet: false,
@@ -101,9 +101,19 @@ export default {
       return this.lang === 'uk' ? `/` : `/${this.lang}`;
     },
   },
+  mounted() {
+    this.setScrollbarMenu();
+  },
+  updated() {
+    this.setScrollbarMenu();
+  },
   methods: {
     setScrollbarMenu() {
-      if (this.$refs.scrollbarMenu && !this.scrollbarMenuIsSet) {
+      if (
+        this.$refs.scrollbarMenu &&
+        !this.scrollbarMenuIsSet &&
+        DEVICE_WIDTH >= DESKTOP_WIDTH
+      ) {
         const options = {};
 
         Scrollbar.init(this.$refs.scrollbarMenu, options);
@@ -111,12 +121,6 @@ export default {
         this.scrollbarMenuIsSet = true;
       }
     },
-  },
-  mounted() {
-    this.setScrollbarMenu();
-  },
-  updated() {
-    this.setScrollbarMenu();
   },
 };
 </script>

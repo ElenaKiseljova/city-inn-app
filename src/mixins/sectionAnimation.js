@@ -6,6 +6,12 @@ export default {
       sectionAnimationIsSet: false,
     };
   },
+  mounted() {
+    this.setAnimations();
+  },
+  updated() {
+    this.setAnimations();
+  },
   methods: {
     setAnimations() {
       if (this.$refs.section) {
@@ -17,11 +23,5 @@ export default {
         }
       }
     },
-  },
-  mounted() {
-    this.setAnimations();
-  },
-  updated() {
-    this.setAnimations();
   },
 };

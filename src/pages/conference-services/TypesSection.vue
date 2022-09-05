@@ -102,15 +102,6 @@ export default {
       return this.section.slides ? this.section.slides : [];
     },
   },
-  methods: {
-    setTypesItemsAnimation() {
-      if (this.$refs.types && !this.typesItemsAnimationIsSet) {
-        this.typesItemsAnimationIsSet = typesItemsAnimation.init(
-          this.$refs.types
-        );
-      }
-    },
-  },
   mounted() {
     this.setTypesItemsAnimation();
   },
@@ -119,6 +110,15 @@ export default {
   },
   unmounted() {
     typesItemsAnimation.reset();
+  },
+  methods: {
+    setTypesItemsAnimation() {
+      if (this.$refs.types && !this.typesItemsAnimationIsSet) {
+        this.typesItemsAnimationIsSet = typesItemsAnimation.init(
+          this.$refs.types
+        );
+      }
+    },
   },
 };
 </script>

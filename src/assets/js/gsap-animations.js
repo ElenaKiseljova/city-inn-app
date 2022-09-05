@@ -4,26 +4,6 @@ import Scrollbar from 'smooth-scrollbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scrollbar = Scrollbar.init(document.body, {
-  delegateTo: document,
-  damping: 0.05,
-  continuousScrolling: false,
-});
-
-ScrollTrigger.scrollerProxy(document.body, {
-  scrollTop(value) {
-    if (arguments.length) {
-      scrollbar.scrollTop = value; // setter
-    }
-    return scrollbar.scrollTop;    // getter
-  }
-});
-
-scrollbar.addListener(ScrollTrigger.update);
-ScrollTrigger.defaults({ scroller: document.body });
-
-export { scrollbar };
-
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1366;
 
@@ -34,6 +14,29 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
 export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
+
+let scrollbar;
+if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+  scrollbar = Scrollbar.init(document.body, {
+    delegateTo: document,
+    damping: 0.05,
+    continuousScrolling: false,
+  });
+
+  ScrollTrigger.scrollerProxy(document.body, {
+    scrollTop(value) {
+      if (arguments.length) {
+        scrollbar.scrollTop = value; // setter
+      }
+      return scrollbar.scrollTop;    // getter
+    }
+  });
+
+  scrollbar.addListener(ScrollTrigger.update);
+  ScrollTrigger.defaults({ scroller: document.body });
+}
+
+export { scrollbar };
 
 /**
  * Аниаммция элементов списков по триггеру: init/reset
