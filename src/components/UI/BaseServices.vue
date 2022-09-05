@@ -1,7 +1,7 @@
 <template lang="pug">
 ul(
   v-if='items.length > 0',
-  :class='`services services--${this.modificatorArr[0]} ${this.sectionName}__services ${modificationClasses}`',
+  :class='`services services--${modificatorArr[0]} ${sectionName}__services ${modificationClasses}`',
   ref='services'
 )
   li.services__item(v-for='item in items', :key='item', :item='item')

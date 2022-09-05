@@ -440,7 +440,7 @@ const eventSliderInit = (eventSliderImages = null) => {
     const imagesEventSlider = swiperInit(eventSliderImages, attrImages);
 
     // Слайдер с меняющимся заголовком
-    if (eventSliderImages.classList.contains('event__slider--coffee')) {
+    if (eventSliderImages.classList.contains('event__slider--coffee') || eventSliderImages.classList.contains('event__slider--halls')) {
       let lastTimeout;
       imagesEventSlider.on('beforeTransitionStart', () => {
         animationSlideBottom(imagesEventSlider, 1);

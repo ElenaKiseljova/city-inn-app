@@ -6,10 +6,7 @@ footer#footer(
 )
   .page-footer__container.container
     .page-footer__left
-      .page-footer__logo.logo.logo--footer
-        router-link.logo__link(to='/')
-          svg(width='120', height='120')
-            use(xlink:href='@/assets/img/sprites/sprite-multi.svg#icon-logo')
+      BaseLogo(sectionName='page-footer', modificator='footer') 
 
       .page-footer__copyright
         p.page-footer__text(v-for='(copyrightText, index) in copyright')
@@ -52,10 +49,12 @@ import social from '../../mixins/social';
 import checkUrlType from '../../mixins/checkUrlType';
 
 import BaseSocial from '../UI/BaseSocial.vue';
+import BaseLogo from '../UI/BaseLogo.vue';
 
 export default {
   components: {
     BaseSocial,
+    BaseLogo,
   },
   mixins: [social, checkUrlType],
   data() {

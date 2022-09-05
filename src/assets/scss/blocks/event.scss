@@ -723,7 +723,9 @@
       }
 
       &.transition {
-        .event__title-image--coffee {
+
+        .event__title-image--coffee,
+        .event__title-image--halls {
           opacity: 0;
 
           transform: translateY(-50px);
@@ -731,7 +733,9 @@
       }
 
       &.translated {
-        .event__title-image--coffee {
+
+        .event__title-image--coffee,
+        .event__title-image--halls {
           opacity: 1;
 
           transform: translateY(0);
@@ -762,10 +766,6 @@
               left: calc(((100vw - 1440px) / 2) + 70px);
 
               margin: 0;
-
-              opacity: 1;
-
-              transition: opacity 0.5s linear;
             }
           }
         }

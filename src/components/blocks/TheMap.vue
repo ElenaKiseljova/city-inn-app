@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import { mapInit } from '../../assets/js/map';
 
@@ -23,7 +23,7 @@ export default {
     if (this.google) {
       this.mapInit();
     } else if (this.map && !this.google) {
-      await this.$store.dispatch('setGoogle', {
+      await this.setGoogle({
         key: this.map.key,
         lang: this.lang,
       });
@@ -32,6 +32,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['setGoogle']),
     mapInit() {
       if (this.map.center && this.map.zoom) {
         const options = {

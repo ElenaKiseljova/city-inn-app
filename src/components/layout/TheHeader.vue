@@ -2,12 +2,7 @@
 header.page-header(v-if='pageName && header')
   .page-header__container.container
     .page-header__top
-      div(
-        :class='`page-header__logo logo logo--header __js logo--${pageName}`'
-      )
-        router-link.logo__link(:to='toHome')
-          svg(width='120', height='120')
-            use(xlink:href='@/assets/img/sprites/sprite-multi.svg#icon-logo')
+      BaseLogo(sectionName='page-header', modificator='header') 
 
       .page-header__right
         .page-header__buttons
@@ -51,12 +46,14 @@ import checkUrlType from '@/mixins/checkUrlType';
 import MenuHeader from '../blocks/MenuHeader.vue';
 import BaseButton from '../UI/BaseButton.vue';
 import BaseSocial from '../UI/BaseSocial.vue';
+import BaseLogo from '../UI/BaseLogo.vue';
 
 export default {
   components: {
     MenuHeader,
     BaseButton,
     BaseSocial,
+    BaseLogo,
   },
   mixins: [checkUrlType],
   data() {
@@ -65,7 +62,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['pageName', 'header', 'lang', 'routeChanged']),
+    ...mapGetters(['pageName', 'header', 'routeChanged']),
     book() {
       return this.header.content?.book ? this.header.content.book : null;
     },
@@ -92,9 +89,6 @@ export default {
       }
 
       return buttons;
-    },
-    toHome() {
-      return this.lang === 'uk' ? `/` : `/${this.lang}`;
     },
   },
   mounted() {
@@ -123,7 +117,6 @@ export default {
 
 <style lang="scss">
 @import '~@/assets/scss/layout/page-header';
-@import '~@/assets/scss/blocks/logo';
 @import '~@/assets/scss/blocks/burger';
 
 #scrollbar-menu {
