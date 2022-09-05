@@ -2,46 +2,42 @@
 div(:class='imgClasses')
   picture(:class='pictureClasses')
     source(
-      v-if='canUseWebp && image.webp && image.webp.desktop',
+      v-if='canUseWebp && image.webp?.desktop',
       media='(min-width: 1025px)',
       type='image/webp',
       :srcset='image.webp.desktop'
     )
     source(
-      v-if='canUseWebp && image.webp && image.webp.tablet',
+      v-if='canUseWebp && image.webp?.tablet',
       media='(min-width: 500px)',
       :srcset='image.webp.tablet'
     )
     source(
-      v-if='canUseWebp && image.webp && image.webp.mobile',
+      v-if='canUseWebp && image.webp?.mobile',
       media='(min-width: 100px)',
       type='image/webp',
       :srcset='image.webp.mobile'
     )
 
     source(
-      v-if='image.jpg && image.jpg.desktop',
+      v-if='image.jpg?.desktop',
       media='(min-width: 1025px)',
       :srcset='image.jpg.desktop'
     )
     source(
-      v-if='image.jpg && image.jpg.tablet',
+      v-if='image.jpg?.tablet',
       media='(min-width: 500px)',
       :srcset='image.jpg.tablet'
     )
 
+    img(v-if='image.jpg?.mobile', :src='image.jpg.mobile', :alt='imageAlt')
     img(
-      v-if='image.jpg && image.jpg.mobile',
-      :src='image.jpg.mobile',
-      :alt='imageAlt'
-    )
-    img(
-      v-else-if='image.jpg && image.jpg.tablet',
+      v-else-if='image.jpg?.tablet',
       :src='image.jpg.tablet',
       :alt='imageAlt'
     )
     img(
-      v-else-if='image.jpg && image.jpg.desktop',
+      v-else-if='image.jpg?.desktop',
       :src='image.jpg.desktop',
       :alt='imageAlt'
     )

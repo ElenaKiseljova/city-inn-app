@@ -54,7 +54,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -65,27 +65,23 @@ export default {
       return this.sections && this.sections[0] ? this.sections[0] : null;
     },
     subTitle() {
-      return this.section &&
-        this.section.subTitle &&
-        this.section.subTitle !== ''
+      return this.section?.subTitle && this.section.subTitle !== ''
         ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },
     services() {
-      return this.section && this.section.services ? this.section.services : [];
+      return this.section?.services ? this.section.services : [];
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     image() {
-      return this.section && this.section.image ? this.section.image : null;
+      return this.section?.image ? this.section.image : null;
     },
     price() {
-      return this.infoSection &&
-        this.infoSection.priceText &&
-        this.infoSection.priceNumber
+      return this.infoSection?.priceText && this.infoSection?.priceNumber
         ? {
             text: this.infoSection.priceText,
             number: this.infoSection.priceNumber,
@@ -93,9 +89,7 @@ export default {
         : null;
     },
     button() {
-      return this.infoSection && this.infoSection.button
-        ? this.infoSection.button
-        : null;
+      return this.infoSection?.button ? this.infoSection.button : null;
     },
   },
 };

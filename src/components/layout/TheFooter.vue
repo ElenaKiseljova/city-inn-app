@@ -66,7 +66,7 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'header', 'footer', 'routeChanged']),
     columns() {
-      if (this.footer.content && this.footer.content.columns) {
+      if (this.footer.content?.columns) {
         const columnsWithType = this.footer.content.columns.map((column) => {
           const items = column.items || [];
 
@@ -83,7 +83,7 @@ export default {
       return [];
     },
     copyright() {
-      if (this.footer.content && this.footer.content.copyright) {
+      if (this.footer.content?.copyright) {
         return this.footer.content.copyright;
       }
 

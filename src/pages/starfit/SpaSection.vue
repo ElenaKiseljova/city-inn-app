@@ -111,7 +111,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : null;
     },
@@ -119,37 +119,33 @@ export default {
       return this.sections && this.sections[0] ? this.sections[0] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     textTop() {
-      return this.section && this.section.textTop && this.section.textTop !== ''
+      return this.section?.textTop && this.section.textTop !== ''
         ? this.converteSymbolsNewLineToBr(this.section.textTop)
         : null;
     },
     textBottom() {
-      return this.section &&
-        this.section.textBottom &&
-        this.section.textBottom !== ''
+      return this.section?.textBottom && this.section.textBottom !== ''
         ? this.converteSymbolsNewLineToBr(this.section.textBottom)
         : null;
     },
     worktime() {
-      return this.section &&
-        this.section.worktime &&
-        this.section.worktime !== ''
+      return this.section?.worktime && this.section.worktime !== ''
         ? this.section.worktime
         : null;
     },
     rules() {
-      return this.section && this.section.rules ? this.section.rules : null;
+      return this.section?.rules ? this.section.rules : null;
     },
     services() {
-      return this.section && this.section.services ? this.section.services : [];
+      return this.section?.services ? this.section.services : [];
     },
     slides() {
-      return this.section && this.section.slides ? this.section.slides : [];
+      return this.section?.slides ? this.section.slides : [];
     },
   },
 };

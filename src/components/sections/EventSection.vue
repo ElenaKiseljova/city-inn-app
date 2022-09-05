@@ -29,7 +29,7 @@ section(
       )
 
       div(
-        v-if='slides && slides.length > 0',
+        v-if='slides?.length > 0',
         :class='`event__slider-container event__slider-container--${sectionName}`'
       )
         BaseSlider(
@@ -68,7 +68,7 @@ section(
       BaseNavigation(sectionName='event', :modificator='sectionName')
 
       BaseSlider(
-        v-if='slides && slides.length > 0 && !content',
+        v-if='slides?.length > 0 && !content',
         sectionName='event',
         type='text',
         :modificator='sectionName'
@@ -135,7 +135,7 @@ section(
           )
 
           BaseServices(
-            v-if='slide.services && slide.services.length > 0',
+            v-if='slide.services?.length > 0',
             sectionName='event',
             :modificator='sectionName',
             :items='slide.services'
@@ -232,7 +232,7 @@ export default {
   computed: {
     ...mapGetters(['page']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -266,8 +266,7 @@ export default {
     },
     title() {
       return !this.haveTitleSmall &&
-        this.section &&
-        this.section.title &&
+        this.section?.title &&
         this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
@@ -284,9 +283,7 @@ export default {
       return null;
     },
     subTitle() {
-      return this.section &&
-        this.section.subTitle &&
-        this.section.subTitle !== ''
+      return this.section?.subTitle && this.section.subTitle !== ''
         ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },

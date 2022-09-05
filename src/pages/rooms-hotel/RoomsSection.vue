@@ -109,7 +109,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     items() {
-      return this.page && this.page.content && this.page.content.items
+      return this.page?.content && this.page.content.items
         ? this.page.content.items
         : [];
     },

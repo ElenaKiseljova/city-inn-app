@@ -94,13 +94,11 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'page']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : [];
+      return this.page.content?.sections ? this.page.content.sections : [];
     },
     section() {
       if (this.pageName === 'home') {
-        return this.sections && this.sections.length > 0
+        return this.sections?.length > 0
           ? this.sections.find(
               (section) => section.sectionName === this.sectionName
             )
@@ -138,10 +136,10 @@ export default {
         : {};
     },
     more() {
-      return this.section && this.section.more ? this.section.more : null;
+      return this.section?.more ? this.section.more : null;
     },
     book() {
-      return this.section && this.section.book ? this.section.book : null;
+      return this.section?.book ? this.section.book : null;
     },
   },
   mounted() {

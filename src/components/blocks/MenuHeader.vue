@@ -61,14 +61,10 @@ export default {
   computed: {
     ...mapGetters(['header']),
     callUs() {
-      return this.header.content && this.header.content.call
-        ? this.header.content.call
-        : {};
+      return this.header.content?.call ? this.header.content.call : {};
     },
     navigationList() {
-      return this.header.content && this.header.content.menu
-        ? this.header.content.menu
-        : [];
+      return this.header.content?.menu ? this.header.content.menu : [];
     },
   },
   mounted() {

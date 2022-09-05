@@ -6,7 +6,7 @@ section.seating(v-if='page && sections && section')
 
   BaseNavigation(sectionName='seating')
 
-  BaseSlider(v-if='slides && slides.length > 0', sectionName='seating')
+  BaseSlider(v-if='slides?.length > 0', sectionName='seating')
     BaseSlide(v-for='slide in slides', sectionName='seating')
       .seating__top
         BaseImage(
@@ -67,9 +67,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : null;
+      return this.page.content?.sections ? this.page.content.sections : null;
     },
     section() {
       return this.sections && this.sections[1] ? this.sections[1] : null;

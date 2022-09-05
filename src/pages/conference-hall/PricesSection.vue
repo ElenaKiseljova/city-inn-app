@@ -5,7 +5,7 @@ section.prices(v-if='page && sections && section', ref='section')
   BasePagination(sectionName='prices')
   BaseNavigation(sectionName='prices')
 
-  BaseSlider(v-if='slides && slides.length > 0', sectionName='prices')
+  BaseSlider(v-if='slides?.length > 0', sectionName='prices')
     BaseSlide(v-for='slide in slides', sectionName='prices')
       .prices__top
         BaseImage(
@@ -26,7 +26,7 @@ section.prices(v-if='page && sections && section', ref='section')
         )
 
         BaseServices(
-          v-if='slide.services && slide.services.length > 0',
+          v-if='slide.services?.length > 0',
           sectionName='prices',
           modificator='prices',
           :items='slide.services'
@@ -76,20 +76,18 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : null;
+      return this.page.content?.sections ? this.page.content.sections : null;
     },
     section() {
       return this.sections && this.sections[2] ? this.sections[2] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     slides() {
-      return this.section && this.section.slides ? this.section.slides : [];
+      return this.section?.slides ? this.section.slides : [];
     },
   },
 };

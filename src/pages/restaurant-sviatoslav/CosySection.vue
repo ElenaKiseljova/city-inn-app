@@ -8,7 +8,7 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
       )
 
       BaseSlider(
-        v-if='images && images.length > 0',
+        v-if='images?.length > 0',
         sectionName='cosy',
         :modificator='pageName'
       )
@@ -64,7 +64,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -72,7 +72,7 @@ export default {
       return this.sections && this.sections[0] ? this.sections[0] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
@@ -89,14 +89,12 @@ export default {
       return null;
     },
     textBottom() {
-      return this.section &&
-        this.section.textBottom &&
-        this.section.textBottom !== ''
+      return this.section?.textBottom && this.section.textBottom !== ''
         ? this.converteSymbolsNewLineToBr(this.section.textBottom)
         : null;
     },
     images() {
-      return this.section && this.section.images ? this.section.images : null;
+      return this.section?.images ? this.section.images : null;
     },
   },
 };

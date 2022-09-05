@@ -24,7 +24,7 @@ div(
   )
 
   BaseServices(
-    v-if='services && services.length > 0',
+    v-if='services?.length > 0',
     sectionName='cards',
     modificator='cards',
     :items='services',

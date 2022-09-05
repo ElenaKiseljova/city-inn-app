@@ -3,7 +3,7 @@ section.doings(v-if='page && pageName && sections && section', ref='section')
   .doings__title-wrapper
     h2.title-inner.doings__title(v-if='title', v-html='title', ref='title')
 
-  .doings__slider-container(v-if='slides && slides.length > 0')
+  .doings__slider-container(v-if='slides?.length > 0')
     BaseSlider(sectionName='doings', :modificator='pageName')
       BaseSlide(
         v-for='slide in slides',
@@ -58,7 +58,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -66,12 +66,12 @@ export default {
       return this.sections && this.sections[0] ? this.sections[0] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     slides() {
-      return this.section && this.section.slides ? this.section.slides : [];
+      return this.section?.slides ? this.section.slides : [];
     },
   },
 };

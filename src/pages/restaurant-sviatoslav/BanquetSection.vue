@@ -37,7 +37,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : null;
     },
@@ -45,12 +45,12 @@ export default {
       return this.sections && this.sections[2] ? this.sections[2] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     images() {
-      return this.section && this.section.images ? this.section.images : [];
+      return this.section?.images ? this.section.images : [];
     },
   },
 };

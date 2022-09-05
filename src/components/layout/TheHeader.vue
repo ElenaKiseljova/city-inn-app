@@ -67,14 +67,10 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'header', 'lang', 'routeChanged']),
     book() {
-      return this.header.content && this.header.content.book
-        ? this.header.content.book
-        : null;
+      return this.header.content?.book ? this.header.content.book : null;
     },
     offer() {
-      return this.header.content && this.header.content.offer
-        ? this.header.content.offer
-        : null;
+      return this.header.content?.offer ? this.header.content.offer : null;
     },
     buttons() {
       const buttons = [];

@@ -91,14 +91,14 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'contacts', 'routeChanged']),
     title() {
-      if (this.contacts.content && this.contacts.content.title) {
+      if (this.contacts.content?.title) {
         return this.contacts.content.title;
       }
 
       return 'Contacts';
     },
     columns() {
-      if (this.contacts.content && this.contacts.content.columns) {
+      if (this.contacts.content?.columns) {
         const columnsWithType = this.contacts.content.columns.map((column) => {
           const items = column.items || [];
 
@@ -115,9 +115,7 @@ export default {
       return [];
     },
     book() {
-      return this.contacts.content && this.contacts.content.book
-        ? this.contacts.content.book
-        : null;
+      return this.contacts.content?.book ? this.contacts.content.book : null;
     },
   },
   watch: {

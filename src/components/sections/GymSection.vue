@@ -101,9 +101,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : null;
+      return this.page?.content.sections ? this.page.content.sections : null;
     },
     section() {
       if (this.pageName === 'starfit') {
@@ -117,14 +115,12 @@ export default {
       return null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     subTitle() {
-      return this.section &&
-        this.section.subTitle &&
-        this.section.subTitle !== ''
+      return this.section?.subTitle && this.section.subTitle !== ''
         ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },
@@ -140,7 +136,7 @@ export default {
       return null;
     },
     images() {
-      return this.section && this.section.images ? this.section.images : [];
+      return this.section?.images ? this.section.images : [];
     },
     rules() {
       return this.section && (this.section.button || this.section.rules)
@@ -148,9 +144,7 @@ export default {
         : null;
     },
     worktime() {
-      return this.section &&
-        this.section.worktime &&
-        this.section.worktime !== ''
+      return this.section?.worktime && this.section.worktime !== ''
         ? this.section.worktime
         : null;
     },

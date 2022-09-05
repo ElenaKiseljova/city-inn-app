@@ -73,7 +73,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName', 'lang']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -81,22 +81,18 @@ export default {
       return this.sections[0] ?? null;
     },
     description() {
-      return this.section &&
-        this.section.description &&
-        this.section.description !== ''
+      return this.section?.description && this.section.description !== ''
         ? this.converteSymbolsNewLineToBr(this.section.description)
         : null;
     },
     services() {
-      return this.section && this.section.services
-        ? this.section.services
-        : null;
+      return this.section?.services ? this.section.services : null;
     },
     image() {
-      return this.section && this.section.image ? this.section.image : {};
+      return this.section?.image ? this.section.image : {};
     },
     price() {
-      return this.section && this.section.priceText && this.section.priceNumber
+      return this.section?.priceText && this.section?.priceNumber
         ? {
             text: this.section.priceText,
             number: this.section.priceNumber,
@@ -104,7 +100,7 @@ export default {
         : null;
     },
     button() {
-      return this.section && this.section.button ? this.section.button : null;
+      return this.section?.button ? this.section.button : null;
     },
   },
   mounted() {

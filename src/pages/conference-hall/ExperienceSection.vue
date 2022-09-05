@@ -32,9 +32,7 @@ export default {
   computed: {
     ...mapGetters(['page']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : null;
+      return this.page.content?.sections ? this.page.content.sections : null;
     },
     section() {
       return this.sections && this.sections[6] ? this.sections[6] : null;

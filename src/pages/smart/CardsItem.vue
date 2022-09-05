@@ -10,7 +10,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
       BaseImage(sectionName='cards', alt='img', :image='card.image')
 
   div(:class='`cards__bottom cards__bottom--${oddEvenLast}`')
-    BaseSlider(v-if='slides && slides.length > 0', sectionName='cards')
+    BaseSlider(v-if='slides?.length > 0', sectionName='cards')
       BaseSlide(v-for='slide in slides', sectionName='cards')
         CardsSlide(
           :oddEvenLast='oddEvenLast',
@@ -90,7 +90,7 @@ export default {
   computed: {
     ...mapGetters(['page']),
     cards() {
-      return this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -105,14 +105,10 @@ export default {
         : 'odd';
     },
     cardsBottomClass() {
-      return this.slides && this.slides.length > 0
-        ? 'cards__bottom--slider'
-        : '';
+      return this.slides?.length > 0 ? 'cards__bottom--slider' : '';
     },
     cardsContentClass() {
-      return this.slides && this.slides.length > 0
-        ? 'cards__content--desktop'
-        : '';
+      return this.slides?.length > 0 ? 'cards__content--desktop' : '';
     },
     titleHtml() {
       return this.card.title
@@ -125,7 +121,7 @@ export default {
         : '';
     },
     book() {
-      return this.card && this.card.book ? this.card.book : null;
+      return this.card?.book ? this.card.book : null;
     },
   },
 };

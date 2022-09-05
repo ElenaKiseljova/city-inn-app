@@ -16,9 +16,7 @@ export default {
   computed: {
     ...mapGetters(['lang', 'google', 'contacts']),
     map() {
-      return this.contacts && this.contacts.content.map
-        ? this.contacts.content.map
-        : {};
+      return this.contacts?.content.map ? this.contacts.content.map : {};
     },
   },
   async mounted() {

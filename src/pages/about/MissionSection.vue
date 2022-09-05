@@ -43,25 +43,23 @@ export default {
   computed: {
     ...mapGetters(['page']),
     sections() {
-      return this.page.content && this.page.content.sections
-        ? this.page.content.sections
-        : null;
+      return this.page.content?.sections ? this.page.content.sections : null;
     },
     section() {
       return this.sections && this.sections[0] ? this.sections[0] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     text() {
-      return this.section && this.section.text && this.section.text !== ''
+      return this.section?.text && this.section.text !== ''
         ? this.converteSymbolsNewLineToBr(this.section.text)
         : null;
     },
     images() {
-      return this.section && this.section.images ? this.section.images : [];
+      return this.section?.images ? this.section.images : [];
     },
   },
 };

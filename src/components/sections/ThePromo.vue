@@ -120,14 +120,10 @@ export default {
   computed: {
     ...mapGetters(['meta', 'pageName', 'header', 'page']),
     book() {
-      return this.header.content && this.header.content.book
-        ? this.header.content.book
-        : null;
+      return this.header.content?.book ? this.header.content.book : null;
     },
     offer() {
-      return this.header.content && this.header.content.offer
-        ? this.header.content.offer
-        : null;
+      return this.header?.content.offer ? this.header.content.offer : null;
     },
     sectionName() {
       return this.name || this.pageName;
@@ -144,31 +140,28 @@ export default {
       return this.page.content.content || null;
     },
     contentTopDescription() {
-      return this.content &&
-        this.content.top &&
+      return this.content?.top &&
         this.content.top.description &&
         this.content.top.description.trim() !== ''
         ? this.converteSymbolsNewLineToBr(this.content.top.description)
         : null;
     },
     contentTopSubTitle() {
-      return this.content &&
-        this.content.top &&
+      return this.content?.top &&
         this.content.top.subTitle &&
         this.content.top.subTitle.trim() !== ''
         ? this.converteSymbolsNewLineToBr(this.content.top.subTitle)
         : null;
     },
     contentBottomWorktime() {
-      return this.content &&
-        this.content.bottom &&
+      return this.content?.bottom &&
         this.content.bottom.worktime &&
         this.content.bottom.worktime.trim() !== ''
         ? this.content.bottom.worktime
         : null;
     },
     contentBottomBook() {
-      return this.content && this.content.bottom && this.content.bottom.book
+      return this.content?.bottom && this.content.bottom.book
         ? this.content.bottom.book
         : null;
     },

@@ -139,7 +139,7 @@ export default {
   computed: {
     ...mapGetters(['page']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -170,14 +170,12 @@ export default {
       return null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     subTitle() {
-      return this.section &&
-        this.section.subTitle &&
-        this.section.subTitle !== ''
+      return this.section?.subTitle && this.section.subTitle !== ''
         ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },
@@ -194,19 +192,15 @@ export default {
       return null;
     },
     textBottom() {
-      return this.section &&
-        this.section.textBottom &&
-        this.section.textBottom !== ''
+      return this.section?.textBottom && this.section.textBottom !== ''
         ? this.converteSymbolsNewLineToBr(this.section.textBottom)
         : null;
     },
     more() {
-      return this.section && this.section.more ? this.section.more : null;
+      return this.section?.more ? this.section.more : null;
     },
     worktime() {
-      return this.section &&
-        this.section.worktime &&
-        this.section.worktime !== ''
+      return this.section?.worktime && this.section.worktime !== ''
         ? this.section.worktime
         : null;
     },
@@ -218,10 +212,10 @@ export default {
         : null;
     },
     images() {
-      return this.section && this.section.images ? this.section.images : null;
+      return this.section?.images ? this.section.images : null;
     },
     tabs() {
-      return this.section && this.section.tabs ? this.section.tabs : null;
+      return this.section?.tabs ? this.section.tabs : null;
     },
     haveMenuButton() {
       return this.sectionName === 'menu' ||

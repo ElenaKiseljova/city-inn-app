@@ -4,7 +4,7 @@ section.gallery(v-if='page && sections && section')
 
   .gallery__container.container
     BaseSlider(
-      v-if='images && images.length > 0',
+      v-if='images?.length > 0',
       sectionName='gallery',
       :modificator='pageName'
     )
@@ -47,7 +47,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },

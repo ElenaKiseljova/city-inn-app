@@ -46,7 +46,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -54,23 +54,23 @@ export default {
       return this.sections && this.sections[1] ? this.sections[1] : null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     text() {
-      return this.section && this.section.text && this.section.text !== ''
+      return this.section?.text && this.section.text !== ''
         ? this.converteSymbolsNewLineToBr(this.section.text)
         : null;
     },
     image() {
-      return this.section && this.section.image ? this.section.image : null;
+      return this.section?.image ? this.section.image : null;
     },
     more() {
-      return this.section && this.section.more ? this.section.more : null;
+      return this.section?.more ? this.section.more : null;
     },
     book() {
-      return this.section && this.section.book ? this.section.book : null;
+      return this.section?.book ? this.section.book : null;
     },
   },
 };

@@ -47,11 +47,10 @@ export default {
       const button = this.button ?? null;
 
       if (
-        button &&
-        button.link &&
+        button?.link &&
         button.link !== '' &&
-        ((button.text && button.text !== '') ||
-          (button.title && button.title !== ''))
+        ((button?.text && button.text !== '') ||
+          (button?.title && button.title !== ''))
       ) {
         return { ...button, type: this.checkUrlType(button.link) };
       }

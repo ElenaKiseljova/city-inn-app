@@ -46,7 +46,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content.sections
         ? this.page.content.sections
         : [];
     },
@@ -54,25 +54,24 @@ export default {
       return this.sections && this.sections[1] ? this.sections[1] : null;
     },
     services() {
-      return this.section && this.section.services ? this.section.services : [];
+      return this.section?.services ? this.section.services : [];
     },
   },
   mounted() {
-    if (this.$refs.features && !this.serviceAnimationIsSet) {
-      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
-
-      // console.log('Services Activated - mounted');
-    }
+    this.setServiceAnimation();
   },
   updated() {
-    if (this.$refs.features && !this.serviceAnimationIsSet) {
-      this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
-
-      // console.log('Services Activated - updated');
-    }
+    this.setServiceAnimation();
   },
   unmounted() {
     serviceAnimation.reset();
+  },
+  methods: {
+    setServiceAnimation() {
+      if (this.$refs.features && !this.serviceAnimationIsSet) {
+        this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
+      }
+    },
   },
 };
 </script>

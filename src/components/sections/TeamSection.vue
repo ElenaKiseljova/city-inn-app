@@ -69,7 +69,7 @@ export default {
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
-      return this.page && this.page.content && this.page.content.sections
+      return this.page?.content && this.page.content?.sections
         ? this.page.content.sections
         : [];
     },
@@ -85,19 +85,17 @@ export default {
       return null;
     },
     title() {
-      return this.section && this.section.title && this.section.title !== ''
+      return this.section?.title && this.section.title !== ''
         ? this.converteSymbolsNewLineToBr(this.section.title)
         : null;
     },
     subTitle() {
-      return this.section &&
-        this.section.subTitle &&
-        this.section.subTitle !== ''
+      return this.section?.subTitle && this.section.subTitle !== ''
         ? this.converteSymbolsNewLineToBr(this.section.subTitle)
         : null;
     },
     slides() {
-      return this.section && this.section.slides ? this.section.slides : null;
+      return this.section?.slides ? this.section.slides : null;
     },
   },
 };
