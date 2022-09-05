@@ -12,7 +12,7 @@ TheFooter(v-show='appIsReady')
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 import detect from 'detect.js';
 
@@ -29,7 +29,7 @@ export default {
     BaseSpinner,
   },
   computed: {
-    ...mapGetters(['header', 'footer', 'page', 'browser']),
+    ...mapGetters(['header', 'footer', 'page']),
     appIsReady() {
       return this.header && this.footer && this.page ? true : false;
     },
@@ -78,7 +78,10 @@ export default {
           parseInt(ua.browser.version, 10) >= 14),
     };
 
-    await this.$store.dispatch('setBrowser', browser);
+    await this.setBrowser(browser);
+  },
+  methods: {
+    ...mapActions(['setBrowser']),
   },
 };
 </script>
