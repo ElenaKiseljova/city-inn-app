@@ -2,7 +2,7 @@
 teleport(to='body')
   BaseSpinner.spinner--main(v-if='!appIsReady')
 
-TheHeader(v-show='appIsReady')
+  TheHeader(v-show='appIsReady')
 
 router-view(v-show='appIsReady', v-slot='slotProps')
   transition(name='rout', mode='out-in')

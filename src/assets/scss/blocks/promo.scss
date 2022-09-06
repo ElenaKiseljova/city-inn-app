@@ -142,11 +142,21 @@
       height: 820px;
     }
 
+    &--text-page {
+      height: calc(((389 / 414) * 100vw) + 626px + 80px);
+    }
+
     @media screen and (min-width: $tablet) {
       max-height: calc(384 / 768 * 100vw);
 
       &--smart {
         overflow: visible;
+      }
+
+      &--text-page {
+        height: fit-content;
+
+        max-height: none;
       }
     }
 
@@ -202,7 +212,8 @@
     &--restaurant,
     &--lobby,
     &--about,
-    &--starfit {
+    &--starfit,
+    &--text-page {
       --before-linear-gradient-from: rgba(0, 0, 0, 0.2);
       --before-linear-gradient-to: rgba(0, 0, 0, 0.2);
 
@@ -216,12 +227,24 @@
       @include before-linear-gradient();
     }
 
+    &--text-page {
+      height: calc((389 / 414) * 100vw);
+    }
+
     @media screen and (min-width: $tablet) {
       &--standart {
         --before-linear-gradient-from: rgba(0, 0, 0, 0.7);
         --before-linear-gradient-to: rgba(0, 0, 0, 0.7);
 
         @include before-linear-gradient();
+      }
+
+      &--text-page {
+        position: relative;
+
+        order: -1;
+
+        height: calc((256 / 768) * 100vw);
       }
     }
 
@@ -230,6 +253,10 @@
         &::before {
           display: none;
         }
+      }
+
+      &--text-page {
+        height: calc((378 / 1440) * 100vw);
       }
     }
   }
@@ -656,12 +683,25 @@
 
     &--group,
     &--conference,
-    &--conference-service {
-      max-height: calc(100vh - 216px);
-
+    &--conference-service,
+    &--text-page {
       writing-mode: vertical-rl;
 
       transform: rotate(-180deg) translate(0px, 40px);
+    }
+
+    &--group,
+    &--conference,
+    &--conference-service {
+      max-height: calc(100vh - 216px);
+    }
+
+    &--text-page {
+      opacity: 1;
+
+      max-height: 626px;
+
+      transform: rotate(-180deg) translate(32px, 40px);
     }
 
     &--smart {
@@ -713,7 +753,8 @@
 
       &--group,
       &--conference,
-      &--conference-service {
+      &--conference-service,
+      &--text-page {
         max-height: none;
 
         writing-mode: horizontal-tb;
@@ -735,6 +776,17 @@
         margin: 0;
 
         transform: translate(0, 45px);
+      }
+
+      &--text-page {
+        max-height: fit-content;
+
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        opacity: 1;
+
+        transform: none;
       }
     }
 
@@ -781,6 +833,13 @@
       &--smart {
         transform: translate(-112px, 37px);
       }
+
+      &--text-page {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        opacity: 1;
+      }
     }
   }
 
@@ -796,12 +855,17 @@
 
     &--group,
     &--conference,
-    &--conference-service {
+    &--conference-service,
+    &--text-page {
       @include font(96, 86, 700);
     }
 
     &--smart {
       @include font(90, 80, 700);
+    }
+
+    &--text-page {
+      font-weight: 300;
     }
 
     @media screen and (min-width: $mobile) {
@@ -839,6 +903,10 @@
       &--smart {
         @include font(112, 90, 700);
       }
+
+      &--text-page {
+        @include font(80, 72, 300);
+      }
     }
 
     @media screen and (min-width: $desktop) {
@@ -852,6 +920,10 @@
 
       &--smart {
         @include font(200, 140, 700);
+      }
+
+      &--text-page {
+        @include font(146, 140, 300);
       }
     }
   }

@@ -26,6 +26,8 @@ header.page-header(v-if='pageName && header')
             .burger__left.__js
             .burger__right.__js
 
+          BaseLang(sectionName='page-header')
+
           div(
             :class='`page-header__social __js page-header__social--${pageName}`'
           )
@@ -47,6 +49,7 @@ import MenuHeader from '../blocks/MenuHeader.vue';
 import BaseButton from '../UI/BaseButton.vue';
 import BaseSocial from '../UI/BaseSocial.vue';
 import BaseLogo from '../UI/BaseLogo.vue';
+import BaseLang from '../UI/BaseLang.vue';
 
 export default {
   components: {
@@ -54,6 +57,7 @@ export default {
     BaseButton,
     BaseSocial,
     BaseLogo,
+    BaseLang,
   },
   mixins: [checkUrlType],
   data() {

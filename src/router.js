@@ -14,6 +14,7 @@ const RoomsHotel = () => import('./pages/RoomsHotel.vue');
 const RoomsItem = () => import('./pages/RoomsItem.vue');
 const SmartOffer = () => import('./pages/SmartOffer.vue');
 const StarfitComplex = () => import('./pages/StarfitComplex.vue');
+const TextPage = () => import('./pages/TextPage.vue');
 const NotFound = () => import('./pages/NotFound.vue');
 
 const router = createRouter({
@@ -202,6 +203,38 @@ const router = createRouter({
       component: StarfitComplex,
       meta: {
         pageName: 'starfit',
+      },
+    },
+    {
+      path: '/privacy-policy',
+      alias: ['/privacy-policy/'],
+      component: TextPage,
+      meta: {
+        pageName: 'text-page',
+      },
+    },
+    {
+      path: '/en/privacy-policy',
+      alias: ['/en/privacy-policy/'],
+      component: TextPage,
+      meta: {
+        pageName: 'text-page',
+      },
+    },
+    {
+      path: '/public-offer',
+      alias: ['/public-offer/'],
+      component: TextPage,
+      meta: {
+        pageName: 'text-page',
+      },
+    },
+    {
+      path: '/en/public-offer',
+      alias: ['/en/public-offer/'],
+      component: TextPage,
+      meta: {
+        pageName: 'text-page',
       },
     },
     {

@@ -3,6 +3,11 @@
 
   background-color: var(--background-color-page);
 
+  &--text-page {
+    --color-page: var(--white);
+    --background-color-page: var(--dark-gray);
+  }
+
   &--about {
     --color-button: var(--light-yellow);
     --border-color-button: var(--light-yellow);

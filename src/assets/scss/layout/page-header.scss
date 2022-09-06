@@ -111,6 +111,18 @@
   &__burger {
     margin-bottom: 16px;
 
+    &.active {
+      &~.page-header__lang {
+        display: flex;
+      }
+
+      &~.page-header__social {
+        opacity: 0;
+
+        pointer-events: none;
+      }
+    }
+
     @media screen and (min-width: $desktop) {
       margin-bottom: 0;
     }
@@ -151,7 +163,7 @@
     width: 100vw;
     height: 100vh;
 
-    overflow: hidden;
+    overflow: auto;
 
     opacity: 0;
 
@@ -160,6 +172,8 @@
     pointer-events: none;
 
     &.loaded {
+      position: absolute;
+
       transition: transform 1s ease-in, opacity 1s linear;
     }
 
@@ -171,6 +185,23 @@
       transition: transform 1s ease-out, opacity 1s linear;
 
       pointer-events: all;
+    }
+
+    @media screen and (min-width: $desktop) {
+      overflow: hidden;
+    }
+  }
+
+  &__lang {
+    display: none;
+
+    width: 48px;
+    height: 48px;
+
+    margin: 16px 0;
+
+    @media screen and (min-width: $tablet) {
+      display: none !important;
     }
   }
 }

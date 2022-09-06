@@ -1,0 +1,9 @@
+.text {
+  @extend %w100;
+
+  padding: 40px 0;
+
+  @media screen and (min-width: $desktop) {
+    padding: 120px 0 80px;
+  }
+}
