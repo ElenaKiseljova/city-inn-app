@@ -368,3 +368,129 @@ const promoTitleAndTextAnimation = (trigger) => {
 };
 
 export { promoTitleAndTextAnimation };
+
+// Переходы слайдов
+const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {
+  const el1 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
+  const el2 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
+
+  if (el1 && el2) {
+    gsap.to(el1, {
+      x: 0,
+      opacity: 1,
+      duration: 1,
+    });
+
+    switch (mode) {
+      case 1:
+        gsap.to(el2, {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+        });
+
+        break;
+
+      case 2:
+        gsap.to(el2, {
+          opacity: 1,
+          duration: 1,
+          ease: 'Power3.easeOut',
+        });
+
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  if (swiperSlider.previousIndex !== undefined) {
+    const el3 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
+    const el4 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
+
+    if (el3 && el4) {
+      gsap.to(el3, {
+        x: '-100%',
+        opacity: 0,
+        duration: 1,
+      });
+
+      switch (mode) {
+        case 1:
+          gsap.to(el4, {
+            x: '100%',
+            opacity: 0,
+            duration: 1,
+          });
+
+          break;
+
+        case 2:
+          gsap.to(el4, {
+            opacity: 0,
+            duration: 1,
+            ease: 'Power3.easeOut',
+          });
+
+          break;
+
+        default:
+          break;
+      }
+    }
+  }
+};
+
+export { animationSlideElements };
+
+// Анимация абзацев на текстовых страницах
+const textItemsAnimation = (item, callback) => {
+  if (item) {
+    gsap.to(item, {
+      scrollTrigger: {
+        id: 'textItems',
+        trigger: item,
+        start: 'top center',
+        end: 'bottom center',
+        // markers: true,
+        onEnter: () => {
+          // console.log('enter');
+          callback();
+        },
+        onEnterBack: () => {
+          // console.log('onEnterBack');
+          callback();
+        },
+      },
+    });
+
+    return true;
+  }
+
+  return false;
+};
+
+export { textItemsAnimation };
+
+const textNavPin = (trigger, pin) => {
+  gsap.to(pin, {
+    scrollTrigger: {
+      trigger: trigger,
+      scrub: 0.3,
+      // markers: true,
+      start: 'top top',
+      end: 'bottom top',
+      // onEnter: (self) => {
+      //   console.log(self);
+      // },
+      onUpdate: (self) => {
+        pin.style.transform = `translateY(${(self.end - self.start) * self.progress}px)`;
+      },
+    },
+  });
+};
+
+export { textNavPin };
+
+

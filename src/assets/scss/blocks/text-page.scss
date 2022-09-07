@@ -1,0 +1,247 @@
+.text-page {
+  @extend %w100;
+
+  padding: 40px 0;
+
+  @media screen and (min-width: $desktop) {
+    padding: 120px 0 80px;
+  }
+
+  &__container {
+    @media screen and (min-width: $desktop) {
+      display: grid;
+
+      grid-template-columns: 480px 1fr;
+
+      column-gap: 80px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @extend %w100;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      counter-reset: item;
+    }
+  }
+
+  &__nav-list {
+    @extend %w100;
+
+    @media screen and (min-width: $desktop) {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      row-gap: 32px;
+
+      list-style: none;
+    }
+  }
+
+  &__nav-item {
+    @media screen and (min-width: $desktop) {
+      counter-increment: item;
+
+      &.active {
+        .text-page__title {
+          font-weight: 700;
+
+          transition: font-weight 0.5s linear;
+
+          &::before {
+            background-color: $white-30;
+
+            transition: background-color 0.5s linear;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    row-gap: 32px;
+
+    @extend %w100;
+
+    list-style: none;
+
+    counter-reset: item;
+  }
+
+  &__item {
+    @extend %w100;
+
+    height: fit-content;
+
+    overflow: hidden;
+
+    transition: height 0.5s 0.2s linear;
+
+    counter-increment: item;
+
+    &.active {
+      transition: height 0.5s linear;
+
+      .text-page__title {
+        font-weight: 700;
+
+        transition: font-weight 0.5s linear;
+
+        &::before {
+          background-color: $white-30;
+
+          transition: background-color 0.5s linear;
+        }
+      }
+
+      .text-page__content {
+        opacity: 1;
+
+        h3,
+        p {
+          opacity: 1;
+
+          transform: translate(0, 0);
+        }
+
+        h3 {
+          transition: opacity 0.4s 0.4s, transform 0.3s 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        p {
+          transition: opacity 0.4s 0.5s, transform 0.3s 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    @extend %w100;
+
+    min-height: 48px;
+
+    padding-left: calc((95 / 414) * 100vw);
+
+    @include font(18, 27, 400);
+
+    color: var(--color-page, #ffffff);
+
+    text-transform: uppercase;
+
+    transition: font-weight 0.5s linear;
+
+    &::before {
+      position: absolute;
+
+      top: 50%;
+      left: 0;
+
+      z-index: 1;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      width: 48px;
+      height: 48px;
+
+      @include font(14, 17, 500);
+
+      border: 1px solid var(--color-page, #ffffff);
+
+      border-radius: 50%;
+
+      background-color: transparent;
+
+      transform: translateY(-50%);
+
+      transition: background-color 0.5s linear;
+
+      content: counter(item);
+    }
+
+    @media screen and (min-width: $mobile) {
+      padding-left: 95px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      &--mobile {
+        display: none
+      }
+    }
+  }
+
+  &__content {
+    @extend %w100;
+
+    padding-top: 48px;
+    padding-bottom: 16px;
+
+    color: var(--color-page, #ffffff);
+
+    h3 {
+      @include font(14, 17, 400);
+
+      text-transform: uppercase;
+    }
+
+    p {
+      @include font(14, 21, 400);
+    }
+
+    p+h3,
+    h3+p,
+    h3+h3 {
+      margin-top: 40px;
+    }
+
+    p+p {
+      margin-top: 15px;
+    }
+
+    h3,
+    p {
+      opacity: 0;
+
+      transform: translate(20px, -10px);
+    }
+
+    h3 {
+      transition: opacity 0.4s 0.1s, transform 0.3s 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    p {
+      transition: opacity 0.4s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
+  }
+}

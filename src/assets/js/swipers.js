@@ -1,7 +1,7 @@
-import { gsap } from './libs/gsap.min';
 import Swiper from './libs/swiper-bundle.min';
 import changeActiveClass from './changeActiveClass';
 import cardsActivate from './cards';
+import { animationSlideElements } from './gsap-animations';
 
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1366;
@@ -28,78 +28,6 @@ const reloader = () => {
 };
 
 export { reloader };
-
-const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {
-  const el1 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
-  const el2 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
-
-  if (el1 && el2) {
-    gsap.to(el1, {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-    });
-
-    switch (mode) {
-      case 1:
-        gsap.to(el2, {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-        });
-
-        break;
-
-      case 2:
-        gsap.to(el2, {
-          opacity: 1,
-          duration: 1,
-          ease: 'Power3.easeOut',
-        });
-
-        break;
-
-      default:
-        break;
-    }
-  }
-
-  if (swiperSlider.previousIndex !== undefined) {
-    const el3 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
-    const el4 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
-
-    if (el3 && el4) {
-      gsap.to(el3, {
-        x: '-100%',
-        opacity: 0,
-        duration: 1,
-      });
-
-      switch (mode) {
-        case 1:
-          gsap.to(el4, {
-            x: '100%',
-            opacity: 0,
-            duration: 1,
-          });
-
-          break;
-
-        case 2:
-          gsap.to(el4, {
-            opacity: 0,
-            duration: 1,
-            ease: 'Power3.easeOut',
-          });
-
-          break;
-
-        default:
-          break;
-      }
-    }
-  }
-};
 
 const animationSlideBottom = (swiperSlider, mode = 1) => {
   if (mode === 1) {

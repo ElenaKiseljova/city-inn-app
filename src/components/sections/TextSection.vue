@@ -1,45 +1,61 @@
 <template lang="pug">
-.text 
-  .text__container.container 
+.text-page(v-if='page && content && items')
+  .text-page__container.container 
+    nav.text-page__nav(v-if='items?.length > 0')
+      ul.text-page__nav-list 
+        li.text-page__nav-item(
+          v-for='(item, index) in items',
+          :key='item.title'
+        ) 
+          h2.text-page__title
+            | {{ item.title }}
+
+    ul.text-page__list(v-if='items?.length > 0', ref='list')
+      li.text-page__item(v-for='(item, index) in items', :key='item.title')
+        h2.text-page__title.text-page__title--mobile
+          | {{ item.title }}
+
+        .text-page__content(v-html='item.content')
 </template>
   
-  <script>
+<script>
 import { mapGetters } from 'vuex';
 
+import accordion from '@/assets/js/accordion';
+
 export default {
+  data() {
+    return {
+      scriptsIsSet: false,
+    };
+  },
   computed: {
     ...mapGetters(['page']),
-    items() {
-      return this.page?.content && this.page.content.items
-        ? this.page.content.items
+    content() {
+      return this.page?.content && this.page.content?.content
+        ? this.page.content.content
         : null;
     },
-    titles() {
-      if (this.items) {
-        const titles = this.items.map((item) => {
-          return item.title;
-        });
-
-        return titles;
-      }
-
-      return null;
+    items() {
+      return this.content && this.content?.items ? this.content.items : null;
     },
-    contents() {
-      if (this.items) {
-        const contents = this.items.map((item) => {
-          return item.content;
-        });
-
-        return contents;
+  },
+  mounted() {
+    this.setScripts();
+  },
+  updated() {
+    this.setScripts();
+  },
+  methods: {
+    setScripts() {
+      if (this.$refs.list && !this.scriptsIsSet) {
+        this.scriptsIsSet = accordion(this.$refs.list);
       }
-
-      return null;
     },
   },
 };
 </script>
 
 <style lang="scss">
-@import '~@/assets/scss/blocks/text';
+@import '~@/assets/scss/blocks/text-page';
 </style>
