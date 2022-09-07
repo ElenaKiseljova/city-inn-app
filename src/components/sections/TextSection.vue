@@ -22,6 +22,10 @@
 import { mapGetters } from 'vuex';
 
 import accordion from '@/assets/js/accordion';
+import {
+  textItemsAnimation,
+  textNavPin,
+} from '../../assets/js/gsap-animations';
 
 export default {
   data() {
@@ -45,6 +49,10 @@ export default {
   },
   updated() {
     this.setScripts();
+  },
+  unmounted() {
+    textItemsAnimation.reset();
+    textNavPin.reset();
   },
   methods: {
     setScripts() {

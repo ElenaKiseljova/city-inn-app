@@ -9,7 +9,7 @@ const accordion = (conteiner) => {
     const accordionItemsDesktop = accordionNavBar?.querySelectorAll('.text-page__nav-item');
 
     if (accordionNavBar && accordionContainer) {
-      textNavPin(accordionContainer, accordionNavBar);
+      textNavPin.init(accordionContainer, accordionNavBar);
     }
 
     // Мобильнык пункты

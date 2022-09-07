@@ -490,55 +490,61 @@ const textItemsAnimation = {
   },
 };
 
-// const textItemsAnimation = (item, callback) => {
-//   if (item && callback) {
-//     gsap.to(item, {
-//       scrollTrigger: {
-//         id: 'textItems',
-//         trigger: item,
-//         start: 'top center',
-//         end: 'bottom center',
-//         // markers: true,
-//         onEnter: () => {
-//           // console.log('enter');
-//           callback();
-//         },
-//         onEnterBack: () => {
-//           // console.log('onEnterBack');
-//           callback();
-//         },
-//       },
-//     });
-
-//     return true;
-//   }
-
-//   return false;
-// };
-
 export { textItemsAnimation };
 
-const textNavPin = (trigger, pin) => {
-  gsap.to(pin, {
-    scrollTrigger: {
-      id: 'textNavPin',
-      trigger: trigger,
-      scrub: 0.3,
-      // markers: true,
-      start: 'top top',
-      end: 'bottom top',
-      // onEnter: (self) => {
-      //   console.log(self);
-      // },
-      onUpdate: (self) => {
-        const state = (self.end - self.start) * self.progress;
+const textNavPin = {
+  animation: null,
+  element: null,
+  init(trigger, pin) {
+    if (trigger && pin) {
+      this.element = pin;
 
-        pin.style.transform = `translateY(${state}px)`;
+      this.animation = gsap.to(pin, {
+        scrollTrigger: {
+          id: 'textNavPin',
+          trigger: trigger,
+          scrub: 0.3,
+          // markers: true,
+          start: 'top top',
+          end: 'bottom top',
+          // onEnter: (self) => {
+          //   console.log(self);
+          // },
+          onUpdate: (self) => {
+            const translateValue = trigger.offsetHeight - pin.offsetHeight;
 
-        // console.log(state, self.end - self.start);
-      },
-    },
-  });
+            let state = (self.end - self.start) * self.progress;
+
+            if (state > translateValue) {
+              state = translateValue
+            }
+
+            pin.style.transform = `translateY(${state}px)`;
+
+            // console.log(state, self.end - self.start);
+          },
+        },
+      });
+
+      return true;
+    }
+
+    return false;
+  },
+  reset() {
+    console.log(this.animation, ScrollTrigger.getById('textNavPin'), this.element);
+    if (this.animation) {
+      this.animation.pause(0).kill(true);
+    }
+
+    if (ScrollTrigger.getById('textNavPin')) {
+      ScrollTrigger.getById('textNavPin').kill(true);
+    }
+
+    if (this.element) {
+      gsap.set(this.element, { clearProps: true });
+    }
+  },
 };
 
 export { textNavPin };
