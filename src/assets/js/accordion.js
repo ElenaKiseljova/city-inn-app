@@ -49,7 +49,7 @@ const accordion = (conteiner) => {
         };
 
         if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-          textItemsAnimation(accordionItem, accordionToggleHeight);
+          textItemsAnimation.init(accordionItem, accordionToggleHeight);
         } else {
           accordionItem.style.height = `${accordionTitle.offsetHeight}px`;
 

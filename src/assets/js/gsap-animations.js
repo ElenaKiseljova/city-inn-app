@@ -445,37 +445,83 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
 export { animationSlideElements };
 
 // Анимация абзацев на текстовых страницах
-const textItemsAnimation = (item, callback) => {
-  if (item) {
-    gsap.to(item, {
-      scrollTrigger: {
-        id: 'textItems',
-        trigger: item,
-        start: 'top center',
-        end: 'bottom center',
-        // markers: true,
-        onEnter: () => {
-          // console.log('enter');
-          callback();
-        },
-        onEnterBack: () => {
-          // console.log('onEnterBack');
-          callback();
-        },
-      },
-    });
+const textItemsAnimation = {
+  animation: null,
+  element: null,
+  init(item, callback) {
+    if (item && callback) {
+      this.element = item;
 
-    return true;
-  }
+      this.animation = gsap.to(item, {
+        scrollTrigger: {
+          id: 'textItems',
+          trigger: item,
+          start: 'top center',
+          end: 'bottom center',
+          // markers: true,
+          onEnter: () => {
+            // console.log('enter');
+            callback();
+          },
+          onEnterBack: () => {
+            // console.log('onEnterBack');
+            callback();
+          },
+        },
+      });
 
-  return false;
+      return true;
+    }
+
+    return false;
+  },
+  reset() {
+    if (this.animation) {
+      this.animation.pause(0).kill(true);
+    }
+
+    if (ScrollTrigger.getById('textItems')) {
+      ScrollTrigger.getById('textItems').kill(true);
+    }
+
+    if (this.element) {
+      this.element.classList.remove('active');
+    }
+  },
 };
+
+// const textItemsAnimation = (item, callback) => {
+//   if (item && callback) {
+//     gsap.to(item, {
+//       scrollTrigger: {
+//         id: 'textItems',
+//         trigger: item,
+//         start: 'top center',
+//         end: 'bottom center',
+//         // markers: true,
+//         onEnter: () => {
+//           // console.log('enter');
+//           callback();
+//         },
+//         onEnterBack: () => {
+//           // console.log('onEnterBack');
+//           callback();
+//         },
+//       },
+//     });
+
+//     return true;
+//   }
+
+//   return false;
+// };
 
 export { textItemsAnimation };
 
 const textNavPin = (trigger, pin) => {
   gsap.to(pin, {
     scrollTrigger: {
+      id: 'textNavPin',
       trigger: trigger,
       scrub: 0.3,
       // markers: true,
@@ -485,7 +531,11 @@ const textNavPin = (trigger, pin) => {
       //   console.log(self);
       // },
       onUpdate: (self) => {
-        pin.style.transform = `translateY(${(self.end - self.start) * self.progress}px)`;
+        const state = (self.end - self.start) * self.progress;
+
+        pin.style.transform = `translateY(${state}px)`;
+
+        // console.log(state, self.end - self.start);
       },
     },
   });

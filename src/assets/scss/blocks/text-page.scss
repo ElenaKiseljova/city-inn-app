@@ -116,7 +116,8 @@
         opacity: 1;
 
         h3,
-        p {
+        p,
+        div {
           opacity: 1;
 
           transform: translate(0, 0);
@@ -126,7 +127,8 @@
           transition: opacity 0.4s 0.4s, transform 0.3s 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        p {
+        p,
+        div {
           transition: opacity 0.4s 0.5s, transform 0.3s 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }
@@ -211,22 +213,27 @@
       text-transform: uppercase;
     }
 
-    p {
+    p,
+    div {
       @include font(14, 21, 400);
     }
 
     p+h3,
     h3+p,
+    div+h3,
+    h3+div,
     h3+h3 {
       margin-top: 40px;
     }
 
-    p+p {
+    p+p,
+    div+div {
       margin-top: 15px;
     }
 
     h3,
-    p {
+    p,
+    div {
       opacity: 0;
 
       transform: translate(20px, -10px);
@@ -236,7 +243,8 @@
       transition: opacity 0.4s 0.1s, transform 0.3s 0.1s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    p {
+    p,
+    div {
       transition: opacity 0.4s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
