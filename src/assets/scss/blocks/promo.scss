@@ -965,6 +965,14 @@
         --color-social: #{$starfit};
         --border-color-social: #{$starfit};
 
+        position: relative;
+
+        z-index: 4;
+
+        .promo__lang {
+          display: none;
+        }
+
         .social {
           flex-direction: row-reverse;
         }
