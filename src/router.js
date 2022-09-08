@@ -247,16 +247,24 @@ const router = createRouter({
       },
     },
   ],
-  scrollBehavior(to, _2, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH && scrollbar) {
-      scrollbar.setPosition(0, 0);
+      if (to.path !== from.path) {
+        scrollbar.setPosition(0, 0);
 
-      if (to.hash) {
-        setTimeout(() => {
+        if (to.hash) {
+          setTimeout(() => {
+            scrollbar.scrollIntoView(document.querySelector(to.hash), {
+              onlyScrollIfNeeded: true,
+            });
+          }, 600);
+        }
+      } else {
+        if (to.hash) {
           scrollbar.scrollIntoView(document.querySelector(to.hash), {
             onlyScrollIfNeeded: true,
           });
-        }, 600);
+        }
       }
     } else {
       if (to.hash) {

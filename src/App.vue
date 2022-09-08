@@ -2,6 +2,8 @@
 teleport(to='body')
   BaseSpinner.spinner--main(v-if='!appIsReady')
 
+  BaseScrollTopButton
+
   TheHeader(v-show='appIsReady')
 
 router-view(v-show='appIsReady', v-slot='slotProps')
@@ -21,12 +23,14 @@ import { reloader } from './assets/js/swipers';
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
 import BaseSpinner from './components/UI/BaseSpinner.vue';
+import BaseScrollTopButton from './components/UI/BaseScrollTopButton.vue';
 
 export default {
   components: {
     TheHeader,
     TheFooter,
     BaseSpinner,
+    BaseScrollTopButton,
   },
   computed: {
     ...mapGetters(['header', 'footer', 'page']),

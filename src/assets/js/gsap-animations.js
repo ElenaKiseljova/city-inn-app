@@ -492,6 +492,7 @@ const textItemsAnimation = {
 
 export { textItemsAnimation };
 
+// Закрепление навигации по текстовым страницам при скролле
 const textNavPin = {
   animation: null,
   element: null,
@@ -532,7 +533,6 @@ const textNavPin = {
     return false;
   },
   reset() {
-    console.log(this.animation, ScrollTrigger.getById('textNavPin'), this.element);
     if (this.animation) {
       this.animation.pause(0).kill(true);
     }
@@ -548,5 +548,54 @@ const textNavPin = {
 };
 
 export { textNavPin };
+
+// Scroll top
+const animationScrollTop = {
+  animation: null,
+  element: null,
+  trigger: document.body,
+  init(element) {
+    if (element) {
+      const trigger = this.trigger;
+
+      this.element = element;
+
+      this.animation = gsap.to(element, {
+        scrollTrigger: {
+          id: 'scrollTopButton',
+          trigger: trigger,
+          start: '200% top',
+          end: 9999999,
+          // markers: true,
+          onToggle: () => {
+            element?.classList.toggle('active');
+
+            // console.log('scrollTopButton');
+          },
+        },
+      });
+
+      return true;
+    }
+
+    return false;
+  },
+  reset() {
+    if (this.animation) {
+      this.animation.pause(0).kill(true);
+    }
+
+    if (ScrollTrigger.getById('scrollTopButton')) {
+      ScrollTrigger.getById('scrollTopButton').kill(true);
+    }
+
+    this.element?.classList.remove('active');
+  },
+  status() {
+    console.log(this.element, this.trigger, this.animation, ScrollTrigger.getById('scrollTopButton'));
+  }
+};
+
+export { animationScrollTop };
 
 
