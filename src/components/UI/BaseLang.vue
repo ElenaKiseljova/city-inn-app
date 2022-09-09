@@ -20,9 +20,11 @@ export default {
     ...mapGetters(['lang']),
     langToggle() {
       const path = this.$route.path;
+      const uaPath =
+        path === '/en' ? path.replace('/en', '/') : path.replace('/en', '');
 
       return {
-        path: this.lang === 'uk' ? `/en${path}` : path.replace('/en', ''),
+        path: this.lang === 'uk' ? `/en${path}` : uaPath,
         text: this.lang === 'uk' ? 'en' : 'ua',
       };
     },
