@@ -5,6 +5,8 @@ export default {
     context.commit('setPageName', payload);
   },
   async setNextPage(context, payload) {
+    const curLang = payload.curLang;
+
     let path = payload.url;
 
     path = path === '/'
@@ -25,74 +27,120 @@ export default {
 
     url = `${path}`;
 
-    const responseData = await getFetchData(url);
+    const responsePageData = await getFetchData(url);
 
-    if (responseData) {
-      context.commit('setNextPage', responseData);
+    if (responsePageData) {
+      const lang = responsePageData.content.language === 'ua' ? 'uk' : responsePageData.content.language;
 
-      return true;
+      // Update Header
+      let responseHeaderData = await context.getters.header;
+      if (!responseHeaderData || curLang !== lang) {
+        responseHeaderData = await context.dispatch('setNewHeader', { lang: lang });
+      }
+
+      // Update Footer
+      let responseFooterData = await context.getters.footer;
+      if (!responseFooterData || curLang !== lang) {
+        responseFooterData = await context.dispatch('setNewFooter', { lang: lang });
+      }
+
+      // Update Contacts
+      let responseConatctsData = await context.getters.contacts;
+      if (!responseConatctsData || curLang !== lang) {
+        responseConatctsData = await context.dispatch('setNewContacts', { lang: lang });
+      }
+
+      context.commit('setNextPage', responsePageData);
+
+      if (responseHeaderData && responseFooterData && responseConatctsData) {
+        console.log(lang, curLang, responseHeaderData, responseFooterData, responseConatctsData);
+
+        return true;
+      }
     }
 
     return false;
   },
   async setPage(context, payload) {
-    const path = payload.url;
-    const curLang = payload.curLang;
-    const pageName = payload.pageName;
+    try {
+      const curLang = payload.curLang;
+      const path = payload.url;
+      const pageName = payload.pageName;
 
-    const pageObj = context.getters.nextPage;
+      const pageObj = await context.getters.nextPage;
 
-    if (!pageObj) {
-      return;
+      if (!pageObj) {
+        const message = `Error: No page data`;
+
+        throw new Error(message);
+      }
+
+      const lang = pageObj.content.language === 'ua' ? 'uk' : pageObj.content.language;
+
+      // Update meta
+      const oldMeta = await context.getters.meta.items;
+      const newMeta = {
+        lang: lang,
+        title: pageObj.content.seoTitle,
+        items: [
+          ...oldMeta,
+          {
+            name: 'description',
+            content: pageObj.content.seoDescription,
+          },
+          {
+            property: 'og:title',
+            content: pageObj.content.seoTitle,
+          },
+          {
+            property: 'og:url',
+            content: `${window.location.origin}${path}`,
+          },
+        ],
+      };
+
+      await context.dispatch('setMeta', newMeta);
+
+      // Update lang
+      await context.dispatch('setLang', lang);
+
+      // Update Header
+      const header = await context.getters.header;
+      if (!header || curLang !== lang) {
+        const newHeader = await context.getters.newHeader;
+
+        if (newHeader) {
+          await context.dispatch('setHeader', newHeader);
+        }
+      }
+
+      // Update Footer
+      const footer = await context.getters.footer;
+      if (!footer || curLang !== lang) {
+        const newFooter = await context.getters.newFooter;
+
+        if (newFooter) {
+          await context.dispatch('setFooter', newFooter);
+        }
+      }
+
+      // Update Contacts
+      const contacts = await context.getters.contacts;
+      if (!contacts || curLang !== lang) {
+        const newContacts = await context.getters.newContacts;
+
+        if (newContacts) {
+          await context.dispatch('setContacts', newContacts);
+        }
+      }
+
+      // Update pageName
+      await context.dispatch('setPageName', pageName);
+
+      // Update page
+      context.commit('setPage', pageObj);
+    } catch (error) {
+      console.error(error);
     }
-
-    // Update meta
-    const newMeta = {
-      lang: pageObj.content.language,
-      title: pageObj.content.seoTitle,
-      items: [
-        ...context.getters.meta.items,
-        {
-          name: 'description',
-          content: pageObj.content.seoDescription,
-        },
-        {
-          property: 'og:title',
-          content: pageObj.content.seoTitle,
-        },
-        {
-          property: 'og:url',
-          content: `${window.location.origin}${path}`,
-        },
-      ],
-    };
-
-    await context.dispatch('setMeta', newMeta);
-
-    // Update lang
-    const lang = pageObj.content.language;
-
-    await context.dispatch('setLang', lang);
-
-    // Update Header
-    if (!context.getters.header || curLang !== context.getters.lang) {
-      await context.dispatch('setHeader', { lang: context.getters.lang });
-    }
-
-    // Update Footer
-    if (!context.getters.footer || curLang !== context.getters.lang) {
-      await context.dispatch('setFooter', { lang: context.getters.lang });
-    }
-
-    // Update Contacts
-    if (!context.getters.contacts || curLang !== context.getters.lang) {
-      await context.dispatch('setContacts', { lang: context.getters.lang });
-    }
-
-    // Update pageName
-    await context.dispatch('setPageName', pageName);
-
-    // Set page
-    context.commit('setPage', pageObj);
   },
 };

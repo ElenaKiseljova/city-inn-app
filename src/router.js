@@ -294,7 +294,7 @@ router.beforeEach(async (to, _, next) => {
 
   curLang = store.getters.lang;
 
-  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path });
+  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path, curLang: curLang });
 
   if (nextPageIsSet) {
     next();

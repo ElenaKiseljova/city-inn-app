@@ -6,6 +6,7 @@ export default {
   namespaced: false,
   state() {
     return {
+      newContacts: null,
       contacts: null,
     };
   },

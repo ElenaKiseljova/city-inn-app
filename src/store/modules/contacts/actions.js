@@ -1,12 +1,12 @@
 import getFetchData from "@/assets/js/getFetchData";
 
 export default {
-  async setContacts(context, payload) {
+  async setNewContacts(context, payload) {
     let url = '';
     let lang = payload.lang;
     let path = '/contacts';
 
-    if (lang === 'uk') {
+    if (lang === 'uk' || lang === 'ua') {
       lang = '';
     } else {
       lang = `/${lang}`;
@@ -17,7 +17,14 @@ export default {
     const responseData = await getFetchData(url);
 
     if (responseData) {
-      context.commit('setContacts', responseData);
+      context.commit('setNewContacts', responseData);
+
+      return true;
     }
+
+    return false;
+  },
+  async setContacts(context, payload) {
+    await context.commit('setContacts', payload);
   },
 };
