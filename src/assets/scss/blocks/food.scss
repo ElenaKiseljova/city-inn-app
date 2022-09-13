@@ -8,18 +8,18 @@
   @media screen and (min-width: $tablet) {
     overflow: visible;
 
-    &--advantages,
-    &--menu,
-    &--approach-conference,
-    &--approach-group,
-    &--supply {
-      transform: translateX(30vw);
-    }
+    // &--advantages,
+    // &--menu,
+    // &--approach-conference,
+    // &--approach-group,
+    // &--supply {
+    //   transform: translateX(30vw);
+    // }
 
-    &--breakfast,
-    &--why-conference {
-      transform: translateX(-30vw);
-    }
+    // &--breakfast,
+    // &--why-conference {
+    //   transform: translateX(-30vw);
+    // }
 
     &--approach-conference {
       position: relative;
@@ -33,10 +33,10 @@
 
     overflow: visible;
 
-    &--breakfast,
-    &--why-conference {
-      transform: translateX(30vw);
-    }
+    // &--breakfast,
+    // &--why-conference {
+    //   transform: translateX(30vw);
+    // }
 
     &--breakfast,
     &--supply {
@@ -162,14 +162,21 @@
       width: calc(100% - 30px);
 
       margin-top: 0;
-
-      transform: translateY(-100%);
     }
 
     &--supply {
       bottom: 36px;
 
       margin: 0;
+    }
+
+    @media screen and (max-width: calc(#{$tablet} - 1px)) {
+
+      &--approach-conference,
+      &--why-conference,
+      &--approach-group {
+        transform: translateY(-100%);
+      }
     }
 
     @media screen and (min-width: $mobile) {
@@ -184,6 +191,8 @@
     }
 
     @media screen and (min-width: $tablet) {
+      --opacity: 0.8;
+
       width: fit-content;
       min-width: 538px;
 
@@ -191,8 +200,6 @@
       margin-right: calc((114px + 100%) - 538px);
       margin-bottom: 60px;
       margin-left: -114px;
-
-      opacity: 0.8;
 
       &--mobile {
         display: none;
@@ -209,31 +216,29 @@
 
       &--breakfast,
       &--supply {
+        --opacity: 0.6;
+
         margin-right: calc((100% + 102px) - 538px);
         margin-bottom: 47px;
         margin-left: -102px;
-
-        opacity: 0.6;
       }
 
       &--advantages {
-        margin-bottom: 19px;
+        --opacity: 1;
 
-        opacity: 1;
+        margin-bottom: 19px;
       }
 
       &--approach-conference,
       &--why-conference,
       &--approach-group {
+        --opacity: 1;
+
         min-width: 688px;
 
         margin-right: calc(100% - 688px);
         margin-bottom: 35px;
         margin-left: 0;
-
-        opacity: 1;
-
-        transform: translateY(0);
       }
 
       &--supply {
@@ -242,8 +247,6 @@
         margin-right: calc(100% - 538px);
         margin-bottom: 44px;
         margin-left: 0;
-
-        transform: translateY(0);
       }
 
       &--why-conference {
@@ -260,13 +263,13 @@
     }
 
     @media screen and (min-width: $desktop) {
+      --opacity: 0.6;
+
       min-width: 720px;
 
       margin-right: calc(100% - 720px);
       margin-bottom: 100px;
       margin-left: 0;
-
-      opacity: 0.6;
 
       &--desktop {
         margin-right: calc(100% - 720px);
@@ -276,7 +279,7 @@
       &--advantages,
       &--approach-group,
       &--supply {
-        opacity: 1;
+        --opacity: 1;
       }
 
       &--breakfast,
@@ -288,9 +291,9 @@
       }
 
       &--breakfast {
-        margin-bottom: 48px;
+        --opacity: 0.8;
 
-        opacity: 0.8;
+        margin-bottom: 48px;
       }
 
       &--advantages {

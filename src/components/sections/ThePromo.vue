@@ -79,6 +79,7 @@ section#promo(
 import { mapGetters } from 'vuex';
 
 import {
+  promoBgAnimation,
   promoTitleAndTextAnimation,
   promoSocialAnimation,
   animationThreeElements,
@@ -112,7 +113,8 @@ export default {
   },
   data() {
     return {
-      promoTitleAndTextAnimation: false,
+      promoBgAnimationIsSet: false,
+      promoTitleAndTextAnimationIsSet: false,
       promoSocialAnimationIsSet: false,
       animationThreeElementsIsSet: false,
     };
@@ -182,12 +184,13 @@ export default {
 
     await animationThreeElements.reset();
   },
-  unmounted() {
-    // animationThreeElements.status();
-  },
   methods: {
     setPromoAnimation() {
       if (this.$refs.promo) {
+        if (!this.promoBgAnimationIsSet) {
+          this.promoBgAnimationIsSet = promoBgAnimation(this.$refs.promo);
+        }
+
         if (!this.promoSocialAnimationIsSet) {
           this.promoSocialAnimationIsSet = promoSocialAnimation.init(
             this.$refs.promo
@@ -201,7 +204,7 @@ export default {
         }
 
         if (!this.promoTitleAndTextAnimationIsSet) {
-          this.promoTitleAndTextAnimation = promoTitleAndTextAnimation(
+          this.promoTitleAndTextAnimationIsSet = promoTitleAndTextAnimation(
             this.$refs.promo
           );
         }

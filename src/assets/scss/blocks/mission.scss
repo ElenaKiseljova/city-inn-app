@@ -38,12 +38,6 @@
 
     margin-bottom: 40px;
 
-    @media screen and (min-width: $tablet) {
-      transform: translate(-20px, -20px);
-
-      opacity: 0;
-    }
-
     @media screen and (min-width: $desktop) {
       width: 100%;
     }

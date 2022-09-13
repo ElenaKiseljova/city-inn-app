@@ -1,20 +1,20 @@
 .gym {
   @extend %w100;
 
-  @media screen and (min-width: $tablet) {
-    &--group {
-      transform: translateX(30vw);
-    }
-  }
+  // @media screen and (min-width: $tablet) {
+  //   &--group {
+  //     transform: translateX(30vw);
+  //   }
+  // }
 
   @media screen and (min-width: $desktop) {
     &--group {
       padding: 177px 0 183px;
     }
 
-    &--starfit {
-      transform: translateX(-30vw);
-    }
+    // &--starfit {
+    //   transform: translateX(-30vw);
+    // }
   }
 
   &__container {
@@ -64,6 +64,12 @@
     &--group {
       top: auto;
       bottom: 41px;
+    }
+
+    @media screen and (max-width: calc(#{$desktop} - 1px)) {
+      opacity: 1;
+
+      transform: none;
     }
 
     @media screen and (min-width: $tablet) {

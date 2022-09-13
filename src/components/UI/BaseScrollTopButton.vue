@@ -21,8 +21,8 @@ export default {
   updated() {
     this.setAnimationScrollTop();
   },
-  unmounted() {
-    animationScrollTop.reset();
+  async beforeUnmount() {
+    await animationScrollTop.reset();
   },
   methods: {
     setAnimationScrollTop() {

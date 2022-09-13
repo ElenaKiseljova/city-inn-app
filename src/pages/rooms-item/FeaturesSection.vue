@@ -63,8 +63,8 @@ export default {
   updated() {
     this.setServiceAnimation();
   },
-  unmounted() {
-    serviceAnimation.reset();
+  async beforeUnmount() {
+    await serviceAnimation.reset();
   },
   methods: {
     setServiceAnimation() {

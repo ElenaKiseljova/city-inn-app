@@ -45,6 +45,8 @@
     @media screen and (min-width: $tablet) {
       opacity: 0;
 
+      transform: scale(0.1);
+
       transition: transform 0.5s linear;
 
       &--last {
@@ -52,15 +54,15 @@
 
         height: fit-content;
 
-        transform: translateY(50px);
+        // transform: translateY(50px);
       }
 
       &--odd {
-        transform: translateX(-20vw);
+        // transform: translateX(-20vw);
       }
 
       &--even {
-        transform: translateX(20vw);
+        // transform: translateX(20vw);
       }
     }
 

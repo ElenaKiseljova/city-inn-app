@@ -3,14 +3,14 @@
 
   @extend %w100;
 
-  @media screen and (min-width: $tablet) {
-    transform: translateX(-30vw);
-  }
+  // @media screen and (min-width: $tablet) {
+  //   transform: translateX(-30vw);
+  // }
 
   @media screen and (min-width: $desktop) {
     padding: 131px 0 0;
 
-    transform: translateX(30vw);
+    // transform: translateX(30vw);
   }
 
   &__title {
@@ -37,12 +37,12 @@
     }
 
     @media screen and (min-width: $desktop) {
+      --opacity: 0.8;
+
       top: 185px;
       left: calc((99 / 1440) * 100vw);
 
       width: fit-content;
-
-      opacity: 0.8;
     }
   }
 

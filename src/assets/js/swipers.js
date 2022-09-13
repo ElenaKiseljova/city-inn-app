@@ -140,6 +140,8 @@ const swiperInit = (swiperItem, attr = {}) => {
   // Types slider
   if (swiperItem.classList.contains('types__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+      swiperArgs.loop = true;
+      swiperArgs.slidesPerView = 3;
       swiperArgs.spaceBetween = 40;
     }
   }
@@ -148,6 +150,8 @@ const swiperInit = (swiperItem, attr = {}) => {
   if (swiperItem.classList.contains('team__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 51;
+      swiperArgs.slidesPerView = 3;
+      swiperArgs.loop = true;
     }
   }
 

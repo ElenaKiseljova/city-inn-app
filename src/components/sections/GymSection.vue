@@ -9,7 +9,8 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner gym__title gym__title--mobile gym__title--${pageName}`'
+        :class='`title-inner gym__title gym__title--mobile gym__title--${pageName}`',
+        ref='title'
       )
 
       BaseSlider(
@@ -36,7 +37,8 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner gym__title gym__title--desktop gym__title--${pageName}`'
+        :class='`title-inner gym__title gym__title--desktop gym__title--${pageName}`',
+        ref='title'
       )
 
       h3(
@@ -76,6 +78,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -97,7 +100,7 @@ export default {
     BaseButton,
     BaseWorktime,
   },
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -23,14 +23,6 @@
     }
   }
 
-  &__title {
-    @media screen and (min-width: $tablet) {
-      opacity: 0;
-
-      transform: translate(20px, 20px);
-    }
-  }
-
   &__slider-container {
     @extend %w100;
     min-height: 200vw;

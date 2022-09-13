@@ -31,6 +31,8 @@
 
       height: fit-content;
 
+      overflow: visible;
+
       pointer-events: all;
     }
 
@@ -108,7 +110,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      width: 360px;
+      width: calc((360px * 3) + (40px * 2));
 
       margin-left: 0;
       margin-right: auto;
@@ -238,6 +240,14 @@
         transform: none;
 
         transition: none;
+      }
+
+      &.swiper-slide-duplicate {
+        .service {
+          opacity: 1 !important;
+
+          transform: none !important;
+        }
       }
     }
   }

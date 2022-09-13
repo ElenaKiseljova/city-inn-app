@@ -50,9 +50,9 @@ export default {
   updated() {
     this.setScripts();
   },
-  unmounted() {
-    textItemsAnimation.reset();
-    textNavPin.reset();
+  async beforeUnmount() {
+    await textItemsAnimation.reset();
+    await textNavPin.reset();
   },
   methods: {
     setScripts() {

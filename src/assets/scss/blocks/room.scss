@@ -52,8 +52,6 @@
 
       &--desktop {
         display: block;
-
-        opacity: 0;
       }
 
       &--mobile {
@@ -64,16 +62,12 @@
         margin-right: calc((100% + 232px) - 536px);
         margin-bottom: 92px;
         margin-left: -232px;
-
-        transform: translate(20px, 20px);
       }
 
       &--even {
         margin-right: calc(100% - 536px);
         margin-bottom: 52px;
         margin-left: 0;
-
-        transform: translate(-20px, -20px);
       }
     }
 
@@ -294,10 +288,6 @@
 
     @media screen and (min-width: $tablet) {
       min-width: 200px;
-
-      // transform: translate(20px, 20px);
-
-      // opacity: 0;
 
       &:not(:last-of-type) {
         margin-bottom: 0;

@@ -1,7 +1,7 @@
 <template lang="pug">
-section.banquet(v-if='page && pageName && sections && section')
+section.banquet(v-if='page && pageName && sections && section', ref='section')
   .banquet__container.container
-    h2.title-inner.banquet__title(v-if='title', v-html='title')
+    h2.title-inner.banquet__title(v-if='title', v-html='title', ref='title')
 
     BaseSlider(v-if='images && images.length > 0', sectionName='banquet')
       BaseSlide(v-for='image in images', sectionName='banquet')
@@ -18,6 +18,7 @@ section.banquet(v-if='page && pageName && sections && section')
 import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
+import titleAnimation from '../../mixins/titleAnimation';
 
 import BaseSlider from '../../components/UI/BaseSlider.vue';
 import BaseSlide from '../../components/UI/BaseSlide.vue';
@@ -33,7 +34,7 @@ export default {
     BasePagination,
     BaseImage,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

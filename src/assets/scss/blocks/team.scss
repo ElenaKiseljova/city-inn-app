@@ -174,7 +174,7 @@
     height: fit-content;
 
     @media screen and (min-width: $desktop) {
-      width: 360px;
+      width: calc((360px * 3) + (51px * 2));
 
       margin: 0 auto 0 0;
 

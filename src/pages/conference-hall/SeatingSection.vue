@@ -1,6 +1,6 @@
 <template lang="pug">
-section.seating(v-if='page && sections && section')
-  h2.title-inner.seating__title(v-if='title', v-html='title')
+section.seating(v-if='page && sections && section', ref='section')
+  h2.title-inner.seating__title(v-if='title', v-html='title', ref='title')
 
   BasePagination(sectionName='seating')
 
@@ -43,6 +43,7 @@ section.seating(v-if='page && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -63,7 +64,7 @@ export default {
     BaseButton,
     BaseServices,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

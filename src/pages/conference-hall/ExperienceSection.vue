@@ -1,7 +1,7 @@
 <template lang="pug">
-section.experience(v-if='page && sections && section && items')
+section.experience(v-if='page && sections && section && items', ref='section')
   .experience__container.container
-    h2.title-inner.experience__title(v-if='title', v-html='title')
+    h2.title-inner.experience__title(v-if='title', v-html='title', ref='title')
 
     ul.experience__list(v-if='items.length > 0', ref='experienceList')
       li.experience__item(v-for='item in items')
@@ -21,9 +21,10 @@ import { experienceAnimation } from '../../assets/js/gsap-animations';
 import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
+import titleAnimation from '../../mixins/titleAnimation';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   data() {
     return {
       experienceAnimationIsSet: false,

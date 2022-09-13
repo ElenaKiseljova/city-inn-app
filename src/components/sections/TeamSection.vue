@@ -1,5 +1,8 @@
 <template lang="pug">
-section.team(v-if='page && pageName && sections && section && slides')
+section.team(
+  v-if='page && pageName && sections && section && slides',
+  ref='section'
+)
   .team__container.container
     header.team__header
       p(
@@ -8,7 +11,7 @@ section.team(v-if='page && pageName && sections && section && slides')
         v-html='subTitle'
       )
 
-      h2.title-inner.team__title(v-if='title', v-html='title')
+      h2.title-inner.team__title(v-if='title', v-html='title', ref='title')
 
       BaseNavigation(sectionName='team', :modificator='pageName')
       BasePagination(sectionName='team', :modificator='pageName')
@@ -49,6 +52,7 @@ section.team(v-if='page && pageName && sections && section && slides')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BaseSlider from '../UI/BaseSlider.vue';
@@ -65,7 +69,7 @@ export default {
     BaseNavigation,
     BaseImage,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

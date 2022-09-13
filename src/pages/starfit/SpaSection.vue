@@ -49,7 +49,11 @@ section.spa(v-if='page && sections && section', ref='section')
     BasePagination(sectionName='spa', :modificator='pageName')
 
   .spa__right
-    h2.title-inner.spa__title.spa__title--desktop(v-if='title', v-html='title')
+    h2.title-inner.spa__title.spa__title--desktop(
+      v-if='title',
+      v-html='title',
+      ref='title'
+    )
 
     p.spa__text.spa__text--top(v-if='textTop', v-html='textTop')
 
@@ -86,6 +90,7 @@ section.spa(v-if='page && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -107,7 +112,7 @@ export default {
     BaseServices,
     BaseWorktime,
   },
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

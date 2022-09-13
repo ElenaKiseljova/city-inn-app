@@ -1,8 +1,8 @@
 <template lang="pug">
-section.types(v-if='page && pageName && sections && section', ref='types')
+section.types(v-if='page && pageName && sections && section', ref='section')
   .types__container.container
     header.types__header
-      h2.title-inner.types__title(v-if='title', v-html='title')
+      h2.title-inner.types__title(v-if='title', v-html='title', ref='title')
 
       BasePagination(sectionName='types')
 
@@ -57,6 +57,7 @@ import { mapGetters } from 'vuex';
 
 import { typesItemsAnimation } from '../../assets/js/gsap-animations';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
 import BasePagination from '@/components/UI/BasePagination.vue';
@@ -77,7 +78,7 @@ export default {
     BaseButton,
     BaseServices,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   data() {
     return {
       typesItemsAnimationIsSet: false,
@@ -106,14 +107,14 @@ export default {
   updated() {
     this.setTypesItemsAnimation();
   },
-  unmounted() {
-    typesItemsAnimation.reset();
+  async beforeUnmount() {
+    await typesItemsAnimation.reset();
   },
   methods: {
     setTypesItemsAnimation() {
-      if (this.$refs.types && !this.typesItemsAnimationIsSet) {
+      if (this.$refs.section && !this.typesItemsAnimationIsSet) {
         this.typesItemsAnimationIsSet = typesItemsAnimation.init(
-          this.$refs.types
+          this.$refs.section
         );
       }
     },

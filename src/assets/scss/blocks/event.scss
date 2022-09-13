@@ -11,17 +11,17 @@
   @media screen and (min-width: $tablet) {
     overflow: visible;
 
-    &--around,
-    &--event,
-    &--locations,
-    &--smart-rooms,
+    // &--around,
+    // &--event,
+    // &--locations,
+    // &--smart-rooms,
     &--halls {
       transform: translateX(-30vw);
     }
 
-    &--attraction,
-    &--kitchen,
-    &--saunas,
+    // &--attraction,
+    // &--kitchen,
+    // &--saunas,
     &--coffee {
       transform: translateX(30vw);
     }
@@ -32,12 +32,12 @@
 
     overflow: visible;
 
-    &--attraction {
-      transform: translateX(30vw);
-    }
+    // &--attraction {
+    //   transform: translateX(30vw);
+    // }
 
-    &--kitchen,
-    &--around,
+    // &--kitchen,
+    // &--around,
     &--coffee {
       transform: translateX(-30vw);
     }
@@ -175,8 +175,6 @@
       top: calc(100vw - 34px);
 
       margin: 0;
-
-      transform: translateY(-100%);
     }
 
     &--smart-rooms {
@@ -184,7 +182,15 @@
       bottom: 33px;
     }
 
+    @media screen and (max-width: calc(#{$tablet} - 1px)) {
+      &--locations {
+        transform: translateY(-100%);
+      }
+    }
+
     @media screen and (min-width: $tablet) {
+      --opacity: 0.8;
+
       width: fit-content;
       min-width: 538px;
 
@@ -192,8 +198,6 @@
       margin-right: calc((114px + 100%) - 538px);
       margin-bottom: 60px;
       margin-left: -114px;
-
-      opacity: 0.8;
 
       &--mobile {
         display: none;
@@ -209,12 +213,12 @@
       }
 
       &--kitchen {
+        --opacity: 0.6;
+
         margin-top: 0;
         margin-right: calc((100% + 9px) - 538px);
         margin-bottom: 47px;
         margin-left: -9px;
-
-        opacity: 0.6;
 
         br {
           display: none;
@@ -223,13 +227,12 @@
 
       &--around,
       &--attraction {
+        --opacity: 1;
         --color-page: var(--light-yellow);
 
         min-width: 617px;
 
         margin-top: 0;
-
-        opacity: 1;
       }
 
       &--around {
@@ -261,8 +264,6 @@
         margin-right: calc((100% + 232px) - 536px);
         margin-bottom: 96px;
         margin-left: -232px;
-
-        transform: translateY(0);
       }
 
       &--smart-rooms {
@@ -272,16 +273,21 @@
         margin-bottom: 51px;
         margin-left: -377px;
       }
+
+      &--coffee,
+      &--hallss {
+        transform: none;
+      }
     }
 
     @media screen and (min-width: $desktop) {
+      --opacity: 0.6;
+
       min-width: 720px;
 
       margin-right: calc(100% - 720px);
       margin-bottom: 100px;
       margin-left: 0;
-
-      opacity: 0.6;
 
       &--desktop {
         margin-top: -70px;
@@ -291,21 +297,22 @@
       }
 
       &--kitchen {
+        --opacity: 0.8;
+
         min-width: 784px;
 
         margin-top: 0;
         margin-right: calc((100% + 106px) - 784px);
         margin-bottom: 235px;
         margin-left: -106px;
-
-        opacity: 0.8;
       }
 
       &--around,
       &--attraction,
       &--smart-rooms,
-      &--halls {
-        opacity: 1;
+      &--halls,
+      &--saunas {
+        --opacity: 1;
       }
 
       &--around {
@@ -335,19 +342,17 @@
         margin-left: 0;
         margin-right: calc(100% - 719px);
         margin-bottom: 80px;
-
-        opacity: 1;
       }
 
       &--locations {
+        --opacity: 0.8;
+
         min-width: 784px;
 
         margin-top: 0;
         margin-right: calc((100% + 64px) - 784px);
         margin-bottom: 235px;
         margin-left: -64px;
-
-        opacity: 0.8;
       }
 
       &--smart-rooms {
@@ -442,6 +447,16 @@
         margin-left: -265px;
 
         letter-spacing: normal;
+
+        opacity: 1;
+
+        transform: none;
+      }
+
+      &--coffee {
+        opacity: 0.8;
+
+        transform: none;
       }
     }
 
@@ -458,10 +473,6 @@
 
       &--halls {
         min-width: 1128px;
-      }
-
-      &--coffee {
-        opacity: 0.8;
       }
     }
   }
@@ -736,7 +747,7 @@
 
         .event__title-image--coffee,
         .event__title-image--halls {
-          opacity: 1;
+          opacity: 0.8;
 
           transform: translateY(0);
 
@@ -822,7 +833,7 @@
 
           column-gap: 49px;
 
-          padding: 435px 48px 66px 60px;
+          padding: 0;
         }
 
         // &.event__slide--kitchen {
@@ -973,6 +984,10 @@
 
       &--halls {
         padding: 454px 11px 32px 69px;
+      }
+
+      &--coffee {
+        padding: 435px 48px 66px 60px;
       }
     }
   }

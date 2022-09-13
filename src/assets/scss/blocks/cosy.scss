@@ -1,11 +1,11 @@
 .cosy {
   @extend %w100;
 
-  @media screen and (min-width: $tablet) {
-    overflow: visible;
+  // @media screen and (min-width: $tablet) {
+  //   overflow: visible;
 
-    transform: translateX(-30vw);
-  }
+  //   transform: translateX(-30vw);
+  // }
 
   &__container {
     position: relative;
@@ -52,6 +52,8 @@
     }
 
     @media screen and (min-width: $tablet) {
+      --opacity: 0.8;
+
       width: fit-content;
       min-width: 538px;
 
@@ -59,8 +61,6 @@
       margin-right: calc((114px + 100%) - 538px);
       margin-bottom: 60px;
       margin-left: -114px;
-
-      opacity: 0.8;
 
       &--mobile {
         display: none;
@@ -72,13 +72,13 @@
     }
 
     @media screen and (min-width: $desktop) {
+      --opacity: 0.6;
+
       min-width: 720px;
 
       margin-right: calc(100% - 720px);
       margin-bottom: 100px;
       margin-left: 0;
-
-      opacity: 0.6;
     }
   }
 

@@ -62,7 +62,8 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner event__title event__title--desktop event__title--${sectionName}`'
+        :class='`title-inner event__title event__title--desktop event__title--${sectionName}`',
+        ref='title'
       )
 
       BaseNavigation(sectionName='event', :modificator='sectionName')
@@ -197,6 +198,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -222,7 +224,7 @@ export default {
     BaseButton,
     BasePrice,
   },
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   props: {
     sectionName: {
       type: String,

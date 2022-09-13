@@ -151,7 +151,7 @@ export default {
   methods: {
     setAnimations() {
       if (this.$refs.title1 && this.$refs.title2 && this.$refs.section) {
-        if (!this.sectionTitleAnimationIsSet && this.sectionName !== 'why') {
+        if (!this.sectionTitleAnimationIsSet) {
           let title = this.$refs.title1;
 
           if (
@@ -167,7 +167,7 @@ export default {
           );
         }
 
-        if (!this.sectionAnimationIsSet && this.sectionName === 'why') {
+        if (!this.sectionAnimationIsSet) {
           this.sectionAnimationIsSet = sectionAnimation(
             this.$refs.section,
             this.$refs.section

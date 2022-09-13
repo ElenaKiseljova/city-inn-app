@@ -29,7 +29,8 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
     .cosy__bottom
       h2.title-inner.cosy__title.cosy__title--desktop(
         v-if='title',
-        v-html='title'
+        v-html='title',
+        ref='title'
       )
 
       .cosy__content
@@ -43,6 +44,7 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -60,7 +62,7 @@ export default {
     BaseNavigation,
     BaseImage,
   },
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

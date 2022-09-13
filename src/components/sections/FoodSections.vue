@@ -37,7 +37,8 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner food__title food__title--desktop food__title--${sectionName}`'
+        :class='`title-inner food__title food__title--desktop food__title--${sectionName}`',
+        ref='title'
       )
 
       p.food__subtitle(v-if='subTitle', v-html='subTitle')
@@ -108,6 +109,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import titleAnimation from '../../mixins/titleAnimation';
 import sectionAnimation from '../../mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
 
@@ -120,7 +122,7 @@ import BaseButton from '../UI/BaseButton.vue';
 import BaseWorktime from '../UI/BaseWorktime.vue';
 
 export default {
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   props: {
     sectionName: {
       type: String,

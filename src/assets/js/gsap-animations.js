@@ -42,7 +42,7 @@ export { scrollbar };
  * Аниаммция элементов списков по триггеру: init/reset
  *  
  */
-const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null) => {
+const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null, scrub = 1) => {
   if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
     scrollTriggerId = scrollTriggerId ? `${scrollTriggerId}-${new Date().getTime()}` : `scrollTriggerId-${new Date().getTime()}`;
 
@@ -55,6 +55,7 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
       ease: 'power3.inOut',
       scrollTrigger: {
         id: scrollTriggerId,
+        scrub: scrub,
         trigger: trigerElement,
         // markers: true,
         start: 'top bottom',
@@ -72,9 +73,10 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
 };
 
 class Animation {
-  constructor(selectorItem, scrollTriggerId = null) {
+  constructor(selectorItem, scrollTriggerId = null, scrub = 1) {
     this.selectorItem = selectorItem;
     this.scrollTriggerId = scrollTriggerId;
+    this.scrub = scrub;
   }
 
   static trigger = null;
@@ -88,7 +90,7 @@ class Animation {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
       this.triggerInit = trigger;
 
-      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId);
+      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId, this.scrub);
 
       this.animationInit = response.animation;
       this.scrollTriggerIdInit = response.scrollTriggerId;
@@ -142,7 +144,7 @@ const contactsAnimation = new Animation('.contacts__item', 'contacts');
 export { contactsAnimation };
 
 //.page-footer
-const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer');
+const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer', null);
 
 export { pageFooterAnimation };
 
@@ -152,7 +154,7 @@ const serviceAnimation = new Animation('.service', 'services');
 export { serviceAnimation };
 
 //.promo__social
-const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item', 'promoSocial');
+const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item', 'promoSocial', null);
 
 export { promoSocialAnimation };
 
@@ -162,9 +164,39 @@ const typesItemsAnimation = new Animation('.types__slide', 'types');
 export { typesItemsAnimation };
 
 //.cards
-const cardsItemsAnimation = new Animation('.cards__item', 'cards');
+// const cardsItemsAnimation = new Animation('.cards__item', 'cards');
 
-export { cardsItemsAnimation };
+// export { cardsItemsAnimation };
+const cardsAnimation = (trigger) => {
+  if (DEVICE_WIDTH >= TABLET_WIDTH) {
+    const cards = trigger?.querySelectorAll('.cards__item');
+
+    if (cards && cards.length > 0) {
+      gsap.to(cards, {
+        opacity: 1,
+        scale: 1,
+        transformOrigin: 'center',
+        duration: 1,
+        ease: 'Power1.easeIn',
+        stagger: 0.5,
+        scrollTrigger: {
+          trigger: trigger,
+          // markers: true,
+          // scrub: 1,
+          start: 'top 70%',
+          end: 'bottom center',
+        },
+      });
+
+
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export { cardsAnimation };
 
 
 // Experiences
@@ -220,18 +252,20 @@ export { experienceAnimation };
 const sectionTitleAnimation = (title, trigger) => {
   if (title && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
     gsap.to(title, {
-      x: 0,
-      y: 0,
-      opacity: 1,
+      // x: 0,
+      // y: 0,
+      // opacity: 1,
       duration: 1,
-      stagger: 0.2,
       ease: 'power3.inOut',
       scrollTrigger: {
         trigger: trigger,
         // markers: true,
-        // scrub: 1,
+        scrub: 1,
         start: 'top 70%',
         end: 'bottom center',
+        onToggle: () => {
+          title.classList.toggle('active');
+        },
       },
     });
 
@@ -368,6 +402,39 @@ const promoTitleAndTextAnimation = (trigger) => {
 };
 
 export { promoTitleAndTextAnimation };
+
+
+/**
+     * Анимация фоновой картинки
+     */
+//.promo__img | .promo
+const promoBgAnimation = (trigger) => {
+  if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    const element = trigger.querySelector('.promo__picture');
+
+    if (element) {
+      gsap.to(element, {
+        scale: 1.2,
+        transformOrigin: 'center',
+        duration: 1,
+        ease: 'Power1.easeIn',
+        scrollTrigger: {
+          trigger: trigger,
+          // markers: true,
+          scrub: 1,
+          start: 'top top',
+          end: 'bottom top',
+        },
+      });
+
+      return true;
+    }
+  }
+
+  return false;
+};
+
+export { promoBgAnimation };
 
 // Переходы слайдов
 const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {

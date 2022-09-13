@@ -34,9 +34,9 @@
   }
 
   @media screen and (min-width: $tablet) {
-    &--why {
-      transform: translateX(-30vw);
-    }
+    // &--why {
+    //   transform: translateX(-30vw);
+    // }
   }
 
   &__container {
@@ -300,10 +300,6 @@
     }
 
     @media screen and (min-width: $tablet) {
-
-
-      opacity: 0;
-
       &--desktop {
         position: static;
 
@@ -344,8 +340,6 @@
       &--smart,
       &--group,
       &--starfit {
-        transform: translate(20px, 20px);
-
         min-width: 419px;
 
         margin-right: calc((100% + 105px) - 419px);
@@ -361,8 +355,6 @@
 
       &--conference,
       &--about {
-        transform: translate(-20px, -20px);
-
         min-width: 696px;
 
         margin-right: calc(100% - 696px);
@@ -384,11 +376,6 @@
         margin-bottom: 47px;
 
         opacity: 1;
-      }
-
-      &--lobby,
-      &--restaurant {
-        transform: translate(-20px, -20px);
       }
     }
 
