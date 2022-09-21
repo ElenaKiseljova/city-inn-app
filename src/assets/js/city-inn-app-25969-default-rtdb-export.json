@@ -1,4 +1,20 @@
 {
+  "sitemap": {
+    "status": "success",
+    "content": {
+      "links": [
+        "https:\/\/city-inn.com.ua\/",
+        "https:\/\/city-inn.com.ua\/restaurant-sviatoslav\/",
+        "https:\/\/city-inn.com.ua\/lobby-bar\/",
+        "https:\/\/city-inn.com.ua\/about\/",
+        "https:\/\/city-inn.com.ua\/starfit\/",
+        "https:\/\/city-inn.com.ua\/smart-offer\/",
+        "https:\/\/city-inn.com.ua\/group-request\/",
+        "https:\/\/city-inn.com.ua\/rooms\/",
+        "https:\/\/city-inn.com.ua\/conference-service\/"
+      ]
+    }
+  },
   "about": {
     "content": {
       "content": {

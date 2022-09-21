@@ -21,7 +21,9 @@ export default {
               ? '/rooms/index'
               : path === '/en/rooms'
                 ? '/en/rooms/index'
-                : path;
+                : (path === '/en/sitemap.xml' || path === '/sitemap.xml')
+                  ? '/sitemap'
+                  : path;
 
     let url = '';
 
@@ -53,7 +55,7 @@ export default {
       context.commit('setNextPage', responsePageData);
 
       if (responseHeaderData && responseFooterData && responseConatctsData) {
-        console.log(lang, curLang, responseHeaderData, responseFooterData, responseConatctsData);
+        // console.log(lang, curLang, responseHeaderData, responseFooterData, responseConatctsData);
 
         return true;
       }

@@ -120,7 +120,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['meta', 'pageName', 'header', 'page']),
+    ...mapGetters(['meta', 'pageName', 'header', 'page', 'images']),
     book() {
       return this.header.content?.book ? this.header.content.book : null;
     },
@@ -173,6 +173,13 @@ export default {
         : false;
     },
   },
+  watch: {
+    images(cur, prev) {
+      if (cur === 0 && prev > 0) {
+        this.setPromoAnimation();
+      }
+    },
+  },
   mounted() {
     this.setPromoAnimation();
   },
@@ -191,7 +198,7 @@ export default {
           this.promoBgAnimationIsSet = promoBgAnimation(this.$refs.promo);
         }
 
-        if (!this.promoSocialAnimationIsSet) {
+        if (!this.promoSocialAnimationIsSet && this.images === 0) {
           this.promoSocialAnimationIsSet = promoSocialAnimation.init(
             this.$refs.promo
           );
@@ -203,7 +210,7 @@ export default {
           );
         }
 
-        if (!this.promoTitleAndTextAnimationIsSet) {
+        if (!this.promoTitleAndTextAnimationIsSet && this.images === 0) {
           this.promoTitleAndTextAnimationIsSet = promoTitleAndTextAnimation(
             this.$refs.promo
           );

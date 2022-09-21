@@ -1,14 +1,15 @@
 import { createStore } from 'vuex';
 
-import langModule from './modules/lang/index.js';
-import metaModule from './modules/meta/index.js';
-import headerModule from './modules/header/index.js';
-import footerModule from './modules/footer/index.js';
-import pageModule from './modules/page/index.js';
-import mapModule from './modules/map/index.js';
-import contactsModule from './modules/contacts/index.js';
-import browserModule from './modules/browser/index.js';
-import routeChangedModule from './modules/routeChanged/index.js';
+import langModule from './modules/lang/index';
+import metaModule from './modules/meta/index';
+import headerModule from './modules/header/index';
+import footerModule from './modules/footer/index';
+import pageModule from './modules/page/index';
+import mapModule from './modules/map/index';
+import contactsModule from './modules/contacts/index';
+import browserModule from './modules/browser/index';
+import routeChangedModule from './modules/routeChanged/index';
+import imagesModule from './modules/images/index';
 
 const store = createStore({
   modules: {
@@ -21,6 +22,7 @@ const store = createStore({
     contacts: contactsModule,
     browser: browserModule,
     routeChanged: routeChangedModule,
+    images: imagesModule,
   },
 });
 

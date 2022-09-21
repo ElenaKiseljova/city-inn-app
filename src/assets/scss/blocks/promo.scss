@@ -702,7 +702,7 @@
 
       max-height: 626px;
 
-      transform: rotate(-180deg) translate(32px, 40px);
+      transform: rotate(-180deg) translate(5px, 40px);
     }
 
     &--smart {
@@ -726,6 +726,9 @@
         transform: translate(0, calc((122 / 174) * 100%));
       }
 
+      &--text-page {
+        transform: rotate(-180deg) translate(32px, 40px);
+      }
     }
 
     @media screen and (min-width: $tablet) {

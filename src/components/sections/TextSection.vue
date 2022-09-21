@@ -1,17 +1,22 @@
 <template lang="pug">
 .text-page(v-if='page && content && items')
-  .text-page__container.container 
-    nav.text-page__nav(v-if='items?.length > 0')
+  .text-page__container.container(ref='container')
+    nav.text-page__nav(v-if='items?.length > 0', ref='navBar')
       ul.text-page__nav-list 
         li.text-page__nav-item(
           v-for='(item, index) in items',
-          :key='item.title'
+          :key='item.title',
+          ref='navItem'
         ) 
           h2.text-page__title
             | {{ item.title }}
 
     ul.text-page__list(v-if='items?.length > 0', ref='list')
-      li.text-page__item(v-for='(item, index) in items', :key='item.title')
+      li.text-page__item(
+        v-for='(item, index) in items',
+        :key='item.title',
+        ref='listItem'
+      )
         h2.text-page__title.text-page__title--mobile
           | {{ item.title }}
 
@@ -21,10 +26,13 @@
 <script>
 import { mapGetters } from 'vuex';
 
+import changeActiveClass from '../../assets/js/changeActiveClass';
 import accordion from '@/assets/js/accordion';
 import {
   textItemsAnimation,
   textNavPin,
+  DEVICE_WIDTH,
+  DESKTOP_WIDTH,
 } from '../../assets/js/gsap-animations';
 
 export default {
@@ -34,7 +42,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['page']),
+    ...mapGetters(['page', 'routeChanged']),
     content() {
       return this.page?.content && this.page.content?.content
         ? this.page.content.content
@@ -44,6 +52,13 @@ export default {
       return this.content && this.content?.items ? this.content.items : null;
     },
   },
+  watch: {
+    async routeChanged(cur, prev) {
+      if (cur === false && prev === true) {
+        await this.resetScripts();
+      }
+    },
+  },
   mounted() {
     this.setScripts();
   },
@@ -51,13 +66,47 @@ export default {
     this.setScripts();
   },
   async beforeUnmount() {
-    await textItemsAnimation.reset();
-    await textNavPin.reset();
+    await this.resetScripts();
   },
   methods: {
     setScripts() {
-      if (this.$refs.list && !this.scriptsIsSet) {
-        this.scriptsIsSet = accordion(this.$refs.list);
+      if (!this.scriptsIsSet) {
+        if (
+          DEVICE_WIDTH >= DESKTOP_WIDTH &&
+          this.$refs.container &&
+          this.$refs.navBar &&
+          this.$refs.listItem
+        ) {
+          textNavPin.init(this.$refs.container, this.$refs.navBar);
+
+          this.$refs.listItem.forEach((listItem, index) => {
+            const listItemToggleActive = () => {
+              if (listItem.classList.contains('active')) {
+                this.$refs.listItem[index + 1]?.classList.remove('active');
+              } else {
+                listItem.classList.add('active');
+              }
+
+              changeActiveClass(this.$refs.navItem);
+
+              this.$refs.navItem[index]?.classList.add('active');
+            };
+
+            textItemsAnimation.init(listItem, listItemToggleActive);
+          });
+
+          this.scriptsIsSet = true;
+        } else if (DEVICE_WIDTH < DESKTOP_WIDTH && this.$refs.list) {
+          this.scriptsIsSet = accordion(this.$refs.list);
+        }
+      }
+    },
+    async resetScripts() {
+      if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+        await textItemsAnimation.reset();
+        await textNavPin.reset();
+
+        this.scriptsIsSet = false;
       }
     },
   },

@@ -6,8 +6,7 @@ export default {
   namespaced: false,
   state() {
     return {
-      newContacts: null,
-      contacts: null,
+      images: 0,
     };
   },
   mutations,

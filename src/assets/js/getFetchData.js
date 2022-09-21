@@ -22,7 +22,7 @@ const getFetchData = async (url) => {
     const response = await axios.get(`${URL_API}${url}${fileExtension}`);
 
     /** Удалить в финале СТАРТ */
-    console.log(response);
+    console.log(url, response);
     /** Удалить в финале КОНЕЦ */
 
     if (response.status !== CODE_SUCCESS) {
@@ -31,8 +31,8 @@ const getFetchData = async (url) => {
       throw new Error(message);
     }
 
-    if (response.data.status !== TEXT_SUCCESS) {
-      const message = `Error: ${response.data.error || 'Something went wrong...'}`;
+    if (!response.data || response.data.status !== TEXT_SUCCESS) {
+      const message = `Error: ${response.data?.error || 'No part of page data'}`;
 
       throw new Error(message);
     }

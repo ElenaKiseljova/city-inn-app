@@ -30,21 +30,17 @@ div(:class='imgClasses')
       :srcset='image.jpg.tablet'
     )
 
-    img(v-if='image.jpg?.mobile', :src='image.jpg.mobile', :alt='imageAlt')
     img(
-      v-else-if='image.jpg?.tablet',
-      :src='image.jpg.tablet',
-      :alt='imageAlt'
-    )
-    img(
-      v-else-if='image.jpg?.desktop',
-      :src='image.jpg.desktop',
-      :alt='imageAlt'
+      v-if='image.jpg?.mobile || image.jpg?.tablet || image.jpg?.desktop',
+      :src='image.jpg.mobile || image.jpg.tablet || image.jpg.desktop',
+      :alt='imageAlt',
+      @load='onImgLoad',
+      @error='onImgError'
     )
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -91,6 +87,18 @@ export default {
 
       return `${this.sectionName}__picture ${pictureModificator}`;
     },
+  },
+  methods: {
+    ...mapActions(['incrementImages', 'decrementImages']),
+    async onImgLoad() {
+      await this.decrementImages();
+    },
+    async onImgError() {
+      await this.decrementImages();
+    },
+  },
+  async mounted() {
+    await this.incrementImages();
   },
 };
 </script>

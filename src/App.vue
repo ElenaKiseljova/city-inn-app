@@ -4,13 +4,13 @@ teleport(to='body')
 
   BaseScrollTopButton
 
-  TheHeader(v-show='appIsReady')
+  TheHeader(:class='{ hidden: !appIsReady }')
 
-router-view(v-show='appIsReady', v-slot='slotProps')
+router-view(:class='{ hidden: !appIsReady }', v-slot='slotProps')
   transition(name='rout', mode='out-in')
     component(:is='slotProps.Component') 
 
-TheFooter(v-show='appIsReady')
+TheFooter(:class='{ hidden: !appIsReady }')
 </template>
 
 <script>
@@ -33,9 +33,11 @@ export default {
     BaseScrollTopButton,
   },
   computed: {
-    ...mapGetters(['header', 'footer', 'page']),
+    ...mapGetters(['header', 'footer', 'page', 'images']),
     appIsReady() {
-      return this.header && this.footer && this.page ? true : false;
+      return this.header && this.footer && this.page && this.images === 0
+        ? true
+        : false;
     },
     langButton() {
       return document.querySelector('.menu__lang');
@@ -100,6 +102,10 @@ export default {
 
 @import '~@/assets/scss/blocks/title';
 @import '~@/assets/scss/blocks/title-inner';
+
+.hidden {
+  visibility: hidden;
+}
 
 /** Animations Routs */
 .rout-enter-from {

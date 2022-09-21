@@ -575,9 +575,6 @@ const textNavPin = {
           // markers: true,
           start: 'top top',
           end: 'bottom top',
-          // onEnter: (self) => {
-          //   console.log(self);
-          // },
           onUpdate: (self) => {
             const translateValue = trigger.offsetHeight - pin.offsetHeight;
 
