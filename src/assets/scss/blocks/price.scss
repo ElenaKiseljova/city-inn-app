@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-end;
 
-  @extend %w100;
+  width: 100%;
 
   color: var(--color-page, #ffffff);
 
