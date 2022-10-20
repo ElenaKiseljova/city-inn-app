@@ -60,12 +60,18 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
+import sectionAnimation from '@/mixins/sectionAnimation';
 import checkUrlType from '@/mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 import titleAnimation from '@/mixins/titleAnimation';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr, checkUrlType],
+  mixins: [
+    sectionAnimation,
+    titleAnimation,
+    converteSymbolsNewLineToBr,
+    checkUrlType,
+  ],
   props: {
     sectionName: {
       type: String,

@@ -9,7 +9,7 @@ TheMain
           br
           a(:href='supportMailHref') {{ supportMail }}
 
-  .not-found__bottom(ref='notFoundBottom')
+  .not-found__bottom
     .not-found__container.not-found__container--bottom.container 
       .not-found__social 
         BaseLang(sectionName='not-found')
@@ -22,12 +22,13 @@ TheMain
         :button='book'
       )
 
-      .not-found__call.call
+      .not-found__call.call(ref='notFoundCall')
         a.call__link(
           v-if='callUs.link && callUs.text',
           :href='callUs.link',
           :data-text='callUs.text',
-          :data-phone='callUs.phone'
+          :data-phone='callUs.phone',
+          ref='notFoundCallLink'
         )
           span.call__text
             | {{ callUs.text }}
@@ -89,8 +90,12 @@ export default {
   },
   methods: {
     setNotFoundScripts() {
-      if (this.$refs.notFoundBottom && !this.notFoundScriptsIsSet) {
-        callUs(this.$refs.notFoundBottom);
+      if (
+        this.$refs.notFoundCall &&
+        this.$refs.notFoundCallLink &&
+        !this.notFoundScriptsIsSet
+      ) {
+        callUs(this.$refs.notFoundCall);
 
         this.notFoundScriptsIsSet = true;
       }
