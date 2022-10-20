@@ -55,26 +55,13 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
 <script>
 import { mapGetters } from 'vuex';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '../../components/UI/BaseImage.vue';
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 import CardsSlide from './CardsSlide.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
-import BaseServices from '@/components/UI/BaseServices.vue';
 
 export default {
   components: {
-    BaseImage,
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
     CardsSlide,
-    BaseButton,
-    BaseServices,
   },
   mixins: [converteSymbolsNewLineToBr],
   props: {

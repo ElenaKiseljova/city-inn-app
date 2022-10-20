@@ -11,8 +11,8 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/sections/ThePromo.vue';
+import TheMain from '@/components/layout/TheMain.vue';
+import ThePromo from '@/components/sections/ThePromo.vue';
 import FoodSections from '@/components/sections/FoodSections.vue';
 import EventSection from '@/components/sections/EventSection.vue';
 import GymSection from '@/components/sections/GymSection.vue';

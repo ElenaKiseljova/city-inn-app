@@ -44,24 +44,11 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import sectionAnimation from '../../mixins/sectionAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseNavigation from '../../components/UI/BaseNavigation.vue';
-import BaseImage from '../../components/UI/BaseImage.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import sectionAnimation from '@/mixins/sectionAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseNavigation,
-    BaseImage,
-  },
   mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

@@ -31,17 +31,10 @@ section.bar(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '../../components/UI/BaseImage.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseImage,
-    BaseButton,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

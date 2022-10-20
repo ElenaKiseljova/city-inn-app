@@ -35,21 +35,10 @@ section.warm(v-if='page && sections && section && infoSection', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '@/components/UI/BaseImage.vue';
-import BaseServices from '@/components/UI/BaseServices.vue';
-import BasePrice from '@/components/UI/BasePrice.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseImage,
-    BaseServices,
-    BasePrice,
-    BaseButton,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

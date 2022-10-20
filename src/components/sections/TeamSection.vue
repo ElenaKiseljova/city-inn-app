@@ -52,23 +52,10 @@ section.team(
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../UI/BaseSlider.vue';
-import BaseSlide from '../UI/BaseSlide.vue';
-import BasePagination from '../UI/BasePagination.vue';
-import BaseNavigation from '../UI/BaseNavigation.vue';
-import BaseImage from '../UI/BaseImage.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseNavigation,
-    BaseImage,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

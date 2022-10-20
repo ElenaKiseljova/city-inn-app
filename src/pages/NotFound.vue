@@ -4,7 +4,7 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
+import TheMain from '@/components/layout/TheMain.vue';
 
 export default {
   components: {

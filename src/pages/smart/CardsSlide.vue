@@ -42,18 +42,9 @@ div(
 <script>
 import { mapGetters } from 'vuex';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '../../components/UI/BaseImage.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
-import BaseServices from '@/components/UI/BaseServices.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseImage,
-    BaseButton,
-    BaseServices,
-  },
   mixins: [converteSymbolsNewLineToBr],
   props: {
     oddEvenLast: {

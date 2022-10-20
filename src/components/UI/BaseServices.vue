@@ -16,16 +16,9 @@ ul(
 </template>
 
 <script>
-import { serviceAnimation } from '../../assets/js/gsap-animations';
-
-import BaseService from './BaseService.vue';
-import BaseWorktime from './BaseWorktime.vue';
+import { serviceAnimation } from '@/assets/js/gsap-animations';
 
 export default {
-  components: {
-    BaseService,
-    BaseWorktime,
-  },
   props: {
     sectionName: {
       type: String,

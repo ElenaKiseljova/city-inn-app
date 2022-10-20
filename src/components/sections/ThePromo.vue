@@ -83,26 +83,14 @@ import {
   promoTitleAndTextAnimation,
   promoSocialAnimation,
   animationThreeElements,
-} from '../../assets/js/gsap-animations';
+} from '@/assets/js/gsap-animations';
 
-import social from '../../mixins/social';
-import checkUrlType from '../../mixins/checkUrlType';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '../UI/BaseImage.vue';
-import BaseButton from '../UI/BaseButton.vue';
-import BaseWorktime from '../UI/BaseWorktime.vue';
-import BaseSocial from '../UI/BaseSocial.vue';
-import BaseLang from '../UI/BaseLang.vue';
+import social from '@/mixins/social';
+import checkUrlType from '@/mixins/checkUrlType';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseImage,
-    BaseButton,
-    BaseWorktime,
-    BaseSocial,
-    BaseLang,
-  },
+  components: {},
   mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
   props: {
     name: {

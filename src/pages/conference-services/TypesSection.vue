@@ -55,29 +55,12 @@ section.types(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import { typesItemsAnimation } from '../../assets/js/gsap-animations';
+import { typesItemsAnimation } from '@/assets/js/gsap-animations';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BasePagination from '@/components/UI/BasePagination.vue';
-import BaseNavigation from '@/components/UI/BaseNavigation.vue';
-import BaseSlider from '@/components/UI/BaseSlider.vue';
-import BaseSlide from '@/components/UI/BaseSlide.vue';
-import BaseImage from '@/components/UI/BaseImage.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
-import BaseServices from '@/components/UI/BaseServices.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BasePagination,
-    BaseNavigation,
-    BaseSlider,
-    BaseSlide,
-    BaseImage,
-    BaseButton,
-    BaseServices,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   data() {
     return {

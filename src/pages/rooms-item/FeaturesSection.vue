@@ -21,22 +21,11 @@ section.features(v-if='page && pageName && sections && section', ref='features')
 <script>
 import { mapGetters } from 'vuex';
 
-import { serviceAnimation } from '../../assets/js/gsap-animations';
+import { serviceAnimation } from '@/assets/js/gsap-animations';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseService from '@/components/UI/BaseService.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseService,
-  },
   mixins: [converteSymbolsNewLineToBr],
   data() {
     return {

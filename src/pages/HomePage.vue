@@ -12,10 +12,10 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/sections/ThePromo.vue';
-import HomeSection from '../components/sections/HomeSection.vue';
-import TheContacts from '../components/sections/TheContacts.vue';
+import TheMain from '@/components/layout/TheMain.vue';
+import ThePromo from '@/components/sections/ThePromo.vue';
+import HomeSection from '@/components/sections/HomeSection.vue';
+import TheContacts from '@/components/sections/TheContacts.vue';
 
 export default {
   components: {

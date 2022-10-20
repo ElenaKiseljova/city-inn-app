@@ -10,13 +10,13 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/sections/ThePromo.vue';
-import MissionSection from '../pages/about/MissionSection.vue';
-import HomeSection from '../components/sections/HomeSection.vue';
-import EventSection from '../components/sections/EventSection.vue';
-import FoodSections from '../components/sections/FoodSections.vue';
-import TheContacts from '../components/sections/TheContacts.vue';
+import TheMain from '@/components/layout/TheMain.vue';
+import ThePromo from '@/components/sections/ThePromo.vue';
+import MissionSection from '@/pages/about/MissionSection.vue';
+import HomeSection from '@/components/sections/HomeSection.vue';
+import EventSection from '@/components/sections/EventSection.vue';
+import FoodSections from '@/components/sections/FoodSections.vue';
+import TheContacts from '@/components/sections/TheContacts.vue';
 
 export default {
   components: {

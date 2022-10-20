@@ -45,19 +45,11 @@ import { DEVICE_WIDTH, DESKTOP_WIDTH } from '@/assets/js/gsap-animations';
 
 import checkUrlType from '@/mixins/checkUrlType';
 
-import MenuHeader from '../blocks/MenuHeader.vue';
-import BaseButton from '../UI/BaseButton.vue';
-import BaseSocial from '../UI/BaseSocial.vue';
-import BaseLogo from '../UI/BaseLogo.vue';
-import BaseLang from '../UI/BaseLang.vue';
+import MenuHeader from '@/components/blocks/MenuHeader.vue';
 
 export default {
   components: {
     MenuHeader,
-    BaseButton,
-    BaseSocial,
-    BaseLogo,
-    BaseLang,
   },
   mixins: [checkUrlType],
   data() {

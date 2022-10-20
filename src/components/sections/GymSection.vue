@@ -78,28 +78,11 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import sectionAnimation from '../../mixins/sectionAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BasePagination from '@/components/UI/BasePagination.vue';
-import BaseNavigation from '@/components/UI/BaseNavigation.vue';
-import BaseSlider from '@/components/UI/BaseSlider.vue';
-import BaseSlide from '@/components/UI/BaseSlide.vue';
-import BaseImage from '@/components/UI/BaseImage.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
-import BaseWorktime from '@/components/UI/BaseWorktime.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import sectionAnimation from '@/mixins/sectionAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BasePagination,
-    BaseNavigation,
-    BaseSlider,
-    BaseSlide,
-    BaseImage,
-    BaseButton,
-    BaseWorktime,
-  },
   mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

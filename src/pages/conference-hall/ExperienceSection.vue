@@ -16,12 +16,12 @@ section.experience(v-if='page && sections && section && items', ref='section')
 </template>
 
 <script>
-import { experienceAnimation } from '../../assets/js/gsap-animations';
+import { experienceAnimation } from '@/assets/js/gsap-animations';
 
 import { mapGetters } from 'vuex';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-import titleAnimation from '../../mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import titleAnimation from '@/mixins/titleAnimation';
 
 export default {
   mixins: [titleAnimation, converteSymbolsNewLineToBr],

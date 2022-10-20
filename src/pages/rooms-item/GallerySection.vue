@@ -27,22 +27,9 @@ section.gallery(v-if='page && sections && section')
 <script>
 import { mapGetters } from 'vuex';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseImage from '@/components/UI/BaseImage.vue';
-import BaseNavigation from '@/components/UI/BaseNavigation.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseImage,
-    BaseNavigation,
-  },
   mixins: [converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

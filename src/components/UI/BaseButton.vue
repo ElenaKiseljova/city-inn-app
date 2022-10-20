@@ -18,7 +18,7 @@ router-link(
 </template>
 
 <script>
-import checkUrlType from '../../mixins/checkUrlType';
+import checkUrlType from '@/mixins/checkUrlType';
 
 export default {
   mixins: [checkUrlType],

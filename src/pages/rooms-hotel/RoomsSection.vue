@@ -78,28 +78,11 @@ section.rooms(v-if='page && items')
 <script>
 import { mapGetters } from 'vuex';
 
-import { sectionTitleAnimation } from '../../assets/js/gsap-animations';
+import { sectionTitleAnimation } from '@/assets/js/gsap-animations';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseImage from '../../components/UI/BaseImage.vue';
-import BaseButton from '../../components/UI/BaseButton.vue';
-import BaseServices from '../../components/UI/BaseServices.vue';
-import BasePrice from '../../components/UI/BasePrice.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseButton,
-    BaseImage,
-    BaseServices,
-    BasePrice,
-  },
   mixins: [converteSymbolsNewLineToBr],
   data() {
     return {

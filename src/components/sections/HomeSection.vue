@@ -63,21 +63,12 @@ import { mapGetters } from 'vuex';
 import {
   sectionAnimation,
   sectionTitleAnimation,
-} from '../../assets/js/gsap-animations';
+} from '@/assets/js/gsap-animations';
 
-import checkUrlType from '../../mixins/checkUrlType';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseImage from '../UI/BaseImage.vue';
-import BaseButton from '../UI/BaseButton.vue';
-import BaseWorktime from '../UI/BaseWorktime.vue';
+import checkUrlType from '@/mixins/checkUrlType';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseImage,
-    BaseButton,
-    BaseWorktime,
-  },
   mixins: [converteSymbolsNewLineToBr, checkUrlType],
   props: {
     sectionName: {

@@ -17,7 +17,7 @@ import {
   swiperInit,
   eventSliderInit,
   featuresSliderInit,
-} from '../../assets/js/swipers';
+} from '@/assets/js/swipers';
 
 export default {
   props: {

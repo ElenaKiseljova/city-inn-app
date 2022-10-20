@@ -90,28 +90,11 @@ section.spa(v-if='page && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import sectionAnimation from '../../mixins/sectionAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BasePagination from '@/components/UI/BasePagination.vue';
-import BaseSlider from '@/components/UI/BaseSlider.vue';
-import BaseSlide from '@/components/UI/BaseSlide.vue';
-import BaseImage from '@/components/UI/BaseImage.vue';
-import BaseButton from '@/components/UI/BaseButton.vue';
-import BaseServices from '@/components/UI/BaseServices.vue';
-import BaseWorktime from '../../components/UI/BaseWorktime.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import sectionAnimation from '@/mixins/sectionAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BasePagination,
-    BaseSlider,
-    BaseSlide,
-    BaseImage,
-    BaseButton,
-    BaseServices,
-    BaseWorktime,
-  },
   mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

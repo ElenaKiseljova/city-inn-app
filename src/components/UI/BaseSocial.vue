@@ -33,7 +33,7 @@ ul(v-if='pageName', :class='`social social--${direction}`')
 <script>
 import { mapGetters } from 'vuex';
 
-import checkUrlType from '../../mixins/checkUrlType';
+import checkUrlType from '@/mixins/checkUrlType';
 
 export default {
   mixins: [checkUrlType],

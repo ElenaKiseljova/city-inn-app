@@ -7,8 +7,8 @@ section.cards(v-if='page && cards', ref='cards')
 <script>
 import { mapGetters } from 'vuex';
 
-import { cardsAnimation } from '../../assets/js/gsap-animations';
-import cards from '../../assets/js/cards';
+import { cardsAnimation } from '@/assets/js/gsap-animations';
+import cards from '@/assets/js/cards';
 
 import CardsItem from './CardsItem.vue';
 

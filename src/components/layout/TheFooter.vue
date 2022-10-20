@@ -43,19 +43,13 @@ footer#footer(
 <script>
 import { mapGetters } from 'vuex';
 
-import { pageFooterAnimation } from '../../assets/js/gsap-animations';
+import { pageFooterAnimation } from '@/assets/js/gsap-animations';
 
-import social from '../../mixins/social';
-import checkUrlType from '../../mixins/checkUrlType';
-
-import BaseSocial from '../UI/BaseSocial.vue';
-import BaseLogo from '../UI/BaseLogo.vue';
+import social from '@/mixins/social';
+import checkUrlType from '@/mixins/checkUrlType';
 
 export default {
-  components: {
-    BaseSocial,
-    BaseLogo,
-  },
+  components: {},
   mixins: [social, checkUrlType],
   data() {
     return {

@@ -26,14 +26,14 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import changeActiveClass from '../../assets/js/changeActiveClass';
+import changeActiveClass from '@/assets/js/changeActiveClass';
 import accordion from '@/assets/js/accordion';
 import {
   textItemsAnimation,
   textNavPin,
   DEVICE_WIDTH,
   DESKTOP_WIDTH,
-} from '../../assets/js/gsap-animations';
+} from '@/assets/js/gsap-animations';
 
 export default {
   data() {

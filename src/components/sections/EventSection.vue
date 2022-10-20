@@ -198,32 +198,11 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import sectionAnimation from '../../mixins/sectionAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../UI/BaseSlider.vue';
-import BaseSlide from '../UI/BaseSlide.vue';
-import BasePagination from '../UI/BasePagination.vue';
-import BaseNavigation from '../UI/BaseNavigation.vue';
-import BaseImage from '../UI/BaseImage.vue';
-import BaseServices from '../UI/BaseServices.vue';
-import BaseButton from '../UI/BaseButton.vue';
-import BasePrice from '../UI/BasePrice.vue';
-import BaseWorktime from '../UI/BaseWorktime.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import sectionAnimation from '@/mixins/sectionAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BasePagination,
-    BaseNavigation,
-    BaseImage,
-    BaseWorktime,
-    BaseServices,
-    BaseButton,
-    BasePrice,
-  },
   mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   props: {
     sectionName: {

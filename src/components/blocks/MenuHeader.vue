@@ -35,22 +35,16 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { callUs } from '../../assets/js/call-us';
-import menu from '../../assets/js/menu';
+import { callUs } from '@/assets/js/call-us';
+import menu from '@/assets/js/menu';
 
-import social from '../../mixins/social';
+import social from '@/mixins/social';
 
 import NavigationHeader from './NavigationHeader.vue';
-import BaseImage from '../UI/BaseImage.vue';
-import BaseSocial from '../UI/BaseSocial.vue';
-import BaseLang from '../UI/BaseLang.vue';
 
 export default {
   components: {
     NavigationHeader,
-    BaseImage,
-    BaseSocial,
-    BaseLang,
   },
   mixins: [social],
   data() {

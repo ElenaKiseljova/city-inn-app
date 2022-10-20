@@ -69,17 +69,15 @@ import {
   DEVICE_WIDTH,
   TABLET_WIDTH,
   DESKTOP_WIDTH,
-} from '../../assets/js/gsap-animations';
+} from '@/assets/js/gsap-animations';
 
-import checkUrlType from '../../mixins/checkUrlType';
+import checkUrlType from '@/mixins/checkUrlType';
 
-import TheMap from '../blocks/TheMap.vue';
-import BaseButton from '../UI/BaseButton.vue';
+import TheMap from '@/components/blocks/TheMap.vue';
 
 export default {
   components: {
     TheMap,
-    BaseButton,
   },
   mixins: [checkUrlType],
   data() {

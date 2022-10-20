@@ -17,23 +17,10 @@ section.banquet(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-import titleAnimation from '../../mixins/titleAnimation';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BaseNavigation from '../../components/UI/BaseNavigation.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseImage from '../../components/UI/BaseImage.vue';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import titleAnimation from '@/mixins/titleAnimation';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BaseNavigation,
-    BasePagination,
-    BaseImage,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),

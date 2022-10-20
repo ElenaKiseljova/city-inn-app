@@ -41,23 +41,12 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import readMore from '../../assets/js/read-more';
+import readMore from '@/assets/js/read-more';
 
-import checkUrlType from '../../mixins/checkUrlType';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseServices from '../UI/BaseServices.vue';
-import BaseImage from '../UI/BaseImage.vue';
-import BasePrice from '../UI/BasePrice.vue';
-import BaseButton from '../UI/BaseButton.vue';
+import checkUrlType from '@/mixins/checkUrlType';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseServices,
-    BaseImage,
-    BasePrice,
-    BaseButton,
-  },
   mixins: [checkUrlType, converteSymbolsNewLineToBr],
   props: {
     sectionName: {

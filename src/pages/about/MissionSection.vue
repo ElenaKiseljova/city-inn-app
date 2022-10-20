@@ -22,23 +22,10 @@ section.mission(v-if='page && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import titleAnimation from '../../mixins/titleAnimation';
-import converteSymbolsNewLineToBr from '../../mixins/converteSymbolsNewLineToBr';
-
-import BaseSlider from '../../components/UI/BaseSlider.vue';
-import BaseSlide from '../../components/UI/BaseSlide.vue';
-import BaseNavigation from '../../components/UI/BaseNavigation.vue';
-import BasePagination from '../../components/UI/BasePagination.vue';
-import BaseImage from '../../components/UI/BaseImage.vue';
+import titleAnimation from '@/mixins/titleAnimation';
+import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  components: {
-    BaseSlider,
-    BaseSlide,
-    BaseNavigation,
-    BasePagination,
-    BaseImage,
-  },
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page']),

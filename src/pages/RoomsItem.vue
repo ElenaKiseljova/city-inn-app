@@ -8,8 +8,8 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/sections/ThePromo.vue';
+import TheMain from '@/components/layout/TheMain.vue';
+import ThePromo from '@/components/sections/ThePromo.vue';
 import InfoSection from '@/components/sections/InfoSection.vue';
 import FeaturesSection from './rooms-item/FeaturesSection.vue';
 import GallerySection from './rooms-item/GallerySection.vue';

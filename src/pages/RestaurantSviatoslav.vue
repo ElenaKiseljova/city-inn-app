@@ -9,9 +9,9 @@ TheMain
 </template>
 
 <script>
-import TheMain from '../components/layout/TheMain.vue';
-import ThePromo from '../components/sections/ThePromo.vue';
-import TheContacts from '../components/sections/TheContacts.vue';
+import TheMain from '@/components/layout/TheMain.vue';
+import ThePromo from '@/components/sections/ThePromo.vue';
+import TheContacts from '@/components/sections/TheContacts.vue';
 import CosySection from './restaurant-sviatoslav/CosySection.vue';
 import FoodSections from '@/components/sections/FoodSections.vue';
 import BanquetSection from './restaurant-sviatoslav/BanquetSection.vue';
