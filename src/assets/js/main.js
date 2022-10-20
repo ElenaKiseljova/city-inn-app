@@ -1,5 +1,5 @@
 import gsapAnimations from './gsap-animations';
-// import geo from './geo';
+import headerScroll from './modules/headerScroll';
 import menu from './menu';
 import callUs from './call-us';
 import swipers from './swipers';
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(error.message);
   }
 
-  // try {
-  //   geo();
-  // } catch (error) {
-  //   console.log(error.message);
-  // }
+  try {
+    headerScroll();
+  } catch (error) {
+    console.log(error.message);
+  }
 
   try {
     menu();

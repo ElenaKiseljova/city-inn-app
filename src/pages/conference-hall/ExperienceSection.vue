@@ -16,7 +16,7 @@ section.experience(v-if='page && sections && section && items', ref='section')
 </template>
 
 <script>
-import { experienceAnimation } from '@/assets/js/gsap-animations';
+import { experienceAnimation } from '@/assets/js/modules/gsap-animations';
 
 import { mapGetters } from 'vuex';
 

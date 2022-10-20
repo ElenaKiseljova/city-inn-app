@@ -78,7 +78,7 @@ section.rooms(v-if='page && items')
 <script>
 import { mapGetters } from 'vuex';
 
-import { sectionTitleAnimation } from '@/assets/js/gsap-animations';
+import { sectionTitleAnimation } from '@/assets/js/modules/gsap-animations';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 

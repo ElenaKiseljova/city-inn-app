@@ -98,6 +98,7 @@ export default {
       return this.slides?.length > 0 ? 'cards__content--desktop' : '';
     },
     titleHtml() {
+      console.log(this.card.title);
       return this.card.title
         ? this.converteSymbolsNewLineToBr(this.card.title)
         : '';

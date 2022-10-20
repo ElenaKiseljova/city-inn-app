@@ -83,7 +83,7 @@ import {
   promoTitleAndTextAnimation,
   promoSocialAnimation,
   animationThreeElements,
-} from '@/assets/js/gsap-animations';
+} from '@/assets/js/modules/gsap-animations';
 
 import social from '@/mixins/social';
 import checkUrlType from '@/mixins/checkUrlType';

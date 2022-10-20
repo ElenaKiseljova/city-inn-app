@@ -55,7 +55,7 @@ section.types(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import { typesItemsAnimation } from '@/assets/js/gsap-animations';
+import { typesItemsAnimation } from '@/assets/js/modules/gsap-animations';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';

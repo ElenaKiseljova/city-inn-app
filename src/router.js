@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
 
-import { DEVICE_WIDTH, DESKTOP_WIDTH, scrollbar } from './assets/js/gsap-animations';
+import { DEVICE_WIDTH, DESKTOP_WIDTH } from './assets/js/modules/gsap-animations';
+import { scrollbar } from './assets/js/modules/bodyScrollbar';
 
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');

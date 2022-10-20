@@ -1,4 +1,4 @@
-import getFetchData from "@/assets/js/getFetchData";
+import getFetchData from "@/assets/js/modules/getFetchData";
 
 export default {
   setPageName(context, payload) {

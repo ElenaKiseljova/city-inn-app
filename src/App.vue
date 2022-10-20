@@ -18,7 +18,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 import detect from 'detect.js';
 
-import { reloader } from './assets/js/swipers';
+import { reloader } from './assets/js/modules/swipers';
 
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';

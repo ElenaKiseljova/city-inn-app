@@ -1,4 +1,4 @@
-import { map } from '@/assets/js/map';
+import { map } from '@/assets/js/modules/map';
 
 export default {
   async setGoogle(context, payload) {

@@ -16,7 +16,7 @@ ul(
 </template>
 
 <script>
-import { serviceAnimation } from '@/assets/js/gsap-animations';
+import { serviceAnimation } from '@/assets/js/modules/gsap-animations';
 
 export default {
   props: {

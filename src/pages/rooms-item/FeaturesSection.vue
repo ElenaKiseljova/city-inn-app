@@ -21,7 +21,7 @@ section.features(v-if='page && pageName && sections && section', ref='features')
 <script>
 import { mapGetters } from 'vuex';
 
-import { serviceAnimation } from '@/assets/js/gsap-animations';
+import { serviceAnimation } from '@/assets/js/modules/gsap-animations';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 

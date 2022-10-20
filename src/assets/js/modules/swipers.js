@@ -1,4 +1,4 @@
-import Swiper from './libs/swiper-bundle.min';
+import Swiper from '../libs/swiper-bundle.min';
 import changeActiveClass from './changeActiveClass';
 import cardsActivate from './cards';
 import { animationSlideElements } from './gsap-animations';

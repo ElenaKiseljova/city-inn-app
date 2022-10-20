@@ -5,7 +5,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 
-import { mapInit } from '@/assets/js/map';
+import { mapInit } from '@/assets/js/modules/map';
 
 export default {
   data() {

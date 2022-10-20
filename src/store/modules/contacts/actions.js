@@ -1,4 +1,4 @@
-import getFetchData from "@/assets/js/getFetchData";
+import getFetchData from "@/assets/js/modules/getFetchData";
 
 export default {
   async setNewContacts(context, payload) {

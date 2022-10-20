@@ -41,7 +41,7 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import readMore from '@/assets/js/read-more';
+import readMore from '@/assets/js/modules/read-more';
 
 import checkUrlType from '@/mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';

@@ -1,4 +1,4 @@
-import { sectionAnimation } from "@/assets/js/gsap-animations";
+import { sectionAnimation } from "@/assets/js/modules/gsap-animations";
 
 export default {
   data() {

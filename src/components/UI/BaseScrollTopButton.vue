@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { animationScrollTop } from '@/assets/js/gsap-animations';
+import { animationScrollTop } from '@/assets/js/modules/gsap-animations';
 
 export default {
   data() {

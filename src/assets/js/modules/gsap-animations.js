@@ -1,6 +1,5 @@
-import gsap from './libs/gsap.min';
-import ScrollTrigger from './libs/ScrollTrigger.min';
-import Scrollbar from 'smooth-scrollbar';
+import gsap from '../libs/gsap.min';
+import ScrollTrigger from '../libs/ScrollTrigger.min';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,29 +13,6 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
 export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
-
-let scrollbar;
-if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-  scrollbar = Scrollbar.init(document.body, {
-    delegateTo: document,
-    damping: 0.05,
-    continuousScrolling: false,
-  });
-
-  ScrollTrigger.scrollerProxy(document.body, {
-    scrollTop(value) {
-      if (arguments.length) {
-        scrollbar.scrollTop = value; // setter
-      }
-      return scrollbar.scrollTop;    // getter
-    }
-  });
-
-  scrollbar.addListener(ScrollTrigger.update);
-  ScrollTrigger.defaults({ scroller: document.body });
-}
-
-export { scrollbar };
 
 /**
  * Аниаммция элементов списков по триггеру: init/reset
@@ -163,42 +139,6 @@ const typesItemsAnimation = new Animation('.types__slide', 'types');
 
 export { typesItemsAnimation };
 
-//.cards
-// const cardsItemsAnimation = new Animation('.cards__item', 'cards');
-
-// export { cardsItemsAnimation };
-const cardsAnimation = (trigger) => {
-  if (DEVICE_WIDTH >= TABLET_WIDTH) {
-    const cards = trigger?.querySelectorAll('.cards__item');
-
-    if (cards && cards.length > 0) {
-      gsap.to(cards, {
-        opacity: 1,
-        scale: 1,
-        transformOrigin: 'center',
-        duration: 1,
-        ease: 'Power1.easeIn',
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: trigger,
-          // markers: true,
-          // scrub: 1,
-          start: 'top 70%',
-          end: 'bottom center',
-        },
-      });
-
-
-      return true;
-    }
-  }
-
-  return false;
-};
-
-export { cardsAnimation };
-
-
 // Experiences
 const experienceAnimation = (list) => {
   if (list) {
@@ -262,7 +202,7 @@ const sectionTitleAnimation = (title, trigger) => {
         // markers: true,
         scrub: 1,
         start: 'top 70%',
-        end: 'bottom center',
+        end: 'bottom top',
         onToggle: () => {
           title.classList.toggle('active');
         },

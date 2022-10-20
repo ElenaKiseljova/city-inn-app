@@ -30,7 +30,7 @@
 
     cursor: pointer;
 
-    perspective: 50vw;
+    perspective: 300vw;
 
     transition: height 0.5s;
 
@@ -43,26 +43,10 @@
     }
 
     @media screen and (min-width: $tablet) {
-      opacity: 0;
-
-      transform: scale(0.1);
-
-      transition: transform 0.5s linear;
-
       &--last {
         grid-column: span 2;
 
         height: fit-content;
-
-        // transform: translateY(50px);
-      }
-
-      &--odd {
-        // transform: translateX(-20vw);
-      }
-
-      &--even {
-        // transform: translateX(20vw);
       }
     }
 
@@ -124,29 +108,16 @@
 
     padding: 38px 15px;
 
-    @include font(64, 70, 400);
+    @include font(40, 44, 400);
 
     color: $white;
 
     text-transform: lowercase;
 
-    word-break: break-all;
-
-    &--1,
-    &--3,
-    &--4 {
-      top: 0;
-      left: 0;
-    }
-
-    &--2 {
-      top: auto;
-      bottom: 0;
-      left: 0;
-    }
+    pointer-events: none;
 
     @media screen and (min-width: $mobile) {
-      padding: 38px 40px;
+      padding: 38px 30px 38px 40px;
     }
 
     @media screen and (min-width: $tablet) {
@@ -208,10 +179,22 @@
 
   &__img {
     @extend %img;
+
+    overflow: hidden
   }
 
   &__picture {
     @extend %picture;
+
+    @media screen and (min-width: $desktop) {
+      transform: scale(1);
+
+      transition: transform 0.5s linear;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 
   &__bottom {

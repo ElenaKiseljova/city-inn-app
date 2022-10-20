@@ -44,7 +44,7 @@ TheMain
 <script>
 import { mapGetters } from 'vuex';
 
-import { callUs } from '@/assets/js/call-us';
+import { callUs } from '@/assets/js/modules/call-us';
 import social from '@/mixins/social';
 
 import TheMain from '@/components/layout/TheMain.vue';

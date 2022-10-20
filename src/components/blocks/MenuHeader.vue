@@ -45,8 +45,8 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { callUs } from '@/assets/js/call-us';
-import menu from '@/assets/js/menu';
+import { callUs } from '@/assets/js/modules/call-us';
+import menu from '@/assets/js/modules/menu';
 
 import social from '@/mixins/social';
 

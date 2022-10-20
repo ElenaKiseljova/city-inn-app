@@ -4,7 +4,7 @@ header.page-header(v-if='pageName && header')
     .page-header__top
       BaseLogo(sectionName='page-header', modificator='header') 
 
-      .page-header__right
+      .page-header__right(ref='headerRight')
         .page-header__buttons
           BaseButton(
             v-if='book',
@@ -39,9 +39,14 @@ header.page-header(v-if='pageName && header')
 
 <script>
 import { mapGetters } from 'vuex';
+
 import Scrollbar from 'smooth-scrollbar';
 
-import { DEVICE_WIDTH, DESKTOP_WIDTH } from '@/assets/js/gsap-animations';
+import headerScroll from '@/assets/js/modules/headerScroll';
+import {
+  DEVICE_WIDTH,
+  DESKTOP_WIDTH,
+} from '@/assets/js/modules/gsap-animations';
 
 import checkUrlType from '@/mixins/checkUrlType';
 
@@ -55,6 +60,7 @@ export default {
   data() {
     return {
       scrollbarMenuIsSet: false,
+      scrollHeaderRightAnimationIsSet: false,
     };
   },
   computed: {
@@ -89,9 +95,11 @@ export default {
   },
   mounted() {
     this.setScrollbarMenu();
+    this.setScrollHeaderRightAnimation();
   },
   updated() {
     this.setScrollbarMenu();
+    this.setScrollHeaderRightAnimation();
   },
   methods: {
     setScrollbarMenu() {
@@ -105,6 +113,13 @@ export default {
         Scrollbar.init(this.$refs.scrollbarMenu, options);
 
         this.scrollbarMenuIsSet = true;
+      }
+    },
+    setScrollHeaderRightAnimation() {
+      if (this.$refs.headerRight && !this.scrollHeaderRightAnimationIsSet) {
+        headerScroll(this.$refs.headerRight);
+
+        this.scrollHeaderRightAnimationIsSet = true;
       }
     },
   },

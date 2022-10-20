@@ -63,7 +63,7 @@ import { mapGetters } from 'vuex';
 import {
   sectionAnimation,
   sectionTitleAnimation,
-} from '@/assets/js/gsap-animations';
+} from '@/assets/js/modules/gsap-animations';
 
 import checkUrlType from '@/mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';

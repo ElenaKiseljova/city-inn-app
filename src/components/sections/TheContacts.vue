@@ -69,7 +69,7 @@ import {
   DEVICE_WIDTH,
   TABLET_WIDTH,
   DESKTOP_WIDTH,
-} from '@/assets/js/gsap-animations';
+} from '@/assets/js/modules/gsap-animations';
 
 import checkUrlType from '@/mixins/checkUrlType';
 

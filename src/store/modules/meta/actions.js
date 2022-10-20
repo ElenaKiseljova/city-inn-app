@@ -1,4 +1,4 @@
-import meta from "@/assets/js/meta";
+import meta from "@/assets/js/modules/meta";
 
 export default {
   async setMeta(context, payload) {
