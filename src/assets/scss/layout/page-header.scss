@@ -113,13 +113,21 @@
 
     &.active {
       &~.page-header__lang {
-        display: flex;
+        display: flex !important;
       }
 
       &~.page-header__social {
         opacity: 0;
 
         pointer-events: none;
+      }
+    }
+
+    @media screen and (min-width: $tablet) {
+      &.active {
+        &~.page-header__lang {
+          display: none !important;
+        }
       }
     }
 
@@ -145,6 +153,10 @@
 
         transition: transform 0.5s ease-out;
       }
+    }
+
+    &--404 {
+      display: none;
     }
 
     @media screen and (min-width: $tablet) {
@@ -193,7 +205,7 @@
   }
 
   &__lang {
-    display: none;
+    display: none !important;
 
     width: 48px;
     height: 48px;

@@ -1,5 +1,5 @@
 <template lang="pug">
-main(:class='`page-main page-main--${pageName}`')
+main.page-main(:class='`page-main--${pageName}`')
   slot
 </template>
 

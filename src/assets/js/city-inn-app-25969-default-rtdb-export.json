@@ -1,18 +1,10 @@
 {
-  "sitemap": {
+  "404": {
     "status": "success",
     "content": {
-      "links": [
-        "https:\/\/city-inn.com.ua\/",
-        "https:\/\/city-inn.com.ua\/restaurant-sviatoslav\/",
-        "https:\/\/city-inn.com.ua\/lobby-bar\/",
-        "https:\/\/city-inn.com.ua\/about\/",
-        "https:\/\/city-inn.com.ua\/starfit\/",
-        "https:\/\/city-inn.com.ua\/smart-offer\/",
-        "https:\/\/city-inn.com.ua\/group-request\/",
-        "https:\/\/city-inn.com.ua\/rooms\/",
-        "https:\/\/city-inn.com.ua\/conference-service\/"
-      ]
+      "language": "uk",
+      "text": "Ця сторінка недоступна. Зверніться до служби підтримки",
+      "supportMail": "support@cityinn.com"
     }
   },
   "about": {
@@ -1087,6 +1079,14 @@
     "status": "success"
   },
   "en": {
+    "404": {
+      "status": "success",
+      "content": {
+        "language": "en",
+        "text": "This page is not available. Please contact support",
+        "supportMail": "support@cityinn.com"
+      }
+    },
     "about": {
       "content": {
         "content": {

@@ -58,7 +58,7 @@ export default {
       )}`;
     }
 
-    if (browserLang !== 'uk' && path.indexOf('/en') === -1) {
+    if (browserLang !== 'uk' && path.indexOf('/en') !== 0) {
       window.location.href = `${window.location.origin}/en${path}`;
     }
   },

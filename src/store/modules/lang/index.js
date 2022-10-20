@@ -6,7 +6,7 @@ export default {
   namespaced: false,
   state() {
     return {
-      lang: 'uk',
+      lang: window.navigator.language === 'uk' ? 'uk' : 'en',
     };
   },
   mutations,

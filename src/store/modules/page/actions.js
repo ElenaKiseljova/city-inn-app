@@ -21,9 +21,7 @@ export default {
               ? '/rooms/index'
               : path === '/en/rooms'
                 ? '/en/rooms/index'
-                : (path === '/en/sitemap.xml' || path === '/sitemap.xml')
-                  ? '/sitemap'
-                  : path;
+                : path;
 
     let url = '';
 
@@ -37,19 +35,19 @@ export default {
       // Update Header
       let responseHeaderData = await context.getters.header;
       if (!responseHeaderData || curLang !== lang) {
-        responseHeaderData = await context.dispatch('setNewHeader', { lang: lang });
+        responseHeaderData = await context.dispatch('setNewHeader', { lang });
       }
 
       // Update Footer
       let responseFooterData = await context.getters.footer;
       if (!responseFooterData || curLang !== lang) {
-        responseFooterData = await context.dispatch('setNewFooter', { lang: lang });
+        responseFooterData = await context.dispatch('setNewFooter', { lang });
       }
 
       // Update Contacts
       let responseConatctsData = await context.getters.contacts;
       if (!responseConatctsData || curLang !== lang) {
-        responseConatctsData = await context.dispatch('setNewContacts', { lang: lang });
+        responseConatctsData = await context.dispatch('setNewContacts', { lang });
       }
 
       context.commit('setNextPage', responsePageData);

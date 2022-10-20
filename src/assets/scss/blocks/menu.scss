@@ -1,19 +1,24 @@
 .menu {
   position: relative;
 
+  display: flex;
+
+  align-items: stretch;
+  justify-content: flex-start;
+
   width: 100%;
   height: fit-content;
 
   min-height: 100vh;
 
-  padding: 218px 0 calc(68 / 896 * 100vh) 0;
+  padding: 218px 0 48px 0;
 
   background-color: $dark-gray;
 
   @include before-linear-gradient();
 
-  @media screen and (min-width: $desktop) {
-    padding: calc(274 / 840 * 100vh) 0 calc(60 / 840 * 100vh) 0;
+  @media screen and (min-width: $tablet) {
+    padding: calc(274 / 840 * 100vh) 0 60px 0;
   }
 
   &__container {
@@ -26,7 +31,7 @@
     flex-direction: column;
 
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   &__img {
@@ -62,48 +67,57 @@
 
     display: flex;
 
-    flex-direction: column;
-
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    @media screen and (min-width: $desktop) {
-      flex-direction: row;
-
-      align-items: center;
-      justify-content: space-between;
-    }
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__social {
-    display: flex;
+    display: none;
 
-    align-items: center;
-    justify-content: flex-start;
+    @media screen and (min-width: $tablet) {
+      display: flex;
 
-    gap: 18px;
+      align-items: center;
+      justify-content: flex-start;
 
-    width: 100%;
+      gap: 18px;
 
-    margin-bottom: 40px;
+      width: 100%;
 
-    a {
-      --color-social: #{$white};
-      --border-color-social: #{$white};
+      a {
+        --color-social: #{$white};
+        --border-color-social: #{$white};
+      }
     }
+  }
 
-    @media screen and (min-width: $desktop) {
-      margin-bottom: 0;
+  &__button {
+    --background-color-button: #{$white-30};
+
+    min-width: calc((210 / 414) * 100vw);
+
+    @media screen and (min-width: $tablet) {
+      display: none !important;
     }
   }
 
   &__call {
-    width: 100%;
+    display: none;
 
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: $tablet) {
+      display: flex;
+
       width: auto;
 
       min-width: 208px;
+    }
+  }
+
+  &__phone {
+    display: flex;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
     }
   }
 

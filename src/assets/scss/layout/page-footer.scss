@@ -14,6 +14,10 @@
     background-color: $black;
   }
 
+  &--404 {
+    display: none;
+  }
+
   @media screen and (min-width: $tablet) {
     padding: 40px 0;
   }

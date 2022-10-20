@@ -1,0 +1,120 @@
+.not-found {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  @extend %w100;
+
+  min-height: 100vh;
+
+  padding: 150px 0;
+
+  text-align: center;
+
+  background-color: $dark-green;
+
+  &__container {
+    &--bottom {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @extend %w100;
+
+    margin-bottom: 25px;
+
+    @include font(152, 137, 500);
+
+    color: $white-80;
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 39px;
+
+      @include font(200, 156, 500);
+    }
+  }
+
+  &__text {
+    @extend %w100;
+
+    @include font(14, 21, 400);
+
+    color: $white;
+
+    a {
+      color: $white;
+
+      text-decoration: underline;
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    z-index: 1;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: 48px 0;
+
+    @media screen and (min-width: $tablet) {
+      padding: 60px 0;
+    }
+  }
+
+  &__social {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+
+      align-items: center;
+      justify-content: flex-start;
+
+      width: fit-content;
+
+      gap: 16px;
+    }
+  }
+
+  &__button {
+    --background-color-button: #{$white-30};
+
+    min-width: calc((210 / 414) * 100vw);
+
+    @media screen and (min-width: $tablet) {
+      display: none !important;
+    }
+  }
+
+  &__call {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+
+      width: fit-content;
+    }
+  }
+
+  &__phone {
+    display: block;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
+  }
+}

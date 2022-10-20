@@ -9,6 +9,13 @@
         BaseLang(sectionName='menu')
         BaseSocial(:items='social', direction='horizontal')
 
+      BaseButton(
+        v-if='book',
+        sectionName='menu',
+        :modificator='pageName',
+        :button='book'
+      )
+
       .menu__call.call
         a.call__link(
           v-if='callUs.link && callUs.text',
@@ -23,6 +30,9 @@
             svg(width='48', height='48')
               use(xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-phone')
 
+      a.menu__phone.phone(v-if='callUs.link', :href='callUs.link')
+        svg(width='48', height='48')
+          use(xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-phone')
   BaseImage(
     v-if='navigationList.length > 0',
     v-for='(navItemHeader, index) in navigationList',
@@ -53,12 +63,15 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['header']),
+    ...mapGetters(['header', 'pageName']),
+    book() {
+      return this.header?.content?.book ? this.header.content.book : null;
+    },
     callUs() {
-      return this.header.content?.call ? this.header.content.call : {};
+      return this.header?.content?.call ? this.header.content.call : {};
     },
     navigationList() {
-      return this.header.content?.menu ? this.header.content.menu : [];
+      return this.header?.content?.menu ? this.header.content.menu : [];
     },
   },
   mounted() {
@@ -70,7 +83,8 @@ export default {
   methods: {
     setHeaderScripts() {
       if (this.$refs.menu && !this.headerScriptsIsSet) {
-        callUs() && menu();
+        callUs(this.$refs.menu);
+        menu();
 
         this.headerScriptsIsSet = true;
       }

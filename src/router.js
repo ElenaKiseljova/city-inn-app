@@ -239,12 +239,7 @@ const router = createRouter({
     },
     {
       path: '/:notFound(.*)',
-      alias: ['/en/:notFound(.*)'],
-      redirect: '/',
       component: NotFound,
-      meta: {
-        pageName: '404',
-      },
     },
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -294,7 +289,7 @@ router.beforeEach(async (to, _, next) => {
 
   curLang = store.getters.lang;
 
-  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path, curLang: curLang });
+  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path, curLang });
 
   if (nextPageIsSet) {
     next();
@@ -320,21 +315,15 @@ router.beforeEach(async (to, _, next) => {
 
         break;
 
-      case 'Home':
-        next(false);
-
-        break;
-
-      case 'Home En':
-        next(false);
-
-        break;
-
       default:
-        if (curLang === 'uk') {
-          next({ name: 'Home' });
+        if (to.params.notFound) {
+          const path404 = curLang === 'uk' ? '/404' : `/${curLang}/404`;
+
+          await store.dispatch('setNextPage', { url: path404, curLang });
+
+          next();
         } else {
-          next({ name: 'Home En' });
+          next(false);
         }
 
         break;
@@ -343,9 +332,20 @@ router.beforeEach(async (to, _, next) => {
 });
 
 router.afterEach(async (to) => {
-  await store.dispatch('setPage', { url: to.path, curLang: curLang, pageName: to.meta.pageName });
+  await store.dispatch('setPage', { url: to.path, curLang, pageName: to.meta.pageName || '404' });
 
   await store.dispatch('setRouteChanged', true);
+
+  if (to.params.notFound) {
+    // Редирект с 404 на Главную через 10 с
+    const homePath = curLang === 'uk' ? '/' : `/${curLang}`;
+
+    const notFoundTimeout = setTimeout(() => {
+      router.replace({ path: homePath });
+
+      clearTimeout(notFoundTimeout);
+    }, 10000);
+  }
 });
 
 export default router;

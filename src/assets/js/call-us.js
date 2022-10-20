@@ -1,5 +1,5 @@
-const callUs = () => {
-  const callLink = document.querySelector('.call__link');
+const callUs = (container = document) => {
+  const callLink = container.querySelector('.call__link');
 
   if (callLink) {
     const callText = callLink.querySelector('.call__text');

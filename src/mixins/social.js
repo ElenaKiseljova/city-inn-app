@@ -2,8 +2,8 @@ export default {
   computed: {
     social() {
       if (
-        this.header.content?.social &&
-        this.header.content.address
+        this.header?.content?.social &&
+        this.header?.content.address
       ) {
         const address = this.header.content.address;
 
