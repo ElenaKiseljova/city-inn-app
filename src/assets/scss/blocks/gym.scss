@@ -66,12 +66,6 @@
       bottom: 41px;
     }
 
-    @media screen and (max-width: calc(#{$desktop} - 1px)) {
-      opacity: 1;
-
-      transform: none;
-    }
-
     @media screen and (min-width: $tablet) {
       &--group {
         position: static;

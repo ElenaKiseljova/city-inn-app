@@ -2,7 +2,7 @@
 section#promo(
   v-if='meta && pageName && header && page',
   :class='`promo promo--${sectionName}`',
-  ref='promo'
+  ref='section'
 ) 
   h1.visually-hidden(v-if='title === ""')
     | {{ meta.title }}
@@ -79,19 +79,19 @@ section#promo(
 import { mapGetters } from 'vuex';
 
 import {
-  promoBgAnimation,
   promoTitleAndTextAnimation,
   promoSocialAnimation,
   animationThreeElements,
 } from '@/assets/js/modules/gsap-animations';
 
 import social from '@/mixins/social';
+import imageBgAnimation from '@/mixins/imageBgAnimation';
 import checkUrlType from '@/mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
   components: {},
-  mixins: [social, checkUrlType, converteSymbolsNewLineToBr],
+  mixins: [imageBgAnimation, social, checkUrlType, converteSymbolsNewLineToBr],
   props: {
     name: {
       type: String,
@@ -101,7 +101,6 @@ export default {
   },
   data() {
     return {
-      promoBgAnimationIsSet: false,
       promoTitleAndTextAnimationIsSet: false,
       promoSocialAnimationIsSet: false,
       animationThreeElementsIsSet: false,
@@ -181,26 +180,22 @@ export default {
   },
   methods: {
     setPromoAnimation() {
-      if (this.$refs.promo) {
-        if (!this.promoBgAnimationIsSet) {
-          this.promoBgAnimationIsSet = promoBgAnimation(this.$refs.promo);
-        }
-
+      if (this.$refs.section) {
         if (!this.promoSocialAnimationIsSet && this.images === 0) {
           this.promoSocialAnimationIsSet = promoSocialAnimation.init(
-            this.$refs.promo
+            this.$refs.section
           );
         }
 
         if (!this.animationThreeElementsIsSet) {
           this.animationThreeElementsIsSet = animationThreeElements.init(
-            this.$refs.promo
+            this.$refs.section
           );
         }
 
         if (!this.promoTitleAndTextAnimationIsSet && this.images === 0) {
           this.promoTitleAndTextAnimationIsSet = promoTitleAndTextAnimation(
-            this.$refs.promo
+            this.$refs.section
           );
         }
       }

@@ -34,9 +34,9 @@
   }
 
   @media screen and (min-width: $tablet) {
-    // &--why {
-    //   transform: translateX(-30vw);
-    // }
+    &--why {
+      transform: translateX(-30vw);
+    }
   }
 
   &__container {
@@ -347,6 +347,8 @@
         margin-bottom: 91.5px;
 
         text-align: left;
+
+        transform: translateY(100px) rotate(-10deg) rotateX(-40deg);
       }
 
       &--starfit {

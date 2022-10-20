@@ -2,7 +2,7 @@
 section.parking(v-if='page && pageName && sections && section', ref='section')
   .parking__container.container
     .parking__content
-      h2.title-inner.parking__title(v-if='title', v-html='title')
+      h2.title-inner.parking__title(v-if='title', v-html='title', ref='title')
 
       p.parking__text(v-if='description', v-html='description')
 
@@ -12,11 +12,13 @@ section.parking(v-if='page && pageName && sections && section', ref='section')
 
 <script>
 import { mapGetters } from 'vuex';
+
+import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  mixins: [sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -10,7 +10,7 @@ section(
       h2(
         v-html='title',
         :class='`home__title home__title--mobile title home__title--${sectionName}`',
-        ref='title2'
+        ref='titleMobile'
       )
 
       div(:class='`home__img-wrapper home__img-wrapper--${sectionName}`')
@@ -24,7 +24,7 @@ section(
       h2(
         v-html='title',
         :class='` home__title home__title--desktop title home__title--${sectionName}`',
-        ref='title1'
+        ref='title'
       )
 
       div(:class='`home__content home__content--${sectionName}`')
@@ -60,16 +60,12 @@ section(
 <script>
 import { mapGetters } from 'vuex';
 
-import {
-  sectionAnimation,
-  sectionTitleAnimation,
-} from '@/assets/js/modules/gsap-animations';
-
 import checkUrlType from '@/mixins/checkUrlType';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import titleAnimation from '@/mixins/titleAnimation';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr, checkUrlType],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr, checkUrlType],
   props: {
     sectionName: {
       type: String,
@@ -79,7 +75,6 @@ export default {
   data() {
     return {
       sectionTitleAnimationIsSet: false,
-      sectionAnimationIsSet: false,
     };
   },
   computed: {
@@ -131,40 +126,6 @@ export default {
     },
     book() {
       return this.section?.book ? this.section.book : null;
-    },
-  },
-  mounted() {
-    this.setAnimations();
-  },
-  updated() {
-    this.setAnimations();
-  },
-  methods: {
-    setAnimations() {
-      if (this.$refs.title1 && this.$refs.title2 && this.$refs.section) {
-        if (!this.sectionTitleAnimationIsSet) {
-          let title = this.$refs.title1;
-
-          if (
-            this.sectionName === 'lobby' ||
-            this.sectionName === 'restaurant'
-          ) {
-            title = this.$refs.title2;
-          }
-
-          this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-            title,
-            this.$refs.section
-          );
-        }
-
-        if (!this.sectionAnimationIsSet) {
-          this.sectionAnimationIsSet = sectionAnimation(
-            this.$refs.section,
-            this.$refs.section
-          );
-        }
-      }
     },
   },
 };

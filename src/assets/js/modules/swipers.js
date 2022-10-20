@@ -103,6 +103,13 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   // Food slider
   if (swiperItem.classList.contains('food__slider')) {
+    swiperArgs.autoplay = {
+      delay: 5000,
+      stopOnLastSlide: true,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    };
+
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 75;
     }

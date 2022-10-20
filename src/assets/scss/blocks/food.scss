@@ -9,14 +9,14 @@
     overflow: visible;
 
     // &--advantages,
-    // &--menu,
+    &--menu,
     // &--approach-conference,
     // &--approach-group,
-    // &--supply {
-    //   transform: translateX(30vw);
-    // }
+    // &--supply,
+    &--breakfast {
+      transform: translateX(30vw);
+    }
 
-    // &--breakfast,
     // &--why-conference {
     //   transform: translateX(-30vw);
     // }
@@ -464,18 +464,23 @@
 
           transition: transform 0.5s linear;
         }
-      }
 
-      &.swiper-slide-next {
-        .food__img {
-          transform-origin: left top;
-          transform: translateY(var(--translateY)) scale(2);
+        &+.swiper-slide {
+          .food__img {
+            transform-origin: left top;
+            transform: translateY(var(--translateY)) scale(2);
 
-          transition: transform 0.5s linear;
-        }
+            transition: transform 0.5s linear;
+          }
 
-        &~.swiper-slide {
-          opacity: 0;
+          &~.swiper-slide {
+            .food__img {
+              transform-origin: left top;
+              transform: translate(100%, var(--translateY)) scale(2);
+
+              transition: transform 0.5s linear;
+            }
+          }
         }
       }
     }

@@ -1,4 +1,4 @@
-import { sectionTitleAnimation } from "@/assets/js/modules/gsap-animations";
+import { sectionTitleAnimation } from '@/assets/js/modules/gsap-animations';
 
 export default {
   data() {
@@ -15,14 +15,23 @@ export default {
   methods: {
     setTitleAnimation() {
       if (
-        this.$refs.title &&
+        (this.$refs.title || this.$refs.titleMobile) &&
         this.$refs.section &&
         !this.sectionTitleAnimationIsSet
       ) {
-        this.sectionTitleAnimationIsSet = sectionTitleAnimation(
-          this.$refs.title,
+        const titles = [];
+        if (this.$refs.title) {
+          titles.push(this.$refs.title);
+        }
+        if (this.$refs.titleMobile) {
+          titles.push(this.$refs.titleMobile);
+        }
+        sectionTitleAnimation(
+          titles,
           this.$refs.section
         );
+
+        this.sectionTitleAnimationIsSet = true;
       }
     },
   },

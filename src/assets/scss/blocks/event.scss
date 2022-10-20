@@ -11,13 +11,14 @@
   @media screen and (min-width: $tablet) {
     overflow: visible;
 
-    // &--around,
-    // &--event,
+    &--around,
+    &--event,
     // &--locations,
     // &--smart-rooms,
     &--halls {
       transform: translateX(-30vw);
     }
+
 
     // &--attraction,
     // &--kitchen,
@@ -32,9 +33,10 @@
 
     overflow: visible;
 
-    // &--attraction {
-    //   transform: translateX(30vw);
-    // }
+    // &--attraction,
+    &--around {
+      transform: translateX(30vw);
+    }
 
     // &--kitchen,
     // &--around,

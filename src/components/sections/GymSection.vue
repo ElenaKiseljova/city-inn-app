@@ -10,7 +10,7 @@ section(
         v-if='title',
         v-html='title',
         :class='`title-inner gym__title gym__title--mobile gym__title--${pageName}`',
-        ref='title'
+        ref='titleMobile'
       )
 
       BaseSlider(

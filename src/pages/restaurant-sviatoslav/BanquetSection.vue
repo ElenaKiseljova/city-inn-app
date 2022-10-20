@@ -19,9 +19,10 @@ import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 import titleAnimation from '@/mixins/titleAnimation';
+import imageBgAnimation from '@/mixins/imageBgAnimation';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [imageBgAnimation, titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

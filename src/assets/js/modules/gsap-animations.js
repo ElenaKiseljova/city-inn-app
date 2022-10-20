@@ -189,9 +189,9 @@ const experienceAnimation = (list) => {
 
 export { experienceAnimation };
 
-const sectionTitleAnimation = (title, trigger) => {
-  if (title && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
-    gsap.to(title, {
+const sectionTitleAnimation = (titles, trigger) => {
+  if (titles.length > 0 && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    gsap.to(titles, {
       // x: 0,
       // y: 0,
       // opacity: 1,
@@ -204,7 +204,7 @@ const sectionTitleAnimation = (title, trigger) => {
         start: 'top 70%',
         end: 'bottom top',
         onToggle: () => {
-          title.classList.toggle('active');
+          titles.forEach((title) => title.classList.toggle('active'));
         },
       },
     });
@@ -345,15 +345,14 @@ export { promoTitleAndTextAnimation };
 
 
 /**
-     * Анимация фоновой картинки
-     */
-//.promo__img | .promo
-const promoBgAnimation = (trigger) => {
+   * Анимация фоновой картинки
+   */
+const imageBgAnimation = (trigger) => {
   if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
-    const element = trigger.querySelector('.promo__picture');
+    const elements = trigger.querySelectorAll('picture');
 
-    if (element) {
-      gsap.to(element, {
+    if (elements.length > 0) {
+      gsap.to(elements, {
         scale: 1.2,
         transformOrigin: 'center',
         duration: 1,
@@ -374,7 +373,7 @@ const promoBgAnimation = (trigger) => {
   return false;
 };
 
-export { promoBgAnimation };
+export { imageBgAnimation };
 
 // Переходы слайдов
 const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {
