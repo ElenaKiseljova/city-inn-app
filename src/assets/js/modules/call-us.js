@@ -1,7 +1,6 @@
 const callUs = (container = document) => {
   const callLink = container.querySelector('.call__link');
 
-  console.log(container, callLink);
   if (callLink) {
     const callText = callLink.querySelector('.call__text');
 
