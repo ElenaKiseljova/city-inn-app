@@ -1,3 +1,5 @@
+import { mapGetters } from 'vuex';
+
 import { sectionTitleAnimation } from '@/assets/js/modules/gsap-animations';
 
 export default {
@@ -5,6 +7,14 @@ export default {
     return {
       sectionTitleAnimationIsSet: false,
     };
+  },
+  computed: {
+    ...mapGetters(['images']),
+  },
+  watch: {
+    images() {
+      this.setTitleAnimation();
+    },
   },
   mounted() {
     this.setTitleAnimation();
@@ -15,6 +25,7 @@ export default {
   methods: {
     setTitleAnimation() {
       if (
+        this.images === 0 &&
         (this.$refs.title || this.$refs.titleMobile) &&
         this.$refs.section &&
         !this.sectionTitleAnimationIsSet
