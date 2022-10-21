@@ -10,7 +10,7 @@ section#contacts(
     .contacts__left
       h2.contacts__title.contacts__title--mobile(
         :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`',
-        ref='title1'
+        ref='titleMobile'
       )
         | {{ title }}
       TheMap
@@ -18,7 +18,7 @@ section#contacts(
     div(:class='`contacts__content contacts__content--${pageName}`')
       h2.contacts__title.contacts__title--desktop(
         :class='`contacts__title--${pageName} ${pageName === "home" ? "title" : "title-inner"}`',
-        ref='title2'
+        ref='title'
       )
         | {{ title }}
 
@@ -63,15 +63,10 @@ section#contacts(
 <script>
 import { mapGetters } from 'vuex';
 
-import {
-  contactsAnimation,
-  sectionTitleAnimation,
-  DEVICE_WIDTH,
-  TABLET_WIDTH,
-  DESKTOP_WIDTH,
-} from '@/assets/js/modules/gsap-animations';
+import { contactsAnimation } from '@/assets/js/modules/gsap-animations';
 
 import checkUrlType from '@/mixins/checkUrlType';
+import titleAnimation from '@/mixins/titleAnimation';
 
 import TheMap from '@/components/blocks/TheMap.vue';
 
@@ -79,10 +74,9 @@ export default {
   components: {
     TheMap,
   },
-  mixins: [checkUrlType],
+  mixins: [titleAnimation, checkUrlType],
   data() {
     return {
-      sectionTitleAnimationIsSet: false,
       contactsAnimationInited: false,
     };
   },
@@ -137,24 +131,6 @@ export default {
           this.contactsAnimationInited = await contactsAnimation.init(
             this.$refs.section
           );
-        }
-
-        if (
-          this.$refs.title1 &&
-          this.$refs.title2 &&
-          !this.sectionTitleAnimationIsSet
-        ) {
-          if (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH) {
-            this.sectionTitleAnimationIsSet = await sectionTitleAnimation(
-              this.$refs.title1,
-              this.$refs.section
-            );
-          } else if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-            this.sectionTitleAnimationIsSet = await sectionTitleAnimation(
-              this.$refs.title2,
-              this.$refs.section
-            );
-          }
         }
       }
     },
