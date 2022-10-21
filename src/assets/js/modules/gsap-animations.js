@@ -189,9 +189,11 @@ const experienceAnimation = (list) => {
 
 export { experienceAnimation };
 
-const sectionTitleAnimation = (titles, trigger) => {
-  if (titles.length > 0 && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
-    gsap.to(titles, {
+const sectionTitleAnimation = ({ title, titles, trigger }) => {
+  if ((titles || title) && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+    const els = title || titles;
+
+    gsap.to(els, {
       // x: 0,
       // y: 0,
       // opacity: 1,
@@ -204,7 +206,11 @@ const sectionTitleAnimation = (titles, trigger) => {
         start: 'top 70%',
         end: 'bottom top',
         onToggle: () => {
-          titles.forEach((title) => title.classList.toggle('active'));
+          if (title) {
+            title.classList.toggle('active');
+          } else {
+            titles.forEach((t) => t.classList.toggle('active'));
+          }
         },
       },
     });

@@ -11,20 +11,19 @@ section.rooms(v-if='page && items')
       sectionName='rooms',
       :modificator='pageName'
     )
-      .room(ref='room')
-        div(
-          :class='`room__container container room__container--${mode(index)}`'
-        )
-          div(:class='`room__top room__top--${mode(index)}`')
+      .room(ref='section')
+        .room__container.container(:class='`room__container--${mode(index)}`')
+          .room__top(:class='`room__top--${mode(index)}`')
             h2(
               v-if='item.title && item.title !== ""',
               v-html='converteSymbolsNewLineToBr(item.title)',
-              :class='`title-inner room__title room__title--mobile room__title--${mode(index)}`'
+              :class='`title-inner room__title room__title--mobile room__title--${mode(index)}`',
+              ref='titleMobile'
             )
 
-            div(
+            .room__img-wrapper(
               v-if='item.image || item.previewImage',
-              :class='`room__img-wrapper room__img-wrapper--${mode(index)}`'
+              :class='`room__img-wrapper--${mode(index)}`'
             )
               BaseImage(
                 sectionName='room',
@@ -32,7 +31,7 @@ section.rooms(v-if='page && items')
                 :image='item.image || item.previewImage'
               )
 
-          div(:class='`room__bottom room__bottom--${mode(index)}`')
+          .room__bottom(:class='`room__bottom--${mode(index)}`')
             h2(
               v-if='item.title && item.title !== ""',
               v-html='converteSymbolsNewLineToBr(item.title)',
@@ -40,9 +39,9 @@ section.rooms(v-if='page && items')
               ref='title'
             )
 
-            div(
+            .room__services-wrapper(
               v-if='item.services && item.services.length > 0',
-              :class='`room__services-wrapper room__services-wrapper--${mode(index)}`'
+              :class='`room__services-wrapper--${mode(index)}`'
             )
               BaseServices(
                 sectionName='room',
@@ -50,7 +49,7 @@ section.rooms(v-if='page && items')
                 :items='item.services'
               )
 
-            div(:class='`room__buttons room__buttons--${mode(index)}`')
+            .room__buttons(:class='`room__buttons--${mode(index)}`')
               BasePrice(
                 v-if='item.priceFor && item.price',
                 sectionName='room',
@@ -78,17 +77,11 @@ section.rooms(v-if='page && items')
 <script>
 import { mapGetters } from 'vuex';
 
-import { sectionTitleAnimation } from '@/assets/js/modules/gsap-animations';
-
+import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
-  data() {
-    return {
-      sectionTitleAnimationIsSet: false,
-    };
-  },
+  mixins: [titleAnimation, converteSymbolsNewLineToBr],
   computed: {
     ...mapGetters(['page', 'pageName']),
     items() {
@@ -96,42 +89,6 @@ export default {
         ? this.page.content.items
         : [];
     },
-  },
-  mounted() {
-    if (
-      this.$refs.room &&
-      this.$refs.title &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      const rooms = this.$refs.room;
-      const titles = this.$refs.title;
-
-      let allOk = true;
-
-      rooms.forEach((room, index) => {
-        allOk = sectionTitleAnimation(titles[index], room);
-      });
-
-      this.sectionTitleAnimationIsSet = allOk;
-    }
-  },
-  updated() {
-    if (
-      this.$refs.room &&
-      this.$refs.title &&
-      !this.sectionTitleAnimationIsSet
-    ) {
-      const rooms = this.$refs.room;
-      const titles = this.$refs.title;
-
-      let allOk = true;
-
-      rooms.forEach((room, index) => {
-        allOk = sectionTitleAnimation(titles[index], room);
-      });
-
-      this.sectionTitleAnimationIsSet = allOk;
-    }
   },
   methods: {
     mode(index) {
