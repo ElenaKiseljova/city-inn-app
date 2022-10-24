@@ -55,18 +55,18 @@ section.types(v-if='page && pageName && sections && section', ref='section')
 <script>
 import { mapGetters } from 'vuex';
 
-import { typesItemsAnimation } from '@/assets/js/modules/gsap-animations';
+// import { typesItemsAnimation } from '@/assets/js/modules/gsap-animations';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
   mixins: [titleAnimation, converteSymbolsNewLineToBr],
-  data() {
-    return {
-      typesItemsAnimationIsSet: false,
-    };
-  },
+  // data() {
+  //   return {
+  //     typesItemsAnimationIsSet: false,
+  //   };
+  // },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {
@@ -84,24 +84,24 @@ export default {
       return this.section.slides ? this.section.slides : [];
     },
   },
-  mounted() {
-    this.setTypesItemsAnimation();
-  },
-  updated() {
-    this.setTypesItemsAnimation();
-  },
-  async beforeUnmount() {
-    await typesItemsAnimation.reset();
-  },
-  methods: {
-    setTypesItemsAnimation() {
-      if (this.$refs.section && !this.typesItemsAnimationIsSet) {
-        this.typesItemsAnimationIsSet = typesItemsAnimation.init(
-          this.$refs.section
-        );
-      }
-    },
-  },
+  // mounted() {
+  //   this.setTypesItemsAnimation();
+  // },
+  // updated() {
+  //   this.setTypesItemsAnimation();
+  // },
+  // async beforeUnmount() {
+  //   await typesItemsAnimation.reset();
+  // },
+  // methods: {
+  //   setTypesItemsAnimation() {
+  //     if (this.$refs.section && !this.typesItemsAnimationIsSet) {
+  //       this.typesItemsAnimationIsSet = typesItemsAnimation.init(
+  //         this.$refs.section
+  //       );
+  //     }
+  //   },
+  // },
 };
 </script>
 

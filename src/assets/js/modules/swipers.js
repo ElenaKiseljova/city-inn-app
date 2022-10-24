@@ -165,7 +165,8 @@ const swiperInit = (swiperItem, attr = {}) => {
   // Autoplay + fade sliders
   if (swiperItem.classList.contains('banquet__slider')
     || swiperItem.classList.contains('mission__slider')
-    || swiperItem.classList.contains('seating__slider')) {
+    // || swiperItem.classList.contains('seating__slider')
+  ) {
     newAttr.effect = 'fade';
     newAttr.fadeEffect = {
       crossFade: true,

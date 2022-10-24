@@ -97,4 +97,5 @@ export default {
 @import '~@/assets/scss/blocks/menu';
 @import '~@/assets/scss/blocks/nav';
 @import '~@/assets/scss/blocks/call';
+@import '~@/assets/scss/blocks/phone';
 </style>

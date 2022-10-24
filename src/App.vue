@@ -99,6 +99,12 @@ export default {
 @import '~@/assets/scss/blocks/title';
 @import '~@/assets/scss/blocks/title-inner';
 
+#app {
+  width: 100%;
+
+  overflow: hidden;
+}
+
 .hidden {
   visibility: hidden;
 }

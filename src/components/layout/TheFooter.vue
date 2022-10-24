@@ -89,37 +89,33 @@ export default {
   watch: {
     async routeChanged(newVal, oldVal) {
       if (newVal === false && oldVal === true) {
-        await this.setFooterAnimation('reset');
+        this.setFooterAnimation('reset');
       } else if (newVal === true) {
         // 500 time for animation route
-        setTimeout(async () => {
-          await this.setFooterAnimation();
+        setTimeout(() => {
+          this.setFooterAnimation();
         }, 500);
       }
     },
   },
-  async mounted() {
-    await this.setFooterAnimation();
+  mounted() {
+    this.setFooterAnimation();
   },
-  async updated() {
-    await this.setFooterAnimation();
+  updated() {
+    this.setFooterAnimation();
   },
   methods: {
-    async setFooterAnimation(type = 'init') {
+    setFooterAnimation(type = 'init') {
       if (type === 'init' && this.routeChanged && this.$refs.footer) {
-        // console.log(this.footerAnimationInited, 'init', type);
-
         if (!this.footerAnimationInited) {
-          this.footerAnimationInited = await pageFooterAnimation.init(
+          this.footerAnimationInited = pageFooterAnimation.init(
             this.$refs.footer
           );
         }
       } else if (type === 'reset' && !this.routeChanged) {
-        await pageFooterAnimation.reset();
+        pageFooterAnimation.reset();
 
         this.footerAnimationInited = false;
-
-        // console.log(this.footerAnimationInited, 'reset', type);
       }
     },
   },

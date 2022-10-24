@@ -53,7 +53,8 @@ section(
             h3(
               v-if='haveTitleImage && slide.title && slide.title !== ""',
               v-html='converteSymbolsNewLineToBr(slide.title)',
-              :class='`title-inner event__title-image event__title-image--mobile event__title-image--${sectionName}`'
+              :class='`title-inner event__title-image event__title-image--mobile event__title-image--${sectionName}`',
+              ref='title'
             )
 
         BasePagination(sectionName='event', :modificator='sectionName')
@@ -95,7 +96,8 @@ section(
           h3(
             v-if='haveTitleImage && slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)',
-            :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`'
+            :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`',
+            ref='titleMobile'
           )
 
           div(

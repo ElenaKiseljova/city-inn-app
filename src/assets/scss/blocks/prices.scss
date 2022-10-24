@@ -93,9 +93,9 @@
 
     .prices__top,
     .prices__bottom {
-      visibility: hidden;
+      // visibility: hidden;
 
-      opacity: 0;
+      // opacity: 0;
     }
 
     .prices__top {
@@ -111,7 +111,7 @@
 
       .prices__top,
       .prices__bottom {
-        visibility: visible;
+        // visibility: visible;
 
         transition: translate 1.2s linear, opacity 0.5s linear;
       }

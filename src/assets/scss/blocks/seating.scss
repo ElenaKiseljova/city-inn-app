@@ -103,10 +103,12 @@
 
       grid-template-columns: 50% 50%;
 
-      opacity: 0;
+      visibility: hidden;
+      // opacity: 0;
 
       &.swiper-slide-active {
-        opacity: 1;
+        // opacity: 1;
+        visibility: visible;
       }
     }
   }
@@ -168,7 +170,7 @@
 
       background-color: rgba(18, 17, 21, 0.8);
 
-      opacity: 0;
+      // opacity: 0;
 
       transform: translateX(-100%);
 

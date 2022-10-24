@@ -7,7 +7,7 @@
     align-items: stretch;
     justify-content: flex-start;
 
-    // transform: translateX(-30vw);
+    transform: translateX(-30vw);
   }
 
   &__left {
@@ -97,12 +97,12 @@
 
     visibility: hidden;
 
-    .spa__top,
-    .spa__bottom {
-      visibility: hidden;
+    // .spa__top,
+    // .spa__bottom {
+    //   visibility: hidden;
 
-      opacity: 0;
-    }
+    //   opacity: 0;
+    // }
 
     .spa__top {
       transform: translateX(-100%);
@@ -117,7 +117,7 @@
 
       .spa__top,
       .spa__bottom {
-        visibility: visible;
+        // visibility: visible;
 
         transition: translate 1.2s linear, opacity 0.5s linear;
       }

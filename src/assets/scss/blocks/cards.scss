@@ -79,13 +79,15 @@
     transition: transform 1s linear;
 
     &.active {
-      position: absolute;
-
       width: 100%;
 
       transform: rotateY(180deg);
 
       transition: transform 1s linear;
+    }
+
+    &.opened {
+      position: absolute;
     }
 
     @media screen and (min-width: $desktop) {
@@ -163,7 +165,7 @@
       min-height: 50vw;
 
       &--last {
-        width: 100%;
+        width: 100vw;
       }
     }
 
@@ -172,7 +174,7 @@
       min-height: auto;
 
       &--last {
-        width: 100%;
+        width: 100vw;
       }
     }
   }
@@ -180,7 +182,7 @@
   &__img {
     @extend %img;
 
-    overflow: hidden
+    overflow: hidden;
   }
 
   &__picture {
@@ -206,6 +208,8 @@
     width: 100vw;
     height: fit-content;
 
+    min-height: 100vw;
+
     margin: 0;
 
     background-color: $dirty-green;
@@ -225,8 +229,6 @@
     }
 
     &.active {
-      position: relative;
-
       pointer-events: all;
 
       transform: rotateY(360deg);
@@ -238,6 +240,10 @@
       }
     }
 
+    &.opened {
+      position: relative;
+    }
+
     @media screen and (min-width: $tablet) {
       width: 50vw;
       min-height: 50vw;
@@ -246,7 +252,6 @@
         width: 100%;
 
         height: fit-content;
-        min-height: auto;
       }
     }
 
@@ -306,13 +311,15 @@
 
     box-sizing: border-box;
 
+    visibility: hidden;
+
     .cards__img-wrapper,
     .cards__content {
-      opacity: 0;
+      // opacity: 0;
 
       transform: translateX(-100%);
 
-      visibility: hidden;
+      // visibility: hidden;
     }
 
     .cards__img-wrapper {
@@ -344,9 +351,11 @@
     &.swiper-slide-active {
       z-index: 1;
 
+      visibility: visible;
+
       .cards__content,
       .cards__img-wrapper {
-        visibility: visible;
+        // visibility: visible;
 
         transition: translate 1.2s linear, opacity 0.5s linear;
       }

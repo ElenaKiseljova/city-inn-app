@@ -18,7 +18,7 @@ export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
  * Аниаммция элементов списков по триггеру: init/reset
  *  
  */
-const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null, scrub = 1) => {
+const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null, scrub = 1, markers = false) => {
   if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
     scrollTriggerId = scrollTriggerId ? `${scrollTriggerId}-${new Date().getTime()}` : `scrollTriggerId-${new Date().getTime()}`;
 
@@ -33,7 +33,7 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
         id: scrollTriggerId,
         scrub: scrub,
         trigger: trigerElement,
-        // markers: true,
+        markers,
         start: 'top bottom',
         end: 'bottom center',
       },
@@ -49,10 +49,11 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
 };
 
 class Animation {
-  constructor(selectorItem, scrollTriggerId = null, scrub = 1) {
+  constructor(selectorItem, scrollTriggerId = null, scrub = 1, markers = false) {
     this.selectorItem = selectorItem;
     this.scrollTriggerId = scrollTriggerId;
     this.scrub = scrub;
+    this.markers = markers;
   }
 
   static trigger = null;
@@ -66,7 +67,7 @@ class Animation {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
       this.triggerInit = trigger;
 
-      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId, this.scrub);
+      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId, this.scrub, this.markers);
 
       this.animationInit = response.animation;
       this.scrollTriggerIdInit = response.scrollTriggerId;
@@ -135,9 +136,9 @@ const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social
 export { promoSocialAnimation };
 
 //.types
-const typesItemsAnimation = new Animation('.types__slide', 'types');
+// const typesItemsAnimation = new Animation('.types__slide', 'types');
 
-export { typesItemsAnimation };
+// export { typesItemsAnimation };
 
 // Experiences
 const experienceAnimation = (list) => {
@@ -361,7 +362,7 @@ const imageBgAnimation = (trigger) => {
       gsap.to(elements, {
         scale: 1.2,
         transformOrigin: 'center',
-        duration: 1,
+        duration: 1.2,
         ease: 'Power1.easeIn',
         scrollTrigger: {
           trigger: trigger,
@@ -389,24 +390,24 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
   if (el1 && el2) {
     gsap.to(el1, {
       x: 0,
-      opacity: 1,
-      duration: 1,
+      // opacity: 1,
+      duration: 1.2,
     });
 
     switch (mode) {
       case 1:
         gsap.to(el2, {
           x: 0,
-          opacity: 1,
-          duration: 1,
+          // opacity: 1,
+          duration: 1.2,
         });
 
         break;
 
       case 2:
         gsap.to(el2, {
-          opacity: 1,
-          duration: 1,
+          // opacity: 1,
+          duration: 1.2,
           ease: 'Power3.easeOut',
         });
 
@@ -424,7 +425,7 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
     if (el3 && el4) {
       gsap.to(el3, {
         x: '-100%',
-        opacity: 0,
+        // opacity: 0,
         duration: 1,
       });
 
@@ -432,7 +433,7 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
         case 1:
           gsap.to(el4, {
             x: '100%',
-            opacity: 0,
+            // opacity: 0,
             duration: 1,
           });
 
@@ -440,7 +441,7 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
 
         case 2:
           gsap.to(el4, {
-            opacity: 0,
+            // opacity: 0,
             duration: 1,
             ease: 'Power3.easeOut',
           });

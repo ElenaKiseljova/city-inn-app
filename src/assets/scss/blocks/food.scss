@@ -9,17 +9,17 @@
     overflow: visible;
 
     // &--advantages,
-    &--menu,
     // &--approach-conference,
     // &--approach-group,
     // &--supply,
-    &--breakfast {
+    &--menu {
       transform: translateX(30vw);
     }
 
-    // &--why-conference {
-    //   transform: translateX(-30vw);
-    // }
+    // &--why-conference,
+    &--breakfast {
+      transform: translateX(-30vw);
+    }
 
     &--approach-conference {
       position: relative;
@@ -33,10 +33,10 @@
 
     overflow: visible;
 
-    // &--breakfast,
-    // &--why-conference {
-    //   transform: translateX(30vw);
-    // }
+    // &--why-conference,
+    &--breakfast {
+      transform: translateX(30vw);
+    }
 
     &--breakfast,
     &--supply {
@@ -99,7 +99,7 @@
       position: relative;
 
       height: auto;
-      min-height: 478px;
+      min-height: calc((478 / 768)* 100vw);
 
       &--menu,
       &--advantages,
@@ -113,11 +113,11 @@
       &--why-conference {
         position: static;
 
-        min-height: 580px;
+        min-height: calc((580 / 768)* 100vw);
       }
 
       &--approach-group {
-        min-height: 488px;
+        min-height: calc((488 / 768)* 100vw);
       }
     }
 

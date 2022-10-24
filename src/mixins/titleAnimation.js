@@ -32,9 +32,9 @@ export default {
         this.$refs.section &&
         !this.sectionTitleAnimationIsSet
       ) {
-        console.log(this.$refs.title, this.$refs.title?.length);
-        console.log(this.$refs.titleMobile, this.$refs.titleMobile?.length);
-        console.log(this.$refs.section, this.$refs.section?.length);
+        // console.log(this.$refs.title, this.$refs.title?.length);
+        // console.log(this.$refs.titleMobile, this.$refs.titleMobile?.length);
+        // console.log(this.$refs.section, this.$refs.section?.length);
 
         if (this.$refs.title?.length && this.$refs.titleMobile?.length && this.$refs.section?.length) {
           this.$refs.section.forEach((s, i) => {
@@ -45,6 +45,16 @@ export default {
 
             sectionTitleAnimation({ titles, trigger: s });
           });
+        } else if (this.$refs.title?.length && this.$refs.titleMobile?.length && !this.$refs.section?.length) {
+          // Group Requests - Конференц зали
+          const titles = [];
+
+          this.$refs.title.forEach((title, i) => {
+            titles.push(title);
+            titles.push(this.$refs.titleMobile[i]);
+          });
+
+          sectionTitleAnimation({ titles, trigger: this.$refs.section });
         } else if (this.$refs.title?.length && this.$refs.section?.length) {
           this.$refs.section.forEach((s, i) => {
             sectionTitleAnimation({ title: this.$refs.title[i], trigger: s });

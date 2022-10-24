@@ -22,7 +22,7 @@
 
     // &--attraction,
     // &--kitchen,
-    // &--saunas,
+    &--saunas,
     &--coffee {
       transform: translateX(30vw);
     }
@@ -112,7 +112,7 @@
 
     @media screen and (min-width: $tablet) {
       height: auto;
-      min-height: 478px;
+      min-height: calc((478 / 768)* 100vw);
 
       &--kitchen,
       &--attraction,
@@ -123,7 +123,7 @@
 
       &--smart-rooms,
       &--halls {
-        min-height: 585px;
+        min-height: calc((585 / 768)* 100vw);
       }
     }
 
@@ -276,8 +276,7 @@
         margin-left: -377px;
       }
 
-      &--coffee,
-      &--hallss {
+      &--coffee {
         transform: none;
       }
     }
@@ -450,9 +449,9 @@
 
         letter-spacing: normal;
 
-        opacity: 1;
+        // opacity: 1;
 
-        transform: none;
+        // transform: none;
       }
 
       &--coffee {
@@ -1076,7 +1075,8 @@
 
     @extend %w100;
 
-    &--coffee {
+    &--coffee,
+    &--kitchen {
       margin-bottom: 40px;
     }
 

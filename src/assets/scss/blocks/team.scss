@@ -195,9 +195,9 @@
 
     .team__top,
     .team__bottom {
-      visibility: hidden;
+      // visibility: hidden;
 
-      opacity: 0;
+      // opacity: 0;
     }
 
     .team__top {
@@ -213,7 +213,7 @@
 
       .team__top,
       .team__bottom {
-        visibility: visible;
+        // visibility: visible;
 
         transition: translate 1.2s linear, opacity 0.5s linear;
       }

@@ -139,12 +139,12 @@
 
     visibility: hidden;
 
-    .types__top,
-    .types__bottom {
-      visibility: hidden;
+    // .types__top,
+    // .types__bottom {
+    //   visibility: hidden;
 
-      opacity: 0;
-    }
+    //   opacity: 0;
+    // }
 
     .types__top {
       transform: translateX(-100%);
@@ -159,7 +159,7 @@
 
       .types__top,
       .types__bottom {
-        visibility: visible;
+        // visibility: visible;
 
         transition: translate 1.2s linear, opacity 0.5s linear;
       }
@@ -170,19 +170,19 @@
 
       perspective: 300vw;
 
-      opacity: 0;
+      // opacity: 0;
 
       transition: transform 0.5s linear, opacity 0.5s linear;
 
       visibility: visible;
 
-      &:nth-of-type(odd) {
-        transform: translateX(-20vw);
-      }
+      // &:nth-of-type(odd) {
+      //   transform: translateX(-20vw);
+      // }
 
-      &:nth-of-type(even) {
-        transform: translateX(20vw);
-      }
+      // &:nth-of-type(even) {
+      //   transform: translateX(20vw);
+      // }
 
       .types__top,
       .types__bottom {
@@ -320,6 +320,8 @@
 
     @extend %img;
 
+    overflow: hidden;
+
     @media screen and (min-width: $tablet) {
       &::before {
         display: none;
@@ -329,6 +331,16 @@
 
   &__picture {
     @extend %picture;
+
+    @media screen and (min-width: $desktop) {
+      transform: scale(1);
+
+      transition: transform 0.5s linear;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
 
   &__bottom {

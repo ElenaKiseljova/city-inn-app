@@ -10,15 +10,16 @@ const cardsActivate = (sectionName = 'cards', cardSelector = '.cards__item') => 
 
       if (cardTop && cardBottom) {
         card.addEventListener('click', (evt) => {
+          const cardTopHeight = cardTop.offsetHeight;
+          const cardBottomHeight = cardBottom.offsetHeight;
+
           if (!evt.target.classList.contains('swiper-pagination-bullet')) {
             card.classList.add('active');
+            cardBottom.classList.toggle('active');
+            cardTop.classList.toggle('active');
 
             if (cardTop.classList.contains('active')) {
-              cardTop.classList.remove('active');
-              cardBottom.classList.remove('active');
-            } else {
-              cardTop.classList.add('active');
-              cardBottom.classList.add('active');
+              card.style.height = `${cardBottomHeight}px`;
             }
           }
 
@@ -26,7 +27,14 @@ const cardsActivate = (sectionName = 'cards', cardSelector = '.cards__item') => 
             clearTimeout(lastTimeout);
           }
 
-          lastTimeout = setTimeout(() => card.classList.remove('active'), 1000);
+          lastTimeout = setTimeout(() => {
+            cardBottom.classList.toggle('opened');
+            cardTop.classList.toggle('opened');
+            if (!cardTop.classList.contains('active')) {
+              card.style.height = `${cardTopHeight}px`;
+            }
+            card.classList.remove('active');
+          }, 1000);
         });
       }
     });
