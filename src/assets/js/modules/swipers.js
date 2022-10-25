@@ -78,6 +78,8 @@ const swiperInit = (swiperItem, attr = {}) => {
     spaceBetween: 0,
     resizeObserver: true,
     speed: 500,
+    // slideToClickedSlide: true,
+    // rewind: true,
   };
 
   prevButton = swiperItem.closest('section').querySelector('.swiper-button-prev');
@@ -147,7 +149,7 @@ const swiperInit = (swiperItem, attr = {}) => {
   // Types slider
   if (swiperItem.classList.contains('types__slider')) {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-      swiperArgs.loop = true;
+      // swiperArgs.loop = true;
       swiperArgs.slidesPerView = 3;
       swiperArgs.spaceBetween = 40;
     }
@@ -158,7 +160,7 @@ const swiperInit = (swiperItem, attr = {}) => {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       swiperArgs.spaceBetween = 51;
       swiperArgs.slidesPerView = 3;
-      swiperArgs.loop = true;
+      // swiperArgs.loop = true;
     }
   }
 
@@ -344,15 +346,35 @@ const swiperInit = (swiperItem, attr = {}) => {
     }
   }
 
+  swiperSlider.on('touchStart', (swiper) => {
+    // console.log('touchStart');
+    if (swiper.isEnd) {
+      // console.log(swiper.isEnd, 'isEnd');
 
-  // Переход к следующему/предыдущему слайду по клику
-  swiperSlider.on('click', (_, touchEvent) => {
-    if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active') && touchEvent.target.tagName !== 'A') {
-      swiperSlider.slidePrev();
-    } else if (touchEvent.target.tagName !== 'A') {
-      swiperSlider.slideNext();
+      swiper.allowSlideNext = false;
+    } else {
+      swiper.allowSlideNext = true;
+    }
+
+    if (swiper.isBeginning) {
+      // console.log(swiper.isBeginning, 'isBeginning');
+
+      swiper.allowSlidePrev = false;
+    } else {
+      swiper.allowSlidePrev = true;
     }
   });
+
+  // Переход к следующему/предыдущему слайду по клику
+  if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+    swiperSlider.on('click', (_, touchEvent) => {
+      if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active') && touchEvent.target.tagName !== 'A') {
+        swiperSlider.slidePrev();
+      } else if (touchEvent.target.tagName !== 'A') {
+        swiperSlider.slideNext();
+      }
+    });
+  }
 
   return swiperSlider;
 };

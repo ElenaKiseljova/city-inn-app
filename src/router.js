@@ -339,9 +339,11 @@ router.afterEach(async (to) => {
 
   if (to.params.notFound) {
     // Редирект с 404 на Главную через 10 с
-    const homePath = curLang === 'uk' ? '/' : `/${curLang}`;
-
     const notFoundTimeout = setTimeout(() => {
+      curLang = store.getters.lang;
+
+      const homePath = curLang === 'uk' ? '/' : `/${curLang}`;
+
       router.replace({ path: homePath });
 
       clearTimeout(notFoundTimeout);

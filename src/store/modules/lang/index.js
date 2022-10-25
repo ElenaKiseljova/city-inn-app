@@ -7,6 +7,7 @@ export default {
   state() {
     return {
       lang: window.navigator.language === 'uk' ? 'uk' : 'en',
+      isSetLang: false,
     };
   },
   mutations,

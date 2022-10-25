@@ -83,7 +83,7 @@ export default {
   computed: {
     ...mapGetters(['pageName', 'contacts', 'routeChanged']),
     title() {
-      if (this.contacts.content?.title) {
+      if (this.contacts?.content?.title) {
         return this.contacts.content.title;
       }
 
