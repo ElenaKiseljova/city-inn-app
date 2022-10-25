@@ -12,7 +12,13 @@ const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
   || document.documentElement.clientWidth
   || document.getElementsByTagName('body')[0].clientWidth;
 
-export { DEVICE_WIDTH, TABLET_WIDTH, DESKTOP_WIDTH };
+const DEVICE_HEIGHT = window.innerHeight && document.documentElement.clientHeight
+  ? Math.min(window.innerHeight, document.documentElement.clientHeight)
+  : window.innerHeight
+  || document.documentElement.clientHeight
+  || document.getElementsByTagName('body')[0].clientHeight;
+
+export { DEVICE_WIDTH, DEVICE_HEIGHT, TABLET_WIDTH, DESKTOP_WIDTH };
 
 /**
  * Аниаммция элементов списков по триггеру: init/reset
@@ -558,54 +564,5 @@ const textNavPin = {
 };
 
 export { textNavPin };
-
-// Scroll top
-const animationScrollTop = {
-  animation: null,
-  element: null,
-  trigger: document.body,
-  init(element) {
-    if (element) {
-      const trigger = this.trigger;
-
-      this.element = element;
-
-      this.animation = gsap.to(element, {
-        scrollTrigger: {
-          id: 'scrollTopButton',
-          trigger: trigger,
-          start: '200% top',
-          end: 9999999,
-          // markers: true,
-          onToggle: () => {
-            element?.classList.toggle('active');
-
-            // console.log('scrollTopButton');
-          },
-        },
-      });
-
-      return true;
-    }
-
-    return false;
-  },
-  reset() {
-    if (this.animation) {
-      this.animation.pause(0).kill(true);
-    }
-
-    if (ScrollTrigger.getById('scrollTopButton')) {
-      ScrollTrigger.getById('scrollTopButton').kill(true);
-    }
-
-    this.element?.classList.remove('active');
-  },
-  status() {
-    console.log(this.element, this.trigger, this.animation, ScrollTrigger.getById('scrollTopButton'));
-  }
-};
-
-export { animationScrollTop };
 
 

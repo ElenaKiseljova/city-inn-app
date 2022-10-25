@@ -42,7 +42,7 @@ import { mapGetters } from 'vuex';
 
 import Scrollbar from 'smooth-scrollbar';
 
-import headerScroll from '@/assets/js/modules/headerScroll';
+import headerAndToTopButtonAnimationByScroll from '@/assets/js/modules/headerAndToTopButtonAnimationByScroll';
 import {
   DEVICE_WIDTH,
   DESKTOP_WIDTH,
@@ -117,7 +117,7 @@ export default {
     },
     setScrollHeaderRightAnimation() {
       if (this.$refs.headerRight && !this.scrollHeaderRightAnimationIsSet) {
-        headerScroll(this.$refs.headerRight);
+        headerAndToTopButtonAnimationByScroll(this.$refs.headerRight);
 
         this.scrollHeaderRightAnimationIsSet = true;
       }

@@ -1,7 +1,10 @@
 import { scrollbar } from "./bodyScrollbar";
-import { DEVICE_WIDTH, DESKTOP_WIDTH } from "./gsap-animations";
+import { DEVICE_WIDTH, DEVICE_HEIGHT, DESKTOP_WIDTH } from "./gsap-animations";
 
 export default (el) => {
+  const scrollTop = document.querySelector('.scroll-top');
+
+  let scrollTopActive = false;
   let scrollTimeout;
 
   const scrollCallback = (y) => {
@@ -27,6 +30,16 @@ export default (el) => {
       if (el.classList.contains('scrolled')) {
         el.classList.remove('scrolled');
       }
+    }
+
+    if (y > (DEVICE_HEIGHT * 2) && !scrollTopActive) {
+      scrollTop?.classList.add('active');
+
+      scrollTopActive = true;
+    } else if (y < (DEVICE_HEIGHT * 2) && scrollTopActive) {
+      scrollTop?.classList.remove('active');
+
+      scrollTopActive = false;
     }
   };
 
