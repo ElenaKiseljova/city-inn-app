@@ -45,7 +45,7 @@
 <script>
 import { mapGetters } from 'vuex';
 
-import { callUs } from '@/assets/js/modules/call-us';
+import { callUs } from '@/assets/js/modules/callUs';
 import menu from '@/assets/js/modules/menu';
 
 import social from '@/mixins/social';
@@ -59,7 +59,10 @@ export default {
   mixins: [social],
   data() {
     return {
-      headerScriptsIsSet: false,
+      menuScriptIsSet: false,
+      menuScriptInterval: null,
+      callUsScriptIsSet: false,
+      callUsScriptInterval: null,
     };
   },
   computed: {
@@ -82,11 +85,38 @@ export default {
   },
   methods: {
     setHeaderScripts() {
-      if (this.$refs.menu && !this.headerScriptsIsSet) {
-        callUs(this.$refs.menu);
-        menu();
+      if (this.$refs.menu) {
+        if (!this.menuScriptIsSet) {
+          this.menuScriptIsSet = menu();
 
-        this.headerScriptsIsSet = true;
+          if (!this.menuScriptIsSet && !this.menuScriptInterval) {
+            this.menuScriptInterval = setInterval(() => {
+              this.menuScriptIsSet = menu();
+
+              if (this.menuScriptIsSet) {
+                clearInterval(this.menuScriptInterval);
+              }
+            }, 100);
+          } else if (this.menuScriptIsSet && this.menuScriptInterval) {
+            clearInterval(this.menuScriptInterval);
+          }
+        }
+
+        if (!this.callUsScriptIsSet) {
+          this.callUsScriptIsSet = callUs(this.$refs.menu);
+
+          if (!this.callUsScriptIsSet && !this.callUsScriptInterval) {
+            this.callUsScriptInterval = setInterval(() => {
+              this.callUsScriptIsSet = callUs(this.$refs.menu);
+
+              if (this.callUsScriptIsSet) {
+                clearInterval(this.callUsScriptInterval);
+              }
+            }, 100);
+          } else if (this.callUsScriptIsSet && this.callUsScriptInterval) {
+            clearInterval(this.callUsScriptInterval);
+          }
+        }
       }
     },
   },

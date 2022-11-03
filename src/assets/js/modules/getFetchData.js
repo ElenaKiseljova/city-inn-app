@@ -4,13 +4,16 @@ const CODE_SUCCESS = 200;
 const TEXT_SUCCESS = 'success';
 
 // Разные API для теста и бой
-const URL_API = window.location.host.indexOf('city-inn.com.ua') > 0 ? 'https://admin.city-inn.com.ua/api' : 'https://city-inn-app-25969-default-rtdb.firebaseio.com';
+const URL_API =
+  window.location.host.indexOf('city-inn.com.ua') > 0
+    ? `${process.env.VUE_APP_CITY_IN_API}/api`
+    : process.env.VUE_APP_FIREBASE_RTDB;
 
 // Запрос для firebase должен расширение файла включать, иначе CORS ошибка выпадает (так решила эту проблему)
 let fileExtension = URL_API.indexOf('firebase') > 0 ? '.json' : '';
 
 /** Удалить в финале СТАРТ */
-// const replceLineBreakSymbolsForJsonValidFormat = (text) => {
+// const replaceLineBreakSymbolsForJsonValidFormat = (text) => {
 //   const changedText = text.replace(/\r\n/g, '\\r\\n');
 
 //   return changedText;
@@ -22,17 +25,21 @@ const getFetchData = async (url) => {
     const response = await axios.get(`${URL_API}${url}${fileExtension}`);
 
     /** Удалить в финале СТАРТ */
-    // console.log(url, response);
+    console.log(url, response);
     /** Удалить в финале КОНЕЦ */
 
     if (response.status !== CODE_SUCCESS) {
-      const message = `Error: ${response.statusText || 'Something went wrong...'}`;
+      const message = `Error: ${
+        response.statusText || 'Something went wrong...'
+      }`;
 
       throw new Error(message);
     }
 
     if (!response.data || response.data.status !== TEXT_SUCCESS) {
-      const message = `Error: ${response.data?.error || 'No part of page data'}`;
+      const message = `Error: ${
+        response.data?.error || 'No part of page data'
+      }`;
 
       throw new Error(message);
     }

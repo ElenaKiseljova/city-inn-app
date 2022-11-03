@@ -3,13 +3,12 @@ import changeActiveClass from './changeActiveClass';
 export default () => {
   const rootElement = document.documentElement;
 
-  const burger = document.querySelector('.burger');
-  const pageHeaderMenu = document.querySelector('.page-header__menu');
-  const logoHeader = document.querySelector('.logo--header');
+  const pageHeader = document.querySelector('.page-header');
+  const burger = pageHeader?.querySelector('.page-header__burger');
+  const pageHeaderMenu = pageHeader?.querySelector('.page-header__menu');
+  const logoHeader = pageHeader?.querySelector('.page-header__logo');
 
   if (burger && pageHeaderMenu && logoHeader) {
-    pageHeaderMenu.classList.add('loaded');
-
     const burgerLeft = burger.querySelector('.burger__left');
     const burgerRight = burger.querySelector('.burger__right');
 
@@ -18,7 +17,14 @@ export default () => {
     const navItems = document.querySelectorAll('.nav__item');
     const navImages = document.querySelectorAll('.menu__img');
 
-    if (burgerLeft && burgerRight && navItems.length > 0 && navImages.length > 0) {
+    if (
+      burgerLeft &&
+      burgerRight &&
+      navItems.length > 0 &&
+      navImages.length > 0
+    ) {
+      pageHeaderMenu.classList.add('loaded');
+
       const defaultImage = navImages[0];
 
       const onClickRoot = (evt) => {

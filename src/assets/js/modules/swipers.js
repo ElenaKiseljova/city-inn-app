@@ -6,22 +6,27 @@ import { animationSlideElements } from './gsap-animations';
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1366;
 
-const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
-  ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-  : window.innerWidth
-  || document.documentElement.clientWidth
-  || document.getElementsByTagName('body')[0].clientWidth;
+const DEVICE_WIDTH =
+  window.innerWidth && document.documentElement.clientWidth
+    ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+    : window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.getElementsByTagName('body')[0].clientWidth;
 
 const reloader = () => {
   // Reloader
   window.addEventListener('resize', () => {
-    const DEVICE_WIDTH_RESIZE = window.innerWidth && document.documentElement.clientWidth
-      ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-      : window.innerWidth
-      || document.documentElement.clientWidth
-      || document.getElementsByTagName('body')[0].clientWidth;
+    const DEVICE_WIDTH_RESIZE =
+      window.innerWidth && document.documentElement.clientWidth
+        ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+        : window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.getElementsByTagName('body')[0].clientWidth;
 
-    if (DEVICE_WIDTH !== DEVICE_WIDTH_RESIZE && Math.abs(DEVICE_WIDTH - DEVICE_WIDTH_RESIZE) > 100) {
+    if (
+      DEVICE_WIDTH !== DEVICE_WIDTH_RESIZE &&
+      Math.abs(DEVICE_WIDTH - DEVICE_WIDTH_RESIZE) > 100
+    ) {
       document.location.reload();
     }
   });
@@ -53,17 +58,27 @@ const changeTab = (swiperSlider, numbers = [], texts = []) => {
 
 const swiperInit = (swiperItem, attr = {}) => {
   // Sliders destroy
-  if (swiperItem.classList.contains('rooms__slider') && (DEVICE_WIDTH >= TABLET_WIDTH)) {
+  if (
+    swiperItem.classList.contains('rooms__slider') &&
+    DEVICE_WIDTH >= TABLET_WIDTH
+  ) {
     return;
   }
 
-  if (swiperItem.classList.contains('types__slider') && (DEVICE_WIDTH >= TABLET_WIDTH && DEVICE_WIDTH < DESKTOP_WIDTH)) {
+  if (
+    swiperItem.classList.contains('types__slider') &&
+    DEVICE_WIDTH >= TABLET_WIDTH &&
+    DEVICE_WIDTH < DESKTOP_WIDTH
+  ) {
     cardsActivate('types', '.types__slide');
 
     return;
   }
 
-  if (swiperItem.classList.contains('cards__slider') && (DEVICE_WIDTH > TABLET_WIDTH)) {
+  if (
+    swiperItem.classList.contains('cards__slider') &&
+    DEVICE_WIDTH > TABLET_WIDTH
+  ) {
     return;
   }
 
@@ -82,15 +97,21 @@ const swiperInit = (swiperItem, attr = {}) => {
     // rewind: true,
   };
 
-  prevButton = swiperItem.closest('section').querySelector('.swiper-button-prev');
-  nextButton = swiperItem.closest('section').querySelector('.swiper-button-next');
+  prevButton = swiperItem
+    .closest('section')
+    .querySelector('.swiper-button-prev');
+  nextButton = swiperItem
+    .closest('section')
+    .querySelector('.swiper-button-next');
 
   // Половинчатые двойные (картинка + текст) слайдеры СТАРТ
-  if (swiperItem.classList.contains('cards__slider') ||
+  if (
+    swiperItem.classList.contains('cards__slider') ||
     swiperItem.classList.contains('team__slider') ||
     swiperItem.classList.contains('rooms__slider') ||
     swiperItem.classList.contains('spa__slider') ||
-    swiperItem.classList.contains('types__slider') || swiperItem.classList.contains('prices__slider')
+    swiperItem.classList.contains('types__slider') ||
+    swiperItem.classList.contains('prices__slider')
   ) {
     if (DEVICE_WIDTH < DESKTOP_WIDTH) {
       swiperArgs.speed = 1200;
@@ -100,7 +121,9 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   // Cards slider
   if (swiperItem.classList.contains('cards__slider')) {
-    pagination = swiperItem.closest('.cards__item').querySelector('.swiper-pagination');
+    pagination = swiperItem
+      .closest('.cards__item')
+      .querySelector('.swiper-pagination');
   }
 
   // Food slider
@@ -165,8 +188,9 @@ const swiperInit = (swiperItem, attr = {}) => {
   }
 
   // Autoplay + fade sliders
-  if (swiperItem.classList.contains('banquet__slider')
-    || swiperItem.classList.contains('mission__slider')
+  if (
+    swiperItem.classList.contains('banquet__slider') ||
+    swiperItem.classList.contains('mission__slider')
     // || swiperItem.classList.contains('seating__slider')
   ) {
     newAttr.effect = 'fade';
@@ -182,9 +206,11 @@ const swiperInit = (swiperItem, attr = {}) => {
   }
 
   // Autoplay sliders
-  if (swiperItem.classList.contains('spa__slider')
-    || swiperItem.classList.contains('gym__slider')
-    || swiperItem.classList.contains('prices__slider')) {
+  if (
+    swiperItem.classList.contains('spa__slider') ||
+    swiperItem.classList.contains('gym__slider') ||
+    swiperItem.classList.contains('prices__slider')
+  ) {
     if (DEVICE_WIDTH > TABLET_WIDTH) {
       newAttr.autoplay = {
         delay: 5000,
@@ -193,7 +219,9 @@ const swiperInit = (swiperItem, attr = {}) => {
   }
 
   if (!pagination) {
-    pagination = swiperItem.closest('section').querySelector('.swiper-pagination');
+    pagination = swiperItem
+      .closest('section')
+      .querySelector('.swiper-pagination');
   }
 
   if (pagination) {
@@ -305,10 +333,20 @@ const swiperInit = (swiperItem, attr = {}) => {
   // Conference
   if (swiperItem.classList.contains('seating__slider')) {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
-      animationSlideElements(swiperSlider, '.seating__bottom', '.seating__top', 2);
+      animationSlideElements(
+        swiperSlider,
+        '.seating__bottom',
+        '.seating__top',
+        2
+      );
 
       swiperSlider.on('beforeTransitionStart', () => {
-        animationSlideElements(swiperSlider, '.seating__bottom', '.seating__top', 2);
+        animationSlideElements(
+          swiperSlider,
+          '.seating__bottom',
+          '.seating__top',
+          2
+        );
       });
     }
   }
@@ -324,8 +362,12 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   // Food sliders
   if (swiperItem.classList.contains('food__slider')) {
-    const foodNumberTabs = swiperItem.closest('section').querySelectorAll('.food__tab-number');
-    const foodTextTabs = swiperItem.closest('section').querySelectorAll('.food__tab-text');
+    const foodNumberTabs = swiperItem
+      .closest('section')
+      .querySelectorAll('.food__tab-number');
+    const foodTextTabs = swiperItem
+      .closest('section')
+      .querySelectorAll('.food__tab-text');
 
     if (foodNumberTabs.length > 0 && foodTextTabs.length > 0) {
       changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
@@ -338,10 +380,18 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   if (swiperItem.classList.contains('cards__slider')) {
     if (DEVICE_WIDTH < DESKTOP_WIDTH) {
-      animationSlideElements(swiperSlider, '.cards__img-wrapper', '.cards__content');
+      animationSlideElements(
+        swiperSlider,
+        '.cards__img-wrapper',
+        '.cards__content'
+      );
 
       swiperSlider.on('beforeTransitionStart', () => {
-        animationSlideElements(swiperSlider, '.cards__img-wrapper', '.cards__content');
+        animationSlideElements(
+          swiperSlider,
+          '.cards__img-wrapper',
+          '.cards__content'
+        );
       });
     }
   }
@@ -368,7 +418,10 @@ const swiperInit = (swiperItem, attr = {}) => {
   // Переход к следующему/предыдущему слайду по клику
   if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
     swiperSlider.on('click', (_, touchEvent) => {
-      if (swiperSlider.clickedSlide.classList.contains('swiper-slide-active') && touchEvent.target.tagName !== 'A') {
+      if (
+        swiperSlider.clickedSlide?.classList.contains('swiper-slide-active') &&
+        touchEvent.target.tagName !== 'A'
+      ) {
         swiperSlider.slidePrev();
       } else if (touchEvent.target.tagName !== 'A') {
         swiperSlider.slideNext();
@@ -394,7 +447,11 @@ const eventSliderInit = (eventSliderImages = null) => {
     if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
       if (eventSliderImages.classList.contains('event__slider--group')) {
         attrImages.spaceBetween = 246;
-      } else if (!eventSliderImages.classList.contains('event__slider--around') && !eventSliderImages.classList.contains('event__slider--attraction') && !eventSliderImages.classList.contains('event__slider--saunas')) {
+      } else if (
+        !eventSliderImages.classList.contains('event__slider--around') &&
+        !eventSliderImages.classList.contains('event__slider--attraction') &&
+        !eventSliderImages.classList.contains('event__slider--saunas')
+      ) {
         attrImages.spaceBetween = 280;
       }
     }
@@ -402,7 +459,10 @@ const eventSliderInit = (eventSliderImages = null) => {
     const imagesEventSlider = swiperInit(eventSliderImages, attrImages);
 
     // Слайдер с меняющимся заголовком
-    if (eventSliderImages.classList.contains('event__slider--coffee') || eventSliderImages.classList.contains('event__slider--halls')) {
+    if (
+      eventSliderImages.classList.contains('event__slider--coffee') ||
+      eventSliderImages.classList.contains('event__slider--halls')
+    ) {
       let lastTimeout;
       imagesEventSlider.on('beforeTransitionStart', () => {
         animationSlideBottom(imagesEventSlider, 1);
@@ -417,7 +477,9 @@ const eventSliderInit = (eventSliderImages = null) => {
       });
     }
 
-    const eventSliderText = eventSliderImages.closest('.event').querySelector('.event__slider--text');
+    const eventSliderText = eventSliderImages
+      .closest('.event')
+      .querySelector('.event__slider--text');
 
     if (eventSliderText) {
       let attrText = {
@@ -425,8 +487,7 @@ const eventSliderInit = (eventSliderImages = null) => {
         spaceBetween: 40,
         breakpoints: {
           // when window width is >= 1366px
-          1366: {
-          },
+          1366: {},
         },
       };
 
@@ -439,8 +500,7 @@ const eventSliderInit = (eventSliderImages = null) => {
           },
           breakpoints: {
             // when window width is >= 1366px
-            1366: {
-            },
+            1366: {},
           },
         };
       }
@@ -471,7 +531,9 @@ const featuresSliderInit = (featuresIconsSlider = null) => {
       },
     };
 
-    const pagination = featuresIconsSlider.closest('section').querySelector('.swiper-pagination');
+    const pagination = featuresIconsSlider
+      .closest('section')
+      .querySelector('.swiper-pagination');
 
     if (pagination) {
       swiperArgs.pagination = {
@@ -483,7 +545,9 @@ const featuresSliderInit = (featuresIconsSlider = null) => {
     const featuresSwiper = new Swiper(featuresIconsSlider, swiperArgs);
 
     featuresSwiper.on('click', () => {
-      if (featuresSwiper.clickedSlide.classList.contains('swiper-slide-active')) {
+      if (
+        featuresSwiper.clickedSlide?.classList.contains('swiper-slide-active')
+      ) {
         featuresSwiper.slidePrev();
       } else {
         featuresSwiper.slideNext();
@@ -503,7 +567,9 @@ export default () => {
   });
 
   // Events sliders
-  const eventSlidersImages = document.querySelectorAll('.event__slider--images');
+  const eventSlidersImages = document.querySelectorAll(
+    '.event__slider--images'
+  );
 
   if (eventSlidersImages.length > 0) {
     eventSlidersImages.forEach((eventSliderImages) => {

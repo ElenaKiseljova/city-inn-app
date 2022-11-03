@@ -6,6 +6,6 @@
       use(xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-scroll-top')
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~@/assets/scss/blocks/scroll-top';
 </style>

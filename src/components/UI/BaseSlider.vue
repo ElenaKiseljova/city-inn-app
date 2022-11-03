@@ -36,6 +36,11 @@ export default {
       default: '',
     },
   },
+  data() {
+    return {
+      sliderIsInited: false,
+    };
+  },
   computed: {
     ...mapGetters(['pageName']),
     sliderModificator() {
@@ -63,21 +68,27 @@ export default {
     },
   },
   mounted() {
-    const slider = this.$refs.slider;
+    this.sliderInit();
+  },
+  updated() {
+    this.sliderInit();
+  },
+  methods: {
+    sliderInit() {
+      if (this.$refs.slider && !this.sliderIsInited) {
+        const slider = this.$refs.slider;
 
-    if (slider) {
-      if (slider.classList.contains('event__slider--images')) {
-        eventSliderInit(slider);
-      } else if (slider.classList.contains('features__slider')) {
-        featuresSliderInit(slider);
-      } else if (!slider.classList.contains('event__slider--text')) {
-        swiperInit(slider);
+        if (slider.classList.contains('event__slider--images')) {
+          eventSliderInit(slider);
+        } else if (slider.classList.contains('features__slider')) {
+          featuresSliderInit(slider);
+        } else if (!slider.classList.contains('event__slider--text')) {
+          swiperInit(slider);
+        }
+
+        this.sliderIsInited = true;
       }
-    }
+    },
   },
 };
 </script>
-
-<style lang="scss">
-@import '~@/assets/scss/libs/swiper-bundle.min';
-</style>

@@ -350,7 +350,7 @@
 
         min-width: 784px;
 
-        margin-top: 0;
+        margin-top: 34px;
         margin-right: calc((100% + 64px) - 784px);
         margin-bottom: 235px;
         margin-left: -64px;
@@ -854,7 +854,7 @@
         }
 
         &.event__slide--locations {
-          padding: 34px 74px 0 42px;
+          padding: 65px 72px 0 46px;
         }
 
         &.event__slide--smart-rooms {
@@ -1324,6 +1324,11 @@
 
       &--halls {
         margin: 0 auto 68px 0;
+      }
+
+      &--locations {
+        margin-bottom: 0;
+        margin-left: 280px;
       }
     }
   }

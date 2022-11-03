@@ -45,7 +45,7 @@ TheMain
 <script>
 import { mapGetters } from 'vuex';
 
-import { callUs } from '@/assets/js/modules/call-us';
+import { callUs } from '@/assets/js/modules/callUs';
 import social from '@/mixins/social';
 
 import TheMain from '@/components/layout/TheMain.vue';
@@ -108,7 +108,3 @@ export default {
 @import '~@/assets/scss/blocks/not-found';
 @import '~@/assets/scss/blocks/phone';
 </style>
-
-
-
-

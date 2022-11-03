@@ -1,7 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from './store';
 
-import { DEVICE_WIDTH, DESKTOP_WIDTH } from './assets/js/modules/gsap-animations';
+import {
+  DEVICE_WIDTH,
+  DESKTOP_WIDTH,
+} from './assets/js/modules/gsap-animations';
 import { scrollbar } from './assets/js/modules/bodyScrollbar';
 
 const HomePage = () => import('./pages/HomePage.vue');
@@ -269,9 +272,9 @@ const router = createRouter({
             resolve({
               el: to.hash,
               behavior: 'smooth',
-            })
-          }, 600)
-        })
+            });
+          }, 600);
+        });
       }
 
       if (savedPosition) {
@@ -280,7 +283,7 @@ const router = createRouter({
     }
 
     return { left: 0, top: 0 };
-  }
+  },
 });
 
 let curLang;
@@ -290,7 +293,10 @@ router.beforeEach(async (to, _, next) => {
 
   curLang = store.getters.lang;
 
-  const nextPageIsSet = await store.dispatch('setNextPage', { url: to.path, curLang });
+  const nextPageIsSet = await store.dispatch('setNextPage', {
+    url: to.path,
+    curLang,
+  });
 
   if (nextPageIsSet) {
     next();
@@ -333,7 +339,11 @@ router.beforeEach(async (to, _, next) => {
 });
 
 router.afterEach(async (to) => {
-  await store.dispatch('setPage', { url: to.path, curLang, pageName: to.meta.pageName || '404' });
+  await store.dispatch('setPage', {
+    url: to.path,
+    curLang,
+    pageName: to.meta.pageName || '404',
+  });
 
   await store.dispatch('setRouteChanged', true);
 
