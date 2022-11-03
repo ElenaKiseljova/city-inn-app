@@ -1,6 +1,6 @@
 <template lang="pug">
 div(
-  :class='`swiper ${sectionName}__slider ${sliderType} ${sliderModification}`',
+  :class='`swiper ${sectionName}__slider ${sliderType} ${sliderModification} ${additionalClass}`',
   ref='slider'
 )
   div(
@@ -15,7 +15,7 @@ import { mapGetters } from 'vuex';
 
 import {
   swiperInit,
-  eventSliderInit,
+  doobleSliderInit,
   featuresSliderInit,
 } from '@/assets/js/modules/swipers';
 
@@ -31,6 +31,11 @@ export default {
       default: null,
     },
     type: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    additionalClass: {
       type: String,
       required: false,
       default: '',
@@ -78,11 +83,14 @@ export default {
       if (this.$refs.slider && !this.sliderIsInited) {
         const slider = this.$refs.slider;
 
-        if (slider.classList.contains('event__slider--images')) {
-          eventSliderInit(slider);
+        if (slider.classList.contains('dooble__slider--images')) {
+          // console.log('doobleSliderInit');
+          doobleSliderInit(slider);
         } else if (slider.classList.contains('features__slider')) {
+          // console.log('featuresSliderInit');
           featuresSliderInit(slider);
-        } else if (!slider.classList.contains('event__slider--text')) {
+        } else if (!slider.classList.contains('dooble__slider--text')) {
+          // console.log('default');
           swiperInit(slider);
         }
 
@@ -92,3 +100,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '~@/assets/scss/blocks/dooble';
+</style>

@@ -30,6 +30,9 @@
     padding-bottom: 40px;
 
     @media screen and (min-width: $tablet) {
+      display: flex;
+
+      width: 50vw;
       height: fit-content;
       min-height: calc((478 / 768)* 100vw);
 
@@ -49,17 +52,27 @@
   }
 
   &__slider {
+    width: 100%;
+
     @media screen and (min-width: $tablet) {
+      direction: ltr;
+    }
+
+    @media screen and (min-width: $desktop) {
       overflow: visible;
+
+      &.dooble__slider--text {
+        display: none;
+      }
     }
   }
 
   &__slider-wrapper {
-    transition: none;
+    // transition: none;
 
-    @media screen and (min-width: $desktop) {
-      transition: all 1.2s linear;
-    }
+    // @media screen and (min-width: $desktop) {
+    //   transition: all 1.2s linear;
+    // }
   }
 
   &__slide {
@@ -67,39 +80,39 @@
 
     box-sizing: border-box;
 
-    visibility: hidden;
+    // visibility: hidden;
 
-    .doings__top,
-    .doings__bottom {
-      visibility: hidden;
+    // .doings__top,
+    // .doings__bottom {
+    //   visibility: hidden;
 
-      // opacity: 0;
-    }
+    //   // opacity: 0;
+    // }
 
-    .doings__top {
-      transform: translateX(-100%);
-    }
+    // .doings__top {
+    //   transform: translateX(-100%);
+    // }
 
-    .doings__bottom {
-      transform: translateX(100%);
-    }
+    // .doings__bottom {
+    //   transform: translateX(100%);
+    // }
 
-    &.swiper-slide-active {
-      visibility: visible;
+    // &.swiper-slide-active {
+    //   visibility: visible;
 
-      .doings__top,
-      .doings__bottom {
-        visibility: visible;
+    //   .doings__top,
+    //   .doings__bottom {
+    //     visibility: visible;
 
-        transition: translate 1.2s linear, opacity 0.5s linear;
-      }
-    }
+    //     transition: translate 1.2s linear, opacity 0.5s linear;
+    //   }
+    // }
 
-    @media screen and (min-width: $tablet) {
-      display: grid;
+    // @media screen and (min-width: $tablet) {
+    //   display: grid;
 
-      grid-template-columns: 50% 50%;
-    }
+    //   grid-template-columns: 50% 50%;
+    // }
 
     @media screen and (min-width: $desktop) {
       position: static;
@@ -116,16 +129,16 @@
 
       height: fit-content;
 
-      visibility: visible;
+      // visibility: visible;
 
-      .doings__top,
-      .doings__bottom {
-        opacity: 1;
+      // .doings__top,
+      // .doings__bottom {
+      //   opacity: 1;
 
-        visibility: visible;
+      //   visibility: visible;
 
-        transform: none;
-      }
+      //   transform: none;
+      // }
 
       &.transition {
         .doings__bottom {
@@ -255,6 +268,10 @@
 
     padding: 131px 40px 40px;
 
+    &--desktop {
+      display: none;
+    }
+
     @media screen and (min-width: $tablet) {
       min-height: auto;
 
@@ -268,6 +285,14 @@
       margin-left: auto;
 
       padding: 0 75px 90px 106px;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
     }
   }
 

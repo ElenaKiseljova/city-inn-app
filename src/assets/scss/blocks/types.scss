@@ -107,6 +107,12 @@
 
     @media screen and (min-width: $tablet) {
       overflow: visible;
+
+      direction: ltr;
+
+      &.dooble__slider--text {
+        display: none;
+      }
     }
 
     @media screen and (min-width: $desktop) {
@@ -118,7 +124,7 @@
   }
 
   &__slider-wrapper {
-    transition: none;
+    // transition: none;
 
     @media screen and (min-width: $tablet) {
       display: grid;
@@ -137,33 +143,33 @@
   &__slide {
     box-sizing: border-box;
 
-    visibility: hidden;
+    // visibility: hidden;
 
-    // .types__top,
-    // .types__bottom {
-    //   visibility: hidden;
+    // // .types__top,
+    // // .types__bottom {
+    // //   visibility: hidden;
 
-    //   opacity: 0;
+    // //   opacity: 0;
+    // // }
+
+    // .types__top {
+    //   transform: translateX(-100%);
     // }
 
-    .types__top {
-      transform: translateX(-100%);
-    }
+    // .types__bottom {
+    //   transform: translateX(100%);
+    // }
 
-    .types__bottom {
-      transform: translateX(100%);
-    }
+    // &.swiper-slide-active {
+    //   visibility: visible;
 
-    &.swiper-slide-active {
-      visibility: visible;
+    //   .types__top,
+    //   .types__bottom {
+    //     // visibility: visible;
 
-      .types__top,
-      .types__bottom {
-        // visibility: visible;
-
-        transition: translate 1.2s linear, opacity 0.5s linear;
-      }
-    }
+    //     transition: translate 1.2s linear, opacity 0.5s linear;
+    //   }
+    // }
 
     @media screen and (min-width: $tablet) {
       position: relative;
@@ -174,7 +180,7 @@
 
       transition: transform 0.5s linear, opacity 0.5s linear;
 
-      visibility: visible;
+      // visibility: visible;
 
       // &:nth-of-type(odd) {
       //   transform: translateX(-20vw);
@@ -186,9 +192,9 @@
 
       .types__top,
       .types__bottom {
-        opacity: 1;
+        // opacity: 1;
 
-        visibility: visible;
+        // visibility: visible;
 
         transform-origin: center;
 
@@ -352,6 +358,10 @@
 
     padding: 40px 15px;
 
+    &--desktop {
+      display: none;
+    }
+
     @media screen and (min-width: $mobile) {
       padding: 40px;
     }
@@ -371,6 +381,14 @@
       pointer-events: none;
 
       backface-visibility: hidden;
+
+      &--desktop {
+        display: flex;
+      }
+
+      &--mobile {
+        display: none;
+      }
     }
 
     @media screen and (min-width: $desktop) {

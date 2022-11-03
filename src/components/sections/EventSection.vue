@@ -1,7 +1,7 @@
 <template lang="pug">
 section(
   v-if='page && sectionName && section && slides',
-  :class='`event event--${sectionName}`',
+  :class='`event event--${sectionName} dooble`',
   ref='section'
 )
   div(
@@ -35,7 +35,8 @@ section(
         BaseSlider(
           sectionName='event',
           type='images',
-          :modificator='sectionName'
+          :modificator='sectionName',
+          additionalClass='dooble__slider dooble__slider--images'
         )
           BaseSlide(
             v-for='slide in slides',
@@ -74,6 +75,7 @@ section(
         sectionName='event',
         type='text',
         :modificator='sectionName'
+        additionalClass='dooble__slider dooble__slider--text'
       )
         BaseSlide(
           v-for='slide in slides',

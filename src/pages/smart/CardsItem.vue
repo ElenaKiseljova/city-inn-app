@@ -9,10 +9,21 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
     div(:class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`')
       BaseImage(sectionName='cards', alt='img', :image='card.image')
 
-  div(:class='`cards__bottom cards__bottom--${oddEvenLast}`')
-    BaseSlider(v-if='slides?.length > 0', sectionName='cards')
+  div(:class='`cards__bottom cards__bottom--${oddEvenLast} dooble`')
+    BaseSlider(v-if='slides?.length > 0', sectionName='cards', additionalClass='dooble__slider dooble__slider--images')
       BaseSlide(v-for='slide in slides', sectionName='cards')
-        CardsSlide(
+        CardsImage(
+          :oddEvenLast='oddEvenLast',
+          :image='slide.image',
+          :title='slide.title',
+          :description='slide.description',
+          :services='slide.services',
+          :book='slide.book'
+        )
+
+    BaseSlider(v-if='slides?.length > 0', sectionName='cards', additionalClass='dooble__slider dooble__slider--text')
+      BaseSlide(v-for='slide in slides', sectionName='cards')
+        CardsDesc(
           :oddEvenLast='oddEvenLast',
           :image='slide.image',
           :title='slide.title',
@@ -57,11 +68,13 @@ import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
-import CardsSlide from './CardsSlide.vue';
+import CardsImage from './CardsImage.vue';
+import CardsDesc from './CardsDesc.vue';
 
 export default {
   components: {
-    CardsSlide,
+    CardsImage,
+    CardsDesc,
   },
   mixins: [converteSymbolsNewLineToBr],
   props: {

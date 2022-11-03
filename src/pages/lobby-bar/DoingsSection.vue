@@ -1,10 +1,10 @@
 <template lang="pug">
-section.doings(v-if='page && pageName && sections && section', ref='section')
+section.doings.dooble(v-if='page && pageName && sections && section', ref='section')
   .doings__title-wrapper
     h2.title-inner.doings__title(v-if='title', v-html='title', ref='title')
 
   .doings__slider-container(v-if='slides?.length > 0')
-    BaseSlider(sectionName='doings', :modificator='pageName')
+    BaseSlider(sectionName='doings', :modificator='pageName', additionalClass='dooble__slider dooble__slider--images')
       BaseSlide(
         v-for='slide in slides',
         :key='slide.title',
@@ -18,7 +18,25 @@ section.doings(v-if='page && pageName && sections && section', ref='section')
             :image='slide.image'
           )
 
-        .doings__bottom
+        .doings__bottom.doings__bottom--desktop
+          h3.doings__subtitle(
+            v-if='slide.title && slide.title !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.title)'
+          )
+
+          p.doings__text(
+            v-if='slide.text && slide.text !== ""',
+            v-html='converteSymbolsNewLineToBr(slide.text)'
+          )
+
+    BaseSlider(sectionName='doings', :modificator='pageName', additionalClass='dooble__slider dooble__slider--text')
+      BaseSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        sectionName='doings',
+        :modificator='pageName'
+      ) 
+        .doings__bottom.doings__bottom--mobile
           h3.doings__subtitle(
             v-if='slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)'

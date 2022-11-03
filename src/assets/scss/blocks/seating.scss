@@ -75,18 +75,60 @@
     }
   }
 
+  &__slider-container {
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      position: relative;
+
+      display: flex;
+
+      align-items: stretch;
+
+      min-height: calc((580 / 768) * 100vw);
+    }
+
+    @media screen and (min-width: $desktop) {
+      min-height: calc((780 / 1440) * 100vw);
+    }
+  }
+
   &__slider {
     height: fit-content;
+
+    @media screen and (min-width: $tablet) {
+      display: flex;
+
+        align-items: stretch;
+
+      min-height: 100%;
+
+      &.dooble__slider--images {
+        width: 100vw;
+        height: auto;
+      }
+
+      &.dooble__slider--text {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 50vw;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      &.dooble__slider--text {
+        width: calc((454 / 1440) * 100vw);
+      }
+    }
   }
 
   &__slider-wrapper {
+    height: auto;
+
     align-items: stretch;
-
-    transition: all linear;
-
-    @media screen and (min-width: $tablet) {
-      transition: none;
-    }
   }
 
   &__slide {
@@ -98,19 +140,19 @@
 
     box-sizing: border-box;
 
-    @media screen and (min-width: $tablet) {
-      display: grid;
+    // @media screen and (min-width: $tablet) {
+    //   display: grid;
 
-      grid-template-columns: 50% 50%;
+    //   grid-template-columns: 50% 50%;
 
-      visibility: hidden;
-      // opacity: 0;
+      // visibility: hidden;
+      // // opacity: 0;
 
-      &.swiper-slide-active {
-        // opacity: 1;
-        visibility: visible;
-      }
-    }
+      // &.swiper-slide-active {
+      //   // opacity: 1;
+      //   visibility: visible;
+      // }
+    // }
   }
 
   &__top {
@@ -129,10 +171,8 @@
 
       order: 2;
 
-      width: 100vw;
+      width: 100%;
       height: 100%;
-
-      margin-left: calc(100% - 100vw);
     }
   }
 
@@ -161,10 +201,8 @@
     }
 
     @media screen and (min-width: $tablet) {
-      width: 50vw;
-
+      width: 100%;
       height: 100%;
-      min-height: calc((580 / 768) * 100vw);
 
       padding: 192px 40px 40px;
 
@@ -172,9 +210,9 @@
 
       // opacity: 0;
 
-      transform: translateX(-100%);
+      // transform: translateX(-100%);
 
-      transition: transform 0.5s linear, opacity 0.5s linear;
+      // transition: transform 0.5s linear, opacity 0.5s linear;
 
       overflow: visible;
     }
@@ -187,9 +225,6 @@
       align-items: flex-start;
       justify-content: flex-start;
 
-      width: calc((454 / 1440) * 100vw);
-
-      min-height: calc((780 / 1440) * 100vw);
       padding: 225px 74px 69px calc((74 / 1440) * 100vw);
     }
   }

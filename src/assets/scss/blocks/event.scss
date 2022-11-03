@@ -553,9 +553,9 @@
 
     cursor: pointer;
 
-    &--images {
-      direction: rtl;
-    }
+    // &--images {
+    //   direction: rtl;
+    // }
 
     &--text {
       height: fit-content;
@@ -598,31 +598,31 @@
 
     box-sizing: border-box;
 
-    &--images {
-      direction: ltr;
-    }
+    // &--images {
+    //   direction: ltr;
+    // }
 
     &--text {
       padding: 95px 15px 40px;
 
-      .event__content,
-      .event__subtitle,
-      .event__buttons {
-        opacity: 0;
+      // .event__content,
+      // .event__subtitle,
+      // .event__buttons {
+      //   opacity: 0;
 
-        transition: opacity 1.2s linear;
-      }
+      //   transition: opacity 1.2s linear;
+      // }
 
-      &.swiper-slide-active {
+      // &.swiper-slide-active {
 
-        .event__content,
-        .event__subtitle,
-        .event__buttons {
-          opacity: 1;
+      //   .event__content,
+      //   .event__subtitle,
+      //   .event__buttons {
+      //     opacity: 1;
 
-          transition: opacity 1.2s linear;
-        }
-      }
+      //     transition: opacity 1.2s linear;
+      //   }
+      // }
 
       // &.event__slide--kitchen,
       &.event__slide--saunas {
@@ -738,9 +738,11 @@
 
         .event__title-image--coffee,
         .event__title-image--halls {
+          visibility: hidden;
+
           opacity: 0;
 
-          transform: translateY(-50px);
+          translate: 0 -50px;
         }
       }
 
@@ -748,11 +750,13 @@
 
         .event__title-image--coffee,
         .event__title-image--halls {
-          opacity: 0.8;
+          --opacity: 0.8;
 
-          transform: translateY(0);
+          translate: 0 0;
 
-          transition: transform 0.5s linear, opacity 0.5s linear;
+          transition: translate, transform, opacity;
+
+          transition-duration: 1.5s;
         }
       }
 
@@ -800,6 +804,8 @@
             @include font(30, 45, 300);
 
             &--halls {
+              visibility: hidden;
+
               opacity: 0;
             }
           }

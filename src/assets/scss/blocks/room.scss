@@ -169,6 +169,10 @@
 
     padding: 40px 0 48px;
 
+    &--desktop {
+      display: none;
+    }
+
     @media screen and (min-width: $tablet) {
       display: grid;
 
@@ -177,6 +181,14 @@
       min-height: auto;
 
       padding: 0;
+
+      &--desktop {
+        display: grid;
+      }
+
+      &--mobile {
+        display: none;
+      }
 
       &--odd {
         grid-template-areas:

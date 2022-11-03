@@ -1,0 +1,28 @@
+.dooble {
+  &__slider {
+    &--images {
+      direction: rtl;
+    }
+
+    &--text {
+      .swiper-slide {
+        opacity: 0;
+
+        transition: opacity 1.2s linear;
+
+        &-active {
+
+          opacity: 1;
+
+          transition: opacity 1.2s linear;
+        }
+      }
+    }
+
+    // @media screen and (min-width: $tablet) {
+    //   &--images {
+    //     direction: ltr;
+    //   }
+    // }
+  }
+}

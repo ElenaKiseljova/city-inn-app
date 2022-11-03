@@ -1,15 +1,4 @@
-<template lang="pug">
-div(
-  v-if='pageName',
-  :class='`cards__img-wrapper cards__img-wrapper--${oddEvenLast}`'
-)
-  BaseImage(
-    sectionName='cards',
-    :modificator='pageName',
-    alt='img',
-    :image='image'
-  )
-
+<template lang="pug"> 
 .cards__content.cards__content--mobile
   h4(
     v-if='titleHtml',
@@ -40,8 +29,6 @@ div(
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 
 export default {
@@ -49,10 +36,6 @@ export default {
   props: {
     oddEvenLast: {
       type: String,
-      required: true,
-    },
-    image: {
-      type: Object,
       required: true,
     },
     title: {
@@ -77,7 +60,6 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(['pageName']),
     titleHtml() {
       return this.title && this.title !== ''
         ? this.converteSymbolsNewLineToBr(this.title)

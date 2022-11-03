@@ -1,5 +1,5 @@
 <template lang="pug">
-section.team(
+section.team.dooble(
   v-if='page && pageName && sections && section && slides',
   ref='section'
 )
@@ -17,7 +17,7 @@ section.team(
       BasePagination(sectionName='team', :modificator='pageName')
 
     .team__slider-container(v-if='slides.length > 0')
-      BaseSlider(sectionName='team', :modificator='pageName')
+      BaseSlider(sectionName='team', :modificator='pageName', additionalClass='dooble__slider dooble__slider--images')
         BaseSlide(
           v-for='slide in slides',
           sectionName='team',
@@ -31,7 +31,7 @@ section.team(
               alt='img'
             ) 
 
-          .team__bottom
+          .team__bottom.team__bottom--desktop
             h3.team__name(v-if='slide.title && slide.title !== ""')
               | {{ slide.title }}
 
@@ -47,6 +47,31 @@ section.team(
                 :href='contact.link'
               )
                 | {{ contact.text }}
+
+      BaseSlider(sectionName='team', :modificator='pageName', additionalClass='dooble__slider dooble__slider--text')
+        BaseSlide(
+          v-for='slide in slides',
+          sectionName='team',
+          :modificator='pageName'
+        )
+  
+          .team__bottom.team__bottom--mobile
+            h3.team__name(v-if='slide.title && slide.title !== ""')
+              | {{ slide.title }}
+
+            p.team__position(
+              v-if='slide.description && slide.description !== ""'
+            )
+              | {{ slide.description }}
+
+            template(v-if='slide.contacts && slide.contacts.length > 0')
+              a.team__mail(
+                v-for='contact in slide.contacts',
+                :key='contact.link',
+                :href='contact.link'
+              )
+                | {{ contact.text }}
+
 </template>
 
 <script>

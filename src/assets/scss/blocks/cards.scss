@@ -47,6 +47,7 @@
         grid-column: span 2;
 
         height: fit-content;
+        min-height: unset;
       }
     }
 
@@ -252,6 +253,7 @@
         width: 100%;
 
         height: fit-content;
+        min-height: unset;
       }
     }
 
@@ -283,7 +285,7 @@
     }
   }
 
-  &__slider {
+  &__slider { 
     width: 100%;
 
     @media screen and (min-width: $desktop) {
@@ -296,7 +298,7 @@
 
     align-items: stretch;
 
-    transition: none;
+    // transition: none;
   }
 
   &__slide {
@@ -311,78 +313,78 @@
 
     box-sizing: border-box;
 
-    visibility: hidden;
+    // visibility: hidden;
 
-    .cards__img-wrapper,
-    .cards__content {
-      // opacity: 0;
+    // .cards__img-wrapper,
+    // .cards__content {
+    //   // opacity: 0;
 
-      transform: translateX(-100%);
+    //   transform: translateX(-100%);
 
-      // visibility: hidden;
-    }
+    //   // visibility: hidden;
+    // }
 
-    .cards__img-wrapper {
-      transform: translateX(-100%);
-    }
+    // .cards__img-wrapper {
+    //   transform: translateX(-100%);
+    // }
 
-    .cards__content {
-      transform: translateX(100%);
-    }
+    // .cards__content {
+    //   transform: translateX(100%);
+    // }
 
-    .cards__subtitle {
-      opacity: 0;
+    // .cards__subtitle {
+    //   opacity: 0;
 
-      transform: translate(10px, 5px);
-    }
+    //   transform: translate(10px, 5px);
+    // }
 
-    .cards__description {
-      opacity: 0;
+    // .cards__description {
+    //   opacity: 0;
 
-      transform: translate(15px, 5px);
-    }
+    //   transform: translate(15px, 5px);
+    // }
 
-    .cards__services {
-      opacity: 0;
+    // .cards__services {
+    //   opacity: 0;
 
-      transform: translate(20px, 5px);
-    }
+    //   transform: translate(20px, 5px);
+    // }
 
     &.swiper-slide-active {
       z-index: 1;
 
-      visibility: visible;
+      // visibility: visible;
 
-      .cards__content,
-      .cards__img-wrapper {
-        // visibility: visible;
+      // .cards__content,
+      // .cards__img-wrapper {
+      //   // visibility: visible;
 
-        transition: translate 1.2s linear, opacity 0.5s linear;
-      }
+      //   transition: translate 1.2s linear, opacity 0.5s linear;
+      // }
 
-      .cards__subtitle {
-        opacity: 1;
+      // .cards__subtitle {
+      //   opacity: 1;
 
-        transform: translate(0, 0);
+      //   transform: translate(0, 0);
 
-        transition: transform 0.8s cubic-bezier(0, 0, 0.2, 1);
-      }
+      //   transition: transform 0.8s cubic-bezier(0, 0, 0.2, 1);
+      // }
 
-      .cards__description {
-        opacity: 1;
+      // .cards__description {
+      //   opacity: 1;
 
-        transform: translate(0, 0);
+      //   transform: translate(0, 0);
 
-        transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
-      }
+      //   transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
+      // }
 
-      .cards__services {
-        opacity: 1;
+      // .cards__services {
+      //   opacity: 1;
 
-        transform: translate(0, 0);
+      //   transform: translate(0, 0);
 
-        transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
-      }
+      //   transition: transform 0.8s 0.4s cubic-bezier(0, 0, 0.2, 1);
+      // }
     }
   }
 

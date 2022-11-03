@@ -1,5 +1,5 @@
 <template lang="pug">
-section.spa(v-if='page && sections && section', ref='section')
+section.spa.dooble(v-if='page && sections && section', ref='section')
   .spa__left
     h2.title-inner.spa__title.spa__title--mobile(v-if='title', v-html='title')
 
@@ -7,6 +7,7 @@ section.spa(v-if='page && sections && section', ref='section')
       v-if='slides && slides.length > 0',
       sectionName='spa',
       :modificator='pageName'
+      additionalClass='dooble__slider dooble__slider--images'
     )
       BaseSlide(
         v-for='slide in slides',
@@ -20,6 +21,17 @@ section.spa(v-if='page && sections && section', ref='section')
             :image='slide.image'
           )
 
+    BaseSlider(
+      v-if='slides && slides.length > 0',
+      sectionName='spa',
+      :modificator='pageName'
+      additionalClass='dooble__slider dooble__slider--text'
+    )
+      BaseSlide(
+        v-for='slide in slides',
+        sectionName='spa',
+        :modificator='pageName'
+      )
         .spa__bottom
           p.spa__text(
             v-if='slide.description && slide.description !== ""',
@@ -46,6 +58,7 @@ section.spa(v-if='page && sections && section', ref='section')
             :modificator='pageName',
             :button='slide.button'
           )
+    
     BasePagination(sectionName='spa', :modificator='pageName')
 
   .spa__right

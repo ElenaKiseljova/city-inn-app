@@ -81,11 +81,17 @@
       height: 100%;
 
       min-height: fit-content;
+
+      direction: ltr;
+
+      &.dooble__slider--text {
+        display: none;
+      }
     }
   }
 
   &__slider-wrapper {
-    transition: none;
+    // transition: none;
 
     @media screen and (min-width: $tablet) {
       transition: all 1.2s linear;
@@ -95,7 +101,7 @@
   &__slide {
     box-sizing: border-box;
 
-    visibility: hidden;
+    // visibility: hidden;
 
     // .spa__top,
     // .spa__bottom {
@@ -104,37 +110,37 @@
     //   opacity: 0;
     // }
 
-    .spa__top {
-      transform: translateX(-100%);
-    }
+    // .spa__top {
+    //   transform: translateX(-100%);
+    // }
 
-    .spa__bottom {
-      transform: translateX(100%);
-    }
+    // .spa__bottom {
+    //   transform: translateX(100%);
+    // }
 
-    &.swiper-slide-active {
-      visibility: visible;
+    // &.swiper-slide-active {
+    //   visibility: visible;
 
-      .spa__top,
-      .spa__bottom {
-        // visibility: visible;
+    //   .spa__top,
+    //   .spa__bottom {
+    //     // visibility: visible;
 
-        transition: translate 1.2s linear, opacity 0.5s linear;
-      }
-    }
+    //     transition: translate 1.2s linear, opacity 0.5s linear;
+    //   }
+    // }
 
-    @media screen and (min-width: $tablet) {
-      visibility: visible;
+    // @media screen and (min-width: $tablet) {
+      // visibility: visible;
 
-      .spa__top,
-      .spa__bottom {
-        opacity: 1;
+      // .spa__top,
+      // .spa__bottom {
+      //   opacity: 1;
 
-        visibility: visible;
+      //   visibility: visible;
 
-        transform: none;
-      }
-    }
+      //   transform: none;
+      // }
+    // }
   }
 
   &__top {
@@ -162,6 +168,10 @@
     min-height: 100vw;
 
     padding: 40px 15px 88px 15px;
+
+    &--desktop {
+      display: none;
+    }
 
     @media screen and (min-width: $mobile) {
       padding: 40px 40px 88px 40px;
@@ -228,7 +238,7 @@
     margin-bottom: 47px;
 
     &--desktop {
-      display: none;
+      display: none!important;
     }
 
     @media screen and (min-width: $tablet) {
@@ -237,7 +247,7 @@
 
     @media screen and (min-width: $desktop) {
       &--desktop {
-        display: flex;
+        display: flex!important;
       }
     }
   }
