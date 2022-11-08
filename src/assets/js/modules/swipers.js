@@ -102,18 +102,18 @@ const swiperInit = (swiperItem, attr = {}) => {
       // when window width is >= 768px
       768: {
         spaceBetween: 36,
-        navigation: {
-          nextEl: nextButton,
-          prevEl: prevButton,
-        },
+        // navigation: {
+        //   nextEl: nextButton,
+        //   prevEl: prevButton,
+        // },
       },
       // when window width is >= 1366px
       1366: {
         spaceBetween: 320,
-        navigation: {
-          nextEl: nextButton,
-          prevEl: prevButton,
-        },
+        // navigation: {
+        //   nextEl: nextButton,
+        //   prevEl: prevButton,
+        // },
       },
     };
   }
@@ -153,22 +153,21 @@ const swiperInit = (swiperItem, attr = {}) => {
       .querySelector('.swiper-pagination');
   }
 
-  if (pagination) {
+  if (pagination && !swiperItem.classList.contains('dooble__slider--text')) {
     swiperArgs.pagination = {
       el: pagination,
       clickable: true,
     };
   }
 
-  if (prevButton && nextButton) {
-    swiperArgs.breakpoints = {
-      // when window width is >= 1366px
-      1366: {
-        navigation: {
-          nextEl: nextButton,
-          prevEl: prevButton,
-        },
-      },
+  if (
+    prevButton &&
+    nextButton &&
+    !swiperItem.classList.contains('dooble__slider--text')
+  ) {
+    swiperArgs.navigation = {
+      nextEl: nextButton,
+      prevEl: prevButton,
     };
   }
 
@@ -218,14 +217,13 @@ const swiperInit = (swiperItem, attr = {}) => {
 
   // Переход к следующему/предыдущему слайду по клику
   if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-    swiperSlider.on('click', (_, touchEvent) => {
-      if (
-        swiperSlider.clickedSlide?.classList.contains('swiper-slide-active') &&
-        touchEvent.target.tagName !== 'A'
-      ) {
-        swiperSlider.slidePrev();
-      } else if (touchEvent.target.tagName !== 'A') {
-        swiperSlider.slideNext();
+    swiperSlider.on('click', (swiper, touchEvent) => {
+      if (touchEvent.target.tagName !== 'A') {
+        if (swiper.clickedSlide?.classList.contains('swiper-slide-active')) {
+          swiper.slidePrev();
+        } else {
+          swiper.slideNext();
+        }
       }
     });
   }
@@ -391,7 +389,7 @@ const doobleSliderInit = (doobleSliderImages = null) => {
         (doobleSliderText.classList.contains('doings__slider') ||
           doobleSliderText.classList.contains('team__slider'))
       ) {
-        return;
+        return imagesDoobleSlider;
       }
 
       if (
@@ -399,20 +397,20 @@ const doobleSliderInit = (doobleSliderImages = null) => {
         (doobleSliderText.classList.contains('types__slider') ||
           doobleSliderText.classList.contains('spa__slider'))
       ) {
-        return;
+        return imagesDoobleSlider;
       }
 
       let attrText = {
         speed: 1200,
         spaceBetween: 40,
-        pagination: {
-          el: null,
-          clickable: true,
-        },
-        breakpoints: {
-          // when window width is >= 1366px
-          1366: {},
-        },
+        // pagination: {
+        //   el: null,
+        //   clickable: true,
+        // },
+        // breakpoints: {
+        //   // when window width is >= 1366px
+        //   1366: {},
+        // },
       };
 
       if (DEVICE_WIDTH >= TABLET_WIDTH) {
@@ -427,10 +425,10 @@ const doobleSliderInit = (doobleSliderImages = null) => {
             fadeEffect: {
               crossFade: true,
             },
-            breakpoints: {
-              // when window width is >= 1366px
-              1366: {},
-            },
+            // breakpoints: {
+            //   // when window width is >= 1366px
+            //   1366: {},
+            // },
           };
         }
 
@@ -465,6 +463,8 @@ const doobleSliderInit = (doobleSliderImages = null) => {
         textDoobleSlider.slideTo(imagesDoobleSlider.activeIndex);
       });
     }
+
+    return imagesDoobleSlider;
   }
 };
 
@@ -503,6 +503,8 @@ const featuresSliderInit = (featuresIconsSlider = null) => {
         featuresSwiper.slideNext();
       }
     });
+
+    return featuresSwiper;
   }
 };
 

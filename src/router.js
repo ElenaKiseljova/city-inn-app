@@ -286,12 +286,10 @@ const router = createRouter({
   },
 });
 
-let curLang;
-
 router.beforeEach(async (to, _, next) => {
   await store.dispatch('setRouteChanged', false);
 
-  curLang = store.getters.lang;
+  const curLang = store.getters.lang;
 
   const nextPageIsSet = await store.dispatch('setNextPage', {
     url: to.path,
@@ -339,6 +337,8 @@ router.beforeEach(async (to, _, next) => {
 });
 
 router.afterEach(async (to) => {
+  const curLang = store.getters.lang;
+
   await store.dispatch('setPage', {
     url: to.path,
     curLang,
@@ -350,8 +350,6 @@ router.afterEach(async (to) => {
   if (to.params.notFound) {
     // Редирект с 404 на Главную через 10 с
     const notFoundTimeout = setTimeout(() => {
-      curLang = store.getters.lang;
-
       const homePath = curLang === 'uk' ? '/' : `/${curLang}`;
 
       router.replace({ path: homePath });

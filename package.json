@@ -13,7 +13,6 @@
     "detect.js": "^2.2.3",
     "google-maps": "^4.3.3",
     "smooth-scrollbar": "^8.7.5",
-    "swiper": "^8.3.2",
     "vue": "^3.2.13",
     "vue-meta": "^3.0.0-alpha.10",
     "vue-router": "^4.1.3",

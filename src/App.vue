@@ -1,16 +1,17 @@
 <template lang="pug">
-teleport(to='body')
-  BaseSpinner.spinner--main(v-if='!appIsReady')
+//- teleport(to='body')
+BaseSpinner.spinner--main(v-if='!appIsReady')
 
-  BaseScrollTopButton
+BaseScrollTopButton
 
-  TheHeader(:class='{ hidden: !appIsReady }')
+TheHeader(:class='{ hidden: !appIsReady }')
 
-router-view(:class='{ hidden: !appIsReady }', v-slot='slotProps')
-  transition(name='rout', mode='out-in')
-    component(:is='slotProps.Component') 
+.wrapper 
+  router-view(:class='{ hidden: !appIsReady }', v-slot='slotProps')
+    transition(name='rout', mode='out-in')
+      component(:is='slotProps.Component') 
 
-TheFooter(:class='{ hidden: !appIsReady }')
+  TheFooter(:class='{ hidden: !appIsReady }')
 </template>
 
 <script>
@@ -19,6 +20,7 @@ import { mapGetters, mapActions } from 'vuex';
 import detect from 'detect.js';
 
 import { reloader } from './assets/js/modules/swipers';
+import { scrollbarInit } from '@/assets/js/modules/bodyScrollbar';
 
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
@@ -82,6 +84,9 @@ export default {
     };
 
     await this.setBrowser(browser);
+  },
+  mounted() {
+    scrollbarInit();
   },
   methods: {
     ...mapActions(['setBrowser']),

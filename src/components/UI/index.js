@@ -1,10 +1,5 @@
 import { defineAsyncComponent } from 'vue';
 
-const BaseButton = defineAsyncComponent(() => import('./BaseButton.vue'));
-const BaseLogo = defineAsyncComponent(() => import('./BaseLogo.vue'));
-const BasePrice = defineAsyncComponent(() => import('./BasePrice.vue'));
-const BaseWorktime = defineAsyncComponent(() => import('./BaseWorktime.vue'));
-
 import BaseLang from './BaseLang.vue';
 import BaseNavigation from './BaseNavigation.vue';
 import BasePagination from './BasePagination.vue';
@@ -16,6 +11,11 @@ import BaseSlider from './BaseSlider.vue';
 import BaseSocial from './BaseSocial.vue';
 import BaseSpinner from './BaseSpinner.vue';
 import BaseImage from './BaseImage.vue';
+import BaseButton from './BaseButton.vue';
+
+const BaseLogo = defineAsyncComponent(() => import('./BaseLogo.vue'));
+const BasePrice = defineAsyncComponent(() => import('./BasePrice.vue'));
+const BaseWorktime = defineAsyncComponent(() => import('./BaseWorktime.vue'));
 
 const components = [
   {

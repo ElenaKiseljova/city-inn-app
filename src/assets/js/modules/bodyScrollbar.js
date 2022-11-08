@@ -4,24 +4,30 @@ import { DEVICE_WIDTH, DESKTOP_WIDTH } from './gsap-animations';
 
 let scrollbar;
 
-if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-  scrollbar = Scrollbar.init(document.body, {
-    delegateTo: document,
-    damping: 0.05,
-    continuousScrolling: false,
-  });
+const scrollbarInit = () => {
+  if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+    const wrapper = document.querySelector('.wrapper');
 
-  ScrollTrigger.scrollerProxy(document.body, {
-    scrollTop(value) {
-      if (arguments.length) {
-        scrollbar.scrollTop = value; // setter
-      }
-      return scrollbar.scrollTop;    // getter
+    if (wrapper) {
+      scrollbar = Scrollbar.init(wrapper, {
+        delegateTo: document,
+        damping: 0.05,
+        continuousScrolling: false,
+      });
+
+      ScrollTrigger.scrollerProxy(wrapper, {
+        scrollTop(value) {
+          if (arguments.length) {
+            scrollbar.scrollTop = value; // setter
+          }
+          return scrollbar.scrollTop; // getter
+        },
+      });
+
+      scrollbar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: wrapper });
     }
-  });
+  }
+};
 
-  scrollbar.addListener(ScrollTrigger.update);
-  ScrollTrigger.defaults({ scroller: document.body });
-}
-
-export { scrollbar };
+export { scrollbarInit, scrollbar };

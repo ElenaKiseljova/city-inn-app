@@ -1,4 +1,4 @@
-import getFetchData from "@/assets/js/modules/getFetchData";
+import getFetchData from '@/assets/js/modules/getFetchData';
 
 export default {
   setPageName(context, payload) {
@@ -9,19 +9,20 @@ export default {
 
     let path = payload.url;
 
-    path = path === '/'
-      ? '/index'
-      : (path === '/en/' || path === '/en')
+    path =
+      path === '/'
+        ? '/index'
+        : path === '/en/' || path === '/en'
         ? '/en/index'
         : path === '/conference-service'
-          ? '/conference-service/index'
-          : path === '/en/conference-service'
-            ? '/en/conference-service/index'
-            : path === '/rooms'
-              ? '/rooms/index'
-              : path === '/en/rooms'
-                ? '/en/rooms/index'
-                : path;
+        ? '/conference-service/index'
+        : path === '/en/conference-service'
+        ? '/en/conference-service/index'
+        : path === '/rooms'
+        ? '/rooms/index'
+        : path === '/en/rooms'
+        ? '/en/rooms/index'
+        : path;
 
     let url = '';
 
@@ -30,30 +31,43 @@ export default {
     const responsePageData = await getFetchData(url);
 
     if (responsePageData) {
-      const lang = responsePageData.content.language === 'ua' ? 'uk' : responsePageData.content.language;
-
       // Update Header
       let responseHeaderData = await context.getters.header;
-      if (!responseHeaderData || curLang !== lang) {
-        responseHeaderData = await context.dispatch('setNewHeader', { lang });
+      if (
+        !responseHeaderData ||
+        responseHeaderData?.content?.language !== curLang
+      ) {
+        responseHeaderData = await context.dispatch('setNewHeader', {
+          lang: curLang,
+        });
       }
 
       // Update Footer
       let responseFooterData = await context.getters.footer;
-      if (!responseFooterData || curLang !== lang) {
-        responseFooterData = await context.dispatch('setNewFooter', { lang });
+      if (
+        !responseFooterData ||
+        responseFooterData?.content?.language !== curLang
+      ) {
+        responseFooterData = await context.dispatch('setNewFooter', {
+          lang: curLang,
+        });
       }
 
       // Update Contacts
       let responseConatctsData = await context.getters.contacts;
-      if (!responseConatctsData || curLang !== lang) {
-        responseConatctsData = await context.dispatch('setNewContacts', { lang });
+      if (
+        !responseConatctsData ||
+        responseConatctsData?.content?.language !== curLang
+      ) {
+        responseConatctsData = await context.dispatch('setNewContacts', {
+          lang: curLang,
+        });
       }
 
       context.commit('setNextPage', responsePageData);
 
       if (responseHeaderData && responseFooterData && responseConatctsData) {
-        // console.log(lang, curLang, responseHeaderData, responseFooterData, responseConatctsData);
+        // console.log(curLang, responseHeaderData, responseFooterData, responseConatctsData);
 
         return true;
       }
@@ -75,12 +89,10 @@ export default {
         throw new Error(message);
       }
 
-      const lang = pageObj.content.language === 'ua' ? 'uk' : pageObj.content.language;
-
       // Update meta
       const oldMeta = await context.getters.meta.items;
       const newMeta = {
-        lang: lang,
+        lang: curLang,
         title: pageObj.content.seoTitle,
         items: [
           ...oldMeta,
@@ -102,11 +114,12 @@ export default {
       await context.dispatch('setMeta', newMeta);
 
       // Update lang
-      await context.dispatch('setLang', lang);
+      await context.dispatch('setLang', curLang);
 
       // Update Header
       const header = await context.getters.header;
-      if (!header || curLang !== lang) {
+
+      if (!header || header.content?.language !== curLang) {
         const newHeader = await context.getters.newHeader;
 
         if (newHeader) {
@@ -116,7 +129,7 @@ export default {
 
       // Update Footer
       const footer = await context.getters.footer;
-      if (!footer || curLang !== lang) {
+      if (!footer || footer.content?.language !== curLang) {
         const newFooter = await context.getters.newFooter;
 
         if (newFooter) {
@@ -126,7 +139,7 @@ export default {
 
       // Update Contacts
       const contacts = await context.getters.contacts;
-      if (!contacts || curLang !== lang) {
+      if (!contacts || contacts.content?.language !== curLang) {
         const newContacts = await context.getters.newContacts;
 
         if (newContacts) {

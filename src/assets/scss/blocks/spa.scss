@@ -93,9 +93,9 @@
   &__slider-wrapper {
     // transition: none;
 
-    @media screen and (min-width: $tablet) {
-      transition: all 1.2s linear;
-    }
+    // @media screen and (min-width: $tablet) {
+    //   transition: all 1.2s linear;
+    // }
   }
 
   &__slide {
