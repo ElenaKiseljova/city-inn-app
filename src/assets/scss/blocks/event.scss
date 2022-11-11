@@ -580,10 +580,10 @@
         overflow: visible;
       }
     }
-  }
 
-  &__slider-wrapper {
-    align-items: stretch;
+    .swiper-wrapper {
+      align-items: stretch;
+    }
   }
 
   &__slide {

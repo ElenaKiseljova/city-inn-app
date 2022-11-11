@@ -8,8 +8,26 @@ section.mission(v-if='page && sections && section', ref='section')
 
     BaseNavigation(sectionName='mission')
 
-    BaseSlider(v-if='images && images.length > 0', sectionName='mission')
-      BaseSlide(v-for='image in images', sectionName='mission')
+    SwiperSlider(
+      v-if='images && images.length > 0',
+      :class="`mission__slider`"
+      :modules="modules"
+      :slides-per-view="slidesPerView",
+      :space-between="spaceBetween",
+      :resize-observer="resizeObserver",
+      :speed="speed",      
+      :pagination="{ el: '.mission__pagination', clickable: true }",
+      :navigation="{ nextEl: '.mission__navigation .navigation__next', prevEl: '.mission__navigation .navigation__prev' }",
+      :effect="'fade'",
+      :autoplay="autoplay",
+      @swiper="setSwiper"
+    )
+      SwiperSlide(
+        v-for='image in images',
+        :key='image',
+        :class="`mission__slide`"
+        @click="slideChange"
+      )
         BaseImage(
           sectionName='mission',
           modificator='mission',
@@ -25,9 +43,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 import imageBgAnimation from '@/mixins/imageBgAnimation';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [imageBgAnimation, titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    imageBgAnimation,
+    titleAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   computed: {
     ...mapGetters(['page']),
     sections() {

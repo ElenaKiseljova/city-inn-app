@@ -123,12 +123,12 @@
         width: calc((454 / 1440) * 100vw);
       }
     }
-  }
 
-  &__slider-wrapper {
-    height: auto;
-
-    align-items: stretch;
+    .swiper-wrapper {
+      height: auto;
+  
+      align-items: stretch;
+    }
   }
 
   &__slide {

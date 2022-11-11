@@ -3,14 +3,32 @@ section.banquet(v-if='page && pageName && sections && section', ref='section')
   .banquet__container.container
     h2.title-inner.banquet__title(v-if='title', v-html='title', ref='title')
 
-    BaseSlider(v-if='images && images.length > 0', sectionName='banquet')
-      BaseSlide(v-for='image in images', sectionName='banquet')
+    SwiperSlider(
+      v-if='images && images.length > 0', 
+      :class="`banquet__slider banquet__slider--${pageName}`"
+      :modules="modules"
+      :slides-per-view="slidesPerView",
+      :space-between="spaceBetween",
+      :resize-observer="resizeObserver",
+      :speed="speed",      
+      :pagination="{ el: '.banquet__pagination', clickable: true }"
+      :effect="'fade'",
+      :autoplay="autoplay",
+      @swiper="setSwiper"
+    )
+      SwiperSlide(
+        v-for='image in images',
+        :key='image',
+        :class="`banquet__slide banquet__slide--${pageName}`"
+        @click="slideChange"
+      )
         BaseImage(
           sectionName='banquet',
           :modificator='pageName',
           :image='image',
           alt='img'
         )
+        
     BasePagination(sectionName='banquet')
 </template>
 
@@ -20,9 +38,15 @@ import { mapGetters } from 'vuex';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 import titleAnimation from '@/mixins/titleAnimation';
 import imageBgAnimation from '@/mixins/imageBgAnimation';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [imageBgAnimation, titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    imageBgAnimation,
+    titleAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

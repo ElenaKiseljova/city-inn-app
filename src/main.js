@@ -3,6 +3,8 @@ import { createApp } from 'vue'; // defineAsyncComponent
 import App from './App.vue';
 import baseComponents from './components/UI';
 
+import 'swiper/css';
+
 import router from './router.js';
 import store from './store';
 
@@ -19,5 +21,3 @@ const appMount = async () => {
 };
 
 appMount();
-
-

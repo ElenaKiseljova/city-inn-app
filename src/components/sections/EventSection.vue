@@ -32,17 +32,23 @@ section(
         v-if='slides?.length > 0',
         :class='`event__slider-container event__slider-container--${sectionName}`'
       )
-        BaseSlider(
-          sectionName='event',
-          type='images',
-          :modificator='sectionName',
-          additionalClass='dooble__slider dooble__slider--images'
+        SwiperSlider(
+          :class="`event__slider event__slider--images event__slider--${sectionName} dooble__slider dooble__slider--images`"
+          :modules="modules"
+          :slides-per-view="slidesPerView",
+          :space-between="spaceBetween",
+          :resize-observer="resizeObserver",
+          :speed="speed",
+          :navigation="{ nextEl: '.event__navigation .navigation__next', prevEl: '.event__navigation .navigation__prev' }"
+          :pagination="{ el: '.event__pagination', clickable: true }",
+          :controller="{ control: textSwiper }",
+          @swiper="setSwiper"
         )
-          BaseSlide(
+          SwiperSlide(
             v-for='slide in slides',
-            sectionName='event',
-            type='images',
-            :modificator='sectionName'
+            :key='slide.image',
+            :class="`event__slide event__slide--images event__slide--${sectionName}`",
+            @click="slideChange"
           )
             BaseImage(
               sectionName='event',
@@ -70,18 +76,22 @@ section(
 
       BaseNavigation(sectionName='event', :modificator='sectionName')
 
-      BaseSlider(
+      SwiperSlider(
         v-if='slides?.length > 0 && !content',
-        sectionName='event',
-        type='text',
-        :modificator='sectionName'
-        additionalClass='dooble__slider dooble__slider--text'
+        :class="`event__slider event__slider--text event__slider--${sectionName} dooble__slider dooble__slider--text`"
+        :modules="modules"
+        :slides-per-view="slidesPerView",
+        :space-between="spaceBetween",
+        :resize-observer="resizeObserver",
+        :speed="speed",
+        :controller="{ control: swiper }",
+        :effect="'fade'",
+        @swiper="setTextSwiper"
       )
-        BaseSlide(
+        SwiperSlide(
           v-for='slide in slides',
-          sectionName='event',
-          :modificator='sectionName',
-          type='text'
+          :key='slide.image',
+          :class="`event__slide event__slide--images event__slide--${sectionName}`"
         )
           h3(
             v-if='subTitle',
@@ -205,9 +215,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   props: {
     sectionName: {
       type: String,

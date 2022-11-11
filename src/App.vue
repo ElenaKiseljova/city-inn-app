@@ -104,7 +104,7 @@ export default {
 
 @import '~@/assets/scss/blocks/title';
 @import '~@/assets/scss/blocks/title-inner';
-@import '~@/assets/scss/libs/swiper-bundle.min';
+// @import '~@/assets/scss/libs/swiper-bundle.min';
 
 #app {
   width: 100%;

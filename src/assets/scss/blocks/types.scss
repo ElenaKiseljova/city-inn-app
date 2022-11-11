@@ -121,22 +121,18 @@
       margin-left: 0;
       margin-right: auto;
     }
-  }
 
-  &__slider-wrapper {
-    // transition: none;
-
-    @media screen and (min-width: $tablet) {
-      display: grid;
-
-      grid-template-columns: 50vw 50vw;
-      grid-template-rows: 50vw 50vw;
-    }
-
-    @media screen and (min-width: $desktop) {
-      display: flex;
-
-      // transition: all 1.2s linear;
+    .swiper-wrapper {
+      @media screen and (min-width: $tablet) {
+        display: grid;
+  
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 50vw 50vw;
+      }
+  
+      @media screen and (min-width: $desktop) {
+        display: flex;
+      }
     }
   }
 

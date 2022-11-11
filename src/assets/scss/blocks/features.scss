@@ -27,28 +27,28 @@
     @media screen and (min-width: $desktop) {
       padding-bottom: 164px;
     }
-  }
 
-  &__slider-wrapper {
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-
-    @media screen and (min-width: $tablet) {
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 32px 14px;
-
-      width: 100%;
-    }
-
-    @media screen and (min-width: $desktop) {
-      grid-template-columns: repeat(5, 1fr);
-
-      gap: 109px 60px;
+    .swiper-wrapper {
+      margin: 0;
+      padding: 0;
+  
+      list-style: none;
+  
+      @media screen and (min-width: $tablet) {
+        display: grid;
+  
+        grid-template-columns: repeat(4, 1fr);
+  
+        gap: 32px 14px;
+  
+        width: 100%;
+      }
+  
+      @media screen and (min-width: $desktop) {
+        grid-template-columns: repeat(5, 1fr);
+  
+        gap: 109px 60px;
+      }
     }
   }
 

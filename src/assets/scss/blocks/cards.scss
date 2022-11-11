@@ -291,14 +291,14 @@
     @media screen and (min-width: $desktop) {
       display: none;
     }
-  }
 
-  &__slider-wrapper {
-    display: flex;
-
-    align-items: stretch;
-
-    // transition: none;
+    .swiper-wrapper {
+      display: flex;
+  
+      align-items: stretch;
+  
+      // transition: none;
+    }
   }
 
   &__slide {

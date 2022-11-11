@@ -16,11 +16,23 @@ section(
         v-if='images && images.length > 0',
         :class='`food__slider-container food__slider-container--${sectionName}`'
       )
-        BaseSlider(sectionName='food', :modificator='sectionName')
-          BaseSlide(
+        SwiperSlider(
+          :class="`food__slider food__slider--${sectionName}`"
+          :modules="modules"
+          :slides-per-view="slidesPerView",
+          :space-between="spaceBetween",
+          :resize-observer="resizeObserver",
+          :speed="speed",
+          :navigation="{ nextEl: '.food__navigation .navigation__next', prevEl: '.food__navigation .navigation__prev' }",
+          :pagination="{ el: '.food__pagination', clickable: true }",
+          :autoplay="autoplay",
+          @swiper="setSwiper",
+          @slideChange="onSlideChange"
+        )
+          SwiperSlide(
             v-for='image in images',
-            sectionName='food',
-            :modificator='sectionName'
+            :class="`food__slide food__slide--${sectionName}`"
+            @click="slideChange"
           )
             BaseImage(
               sectionName='food',
@@ -112,9 +124,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   props: {
     sectionName: {
       type: String,

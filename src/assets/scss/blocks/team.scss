@@ -200,59 +200,13 @@
     }
   }
 
-  // &__slider-wrapper {
-    // transition: none;
-
-    // @media screen and (min-width: $desktop) {
-    //   transition: all 1.2s linear;
-    // }
-  // }
-
   &__slide {
-    // visibility: hidden;
-
-    // .team__top,
-    // .team__bottom {
-    //   // visibility: hidden;
-
-    //   // opacity: 0;
-    // }
-
-    // .team__top {
-    //   transform: translateX(-100%);
-    // }
-
-    // .team__bottom {
-    //   transform: translateX(100%);
-    // }
-
-    // &.swiper-slide-active {
-    //   visibility: visible;
-
-    //   .team__top,
-    //   .team__bottom {
-    //     // visibility: visible;
-
-    //     transition: translate 1.2s linear, opacity 0.5s linear;
-    //   }
-    // }
 
     @media screen and (min-width: $desktop) {
       display: grid;
 
       grid-template-rows: auto;
       grid-template-columns: 100%;
-
-      // visibility: visible;
-
-      // .team__top,
-      // .team__bottom {
-      //   opacity: 1;
-
-      //   visibility: visible;
-
-      //   transform: none;
-      // }
     }
   }
 

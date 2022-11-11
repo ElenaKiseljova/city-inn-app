@@ -7,16 +7,23 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
         v-html='title'
       )
 
-      BaseSlider(
+      SwiperSlider(
         v-if='images?.length > 0',
-        sectionName='cosy',
-        :modificator='pageName'
+        :class="`cosy__slider cosy__slider--${pageName}`"
+        :modules="modules"
+        :slides-per-view="slidesPerView",
+        :space-between="spaceBetween",
+        :resize-observer="resizeObserver",
+        :speed="speed",
+        :navigation="{ nextEl: '.cosy__navigation .navigation__next', prevEl: '.cosy__navigation .navigation__prev' }"
+        :pagination="{ el: '.cosy__pagination', clickable: true }",
+        @swiper="setSwiper"
       )
-        BaseSlide(
+        SwiperSlide(
           v-for='image in images',
           :key='image',
-          sectionName='cosy',
-          :modificator='pageName'
+          :class="`cosy__slide cosy__slide--${pageName}`",
+          @click="slideChange"
         )
           BaseImage(
             sectionName='cosy',
@@ -47,9 +54,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

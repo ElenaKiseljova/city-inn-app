@@ -43,17 +43,17 @@ const animationSlideBottom = (swiperSlider, mode = 1) => {
   }
 };
 
-const changeTab = (swiperSlider, numbers = [], texts = []) => {
-  const index = swiperSlider.activeIndex ?? 0;
+// const changeTab = (swiperSlider, numbers = [], texts = []) => {
+//   const index = swiperSlider.activeIndex ?? 0;
 
-  if (numbers[index] && texts[index]) {
-    changeActiveClass(numbers);
-    numbers[index].classList.add('active');
+//   if (numbers[index] && texts[index]) {
+//     changeActiveClass(numbers);
+//     numbers[index].classList.add('active');
 
-    changeActiveClass(texts);
-    texts[index].classList.add('active');
-  }
-};
+//     changeActiveClass(texts);
+//     texts[index].classList.add('active');
+//   }
+// };
 
 const swiperInit = (swiperItem, attr = {}) => {
   const newAttr = { ...attr };
@@ -83,58 +83,58 @@ const swiperInit = (swiperItem, attr = {}) => {
     .querySelector('.swiper-button-next');
 
   // Food slider
-  if (swiperItem.classList.contains('food__slider')) {
-    swiperArgs.autoplay = {
-      delay: 5000,
-      stopOnLastSlide: true,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
-    };
+  // if (swiperItem.classList.contains('food__slider')) {
+  //   swiperArgs.autoplay = {
+  //     delay: 5000,
+  //     stopOnLastSlide: true,
+  //     disableOnInteraction: false,
+  //     pauseOnMouseEnter: true,
+  //   };
 
-    if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
-      swiperArgs.spaceBetween = 75;
-    }
-  }
+  //   if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+  //     swiperArgs.spaceBetween = 75;
+  //   }
+  // }
 
   // Gallery slider
-  if (swiperItem.classList.contains('gallery__slider')) {
-    newAttr.breakpoints = {
-      // when window width is >= 768px
-      768: {
-        spaceBetween: 36,
-        // navigation: {
-        //   nextEl: nextButton,
-        //   prevEl: prevButton,
-        // },
-      },
-      // when window width is >= 1366px
-      1366: {
-        spaceBetween: 320,
-        // navigation: {
-        //   nextEl: nextButton,
-        //   prevEl: prevButton,
-        // },
-      },
-    };
-  }
+  // if (swiperItem.classList.contains('gallery__slider')) {
+  //   newAttr.breakpoints = {
+  //     // when window width is >= 768px
+  //     768: {
+  //       spaceBetween: 36,
+  //       // navigation: {
+  //       //   nextEl: nextButton,
+  //       //   prevEl: prevButton,
+  //       // },
+  //     },
+  //     // when window width is >= 1366px
+  //     1366: {
+  //       spaceBetween: 320,
+  //       // navigation: {
+  //       //   nextEl: nextButton,
+  //       //   prevEl: prevButton,
+  //       // },
+  //     },
+  //   };
+  // }
 
   // Autoplay + fade sliders
-  if (
-    swiperItem.classList.contains('banquet__slider') ||
-    swiperItem.classList.contains('mission__slider')
-    // || swiperItem.classList.contains('seating__slider')
-  ) {
-    newAttr.effect = 'fade';
-    newAttr.fadeEffect = {
-      crossFade: true,
-    };
+  // if (
+  //   swiperItem.classList.contains('banquet__slider') ||
+  //   swiperItem.classList.contains('mission__slider')
+  //   // || swiperItem.classList.contains('seating__slider')
+  // ) {
+  //   newAttr.effect = 'fade';
+  //   newAttr.fadeEffect = {
+  //     crossFade: true,
+  //   };
 
-    if (DEVICE_WIDTH > TABLET_WIDTH) {
-      newAttr.autoplay = {
-        delay: 5000,
-      };
-    }
-  }
+  //   if (DEVICE_WIDTH > TABLET_WIDTH) {
+  //     newAttr.autoplay = {
+  //       delay: 5000,
+  //     };
+  //   }
+  // }
 
   // Autoplay sliders
 
@@ -179,22 +179,22 @@ const swiperInit = (swiperItem, attr = {}) => {
   const swiperSlider = new Swiper(swiperItem, swiperArgsMerged);
 
   // Food sliders
-  if (swiperItem.classList.contains('food__slider')) {
-    const foodNumberTabs = swiperItem
-      .closest('section')
-      .querySelectorAll('.food__tab-number');
-    const foodTextTabs = swiperItem
-      .closest('section')
-      .querySelectorAll('.food__tab-text');
+  // if (swiperItem.classList.contains('food__slider')) {
+  //   const foodNumberTabs = swiperItem
+  //     .closest('section')
+  //     .querySelectorAll('.food__tab-number');
+  //   const foodTextTabs = swiperItem
+  //     .closest('section')
+  //     .querySelectorAll('.food__tab-text');
 
-    if (foodNumberTabs.length > 0 && foodTextTabs.length > 0) {
-      changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
+  //   if (foodNumberTabs.length > 0 && foodTextTabs.length > 0) {
+  //     changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
 
-      swiperSlider.on('slideChange', () => {
-        changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
-      });
-    }
-  }
+  //     swiperSlider.on('slideChange', () => {
+  //       changeTab(swiperSlider, foodNumberTabs, foodTextTabs);
+  //     });
+  //   }
+  // }
 
   swiperSlider.on('touchStart', (swiper) => {
     // console.log('touchStart');
