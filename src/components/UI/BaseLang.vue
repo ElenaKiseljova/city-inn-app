@@ -36,8 +36,8 @@ export default {
 
       window.location.href =
         this.lang === 'uk'
-          ? `${window.location.origin}/en${path}`
-          : `${window.location.origin}${uaPath}`;
+          ? `${window.location.origin}${uaPath}`
+          : `${window.location.origin}/en${path}`;
     },
   },
 };
