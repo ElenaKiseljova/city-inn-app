@@ -31,13 +31,16 @@ export default {
       await this.updateIsSetLang();
 
       const path = this.$route.path;
-      const uaPath =
-        path === '/en' ? path.replace('/en', '/') : path.replace('/en', '');
+      if (this.lang === 'uk' && path.indexOf('/en') === 0) {
+        window.location.href = `${window.location.origin}${path.replace(
+          '/en',
+          ''
+        )}`;
+      }
 
-      window.location.href =
-        this.lang === 'uk'
-          ? `${window.location.origin}${uaPath}`
-          : `${window.location.origin}/en${path}`;
+      if (this.lang !== 'uk' && path.indexOf('/en') !== 0) {
+        window.location.href = `${window.location.origin}/en${path}`;
+      }
     },
   },
 };
