@@ -510,6 +510,10 @@
 
     color: var(--color-page);
 
+    opacity: 0;
+    
+    transform: translateX(50px);
+
     &--group,
     &--conference {
       @include font(12, 20, 400);
@@ -525,10 +529,6 @@
 
     @media screen and (min-width: $tablet) {
       @include font(18, 27, 400);
-
-      transform: translateX(50px);
-
-      opacity: 0;
 
       &--conference {
         @include font(12, 20, 400);
@@ -857,6 +857,10 @@
 
     color: var(--color-page);
 
+    opacity: 0;
+
+    transform: translateX(-100px);
+
     &--group,
     &--conference,
     &--conference-service,
@@ -886,10 +890,6 @@
 
     @media screen and (min-width: $tablet) {
       @include font(96, 86, 600);
-
-      transform: translateX(-100px);
-
-      opacity: 0;
 
       &--about,
       &--rooms {

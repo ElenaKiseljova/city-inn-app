@@ -3,34 +3,49 @@ section.gallery(v-if='page && sections && section')
   h2.visually-hidden Gallery
 
   .gallery__container.container
-    BaseSlider(
+    SwiperSlider(
       v-if='images?.length > 0',
-      sectionName='gallery',
-      :modificator='pageName'
+      :class="`gallery__slider gallery__slider--${pageName}`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      @swiper="setSwiper"
     )
-      BaseSlide(
-        v-for='iamge in images',
-        sectionName='gallery',
-        :modificator='pageName'
+      SwiperSlide(
+        v-for='image in images',
+        :key='image',
+        :class="`gallery__slide gallery__slide--${pageName}`",
+        @click="slideChange"
       )
+  
         BaseImage(
           sectionName='gallery',
           :modificator='pageName',
-          :image='iamge'
+          :image='image'
         )
 
-    BasePagination(sectionName='gallery', :modificator='pageName')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='gallery', :modificator='pageName')
 
-    BaseNavigation(sectionName='gallery', :modificator='pageName')
+    BaseNavigation(:swiperIndex="swiperIndex", sectionName='gallery', :modificator='pageName')
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [converteSymbolsNewLineToBr, swiperSliderInit],
+  data() {
+    return {
+      sectionName: 'gallery',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -25,7 +25,8 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner event__title event__title--mobile event__title--${sectionName}`'
+        :class='`title-inner event__title event__title--mobile event__title--${sectionName}`',
+        ref='titleMobile'
       )
 
       div(
@@ -35,19 +36,20 @@ section(
         SwiperSlider(
           :class="`event__slider event__slider--images event__slider--${sectionName} dooble__slider dooble__slider--images`"
           :modules="modules"
-          :slides-per-view="slidesPerView",
-          :space-between="spaceBetween",
-          :resize-observer="resizeObserver",
-          :speed="speed",
-          :navigation="{ nextEl: '.event__navigation .navigation__next', prevEl: '.event__navigation .navigation__prev' }"
-          :pagination="{ el: '.event__pagination', clickable: true }",
+          :slides-per-view="swiperOptions.slidesPerView",
+          :space-between="swiperOptions.spaceBetween",
+          :resize-observer="swiperOptions.resizeObserver",
+          :speed="swiperOptions.speed",
+          :navigation="swiperNavigation",
+          :pagination="swiperPagination",
           :controller="{ control: textSwiper }",
           @swiper="setSwiper"
+          @beforeTransitionStart="onBeforeTransitionStart"
         )
           SwiperSlide(
             v-for='slide in slides',
             :key='slide.image',
-            :class="`event__slide event__slide--images event__slide--${sectionName}`",
+            :class="`event__slide event__slide--images event__slide--${sectionName} ${slideClass}`",
             @click="slideChange"
           )
             BaseImage(
@@ -64,7 +66,7 @@ section(
               ref='title'
             )
 
-        BasePagination(sectionName='event', :modificator='sectionName')
+        BasePagination(:swiperIndex="swiperIndex", sectionName='event', :modificator='sectionName')
 
     div(:class='`event__bottom event__bottom--${sectionName}`')
       h2(
@@ -74,24 +76,25 @@ section(
         ref='title'
       )
 
-      BaseNavigation(sectionName='event', :modificator='sectionName')
+      BaseNavigation(:swiperIndex="swiperIndex", sectionName='event', :modificator='sectionName')
 
       SwiperSlider(
         v-if='slides?.length > 0 && !content',
         :class="`event__slider event__slider--text event__slider--${sectionName} dooble__slider dooble__slider--text`"
         :modules="modules"
-        :slides-per-view="slidesPerView",
-        :space-between="spaceBetween",
-        :resize-observer="resizeObserver",
-        :speed="speed",
+        :slides-per-view="swiperTextOptions.slidesPerView",
+        :space-between="swiperTextOptions.spaceBetween",
+        :resize-observer="swiperTextOptions.resizeObserver",
+        :speed="swiperTextOptions.speed",
         :controller="{ control: swiper }",
-        :effect="'fade'",
+        :effect="swiperTextOptions.effect",
+        :fadeEffect="{crossFade: true}",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
           v-for='slide in slides',
           :key='slide.image',
-          :class="`event__slide event__slide--images event__slide--${sectionName}`"
+          :class="`event__slide event__slide--text event__slide--${sectionName}`"
         )
           h3(
             v-if='subTitle',

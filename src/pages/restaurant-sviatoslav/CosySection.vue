@@ -4,19 +4,20 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
     .cosy__top
       h2.title-inner.cosy__title.cosy__title--mobile(
         v-if='title',
-        v-html='title'
+        v-html='title',
+        ref="titleMobile"
       )
 
       SwiperSlider(
         v-if='images?.length > 0',
         :class="`cosy__slider cosy__slider--${pageName}`"
         :modules="modules"
-        :slides-per-view="slidesPerView",
-        :space-between="spaceBetween",
-        :resize-observer="resizeObserver",
-        :speed="speed",
-        :navigation="{ nextEl: '.cosy__navigation .navigation__next', prevEl: '.cosy__navigation .navigation__prev' }"
-        :pagination="{ el: '.cosy__pagination', clickable: true }",
+        :slides-per-view="swiperOptions.slidesPerView",
+        :space-between="swiperOptions.spaceBetween",
+        :resize-observer="swiperOptions.resizeObserver",
+        :speed="swiperOptions.speed",
+        :navigation="swiperNavigation",
+        :pagination="swiperPagination",
         @swiper="setSwiper"
       )
         SwiperSlide(
@@ -31,7 +32,7 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
             :image='image'
           )
 
-      BasePagination(sectionName='cosy', :modificator='pageName')
+      BasePagination(:swiperIndex="swiperIndex", sectionName='cosy', :modificator='pageName')
 
     .cosy__bottom
       h2.title-inner.cosy__title.cosy__title--desktop(
@@ -45,7 +46,7 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
 
         p.cosy__text.cosy__text--bottom(v-if='textBottom', v-html='textBottom')
 
-      BaseNavigation(sectionName='cosy', :modificator='pageName')
+      BaseNavigation(:swiperIndex="swiperIndex", sectionName='cosy', :modificator='pageName')
 </template>
 
 <script>
@@ -63,6 +64,11 @@ export default {
     converteSymbolsNewLineToBr,
     swiperSliderInit,
   ],
+  data() {
+    return {
+      sectionName: 'cosy',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

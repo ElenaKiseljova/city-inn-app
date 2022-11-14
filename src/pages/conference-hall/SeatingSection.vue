@@ -2,22 +2,55 @@
 section.seating.dooble(v-if='page && sections && section', ref='section')
   h2.title-inner.seating__title(v-if='title', v-html='title', ref='title')
 
-  BasePagination(sectionName='seating')
+  BasePagination(:swiperIndex="swiperIndex", sectionName='seating')
 
-  BaseNavigation(sectionName='seating')
+  BaseNavigation(:swiperIndex="swiperIndex", sectionName='seating')
 
   .seating__slider-container
-    BaseSlider(v-if='slides?.length > 0', sectionName='seating', additionalClass='dooble__slider dooble__slider--images')
-      BaseSlide(v-for='slide in slides', sectionName='seating')
+    SwiperSlider(
+      v-if='slides?.length > 0', 
+      :class="`seating__slider seating__slider--images seating__slider--${pageName} dooble__slider dooble__slider--images`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :controller="{ control: textSwiper }",
+      @swiper="setSwiper"
+      @beforeTransitionStart="onBeforeTransitionStart"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`seating__slide seating__slide--images seating__slide--${pageName} ${slideClass}`",
+        @click="slideChange"
+      )
         .seating__top
           BaseImage(
             sectionName='seating',
             :modificator='pageName',
             :image='slide.image'
           )
-
-    BaseSlider(v-if='slides?.length > 0', sectionName='seating', additionalClass='dooble__slider dooble__slider--text')
-      BaseSlide(v-for='slide in slides', sectionName='seating')
+    SwiperSlider(
+      v-if='slides?.length > 0', 
+      :class="`seating__slider seating__slider--text seating__slider--${pageName} dooble__slider dooble__slider--text`"
+      :modules="modules"
+      :slides-per-view="swiperTextOptions.slidesPerView",
+      :space-between="swiperTextOptions.spaceBetween",
+      :resize-observer="swiperTextOptions.resizeObserver",
+      :speed="swiperTextOptions.speed",
+      :controller="{ control: swiper }",
+      :effect="swiperTextOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      @swiper="setTextSwiper"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`seating__slide seating__slide--text seating__slide--${pageName}`"
+      )
         .seating__bottom
           .seating__header
             .seating__icon
@@ -49,9 +82,15 @@ import { mapGetters } from 'vuex';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr, swiperSliderInit],
+  data() {
+    return {
+      sectionName: 'seating',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

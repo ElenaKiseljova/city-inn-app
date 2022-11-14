@@ -1,10 +1,9 @@
 <template lang="pug">
-router-link.lang.button.button--circle(
+button.lang.button.button--circle(
   :class='`${sectionName}__lang`',
-  :to='langToggle.path',
   @click='changeLang'
 )
-  span {{ langToggle.text }}
+  span {{ toLang }}
 </template>
 
 <script>
@@ -19,15 +18,8 @@ export default {
   },
   computed: {
     ...mapGetters(['lang']),
-    langToggle() {
-      const path = this.$route.path;
-      const uaPath =
-        path === '/en' ? path.replace('/en', '/') : path.replace('/en', '');
-
-      return {
-        path: this.lang === 'uk' ? `/en${path}` : uaPath,
-        text: this.lang === 'uk' ? 'en' : 'ua',
-      };
+    toLang() {
+      return this.lang === 'uk' ? 'en' : 'ua';
     },
   },
   methods: {
@@ -37,6 +29,15 @@ export default {
 
       await this.setLang(newLang);
       await this.updateIsSetLang();
+
+      const path = this.$route.path;
+      const uaPath =
+        path === '/en' ? path.replace('/en', '/') : path.replace('/en', '');
+
+      window.location.href =
+        this.lang === 'uk'
+          ? `${window.location.origin}/en${path}`
+          : `${window.location.origin}${uaPath}`;
     },
   },
 };

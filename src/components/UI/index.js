@@ -6,8 +6,6 @@ import BasePagination from './BasePagination.vue';
 import BaseScrollTopButton from './BaseScrollTopButton.vue';
 import BaseService from './BaseService.vue';
 import BaseServices from './BaseServices.vue';
-import BaseSlide from './BaseSlide.vue';
-import BaseSlider from './BaseSlider.vue';
 import BaseSocial from './BaseSocial.vue';
 import BaseSpinner from './BaseSpinner.vue';
 import BaseImage from './BaseImage.vue';
@@ -57,14 +55,6 @@ const components = [
   {
     name: 'BaseServices',
     component: BaseServices,
-  },
-  {
-    name: 'BaseSlide',
-    component: BaseSlide,
-  },
-  {
-    name: 'BaseSlider',
-    component: BaseSlider,
   },
   {
     name: 'BaseSocial',

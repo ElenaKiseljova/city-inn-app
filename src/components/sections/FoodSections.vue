@@ -9,7 +9,7 @@ section(
       h2(
         v-if='title',
         v-html='title',
-        :class='`title-inner food__title food__title--mobile food__title--${sectionName}`'
+        :class='`title-inner food__title food__title--mobile food__title--${sectionName}`', ref='titleMobile'
       )
 
       div(
@@ -19,13 +19,13 @@ section(
         SwiperSlider(
           :class="`food__slider food__slider--${sectionName}`"
           :modules="modules"
-          :slides-per-view="slidesPerView",
-          :space-between="spaceBetween",
-          :resize-observer="resizeObserver",
-          :speed="speed",
-          :navigation="{ nextEl: '.food__navigation .navigation__next', prevEl: '.food__navigation .navigation__prev' }",
-          :pagination="{ el: '.food__pagination', clickable: true }",
-          :autoplay="autoplay",
+          :slides-per-view="swiperOptions.slidesPerView",
+          :space-between="swiperOptions.spaceBetween",
+          :resize-observer="swiperOptions.resizeObserver",
+          :speed="swiperOptions.speed",
+          :navigation="swiperNavigation",
+          :pagination="swiperPagination",
+          :autoplay="swiperOptions.autoplay",
           @swiper="setSwiper",
           @slideChange="onSlideChange"
         )
@@ -41,9 +41,9 @@ section(
               alt='img'
             )
 
-        BaseNavigation(sectionName='food', :modificator='sectionName')
+        BaseNavigation(:swiperIndex="swiperIndex", sectionName='food', :modificator='sectionName')
 
-        BasePagination(sectionName='food', :modificator='sectionName')
+        BasePagination(:swiperIndex="swiperIndex", sectionName='food', :modificator='sectionName')
 
     div(:class='`food__bottom food__bottom--${sectionName}`')
       h2(
@@ -139,7 +139,6 @@ export default {
       required: true,
     },
   },
-
   computed: {
     ...mapGetters(['page']),
     sections() {

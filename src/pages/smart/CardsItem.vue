@@ -10,8 +10,26 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
       BaseImage(sectionName='cards', alt='img', :image='card.image')
 
   div(:class='`cards__bottom cards__bottom--${oddEvenLast} dooble`')
-    BaseSlider(v-if='slides?.length > 0', sectionName='cards', additionalClass='dooble__slider dooble__slider--images')
-      BaseSlide(v-for='slide in slides', sectionName='cards')
+    SwiperSlider(
+      v-if='slides?.length > 0',
+      :class="`cards__slider cards__slider--images dooble__slider dooble__slider--images`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :controller="{ control: textSwiper }",
+      @swiper="setSwiper"
+      @beforeTransitionStart="onBeforeTransitionStart"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`cards__slide cards__slide--images ${slideClass}`",
+        @click="slideChange"
+      )
         CardsImage(
           :oddEvenLast='oddEvenLast',
           :image='slide.image',
@@ -21,8 +39,24 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
           :book='slide.book'
         )
 
-    BaseSlider(v-if='slides?.length > 0', sectionName='cards', additionalClass='dooble__slider dooble__slider--text')
-      BaseSlide(v-for='slide in slides', sectionName='cards')
+    SwiperSlider(
+      v-if='slides?.length > 0', 
+      :class="`cards__slider cards__slider--text dooble__slider dooble__slider--text`"
+      :modules="modules"
+      :slides-per-view="swiperTextOptions.slidesPerView",
+      :space-between="swiperTextOptions.spaceBetween",
+      :resize-observer="swiperTextOptions.resizeObserver",
+      :speed="swiperTextOptions.speed",
+      :controller="{ control: swiper }",
+      :effect="swiperTextOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      @swiper="setTextSwiper"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`cards__slide cards__slide--text`"
+      )
         CardsDesc(
           :oddEvenLast='oddEvenLast',
           :image='slide.image',
@@ -32,7 +66,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
           :book='slide.book'
         )
 
-    BasePagination(sectionName='cards')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='cards')
 
     div(
       :class='`cards__content cards__content--${oddEvenLast} ${cardsContentClass}`'
@@ -67,6 +101,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
 import { mapGetters } from 'vuex';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 import CardsImage from './CardsImage.vue';
 import CardsDesc from './CardsDesc.vue';
@@ -76,7 +111,7 @@ export default {
     CardsImage,
     CardsDesc,
   },
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [converteSymbolsNewLineToBr, swiperSliderInit],
   props: {
     card: {
       type: Object,

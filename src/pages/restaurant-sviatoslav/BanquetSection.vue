@@ -7,13 +7,14 @@ section.banquet(v-if='page && pageName && sections && section', ref='section')
       v-if='images && images.length > 0', 
       :class="`banquet__slider banquet__slider--${pageName}`"
       :modules="modules"
-      :slides-per-view="slidesPerView",
-      :space-between="spaceBetween",
-      :resize-observer="resizeObserver",
-      :speed="speed",      
-      :pagination="{ el: '.banquet__pagination', clickable: true }"
-      :effect="'fade'",
-      :autoplay="autoplay",
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",   
+      :pagination="swiperPagination",
+      :effect="swiperOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      :autoplay="swiperOptions.autoplay",
       @swiper="setSwiper"
     )
       SwiperSlide(
@@ -29,7 +30,7 @@ section.banquet(v-if='page && pageName && sections && section', ref='section')
           alt='img'
         )
         
-    BasePagination(sectionName='banquet')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='banquet')
 </template>
 
 <script>
@@ -47,6 +48,11 @@ export default {
     converteSymbolsNewLineToBr,
     swiperSliderInit,
   ],
+  data() {
+    return {
+      sectionName: 'banquet',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

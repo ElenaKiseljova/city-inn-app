@@ -167,6 +167,10 @@
     //   }
     // }
 
+    @media screen and (min-width: $tablet) and (max-width: calc(#{$desktop} - 1px)) {
+      width: unset!important;
+    }
+
     @media screen and (min-width: $tablet) {
       position: relative;
 
@@ -185,7 +189,10 @@
       // &:nth-of-type(even) {
       //   transform: translateX(20vw);
       // }
+      // &.swiper-slide {
 
+      // }
+      
       .types__top,
       .types__bottom {
         // opacity: 1;

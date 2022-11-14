@@ -6,20 +6,21 @@ section.mission(v-if='page && sections && section', ref='section')
     .mission__content
       p.mission__text(v-if='text', v-html='text')
 
-    BaseNavigation(sectionName='mission')
+    BaseNavigation(:swiperIndex="swiperIndex", sectionName='mission')
 
     SwiperSlider(
       v-if='images && images.length > 0',
       :class="`mission__slider`"
       :modules="modules"
-      :slides-per-view="slidesPerView",
-      :space-between="spaceBetween",
-      :resize-observer="resizeObserver",
-      :speed="speed",      
-      :pagination="{ el: '.mission__pagination', clickable: true }",
-      :navigation="{ nextEl: '.mission__navigation .navigation__next', prevEl: '.mission__navigation .navigation__prev' }",
-      :effect="'fade'",
-      :autoplay="autoplay",
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",      
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :effect="swiperOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      :autoplay="swiperOptions.autoplay",
       @swiper="setSwiper"
     )
       SwiperSlide(
@@ -34,7 +35,7 @@ section.mission(v-if='page && sections && section', ref='section')
           :image='image',
           alt='img'
         )
-    BasePagination(sectionName='mission')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='mission')
 </template>
 
 <script>
@@ -52,6 +53,11 @@ export default {
     converteSymbolsNewLineToBr,
     swiperSliderInit,
   ],
+  data() {
+    return {
+      sectionName: 'mission',
+    };
+  },
   computed: {
     ...mapGetters(['page']),
     sections() {

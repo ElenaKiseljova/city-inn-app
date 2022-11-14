@@ -52,6 +52,12 @@
     }
   }
 
+  &__slide {
+    @media screen and (min-width: $tablet) {
+      width: unset!important;
+    }
+  }
+
   &__pagination {
     &.swiper-pagination {
       bottom: 0;

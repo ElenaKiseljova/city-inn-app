@@ -1,5 +1,5 @@
 <template lang="pug">
-div(:class='paginationClasses')
+div(:class='paginationClasses', :id="`slider-pagination-${swiperIndex}`")
 </template>
 
 <script>
@@ -13,6 +13,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    swiperIndex: {
+      type: [String, Number],
+      required: true,
+      default: 0,
     },
   },
   computed: {

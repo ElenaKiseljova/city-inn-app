@@ -44,7 +44,7 @@
           transform-origin: left top;
           transform: translateY(0) scale(1);
 
-          transition: transform 0.5s linear;
+          transition: transform 1.2s linear;
         }
       }
 
@@ -60,12 +60,17 @@
 
       &.swiper-slide-next {
         .gallery__img {
-          transition: transform 0.5s linear;
+          transition: transform 1.2s linear;
         }
       }
     }
 
     @media screen and (min-width: $desktop) {
+      &.swiper-slide-active {
+        .gallery__img {
+          transition: transform 0.5s linear;
+        }
+      }
 
       &.swiper-slide-next,
       &.swiper-slide-next~.swiper-slide {
@@ -73,6 +78,14 @@
           $scale: calc(420 / 840);
 
           transform: translateY(0) scale(#{$scale});
+
+          transition: transform 0.5s linear;
+        }
+      }
+
+      &.swiper-slide-next {
+        .gallery__img {
+          transition: transform 0.5s linear;
         }
       }
     }

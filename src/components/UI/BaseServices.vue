@@ -17,6 +17,7 @@ ul(
 
 <script>
 import { serviceAnimation } from '@/assets/js/modules/gsap-animations';
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
@@ -50,6 +51,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['lang', 'routeChanged']),
     modificatorArr() {
       return this.modificator.split(',');
     },
@@ -71,6 +73,8 @@ export default {
   },
   beforeUnmount() {
     serviceAnimation.reset();
+
+    this.serviceAnimationIsSet = false;
   },
   methods: {
     setServiceAnimation() {

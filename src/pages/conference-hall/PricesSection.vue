@@ -2,12 +2,30 @@
 section.prices.dooble(v-if='page && sections && section', ref='section')
   h2.title-inner.prices__title(v-if='title', v-html='title', ref='title')
 
-  BasePagination(sectionName='prices')
-  BaseNavigation(sectionName='prices')
+  BasePagination(:swiperIndex="swiperIndex", sectionName='prices')
+  BaseNavigation(:swiperIndex="swiperIndex", sectionName='prices')
 
   .prices__slider-container
-    BaseSlider(v-if='slides?.length > 0', sectionName='prices', additionalClass='dooble__slider dooble__slider--images')
-      BaseSlide(v-for='slide in slides', sectionName='prices')
+    SwiperSlider(
+      v-if='slides?.length > 0', 
+      :class="`prices__slider prices__slider--images prices__slider--${pageName} dooble__slider dooble__slider--images`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :controller="{ control: textSwiper }",
+      @swiper="setSwiper"
+      @beforeTransitionStart="onBeforeTransitionStart"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`prices__slide prices__slide--images prices__slide--${pageName} ${slideClass}`",
+        @click="slideChange"
+      )
         .prices__top
           BaseImage(
             sectionName='prices',
@@ -15,8 +33,24 @@ section.prices.dooble(v-if='page && sections && section', ref='section')
             :image='slide.image'
           )
 
-    BaseSlider(v-if='slides?.length > 0', sectionName='prices', additionalClass='dooble__slider dooble__slider--text')
-      BaseSlide(v-for='slide in slides', sectionName='prices')
+    SwiperSlider(
+      v-if='slides?.length > 0', 
+      :class="`prices__slider prices__slider--text prices__slider--${pageName} dooble__slider dooble__slider--text`"
+      :modules="modules"
+      :slides-per-view="swiperTextOptions.slidesPerView",
+      :space-between="swiperTextOptions.spaceBetween",
+      :resize-observer="swiperTextOptions.resizeObserver",
+      :speed="swiperTextOptions.speed",
+      :controller="{ control: swiper }",
+      :effect="swiperTextOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      @swiper="setTextSwiper"
+    )
+      SwiperSlide(
+        v-for='slide in slides',
+        :key='slide.title',
+        :class="`prices__slide prices__slide--text prices__slide--${pageName}`"
+      )
         .prices__bottom
           h3.prices__subtitle(
             v-if='slide.title && slide.title !== ""',
@@ -56,9 +90,20 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
+  data() {
+    return {
+      sectionName: 'prices',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

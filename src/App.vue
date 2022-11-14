@@ -19,7 +19,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 import detect from 'detect.js';
 
-import { reloader } from './assets/js/modules/swipers';
+import { reloader } from './assets/js/modules/gsap-animations';
 import { scrollbarInit } from '@/assets/js/modules/bodyScrollbar';
 
 import TheHeader from './components/layout/TheHeader.vue';
@@ -31,7 +31,7 @@ export default {
     TheFooter,
   },
   computed: {
-    ...mapGetters(['header', 'footer', 'page', 'images', 'isSetLang']),
+    ...mapGetters(['header', 'footer', 'page', 'images', 'isSetLang', 'lang']),
     appIsReady() {
       return this.header && this.footer && this.page && this.images === 0
         ? true
@@ -51,17 +51,16 @@ export default {
   async created() {
     // Page redirect if lang is not changed previously by click lang button
     if (!this.isSetLang) {
-      const browserLang = window.navigator.language;
       const path = this.$route.path;
 
-      if (browserLang === 'uk' && path.indexOf('/en') === 0) {
+      if (this.lang === 'uk' && path.indexOf('/en') === 0) {
         window.location.href = `${window.location.origin}${path.replace(
           '/en',
           ''
         )}`;
       }
 
-      if (browserLang !== 'uk' && path.indexOf('/en') !== 0) {
+      if (this.lang !== 'uk' && path.indexOf('/en') !== 0) {
         window.location.href = `${window.location.origin}/en${path}`;
       }
     }

@@ -1,18 +1,27 @@
 <template lang="pug">
 section.spa.dooble(v-if='page && sections && section', ref='section')
   .spa__left
-    h2.title-inner.spa__title.spa__title--mobile(v-if='title', v-html='title')
+    h2.title-inner.spa__title.spa__title--mobile(v-if='title', v-html='title', ref="titleMobile")
 
-    BaseSlider(
+    SwiperSlider(
       v-if='slides && slides.length > 0',
-      sectionName='spa',
-      :modificator='pageName'
-      additionalClass='dooble__slider dooble__slider--images'
+      :class="`spa__slider spa__slider--images spa__slider--${pageName} dooble__slider dooble__slider--images`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :controller="{ control: textSwiper }",
+      @swiper="setSwiper"
+      @beforeTransitionStart="onBeforeTransitionStart"
     )
-      BaseSlide(
+      SwiperSlide(
         v-for='slide in slides',
-        sectionName='spa',
-        :modificator='pageName'
+        :key='slide.title',
+        :class="`spa__slide spa__slide--images spa__slide--${pageName} ${slideClass}`",
+        @click="slideChange"
       )
         .spa__top
           BaseImage(
@@ -21,16 +30,23 @@ section.spa.dooble(v-if='page && sections && section', ref='section')
             :image='slide.image'
           )
 
-    BaseSlider(
+    SwiperSlider(
       v-if='slides && slides.length > 0',
-      sectionName='spa',
-      :modificator='pageName'
-      additionalClass='dooble__slider dooble__slider--text'
+      :class="`spa__slider spa__slider--text spa__slider--${pageName} dooble__slider dooble__slider--text`"
+      :modules="modules"
+      :slides-per-view="swiperTextOptions.slidesPerView",
+      :space-between="swiperTextOptions.spaceBetween",
+      :resize-observer="swiperTextOptions.resizeObserver",
+      :speed="swiperTextOptions.speed",
+      :controller="{ control: swiper }",
+      :effect="swiperTextOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      @swiper="setTextSwiper"
     )
-      BaseSlide(
+      SwiperSlide(
         v-for='slide in slides',
-        sectionName='spa',
-        :modificator='pageName'
+        :key='slide.title',
+        :class="`spa__slide spa__slide--text spa__slide--${pageName}`"
       )
         .spa__bottom
           p.spa__text(
@@ -59,7 +75,7 @@ section.spa.dooble(v-if='page && sections && section', ref='section')
             :button='slide.button'
           )
     
-    BasePagination(sectionName='spa', :modificator='pageName')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='spa', :modificator='pageName')
 
   .spa__right
     h2.title-inner.spa__title.spa__title--desktop(
@@ -106,9 +122,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

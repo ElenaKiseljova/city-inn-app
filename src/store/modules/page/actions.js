@@ -28,6 +28,10 @@ export default {
 
     url = `${path}`;
 
+    const getLang = (rawLang) => {
+      return rawLang === 'ua' ? 'uk' : rawLang;
+    };
+
     const responsePageData = await getFetchData(url);
 
     if (responsePageData) {
@@ -35,7 +39,7 @@ export default {
       let responseHeaderData = await context.getters.header;
       if (
         !responseHeaderData ||
-        responseHeaderData?.content?.language !== curLang
+        getLang(responseHeaderData?.content?.language) !== curLang
       ) {
         responseHeaderData = await context.dispatch('setNewHeader', {
           lang: curLang,
@@ -46,7 +50,7 @@ export default {
       let responseFooterData = await context.getters.footer;
       if (
         !responseFooterData ||
-        responseFooterData?.content?.language !== curLang
+        getLang(responseFooterData?.content?.language) !== curLang
       ) {
         responseFooterData = await context.dispatch('setNewFooter', {
           lang: curLang,
@@ -57,7 +61,7 @@ export default {
       let responseConatctsData = await context.getters.contacts;
       if (
         !responseConatctsData ||
-        responseConatctsData?.content?.language !== curLang
+        getLang(responseConatctsData?.content?.language) !== curLang
       ) {
         responseConatctsData = await context.dispatch('setNewContacts', {
           lang: curLang,

@@ -6,27 +6,61 @@ gsap.registerPlugin(ScrollTrigger);
 const TABLET_WIDTH = 768;
 const DESKTOP_WIDTH = 1366;
 
-const DEVICE_WIDTH = window.innerWidth && document.documentElement.clientWidth
-  ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-  : window.innerWidth
-  || document.documentElement.clientWidth
-  || document.getElementsByTagName('body')[0].clientWidth;
+const getDewiceWidth = () => {
+  return window.innerWidth && document.documentElement.clientWidth
+    ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+    : window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.getElementsByTagName('body')[0].clientWidth;
+};
 
-const DEVICE_HEIGHT = window.innerHeight && document.documentElement.clientHeight
-  ? Math.min(window.innerHeight, document.documentElement.clientHeight)
-  : window.innerHeight
-  || document.documentElement.clientHeight
-  || document.getElementsByTagName('body')[0].clientHeight;
+const DEVICE_WIDTH = getDewiceWidth();
 
-export { DEVICE_WIDTH, DEVICE_HEIGHT, TABLET_WIDTH, DESKTOP_WIDTH };
+const DEVICE_HEIGHT =
+  window.innerHeight && document.documentElement.clientHeight
+    ? Math.min(window.innerHeight, document.documentElement.clientHeight)
+    : window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.getElementsByTagName('body')[0].clientHeight;
+
+const reloader = () => {
+  // Reloader
+  window.addEventListener('resize', () => {
+    const DEVICE_WIDTH_RESIZE = getDewiceWidth();
+
+    if (
+      DEVICE_WIDTH !== DEVICE_WIDTH_RESIZE &&
+      Math.abs(DEVICE_WIDTH - DEVICE_WIDTH_RESIZE) > 100
+    ) {
+      document.location.reload();
+    }
+  });
+};
+
+export {
+  reloader,
+  getDewiceWidth,
+  DEVICE_WIDTH,
+  DEVICE_HEIGHT,
+  TABLET_WIDTH,
+  DESKTOP_WIDTH,
+};
 
 /**
  * Аниаммция элементов списков по триггеру: init/reset
- *  
+ *
  */
-const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = null, scrub = 1, markers = false) => {
+const animationOpacityTranslate = (
+  elements,
+  trigerElement,
+  scrollTriggerId = null,
+  scrub = 1,
+  markers = false
+) => {
   if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
-    scrollTriggerId = scrollTriggerId ? `${scrollTriggerId}-${new Date().getTime()}` : `scrollTriggerId-${new Date().getTime()}`;
+    scrollTriggerId = scrollTriggerId
+      ? `${scrollTriggerId}-${new Date().getTime()}`
+      : `scrollTriggerId-${new Date().getTime()}`;
 
     const animation = gsap.to(elements, {
       x: 0,
@@ -55,7 +89,12 @@ const animationOpacityTranslate = (elements, trigerElement, scrollTriggerId = nu
 };
 
 class Animation {
-  constructor(selectorItem, scrollTriggerId = null, scrub = 1, markers = false) {
+  constructor(
+    selectorItem,
+    scrollTriggerId = null,
+    scrub = 1,
+    markers = false
+  ) {
     this.selectorItem = selectorItem;
     this.scrollTriggerId = scrollTriggerId;
     this.scrub = scrub;
@@ -66,14 +105,22 @@ class Animation {
   static animation = null;
 
   elements() {
-    return this.triggerValue ? this.triggerValue.querySelectorAll(this.selectorItem) : [];
+    return this.triggerValue
+      ? this.triggerValue.querySelectorAll(this.selectorItem)
+      : [];
   }
 
   init(trigger) {
     if (DEVICE_WIDTH >= TABLET_WIDTH) {
       this.triggerInit = trigger;
 
-      const response = animationOpacityTranslate(this.elements(), trigger, this.scrollTriggerId, this.scrub, this.markers);
+      const response = animationOpacityTranslate(
+        this.elements(),
+        trigger,
+        this.scrollTriggerId,
+        this.scrub,
+        this.markers
+      );
 
       this.animationInit = response.animation;
       this.scrollTriggerIdInit = response.scrollTriggerId;
@@ -127,7 +174,11 @@ const contactsAnimation = new Animation('.contacts__item', 'contacts');
 export { contactsAnimation };
 
 //.page-footer
-const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer', null);
+const pageFooterAnimation = new Animation(
+  '.page-footer__item',
+  'page-footer',
+  null
+);
 
 export { pageFooterAnimation };
 
@@ -137,14 +188,18 @@ const serviceAnimation = new Animation('.service', 'services');
 export { serviceAnimation };
 
 //.promo__social
-const promoSocialAnimation = new Animation('.promo__lang, .promo__social .social__item', 'promoSocial', null);
+const promoSocialAnimation = new Animation(
+  '.promo__lang, .promo__social .social__item',
+  'promoSocial',
+  null
+);
 
 export { promoSocialAnimation };
 
 //.types
-// const typesItemsAnimation = new Animation('.types__slide', 'types');
+const typesItemsAnimation = new Animation('.types__slide', 'types');
 
-// export { typesItemsAnimation };
+export { typesItemsAnimation };
 
 // Experiences
 const experienceAnimation = (list) => {
@@ -197,7 +252,8 @@ const experienceAnimation = (list) => {
 export { experienceAnimation };
 
 const sectionTitleAnimation = ({ title, titles, trigger }) => {
-  if ((titles || title) && trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+  if ((titles || title) && trigger) {
+    //  && DEVICE_WIDTH >= TABLET_WIDTH
     const els = title || titles;
 
     gsap.to(els, {
@@ -216,7 +272,7 @@ const sectionTitleAnimation = ({ title, titles, trigger }) => {
           if (title) {
             title.classList.toggle('active');
           } else {
-            titles.forEach((t) => t.classList.toggle('active'));
+            titles.forEach((t) => t?.classList.toggle('active'));
           }
         },
       },
@@ -253,10 +309,10 @@ const sectionAnimation = (section, trigger) => {
 
 export { sectionAnimation };
 
-/** 
-      * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции + масштабирование лого
-      * 
-    */
+/**
+ * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции + масштабирование лого
+ *
+ */
 // .page-header__social | .promo__container--home, .promo__container--smart | .promo
 const animationThreeElements = {
   animation: null,
@@ -267,8 +323,12 @@ const animationThreeElements = {
       this.trigger = trigger;
 
       const headerLogo = document.querySelector('.page-header__logo');
-      const headerButtons = document.querySelector('.page-header__social--smart, .page-header__social--home');
-      const promoButtonsContainer = trigger.querySelector('.promo__container--home, .promo__container--smart');
+      const headerButtons = document.querySelector(
+        '.page-header__social--smart, .page-header__social--home'
+      );
+      const promoButtonsContainer = trigger.querySelector(
+        '.promo__container--home, .promo__container--smart'
+      );
 
       if (headerLogo) {
         this.elements[0] = headerLogo;
@@ -318,18 +378,24 @@ const animationThreeElements = {
     });
   },
   status() {
-    console.log(this.elements, this.trigger, this.animation, ScrollTrigger.getById('threeElements'));
-  }
+    console.log(
+      this.elements,
+      this.trigger,
+      this.animation,
+      ScrollTrigger.getById('threeElements')
+    );
+  },
 };
 
 export { animationThreeElements };
 
 /**
-     * Анимация заголовка и текста страницы
-     */
+ * Анимация заголовка и текста страницы
+ */
 //.promo__title | .promo
 const promoTitleAndTextAnimation = (trigger) => {
-  if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+  if (trigger) {
+    // && DEVICE_WIDTH >= TABLET_WIDTH
     const elements = trigger.querySelectorAll('.promo__title, .promo__text');
 
     if (elements.length > 0) {
@@ -338,13 +404,13 @@ const promoTitleAndTextAnimation = (trigger) => {
         opacity: 1,
         duration: 1,
         ease: 'Power1.easeIn',
-        scrollTrigger: {
-          trigger: trigger,
-          // markers: true,
-          // scrub: 1,
-          start: 'top top',
-          end: '98vh top',
-        },
+        // scrollTrigger: {
+        //   trigger: trigger,
+        //   // markers: true,
+        //   // scrub: 1,
+        //   start: 'top top',
+        //   end: '98vh top',
+        // },
       });
 
       return true;
@@ -356,10 +422,9 @@ const promoTitleAndTextAnimation = (trigger) => {
 
 export { promoTitleAndTextAnimation };
 
-
 /**
-   * Анимация фоновой картинки
-   */
+ * Анимация фоновой картинки
+ */
 const imageBgAnimation = (trigger) => {
   if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
     const elements = trigger.querySelectorAll('picture');
@@ -389,9 +454,16 @@ const imageBgAnimation = (trigger) => {
 export { imageBgAnimation };
 
 // Переходы слайдов
-const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) => {
-  const el1 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
-  const el2 = swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
+const animationSlideElements = (
+  swiperSlider,
+  selector1,
+  selector2,
+  mode = 1
+) => {
+  const el1 =
+    swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
+  const el2 =
+    swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
 
   if (el1 && el2) {
     gsap.to(el1, {
@@ -425,8 +497,10 @@ const animationSlideElements = (swiperSlider, selector1, selector2, mode = 1) =>
   }
 
   if (swiperSlider.previousIndex !== undefined) {
-    const el3 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
-    const el4 = swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
+    const el3 =
+      swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
+    const el4 =
+      swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
 
     if (el3 && el4) {
       gsap.to(el3, {
@@ -533,7 +607,7 @@ const textNavPin = {
             let state = (self.end - self.start) * self.progress;
 
             if (state > translateValue) {
-              state = translateValue
+              state = translateValue;
             }
 
             pin.style.transform = `translateY(${state}px)`;
@@ -564,5 +638,3 @@ const textNavPin = {
 };
 
 export { textNavPin };
-
-

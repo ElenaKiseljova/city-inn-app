@@ -186,7 +186,7 @@
 
     @media screen and (max-width: calc(#{$tablet} - 1px)) {
       &--locations {
-        transform: translateY(-100%);
+        translate: 0 -100%;
       }
     }
 
@@ -454,11 +454,11 @@
         // transform: none;
       }
 
-      &--coffee {
-        opacity: 0.8;
+      // &--coffee {
+      //   opacity: 0.8;
 
-        transform: none;
-      }
+      //   transform: none;
+      // }
     }
 
     @media screen and (min-width: $desktop) {
@@ -673,6 +673,10 @@
     }
 
     @media screen and (min-width: $tablet) {
+      &.swiper-slide-active {
+        z-index: 10;
+      }
+
       &--text {
         height: auto;
 

@@ -13,15 +13,28 @@ section.team.dooble(
 
       h2.title-inner.team__title(v-if='title', v-html='title', ref='title')
 
-      BaseNavigation(sectionName='team', :modificator='pageName')
-      BasePagination(sectionName='team', :modificator='pageName')
+      BaseNavigation(:swiperIndex="swiperIndex", sectionName='team', :modificator='pageName')
+      BasePagination(:swiperIndex="swiperIndex", sectionName='team', :modificator='pageName')
 
     .team__slider-container(v-if='slides.length > 0')
-      BaseSlider(sectionName='team', :modificator='pageName', additionalClass='dooble__slider dooble__slider--images')
-        BaseSlide(
+      SwiperSlider(
+        :class="`team__slider team__slider--images team__slider--${pageName} dooble__slider dooble__slider--images`"
+        :modules="modules"
+        :slides-per-view="swiperOptions.slidesPerView",
+        :space-between="swiperOptions.spaceBetween",
+        :resize-observer="swiperOptions.resizeObserver",
+        :speed="swiperOptions.speed",
+        :navigation="swiperNavigation",
+        :pagination="swiperPagination",
+        :controller="{ control: textSwiper }",
+        @swiper="setSwiper"
+        @beforeTransitionStart="onBeforeTransitionStart"
+      )
+        SwiperSlide(
           v-for='slide in slides',
-          sectionName='team',
-          :modificator='pageName'
+          :key='slide.title',
+          :class="`team__slide team__slide--images team__slide--${pageName} ${slideClass}`",
+          @click="slideChange"
         )
           .team__top
             BaseImage(
@@ -48,13 +61,24 @@ section.team.dooble(
               )
                 | {{ contact.text }}
 
-      BaseSlider(sectionName='team', :modificator='pageName', additionalClass='dooble__slider dooble__slider--text')
-        BaseSlide(
+      SwiperSlider(
+        v-if='slides?.length > 0', 
+        :class="`team__slider team__slider--text team__slider--${pageName} dooble__slider dooble__slider--text`"
+        :modules="modules"
+        :slides-per-view="swiperTextOptions.slidesPerView",
+        :space-between="swiperTextOptions.spaceBetween",
+        :resize-observer="swiperTextOptions.resizeObserver",
+        :speed="swiperTextOptions.speed",
+        :controller="{ control: swiper }",
+        :effect="swiperTextOptions.effect",
+        :fadeEffect="{crossFade: true}",
+        @swiper="setTextSwiper"
+      )
+        SwiperSlide(
           v-for='slide in slides',
-          sectionName='team',
-          :modificator='pageName'
+          :key='slide.title',
+          :class="`team__slide team__slide--text team__slide--${pageName}`"
         )
-  
           .team__bottom.team__bottom--mobile
             h3.team__name(v-if='slide.title && slide.title !== ""')
               | {{ slide.title }}
@@ -79,9 +103,15 @@ import { mapGetters } from 'vuex';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr, swiperSliderInit],
+  data() {
+    return {
+      sectionName: 'team',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

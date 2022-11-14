@@ -4,13 +4,25 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
     h2.title-inner.doings__title(v-if='title', v-html='title', ref='title')
 
   .doings__slider-container(v-if='slides?.length > 0')
-    BaseSlider(sectionName='doings', :modificator='pageName', additionalClass='dooble__slider dooble__slider--images')
-      BaseSlide(
+    SwiperSlider(
+      :class="`doings__slider doings__slider--images doings__slider--${pageName} dooble__slider dooble__slider--images`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :controller="{ control: textSwiper }",
+      @swiper="setSwiper"
+      @beforeTransitionStart="onBeforeTransitionStart"
+    )
+      SwiperSlide(
         v-for='slide in slides',
         :key='slide.title',
-        sectionName='doings',
-        :modificator='pageName'
-      ) 
+        :class="`doings__slide doings__slide--images doings__slide--${pageName} ${slideClass}`",
+        @click="slideChange"
+      )
         .doings__top
           BaseImage(
             sectionName='doings',
@@ -28,14 +40,24 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
             v-if='slide.text && slide.text !== ""',
             v-html='converteSymbolsNewLineToBr(slide.text)'
           )
-
-    BaseSlider(sectionName='doings', :modificator='pageName', additionalClass='dooble__slider dooble__slider--text')
-      BaseSlide(
+    
+    SwiperSlider(
+      :class="`doings__slider doings__slider--text doings__slider--${pageName} dooble__slider dooble__slider--text`"
+      :modules="modules"
+      :slides-per-view="swiperTextOptions.slidesPerView",
+      :space-between="swiperTextOptions.spaceBetween",
+      :resize-observer="swiperTextOptions.resizeObserver",
+      :speed="swiperTextOptions.speed",
+      :controller="{ control: swiper }",
+      :effect="swiperTextOptions.effect",
+      :fadeEffect="{crossFade: true}",
+      @swiper="setTextSwiper"
+    )
+      SwiperSlide(
         v-for='slide in slides',
         :key='slide.title',
-        sectionName='doings',
-        :modificator='pageName'
-      ) 
+        :class="`doings__slide doings__slide--text doings__slide--${pageName}`"
+      )
         .doings__bottom.doings__bottom--mobile
           h3.doings__subtitle(
             v-if='slide.title && slide.title !== ""',
@@ -47,9 +69,9 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
             v-html='converteSymbolsNewLineToBr(slide.text)'
           )
 
-    BaseNavigation(sectionName='doings', :modificator='pageName')
+    BaseNavigation(:swiperIndex="swiperIndex", sectionName='doings', :modificator='pageName')
 
-    BasePagination(sectionName='doings', :modificator='pageName')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='doings', :modificator='pageName')
 </template>
 
 <script>
@@ -57,9 +79,15 @@ import { mapGetters } from 'vuex';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
+  mixins: [titleAnimation, converteSymbolsNewLineToBr, swiperSliderInit],
+  data() {
+    return {
+      sectionName: 'doings',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -1,4 +1,8 @@
-const changeActiveClass = (elements, doing = 'remove', activeClass = 'active') => {
+const changeActiveClass = (
+  elements,
+  doing = 'remove',
+  activeClass = 'active'
+) => {
   if (elements.length > 0) {
     elements.forEach((element) => {
       if (doing === 'remove') {

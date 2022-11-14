@@ -4,17 +4,29 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
     header.types__header
       h2.title-inner.types__title(v-if='title', v-html='title', ref='title')
 
-      BasePagination(sectionName='types')
+      BasePagination(:swiperIndex="swiperIndex", sectionName='types')
 
-      BaseNavigation(sectionName='types')
+      BaseNavigation(:swiperIndex="swiperIndex", sectionName='types')
 
     .types__slider-container(v-if='slides.length > 0')
-      BaseSlider(sectionName='types', :modificator='pageName', additionalClass='dooble__slider dooble__slider--images')
-        BaseSlide(
+      SwiperSlider(
+        :class="`types__slider types__slider--images types__slider--${pageName} dooble__slider dooble__slider--images`"
+        :modules="modules"
+        :slides-per-view="swiperOptions.slidesPerView",
+        :space-between="swiperOptions.spaceBetween",
+        :resize-observer="swiperOptions.resizeObserver",
+        :speed="swiperOptions.speed",
+        :navigation="swiperNavigation",
+        :pagination="swiperPagination",
+        :enabled="swiperEnabled",
+        @swiper="setSwiper"
+        @beforeTransitionStart="onBeforeTransitionStart"
+      )
+        SwiperSlide(
           v-for='slide in slides',
           :key='slide.title',
-          sectionName='types',
-          :modificator='pageName'
+          :class="`types__slide types__slide--images types__slide--${pageName} ${slideClass}`",
+          @click="slideChange"
         )
           .types__top
             h3.types__subtitle.types__subtitle--tablet(
@@ -51,14 +63,22 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
               :button='slide.button'
             )
 
-      BaseSlider(sectionName='types', :modificator='pageName', additionalClass='dooble__slider dooble__slider--text')
-        BaseSlide(
+      SwiperSlider(
+        :class="`types__slider types__slider--text types__slider--${pageName} dooble__slider dooble__slider--text`"
+        :modules="modules"
+        :slides-per-view="swiperTextOptions.slidesPerView",
+        :space-between="swiperTextOptions.spaceBetween",
+        :resize-observer="swiperTextOptions.resizeObserver",
+        :speed="swiperTextOptions.speed",
+        :effect="swiperTextOptions.effect",
+        :fadeEffect="{crossFade: true}",
+        @swiper="setTextSwiper"
+      )
+        SwiperSlide(
           v-for='slide in slides',
           :key='slide.title',
-          sectionName='types',
-          :modificator='pageName'
+          :class="`types__slide types__slide--text types__slide--${pageName}`"
         )
-
           .types__bottom.types__bottom--mobile
             h3.types__subtitle.types__subtitle--mobile(
               v-if='slide.title && slide.title !== ""',
@@ -90,14 +110,16 @@ import { mapGetters } from 'vuex';
 
 import titleAnimation from '@/mixins/titleAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, converteSymbolsNewLineToBr],
-  // data() {
-  //   return {
-  //     typesItemsAnimationIsSet: false,
-  //   };
-  // },
+  mixins: [titleAnimation, converteSymbolsNewLineToBr, swiperSliderInit],
+  data() {
+    return {
+      // typesItemsAnimationIsSet: false,
+      sectionName: 'types',
+    };
+  },
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -13,16 +13,23 @@ section(
         ref='titleMobile'
       )
 
-      BaseSlider(
+      SwiperSlider(
         v-if='images && images.length > 0',
-        sectionName='gym',
-        :modificator='pageName'
+        :class="`gym__slider gym__slider--${pageName}`"
+        :modules="modules"
+        :slides-per-view="swiperOptions.slidesPerView",
+        :space-between="swiperOptions.spaceBetween",
+        :resize-observer="swiperOptions.resizeObserver",
+        :speed="swiperOptions.speed",
+        :navigation="swiperNavigation",
+        :pagination="swiperPagination",
+        @swiper="setSwiper"
       )
-        BaseSlide(
+        SwiperSlide(
           v-for='image in images',
           :key='image',
-          sectionName='gym',
-          :modificator='pageName'
+          :class="`gym__slide gym__slide--${pageName}`",
+          @click="slideChange"
         )
           BaseImage(
             sectionName='gym',
@@ -31,7 +38,7 @@ section(
             atr='img'
           )
 
-      BasePagination(sectionName='gym', :modificator='pageName')
+      BasePagination(:swiperIndex="swiperIndex", sectionName='gym', :modificator='pageName')
 
     div(:class='`gym__bottom gym__bottom--${pageName}`')
       h2(
@@ -81,9 +88,15 @@ import { mapGetters } from 'vuex';
 import titleAnimation from '@/mixins/titleAnimation';
 import sectionAnimation from '@/mixins/sectionAnimation';
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [titleAnimation, sectionAnimation, converteSymbolsNewLineToBr],
+  mixins: [
+    titleAnimation,
+    sectionAnimation,
+    converteSymbolsNewLineToBr,
+    swiperSliderInit,
+  ],
   computed: {
     ...mapGetters(['page', 'pageName']),
     sections() {

@@ -3,19 +3,29 @@ section.features(v-if='page && pageName && sections && section', ref='features')
   h2.visually-hidden Features
 
   .features__container.container
-    BaseSlider(
+    SwiperSlider(
       v-if='services && services.length > 0',
-      sectionName='features',
-      :modificator='pageName'
+      :class="`features__slider features__slider--${pageName}`"
+      :modules="modules"
+      :slides-per-view="swiperOptions.slidesPerView",
+      :space-between="swiperOptions.spaceBetween",
+      :resize-observer="swiperOptions.resizeObserver",
+      :speed="swiperOptions.speed",
+      :grid="swiperOptions.grid",
+      :navigation="swiperNavigation",
+      :pagination="swiperPagination",
+      :enabled="swiperEnabled",
+      @swiper="setSwiper"
     )
-      BaseSlide(
+      SwiperSlide(
         v-for='service in services',
-        sectionName='features',
-        :modificator='pageName'
+        :key='service',
+        :class="`features__slide features__slide--${pageName}`",
+        @click="slideChange"
       )
         BaseService(modificator='features', :item='service')
 
-    BasePagination(sectionName='features', :modificator='pageName')
+    BasePagination(:swiperIndex="swiperIndex", sectionName='features', :modificator='pageName')
 </template>
 
 <script>
@@ -24,12 +34,14 @@ import { mapGetters } from 'vuex';
 import { serviceAnimation } from '@/assets/js/modules/gsap-animations';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
+import swiperSliderInit from '@/mixins/swiperSliderInit';
 
 export default {
-  mixins: [converteSymbolsNewLineToBr],
+  mixins: [converteSymbolsNewLineToBr, swiperSliderInit],
   data() {
     return {
       serviceAnimationIsSet: false,
+      sectionName: 'features',
     };
   },
   computed: {

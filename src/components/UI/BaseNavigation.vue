@@ -1,5 +1,5 @@
 <template lang="pug">
-div(:class='`navigation ${additionalClassesNavigation}`')
+div(:class='`navigation ${additionalClassesNavigation}`', :id="`slider-navigation-${swiperIndex}`")
   button.navigation__prev.button.button--circle.swiper-button-prev
     span.visually-hidden Prev
     svg(width='48', height='48')
@@ -22,6 +22,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    swiperIndex: {
+      type: [String, Number],
+      required: true,
+      default: 0,
     },
   },
   computed: {
