@@ -17,8 +17,9 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
         :resize-observer="swiperOptions.resizeObserver",
         :speed="swiperOptions.speed",
         :navigation="swiperNavigation",
-        :pagination="swiperPagination",
+        :pagination="swiperPagination", 
         :enabled="swiperEnabled",
+        :controller="{ control: textSwiper }",
         @swiper="setSwiper"
         @beforeTransitionStart="onBeforeTransitionStart"
       )
@@ -72,6 +73,7 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
         :speed="swiperTextOptions.speed",
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
+        :controller="{ control: swiper }",
         @swiper="setTextSwiper"
       )
         SwiperSlide(

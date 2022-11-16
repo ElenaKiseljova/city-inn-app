@@ -26,6 +26,8 @@
 
   transition: color 0.3s, border-color 0.3s;
 
+  pointer-events: all!important;
+
   * {
     position: relative;
 
@@ -82,6 +84,11 @@
   &:active {
     --color-button: #{$yellow};
     --background-color-button: #{$white-80};
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none!important;
   }
 
   &--circle {
