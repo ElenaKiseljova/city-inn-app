@@ -120,12 +120,14 @@
     margin: 0 calc((100% - 100vw) / 2);
 
     @media screen and (min-width: $tablet) {
-      height: calc(448 / 768 * 100vw);
+      height: calc(448 / 1024 * 100vh);
+
+      min-height: 100%;
+      max-height: 100vh;
 
       &--group {
         width: 50vw;
-        height: 100%;
-        min-height: calc(585 / 768 * 100vw);
+        height: calc(585 / 1024 * 100vh);
 
         margin: 0 calc(100% - 50vw) 0 0;
       }
@@ -133,9 +135,7 @@
 
     @media screen and (min-width: $desktop) {
       width: 50vw;
-
-      height: 100%;
-      min-height: calc((840 / 1440) * 100vw);
+      height: calc((840 / 1440) * 100vw);
 
       margin: 0 0 0 calc(100% - 50vw);
 
@@ -222,10 +222,12 @@
       display: grid;
 
       grid-template-areas:
-        "a b"
-        "a c";
+        'a b'
+        'a c';
 
-      grid-template-columns: calc(312 / (768 - 72) * 100%) calc(312 / (768 - 72) * 100%);
+      grid-template-columns: calc(312 / (768 - 72) * 100%) calc(
+          312 / (768 - 72) * 100%
+        );
 
       justify-content: space-between;
 
@@ -250,11 +252,11 @@
 
     @media screen and (min-width: $desktop) {
       grid-template-areas:
-        "d d"
-        "a a"
-        "b c";
+        'd d'
+        'a a'
+        'b c';
 
-      grid-template-columns: calc((168 / 560)* 100%) calc((312 / 560)* 100%);
+      grid-template-columns: calc((168 / 560) * 100%) calc((312 / 560) * 100%);
 
       padding: 118px 0 80px 78px;
 
@@ -264,10 +266,10 @@
         display: grid;
 
         grid-template-areas:
-          "a"
-          "b"
-          "c"
-          "d";
+          'a'
+          'b'
+          'c'
+          'd';
 
         grid-template-columns: 100%;
         grid-template-rows: min-content;

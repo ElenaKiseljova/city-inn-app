@@ -26,7 +26,7 @@
 
     @media screen and (min-width: $tablet) {
       width: calc(575 / 768 * 100vw);
-      height: calc(680 / 768 * 100vw);
+      height: calc(680 / 1024 * 100vh);
 
       overflow: visible;
     }

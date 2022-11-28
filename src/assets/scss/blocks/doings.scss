@@ -24,6 +24,8 @@
   }
 
   &__slider-container {
+    --max-height-top: 640px;
+
     @extend %w100;
     min-height: 200vw;
 
@@ -33,14 +35,17 @@
       display: flex;
 
       width: 100vw;
-      height: fit-content;
-      min-height: calc((478 / 768)* 100vw);
+      height: calc((478 / 1024) * 100vh);
+
+      min-height: 100%;
+      max-height: 100vh;
 
       padding-bottom: 0;
     }
 
     @media screen and (min-width: $desktop) {
       width: calc(730 / 1440 * 100%);
+      height: auto;
 
       min-height: auto;
 
@@ -62,7 +67,7 @@
 
     @media screen and (min-width: $desktop) {
       width: 100%;
-      
+
       overflow: visible;
 
       &.dooble__slider--text {
@@ -75,40 +80,6 @@
     height: auto;
 
     box-sizing: border-box;
-
-    // visibility: hidden;
-
-    // .doings__top,
-    // .doings__bottom {
-    //   visibility: hidden;
-
-    //   // opacity: 0;
-    // }
-
-    // .doings__top {
-    //   transform: translateX(-100%);
-    // }
-
-    // .doings__bottom {
-    //   transform: translateX(100%);
-    // }
-
-    // &.swiper-slide-active {
-    //   visibility: visible;
-
-    //   .doings__top,
-    //   .doings__bottom {
-    //     visibility: visible;
-
-    //     transition: translate 1.2s linear, opacity 0.5s linear;
-    //   }
-    // }
-
-    // @media screen and (min-width: $tablet) {
-    //   display: grid;
-
-    //   grid-template-columns: 50% 50%;
-    // }
 
     @media screen and (min-width: $desktop) {
       position: static;
@@ -123,18 +94,7 @@
       align-items: flex-start;
       justify-content: flex-start;
 
-      height: fit-content;
-
-      // visibility: visible;
-
-      // .doings__top,
-      // .doings__bottom {
-      //   opacity: 1;
-
-      //   visibility: visible;
-
-      //   transform: none;
-      // }
+      height: 100vh;
 
       &.transition {
         .doings__bottom {
@@ -186,7 +146,7 @@
       }
 
       &.swiper-slide-next,
-      &.swiper-slide-next~.swiper-slide {
+      &.swiper-slide-next ~ .swiper-slide {
         position: relative;
 
         .doings__img {
@@ -239,12 +199,19 @@
 
     @media screen and (min-width: $tablet) {
       width: 100%;
-      height: calc((478 / 768) * 100vw);
+      height: calc((478 / 1024) * 100vh);
+
       min-height: 100%;
+      max-height: 100vh;
     }
 
     @media screen and (min-width: $desktop) {
-      height: calc((640 / 1440) * 100vw);
+      flex-shrink: 0;
+
+      height: 640px;
+
+      min-height: auto;
+      max-height: var(--max-height-top);
     }
   }
 
@@ -269,13 +236,14 @@
     }
 
     @media screen and (min-width: $tablet) {
-      min-height: auto;
+      min-height: 100%;
 
       padding: 198px 36px 40px;
     }
 
     @media screen and (min-width: $desktop) {
       max-width: 730px;
+      min-height: auto;
 
       margin-right: 0;
       margin-left: auto;
@@ -362,7 +330,7 @@
     @media screen and (min-width: $desktop) {
       position: absolute;
 
-      top: 640px;
+      top: var(--max-height-top);
       left: calc((730 / 1440) * 100vw + 270px);
 
       z-index: 2;

@@ -175,19 +175,23 @@ export { contactsAnimation };
 const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer', {
   start: 'top bottom',
   end: 'bottom bottom',
+  // markers: true,
 });
 
 export { pageFooterAnimation };
 
 //parent block .service
-const serviceAnimation = new Animation('.service', 'services');
+const serviceAnimation = new Animation('.service', 'services', {
+  start: 'top bottom',
+  end: 'top bottom',
+});
 
 export { serviceAnimation };
 
 //parent block .service
 const featuresAnimation = new Animation('.service', 'features', {
-  start: 'top center',
-  end: 'top top',
+  start: 'top bottom',
+  end: 'top bottom',
 });
 
 export { featuresAnimation };

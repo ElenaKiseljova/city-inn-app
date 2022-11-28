@@ -3,7 +3,7 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
   .doings__title-wrapper
     h2.title-inner.doings__title(v-if='title', v-html='title', ref='title')
 
-  .doings__slider-container(v-if='slides?.length > 0')
+  .doings__slider-container(v-if='slides?.length > 0', ref='dooingsContainer')
     SwiperSlider(
       :class="`doings__slider doings__slider--images doings__slider--${pageName} dooble__slider dooble__slider--images`"
       :modules="modules"
@@ -30,7 +30,7 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
             :image='slide.image'
           )
 
-        .doings__bottom.doings__bottom--desktop
+        .doings__bottom.doings__bottom--desktop(ref='dooingsBottom')
           h3.doings__subtitle(
             v-if='slide.title && slide.title !== ""',
             v-html='converteSymbolsNewLineToBr(slide.title)'
@@ -86,6 +86,7 @@ export default {
   data() {
     return {
       sectionName: 'doings',
+      isSetDoingsMaxHeightTop: false,
     };
   },
   computed: {
@@ -105,6 +106,45 @@ export default {
     },
     slides() {
       return this.section?.slides ? this.section.slides : [];
+    },
+  },
+  mounted() {
+    this.setHeightDoingsTop();
+  },
+  updated() {
+    this.setHeightDoingsTop();
+  },
+  methods: {
+    setHeightDoingsTop() {
+      if (
+        this.$refs.dooingsContainer &&
+        this.$refs.dooingsBottom &&
+        !this.isSetDoingsMaxHeightTop
+      ) {
+        const DOOINGS_MIN_HEIGHT_TOP = 520;
+        let maxHeightBottom = 0;
+
+        if (this.$refs.dooingsBottom?.length) {
+          this.$refs.dooingsBottom.forEach((bot) => {
+            if (bot.offsetHeight > maxHeightBottom)
+              maxHeightBottom = bot.offsetHeight;
+          });
+        }
+
+        const dooingsMaxHeightTop =
+          this.$refs.dooingsContainer.offsetHeight - maxHeightBottom;
+        const dooingsMaxHeightTopFinal =
+          dooingsMaxHeightTop > DOOINGS_MIN_HEIGHT_TOP
+            ? dooingsMaxHeightTop
+            : DOOINGS_MIN_HEIGHT_TOP;
+
+        this.$refs.dooingsContainer.style.setProperty(
+          '--max-height-top',
+          `${dooingsMaxHeightTopFinal}px`
+        );
+
+        this.isSetDoingsMaxHeightTop = true;
+      }
     },
   },
 };

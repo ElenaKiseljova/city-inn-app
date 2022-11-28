@@ -110,7 +110,10 @@
 
     @media screen and (min-width: $tablet) {
       height: auto;
-      min-height: calc((478 / 768) * 100vw);
+      height: calc((478 / 1024) * 100vh);
+
+      min-height: 100%;
+      max-height: 100vh;
 
       &--kitchen,
       &--attraction,
@@ -121,12 +124,12 @@
 
       &--smart-rooms,
       &--halls {
-        min-height: calc((585 / 768) * 100vw);
+        height: calc((585 / 1024) * 100vh);
       }
     }
 
     @media screen and (min-width: $desktop) {
-      min-height: 100vh;
+      height: 100vh;
 
       &--kitchen,
       &--attraction,
@@ -139,7 +142,7 @@
       }
 
       &--saunas {
-        min-height: auto;
+        height: auto;
       }
 
       &--smart-rooms {
@@ -506,7 +509,7 @@
       }
 
       &--saunas {
-        min-height: 580px;
+        height: calc(580 / 1024 * 100vh);
       }
 
       &--locations {
@@ -515,7 +518,8 @@
     }
 
     @media screen and (min-width: $desktop) {
-      min-height: 100vh;
+      min-height: 100%;
+      max-height: 100vh;
 
       &--kitchen,
       &--attraction,

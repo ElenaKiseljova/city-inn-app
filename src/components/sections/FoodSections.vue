@@ -4,7 +4,7 @@ section(
   :class='`food food--${sectionName}`',
   ref='section'
 )
-  .food__container.container
+  .food__container.container(ref="foodContainer")
     div(:class='`food__top food__top--${sectionName}`')
       h2(
         v-if='title',
@@ -138,6 +138,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      isSetHeightContainer: false,
+    };
+  },
   computed: {
     ...mapGetters(['page']),
     sections() {
@@ -225,6 +230,24 @@ export default {
         this.sectionName === 'breakfast'
         ? true
         : false;
+    },
+  },
+  mounted() {
+    this.setHeightContainer();
+  },
+  updated() {
+    this.setHeightContainer();
+  },
+  methods: {
+    setHeightContainer() {
+      if (this.$refs.foodContainer && !this.isSetHeightContainer) {
+        this.$refs.foodContainer.style.setProperty(
+          '--height-container',
+          `${this.$refs.foodContainer.offsetHeight}px`
+        );
+
+        this.isSetHeightContainer = true;
+      }
     },
   },
 };

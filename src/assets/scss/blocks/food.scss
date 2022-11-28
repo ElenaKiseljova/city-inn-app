@@ -76,6 +76,10 @@
 
       align-items: stretch;
     }
+
+    @media screen and (min-width: $desktop) {
+      --height-container: 840px;
+    }
   }
 
   &__top {
@@ -98,8 +102,9 @@
     @media screen and (min-width: $tablet) {
       position: relative;
 
-      height: auto;
-      min-height: calc((478 / 768) * 100vw);
+      height: calc((478 / 1024) * 100vh);
+      min-height: 100%;
+      max-height: 100vh;
 
       &--menu,
       &--advantages,
@@ -113,11 +118,11 @@
       &--why-conference {
         position: static;
 
-        min-height: calc((580 / 768) * 100vw);
+        height: calc((580 / 1024) * 100vh);
       }
 
       &--approach-group {
-        min-height: calc((488 / 768) * 100vw);
+        height: calc((488 / 1024) * 100vh);
       }
     }
 
@@ -127,7 +132,7 @@
       align-items: stretch;
       justify-content: flex-start;
 
-      min-height: 100vh;
+      height: 100vh;
 
       &--breakfast,
       &--why-conference {
@@ -359,12 +364,14 @@
       justify-content: flex-start;
 
       width: calc(50vw - 105px);
-      height: auto;
-      min-height: 100vh;
+      height: fit-content;
 
-      margin: -14px calc(100% - 50vw) 0 105px;
+      min-height: 100%;
+      max-height: 100vh;
 
-      padding-top: 154px;
+      margin: 0 calc(100% - 50vw) 0 105px;
+
+      padding-top: 140px;
       padding-bottom: 129px;
 
       overflow: hidden;
@@ -435,9 +442,16 @@
       width: 360px;
       height: 420px;
 
-      margin: 0;
+      min-height: calc(var(--height-container) / 2);
+      max-height: 100%;
+
+      margin: 0 0 40px;
 
       overflow: visible;
+
+      // &:not(.food__slider--advantages):not(.food__slider--approach-conference) {
+      //   min-height: calc(var(--height-container) / 2);
+      // }
     }
   }
 
@@ -445,7 +459,7 @@
     box-sizing: border-box;
 
     @media screen and (min-width: $desktop) {
-      --translateY: -154px;
+      --translateY: -140px;
 
       &--advantages,
       &--approach-conference,
@@ -531,7 +545,8 @@
       z-index: 1;
 
       height: auto;
-      min-height: auto;
+
+      min-height: fit-content;
 
       padding: 54px 0 54px 37px;
 
@@ -570,12 +585,16 @@
       &--why-conference {
         padding: 0 4px 40px 41px;
       }
+
+      & > * {
+        flex-shrink: 0;
+      }
     }
 
     @media screen and (min-width: $desktop) {
       padding: 165px 203px 129px 0;
 
-      pointer-events: none;
+      // pointer-events: none;
 
       &--breakfast,
       &--supply,
@@ -645,6 +664,8 @@
 
     @extend %w100;
 
+    height: fit-content;
+
     @media screen and (min-width: $tablet) {
       &--why-conference {
         display: flex;
@@ -665,6 +686,8 @@
 
   &__text {
     @extend %w100;
+
+    height: fit-content;
 
     color: var(--color-page, #ffffff);
 
@@ -960,6 +983,11 @@
       margin-bottom: 0;
 
       pointer-events: all;
+
+      // &--advantages {
+      //   margin-top: 78px;
+      //   margin-bottom: auto;
+      // }
     }
   }
 
