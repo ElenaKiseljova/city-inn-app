@@ -10,8 +10,8 @@ import BaseSocial from './BaseSocial.vue';
 import BaseSpinner from './BaseSpinner.vue';
 import BaseImage from './BaseImage.vue';
 import BaseButton from './BaseButton.vue';
+import BaseLogo from './BaseLogo.vue';
 
-const BaseLogo = defineAsyncComponent(() => import('./BaseLogo.vue'));
 const BasePrice = defineAsyncComponent(() => import('./BasePrice.vue'));
 const BaseWorktime = defineAsyncComponent(() => import('./BaseWorktime.vue'));
 

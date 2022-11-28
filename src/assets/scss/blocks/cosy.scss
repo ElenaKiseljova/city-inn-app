@@ -30,11 +30,11 @@
       position: relative;
 
       height: auto;
-      min-height: calc((478 / 768)* 100vw);
+      min-height: calc((478 / 768) * 100vw);
     }
 
     @media screen and (min-width: $desktop) {
-      min-height: 840px;
+      min-height: 100vh;
     }
   }
 

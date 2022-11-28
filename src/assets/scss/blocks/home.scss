@@ -62,7 +62,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--lobby,
       &--restaurant {
         min-height: 100vh;
@@ -80,7 +79,6 @@
     margin: 0;
 
     @media screen and (min-width: $tablet) {
-
       &--conference,
       &--about {
         order: 2;
@@ -139,7 +137,7 @@
 
         min-height: calc(384 / 768 * 100vw);
 
-        margin: 0 calc((100% - 100vw)/ 2);
+        margin: 0 calc((100% - 100vw) / 2);
       }
 
       &--why {
@@ -150,7 +148,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--about,
       &--starfit,
       &--group,
@@ -228,7 +225,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--smart,
       &--why,
       &--group,
@@ -458,7 +454,6 @@
     }
 
     @media screen and (min-width: $tablet) {
-
       &--smart,
       &--conference,
       &--group {
@@ -480,7 +475,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--lobby,
       &--restaurant {
         max-width: calc(717 / (1440 - 160)) * 100%;
@@ -526,18 +520,20 @@
 
     color: $white;
 
+    text-transform: uppercase;
+
     &--top {
       margin-bottom: 24px;
     }
 
     &--bottom {
       font-weight: 700;
-
-      text-transform: uppercase;
     }
 
     &--about {
-      @include font(14, 21, 400);
+      &.home__text--top {
+        @include font(14, 21, 400);
+      }
     }
 
     &--why {
@@ -556,7 +552,11 @@
 
     @media screen and (min-width: $desktop) {
       &--about {
-        margin-bottom: 45px;
+        &.home__text--top {
+          @include font(18, 27, 400);
+
+          margin-bottom: 45px;
+        }
       }
 
       &--why {
@@ -599,7 +599,6 @@
         align-items: center;
       }
 
-
       &--starfitt {
         justify-content: flex-start;
       }
@@ -614,7 +613,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--smart,
       &--why,
       &--group,
@@ -685,7 +683,6 @@
       }
 
       &--more {
-
         &.home__button--smart,
         &.home__button--lobby,
         &.home__button--about {

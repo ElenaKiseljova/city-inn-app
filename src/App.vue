@@ -1,10 +1,10 @@
 <template lang="pug">
-//- teleport(to='body')
-BaseSpinner.spinner--main(v-if='!appIsReady')
+teleport(to='body')
+  BaseSpinner.spinner--main(v-if='!appIsReady')
 
-BaseScrollTopButton
+  BaseScrollTopButton
 
-TheHeader(:class='{ hidden: !appIsReady }')
+  TheHeader(:class='{ hidden: !appIsReady }')
 
 .wrapper 
   router-view(:class='{ hidden: !appIsReady }', v-slot='slotProps')

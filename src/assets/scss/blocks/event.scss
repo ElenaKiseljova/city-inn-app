@@ -19,7 +19,6 @@
       transform: translateX(-30vw);
     }
 
-
     // &--attraction,
     // &--kitchen,
     &--saunas,
@@ -76,7 +75,6 @@
   }
 
   &__container {
-
     &--saunas,
     &--locations {
       position: relative;
@@ -107,12 +105,12 @@
 
     &--smart-rooms,
     &--halls {
-      height: calc((363 / 414)* 100vw);
+      height: calc((363 / 414) * 100vw);
     }
 
     @media screen and (min-width: $tablet) {
       height: auto;
-      min-height: calc((478 / 768)* 100vw);
+      min-height: calc((478 / 768) * 100vw);
 
       &--kitchen,
       &--attraction,
@@ -123,12 +121,12 @@
 
       &--smart-rooms,
       &--halls {
-        min-height: calc((585 / 768)* 100vw);
+        min-height: calc((585 / 768) * 100vw);
       }
     }
 
     @media screen and (min-width: $desktop) {
-      min-height: 840px;
+      min-height: 100vh;
 
       &--kitchen,
       &--attraction,
@@ -517,7 +515,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      min-height: 840px;
+      min-height: 100vh;
 
       &--kitchen,
       &--attraction,
@@ -661,8 +659,6 @@
 
         padding-top: 40px;
       }
-
-
     }
 
     @media screen and (min-width: $mobile) {
@@ -739,7 +735,6 @@
       }
 
       &.transition {
-
         .event__title-image--coffee,
         .event__title-image--halls {
           visibility: hidden;
@@ -751,7 +746,6 @@
       }
 
       &.translated {
-
         .event__title-image--coffee,
         .event__title-image--halls {
           --opacity: 0.8;
@@ -772,7 +766,8 @@
 
             transform: translateY(0);
 
-            transition: height 0.5s linear, width 0.5s linear, transform 0.5s linear;
+            transition: height 0.5s linear, width 0.5s linear,
+              transform 0.5s linear;
           }
 
           .event__title-image {
@@ -791,14 +786,15 @@
         }
 
         &.swiper-slide-next,
-        &.swiper-slide-next~.swiper-slide {
+        &.swiper-slide-next ~ .swiper-slide {
           .event__img {
             width: var(--width-img);
             height: var(--height-img);
 
             transform: translateY(var(--translateY, 0));
 
-            transition: height 0.5s linear, width 0.5s linear, transform 0.5s linear;
+            transition: height 0.5s linear, width 0.5s linear,
+              transform 0.5s linear;
           }
 
           .event__title-image {
@@ -817,7 +813,8 @@
 
         &.swiper-slide-next {
           .event__img {
-            transition: height 0.5s linear, width 0.5s linear, transform 0.5s linear;
+            transition: height 0.5s linear, width 0.5s linear,
+              transform 0.5s linear;
           }
         }
       }
@@ -836,8 +833,8 @@
           display: grid;
 
           grid-template-areas:
-            "a a"
-            "b c";
+            'a a'
+            'b c';
 
           grid-template-columns: 1fr 200px;
           grid-template-rows: 1fr auto;
@@ -1201,7 +1198,6 @@
     }
 
     @media screen and (min-width: $tablet) {
-
       &--coffee,
       &--halls {
         margin-top: 32px;

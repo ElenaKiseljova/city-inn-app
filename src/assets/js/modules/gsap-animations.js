@@ -54,8 +54,7 @@ const animationOpacityTranslate = (
   elements,
   trigerElement,
   scrollTriggerId = null,
-  scrub = 1,
-  markers = false
+  options
 ) => {
   if (DEVICE_WIDTH >= TABLET_WIDTH && elements.length > 0 && trigerElement) {
     scrollTriggerId = scrollTriggerId
@@ -71,11 +70,10 @@ const animationOpacityTranslate = (
       ease: 'power3.inOut',
       scrollTrigger: {
         id: scrollTriggerId,
-        scrub: scrub,
         trigger: trigerElement,
-        markers,
-        start: 'top bottom',
-        end: 'bottom center',
+        scrub: 1,
+        markers: false,
+        ...options,
       },
     });
 
@@ -92,13 +90,11 @@ class Animation {
   constructor(
     selectorItem,
     scrollTriggerId = null,
-    scrub = 1,
-    markers = false
+    options = { start: 'top bottom', end: 'bottom center' }
   ) {
     this.selectorItem = selectorItem;
     this.scrollTriggerId = scrollTriggerId;
-    this.scrub = scrub;
-    this.markers = markers;
+    this.options = options;
   }
 
   static trigger = null;
@@ -118,8 +114,7 @@ class Animation {
         this.elements(),
         trigger,
         this.scrollTriggerId,
-        this.scrub,
-        this.markers
+        this.options
       );
 
       this.animationInit = response.animation;
@@ -169,16 +164,18 @@ class Animation {
 }
 
 //.contacts
-const contactsAnimation = new Animation('.contacts__item', 'contacts');
+const contactsAnimation = new Animation('.contacts__item', 'contacts', {
+  start: 'top center',
+  end: 'top top',
+});
 
 export { contactsAnimation };
 
 //.page-footer
-const pageFooterAnimation = new Animation(
-  '.page-footer__item',
-  'page-footer',
-  null
-);
+const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer', {
+  start: 'top bottom',
+  end: 'bottom bottom',
+});
 
 export { pageFooterAnimation };
 
@@ -187,11 +184,19 @@ const serviceAnimation = new Animation('.service', 'services');
 
 export { serviceAnimation };
 
+//parent block .service
+const featuresAnimation = new Animation('.service', 'features', {
+  start: 'top center',
+  end: 'top top',
+});
+
+export { featuresAnimation };
+
 //.promo__social
 const promoSocialAnimation = new Animation(
   '.promo__lang, .promo__social .social__item',
   'promoSocial',
-  null
+  { scrub: null }
 );
 
 export { promoSocialAnimation };
@@ -310,11 +315,11 @@ const sectionAnimation = (section, trigger) => {
 export { sectionAnimation };
 
 /**
- * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции + масштабирование лого
+ * Синхронная анимация появления кнопок хедера и сокрытия кнопок промо секции
  *
  */
-// .page-header__social | .promo__container--home, .promo__container--smart | .promo
-const animationThreeElements = {
+// .page-header__social | .promo__container--home, .promo__container--smart
+const animationHeaderSocialAndPromoButtons = {
   animation: null,
   elements: [],
   trigger: null,
@@ -322,18 +327,15 @@ const animationThreeElements = {
     if (trigger) {
       this.trigger = trigger;
 
-      const headerLogo = document.querySelector('.page-header__logo');
-      const headerButtons = document.querySelector(
+      const headerButtonsContainer = document.querySelector(
         '.page-header__social--smart, .page-header__social--home'
       );
       const promoButtonsContainer = trigger.querySelector(
         '.promo__container--home, .promo__container--smart'
       );
 
-      if (headerLogo) {
-        this.elements[0] = headerLogo;
-
-        this.animation = gsap.to(headerLogo, {
+      if (headerButtonsContainer) {
+        this.animation = gsap.to(headerButtonsContainer, {
           scrollTrigger: {
             id: 'threeElements',
             trigger: trigger,
@@ -341,19 +343,17 @@ const animationThreeElements = {
             end: 9999999,
             // markers: true,
             onToggle: () => {
-              if (headerButtons) {
-                this.elements[1] = headerButtons;
+              if (headerButtonsContainer) {
+                this.elements[0] = headerButtonsContainer;
 
-                headerButtons.classList.toggle('scrolled');
+                headerButtonsContainer.classList.toggle('scrolled');
               }
 
               if (promoButtonsContainer) {
-                this.elements[2] = promoButtonsContainer;
+                this.elements[1] = promoButtonsContainer;
 
                 promoButtonsContainer.classList.toggle('scrolled');
               }
-
-              headerLogo.classList.toggle('scrolled');
             },
           },
         });
@@ -387,7 +387,7 @@ const animationThreeElements = {
   },
 };
 
-export { animationThreeElements };
+export { animationHeaderSocialAndPromoButtons };
 
 /**
  * Анимация заголовка и текста страницы
@@ -431,9 +431,9 @@ const imageBgAnimation = (trigger) => {
 
     if (elements.length > 0) {
       gsap.to(elements, {
-        scale: 1.2,
+        scale: 2,
         transformOrigin: 'center',
-        duration: 1.2,
+        duration: 0.1,
         ease: 'Power1.easeIn',
         scrollTrigger: {
           trigger: trigger,

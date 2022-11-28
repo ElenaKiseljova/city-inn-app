@@ -28,51 +28,10 @@
 
     box-sizing: border-box;
 
-    // visibility: hidden;
-
-    // .room__top,
-    // .room__bottom {
-    //   // opacity: 0;
-
-    //   transform: translateX(-100%);
-
-    //   // visibility: hidden;
-    // }
-
-    // .room__top {
-    //   transform: translateX(-100%);
-    // }
-
-    // .room__bottom {
-    //   transform: translateX(100%);
-    // }
-
-    // &.swiper-slide-active {
-    //   visibility: visible;
-
-    //   .room__bottom,
-    //   .room__top {
-    //     // visibility: visible;
-
-    //     transition: translate 1.2s linear, opacity 0.5s linear;
-    //   }
-    // }
-
     @media screen and (min-width: $tablet) {
       padding-bottom: 120px;
 
-      // overflow: visible;
-
-      // visibility: visible;
-
-      // .room__bottom,
-      // .room__top {
-      //   opacity: 1;
-
-      //   visibility: visible;
-
-      //   transform: none;
-      // }
+      cursor: default;
     }
 
     @media screen and (min-width: $desktop) {

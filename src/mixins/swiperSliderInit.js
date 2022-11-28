@@ -153,12 +153,12 @@ export default {
     setSwiperOptions() {
       // Food slider
       if (this.swiper?.el?.classList.contains('food__slider')) {
-        this.swiperOptions.autoplay = {
-          delay: 5000,
-          stopOnLastSlide: true,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        };
+        // this.swiperOptions.autoplay = {
+        //   delay: 5000,
+        //   stopOnLastSlide: true,
+        //   disableOnInteraction: false,
+        //   pauseOnMouseEnter: true,
+        // };
 
         if (this.foodNumberTabs?.length > 0 && this.foodTextTabs?.length > 0) {
           this.changeTab();
@@ -177,9 +177,9 @@ export default {
         if (
           this.swiper?.el?.classList.contains('banquet__slider') ||
           this.swiper?.el?.classList.contains('mission__slider') ||
-          this.swiper?.el?.classList.contains('spa__slider') ||
-          this.swiper?.el?.classList.contains('seating__slider') ||
-          this.swiper?.el?.classList.contains('prices__slider')
+          // this.swiper?.el?.classList.contains('spa__slider') ||
+          // this.swiper?.el?.classList.contains('prices__slider') ||
+          this.swiper?.el?.classList.contains('seating__slider')
         ) {
           this.swiperOptions.autoplay = {
             delay: 5000,

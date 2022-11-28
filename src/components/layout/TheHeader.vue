@@ -2,7 +2,7 @@
 header.page-header(v-if='pageName && header')
   .page-header__container.container
     .page-header__top
-      BaseLogo(sectionName='page-header', modificator='header') 
+      BaseLogo(sectionName='page-header', modificator='header', ref="headerLogo") 
 
       .page-header__right(ref='headerRight')
         .page-header__buttons
@@ -42,7 +42,7 @@ import { mapGetters } from 'vuex';
 
 import Scrollbar from 'smooth-scrollbar';
 
-import headerAndToTopButtonAnimationByScroll from '@/assets/js/modules/headerAndToTopButtonAnimationByScroll';
+import animationByScroll from '@/assets/js/modules/animationByScroll';
 import {
   DEVICE_WIDTH,
   DESKTOP_WIDTH,
@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       scrollbarMenuIsSet: false,
-      scrollHeaderRightAnimationIsSet: false,
+      animationByScrollIsSet: false,
     };
   },
   computed: {
@@ -116,10 +116,14 @@ export default {
       }
     },
     setScrollHeaderRightAnimation() {
-      if (this.$refs.headerRight && !this.scrollHeaderRightAnimationIsSet) {
-        headerAndToTopButtonAnimationByScroll(this.$refs.headerRight);
+      if (
+        this.$refs.headerRight &&
+        this.$refs.headerLogo &&
+        !this.animationByScrollIsSet
+      ) {
+        animationByScroll();
 
-        this.scrollHeaderRightAnimationIsSet = true;
+        this.animationByScrollIsSet = true;
       }
     },
   },

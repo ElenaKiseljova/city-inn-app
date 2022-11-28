@@ -99,7 +99,7 @@
       position: relative;
 
       height: auto;
-      min-height: calc((478 / 768)* 100vw);
+      min-height: calc((478 / 768) * 100vw);
 
       &--menu,
       &--advantages,
@@ -113,11 +113,11 @@
       &--why-conference {
         position: static;
 
-        min-height: calc((580 / 768)* 100vw);
+        min-height: calc((580 / 768) * 100vw);
       }
 
       &--approach-group {
-        min-height: calc((488 / 768)* 100vw);
+        min-height: calc((488 / 768) * 100vw);
       }
     }
 
@@ -127,7 +127,7 @@
       align-items: stretch;
       justify-content: flex-start;
 
-      min-height: 840px;
+      min-height: 100vh;
 
       &--breakfast,
       &--why-conference {
@@ -171,7 +171,6 @@
     }
 
     @media screen and (max-width: calc(#{$tablet} - 1px)) {
-
       &--approach-conference,
       &--why-conference,
       &--approach-group {
@@ -180,7 +179,6 @@
     }
 
     @media screen and (min-width: $mobile) {
-
       &--approach-conference,
       &--why-conference,
       &--approach-group {
@@ -362,7 +360,7 @@
 
       width: calc(50vw - 105px);
       height: auto;
-      min-height: 840px;
+      min-height: 100vh;
 
       margin: -14px calc(100% - 50vw) 0 105px;
 
@@ -426,7 +424,6 @@
     cursor: pointer;
 
     @media screen and (min-width: $tablet) {
-
       &--approach-conference,
       &--why-conference,
       &--approach-group {
@@ -465,7 +462,7 @@
           transition: transform 0.5s linear;
         }
 
-        &+.swiper-slide {
+        & + .swiper-slide {
           .food__img {
             transform-origin: left top;
             transform: translateY(var(--translateY)) scale(2);
@@ -473,7 +470,7 @@
             transition: transform 0.5s linear;
           }
 
-          &~.swiper-slide {
+          & ~ .swiper-slide {
             .food__img {
               transform-origin: left top;
               transform: translate(100%, var(--translateY)) scale(2);
@@ -710,8 +707,8 @@
     display: grid;
 
     grid-template-areas:
-      "a b c d e"
-      "f f f f f";
+      'a b c d e'
+      'f f f f f';
 
     grid-template-columns: repeat(5, 40px);
     grid-template-rows: 40px auto;
@@ -747,11 +744,11 @@
 
     @media screen and (min-width: $desktop) {
       grid-template-areas:
-        "a f"
-        "b g"
-        "c h"
-        "d i"
-        "e j";
+        'a f'
+        'b g'
+        'c h'
+        'd i'
+        'e j';
 
       grid-template-columns: 48px auto;
       grid-template-rows: auto;
@@ -792,8 +789,8 @@
     $areas: ('a', 'b', 'c', 'd', 'e');
 
     @for $i from 0 to length($areas) {
-      &--#{$i+1} {
-        grid-area: unquote(nth($areas, $i+1));
+      &--#{$i + 1} {
+        grid-area: unquote(nth($areas, $i + 1));
       }
     }
 
@@ -804,7 +801,6 @@
     }
 
     @media screen and (min-width: $tablet) {
-
       &--approach-conference,
       &--why-conference,
       &--approach-group {
@@ -827,8 +823,8 @@
       $areas: ('a', 'b', 'c', 'd', 'e');
 
       @for $i from 0 to length($areas) {
-        &--#{$i+1} {
-          grid-area: unquote(nth($areas, $i+1));
+        &--#{$i + 1} {
+          grid-area: unquote(nth($areas, $i + 1));
         }
       }
 
@@ -863,8 +859,8 @@
       $areas: ('f', 'g', 'h', 'i', 'j');
 
       @for $i from 0 to length($areas) {
-        &--#{$i+1} {
-          grid-area: unquote(nth($areas, $i+1));
+        &--#{$i + 1} {
+          grid-area: unquote(nth($areas, $i + 1));
         }
       }
 

@@ -20,13 +20,9 @@
 
   background-color: transparent;
 
-  border-radius: 40px;
-
-  overflow: hidden;
-
   transition: color 0.3s, border-color 0.3s;
 
-  pointer-events: all!important;
+  pointer-events: all !important;
 
   * {
     position: relative;
@@ -88,7 +84,7 @@
 
   &:disabled,
   &.disabled {
-    pointer-events: none!important;
+    pointer-events: none !important;
   }
 
   &--circle {
@@ -102,6 +98,6 @@
   @media screen and (min-width: $tablet) {
     padding: 15.5px 13px;
 
-    @include font(14, 17, 500)
+    @include font(14, 17, 500);
   }
 }

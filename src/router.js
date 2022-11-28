@@ -5,7 +5,7 @@ import {
   DEVICE_WIDTH,
   DESKTOP_WIDTH,
 } from './assets/js/modules/gsap-animations';
-import { scrollbar } from './assets/js/modules/bodyScrollbar';
+import { scrollbar, isScrollbar } from './assets/js/modules/bodyScrollbar';
 
 const HomePage = () => import('./pages/HomePage.vue');
 const AboutHotel = () => import('./pages/AboutHotel.vue');
@@ -249,24 +249,30 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   async scrollBehavior(to, from, savedPosition) {
-    if (DEVICE_WIDTH >= DESKTOP_WIDTH && scrollbar) {
-      if (to.path !== from.path) {
-        scrollbar.setPosition(0, 0);
+    if (DEVICE_WIDTH >= DESKTOP_WIDTH) {
+      const checkRoute = async () => {
+        if (to.path !== from.path) {
+          const scrollbarEl = scrollbar.getScrollElement();
 
-        if (to.hash) {
-          setTimeout(() => {
-            scrollbar.scrollIntoView(document.querySelector(to.hash), {
-              onlyScrollIfNeeded: true,
-            });
-          }, 600);
+          scrollbarEl.scrollTop = 0;
+
+          if (to.hash) {
+            setTimeout(() => {
+              const hashEl = document.querySelector(to.hash);
+              hashEl?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            }, 600);
+          }
+        } else {
+          if (to.hash) {
+            setTimeout(() => {
+              const hashEl = document.querySelector(to.hash);
+              hashEl?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            }, 0);
+          }
         }
-      } else {
-        if (to.hash) {
-          scrollbar.scrollIntoView(document.querySelector(to.hash), {
-            onlyScrollIfNeeded: true,
-          });
-        }
-      }
+      };
+
+      await isScrollbar(checkRoute);
     } else {
       if (to.path !== from.path) {
         if (to.hash) {

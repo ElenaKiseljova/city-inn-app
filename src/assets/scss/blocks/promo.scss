@@ -82,7 +82,6 @@
     }
 
     &--content {
-
       &.promo__container--home,
       &.promo__container--smart {
         display: none;
@@ -91,7 +90,6 @@
 
     @media screen and (min-width: $tablet) {
       &--image {
-
         &.promo__container--home,
         &.promo__container--smart {
           transform: translateY(0);
@@ -486,7 +484,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--restaurant,
       &--lobby,
       &--about,
@@ -511,7 +508,7 @@
     color: var(--color-page);
 
     opacity: 0;
-    
+
     transform: translateX(50px);
 
     &--group,
@@ -581,7 +578,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--restaurant,
       &--lobby,
       &--about,
@@ -626,13 +622,11 @@
   }
 
   &__worktime {
-
     &--restaurant {
       margin-bottom: 35px;
     }
 
     @media screen and (min-width: $tablet) {
-
       &--restaurant {
         margin-right: 30px;
         margin-bottom: 0;
@@ -640,7 +634,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &--restaurant {
         margin-right: 59px;
       }

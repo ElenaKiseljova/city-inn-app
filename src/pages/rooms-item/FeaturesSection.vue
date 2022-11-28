@@ -31,7 +31,7 @@ section.features(v-if='page && pageName && sections && section', ref='features')
 <script>
 import { mapGetters } from 'vuex';
 
-import { serviceAnimation } from '@/assets/js/modules/gsap-animations';
+import { featuresAnimation } from '@/assets/js/modules/gsap-animations';
 
 import converteSymbolsNewLineToBr from '@/mixins/converteSymbolsNewLineToBr';
 import swiperSliderInit from '@/mixins/swiperSliderInit';
@@ -40,7 +40,7 @@ export default {
   mixins: [converteSymbolsNewLineToBr, swiperSliderInit],
   data() {
     return {
-      serviceAnimationIsSet: false,
+      featuresAnimationIsSet: false,
       sectionName: 'features',
     };
   },
@@ -59,18 +59,20 @@ export default {
     },
   },
   mounted() {
-    this.setServiceAnimation();
+    this.setFeaturesAnimation();
   },
   updated() {
-    this.setServiceAnimation();
+    this.setFeaturesAnimation();
   },
-  async beforeUnmount() {
-    await serviceAnimation.reset();
+  beforeUnmount() {
+    featuresAnimation.reset();
   },
   methods: {
-    setServiceAnimation() {
-      if (this.$refs.features && !this.serviceAnimationIsSet) {
-        this.serviceAnimationIsSet = serviceAnimation.init(this.$refs.features);
+    setFeaturesAnimation() {
+      if (this.$refs.features && !this.featuresAnimationIsSet) {
+        this.featuresAnimationIsSet = featuresAnimation.init(
+          this.$refs.features
+        );
       }
     },
   },

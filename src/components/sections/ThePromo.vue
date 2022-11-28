@@ -81,7 +81,7 @@ import { mapGetters } from 'vuex';
 import {
   promoTitleAndTextAnimation,
   promoSocialAnimation,
-  animationThreeElements,
+  animationHeaderSocialAndPromoButtons,
 } from '@/assets/js/modules/gsap-animations';
 
 import social from '@/mixins/social';
@@ -103,7 +103,7 @@ export default {
     return {
       promoTitleAndTextAnimationIsSet: false,
       promoSocialAnimationIsSet: false,
-      animationThreeElementsIsSet: false,
+      animationHeaderSocialAndPromoButtonsIsSet: false,
     };
   },
   computed: {
@@ -173,10 +173,10 @@ export default {
   updated() {
     this.setPromoAnimation();
   },
-  async beforeUnmount() {
-    await promoSocialAnimation.reset();
+  beforeUnmount() {
+    promoSocialAnimation.reset();
 
-    await animationThreeElements.reset();
+    animationHeaderSocialAndPromoButtons.reset();
   },
   methods: {
     setPromoAnimation() {
@@ -187,10 +187,9 @@ export default {
           );
         }
 
-        if (!this.animationThreeElementsIsSet) {
-          this.animationThreeElementsIsSet = animationThreeElements.init(
-            this.$refs.section
-          );
+        if (!this.animationHeaderSocialAndPromoButtonsIsSet) {
+          this.animationHeaderSocialAndPromoButtonsIsSet =
+            animationHeaderSocialAndPromoButtons.init(this.$refs.section);
         }
 
         if (!this.promoTitleAndTextAnimationIsSet && this.images === 0) {

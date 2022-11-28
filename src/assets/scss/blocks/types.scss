@@ -125,11 +125,11 @@
     .swiper-wrapper {
       @media screen and (min-width: $tablet) {
         display: grid;
-  
+
         grid-template-columns: 50vw 50vw;
         grid-template-rows: 50vw 50vw;
       }
-  
+
       @media screen and (min-width: $desktop) {
         display: flex;
       }
@@ -168,7 +168,7 @@
     // }
 
     @media screen and (min-width: $tablet) and (max-width: calc(#{$desktop} - 1px)) {
-      width: unset!important;
+      width: unset !important;
     }
 
     @media screen and (min-width: $tablet) {
@@ -192,7 +192,7 @@
       // &.swiper-slide {
 
       // }
-      
+
       .types__top,
       .types__bottom {
         // opacity: 1;
@@ -238,7 +238,6 @@
     }
 
     @media screen and (min-width: $desktop) {
-
       &:nth-of-type(odd),
       &:nth-of-type(even) {
         transform: translateY(50px);

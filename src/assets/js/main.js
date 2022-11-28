@@ -1,5 +1,5 @@
 import gsapAnimations from './gsap-animations';
-import headerAndToTopButtonAnimationByScroll from './modules/headerAndToTopButtonAnimationByScroll';
+import animationByScroll from './modules/animationByScroll';
 import menu from './menu';
 import callUs from './call-us';
 import swipers from './swipers';
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   try {
-    headerAndToTopButtonAnimationByScroll();
+    animationByScroll();
   } catch (error) {
     console.log(error.message);
   }

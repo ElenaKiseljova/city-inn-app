@@ -142,11 +142,11 @@
     margin-bottom: 16px;
 
     &.active {
-      &~.page-header__lang {
+      & ~ .page-header__lang {
         display: flex !important;
       }
 
-      &~.page-header__social {
+      & ~ .page-header__social {
         opacity: 0;
 
         pointer-events: none;
@@ -155,7 +155,7 @@
 
     @media screen and (min-width: $tablet) {
       &.active {
-        &~.page-header__lang {
+        & ~ .page-header__lang {
           display: none !important;
         }
       }

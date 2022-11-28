@@ -192,24 +192,26 @@
 
       &--odd {
         grid-template-areas:
-          ". a"
-          ". b"
-          "c c";
+          '. a'
+          '. b'
+          'c c';
 
         grid-template-columns: 50% calc(50% - 40px);
-        grid-template-rows: minmax(264px, max-content) minmax(184px, max-content) max-content;
-
-
+        grid-template-rows:
+          minmax(264px, max-content) minmax(184px, max-content)
+          max-content;
       }
 
       &--even {
         grid-template-areas:
-          "a ."
-          "b ."
-          "c c";
+          'a .'
+          'b .'
+          'c c';
 
         grid-template-columns: calc(50% - 40px) 50%;
-        grid-template-rows: minmax(224px, max-content) minmax(134px, max-content) max-content;
+        grid-template-rows:
+          minmax(224px, max-content) minmax(134px, max-content)
+          max-content;
       }
 
       overflow: visible;

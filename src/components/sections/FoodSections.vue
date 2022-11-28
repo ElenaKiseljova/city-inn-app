@@ -25,7 +25,6 @@ section(
           :speed="swiperOptions.speed",
           :navigation="swiperNavigation",
           :pagination="swiperPagination",
-          :autoplay="swiperOptions.autoplay",
           @swiper="setSwiper",
           @slideChange="onSlideChange"
         )

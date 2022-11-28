@@ -33,7 +33,8 @@
 
     @media screen and (min-width: $desktop) {
       width: 50vw;
-      height: calc(840 / 1440 * 100vw);
+      height: 100vh;
+      min-height: fit-content;
     }
   }
 
@@ -49,7 +50,7 @@
       }
 
       &.swiper-slide-next,
-      &.swiper-slide-next~.swiper-slide {
+      &.swiper-slide-next ~ .swiper-slide {
         .gallery__img {
           $scale: calc(280 / 680);
 
@@ -73,7 +74,7 @@
       }
 
       &.swiper-slide-next,
-      &.swiper-slide-next~.swiper-slide {
+      &.swiper-slide-next ~ .swiper-slide {
         .gallery__img {
           $scale: calc(420 / 840);
 
@@ -123,6 +124,11 @@
 
       margin-right: 15px;
       margin-bottom: 80px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-right: -40px;
+      margin-bottom: 240px;
     }
   }
 }

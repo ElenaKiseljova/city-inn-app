@@ -49,10 +49,12 @@
       display: grid;
 
       grid-template-areas:
-        "a ."
-        "b c";
+        'a .'
+        'b c';
 
-      grid-template-columns: calc(771 / (1440 - 254) * 100%) calc(360 / (1440 - 254) * 100%);
+      grid-template-columns: calc(771 / (1440 - 254) * 100%) calc(
+          360 / (1440 - 254) * 100%
+        );
 
       align-items: end;
 
@@ -201,7 +203,6 @@
   }
 
   &__slide {
-
     @media screen and (min-width: $desktop) {
       display: grid;
 

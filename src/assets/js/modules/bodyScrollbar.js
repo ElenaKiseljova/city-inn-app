@@ -1,4 +1,5 @@
-import Scrollbar from 'smooth-scrollbar';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 import ScrollTrigger from '../libs/ScrollTrigger.min';
 import { DEVICE_WIDTH, DESKTOP_WIDTH } from './gsap-animations';
 
@@ -9,25 +10,49 @@ const scrollbarInit = () => {
     const wrapper = document.querySelector('.wrapper');
 
     if (wrapper) {
-      scrollbar = Scrollbar.init(wrapper, {
-        delegateTo: document,
-        damping: 0.05,
-        continuousScrolling: false,
-      });
+      scrollbar = new SimpleBar(wrapper);
+
+      const scrollbarEl = scrollbar.getScrollElement();
 
       ScrollTrigger.scrollerProxy(wrapper, {
         scrollTop(value) {
           if (arguments.length) {
-            scrollbar.scrollTop = value; // setter
+            scrollbarEl.scrollTop = value; // setter
           }
-          return scrollbar.scrollTop; // getter
+          return scrollbarEl.scrollTop; // getter
         },
       });
 
-      scrollbar.addListener(ScrollTrigger.update);
-      ScrollTrigger.defaults({ scroller: wrapper });
+      // scrollbar.addListener(ScrollTrigger.update);
+      ScrollTrigger.defaults({ scroller: scrollbarEl });
     }
   }
 };
 
-export { scrollbarInit, scrollbar };
+const TOO_MANY_REPETITIONS = 20;
+let scrollInterval;
+let i = 0;
+
+const isScrollbar = async (callback) => {
+  return await new Promise((resolve) => {
+    if (scrollbar) {
+      resolve(callback());
+    } else {
+      scrollInterval = setInterval(() => {
+        if (scrollbar || i > TOO_MANY_REPETITIONS) {
+          if (scrollbar) {
+            resolve(callback());
+          } else {
+            throw new Error('TOO_MANY_REPETITIONS');
+          }
+
+          clearInterval(scrollInterval);
+        }
+
+        i++;
+      }, 500);
+    }
+  });
+};
+
+export { scrollbarInit, scrollbar, isScrollbar };
