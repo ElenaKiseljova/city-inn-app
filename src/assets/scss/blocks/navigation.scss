@@ -2,11 +2,10 @@
   align-items: center;
   justify-content: space-between;
 
-  width: 120px;
+  width: 99px;
 
   &__prev,
   &__next {
-
     &.swiper-button-prev,
     &.swiper-button-next {
       position: relative;
@@ -16,8 +15,8 @@
       bottom: auto;
       left: auto;
 
-      width: 48px;
-      height: 48px;
+      width: 40px;
+      height: 40px;
 
       margin: 0;
       padding: 5px;
@@ -31,6 +30,19 @@
       svg {
         width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 120px;
+
+    &__prev,
+    &__next {
+      &.swiper-button-prev,
+      &.swiper-button-next {
+        width: 48px;
+        height: 48px;
       }
     }
   }

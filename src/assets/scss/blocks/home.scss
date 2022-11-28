@@ -57,7 +57,7 @@
       &--lobby,
       &--restaurant {
         grid-template-columns: 100%;
-        grid-template-rows: calc(384 / 768 * 100vw) auto;
+        grid-template-rows: calc(384 / 1024 * 100vh) auto;
       }
     }
 
@@ -116,7 +116,7 @@
       &--about {
         width: 50vw;
 
-        min-height: calc(585 / 768 * 100vw);
+        min-height: calc(585 / 1024 * 100vh);
       }
 
       &--smart,
@@ -135,7 +135,7 @@
       &--restaurant {
         width: 100vw;
 
-        min-height: calc(384 / 768 * 100vw);
+        min-height: calc(384 / 1024 * 100vh);
 
         margin: 0 calc((100% - 100vw) / 2);
       }
@@ -537,6 +537,8 @@
     }
 
     &--why {
+      text-transform: none;
+
       &.home__text--top {
         margin-bottom: 20px;
 
@@ -545,8 +547,18 @@
 
       &.home__text--bottom {
         @include font(14, 20, 600);
+      }
+    }
 
-        text-transform: none;
+    @media screen and (min-width: $tablet) {
+      &--why {
+        &.home__text--top {
+          @include font(12, 20, 400);
+        }
+
+        &.home__text--bottom {
+          @include font(12, 20, 600);
+        }
       }
     }
 
@@ -560,7 +572,15 @@
       }
 
       &--why {
-        color: var(--color-page, #ffffff);
+        color: var(--color-page);
+
+        &.home__text--top {
+          @include font(14, 20, 400);
+        }
+
+        &.home__text--bottom {
+          @include font(14, 20, 600);
+        }
       }
     }
   }

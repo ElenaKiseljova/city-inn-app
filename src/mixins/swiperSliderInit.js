@@ -191,6 +191,7 @@ export default {
 
         // Gallery slider
         if (this.swiper?.el?.classList.contains('gallery__slider')) {
+          this.swiperOptions.speed = 500;
           this.swiperOptions.spaceBetween = 36;
         }
       }

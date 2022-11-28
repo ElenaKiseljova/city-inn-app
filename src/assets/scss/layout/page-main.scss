@@ -1,6 +1,8 @@
 .page-main {
   @extend %w100;
 
+  flex-grow: 1;
+
   background-color: var(--background-color-page);
 
   &--text-page {

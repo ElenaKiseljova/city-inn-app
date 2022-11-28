@@ -103,6 +103,7 @@
       position: relative;
 
       height: calc((478 / 1024) * 100vh);
+
       min-height: 100%;
       max-height: 100vh;
 
@@ -112,6 +113,11 @@
       &--approach-group,
       &--supply {
         order: 2;
+      }
+
+      &--menu,
+      &--breakfast {
+        height: calc((585 / 1024) * 100vh);
       }
 
       &--approach-conference,

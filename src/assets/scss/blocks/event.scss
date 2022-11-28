@@ -109,7 +109,6 @@
     }
 
     @media screen and (min-width: $tablet) {
-      height: auto;
       height: calc((478 / 1024) * 100vh);
 
       min-height: 100%;
@@ -123,8 +122,17 @@
       }
 
       &--smart-rooms,
-      &--halls {
+      &--halls,
+      &--event {
         height: calc((585 / 1024) * 100vh);
+      }
+
+      &--saunas {
+        height: calc((580 / 1024) * 100vh);
+      }
+
+      &--kitchen {
+        height: calc((495 / 1024) * 100vh);
       }
     }
 
@@ -607,25 +615,6 @@
     &--text {
       padding: 95px 15px 40px;
 
-      // .event__content,
-      // .event__subtitle,
-      // .event__buttons {
-      //   opacity: 0;
-
-      //   transition: opacity 1.2s linear;
-      // }
-
-      // &.swiper-slide-active {
-
-      //   .event__content,
-      //   .event__subtitle,
-      //   .event__buttons {
-      //     opacity: 1;
-
-      //     transition: opacity 1.2s linear;
-      //   }
-      // }
-
       // &.event__slide--kitchen,
       &.event__slide--saunas {
         padding-top: 40px;
@@ -681,6 +670,10 @@
         height: auto;
 
         padding: 53px 0 40px 39px;
+
+        &.event__slide--event {
+          padding: 0 0 40px 39px;
+        }
 
         // &.event__slide--kitchen,
         &.event__slide--saunas {
@@ -1265,9 +1258,9 @@
   &__arrow-top {
     display: none;
 
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: $big-desktop) {
       &--saunas {
-        display: flex;
+        display: flex !important;
 
         margin-left: 24px;
       }

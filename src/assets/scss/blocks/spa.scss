@@ -7,6 +7,8 @@
     align-items: stretch;
     justify-content: flex-start;
 
+    height: max-content;
+
     transform: translateX(-30vw);
   }
 
@@ -17,16 +19,14 @@
 
     @media screen and (min-width: $tablet) {
       width: 50vw;
-      height: calc(580 / 1024 * 100vh);
+      height: auto;
 
       min-height: 100%;
-      max-height: 100vh;
 
       overflow: visible;
     }
 
     @media screen and (min-width: $desktop) {
-      height: 100vh;
     }
   }
 
@@ -79,12 +79,22 @@
     height: fit-content;
 
     @media screen and (min-width: $tablet) {
+      display: flex;
+
+      align-items: stretch;
+
+      height: auto;
+
       min-height: 100%;
 
       direction: ltr;
 
       &.dooble__slider--text {
         display: none;
+      }
+
+      .swiper-wrapper {
+        height: auto;
       }
     }
   }
@@ -100,7 +110,10 @@
     height: 100vw;
 
     @media screen and (min-width: $tablet) {
-      height: 100vh;
+      width: 50vw;
+      height: auto;
+
+      min-height: 100%;
     }
   }
 
@@ -260,7 +273,7 @@
   }
 
   &__arrow-top {
-    @media screen and (min-width: $desktop) {
+    @media screen and (min-width: $big-desktop) {
       display: flex !important;
 
       margin-left: 24px;

@@ -4,7 +4,7 @@ import ScrollTrigger from '../libs/ScrollTrigger.min';
 gsap.registerPlugin(ScrollTrigger);
 
 const TABLET_WIDTH = 768;
-const DESKTOP_WIDTH = 1366;
+const DESKTOP_WIDTH = 1280;
 
 const getDewiceWidth = () => {
   return window.innerWidth && document.documentElement.clientWidth
@@ -166,7 +166,7 @@ class Animation {
 //.contacts
 const contactsAnimation = new Animation('.contacts__item', 'contacts', {
   start: 'top center',
-  end: 'top top',
+  end: 'bottom bottom',
 });
 
 export { contactsAnimation };
@@ -275,7 +275,7 @@ const sectionTitleAnimation = ({ title, titles, trigger }) => {
         trigger: trigger,
         // markers: true,
         scrub: 1,
-        start: 'top 70%',
+        start: 'top center',
         end: 'bottom top',
         onToggle: () => {
           if (title) {
@@ -306,7 +306,7 @@ const sectionAnimation = (section, trigger) => {
         // markers: true,
         scrub: 0.3,
         start: 'top bottom',
-        end: 'top top',
+        end: 'top center',
       },
     });
 
@@ -430,7 +430,7 @@ export { promoTitleAndTextAnimation };
  * Анимация фоновой картинки
  */
 const imageBgAnimation = (trigger) => {
-  if (trigger && DEVICE_WIDTH >= TABLET_WIDTH) {
+  if (trigger) {
     const elements = trigger.querySelectorAll('picture');
 
     if (elements.length > 0) {

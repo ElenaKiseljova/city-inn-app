@@ -11,7 +11,7 @@
     padding-bottom: 80px;
 
     @media screen and (min-width: $tablet) {
-      min-height: calc(477 / 768 * 100vw);
+      min-height: calc(477 / 1024 * 100vh);
 
       padding-bottom: 72px;
     }
@@ -24,7 +24,7 @@
       align-items: flex-end;
       justify-content: space-between;
 
-      min-height: calc(440 / 1440 * 100vw);
+      min-height: calc(440 / 890 * 100vh);
 
       padding-top: 55px;
       padding-bottom: 104px;

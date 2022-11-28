@@ -39,7 +39,6 @@
   }
 
   @media screen and (min-width: $tablet) {
-
     &--spa,
     &--halls {
       grid-template-columns: repeat(auto-fit, minmax(151px, max-content));
@@ -70,7 +69,7 @@
     }
 
     &--spa {
-      grid-template-columns: repeat(3, auto);
+      grid-template-columns: repeat(2, auto);
 
       column-gap: 56px;
 
@@ -127,6 +126,12 @@
 
     &--types {
       grid-template-columns: repeat(2, 48%);
+    }
+  }
+
+  @media screen and (min-width: $big-desktop) {
+    &--spa {
+      grid-template-columns: repeat(3, auto);
     }
   }
 

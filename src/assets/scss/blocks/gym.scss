@@ -382,7 +382,9 @@
   }
 
   &__arrow-top {
-    @media screen and (min-width: $desktop) {
+    flex-shrink: 0;
+
+    @media screen and (min-width: $big-desktop) {
       &--starfit {
         display: flex !important;
 

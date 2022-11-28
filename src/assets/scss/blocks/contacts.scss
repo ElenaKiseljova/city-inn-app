@@ -104,6 +104,8 @@
   }
 
   &__title {
+    --opacity: 0.8;
+
     position: absolute;
 
     bottom: 0;
@@ -131,10 +133,12 @@
 
       padding: 40px 36px 0;
 
-      color: $white;
+      color: $light-yellow;
     }
 
     @media screen and (min-width: $desktop) {
+      --opacity: 0.4;
+
       position: absolute;
 
       top: auto;
@@ -143,7 +147,7 @@
 
       padding: 0;
 
-      color: $white-40;
+      color: $light-green;
 
       &--desktop {
         display: block;
@@ -154,8 +158,6 @@
       }
 
       &.contacts__title--home {
-        color: $light-green-40;
-
         bottom: -5px;
       }
 

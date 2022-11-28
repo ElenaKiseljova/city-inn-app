@@ -181,6 +181,10 @@
 
       min-height: 100vh;
     }
+
+    @media screen and (min-width: $desktop) {
+      height: 100vh;
+    }
   }
 
   &__img {
@@ -217,12 +221,6 @@
 
       background-color: rgba(18, 17, 21, 0.8);
 
-      // opacity: 0;
-
-      // transform: translateX(-100%);
-
-      // transition: transform 0.5s linear, opacity 0.5s linear;
-
       overflow: visible;
     }
 
@@ -234,7 +232,10 @@
       align-items: flex-start;
       justify-content: flex-start;
 
-      padding: 225px 74px 69px calc((74 / 1440) * 100vw);
+      height: 100vh;
+
+      padding: calc((225 / 890) * 100vh) calc((112 / 1440) * 100vw)
+        calc((69 / 890) * 100vh) calc((74 / 1440) * 100vw);
     }
   }
 
@@ -251,7 +252,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      margin-bottom: 102px;
+      margin-bottom: calc((102 / 890) * 100vh);
     }
   }
 
@@ -306,7 +307,7 @@
     }
 
     @media screen and (min-width: $desktop) {
-      margin-bottom: 131px;
+      margin-bottom: calc((131 / 890) * 100vh);
     }
   }
 

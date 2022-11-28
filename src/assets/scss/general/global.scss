@@ -22,6 +22,18 @@ body {
 
   box-sizing: border-box;
 
+  .wrapper {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 100vw;
+    min-height: 100vh;
+  }
+
   @media screen and (min-width: $desktop) {
     height: 100vh;
 
@@ -36,7 +48,6 @@ body {
     /* Firefox */
 
     .wrapper {
-      width: 100%;
       height: 100vh;
 
       overflow: auto;

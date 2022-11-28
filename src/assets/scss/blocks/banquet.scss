@@ -6,11 +6,11 @@
   overflow: visible;
 
   @media screen and (min-width: $tablet) {
-    height: 585px;
+    height: calc((585 / 1024) * 100vh);
   }
 
   @media screen and (min-width: $desktop) {
-    height: calc(440 / 1440 * 100vw);
+    height: calc(440 / 890 * 100vh);
   }
 
   &__container {
