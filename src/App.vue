@@ -94,6 +94,29 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --background-color-page: #{$starfit};
+
+  --green: #{$green};
+  --dark-green: #{$dark-green};
+
+  --gray: #{$gray};
+  --dark-gray: #{$dark-gray};
+
+  --blue: #{$blue};
+  --dark-blue: #{$dark-blue};
+
+  --beige: #{$beige};
+
+  --light-yellow: #{$light-yellow};
+  --starfit: #{$starfit};
+  --white: #{$white};
+
+  --color-button: #{$white};
+  --border-color-button: #{$white};
+  --background-color-button: transparent;
+}
+
 @import '~@/assets/scss/general/fonts';
 @import '~@/assets/scss/general/normalize';
 @import '~@/assets/scss/general/global';

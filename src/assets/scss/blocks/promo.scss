@@ -74,7 +74,7 @@
         transition: transform 0.5s ease-in;
 
         &.scrolled {
-          transform: translateY(192px);
+          transform: translateY(310px);
 
           transition: transform 0.5s ease-out;
         }
@@ -121,7 +121,7 @@
 
     &--home,
     &--smart {
-      padding-bottom: 40px;
+      padding-bottom: 150px;
 
       overflow: hidden;
     }
@@ -147,6 +147,11 @@
 
     @media screen and (min-width: $tablet) {
       max-height: calc(384 / 768 * 100vw);
+
+      &--home,
+      &--smart {
+        padding-bottom: 40px;
+      }
 
       &--smart {
         overflow: visible;

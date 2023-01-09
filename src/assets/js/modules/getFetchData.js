@@ -4,10 +4,10 @@ const CODE_SUCCESS = 200;
 const TEXT_SUCCESS = 'success';
 
 // Разные API для теста и бой
-const URL_API =
-  window.location.host.indexOf('city-inn.com.ua') > 0
-    ? `${process.env.VUE_APP_CITY_IN_API}/api`
-    : process.env.VUE_APP_FIREBASE_RTDB;
+const URL_API = `${process.env.VUE_APP_CITY_IN_API}/api`;
+// window.location.host.indexOf('city-inn.com.ua') > 0
+//   ? `${process.env.VUE_APP_CITY_IN_API}/api`
+//   : process.env.VUE_APP_FIREBASE_RTDB;
 
 // Запрос для firebase должен расширение файла включать, иначе CORS ошибка выпадает (так решила эту проблему)
 let fileExtension = URL_API.indexOf('firebase') > 0 ? '.json' : '';
@@ -25,7 +25,7 @@ const getFetchData = async (url) => {
     const response = await axios.get(`${URL_API}${url}${fileExtension}`);
 
     /** Удалить в финале СТАРТ */
-    console.log(url, response);
+    // console.log(url, response);
     /** Удалить в финале КОНЕЦ */
 
     if (response.status !== CODE_SUCCESS) {

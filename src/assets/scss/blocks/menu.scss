@@ -11,14 +11,17 @@
 
   min-height: 100vh;
 
-  padding: 218px 0 48px 0;
+  padding: 218px 0 150px;
 
   background-color: $dark-gray;
+
+  --before-linear-gradient-from: rgba(0, 0, 0, 0.7);
+  --before-linear-gradient-to: rgba(0, 0, 0, 0.7);
 
   @include before-linear-gradient();
 
   @media screen and (min-width: $tablet) {
-    padding: calc(274 / 840 * 100vh) 0 60px 0;
+    padding: calc(274 / 840 * 100vh) 0 60px;
   }
 
   &__container {

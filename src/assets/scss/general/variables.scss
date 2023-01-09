@@ -52,26 +52,3 @@ $dirty-green: #858569;
 
 $black: #242424;
 // $black-20: rgba(0, 0, 0, 0.2);
-
-:root {
-  --background-color-page: #{$starfit};
-
-  --green: #{$green};
-  --dark-green: #{$dark-green};
-
-  --gray: #{$gray};
-  --dark-gray: #{$dark-gray};
-
-  --blue: #{$blue};
-  --dark-blue: #{$dark-blue};
-
-  --beige: #{$beige};
-
-  --light-yellow: #{$light-yellow};
-  --starfit: #{$starfit};
-  --white: #{$white};
-
-  --color-button: #{$white};
-  --border-color-button: #{$white};
-  --background-color-button: transparent;
-}

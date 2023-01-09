@@ -3,7 +3,10 @@ import styles from '@/assets/js/modules/mapStyles';
 
 const mapInit = (
   google,
-  options = { lat: 49.81173756211972, lng: 24.141566493630982 },
+  options = {
+    center: { lat: 49.81173756211972, lng: 24.141566493630982 },
+    zoom: 16,
+  },
   mapEl
 ) => {
   if (mapEl) {
@@ -21,7 +24,19 @@ const mapInit = (
       styles,
     };
 
-    new google.maps.Map(mapEl, fullOptions);
+    const map = new google.maps.Map(mapEl, fullOptions);
+
+    const { center } = options;
+    const marker = new google.maps.Marker({
+      position: center,
+      title: 'City Inn',
+      icon: {
+        url: '/img/marker.png',
+      },
+    });
+
+    // To add the marker to the map, call setMap();
+    marker.setMap(map);
 
     return true;
   }
