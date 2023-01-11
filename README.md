@@ -28,4 +28,4 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-Версия Nodejs `16.15.0`
+Версия Nodejs `18.13.0`
