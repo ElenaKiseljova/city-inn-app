@@ -52,8 +52,21 @@ body {
 
       overflow: auto;
 
-      .scrollbar-track {
+      .scrollbar-track,
+      .simplebar-track {
+        z-index: 100;
+
         background-color: transparent;
+      }
+
+      .simplebar-scrollbar {
+        &::before {
+          z-index: 100;
+
+          pointer-events: all;
+
+          cursor: grab;
+        }
       }
     }
   }

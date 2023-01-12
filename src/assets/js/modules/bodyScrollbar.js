@@ -10,7 +10,9 @@ const scrollbarInit = () => {
     const wrapper = document.querySelector('.wrapper');
 
     if (wrapper) {
-      scrollbar = new SimpleBar(wrapper);
+      scrollbar = new SimpleBar(wrapper, {
+        autoHide: false,
+      });
 
       const scrollbarEl = scrollbar.getScrollElement();
 
