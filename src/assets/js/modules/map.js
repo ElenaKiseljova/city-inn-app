@@ -4,7 +4,7 @@ import styles from '@/assets/js/modules/mapStyles';
 const mapInit = (
   google,
   options = {
-    center: { lat: 49.81173756211972, lng: 24.141566493630982 },
+    center: { lat: 49.81095100860869, lng: 24.139400572815955 },
     zoom: 16,
   },
   mapEl

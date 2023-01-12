@@ -1,5 +1,5 @@
 <template lang="pug">
-#map.contacts__map(ref="mapEl")
+a#map.contacts__map(:href="mapLink", target="_blank" ref="mapEl")
 </template>
 
 <script>
@@ -11,6 +11,8 @@ export default {
   data() {
     return {
       mapIsReady: false,
+      mapLink:
+        'https://www.google.com/maps/place/%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D1%81%D0%BB%D0%B0%D0%B2+%D0%9E%D1%82%D0%B5%D0%BB%D1%8C/@49.8107658,24.1392699,18.92z/data=!4m8!3m7!1s0x473ac26fe22c7d89:0x8525bf2f39e5844f!5m2!4m1!1i2!8m2!3d49.8109073!4d24.1393622',
     };
   },
   computed: {
