@@ -17,6 +17,8 @@
   }
 
   &__item {
+    --transform-link: translateX(0);
+
     width: max-content;
 
     margin: 0;
@@ -33,13 +35,11 @@
     transition: font-weight 0.3s, transform 0.5s linear, opacity 0.7s;
 
     &:hover {
+      --transform-link: translateX(40px);
+
       font-weight: 700;
 
       opacity: 1;
-
-      transform: translateX(40px);
-
-      transition: transform 0.5s linear, font-weight 0.3s, opacity 0.7s;
     }
 
     @media screen and (min-width: $desktop) {
@@ -60,21 +60,27 @@
 
       &:hover {
         &:nth-of-type(odd) {
-          transform: translateX(79px);
+          --transform-link: translateX(79px);
         }
 
         &:nth-of-type(even) {
-          transform: translateX(-79px);
+          --transform-link: translateX(-79px);
         }
       }
     }
   }
 
   &__link {
+    display: block;
+
     font: inherit;
 
     color: inherit;
 
     white-space: nowrap;
+
+    transform: var(--transform-link);
+
+    transition: transform 0.5s linear, font-weight 0.3s, opacity 0.7s;
   }
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
 nav.nav
   ul.nav__list
-    li.nav__item(v-for='navItemHeader in navItemsHeader')
+    li.nav__item(v-for='navItemHeader in navItemsHeader', :data-text="navItemHeader.title")
       router-link.nav__link(:to='navItemHeader.link') {{ navItemHeader.title }}
 </template>
 
