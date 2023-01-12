@@ -167,6 +167,7 @@ class Animation {
 const contactsAnimation = new Animation('.contacts__item', 'contacts', {
   start: 'top center',
   end: 'bottom bottom',
+  scrub: null,
 });
 
 export { contactsAnimation };
@@ -175,6 +176,7 @@ export { contactsAnimation };
 const pageFooterAnimation = new Animation('.page-footer__item', 'page-footer', {
   start: 'top bottom',
   end: 'bottom bottom',
+  scrub: null,
   // markers: true,
 });
 
