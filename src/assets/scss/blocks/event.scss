@@ -108,6 +108,11 @@
       height: calc((363 / 414) * 100vw);
     }
 
+    picture,
+    img {
+      z-index: -1;
+    }
+
     @media screen and (min-width: $tablet) {
       height: calc((478 / 1024) * 100vh);
 

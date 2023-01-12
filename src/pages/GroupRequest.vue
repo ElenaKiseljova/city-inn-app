@@ -3,7 +3,7 @@ TheMain
   ThePromo
   FoodSections(sectionName='approach-group')
   EventSection(sectionName='smart-rooms')
-  FoodSections(sectionName='supply')
+  SupplySection
   EventSection(sectionName='halls')
   GymSection
   TeamSection
@@ -18,6 +18,7 @@ import EventSection from '@/components/sections/EventSection.vue';
 import GymSection from '@/components/sections/GymSection.vue';
 import TeamSection from '@/components/sections/TeamSection.vue';
 import TheContacts from '@/components/sections/TheContacts.vue';
+import SupplySection from './group-request/SupplySection.vue';
 
 export default {
   components: {
@@ -28,7 +29,7 @@ export default {
     GymSection,
     TeamSection,
     TheContacts,
+    SupplySection,
   },
 };
 </script>
-

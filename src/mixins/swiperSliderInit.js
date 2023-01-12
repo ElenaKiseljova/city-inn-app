@@ -209,7 +209,10 @@ export default {
         }
 
         // Food slider
-        if (this.swiper?.el?.classList.contains('food__slider')) {
+        if (
+          this.swiper?.el?.classList.contains('food__slider') ||
+          this.swiper?.el?.classList.contains('supply__slider')
+        ) {
           this.swiperOptions.spaceBetween = 75;
         }
 
@@ -307,7 +310,8 @@ export default {
           this.sectionName === 'coffee' ||
           this.sectionName === 'doings' ||
           this.sectionName === 'team' ||
-          this.sectionName === 'prices'
+          this.sectionName === 'prices' ||
+          this.sectionName === 'supply'
         ) {
           this.swiperTextOptions.effect = 'fade';
         }

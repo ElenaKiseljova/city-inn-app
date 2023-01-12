@@ -36,7 +36,11 @@ export default {
         // console.log(this.$refs.titleMobile, this.$refs.titleMobile?.length);
         // console.log(this.$refs.section, this.$refs.section?.length);
 
-        if (this.$refs.title?.length && this.$refs.titleMobile?.length && this.$refs.section?.length) {
+        if (
+          this.$refs.title?.length &&
+          this.$refs.titleMobile?.length &&
+          this.$refs.section?.length
+        ) {
           this.$refs.section.forEach((s, i) => {
             const titles = [];
 
@@ -45,7 +49,11 @@ export default {
 
             sectionTitleAnimation({ titles, trigger: s });
           });
-        } else if (this.$refs.title?.length && this.$refs.titleMobile?.length && !this.$refs.section?.length) {
+        } else if (
+          this.$refs.title?.length &&
+          this.$refs.titleMobile?.length &&
+          !this.$refs.section?.length
+        ) {
           // Group Requests - Конференц зали
           const titles = [];
 
@@ -67,7 +75,10 @@ export default {
 
           sectionTitleAnimation({ titles, trigger: this.$refs.section });
         } else if (this.$refs.title) {
-          sectionTitleAnimation({ title: this.$refs.title, trigger: this.$refs.section });
+          sectionTitleAnimation({
+            title: this.$refs.title,
+            trigger: this.$refs.section,
+          });
         }
 
         this.sectionTitleAnimationIsSet = true;
