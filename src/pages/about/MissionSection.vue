@@ -18,9 +18,10 @@ section.mission(v-if='page && sections && section', ref='section')
       :speed="swiperOptions.speed",      
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
-      :effect="swiperOptions.effect",
+      :effect="swiperOptions.effect",      
       :fadeEffect="{crossFade: true}",
       :autoplay="swiperOptions.autoplay",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
     )
       SwiperSlide(

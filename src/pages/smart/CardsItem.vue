@@ -21,6 +21,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
       :controller="{ control: textSwiper }",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
       @beforeTransitionStart="onBeforeTransitionStart"
     )
@@ -50,6 +51,7 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
+      :loop="swiperOptions.loop",
       @swiper="setTextSwiper"
     )
       SwiperSlide(

@@ -39,6 +39,7 @@ export default {
         autoplay: {},
         effect: null,
         grid: {},
+        loop: true,
       },
       swiperTextOptions: {
         slidesPerView: 1,
@@ -47,6 +48,7 @@ export default {
         resizeObserver: true,
         autoplay: {},
         effect: null,
+        loop: true,
       },
       slideClass: null, // transition, translated
       animationSlideTimeout: null,

@@ -17,6 +17,7 @@ section.prices.dooble(v-if='page && sections && section', ref='section')
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
       :controller="{ control: textSwiper }",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
       @beforeTransitionStart="onBeforeTransitionStart"
     )
@@ -44,6 +45,7 @@ section.prices.dooble(v-if='page && sections && section', ref='section')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
+      :loop="swiperOptions.loop",
       @swiper="setTextSwiper"
     )
       SwiperSlide(

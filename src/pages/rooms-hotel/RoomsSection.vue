@@ -11,6 +11,7 @@ section.rooms.dooble(v-if='page && items')
     :pagination="swiperPagination",
     :controller="{ control: textSwiper }",
     :enabled="swiperEnabled",
+    :loop="swiperOptions.loop",
     @swiper="setSwiper"
     @beforeTransitionStart="onBeforeTransitionStart"
   )
@@ -90,6 +91,7 @@ section.rooms.dooble(v-if='page && items')
     :controller="{ control: swiper }",
     :effect="swiperTextOptions.effect",
     :fadeEffect="{crossFade: true}",
+    :loop="swiperOptions.loop",
     @swiper="setTextSwiper"
   )
     SwiperSlide(

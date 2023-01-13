@@ -13,6 +13,7 @@ section.gallery(v-if='page && sections && section')
       :speed="swiperOptions.speed",
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
     )
       SwiperSlide(

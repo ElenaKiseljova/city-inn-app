@@ -460,88 +460,88 @@ const imageBgAnimation = (trigger) => {
 export { imageBgAnimation };
 
 // Переходы слайдов
-const animationSlideElements = (
-  swiperSlider,
-  selector1,
-  selector2,
-  mode = 1
-) => {
-  const el1 =
-    swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
-  const el2 =
-    swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
+// const animationSlideElements = (
+//   swiperSlider,
+//   selector1,
+//   selector2,
+//   mode = 1
+// ) => {
+//   const el1 =
+//     swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector1);
+//   const el2 =
+//     swiperSlider.slides[swiperSlider.activeIndex].querySelector(selector2);
 
-  if (el1 && el2) {
-    gsap.to(el1, {
-      x: 0,
-      // opacity: 1,
-      duration: 1.2,
-    });
+//   if (el1 && el2) {
+//     gsap.to(el1, {
+//       x: 0,
+//       // opacity: 1,
+//       duration: 1.2,
+//     });
 
-    switch (mode) {
-      case 1:
-        gsap.to(el2, {
-          x: 0,
-          // opacity: 1,
-          duration: 1.2,
-        });
+//     switch (mode) {
+//       case 1:
+//         gsap.to(el2, {
+//           x: 0,
+//           // opacity: 1,
+//           duration: 1.2,
+//         });
 
-        break;
+//         break;
 
-      case 2:
-        gsap.to(el2, {
-          // opacity: 1,
-          duration: 1.2,
-          ease: 'Power3.easeOut',
-        });
+//       case 2:
+//         gsap.to(el2, {
+//           // opacity: 1,
+//           duration: 1.2,
+//           ease: 'Power3.easeOut',
+//         });
 
-        break;
+//         break;
 
-      default:
-        break;
-    }
-  }
+//       default:
+//         break;
+//     }
+//   }
 
-  if (swiperSlider.previousIndex !== undefined) {
-    const el3 =
-      swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
-    const el4 =
-      swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
+//   if (swiperSlider.previousIndex !== undefined) {
+//     const el3 =
+//       swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector1);
+//     const el4 =
+//       swiperSlider.slides[swiperSlider.previousIndex].querySelector(selector2);
 
-    if (el3 && el4) {
-      gsap.to(el3, {
-        x: '-100%',
-        // opacity: 0,
-        duration: 1,
-      });
+//     if (el3 && el4) {
+//       gsap.to(el3, {
+//         x: '-100%',
+//         // opacity: 0,
+//         duration: 1,
+//       });
 
-      switch (mode) {
-        case 1:
-          gsap.to(el4, {
-            x: '100%',
-            // opacity: 0,
-            duration: 1,
-          });
+//       switch (mode) {
+//         case 1:
+//           gsap.to(el4, {
+//             x: '100%',
+//             // opacity: 0,
+//             duration: 1,
+//           });
 
-          break;
+//           break;
 
-        case 2:
-          gsap.to(el4, {
-            // opacity: 0,
-            duration: 1,
-            ease: 'Power3.easeOut',
-          });
+//         case 2:
+//           gsap.to(el4, {
+//             // opacity: 0,
+//             duration: 1,
+//             ease: 'Power3.easeOut',
+//           });
 
-          break;
+//           break;
 
-        default:
-          break;
-      }
-    }
-  }
-};
+//         default:
+//           break;
+//       }
+//     }
+//   }
+// };
 
-export { animationSlideElements };
+// export { animationSlideElements };
 
 // Анимация абзацев на текстовых страницах
 const textItemsAnimation = {

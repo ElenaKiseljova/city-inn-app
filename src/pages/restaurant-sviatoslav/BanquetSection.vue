@@ -15,6 +15,7 @@ section.banquet(v-if='page && pageName && sections && section', ref='section')
       :effect="swiperOptions.effect",
       :fadeEffect="{crossFade: true}",
       :autoplay="swiperOptions.autoplay",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
     )
       SwiperSlide(

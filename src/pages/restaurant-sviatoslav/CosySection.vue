@@ -18,6 +18,7 @@ section.cosy(v-if='page && pageName && sections && section', ref='section')
         :speed="swiperOptions.speed",
         :navigation="swiperNavigation",
         :pagination="swiperPagination",
+        :loop="swiperOptions.loop",
         @swiper="setSwiper"
       )
         SwiperSlide(

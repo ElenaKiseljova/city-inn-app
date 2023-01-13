@@ -14,6 +14,7 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
       :controller="{ control: textSwiper }",
+      :loop="swiperOptions.loop",
       @swiper="setSwiper"
       @beforeTransitionStart="onBeforeTransitionStart"
     )
@@ -51,6 +52,7 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
+      :loop="swiperOptions.loop",
       @swiper="setTextSwiper"
     )
       SwiperSlide(

@@ -43,6 +43,7 @@ section(
           :navigation="swiperNavigation",
           :pagination="swiperPagination",
           :controller="{ control: textSwiper }",
+          :loop="swiperOptions.loop",
           @swiper="setSwiper"
           @beforeTransitionStart="onBeforeTransitionStart"
         )
@@ -89,6 +90,7 @@ section(
         :controller="{ control: swiper }",
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
+        :loop="swiperOptions.loop",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
