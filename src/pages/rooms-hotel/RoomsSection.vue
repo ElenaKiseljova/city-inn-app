@@ -91,7 +91,8 @@ section.rooms.dooble(v-if='page && items')
     :controller="{ control: swiper }",
     :effect="swiperTextOptions.effect",
     :fadeEffect="{crossFade: true}",
-    :loop="swiperOptions.loop",
+    :loop="swiperTextOptions.loop",
+    :parallax="swiperTextOptions.parallax",
     @swiper="setTextSwiper"
   )
     SwiperSlide(
@@ -99,47 +100,49 @@ section.rooms.dooble(v-if='page && items')
       :key='item.title',
       :class="`rooms__slide rooms__slide--text rooms__slide--${pageName}`"
     )
-      .room(ref='section')
-        .room__container.container(:class='`room__container--${mode(index)}`')
-          .room__bottom(:class='`room__bottom--${mode(index)} room__bottom--mobile`')
-            h2(
-              v-if='item.title && item.title !== ""',
-              v-html='converteSymbolsNewLineToBr(item.title)',
-              :class='`title-inner room__title room__title--desktop room__title--${mode(index)}`',
-              ref='title'
-            )
 
-            .room__services-wrapper(
-              v-if='item.services && item.services.length > 0',
-              :class='`room__services-wrapper--${mode(index)}`'
-            )
-              BaseServices(
-                sectionName='room',
-                :modificator='pageName',
-                :items='item.services'
+      .dooble__content(data-swiper-parallax-opacity="-1")
+        .room(ref='section')
+          .room__container.container(:class='`room__container--${mode(index)}`')
+            .room__bottom(:class='`room__bottom--${mode(index)} room__bottom--mobile`')
+              h2(
+                v-if='item.title && item.title !== ""',
+                v-html='converteSymbolsNewLineToBr(item.title)',
+                :class='`title-inner room__title room__title--desktop room__title--${mode(index)}`',
+                ref='title'
               )
 
-            .room__buttons(:class='`room__buttons--${mode(index)}`')
-              BasePrice(
-                v-if='item.priceFor && item.price',
-                sectionName='room',
-                :modificator='mode(index)',
-                :price='{ text: item.priceFor, number: item.price }'
+              .room__services-wrapper(
+                v-if='item.services && item.services.length > 0',
+                :class='`room__services-wrapper--${mode(index)}`'
               )
+                BaseServices(
+                  sectionName='room',
+                  :modificator='pageName',
+                  :items='item.services'
+                )
 
-              BaseButton(
-                v-if='item.book',
-                sectionName='room',
-                :modificator='pageName',
-                :button='item.book'
-              )
+              .room__buttons(:class='`room__buttons--${mode(index)}`')
+                BasePrice(
+                  v-if='item.priceFor && item.price',
+                  sectionName='room',
+                  :modificator='mode(index)',
+                  :price='{ text: item.priceFor, number: item.price }'
+                )
 
-              BaseButton(
-                v-if='item.more',
-                sectionName='room',
-                :modificator='pageName',
-                :button='item.more'
-              )
+                BaseButton(
+                  v-if='item.book',
+                  sectionName='room',
+                  :modificator='pageName',
+                  :button='item.book'
+                )
+
+                BaseButton(
+                  v-if='item.more',
+                  sectionName='room',
+                  :modificator='pageName',
+                  :button='item.more'
+                )
 
   BasePagination(:swiperIndex="swiperIndex", sectionName='rooms', :modificator='pageName')
 </template>

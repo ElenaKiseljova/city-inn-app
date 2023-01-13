@@ -57,7 +57,8 @@ section.supply.dooble(
         :controller="{ control: swiper }",
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
-        :loop="swiperOptions.loop",
+        :loop="swiperTextOptions.loop",
+        :parallax="swiperTextOptions.parallax",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
@@ -65,43 +66,46 @@ section.supply.dooble(
           :key='slide.image',
           class="supply__slide supply__slide--text "
         )
-          h2.title-inner.supply__title.supply__title--desktop(
-              v-if='slide.title',
-              v-html='converteSymbolsNewLineToBr(slide.title)',
-              ref='title'
+
+          .dooble__content(data-swiper-parallax-opacity="-1")
+            h2.title-inner.supply__title.supply__title--desktop(
+                v-if='slide.title',
+                v-html='converteSymbolsNewLineToBr(slide.title)',
+                ref='title'
+              )
+
+            h3.supply__subtitle(
+              v-if='subTitle',
+              v-html='subTitle',
             )
 
-          h3.supply__subtitle(
-            v-if='subTitle',
-            v-html='subTitle',
-          )
-
-          .supply__content(
-            v-if='slide.topText || slide.bottomText || slide.text || slide.description',
-          )
-            p.supply__text.supply__text--top(
-              v-if='slide.topText && slide.topText !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.topText)'
+            .supply__content(
+              v-if='slide.topText || slide.bottomText || slide.text || slide.description',
             )
+              p.supply__text.supply__text--top(
+                v-if='slide.topText && slide.topText !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.topText)'
+              )
 
-            p.supply__text.supply__text--bottom(
-              v-if='slide.bottomText && slide.bottomText !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.bottomText)'
-            )
+              p.supply__text.supply__text--bottom(
+                v-if='slide.bottomText && slide.bottomText !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.bottomText)'
+              )
 
-            p.supply__text(
-              v-if='slide.description && slide.description !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.description)',
-            )
+              p.supply__text(
+                v-if='slide.description && slide.description !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.description)',
+              )
 
-          .supply__buttons(
-            v-if='slide.button || slide.more',
-          )
-            BaseButton(
-              sectionName='supply',
-              :modificator='pageName',
-              :button='slide.button || slide.more'
+            .supply__buttons(
+              v-if='slide.button || slide.more',
             )
+              BaseButton(
+                sectionName='supply',
+                :modificator='pageName',
+                :button='slide.button || slide.more'
+              )
+
 </template>
 
 <script>

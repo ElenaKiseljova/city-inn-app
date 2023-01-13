@@ -588,47 +588,29 @@
   &__buttons {
     display: flex;
 
-    align-items: center;
+    flex-direction: column;
+
+    align-items: flex-start;
     justify-content: space-between;
 
     @extend %w100;
 
-    column-gap: calc(24 / 334 * 100%);
-
-    &--restaurant {
-      flex-direction: column;
-
-      align-items: flex-start;
-    }
+    gap: 30px 24px;
 
     @media screen and (min-width: $tablet) {
-      column-gap: 24px;
+      flex-direction: row;
+
+      align-items: center;
 
       overflow: visible;
 
       &--lobby,
       &--restaurant {
-        width: auto;
-
         align-self: flex-end;
-      }
-
-      &--restaurant {
-        flex-direction: row;
-
-        align-items: center;
       }
 
       &--starfitt {
         justify-content: flex-start;
-      }
-
-      &--lobby {
-        min-width: 340px;
-      }
-
-      &--restaurant {
-        min-width: 350px;
       }
     }
 
@@ -649,14 +631,6 @@
       &--restaurant {
         align-self: flex-start;
       }
-
-      &--restaurant {
-        min-width: 448px;
-      }
-
-      &--lobby {
-        min-width: 424px;
-      }
     }
   }
 
@@ -671,20 +645,14 @@
       }
     }
 
-    &--restaurant {
-      margin-top: 30px;
-    }
-
     @media screen and (min-width: $tablet) {
-      min-width: calc(155 / 347 * 100%);
+      flex-grow: 1;
+
+      min-width: fit-content;
 
       // transform: translate(20px, 20px);
 
       // opacity: 0;
-
-      &--restaurant {
-        margin-top: 0;
-      }
     }
 
     @media screen and (min-width: $desktop) {

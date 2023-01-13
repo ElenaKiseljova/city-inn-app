@@ -90,7 +90,8 @@ section(
         :controller="{ control: swiper }",
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
-        :loop="swiperOptions.loop",
+        :loop="swiperTextOptions.loop",
+        :parallax="swiperTextOptions.parallax",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
@@ -98,93 +99,95 @@ section(
           :key='slide.image',
           :class="`event__slide event__slide--text event__slide--${sectionName}`"
         )
-          h3(
-            v-if='subTitle',
-            v-html='subTitle',
-            :class='`event__subtitle event__subtitle--${sectionName}`'
-          )
 
-          h3(
-            v-else-if='!haveTitleSmall && slide.title && slide.title !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.title)',
-            :class='`event__subtitle event__subtitle--${sectionName}`'
-          )
-
-          h3(
-            v-if='haveTitleImage && slide.title && slide.title !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.title)',
-            :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`',
-            ref='titleMobile'
-          )
-
-          div(
-            v-if='slide.topText || slide.bottomText || slide.text || slide.description',
-            :class='`event__content event__content--${sectionName}`'
-          )
-            p.event__text.event__text--top(
-              v-if='slide.topText && slide.topText !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.topText)'
+          .dooble__content(data-swiper-parallax-opacity="-1")
+            h3(
+              v-if='subTitle',
+              v-html='subTitle',
+              :class='`event__subtitle event__subtitle--${sectionName}`'
             )
 
-            p.event__text.event__text--top(
-              v-else-if='slide.text && slide.text !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.text)'
+            h3(
+              v-else-if='!haveTitleSmall && slide.title && slide.title !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.title)',
+              :class='`event__subtitle event__subtitle--${sectionName}`'
             )
 
-            p.event__text.event__text--bottom(
-              v-if='slide.bottomText && slide.bottomText !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.bottomText)'
-            )
-
-            p(
-              v-if='!haveDescriptionList && slide.description && slide.description !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.description)',
-              :class='`event__text event__text--${sectionName}`'
-            )
-
-            ul.event__list(
-              v-if='haveDescriptionList && slideList(slide).length > 0'
-            )
-              li.event__item(v-for='item in slideList(slide)', :key='item') {{ item }}
-
-          BaseWorktime(
-            v-if='slide.worktime && slide.worktime !== ""',
-            sectionName='event',
-            :modificator='sectionName',
-            :text='slide.worktime'
-          )
-
-          BaseServices(
-            v-if='slide.services?.length > 0',
-            sectionName='event',
-            :modificator='sectionName',
-            :items='slide.services'
-          )
-
-          BasePrice(
-            v-if='(slide.priceFor || slide.prePrice) && slide.price',
-            sectionName='event',
-            :modificator='sectionName',
-            :price='{ text: slide.priceFor || slide.prePrice, number: slide.price }'
-          )
-
-          div(
-            v-if='slide.button || slide.more',
-            :class='`event__buttons event__buttons--${sectionName}`'
-          )
-            BaseButton(
-              sectionName='event',
-              :modificator='sectionName',
-              :button='slide.button || slide.more'
+            h3(
+              v-if='haveTitleImage && slide.title && slide.title !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.title)',
+              :class='`title-inner event__title-image event__title-image--tablet event__title-image--${sectionName}`',
+              ref='titleMobile'
             )
 
             div(
-              :class='`event__arrow-top arrow-top event__arrow-top--${sectionName}`'
+              v-if='slide.topText || slide.bottomText || slide.text || slide.description',
+              :class='`event__content event__content--${sectionName}`'
             )
-              svg(width='48', height='48')
-                use(
-                  xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-arrow-top'
-                )
+              p.event__text.event__text--top(
+                v-if='slide.topText && slide.topText !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.topText)'
+              )
+
+              p.event__text.event__text--top(
+                v-else-if='slide.text && slide.text !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.text)'
+              )
+
+              p.event__text.event__text--bottom(
+                v-if='slide.bottomText && slide.bottomText !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.bottomText)'
+              )
+
+              p(
+                v-if='!haveDescriptionList && slide.description && slide.description !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.description)',
+                :class='`event__text event__text--${sectionName}`'
+              )
+
+              ul.event__list(
+                v-if='haveDescriptionList && slideList(slide).length > 0'
+              )
+                li.event__item(v-for='item in slideList(slide)', :key='item') {{ item }}
+
+            BaseWorktime(
+              v-if='slide.worktime && slide.worktime !== ""',
+              sectionName='event',
+              :modificator='sectionName',
+              :text='slide.worktime'
+            )
+
+            BaseServices(
+              v-if='slide.services?.length > 0',
+              sectionName='event',
+              :modificator='sectionName',
+              :items='slide.services'
+            )
+
+            BasePrice(
+              v-if='(slide.priceFor || slide.prePrice) && slide.price',
+              sectionName='event',
+              :modificator='sectionName',
+              :price='{ text: slide.priceFor || slide.prePrice, number: slide.price }'
+            )
+
+            div(
+              v-if='slide.button || slide.more',
+              :class='`event__buttons event__buttons--${sectionName}`'
+            )
+              BaseButton(
+                sectionName='event',
+                :modificator='sectionName',
+                :button='slide.button || slide.more'
+              )
+
+              div(
+                :class='`event__arrow-top arrow-top event__arrow-top--${sectionName}`'
+              )
+                svg(width='48', height='48')
+                  use(
+                    xlink:href='@/assets/img/sprites/sprite-mono.svg#icon-arrow-top'
+                  )
 
       div(
         v-if='content',

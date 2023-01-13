@@ -445,24 +445,18 @@
   &__subtitle {
     @extend %w100;
 
+    margin-bottom: 10px;
+
     @include font(24, 29, 700);
 
     color: var(--color-page);
 
-    &--lobby {
-      margin-bottom: 10px;
-    }
-
     @media screen and (min-width: $tablet) {
-      &--lobby {
-        margin-bottom: 8px;
-      }
+      margin-bottom: 8px;
     }
 
     @media screen and (min-width: $desktop) {
-      &--lobby {
-        margin-bottom: 40px;
-      }
+      margin-bottom: 40px;
     }
   }
 

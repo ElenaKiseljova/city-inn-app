@@ -15,7 +15,6 @@ section.features(v-if='page && pageName && sections && section', ref='features')
       :navigation="swiperNavigation",
       :pagination="swiperPagination",
       :enabled="swiperEnabled",
-      :loop="swiperOptions.loop",
       @swiper="setSwiper"
     )
       SwiperSlide(

@@ -7,6 +7,7 @@ import {
   Autoplay,
   EffectFade,
   Grid,
+  Parallax,
 } from 'swiper';
 
 import {
@@ -30,7 +31,15 @@ export default {
       swiper: null,
       textSwiper: null,
       swiperIndex: 0,
-      modules: [Grid, Controller, Navigation, Pagination, Autoplay, EffectFade],
+      modules: [
+        Grid,
+        Controller,
+        Navigation,
+        Pagination,
+        Autoplay,
+        EffectFade,
+        Parallax,
+      ],
       swiperOptions: {
         slidesPerView: 1,
         spaceBetween: 0,
@@ -49,6 +58,7 @@ export default {
         autoplay: {},
         effect: null,
         loop: true,
+        parallax: true,
       },
       slideClass: null, // transition, translated
       animationSlideTimeout: null,

@@ -52,7 +52,8 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
-      :loop="swiperOptions.loop",
+      :loop="swiperTextOptions.loop",
+      :parallax="swiperTextOptions.parallax",
       @swiper="setTextSwiper"
     )
       SwiperSlide(
@@ -60,16 +61,18 @@ section.doings.dooble(v-if='page && pageName && sections && section', ref='secti
         :key='slide.title',
         :class="`doings__slide doings__slide--text doings__slide--${pageName}`"
       )
-        .doings__bottom.doings__bottom--mobile
-          h3.doings__subtitle(
-            v-if='slide.title && slide.title !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.title)'
-          )
 
-          p.doings__text(
-            v-if='slide.text && slide.text !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.text)'
-          )
+        .dooble__content(data-swiper-parallax-opacity="-1")
+          .doings__bottom.doings__bottom--mobile
+            h3.doings__subtitle(
+              v-if='slide.title && slide.title !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.title)'
+            )
+
+            p.doings__text(
+              v-if='slide.text && slide.text !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.text)'
+            )
 
     BaseNavigation(:swiperIndex="swiperIndex", sectionName='doings', :modificator='pageName')
 

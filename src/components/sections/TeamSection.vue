@@ -73,7 +73,8 @@ section.team.dooble(
         :controller="{ control: swiper }",
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
-        :loop="swiperOptions.loop",
+        :loop="swiperTextOptions.loop",
+        :parallax="swiperTextOptions.parallax",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
@@ -81,22 +82,24 @@ section.team.dooble(
           :key='slide.title',
           :class="`team__slide team__slide--text team__slide--${pageName}`"
         )
-          .team__bottom.team__bottom--mobile
-            h3.team__name(v-if='slide.title && slide.title !== ""')
-              | {{ slide.title }}
 
-            p.team__position(
-              v-if='slide.description && slide.description !== ""'
-            )
-              | {{ slide.description }}
+          .dooble__content(data-swiper-parallax-opacity="-1")
+            .team__bottom.team__bottom--mobile
+              h3.team__name(v-if='slide.title && slide.title !== ""')
+                | {{ slide.title }}
 
-            template(v-if='slide.contacts && slide.contacts.length > 0')
-              a.team__mail(
-                v-for='contact in slide.contacts',
-                :key='contact.link',
-                :href='contact.link'
+              p.team__position(
+                v-if='slide.description && slide.description !== ""'
               )
-                | {{ contact.text }}
+                | {{ slide.description }}
+
+              template(v-if='slide.contacts && slide.contacts.length > 0')
+                a.team__mail(
+                  v-for='contact in slide.contacts',
+                  :key='contact.link',
+                  :href='contact.link'
+                )
+                  | {{ contact.text }}
 
 </template>
 

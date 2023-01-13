@@ -45,7 +45,8 @@ section.prices.dooble(v-if='page && sections && section', ref='section')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
-      :loop="swiperOptions.loop",
+      :loop="swiperTextOptions.loop",
+      :parallax="swiperTextOptions.parallax",
       @swiper="setTextSwiper"
     )
       SwiperSlide(
@@ -53,36 +54,38 @@ section.prices.dooble(v-if='page && sections && section', ref='section')
         :key='slide.title',
         :class="`prices__slide prices__slide--text prices__slide--${pageName}`"
       )
-        .prices__bottom
-          h3.prices__subtitle(
-            v-if='slide.title && slide.title !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.title)'
-          )
 
-          p.prices__text(
-            v-if='slide.text && slide.text !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.text)'
-          )
+        .dooble__content(data-swiper-parallax-opacity="-1")
+          .prices__bottom
+            h3.prices__subtitle(
+              v-if='slide.title && slide.title !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.title)'
+            )
 
-          BaseServices(
-            v-if='slide.services?.length > 0',
-            sectionName='prices',
-            modificator='prices',
-            :items='slide.services'
-          )
+            p.prices__text(
+              v-if='slide.text && slide.text !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.text)'
+            )
 
-          BasePrice(
-            v-if='slide.price',
-            sectionName='prices',
-            modificator='prices',
-            :price='{ number: slide.price, text: slide.priceFor || slide.prePrice }'
-          )
+            BaseServices(
+              v-if='slide.services?.length > 0',
+              sectionName='prices',
+              modificator='prices',
+              :items='slide.services'
+            )
 
-          BaseButton(
-            sectionName='prices',
-            :modificator='pageName',
-            :button='slide.button'
-          )
+            BasePrice(
+              v-if='slide.price',
+              sectionName='prices',
+              modificator='prices',
+              :price='{ number: slide.price, text: slide.priceFor || slide.prePrice }'
+            )
+
+            BaseButton(
+              sectionName='prices',
+              :modificator='pageName',
+              :button='slide.button'
+            )
 
 </template>
 

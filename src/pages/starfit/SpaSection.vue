@@ -42,7 +42,8 @@ section.spa.dooble(v-if='page && sections && section', ref='section')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
-      :loop="swiperOptions.loop",
+      :loop="swiperTextOptions.loop",
+      :parallax="swiperTextOptions.parallax",
       @swiper="setTextSwiper"
     )
       SwiperSlide(
@@ -50,33 +51,35 @@ section.spa.dooble(v-if='page && sections && section', ref='section')
         :key='slide.title',
         :class="`spa__slide spa__slide--text spa__slide--${pageName}`"
       )
-        .spa__bottom
-          p.spa__text(
-            v-if='slide.description && slide.description !== ""',
-            v-html='converteSymbolsNewLineToBr(slide.description)'
-          )
 
-          BaseServices(
-            v-if='slide.services && slide.services.length > 0',
-            sectionName='spa',
-            modificator='spa',
-            :items='slide.services'
-          )
+        .dooble__content(data-swiper-parallax-opacity="-1")
+          .spa__bottom
+            p.spa__text(
+              v-if='slide.description && slide.description !== ""',
+              v-html='converteSymbolsNewLineToBr(slide.description)'
+            )
 
-          BaseWorktime(
-            v-if='slide.worktime && slide.worktime !== ""',
-            sectionName='spa',
-            :modificator='pageName',
-            :text='slide.worktime'
-          )
+            BaseServices(
+              v-if='slide.services && slide.services.length > 0',
+              sectionName='spa',
+              modificator='spa',
+              :items='slide.services'
+            )
 
-          BaseButton(
-            v-if='slide.button',
-            sectionName='spa',
-            :modificator='pageName',
-            :button='slide.button'
-          )
-    
+            BaseWorktime(
+              v-if='slide.worktime && slide.worktime !== ""',
+              sectionName='spa',
+              :modificator='pageName',
+              :text='slide.worktime'
+            )
+
+            BaseButton(
+              v-if='slide.button',
+              sectionName='spa',
+              :modificator='pageName',
+              :button='slide.button'
+            )
+      
     BasePagination(:swiperIndex="swiperIndex", sectionName='spa', :modificator='pageName')
 
   .spa__right

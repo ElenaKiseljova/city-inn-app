@@ -45,7 +45,8 @@ section.seating.dooble(v-if='page && sections && section', ref='section')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
-      :loop="swiperOptions.loop",
+      :loop="swiperTextOptions.loop",
+      :parallax="swiperTextOptions.parallax",
       @swiper="setTextSwiper"
     )
       SwiperSlide(
@@ -53,29 +54,31 @@ section.seating.dooble(v-if='page && sections && section', ref='section')
         :key='slide.title',
         :class="`seating__slide seating__slide--text seating__slide--${pageName}`"
       )
-        .seating__bottom
-          .seating__header
-            .seating__icon
-              img(width='50', height='50', :src='slide.SVG', alt='icon')
-              //- svg(width='50', height='50')
-              //-   use(
-              //-     xlink:href="@/assets/img/sprites/sprite-mono.svg#icon-" + slide.icon
-              //-   )
 
-            h3.seating__subtitle
-              | {{ slide.title }}
+        .dooble__content(data-swiper-parallax-opacity="-1")
+          .seating__bottom
+            .seating__header
+              .seating__icon
+                img(width='50', height='50', :src='slide.SVG', alt='icon')
+                //- svg(width='50', height='50')
+                //-   use(
+                //-     xlink:href="@/assets/img/sprites/sprite-mono.svg#icon-" + slide.icon
+                //-   )
 
-          BaseServices(
-            sectionName='seating',
-            modificator='seating',
-            :items='slide.services'
-          )
+              h3.seating__subtitle
+                | {{ slide.title }}
 
-          BaseButton(
-            sectionName='seating',
-            :modificator='pageName',
-            :button='slide.button'
-          )
+            BaseServices(
+              sectionName='seating',
+              modificator='seating',
+              :items='slide.services'
+            )
+
+            BaseButton(
+              sectionName='seating',
+              :modificator='pageName',
+              :button='slide.button'
+            )
 
 </template>
 

@@ -60,6 +60,7 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
             )
 
             BaseButton(
+              v-if="slide.button"
               sectionName='types',
               modificator='types',
               :button='slide.button'
@@ -75,7 +76,8 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
         :effect="swiperTextOptions.effect",
         :fadeEffect="{crossFade: true}",
         :controller="{ control: swiper }",
-        :loop="swiperOptions.loop",
+        :loop="swiperTextOptions.loop",
+        :parallax="swiperTextOptions.parallax",
         @swiper="setTextSwiper"
       )
         SwiperSlide(
@@ -83,28 +85,32 @@ section.types.dooble(v-if='page && pageName && sections && section', ref='sectio
           :key='slide.title',
           :class="`types__slide types__slide--text types__slide--${pageName}`"
         )
-          .types__bottom.types__bottom--mobile
-            h3.types__subtitle.types__subtitle--mobile(
-              v-if='slide.title && slide.title !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.title)'
-            )
 
-            p.types__text(
-              v-if='slide.description && slide.description !== ""',
-              v-html='converteSymbolsNewLineToBr(slide.description)'
-            )
+          .dooble__content(data-swiper-parallax-opacity="-1")
+            .types__bottom.types__bottom--mobile
+              h3.types__subtitle.types__subtitle--mobile(
+                v-if='slide.title && slide.title !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.title)'
+              )
 
-            BaseServices(
-              sectionName='types',
-              modificator='types',
-              :items='slide.services'
-            )
+              p.types__text(
+                v-if='slide.description && slide.description !== ""',
+                v-html='converteSymbolsNewLineToBr(slide.description)'
+              )
 
-            BaseButton(
-              sectionName='types',
-              modificator='types',
-              :button='slide.button'
-            )
+              BaseServices(
+                sectionName='types',
+                modificator='types',
+                :items='slide.services'
+              )
+
+              BaseButton(
+                v-if="slide.button"
+                sectionName='types',
+                modificator='types',
+                :button='slide.button'
+              )
+              
 </template>
 
 <script>

@@ -51,7 +51,8 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
       :controller="{ control: swiper }",
       :effect="swiperTextOptions.effect",
       :fadeEffect="{crossFade: true}",
-      :loop="swiperOptions.loop",
+      :loop="swiperTextOptions.loop",
+      :parallax="swiperTextOptions.parallax",
       @swiper="setTextSwiper"
     )
       SwiperSlide(
@@ -59,14 +60,16 @@ li(v-if='page', :class='`cards__item cards__item--${oddEvenLast}`')
         :key='slide.title',
         :class="`cards__slide cards__slide--text`"
       )
-        CardsDesc(
-          :oddEvenLast='oddEvenLast',
-          :image='slide.image',
-          :title='slide.title',
-          :description='slide.description',
-          :services='slide.services',
-          :book='slide.book'
-        )
+
+        .dooble__content(data-swiper-parallax-opacity="-1")
+          CardsDesc(
+            :oddEvenLast='oddEvenLast',
+            :image='slide.image',
+            :title='slide.title',
+            :description='slide.description',
+            :services='slide.services',
+            :book='slide.book'
+          )
 
     BasePagination(:swiperIndex="swiperIndex", sectionName='cards')
 

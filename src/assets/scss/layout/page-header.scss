@@ -68,15 +68,21 @@
 
     pointer-events: all;
 
-    transform: rotateX(0);
+    opacity: 1;
 
-    transition: transform 0.5s linear;
+    transition: opacity 0.3s linear;
 
     &.scrolled {
-      transform: rotateX(90deg);
+      opacity: 0;
+
+      transition: opacity 0.3s 0.5s linear;
+
+      pointer-events: none;
 
       &.stoped {
-        transform: rotateX(0);
+        opacity: 1;
+
+        pointer-events: all;
       }
     }
 
