@@ -306,7 +306,9 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from, next) => {
-  if ((to.path !== from.path && to.hash) || !to.hash) {
+  const page = store.getters.page;
+
+  if (to.path !== from.path || !page) {
     await store.dispatch('setRouteChanged', false);
 
     const curLang = store.getters.lang;
@@ -359,8 +361,10 @@ router.beforeEach(async (to, from, next) => {
   }
 });
 
-router.afterEach(async (to, from) => {
-  if ((to.path !== from.path && to.hash) || !to.hash) {
+router.afterEach(async (to) => {
+  const nextPage = store.getters.nextPage;
+
+  if (nextPage) {
     await store.dispatch('sliderIndexReset');
 
     const curLang = store.getters.lang;
@@ -383,6 +387,8 @@ router.afterEach(async (to, from) => {
         clearTimeout(notFoundTimeout);
       }, 10000);
     }
+
+    await store.dispatch('setNextPage', null);
   }
 });
 

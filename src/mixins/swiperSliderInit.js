@@ -266,13 +266,11 @@ export default {
 
         if (this.swiper?.el?.classList.contains('team__slider')) {
           this.swiperOptions.spaceBetween = 51;
-          this.swiperOptions.slidesPerView = 3;
-          // this.swiperOptions.loop = true;
+          // this.swiperOptions.slidesPerView = 3;
         }
 
         if (this.swiper?.el?.classList.contains('types__slider')) {
-          // this.swiperOptions.loop = true;
-          this.swiperOptions.slidesPerView = 3;
+          // this.swiperOptions.slidesPerView = 3;
           this.swiperOptions.spaceBetween = 40;
         }
 
@@ -330,28 +328,30 @@ export default {
       }
     },
     slideChange(el) {
-      if (this.swiper?.isEnd) {
-        this.direction = 'prev';
-      }
+      // if (this.swiper?.isEnd) {
+      //   this.direction = 'prev';
+      // }
 
-      if (this.swiper?.isBeginning) {
-        this.direction = 'next';
-      }
+      // if (this.swiper?.isBeginning) {
+      //   this.direction = 'next';
+      // }
 
       if (el.target.closest('.swiper-slide-prev')) {
         this.swiper?.slidePrev();
       } else if (el.target.closest('.swiper-slide-next')) {
         this.swiper?.slideNext();
       } else {
-        if (this.direction === 'next') {
-          this.swiper?.slideNext();
-        } else {
-          this.swiper?.slidePrev();
-        }
+        // if (this.direction === 'next') {
+        //   this.swiper?.slideNext();
+        // } else {
+        //   this.swiper?.slidePrev();
+        // }
+
+        this.swiper?.slideNext();
       }
     },
     changeTab() {
-      const index = this.swiper?.activeIndex ?? 0;
+      const index = this.swiper?.realIndex ?? 0;
 
       if (this.foodNumberTabs[index] && this.foodTextTabs[index]) {
         changeActiveClass(this.foodNumberTabs);

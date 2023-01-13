@@ -100,7 +100,7 @@ section(
           :class="`event__slide event__slide--text event__slide--${sectionName}`"
         )
 
-          .dooble__content(data-swiper-parallax-opacity="-1")
+          .dooble__content(:class="`dooble__content--${sectionName}`" data-swiper-parallax-opacity="-1")
             h3(
               v-if='subTitle',
               v-html='subTitle',

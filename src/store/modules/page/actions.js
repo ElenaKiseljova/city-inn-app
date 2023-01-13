@@ -5,6 +5,10 @@ export default {
     context.commit('setPageName', payload);
   },
   async setNextPage(context, payload) {
+    if (!payload) {
+      return;
+    }
+
     const curLang = payload.curLang;
 
     let path = payload.url;

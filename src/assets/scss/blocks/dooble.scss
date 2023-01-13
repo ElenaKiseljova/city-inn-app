@@ -24,4 +24,23 @@
     //   }
     // }
   }
+
+  &__content {
+    @media screen and (min-width: $desktop) {
+      &--coffee {
+        display: grid;
+
+        grid-template-areas:
+          'a a'
+          'b c';
+
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: 1fr auto;
+
+        column-gap: 49px;
+
+        padding: 0;
+      }
+    }
+  }
 }

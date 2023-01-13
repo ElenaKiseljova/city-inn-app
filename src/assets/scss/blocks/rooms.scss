@@ -32,6 +32,10 @@
       padding-bottom: 120px;
 
       cursor: default;
+
+      &.swiper-slide-duplicate {
+        display: none;
+      }
     }
 
     @media screen and (min-width: $desktop) {

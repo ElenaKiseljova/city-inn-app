@@ -92,6 +92,8 @@
     @media screen and (min-width: $desktop) {
       width: calc(100% + ((100vw - 100%) / 2));
 
+      height: fit-content;
+
       margin-left: 0;
       margin-right: calc(50% - 50vw);
 
@@ -116,10 +118,13 @@
     }
 
     @media screen and (min-width: $desktop) {
-      width: calc((360px * 3) + (40px * 2));
+      width: 360px;
 
-      margin-left: 0;
-      margin-right: auto;
+      margin: 0 auto 0 0;
+
+      .swiper-wrapper {
+        height: max-content;
+      }
     }
 
     .swiper-wrapper {
@@ -235,13 +240,19 @@
       &.active {
         z-index: 100;
       }
+
+      &.swiper-slide-duplicate {
+        display: none;
+      }
     }
 
     @media screen and (min-width: $desktop) {
-      &:nth-of-type(odd),
-      &:nth-of-type(even) {
-        transform: translateY(50px);
-      }
+      height: fit-content;
+
+      // &:nth-of-type(odd),
+      // &:nth-of-type(even) {
+      //   transform: translateY(50px);
+      // }
 
       .types__top,
       .types__bottom {
@@ -256,6 +267,10 @@
 
           transform: none !important;
         }
+      }
+
+      &.swiper-slide-duplicate {
+        display: block;
       }
     }
   }
@@ -397,6 +412,8 @@
       position: static;
 
       height: fit-content;
+
+      min-height: auto;
 
       padding: 46px 0 0;
 
