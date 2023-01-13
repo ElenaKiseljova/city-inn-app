@@ -123,7 +123,7 @@
           width: 100%;
           height: 100%;
 
-          transition: height 0.5s linear, width 0.5s linear;
+          // transition: height 0.5s linear, width 0.5s linear;
         }
 
         .doings__bottom {
@@ -145,49 +145,71 @@
         .doings__text {
           opacity: 1;
         }
-      }
 
-      &.swiper-slide-next,
-      &.swiper-slide-next ~ .swiper-slide {
-        position: relative;
+        & + .swiper-slide {
+          position: relative;
 
-        .doings__img {
-          width: var(--width-img);
-          height: var(--height-img);
-        }
+          .doings__img {
+            width: var(--width-img);
+            height: var(--height-img);
+          }
 
-        .doings__bottom {
-          position: absolute;
+          .doings__bottom {
+            position: absolute;
 
-          top: var(--height-img);
+            top: var(--height-img);
 
-          left: 0;
+            left: 0;
 
-          max-width: var(--width-img);
+            max-width: var(--width-img);
 
-          margin: 0;
+            margin: 0;
 
-          padding: 50px 0 0;
-        }
+            padding: 50px 0 0;
+          }
 
-        .doings__subtitle {
-          @include font(30, 37, 700);
+          .doings__subtitle {
+            @include font(30, 37, 700);
 
-          opacity: 0.6;
-        }
+            opacity: 0.6;
+          }
 
-        .doings__text {
-          opacity: 0;
-        }
-      }
+          .doings__text {
+            opacity: 0;
+          }
 
-      &.swiper-slide-next {
-        .doings__img {
-          transition: height 0.5s linear, width 0.5s linear;
-        }
+          & ~ .swiper-slide {
+            position: relative;
 
-        .doings__bottom {
-          transition: transform 0.5s linear;
+            .doings__img {
+              width: var(--width-img);
+              height: var(--height-img);
+            }
+
+            .doings__bottom {
+              position: absolute;
+
+              top: var(--height-img);
+
+              left: 0;
+
+              max-width: var(--width-img);
+
+              margin: 0;
+
+              padding: 50px 0 0;
+            }
+
+            .doings__subtitle {
+              @include font(30, 37, 700);
+
+              opacity: 0.6;
+            }
+
+            .doings__text {
+              opacity: 0;
+            }
+          }
         }
       }
     }
